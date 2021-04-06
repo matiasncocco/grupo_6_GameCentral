@@ -1,4 +1,4 @@
-# grupo_6_gameCentral
+# grupo_6_GameCentral
 Proyecto Grupo 6 DH
 
 
