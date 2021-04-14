@@ -1,14 +1,14 @@
-# grupo_6_GameCentral
-Proyecto Grupo 6 DH
+<h1>grupo_6_GameCentral</h1>
+<h3>Proyecto Grupo 6 DH</h3>
 
 
-¿Qué productos o servicios brindará nuestro sitio? ¿Quién será nuestra audiencia objetivo? ¿Cómo ajustaremos nuestra oferta a ese público?
+<h6>¿Qué productos o servicios brindará nuestro sitio? ¿Quién será nuestra audiencia objetivo? ¿Cómo ajustaremos nuestra oferta a ese público?</h6>
 
 - GameCentral es una plataforma virtual que permite a los usuarios acceder a la compra y descarga de videojuegos.
 - Nuetro sitio apunta a todos aquellos entusiastas del mundo gaming. Ya sea casuales o competitivos.
 - Presentaremos de forma novedosa y llamativa un amplio catálogo de ofertas con títulos de diferentes desarrolladores y companías.
 
-Integrantes:  
+<h3>Integrantes:</h3>
 
 Nombre: Melina Giménez  
 Edad: 22  
@@ -29,3 +29,4 @@ Profesión: Lic. en Comunicación Social y Periodismo
 Nombre: Federico Schlatter  
 Edad: 35  
 Profesión: Contador Público
+
