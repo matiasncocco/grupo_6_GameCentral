@@ -32,5 +32,11 @@ Profesión: Contador Público
 
 <h2>Páginas de referencia</h2>
 
-- [Steam](https://store.steampowered.com/)
-- [Epic Games](https://www.epicgames.com/store/en-US/)
+<h6><em>Todas fueron elegidas, en primer lugar, porque ofrecen el mismo producto y/o servicio que nuestro sitio.</h6></em>
+
+- [Steam](https://store.steampowered.com/): es el modelo principal al que apunta nuestro sitio.
+- [Epic Games](https://www.epicgames.com/store/es-ES/): por la estética y funcionalidad que presenta.
+- [Microsoft](https://www.microsoft.com/es-ar/store/games/windows): por los clientes a los que apunta.
+- [Ubisoft](https://store.ubi.com/ofertas/home?lang=es_AR): porque presenta una variedad de productos más estrecha.
+- [Origin](https://www.origin.com/arg/en-us/store): por la estética que presenta.
+- [Instant Gaming](https://www.instant-gaming.com/es/): por la funcionalidad que presenta.
