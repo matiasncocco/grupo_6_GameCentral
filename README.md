@@ -30,3 +30,6 @@ Nombre: Federico Schlatter
 Edad: 35  
 Profesión: Contador Público
 
+<h2>Páginas de referencia</h2>
+
+- <bold>Steam: </bold><em text-decoration='none'>https://store.steampowered.com/</em>
