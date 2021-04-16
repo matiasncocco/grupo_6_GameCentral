@@ -58,5 +58,4 @@ font-family: 'Rubik'
 #72788D (Slate Grey)  
 #636B61 (Ebony)  
 
-- Logo:  
-
+- Logo:
