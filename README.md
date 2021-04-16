@@ -30,6 +30,9 @@ Nombre: Federico Schlatter
 Edad: 35  
 Profesión: Contador Público
 
+<h2>Wireframe del sitio:</h2>
+[Wireframe](https://marvelapp.com/prototype/59521h4/screen/78427280)
+
 <h2>Páginas de referencia</h2>
 
 <h6><em>Todas fueron elegidas, en primer lugar, porque ofrecen el mismo producto y/o servicio que nuestro sitio.</h6></em>
@@ -40,6 +43,8 @@ Profesión: Contador Público
 - [Ubisoft](https://store.ubi.com/ofertas/home?lang=es_AR): porque presenta una variedad de productos más estrecha.
 - [Origin](https://www.origin.com/arg/en-us/store): por la estética que presenta.
 - [Instant Gaming](https://www.instant-gaming.com/es/): por la funcionalidad que presenta.
+
+---
 
 <h3>Para ayudarnos con el diseño del sitio:</h3>
 
