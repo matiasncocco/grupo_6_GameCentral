@@ -40,3 +40,9 @@ Profesión: Contador Público
 - [Ubisoft](https://store.ubi.com/ofertas/home?lang=es_AR): porque presenta una variedad de productos más estrecha.
 - [Origin](https://www.origin.com/arg/en-us/store): por la estética que presenta.
 - [Instant Gaming](https://www.instant-gaming.com/es/): por la funcionalidad que presenta.
+
+<h3>Para ayudarnos con el diseño del sitio:</h3>
+
+- Tipografía: 
+font-family: 'Rubik'  
+<link href="https://fonts.googleapis.com/css2?family=Rubik:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">  
