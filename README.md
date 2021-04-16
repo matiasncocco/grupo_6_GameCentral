@@ -1,4 +1,11 @@
 <h1>grupo_6_GameCentral</h1>
+
+-[Acerca del sitio](proyecto-grupo-6-dh)
+-[Integrantes](integrantes)
+-[Wireframe del sitio](wireframe-del-sitio)
+-[Páginas de referencia](paginas-de-referencia)
+-[Más](para-ayudarnos-con-el-diseño-del-sitio)
+
 <h2>Proyecto Grupo 6 DH</h2>
 
 
@@ -8,7 +15,9 @@
 - Nuetro sitio apunta a todos aquellos entusiastas del mundo gaming. Ya sea casuales o competitivos.
 - Presentaremos de forma novedosa y llamativa un amplio catálogo de ofertas con títulos de diferentes desarrolladores y companías.
 
-<h2>Integrantes:</h2>
+---
+
+<h2>Integrantes</h2>
 
 Nombre: Melina Giménez  
 Edad: 22  
@@ -30,8 +39,13 @@ Nombre: Federico Schlatter
 Edad: 35  
 Profesión: Contador Público
 
-<h2>Wireframe del sitio:</h2>
+---
+
+<h2>Wireframe del sitio</h2>
+
 [Wireframe](https://marvelapp.com/prototype/59521h4/screen/78427280)
+
+---
 
 <h2>Páginas de referencia</h2>
 
@@ -46,7 +60,7 @@ Profesión: Contador Público
 
 ---
 
-<h3>Para ayudarnos con el diseño del sitio:</h3>
+<h3>Para ayudarnos con el diseño del sitio</h3>
 
 - Tipografía:  
 font-family: 'Rubik'  
@@ -59,3 +73,5 @@ font-family: 'Rubik'
 #636B61 (Ebony)  
 
 - Logo:
+
+---
