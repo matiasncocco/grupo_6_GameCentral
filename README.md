@@ -45,4 +45,11 @@ Profesión: Contador Público
 
 - Tipografía:  
 font-family: 'Rubik'  
-href="https://fonts.googleapis.com/css2?family=Rubik:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet"  
+
+- Paleta de colores:  
+#E3D7FF (Lavender Blue)  
+#AFA3FF (Maximum Blue Purple)  
+#7A89C2 (Glaucous)  
+#72788D (Slate Grey)  
+#636B61 (Ebony)  
+
