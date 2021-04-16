@@ -1,11 +1,5 @@
 <h1>grupo_6_GameCentral</h1>
 
--[Acerca del sitio](proyecto-grupo-6-dh)
--[Integrantes](integrantes)
--[Wireframe del sitio](wireframe-del-sitio)
--[Páginas de referencia](paginas-de-referencia)
--[Más](para-ayudarnos-con-el-diseño-del-sitio)
-
 <h2>Proyecto Grupo 6 DH</h2>
 
 
