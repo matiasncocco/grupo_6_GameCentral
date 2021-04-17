@@ -69,3 +69,7 @@ font-family: 'Rubik'
 - Logo: (en desarrollo)
 
 ---
+
+<h3>Tablero de trabajo</h3>
+
+[Trello](https://trello.com/b/Tqb0cThM/game-central)
