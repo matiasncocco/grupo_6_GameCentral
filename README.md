@@ -56,10 +56,10 @@ Profesión: Contador Público
 
 <h3>Para ayudarnos con el diseño del sitio</h3>
 
-- [Tipografía](https://fonts.google.com/specimen/Rubik?query=rubik)
+- [Tipografía](https://fonts.google.com/specimen/Rubik?query=rubik)  
 font-family: 'Rubik';
 
-- [Paleta de colores](https://coolors.co/e3d7ff-afa2ff-7a89c2-72788d-636b61)
+- [Paleta de colores](https://coolors.co/e3d7ff-afa2ff-7a89c2-72788d-636b61)  
 #E3D7FF (Lavender Blue)  
 #AFA3FF (Maximum Blue Purple)  
 #7A89C2 (Glaucous)  
