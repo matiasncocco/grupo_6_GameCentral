@@ -66,7 +66,7 @@ font-family: 'Rubik'
 #72788D (Slate Grey)  
 #636B61 (Ebony)  
 
-- Logo: (en desarrollo)
+- Logo: ![logo](https://github.com/matiasncocco/grupo_6_GameCentral/blob/main/public/img/logo.png?raw=true)
 
 ---
 
