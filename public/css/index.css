@@ -9,36 +9,25 @@ body {
 }
 
 .main-header {
-    border: red dotted 2px;
     display: flex;
-    flex-wrap: nowrap;
     justify-content: space-between;
+    align-items: center;
 }
 
 .main-navbar {
-    border: olive solid 5px;
     display: flex;
-    flex-wrap: nowrap;
     justify-content: space-between;
-    display: inline-block;
+    border: red 2px solid;
 }
 
-.main-navbar ul {
-    border: solid black 3px;
-    list-style: none;
-    text-decoration: none;
-    align-items: center;
-    display: inline-block;
+.top-left {
+    display: flex;
+    justify-content: flex-start;
 }
 
-
-
-
-
-
-
-
-
+.main-navbar ul li {
+    display: inline-block;
+}
 
 
 
