@@ -1,0 +1,52 @@
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Rubik', sans-serif;
+}
+
+.main-header {
+    border: red dotted 2px;
+    display: flex;
+    flex-wrap: nowrap;
+    justify-content: space-between;
+}
+
+.main-navbar {
+    border: olive solid 5px;
+    display: flex;
+    flex-wrap: nowrap;
+    justify-content: space-between;
+    display: inline-block;
+}
+
+.main-navbar ul {
+    border: solid black 3px;
+    list-style: none;
+    text-decoration: none;
+    align-items: center;
+    display: inline-block;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+@media (min-width: 576px) {
+    body {
+        background-color: black;
+    }    
+}
