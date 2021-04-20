@@ -60,11 +60,7 @@ Profesión: Contador Público
 font-family: 'Rubik';
 
 - [Paleta de colores](https://coolors.co/e2ddf9-b6b1f1-858bb7-767889-646766)  
-#E2DDF9 (Lavender Web)  
-#B6B1F1 (Maximum Blue Purple)  
-#858BB7 (Cool Grey)  
-#767889 (Roman Silver)    
-#646766 (Dim Grey)
+![paleta-de-colores](https://github.com/matiasncocco/grupo_6_GameCentral/blob/main/design/paleta-de-colores.jpg?raw=true)
 
 - Logo: ![logo](https://github.com/matiasncocco/grupo_6_GameCentral/blob/main/public/img/logo.png?raw=true)
 
