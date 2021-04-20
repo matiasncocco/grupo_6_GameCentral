@@ -36,28 +36,46 @@ a:link, a:visited {
     background-color: #767889;
     color: #E2DDF9;
     display: flex;
+    flex-wrap: nowrap;
     justify-content: space-between;
     align-items: center;
-    /* border: red 2px solid; */
+        /* border: red 2px solid; */
 }
 
 .main-navbar {
     display: flex;
+    flex-wrap: nowrap;
     justify-content: flex-start;
     align-items: center;
     /* border: red 2px solid; */
 }
 
-/* .main-navbar ul li {
-    display: inline-block;
-} */
-
 header nav ul li {
     list-style: none;
-    text-decoration: none;
     display: inline-block;
-    margin: 5px 10px;
+    margin: 0 15px;
     /* border: dotted 0.5px green; */
+}
+
+.titulo {
+    width: 150px;
+    text-align: center;
+    padding: 10px;
+}
+
+.logo {
+    margin-left: 25px;
+    font-size: 2rem;
+    text-align: center;
+    color: #767889;
+    background-color: #E2DDF9;
+    border-radius: 100%;
+    width: 60px;
+}
+
+.language {
+    font-size: 1.2rem;
+    margin-right: 15px;
 }
 
 /* .top-left {
