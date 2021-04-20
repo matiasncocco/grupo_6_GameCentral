@@ -59,12 +59,12 @@ Profesión: Contador Público
 - [Tipografía](https://fonts.google.com/specimen/Rubik?query=rubik)  
 font-family: 'Rubik';
 
-- [Paleta de colores](https://coolors.co/e3d7ff-afa2ff-7a89c2-72788d-636b61)  
-#E3D7FF (Lavender Blue)  
-#AFA3FF (Maximum Blue Purple)  
-#7A89C2 (Glaucous)  
-#72788D (Slate Grey)  
-#636B61 (Ebony)  
+- [Paleta de colores](https://coolors.co/e2ddf9-b6b1f1-858bb7-767889-646766)  
+#E2DDF9 (Lavender Web)  
+#B6B1F1 (Maximum Blue Purple)  
+#858BB7 (Cool Grey)  
+#767889 (Roman Silver)    
+#646766 (Dim Grey)
 
 - Logo: ![logo](https://github.com/matiasncocco/grupo_6_GameCentral/blob/main/public/img/logo.png?raw=true)
 

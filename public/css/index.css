@@ -6,36 +6,80 @@
 
 body {
     font-family: 'Rubik', sans-serif;
+    font-size: 1rem;
+    font-weight: 400;
 }
 
+/*REGLAS QUE CONSIDERO "GENERALES"*/
+/*-------------------------------------------*/
+
+.titulo-h1 {
+    font-size: 2rem;
+    font-weight: 700;
+}
+
+.titulo-h2 {
+    font-size: 1.5rem;
+    font-weight: 600;
+}
+
+a:link, a:visited {
+    text-decoration: none;
+    color: #E2DDF9
+}
+
+
+/*MAIN NAVBAR*/
+/*-------------------------------------------*/
+
 .main-header {
+    background-color: #767889;
+    color: #E2DDF9;
     display: flex;
     justify-content: space-between;
     align-items: center;
+    /* border: red 2px solid; */
 }
 
 .main-navbar {
     display: flex;
-    justify-content: space-between;
-    border: red 2px solid;
+    justify-content: flex-start;
+    align-items: center;
+    /* border: red 2px solid; */
 }
 
-.top-left {
+/* .main-navbar ul li {
+    display: inline-block;
+} */
+
+header nav ul li {
+    list-style: none;
+    text-decoration: none;
+    display: inline-block;
+    margin: 5px 10px;
+    /* border: dotted 0.5px green; */
+}
+
+/* .top-left {
     display: flex;
     justify-content: flex-start;
-}
-
-.main-navbar ul li {
-    display: inline-block;
-}
+    align-items: center
+    border: red 2px solid;
+} */
 
 
 
 
 
+
+
+
+
+/*MEDIA QUERYS*/
+/*-------------------------------------------*/
 
 @media (min-width: 576px) {
-    body {
+    /* body {
         background-color: black;
-    }    
+    }     */
 }
