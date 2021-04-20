@@ -39,6 +39,7 @@ a:link, a:visited {
     flex-wrap: nowrap;
     justify-content: space-between;
     align-items: center;
+    height: 70px;
         /* border: red 2px solid; */
 }
 
@@ -57,20 +58,20 @@ header nav ul li {
     /* border: dotted 0.5px green; */
 }
 
-.titulo {
-    width: 150px;
-    text-align: center;
-    padding: 10px;
-}
-
 .logo {
-    margin-left: 25px;
+    margin: 0 25px;
     font-size: 2rem;
     text-align: center;
     color: #767889;
     background-color: #E2DDF9;
     border-radius: 100%;
     width: 60px;
+}
+
+.titulo {
+    width: 150px;
+    text-align: center;
+    padding: 10px;
 }
 
 .language {
