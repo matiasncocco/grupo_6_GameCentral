@@ -6,22 +6,26 @@
 
 body {
     font-family: 'Rubik', sans-serif;
-    font-size: 1rem;
-    font-weight: 400;
+    background-color: #767889;
 }
 
-/*REGLAS QUE CONSIDERO "GENERALES"*/
+
+/* TAMAÑOS DE LETRA QUE VIENEN POR DEFECTO */
+/*
+h1  32px
+h2  24px
+h3  18px
+h4  16px
+h5  13px
+h6  10px
+---------
+p   16px
+a   16px
+*/
+
+/* REGLAS PARA LOS LINK */
 /*-------------------------------------------*/
 
-.titulo-h1 {
-    font-size: 2rem;
-    font-weight: 700;
-}
-
-.titulo-h2 {
-    font-size: 1.5rem;
-    font-weight: 600;
-}
 
 a:link, a:visited {
     text-decoration: none;
@@ -29,64 +33,59 @@ a:link, a:visited {
 }
 
 
-/*MAIN NAVBAR*/
+/* REGLAS PARA LAS IMÁGENES */
 /*-------------------------------------------*/
 
-.main-header {
+img {
+    width: 100%;
+}
+
+
+/* HEADER */
+/*-------------------------------------------*/
+
+.header-header {
+    /* estética */
+    margin: auto;
     background-color: #767889;
     color: #E2DDF9;
+    /* posicionamiento */
     display: flex;
-    flex-wrap: nowrap;
+    flex-wrap: wrap;
     justify-content: space-between;
-    align-items: center;
-    height: 70px;
-    /* border: red 2px solid; */
 }
 
-.main-navbar {
+/* reglas para ambos navbar */
+.main-navbar, .user-navbar {
+    /* reglas de contenedor hijo */
+    flex-grow: 3;
+    max-width: 50%;
+    /* reglas de contenedor padre */
     display: flex;
-    flex-wrap: nowrap;
-    justify-content: flex-start;
-    align-items: center;
-    /* border: red 2px solid; */
+    flex-wrap: wrap;
+    align-content: center;
 }
 
-header nav ul li {
-    list-style: none;
-    display: inline-block;
-    margin: 0 15px;
-    /* border: dotted 0.5px green; */
+
+.user-navbar {
+    justify-content: flex-end;
 }
 
 .logo {
-    margin: 0 25px;
-    font-size: 2rem;
-    text-align: center;
-    color: #767889;
-    background-color: #E2DDF9;
-    border-radius: 100%;
-    width: 60px;
+
 }
 
-.titulo {
-    width: 150px;
-    text-align: center;
-    padding: 10px;
+/* nav ul li que contienen <a> */
+.nav-link {
+    padding: 0 8px;
+    /* margin: 5px 0; */
 }
 
-.language {
-    font-size: 1.2rem;
-    margin-right: 15px;
+/* <li> de la navbar*/
+.main-navbar li, .user-navbar li {
+    list-style: none;
+    display: inline-block;
 }
-
-/* .top-left {
-    display: flex;
-    justify-content: flex-start;
-    align-items: center
-    border: red 2px solid;
-} */
-
-
 
 
 
@@ -98,7 +97,16 @@ header nav ul li {
 /*-------------------------------------------*/
 
 @media (min-width: 576px) {
-    /* body {
-        background-color: black;
-    }     */
+
+}
+
+@media (min-width: 768px) {
+
+}
+
+@media (min-width: 992px) {
+    /* limito el ancho */
+    .header-header {
+        max-width: 992px;
+    }
 }
