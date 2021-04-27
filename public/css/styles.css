@@ -51,9 +51,9 @@ img {
 
 .header-header {
     /* estética */
-    margin: auto;
     background-color: #767889;
     /* posicionamiento */
+    margin: auto;
     display: flex;
     flex-wrap: wrap;
     justify-content: space-between; 
@@ -71,6 +71,8 @@ img {
     align-content: center;
     /* mobile first, oculto navbar */
     display: none;
+    /* ajuste de posición */
+    /* margin: 20px; */
 }
 
 .user-navbar {
@@ -110,26 +112,30 @@ img {
 
 
 
-
-
     /* temporal */
     height: 20000px;
 }
 
-/* .lala {
-    margin: 10px;
-} */
 
+/* títulos de cada sección*/
 .main-title {
-    margin: 30px 15px;
+    /* margin:  */
     padding: 15px;
     color: #E2DDF9;
-    /* width: 300px; */
+
     border: 1px solid red;
 }
 
-.game-image {
+/* LA SECCIÓN */
+/* */
 
+/* .main-section {
+
+} */
+
+.game-image {
+    width: 25%;
+    margin: auto;
 }
 
 
