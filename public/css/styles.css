@@ -6,7 +6,7 @@
 
 body {
     font-family: 'Rubik', sans-serif;
-    background-color: #767889;
+    /* background-color: #767889; */
 }
 
 
@@ -64,6 +64,8 @@ img {
     display: flex;
     flex-wrap: wrap;
     align-content: center;
+    /* mobile first, oculto */
+    display: none;
 }
 
 
@@ -71,14 +73,18 @@ img {
     justify-content: flex-end;
 }
 
+/* con ésto le doy height a mi navbar */
 .logo {
-
+    margin: 10px;
 }
+
+/* .hamburger {
+
+} */
 
 /* nav ul li que contienen <a> */
 .nav-link {
     padding: 0 8px;
-    /* margin: 5px 0; */
 }
 
 /* <li> de la navbar*/
@@ -88,16 +94,25 @@ img {
 }
 
 
+/* MAIN */
+/*-------------------------------------------*/
+
+.main-home {
+    background-color: #E2DDF9;
+}
 
 
-
-
-
-/*MEDIA QUERYS*/
+/* MEDIA QUERYS */
 /*-------------------------------------------*/
 
 @media (min-width: 576px) {
+    .main-navbar, .user-navbar {
+        display: flex;
+    }
 
+    .hamburger {
+        display: none;
+    }
 }
 
 @media (min-width: 768px) {
