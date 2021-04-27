@@ -6,26 +6,26 @@
 
 body {
     font-family: 'Rubik', sans-serif;
-    /* background-color: #767889; */
+    background-color: #767889;
 }
 
-
-/* TAMAÑOS DE LETRA QUE VIENEN POR DEFECTO */
+/* font-size: CÓMO VIENEN POR DEFECTO */
 /*
-h1  32px
-h2  24px
-h3  18px
-h4  16px
-h5  13px
-h6  10px
----------
-p   16px
-a   16px
+h1      32px
+h2      24px
+h3      18px
+h4      16px
+h5      13px
+h6      10px
+------------
+p       16px
+a       16px
+label   16px
 */
+
 
 /* REGLAS PARA LOS LINK */
 /*-------------------------------------------*/
-
 
 a:link, a:visited {
     text-decoration: none;
@@ -40,6 +40,11 @@ img {
     width: 100%;
 }
 
+/* con esto arreglo un pequeño gap que queda abjao de las imágenes a veces */
+.game-image img, .logo img {
+    display: block;
+}
+
 
 /* HEADER */
 /*-------------------------------------------*/
@@ -48,11 +53,11 @@ img {
     /* estética */
     margin: auto;
     background-color: #767889;
-    color: #E2DDF9;
     /* posicionamiento */
     display: flex;
     flex-wrap: wrap;
-    justify-content: space-between;
+    justify-content: space-between; 
+    align-content: center;
 }
 
 /* reglas para ambos navbar */
@@ -64,16 +69,16 @@ img {
     display: flex;
     flex-wrap: wrap;
     align-content: center;
-    /* mobile first, oculto */
+    /* mobile first, oculto navbar */
     display: none;
 }
 
-
 .user-navbar {
+    /* llevo éste navbar hacia la derecha */
     justify-content: flex-end;
 }
 
-/* con ésto le doy height a mi navbar */
+/* con ésto, sin querer queriendo, le doy height a mi navbar */
 .logo {
     margin: 10px;
 }
@@ -98,18 +103,74 @@ img {
 /*-------------------------------------------*/
 
 .main-home {
-    background-color: #E2DDF9;
+    /* estética */
+    margin: auto;
+    background-color: #858BB7;
+    /* padding-top: 56px; */
+
+
+
+
+
+    /* temporal */
+    height: 20000px;
 }
 
+/* .lala {
+    margin: 10px;
+} */
+
+.main-title {
+    margin: 30px 15px;
+    padding: 15px;
+    color: #E2DDF9;
+    /* width: 300px; */
+    border: 1px solid red;
+}
+
+.game-image {
+
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* FOOTER */
+/*-------------------------------------------*/
+
+.footer-footer {
+    position: relative;
+
+}
+
+/* probando cómo queda/hacer un footer fixed*/
+.prueba {
+    width: 100%;
+    position: fixed;
+    bottom: 0px;
+    text-align: center;
+}
 
 /* MEDIA QUERYS */
 /*-------------------------------------------*/
 
 @media (min-width: 576px) {
+    /* a partir de este viewport quiero ver la navbar */
     .main-navbar, .user-navbar {
         display: flex;
     }
 
+    /* muestro la navbar, oculto la hamburguesa*/
     .hamburger {
         display: none;
     }
@@ -120,8 +181,12 @@ img {
 }
 
 @media (min-width: 992px) {
+
+}
+
+@media (min-width: 1300px) {
     /* limito el ancho */
-    .header-header {
-        max-width: 992px;
+    .header-header, .main-home, .footer-footer {
+        max-width: 1300px;
     }
 }
