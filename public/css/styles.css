@@ -6,9 +6,12 @@
 
 body {
     font-family: 'Rubik', sans-serif;
+    color: #E2DDF9;
     background-color: #767889;
 }
 
+
+/**/
 /* font-size: CÓMO VIENEN POR DEFECTO */
 /*
 h1      32px
@@ -21,67 +24,71 @@ h6      10px
 p       16px
 a       16px
 label   16px
-*/
+/**/
 
 
+/**/
 /* REGLAS PARA LOS LINK */
-/*-------------------------------------------*/
+/**/
+
 
 a:link, a:visited {
+    /* saco el subrayado */
     text-decoration: none;
-    color: #E2DDF9
+    /* que no cambie el color */
+    color: inherit;
 }
 
 
+/**/
 /* REGLAS PARA LAS IMÁGENES */
-/*-------------------------------------------*/
+/**/
+
 
 img {
+    /* se estiran según su contenedor */
     width: 100%;
-}
-
-/* con esto arreglo un pequeño gap que queda abjao de las imágenes a veces */
-.game-image img, .logo img {
+    /* arreglo un gap */
     display: block;
 }
 
 
+/**/
 /* HEADER */
-/*-------------------------------------------*/
+/**/
+
 
 .header-header {
-    /* estética */
-    background-color: #767889;
-    /* posicionamiento */
+    /* position */
     margin: auto;
     display: flex;
     flex-wrap: wrap;
     justify-content: space-between; 
     align-content: center;
+    /* aesthetics */
+    background-color: #767889;
 }
 
 /* reglas para ambos navbar */
 .main-navbar, .user-navbar {
-    /* reglas de contenedor hijo */
+    /* mobile first, oculto navbar */
+    display: none;  
+    /* flex-box: son */
     flex-grow: 3;
     max-width: 50%;
-    /* reglas de contenedor padre */
+    /* flex-box: father */
     display: flex;
     flex-wrap: wrap;
     align-content: center;
-    /* mobile first, oculto navbar */
-    display: none;
-    /* ajuste de posición */
-    /* margin: 20px; */
 }
 
 .user-navbar {
-    /* llevo éste navbar hacia la derecha */
+    /* position: right */
     justify-content: flex-end;
 }
 
-/* con ésto, sin querer queriendo, le doy height a mi navbar */
 .logo {
+    /* afecto el height de la navbar */
     margin: 10px;
 }
 
@@ -89,90 +96,81 @@ img {
 
 } */
 
-/* nav ul li que contienen <a> */
+/* los link de la navbar */
 .nav-link {
+    /* position */
     padding: 0 8px;
 }
 
-/* <li> de la navbar*/
 .main-navbar li, .user-navbar li {
+    /* saco los puntitos */
     list-style: none;
+    /* position */
     display: inline-block;
 }
 
 
+/**/
 /* MAIN */
-/*-------------------------------------------*/
+/**/
 
 
-
-
-/* productDetail */
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-.main-home {
-    /* estética */
+.main-main {
+    /* para separarlo del header */
+    padding-top: .1px;
+    /* aesthetics */
     margin: auto;
     background-color: #858BB7;
-    /* padding-top: 10px; */
-
-
 
     /* temporal */
     height: 20000px;
 }
 
 
+/**/
+/* HOME */
+/**/
+
+
+/* bordes */
+.main-title,
+.main-section {
+    border: 5px solid #b6b1f1;
+    border-left: 15px solid #b6b1f1;
+}
+
 /* títulos de cada sección*/
 .main-title {
-    margin: 10px;
+    /* position */
+    margin: 5px 15px;
     padding: 15px;
-    color: #E2DDF9;
-
-    border: 1px solid red;
 }
 
-/* LA SECCIÓN */
-/* */
+#first-title {
+    margin-top: 20px;
+}
 
-/* .main-section {
+.main-section {
+    /* position */
+    margin: 15px;
+    /* flex-box father */
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: flex-start;
+}
 
-} */
+.unit-product {
+    /* flex-box father */
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: flex-start;
+    
+    /* temporal */
+    width: 25%;
+}
 
 .game-image {
-    width: 25%;
-    margin: auto;
+
 }
 
 
@@ -188,53 +186,109 @@ img {
 
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/**/
+/* productDetail */
+/**/
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/**/
 /* FOOTER */
-/*-------------------------------------------*/
+/**/
+
 
 .footer-footer {
     position: relative;
 
 }
 
-/* probando cómo queda/hacer un footer fixed*/
-.prueba {
-    width: 100%;
+/* botoncito arriba*/
+.to-the-top {
+    /* aesthetics */
+    background: none;
+    border: 1px red solid;
+    /* position */
     position: fixed;
-    bottom: 0px;
-    text-align: center;
+    bottom: 50px;
+    right: 50px;
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
 }
 
-/* MEDIA QUERYS */
-/*-------------------------------------------*/
+.to-the-top:hover {
+    cursor: pointer;
+}
 
+
+/**/
+/* MEDIA QUERY */
+/**/
+
+
+/*
+TABLETS
+*/
 @media (min-width: 576px) {
-    /* a partir de este viewport quiero ver la navbar */
+    /**/
+    /* HEADER */
+    /**/
+
+    /* muestro la navbar */
     .main-navbar, .user-navbar {
         display: flex;
     }
 
-    /* muestro la navbar, oculto la hamburguesa*/
+    /* oculto la hamburguesa*/
     .hamburger {
         display: none;
     }
 }
 
+
+/*
+DESKTOP
+*/
 @media (min-width: 768px) {
 
 }
 
+
+/*
+PANTALLAS +
+*/
 @media (min-width: 992px) {
-
-}
-
-@media (min-width: 1300px) {
     /* limito el ancho */
-    .header-header, .main-home, .footer-footer {
+    .header-header, .main-main, .footer-footer {
         max-width: 1300px;
     }
 }
-
-
-
-/* COMENTARIO PARA FRAN */
-/* COMENTARIO 2 */
