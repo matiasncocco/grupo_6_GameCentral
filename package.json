@@ -6,7 +6,6 @@
   "dependencies": {
     "express": "^4.17.1"
   },
-  "devDependencies": {},
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
@@ -19,5 +18,6 @@
   "bugs": {
     "url": "https://github.com/matiasncocco/grupo_6_GameCentral/issues"
   },
-  "homepage": "https://github.com/matiasncocco/grupo_6_GameCentral#readme"
+  "homepage": "https://github.com/matiasncocco/grupo_6_GameCentral#readme",
+  "keywords": []
 }
