@@ -71,8 +71,6 @@ img {
 
 /* reglas para ambos navbar */
 .main-navbar, .user-navbar {
-    /* mobile first, oculto navbar */
-    display: none;  
     /* flex-box: son */
     flex-grow: 3;
     max-width: 50%;
@@ -80,6 +78,9 @@ img {
     display: flex;
     flex-wrap: wrap;
     align-content: center;
+    /**/
+    /* mobile first, oculto navbar */
+    display: none;
 }
 
 .user-navbar {
@@ -150,6 +151,7 @@ img {
     margin-top: 20px;
 }
 
+/* sección grande */
 .main-section {
     /* position */
     margin: 15px;
@@ -159,21 +161,44 @@ img {
     justify-content: flex-start;
 }
 
+/* uno por producto */
 .unit-product {
-    /* flex-box father */
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: flex-start;
-    
-    /* temporal */
+    position: relative;
     width: 25%;
 }
 
-/* .game-image {
+.game-image {
+    
+}
 
-} */
+/* cintita */
+.ribbon {
+    /* position */
+    position: absolute;
+    bottom: 50px;
+    width:100%;
+    /* aesthetics */
+    background-color: #75FF33;
+}
 
+.full-price {
+    /* position */
+    display: inline-block;
+    text-align: left;
+    width: 45%;
+    padding-left: 5px;
+    /* aesthetics */
+    color: #17202A;
+}
 
+.discount {
+    /* position */
+    text-align: right;
+    display: inline-block;
+    width: 45%;
+    margin-left: 15px;
+    /* aesthetics */
+}
 
 
 
@@ -228,14 +253,17 @@ img {
 
 .footer-footer {
     position: relative;
-
 }
 
 /* botoncito arriba*/
 .to-the-top {
     /* aesthetics */
     background: none;
+    background-color: red;
     border: 1px red solid;
+    font-family: inherit;
+    font-size: 16px;
+    font-weight: 800;
     /* position */
     position: fixed;
     bottom: 50px;
