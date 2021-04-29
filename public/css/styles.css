@@ -151,6 +151,11 @@ img {
     margin-top: 20px;
 }
 
+/* oculto los h4 */
+.regular-title {
+    display: none;
+}
+
 /* sección grande */
 .main-section {
     /* position */
@@ -313,7 +318,17 @@ TABLETS
     /* HOME */
     /**/
 
+
+    /* muestro los h4 */
+    .regular-title {
+        display: block;
+    }
     
+    /* oculto los h3 */
+    .small-title {
+        display: none;
+    }
+
     /* muestro 2 productos */
     .unit-product {
         max-width: 50%;
