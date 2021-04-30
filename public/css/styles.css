@@ -179,36 +179,61 @@ img {
     position: relative;
 }
 
+/* precio post oferta */
+.new-price {
+    /* position */
+    position: absolute;
+    left: 35%;
+    bottom: 0px;
+    /* aesthetics */
+    color: red;
+}
+
 /* cintita */
 .ribbon {
     /* position */
     position: absolute;
-    bottom: 15%;
+    bottom: 4%;
     width: 100%;
+    height: 30px;
     /* aesthetics */
     background-color: #75FF33;
+    border-top: 1px red solid;
+    border-bottom: 1px red solid;
 }
 
-.full-price {
+/* precio tachadp previo a la oferta */
+.crossed-out {
     /* position */
     position: relative;
     left: 5px;
-    bottom: 0px;
+    top: 3.5px;
     /* aesthetics */
     color: #17202A;
+    text-decoration: line-through;
 }
 
+/* % descuento */
 .discount {
     /* position */
     position: absolute;
     right: 5px;
     bottom: 0px;
     /* aesthetics */
+    color: #fff;
     text-shadow: -1px 0 black, 0 1px black, 1px 0 black, 0 -1px black;
 }
 
-
-
+/* precios que van sin descuento */
+/* es igual que el .crossed-out pero sin line-trough */
+.full-price {
+    /* position */
+    position: relative;
+    left: 5px;
+    top: 3.5px;
+    /* aesthetics */
+    color: #17202A;
+}
 
 
 
@@ -273,8 +298,8 @@ img {
     font-weight: 800;
     /* position */
     position: fixed;
-    bottom: 50px;
-    right: 50px;
+    bottom: 20px;
+    right: 25px;
     width: 50px;
     height: 50px;
     border-radius: 50%;
@@ -319,14 +344,14 @@ TABLETS
     /**/
 
 
-    /* muestro los h4 */
-    .regular-title {
-        display: block;
-    }
-    
-    /* oculto los h3 */
+    /* oculto los títulos h4 */
     .small-title {
         display: none;
+    }
+
+    /* muestro los títulos h3 */
+    .regular-title {
+        display: block;
     }
 
     /* muestro 2 productos */
