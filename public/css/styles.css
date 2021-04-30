@@ -217,17 +217,24 @@ img {
     position: relative;
 }
 
-/* NO IMPLEMENTADO */
 /* precio post oferta */
 .new-price {
     /* position */
     position: absolute;
-    left: 35%;
-    bottom: 0px;
+    left: 5px;
+    top: 5px;
     /* aesthetics */
-    color: red;
+    height: 70px;
+    width: 70px;
+    border-radius: 50%;
+    background-color: red;
+    border: 2px solid #8B0000;
+    
+    padding: 10px;
+    text-align: center;
+    color: #FFF;
+    text-shadow: -1px 0 black, 0 1px black, 1px 0 black, 0 -1px black;
 }
-/**/
 
 /* cintita */
 .ribbon {
@@ -239,15 +246,15 @@ img {
     z-index: 10;
     /* aesthetics */
     background-color: #75FF33;
-    border-top: 1px red solid;
-    border-bottom: 1px red solid;
+    border-top: 3px #FFF solid;
+    border-bottom: 3px #FFF solid;
 }
 
 .full-price {
     /* position */
     position: relative;
     left: 5px;
-    top: 3.5px;
+    top: 1.5px;
     /* aesthetics */
     color: #17202A;
 }
@@ -262,7 +269,7 @@ img {
     /* position */
     position: absolute;
     right: 5px;
-    bottom: 0px;
+    bottom: -1.5px;
     /* aesthetics */
     color: #fff;
     text-shadow: -1px 0 black, 0 1px black, 1px 0 black, 0 -1px black;
