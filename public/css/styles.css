@@ -145,6 +145,8 @@ img {
     /* position */
     margin: 5px 15px;
     padding: 15px;
+    /* aesthetics */
+    text-shadow: -1px 0 black, 0 1px black, 1px 0 black, 0 -1px black;
 }
 
 #first-title {
@@ -168,17 +170,54 @@ img {
 
 /* uno por producto */
 .unit-product {
+    /* position */
+    position: relative;
     /* aesthetics */
     padding: 15px;
-    border: 1px red solid;
     /* muestro 1 producto */
     width: 100%;
+}
+
+/* capa que aparezca cuando :hover*/
+.overlay-product {
+    /* position */
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    /* aesthetics */
+    background-color: #fff;
+    visibility: hidden;
+    opacity: 0;
+    transition: all .5s cubic-bezier(.25,.25,.25,.25);
+}
+
+/* botoncito que aparezca cuando :hover*/
+.ver-mas {
+    /* position */
+    position: absolute;
+    display: inline-block;
+    top: 45%;
+    left: 32%;
+    width: 100px;
+    /* aesthetics */
+    padding: 8px;
+    border: 1px solid black;
+    border-radius: 8px;
+    background-color: #858BB7;
+    color: #fff;
+    text-shadow: -1px 0 black, 0 1px black, 1px 0 black, 0 -1px black;
+    text-align: center;
+    visibility: hidden;
+    transition: all .5 cubic-bezier(.25,.25,.25,.25);
 }
 
 .game-image {
     position: relative;
 }
 
+/* NO IMPLEMENTADO */
 /* precio post oferta */
 .new-price {
     /* position */
@@ -188,6 +227,7 @@ img {
     /* aesthetics */
     color: red;
 }
+/**/
 
 /* cintita */
 .ribbon {
@@ -196,20 +236,24 @@ img {
     bottom: 4%;
     width: 100%;
     height: 30px;
+    z-index: 10;
     /* aesthetics */
     background-color: #75FF33;
     border-top: 1px red solid;
     border-bottom: 1px red solid;
 }
 
-/* precio tachadp previo a la oferta */
-.crossed-out {
+.full-price {
     /* position */
     position: relative;
     left: 5px;
     top: 3.5px;
     /* aesthetics */
     color: #17202A;
+}
+
+/* precio tachado porque hay oferta */
+.crossed-out {
     text-decoration: line-through;
 }
 
@@ -224,16 +268,6 @@ img {
     text-shadow: -1px 0 black, 0 1px black, 1px 0 black, 0 -1px black;
 }
 
-/* precios que van sin descuento */
-/* es igual que el .crossed-out pero sin line-trough */
-.full-price {
-    /* position */
-    position: relative;
-    left: 5px;
-    top: 3.5px;
-    /* aesthetics */
-    color: #17202A;
-}
 
 
 
@@ -357,6 +391,16 @@ TABLETS
     /* muestro 2 productos */
     .unit-product {
         max-width: 50%;
+    }
+
+    /* activo el overlay if :hover */
+    .unit-product:hover .overlay-product {
+        visibility: visible;
+        opacity: .7;
+    }
+
+    .unit-product:hover .ver-mas {
+        visibility: visible;
     }
 }
 
