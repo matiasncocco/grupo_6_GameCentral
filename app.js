@@ -12,4 +12,4 @@ app.get('/productDetail', (req, res) => {
     res.sendFile(path.join(__dirname, 'views/productDetail.html'));
 });
 
-app.listen(3001, () => console.log('Servidor corriendo en el puerto 3001'));
+app.listen(process.env.PORT || 3001, () => console.log('Servidor corriendo en el puerto 3001'));
