@@ -4,9 +4,133 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Game Central</title>
+    <!-- Todas las variantes de la tipografía Rubik -->
+    <link href="https://fonts.googleapis.com/css2?family=Rubik:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
+    <!-- Kit de íconos de Font Awesome -->
+    <script src="https://kit.fontawesome.com/47a442944c.js" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="/css/styles.css">
 </head>
 <body>
+
+<!-- Header con el navbar y nada más, por ahora -->
+<header class="header-header">
+
+    <!-- Logo y hamburguesa -->
+    <div class="logo">
+        <a href="/">
+            <img src="/img/icono.png" alt="icono">
+        </a>
+    </div>
+    <div class="hamburger">
+        <i class="fa fa-bars burger"></i>
+    </div>
+
+    <!-- Navbar de navegación -->
+    <nav class="main-navbar">
+        <ul>
+            <li class="nav-link"><a href="#">Home</a></li>
+            <li class="nav-link"><a href="#">Tienda</a></li>
+            <li class="nav-link"><a href="#">Soporte</a></li>
+        </ul>
+    </nav>
+            
+    <!-- Navbar de acciones para el usuario -->
+    <nav class="user-navbar">
+        <ul>
+            <!-- Iconito para ir al carrito de compras -->
+            <li class="nav-link carrito"><a href="#"><i class="fas fa-shopping-cart"></i></a></li>
+            <li class="nav-link"><a href="#">Iniciar sesión</a></li>
+            <li class="nav-link"><a href="#">Registrarse</a></li>
+        </ul>
+    </nav>
     
+</header>
+
+
+     
+        
+<div class="login_left_col ">
+    <div class="login_credential_ctn">
+        <div class="loginbox login_col_padding">
+            <div class="loginbox_left">
+                <div class="loginbox_content">
+                    <div class="login_title">Iniciar sesión</div>
+
+                    <div id="error_display" class="checkout_error" style="display: none;"></div>
+                    <form name="logon" action="" method="POST" id="login_form" style="display: block;">
+                        <div class="login_row">
+                            <div class="input_title">Nombre de la cuenta de Game Central</div>
+                            <input class="text_field" type="text" name="username" id="input_username" placeholder="" value="">
+                        </div>
+                        <div class="login_row">
+                            <div class="input_title">Contraseña</div>
+                            <input class="text_field" type="password" name="password" id="input_password" autocomplete="off" placeholder="">
+                        </div>
+                                                        <div class="login_row">
+                                <div class="input_title" title="#steam_rememberlogin_explanation">
+                                    <input type="checkbox" name="remember_login" id="remember_login">
+                                    <label for="remember_login">Recordarme en este equipo</label>
+                                </div>
+                            </div>
+                        
+                        
+                        <div class="login_row" id="captcha_entry" style="display: none;">
+                                                            <div id="captcha_image_row">
+                                <img style="float: left;" id="captchaImg" src="https://community.cloudflare.steamstatic.com/public/images/blank.gif" border="0" width="206" height="40">
+                                <div id="captchaRefresh">
+                                    <span class="linkspan" id="captchaRefreshLink">Actualizar</span>
+                                </div>
+                                <div style="clear: left;"></div>
+                            </div>
+                            <br>
+                            <div class="input_title">Introduce los caracteres que aparecen arriba</div>
+                            <input class="text_field" id="input_captcha" type="text" name="captcha_text">
+                        </div>
+                        <div style="display: none;"><input type="submit"></div>
+                    </form>
+
+        
+                    <div class="login_btn_ctn">
+                        <div id="login_btn_signin">
+                            <button type="submit" class="btn_blue_steamui btn_medium login_btn">
+                                <span>Iniciar sesión</span>
+                            </button>
+                                                                <a target="_top" href="https://help.steampowered.com/es-419/wizard/HelpWithLogin?redir=community%2Flogin%2Fhome%2F%3Fgoto%3Dprofiles%252F76561197995850519" id="link_forgot_password">
+                                    ¿Has olvidado la contraseña?									</a>
+                                                        </div>
+                        <div id="login_btn_wait" style="display: none;">
+                                    <div class="LoadingWrapper">
+        <div class="LoadingThrobber">
+            <div class="Bar Bar1"></div>
+            <div class="Bar Bar2"></div>
+            <div class="Bar Bar3"></div>
+        </div>
+                </div>
+                                </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+      
+
+
+       
+       
+
+     
+
+
+<!-- Footer -->
+<footer class="footer-footer">
+
+</footer>
+
 </body>
 </html>
+
+
+
+
