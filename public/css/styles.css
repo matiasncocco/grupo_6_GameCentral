@@ -50,9 +50,7 @@ body {
 
 
 a:link, a:visited {
-    /* saco el subrayado */
     text-decoration: none;
-    /* que no cambie el color */
     color: inherit;
 }
 
@@ -63,9 +61,7 @@ a:link, a:visited {
 
 
 img {
-    /* se estiran según su contenedor */
     width: 100%;
-    /* arreglo un gap */
     display: block;
 }
 
@@ -76,18 +72,17 @@ img {
 
 
 .header-header {
-    /* position */
     margin: auto;
     display: flex;
     flex-wrap: wrap;
     justify-content: flex-start;
     align-content: center;
-    /* aesthetics */
     background-color: #767889;
 }
 
 /* reglas para ambos navbar */
 .main-navbar, .user-navbar {
+    display: none;
     /* flex-box: son */
     flex-grow: 3;
     max-width: 50%;
@@ -95,18 +90,13 @@ img {
     display: flex;
     flex-wrap: wrap;
     align-content: center;
-    /**/
-    /* mobile first, oculto navbar */
-    display: none;
 }
 
 .user-navbar {
-    /* position: right */
     justify-content: flex-end;
 }
 
 .logo {
-    /* afecto el height de la navbar */
     margin: 10px;
 }
 
@@ -125,16 +115,12 @@ img {
     background-color: #E2DDF9;
 }
 
-/* los link de la navbar */
 .nav-link {
-    /* position */
     padding: 0 8px;
 }
 
 .main-navbar li, .user-navbar li {
-    /* saco los puntitos */
     list-style: none;
-    /* position */
     display: inline-block;
 }
 
@@ -149,11 +135,8 @@ img {
 
 
 .main-main {
-    /* para separarlo del header */
     padding-top: .1px;
-    /* position */
     margin: auto;
-    /* aesthetics */
     background-color: #858BB7;
 }
 
@@ -163,19 +146,15 @@ img {
 /**/
 
 
-/* bordes */
 .main-title,
 .main-section {
     border: 5px solid #b6b1f1;
     border-left: 15px solid #b6b1f1;
 }
 
-/* títulos de cada sección*/
 .main-title {
-    /* position */
     margin: 5px 15px;
     padding: 15px;
-    /* aesthetics */
     text-shadow: -1px 0 black, 0 1px black, 1px 0 black, 0 -1px black;
 }
 
@@ -183,16 +162,13 @@ img {
     margin-top: 20px;
 }
 
-/* oculto los h4 */
+/* NO IMPLEMENTADO */
 .regular-title {
     display: none;
 }
 
-/* sección grande */
 .main-section {
-    /* position */
     margin: 15px;
-    /* flex-box father */
     display: flex;
     flex-wrap: wrap;
     justify-content: flex-start;
@@ -202,40 +178,30 @@ img {
     margin-bottom: 0px;
 }
 
-/* uno por producto */
 .unit-product {
-    /* position */
     position: relative;
-    /* aesthetics */
     padding: 15px;
-    /* muestro 1 producto */
     width: 100%;
 }
 
-/* capa que aparezca cuando :hover*/
 .overlay-product {
-    /* position */
     width: 100%;
     height: 100%;
     position: absolute;
     top: 0;
     left: 0;
-    /* aesthetics */
     background-color: #fff;
     visibility: hidden;
     opacity: 0;
     transition: all .5s cubic-bezier(.25,.25,.25,.25);
 }
 
-/* botoncito que aparezca cuando :hover*/
 .ver-mas {
-    /* position */
     position: absolute;
     display: inline-block;
     top: 45%;
     left: 32%;
     width: 100px;
-    /* aesthetics */
     padding: 8px;
     border: 1px solid black;
     border-radius: 8px;
@@ -251,58 +217,46 @@ img {
     position: relative;
 }
 
-/* precio post oferta */
 .new-price {
-    /* position */
     position: absolute;
     left: 0px;
     bottom: 9%;
     z-index: 25;
     text-align: center;
-    /* aesthetics */
     background-color: red;
     border: 2px solid #8B0000;
     color: #FFF;
     text-shadow: -2px 0 black, 0 1px black, 1px 0 black, 0 -2px black;
 }
 
-/* cintita */
 .ribbon {
-    /* position */
     position: absolute;
     bottom: 4%;
     width: 100%;
     height: 30px;
     z-index: 20;
-    /* aesthetics */
     background-color: #75FF33;
     border-top: 3px #FFF solid;
     border-bottom: 3px #FFF solid;
 }
 
 .full-price {
-    /* position */
     position: relative;
     left: 5px;
     top: 1.5px;
-    /* aesthetics */
     color: #17202A;
     text-shadow: -2px 0 #fff, 0 1px #fff, 1px 0 #fff, 0 -2px #fff;
 }
 
-/* precio tachado porque hay oferta */
 .crossed-out {
     text-decoration: line-through;
     text-shadow: none;
 }
 
-/* % descuento */
 .discount {
-    /* position */
     position: absolute;
     right: 5px;
     bottom: -1.5px;
-    /* aesthetics */
     color: #fff;
     text-shadow: -1px 0 black, 0 1px black, 1px 0 black, 0 -1px black;
 }
@@ -388,12 +342,10 @@ TABLETS
         justify-content: space-between;
     }
 
-    /* muestro la navbar */
     .main-navbar, .user-navbar {
         display: flex;
     }
 
-    /* oculto la hamburguesa*/
     .hamburger {
         display: none;
     }
@@ -409,22 +361,18 @@ TABLETS
     /**/
 
 
-    /* oculto los títulos h4 */
     .small-title {
         display: none;
     }
 
-    /* muestro los títulos h3 */
     .regular-title {
         display: block;
     }
 
-    /* muestro 2 productos */
     .unit-product {
         max-width: 50%;
     }
 
-    /* activo el overlay if :hover */
     .unit-product:hover .overlay-product {
         visibility: visible;
         opacity: .7;
@@ -455,7 +403,6 @@ DESKTOP
     /**/
 
     
-    /* muestro 3 */
     .unit-product {
         max-width: 33.33%;
     }
@@ -466,7 +413,6 @@ DESKTOP
 PANTALLAS +
 */
 @media (min-width: 992px) {
-    /* limito el ancho */
     .header-header, .main-main, .footer-footer {
         max-width: 1200px;
     }
@@ -482,7 +428,6 @@ PANTALLAS +
     /**/
 
     
-    /* muestro 4 */
     .unit-product {
         max-width: 25%;
     }
