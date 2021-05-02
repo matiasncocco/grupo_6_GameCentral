@@ -62,7 +62,7 @@ font-family: 'Rubik';
 - [Paleta de colores](https://coolors.co/e2ddf9-b6b1f1-858bb7-767889-646766)  
 ![paleta-de-colores](https://github.com/matiasncocco/grupo_6_GameCentral/blob/main/design/paleta-de-colores.jpg?raw=true)
 
-- Logo: ![logo](https://github.com/matiasncocco/grupo_6_GameCentral/blob/main/public/img/logo.png?raw=true)
+- Logo: ![logo](https://github.com/matiasncocco/grupo_6_GameCentral/blob/main/design/logo.png?raw=true)
 
 ---
 
