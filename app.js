@@ -8,6 +8,9 @@ app.use(express.static(publicPath));
 const indexPath = path.resolve('./views/index.html');
 app.get('/', (req, res) => res.sendFile(indexPath));
 
+const registerPath = path.resolve('./views/register.html')
+app.get('/registro', (req, res) => res.sendFile(registerPath));
+
 app.get('/productDetail', (req, res) => {
     res.sendFile(path.join(__dirname, 'views/productDetail.html'));
 });
