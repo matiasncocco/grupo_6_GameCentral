@@ -370,11 +370,13 @@ img {
     width: 100%;
     margin: auto;
     background-color: #646766;
-    
 
 
 
-
+    display: flex;
+    flex-wrap: nowrap;
+    justify-content: space-evenly;
+    align-items: center;
     /* temporal */
     height: 200px;
 }
@@ -382,6 +384,16 @@ img {
 .trademark {
     width: 30%;
 }
+
+.declaration {
+    width: 30%;
+}
+
+.socials {
+    width: 30%;
+}
+
+
 
 /**/
 /* MEDIA QUERY */
