@@ -263,24 +263,26 @@ img {
 
 
 
+/*-------------------------------------------------------vvvvvv Estilos register.html (Provisorio) vvvvvvvvvv-------------------------------------*/
 
 
+.cajmadreregistro {
+    display: flex;
+    justify-content: center;
+    background-color:  #767889;
+    
+    margin-top: 5%;
+    padding: 1%;
+    
+  
+}
+
+.input-box{
+    margin-bottom: 10px;
+}
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+/*-------------------------------------------------------^^^^^^ Estilos register.html (Provisorio) ^^^^^^^^^^-------------------------------------*/
 
 
 
