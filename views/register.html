@@ -48,73 +48,106 @@
 </header>
 
 
-     
-        
-<div class="login_left_col ">
-    <div class="login_credential_ctn">
-        <div class="loginbox login_col_padding">
-            <div class="loginbox_left">
-                <div class="loginbox_content">
-                    <div class="login_title">Iniciar sesión</div>
+<main class="main-main">
+    
+    <form action="/">
 
-                    <div id="error_display" class="checkout_error" style="display: none;"></div>
-                    <form name="logon" action="" method="POST" id="login_form" style="display: block;">
-                        <div class="login_row">
-                            <div class="input_title">Nombre de la cuenta de Game Central</div>
-                            <input class="text_field" type="text" name="username" id="input_username" placeholder="" value="">
-                        </div>
-                        <div class="login_row">
-                            <div class="input_title">Contraseña</div>
-                            <input class="text_field" type="password" name="password" id="input_password" autocomplete="off" placeholder="">
-                        </div>
-                                                        <div class="login_row">
-                                <div class="input_title" title="#steam_rememberlogin_explanation">
-                                    <input type="checkbox" name="remember_login" id="remember_login">
-                                    <label for="remember_login">Recordarme en este equipo</label>
-                                </div>
-                            </div>
-                        
-                        
-                        <div class="login_row" id="captcha_entry" style="display: none;">
-                                                            <div id="captcha_image_row">
-                                <img style="float: left;" id="captchaImg" src="https://community.cloudflare.steamstatic.com/public/images/blank.gif" border="0" width="206" height="40">
-                                <div id="captchaRefresh">
-                                    <span class="linkspan" id="captchaRefreshLink">Actualizar</span>
-                                </div>
-                                <div style="clear: left;"></div>
-                            </div>
-                            <br>
-                            <div class="input_title">Introduce los caracteres que aparecen arriba</div>
-                            <input class="text_field" id="input_captcha" type="text" name="captcha_text">
-                        </div>
-                        <div style="display: none;"><input type="submit"></div>
-                    </form>
-
-        
-                    <div class="login_btn_ctn">
-                        <div id="login_btn_signin">
-                            <button type="submit" class="btn_blue_steamui btn_medium login_btn">
-                                <span>Iniciar sesión</span>
-                            </button>
-                                                                <a target="_top" href="https://help.steampowered.com/es-419/wizard/HelpWithLogin?redir=community%2Flogin%2Fhome%2F%3Fgoto%3Dprofiles%252F76561197995850519" id="link_forgot_password">
-                                    ¿Has olvidado la contraseña?									</a>
-                                                        </div>
-                        <div id="login_btn_wait" style="display: none;">
-                                    <div class="LoadingWrapper">
-        <div class="LoadingThrobber">
-            <div class="Bar Bar1"></div>
-            <div class="Bar Bar2"></div>
-            <div class="Bar Bar3"></div>
+        <div class="input-box">
+            <label class="input-label" for="fechaNacimiento">Nombre y Apellido</label>
+            <input class="input-text" type="text" name="nombreApellido" id="nombreApellido" placeholder="Nombre y Apellido" required>
         </div>
+
+        
+        <div class="input-box">
+            <label class="input-label" for="fechaNacimiento">Nombre de usuario</label>
+            <input class="input-text" type="text" name="user" id="user" placeholder="Nombre de usuario" required>
+        </div>
+
+        <div class="input-box">
+            <label class="input-label" for="fechaNacimiento">E-mail</label>
+            <input class="input-text" type="text" name="user" id="user" placeholder="E-mail" required>
+        </div>
+        <!-- Birth date -->
+        <!-- date -->
+        <div class="date-box">
+            <label class="input-label" for="fechaNacimiento">Fecha de nacimiento</label>
+            <input class="input-date" type="date" name="fechaNacimiento" id="fechaNacimiento" min="1921-5-25" max="2003-5-25" required>
+        </div>
+
+        <!-- Adress -->
+        <!-- text -->
+        <div class="input-box">
+            <label class="input-label" for="domicilio">Domicilio</label>
+            <input class="input-text" type="text" name="domicilio" id="domicilio" placeholder="Domicilio" required>
+        </div>
+
+        <!-- User tpye -->
+        <!-- radio -->
+        <div class="radio-box">
+            <label class="input-label">Perfil de usuario</label>
+            <div class="user-profile-radio">
+                <input class="input-radio" type="radio" name="perfil" id="comprador" value="comprador" required><label class="option-label" for="comprador">Comprador</label>
+            </div>
+            <div class="user-profile-radio">
+                <input class="input-radio" type="radio" name="perfil" id="vendedor" value="vendedor" required><label class="option-label" for="vendedor">Vendedor</label>
+            </div>
+        </div>
+        
+        <!-- Interest -->
+        <!-- checkbox -->
+        <div class="check-box">
+            <label class="input-label">Interesado en:</label>
+            <div class="interest-box">
+                <div>
+                    <input class="input-checkbox" type="checkbox" name="interes" id="electro" value="electro"><label class="option-label" for="electro">Electro</label>
                 </div>
-                                </div>
-                    </div>
+                <div>
+                    <input class="input-checkbox" type="checkbox" name="interes" id="moda" value="moda"><label class="option-label" for="moda">Moda</label>
+                </div>
+                <div>
+                    <input class="input-checkbox" type="checkbox" name="interes" id="hogar" value="hogar"><label class="option-label" for="hogar">Hogar</label>
+                </div>
+                <div>
+                    <input class="input-checkbox" type="checkbox" name="interes" id="jugueteria" value="jugueteria"><label class="option-label" for="jugueteria">Juguetería</label>
+                </div>
+                <div>
+                    <input class="input-checkbox" type="checkbox" name="interes" id="vidaSana" value="vidaSana"><label class="option-label" for="vidaSana">Vida sana</label>
                 </div>
             </div>
         </div>
-    </div>
-</div>
-      
+
+        <!-- Profile picture -->
+        <!-- file -->
+        <div class="file-box">
+            <label class="input-label" id="file-label" for="fotoPerfil">Añadir foto de perfil<input class="input-file" type="file" name="fotoPerfil" id="fotoPerfil" accept=".jpg, .png"></label>
+        </div>
+
+        <!-- Password -->
+        <!-- password -->
+        <div class="input-box">
+            <label class="input-label" for="password1">Contraseña</label>
+            <input class="input-password" type="password" name="password1" id="password1" placeholder="" required>
+        </div>
+
+        <!-- Repeat password -->
+        <!-- password -->
+        <div class="input-box">
+            <label class="input-label" for="password2">Confirmar contraseña</label>
+            <input class="input-password" type="password" name="password2" id="password2" placeholder="" required>
+        </div>
+
+        <!-- Submit/reset -->
+        <!-- buttons -->
+        <div class="button-box">
+            <button class="form-button" id="send" type="submit">Enviar</button>
+            <button class="form-button" id="clear" type="reset">Borrar</button>
+        </div>
+        
+    </form>
+ 
+</main>
+        
+
 
 
        
