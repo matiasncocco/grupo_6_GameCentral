@@ -15,4 +15,8 @@ app.get('/productDetail', (req, res) => {
     res.sendFile(path.join(__dirname, 'views/productDetail.html'));
 });
 
+app.get('/register', (req, res) => {
+    res.sendFile(path.join(__dirname, 'views/register.html'));
+});
+
 app.listen(3001, () => console.log('Servidor corriendo en el puerto 3001'));

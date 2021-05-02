@@ -48,85 +48,65 @@
 </header>
 
 
-     
-        
-<div class="login_left_col ">
-    <div class="login_credential_ctn">
-        <div class="loginbox login_col_padding">
-            <div class="loginbox_left">
-                <div class="loginbox_content">
-                    <div class="login_title">Iniciar sesión</div>
+<main class="cajmadreregistro" >
+    
+    <form action="/">
 
-                    <div id="error_display" class="checkout_error" style="display: none;"></div>
-                    <form name="logon" action="" method="POST" id="login_form" style="display: block;">
-                        <div class="login_row">
-                            <div class="input_title">Nombre de la cuenta de Game Central</div>
-                            <input class="text_field" type="text" name="username" id="input_username" placeholder="" value="">
-                        </div>
-                        <div class="login_row">
-                            <div class="input_title">Contraseña</div>
-                            <input class="text_field" type="password" name="password" id="input_password" autocomplete="off" placeholder="">
-                        </div>
-                                                        <div class="login_row">
-                                <div class="input_title" title="#steam_rememberlogin_explanation">
-                                    <input type="checkbox" name="remember_login" id="remember_login">
-                                    <label for="remember_login">Recordarme en este equipo</label>
-                                </div>
-                            </div>
-                        
-                        
-                        <div class="login_row" id="captcha_entry" style="display: none;">
-                                                            <div id="captcha_image_row">
-                                <img style="float: left;" id="captchaImg" src="https://community.cloudflare.steamstatic.com/public/images/blank.gif" border="0" width="206" height="40">
-                                <div id="captchaRefresh">
-                                    <span class="linkspan" id="captchaRefreshLink">Actualizar</span>
-                                </div>
-                                <div style="clear: left;"></div>
-                            </div>
-                            <br>
-                            <div class="input_title">Introduce los caracteres que aparecen arriba</div>
-                            <input class="text_field" id="input_captcha" type="text" name="captcha_text">
-                        </div>
-                        <div style="display: none;"><input type="submit"></div>
-                    </form>
+        <div class="section_title" >
+            CREAR TU CUENTA					</div>
+
+        <div class="input-box">
+            <label class="input-label" for="fechaNacimiento">Nombre y Apellido  </label>
+            <input class="input-text" type="text" name="nombreApellido" id="nombreApellido" placeholder="Nombre y Apellido" required>
+        </div>
 
         
-                    <div class="login_btn_ctn">
-                        <div id="login_btn_signin">
-                            <button type="submit" class="btn_blue_steamui btn_medium login_btn">
-                                <span>Iniciar sesión</span>
-                            </button>
-                                                                <a target="_top" href="https://help.steampowered.com/es-419/wizard/HelpWithLogin?redir=community%2Flogin%2Fhome%2F%3Fgoto%3Dprofiles%252F76561197995850519" id="link_forgot_password">
-                                    ¿Has olvidado la contraseña?									</a>
-                                                        </div>
-                        <div id="login_btn_wait" style="display: none;">
-                                    <div class="LoadingWrapper">
-        <div class="LoadingThrobber">
-            <div class="Bar Bar1"></div>
-            <div class="Bar Bar2"></div>
-            <div class="Bar Bar3"></div>
+        <div class="input-box">
+            <label class="input-label" for="fechaNacimiento">Nombre de usuario  </label>
+            <input class="input-text" type="text" name="user" id="user" placeholder="Nombre de usuario" required>
         </div>
-                </div>
-                                </div>
-                    </div>
-                </div>
-            </div>
+
+        <div class="input-box">
+            <label class="input-label" for="fechaNacimiento">E-mail</label>
+            <input class="input-text" type="text" name="user" id="user" placeholder="E-mail" required>
         </div>
-    </div>
-</div>
-      
-
-
+        <!-- Birth date -->
+        <!-- date -->
        
        
 
-     
+        
+        
+       
+
+        <!-- Password -->
+        <!-- password -->
+        <div class="input-box">
+            <label class="input-label" for="password1">Contraseña</label>
+            <input class="input-password" type="password" name="password1" id="password1" placeholder="Password" required>
+        </div>
+
+        <!-- Repeat password -->
+        <!-- password -->
+        <div class="input-box">
+            <label class="input-label" for="password2">Confirmar contraseña</label>
+            <input class="input-password" type="password" name="password2" id="password2" placeholder="Password" required>
+        </div>
+
+        <div><iframe  class="input-box" title="reCAPTCHA" src="https://recaptcha.net/recaptcha/enterprise/anchor?ar=1&amp;k=6LdIFr0ZAAAAAO3vz0O0OQrtAefzdJcWQM2TMYQH&amp;co=aHR0cHM6Ly9zdG9yZS5zdGVhbXBvd2VyZWQuY29tOjQ0Mw..&amp;hl=es-419&amp;v=9qx0v7NiOAe_XnW_ULNZm9e3&amp;theme=dark&amp;size=normal&amp;s=0vNwUMdDidOm6lm-awUUkJq_H6nE9mchEEab4AEpRokpFx3pL1o9sXMGXHeoTqfVdbikAm8Itm9zbTRj2uuMHaRYiuB-K49apfGiHupnN5IclFIq1i2TNuF6MEk3uciqeVUFUIW2d6DxKV_s54S3RaMv2V5qChc_0ZhzagdnljyfILEG0uEqORe3nfH-TTIuRi1ukwAOSMMBOqE699dEaS3-7O8oxPGrG-cl_sDYvGCVrwFIytt5lOioW7qVJH_gnC-yjzDtanoIS6pn&amp;cb=aw4xs2l9rjnc" width="304" height="78" role="presentation" name="a-sluftttnmy4p" frameborder="0" scrolling="no" sandbox="allow-forms allow-popups allow-same-origin allow-scripts allow-top-navigation allow-modals allow-popups-to-escape-sandbox"></iframe></div>
+        <!-- Submit/reset -->
+        <!-- buttons -->
+        <div class="button-box">
+            <button class="form-button" id="send" type="submit">Enviar</button>
+            <button class="form-button" id="clear" type="reset">Borrar</button>
+        </div>
+        
+    </form>
+ 
+</main>
+        
 
 
-<!-- Footer -->
-<footer class="footer-footer">
-
-</footer>
 
 </body>
 </html>

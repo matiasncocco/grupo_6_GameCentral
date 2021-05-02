@@ -263,24 +263,49 @@ img {
 
 
 
+/*-------------------------------------------------------vvvvvv Estilos register.html (Provisorio) vvvvvvvvvv-------------------------------------*/
 
 
+.cajmadreregistro {
+    display: flex;
+    justify-content: center;
+    background-color:  #767889;
+    
+    margin-top: 5%;
+    padding: 1%;
+    
+  
+}
 
+.input-box{
 
+    margin-bottom: 10px;
+    align-items: center;
+    width: auto;
+    
+}
 
+.input-label{
+    display: flex;
+    margin-bottom: 5px;
+    align-items: center;
+}
 
+.form-button{
+    margin-right: 6px;
+    height: 25px;
+    font: 14px Arial;
+    padding: 2px;
+}
 
+.section_title{
+    font-size: large;
+    font-family: Arial, Helvetica, sans-serif;
+    margin-bottom: 22px;
+    font: x-large;
+}
 
-
-
-
-
-
-
-
-
-
-
+/*-------------------------------------------------------^^^^^^ Estilos register.html (Provisorio) ^^^^^^^^^^-------------------------------------*/
 
 
 
