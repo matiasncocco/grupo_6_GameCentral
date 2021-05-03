@@ -478,6 +478,10 @@ img {
     margin-top: 25px;
 }
 
+.trademark h1 {
+    display: none;
+}
+
 .declaration-not-mobile {
     display: none;
 }
