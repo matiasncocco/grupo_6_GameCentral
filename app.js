@@ -28,4 +28,4 @@ app.get('/login', (req,res) => res.sendFile(loginPath));
 const cartPath = path.resolve('./views/shopping-cart.html');
 app.get('/carrito', (req,res) => res.sendFile(cartPath));
 
-app.listen(3001, () => console.log('Servidor corriendo en el puerto 3001'));
+app.listen(process.env.PORT || 3001, () => console.log('Servidor corriendo en el puerto 3001'));
