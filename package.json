@@ -1,14 +1,25 @@
 {
   "name": "grupo_6_gamecentral",
   "version": "1.0.0",
-  "description": "",
+  "description": "<h1>grupo_6_GameCentral</h1>",
   "main": "app.js",
+  "start": "node app.js",
+  "dependencies": {
+    "express": "^4.17.1",
+    "nodemon": "^2.0.7"
+  },
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/matiasncocco/grupo_6_GameCentral.git"
+  },
   "author": "",
   "license": "ISC",
-  "dependencies": {
-    "express": "^4.17.1"
-  }
+  "bugs": {
+    "url": "https://github.com/matiasncocco/grupo_6_GameCentral/issues"
+  },
+  "homepage": "https://github.com/matiasncocco/grupo_6_GameCentral#readme",
+  "keywords": []
 }
