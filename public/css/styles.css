@@ -27,7 +27,7 @@ header {
 main {
     color: inherited;
     background-color: #858BB7;
-        border-color: #B6B1F1; }
+    border-color: #B6B1F1; }
 */
 
 
@@ -60,10 +60,10 @@ a:link, a:visited {
 /**/
 
 
-.big-title, .h1 {
-    font-size: 32px;
+.big-title {
     display: none;
 }
+
 
 
 /**/
@@ -175,11 +175,6 @@ img {
     margin-top: 20px;
 }
 
-/* NO IMPLEMENTADO */
-.regular-title {
-    display: none;
-}
-
 .main-section {
     margin: 15px;
     display: flex;
@@ -231,20 +226,21 @@ img {
 }
 
 .new-price {
+    padding: 2px;
     position: absolute;
-    left: 0px;
-    bottom: 9%;
+    left: 5px;
+    bottom: 35px;
     z-index: 25;
     text-align: center;
-    background-color: red;
-    border: 2px solid #8B0000;
+    background-color:  red;
+    border: 3px solid #fff;
     color: #FFF;
     text-shadow: -2px 0 black, 0 1px black, 1px 0 black, 0 -2px black;
 }
 
 .ribbon {
     position: absolute;
-    bottom: 4%;
+    bottom: 10px;
     width: 100%;
     height: 30px;
     z-index: 20;
@@ -256,7 +252,7 @@ img {
 .full-price {
     position: relative;
     left: 5px;
-    top: 1.5px;
+    top: 2px;
     color: #17202A;
     text-shadow: -2px 0 #fff, 0 1px #fff, 1px 0 #fff, 0 -2px #fff;
 }
@@ -487,6 +483,7 @@ img {
 
 .trademark {
     margin-top: 20px;
+    text-shadow: -2px 0 black, 0 2px black, 1px 0 black, 0 -1px black;
 }
 
 .socials {
@@ -503,7 +500,14 @@ img {
     width: 30%;
     cursor: pointer;
     margin: 10px 0;
-    padding: 0 10px;
+}
+
+.social-box i {
+    padding: 15px;
+    transition: all .2s cubic-bezier(.25,.25,.25,.25);
+    border-radius: 100%;
+    cursor: pointer;
+    /* width: 38px; */
 }
 
 .declaration {
@@ -530,9 +534,16 @@ TABLETS
     /**/
 
 
-    .big-title, .h1 {
-        font-size: 32px;
+    .small-title {
+        display: none;
+    }
+    
+    .big-title {
         display: block;
+    }
+
+    #game-central {
+        font-size: 32px;
     }
 
     .small-title {
@@ -568,30 +579,8 @@ TABLETS
     /**/
 
 
-    .small-title {
-        display: none;
-    }
-
-    .regular-title {
-        display: block;
-    }
-
     .unit-product {
         max-width: 50%;
-    }
-
-    .unit-product:hover .overlay-product {
-        visibility: visible;
-        opacity: .7;
-    }
-
-    .unit-product:hover .ver-mas {
-        visibility: visible;
-    }
-
-    .new-price {
-        bottom: 12%;
-        padding: 2%;
     }
 
 
@@ -649,6 +638,15 @@ DESKTOP
         max-width: 33.33%;
     }
 
+    .unit-product:hover .overlay-product {
+        visibility: visible;
+        opacity: .7;
+    }
+
+    .unit-product:hover .ver-mas {
+        visibility: visible;
+    }
+
 
     /**/
     /* FOOTER */
@@ -658,6 +656,11 @@ DESKTOP
     .declaration {
         width: 100%;
         margin: 30px 180px;
+    }
+
+    .social-box:hover i{
+        color: #B6B1F1;
+        background-color: #F4F9DD;
     }
 }
 
