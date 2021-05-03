@@ -56,6 +56,17 @@ a:link, a:visited {
 
 
 /**/
+/* REGLAS PARA TÍTULOS Y TEXTO */
+/**/
+
+
+.big-title, .h1 {
+    font-size: 32px;
+    display: none;
+}
+
+
+/**/
 /* REGLAS PARA LAS IMÁGENES */
 /**/
 
@@ -475,37 +486,34 @@ img {
 }
 
 .trademark {
-    margin-top: 25px;
-}
-
-.trademark h1 {
-    display: none;
-}
-
-.declaration-not-mobile {
-    display: none;
-}
-
-.declaration-mobile {
-    margin: 0 20px 20px 20px;
-}
-
-.declaration-mobile p, .declaration-not-mobile p {
-    font-size: 8px;
-    text-align: center;
+    margin-top: 20px;
 }
 
 .socials {
     display: flex;
     flex-flow: row wrap;
     justify-content: space-evenly;
+    align-items: center;
+    margin-top: 20px;
+    font-size: 20px;
 }
 
 .social-box {
+    text-align: center;
+    width: 30%;
     cursor: pointer;
     margin: 10px 0;
-    padding: 0 5px;
-}   
+    padding: 0 10px;
+}
+
+.declaration {
+    margin: 15px 35px;
+}
+
+.declaration p {
+    font-size: 8px;
+    text-align: center;
+}
 
 
 /**/
@@ -517,6 +525,21 @@ img {
 TABLETS
 */
 @media (min-width: 576px) {
+    /**/
+    /* REGLAS PARA TÍTULOS Y TEXTO */
+    /**/
+
+
+    .big-title, .h1 {
+        font-size: 32px;
+        display: block;
+    }
+
+    .small-title {
+        display: none;
+    }
+
+
     /**/
     /* HEADER */
     /**/
@@ -580,20 +603,30 @@ TABLETS
     .footer-footer {
         flex-flow: row wrap;
         justify-content: space-evenly;
+        align-items: center;
     }
 
     .trademark {
-        width: 30%;
+        width: 50%;
         text-align: center;
     }
     
+    .socials {
+        width: 50%;
+        font-size: 30px;
+    }
+
+    .social-box {
+        text-align: left;
+    }
+
     .declaration {
-        width: 30%;
-        padding: 20px 0;
+        width: 100%;
+        margin: 30px 120px;
     }
     
-    .socials {
-        width: 30%;
+    .declaration p {
+        font-size: 12px;
     }
 }
 
@@ -614,6 +647,17 @@ DESKTOP
     
     .unit-product {
         max-width: 33.33%;
+    }
+
+
+    /**/
+    /* FOOTER */
+    /**/
+
+
+    .declaration {
+        width: 100%;
+        margin: 30px 180px;
     }
 }
 
@@ -639,5 +683,16 @@ PANTALLAS +
     
     .unit-product {
         max-width: 25%;
+    }
+
+
+    /**/
+    /* FOOTER */
+    /**/
+
+
+    .declaration {
+        width: 100%;
+        margin: 30px 200px;
     }
 }
