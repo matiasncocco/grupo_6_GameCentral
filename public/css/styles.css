@@ -72,6 +72,7 @@ img {
 
 
 .header-header {
+    width: 90%;
     margin: auto;
     display: flex;
     flex-wrap: wrap;
@@ -116,7 +117,7 @@ img {
 }
 
 .nav-link {
-    padding: 0 8px;
+    padding: 0 6px;
 }
 
 .main-navbar li, .user-navbar li {
@@ -135,6 +136,7 @@ img {
 
 
 .main-main {
+    width: 90%;
     padding-top: .1px;
     margin: auto;
     background-color: #858BB7;
@@ -361,6 +363,101 @@ img {
 
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* FEDE */
+/* CARRITO */
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 /**/
 /* FOOTER */
 /**/
@@ -370,29 +467,41 @@ img {
     width: 100%;
     margin: auto;
     background-color: #646766;
-
-
-
     display: flex;
-    flex-wrap: nowrap;
-    justify-content: space-evenly;
+    flex-flow: column wrap;
     align-items: center;
-    /* temporal */
-    height: 200px;
+    justify-content: flex-start;
+    
 }
 
 .trademark {
-    width: 30%;
+    margin-top: 25px;
 }
 
-.declaration {
-    width: 30%;
+.declaration-not-mobile {
+    display: none;
+}
+
+.declaration-mobile {
+    margin: 0 20px 20px 20px;
+}
+
+.declaration-mobile p, .declaration-not-mobile p {
+    font-size: 8px;
+    text-align: center;
 }
 
 .socials {
-    width: 30%;
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: space-evenly;
 }
 
+.social-box {
+    cursor: pointer;
+    margin: 10px 0;
+    padding: 0 5px;
+}   
 
 
 /**/
@@ -457,6 +566,31 @@ TABLETS
         bottom: 12%;
         padding: 2%;
     }
+
+
+    /**/
+    /* FOOTER */
+    /**/
+
+    
+    .footer-footer {
+        flex-flow: row wrap;
+        justify-content: space-evenly;
+    }
+
+    .trademark {
+        width: 30%;
+        text-align: center;
+    }
+    
+    .declaration {
+        width: 30%;
+        padding: 20px 0;
+    }
+    
+    .socials {
+        width: 30%;
+    }
 }
 
 
@@ -484,7 +618,7 @@ DESKTOP
 PANTALLAS +
 */
 @media (min-width: 992px) {
-    .header-header, .main-main, .footer-footer {
+    .header-header, .main-main {
         max-width: 1200px;
     }
     
