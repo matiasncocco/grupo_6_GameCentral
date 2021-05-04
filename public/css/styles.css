@@ -355,57 +355,134 @@ img {
 /* productDetail */
 /**/
 
+.detalle-producto {
+    color: black;
+    padding: 2%;
+    background-color: #b6b1f1ff;
+    font-family: 'Rubik', sans-serif;
+    font-size: 13px;
+    align-items: center;
+}
 
+.Hades {
+   text-align: left;
+   padding: 15px;
+   font-size: 30px;
+   margin: 0 auto;
+}
 
+.presentacion{
+    display: flex;
+    flex-direction: row;
+    text-align: center;
+    width: 90%;
+    margin: 0 auto;
+    padding: 15px;
+}
 
+.imagenprincipal {
+    width: 90%; 
+    height: 90%;
+    border: solid black 2px;
+    padding: 2px;
+    margin: 0%;
+}
 
+.descripcion {
+    display: flex;
+    flex-direction: column;
+    max-height: 100%;
+    padding: 2px;
+    margin: 2%;
+    font-size: 15px;
+}
 
+.descripcion p {
+    display: block;
+    margin: auto;
+}
 
+.precio-boton {
+    display: flex;
+    flex-direction: row;
+    margin: auto;
+    color: black;
+}
 
+.precio-boton p {
+    display: block;
+    padding: 5px;
+    margin: auto;
+    margin-right: 20px;
+    color: white;
+    background-color: red;
+    border: solid black 5px;
+    font-weight: bold;
+    font-size: 20px;
+}
 
+.precio-boton button {
+    display: block;
+    max-width: 100px;
+    padding: 5px;
+    margin: auto;
+    background-color: #e2ddf9ff;
+}
 
+.sobreElJuego {
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    width: 90%;
+    margin: 0 auto;
+    border: #858bb7ff solid 1px;
+    padding: auto;
+    background-color: #e2ddf9ff;
+    padding: 20px;
+}
 
+.sobreElJuego h4 {
+    padding: 15px;
+}
 
+.sobreElJuego p {
+    padding: 5px;
+    margin-bottom: 20px;
+}
 
+.imagenDos {
+    width: 90%; 
+    height: 90%;
+    border: solid black 2px;
+    padding: 2px;
+    margin: auto;
+    margin-bottom: 10px;
+}
 
+.requisitos {
+    width: 90%;
+    margin: 0 auto;
+}
 
+.requisitos h4 {
+    padding-top: 20px;
+    padding-bottom: 20px;
+}
 
+.minimo-requisito {
+    text-align: justify;
+    margin: 1px;
+}
 
+.columnas {
+    column-count: 2;
+    text-align: justify;
+}
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+.final {
+    margin-left: 10px;
+    padding: 20px;
+}
 
 /* FEDE */
 /* CARRITO */
