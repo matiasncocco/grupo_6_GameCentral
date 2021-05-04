@@ -575,7 +575,6 @@ img {
 .social-box {
     text-align: center;
     width: 30%;
-    cursor: pointer;
     margin: 10px 0;
 }
 
@@ -584,7 +583,6 @@ img {
     transition: all .2s cubic-bezier(.25,.25,.25,.25);
     border-radius: 100%;
     cursor: pointer;
-    /* width: 38px; */
 }
 
 .declaration {
