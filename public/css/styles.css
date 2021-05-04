@@ -410,26 +410,116 @@ img {
 /* FEDE */
 /* CARRITO */
 
+.top-small-tittle {
+  padding: 2px 0 8px 15px;
+}
 
+.botton-big-tittle{
+   padding: 0 15px;
+}
 
+.main-section-cart{
+    border: 5px solid #b6b1f1;
+    border-left: 15px solid #b6b1f1;
+    margin: 15px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: flex-start;
+}
 
+.unit-product-cart {
+    position: relative;
+    padding: 15px;
+    width: 100%;
+}
 
+.game-image-cart {
+    position: relative;
+    border: #b6b1f1 solid 2px;
+}
+.name-game {
+    font-weight: bold;
+    font-size: 12px;
+    text-decoration: underline;
+}
 
+.Description-cart {
+    padding: 8px;
+    border: #b6b1f1 solid 2px;
+    margin-top: 3px;
+}
 
+.price-trash-cart{
+    display: flex;
+    flex-wrap: nowrap;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px;
+}
 
+.price-cart{
+    margin: 0 5px;
+    font-size: 14px;
+    font-weight: bold;
+    width: 90%;
+    text-align: center;
+}
 
+.trash-cart{
+    margin: 0 5px;
+    color:white;
+    width: 10%;
+    text-align: right;
+}
 
+.total-price{
+    display: flex;
+    flex-wrap: nowrap;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px 0;
+    background-color: #26421a; 
+    margin-bottom: 0%;   
+}
 
+.total {
+    margin: 0 5px;
+    font-size: 15px;
+    font-weight: bold;
+    text-align: left;
+}
 
+.total-price-cart {
+    margin: 0 5px;
+    color:white;
+    text-align: right;
+}
 
+.tax-note {
+    font-size: 10px;
+}
 
+.p-note{
 
+}
 
+.button-buy {
+    margin: auto;
+    margin-bottom: 20px;
+    display: flex;
+    width: 90%;
+    justify-content: center;
+}
 
-
-
-
-
+.button {
+    background-color: blue;
+    padding: 8px 5px;
+    color: white;
+    font-weight: bold;
+    font-size: 16px;
+    align-items: flex-end;
+    width: 100%;
+}
 
 
 
@@ -581,6 +671,52 @@ TABLETS
 
     .unit-product {
         max-width: 50%;
+        font-weight: bold;
+    }
+
+    /**/
+    /* SHOPPING CART */
+    /**/
+
+    .botton-big-tittle{
+        font-size: 25px;
+    }
+    .view-cart {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-between;
+        align-items: center;
+        border: #b6b1f1 dotted 2px;
+    }
+
+    .game-image-cart {
+        border: none;
+        max-width: 10%;
+        padding: 5px;
+        border: black solid 1px;
+        margin-left: 5px;
+    }
+
+    .Description-cart {
+        border: none;
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-between;
+        align-items: center;
+        width: 87%;
+    }
+
+    .trash-cart {
+        font-size: 10px;
+    }
+    .total{
+        padding-left: 10px;
+    }
+    .total-price-cart{
+        padding-right: 10px;
+    }
+    .button {
+        width: 40%;
     }
 
 
