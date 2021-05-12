@@ -19,3 +19,13 @@
 5. 
 
 ---
+
+<h2>Sprint 2</h2>
+
+1. Comenzar a trabajar en equipo.
+2. Hacer más recurrente la comunicación.
+3. Continuar con la buena predisposición y la actitud favorable ante los aportes de cada miembro del equipo.
+4. 
+5. Dejar de postponer las daily.
+
+---
