@@ -274,75 +274,96 @@ img {
 
 /*-------------------------------------------------------vvvvvv Estilos register.html (Provisorio) vvvvvvvvvv-------------------------------------*/
 
+.cajmadreregistro{
+   justify-content: center;
+   margin-top: 80px;
+   margin-bottom: 90px;
+}
 
-.cajmadreregistro {
+form{
+    background-color: white;
+    border-radius: 15px;
+    color: #999;
+    font-size: 0.8em;
+    padding: 20px;
+    margin: 0 auto;
+    width: 330px;
+}
+
+input{
+    border: 0;
+    outline: none;
+    width: 280px;
+}
+
+.field{
+    border: solid 2px #ccc;
+    padding: 10px;
+}
+
+.field:focus{
+    border-color: #18A383;
+}
+
+.center-content{
+    text-align: center;
+}
+
+.reCaptcha{
+    margin-top: 18px;
+    margin-bottom: 13px;
+}
+
+.btn-neon{
+    margin-right: 10px;
+    display: inline-block;
+    width: 80px;
+    height: 40px;
+    letter-spacing: 1px;
+    font-size: 18px;
+    background-color: #E2DDF9;
+    border-radius: 10px;
+    transition: all 500ms ease;
+
+}
+.btn-neon:hover{
+     background-color: rgb(145, 93, 150);
+ }
+
+ .btn-neon2{
+    margin-top: 10px;
+    
+    display: inline-block;
+    width: 100px;
+    height: 70px;
+    letter-spacing: 1px;
+    font-size: 18px;
+    background-color: #E2DDF9;
+    border-radius: 10px;
+    transition: all 500ms ease;
+ }
+ 
+ .btn-neon2:hover{
+    background-color: rgb(145, 93, 150);
+}
+
+.checkbox{
+    padding-top: 25px;
     display: flex;
+    align-items: stretch;
     justify-content: center;
-    background-color:  #767889;
-    
-    margin-top: 5%;
-    padding: 1%;
-    
-  
-}
-
-.input-box{
-
-    margin-bottom: 10px;
-    align-items: center;
-    width: auto;
     
 }
 
-.input-label{
-    display: flex;
-    margin-bottom: 5px;
-    align-items: center;
+.botoncito{
+    padding-left: 20px;
+    width: 75px;
 }
 
-.form-button{
-    margin-right: 6px;
-    height: 25px;
-    font: 14px Arial;
-    padding: 2px;
+.CREAR{
+    padding-bottom: 10px;
 }
-
-.section_title{
-    font-size: large;
-    font-family: Arial, Helvetica, sans-serif;
-    margin-bottom: 22px;
-    font: x-large;
-}
-
 /*-------------------------------------------------------^^^^^^ Estilos register.html (Provisorio) ^^^^^^^^^^-------------------------------------*/
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 
@@ -586,6 +607,10 @@ img {
 .tax-note {
     font-size: 10px;
 }
+
+/*.p-note{
+
+} */
 
 .button-buy {
     margin: auto;
