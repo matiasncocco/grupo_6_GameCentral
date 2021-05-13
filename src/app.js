@@ -1,8 +1,9 @@
 const express = require('express');
 const app = express();
 const path = require('path');
-const mainController = require('./controllers/mainController');
+const productController = require('./controllers/productController');
 const mainRouter = require('./routes/main')
+const productRouter = require('./routes/product')
 
 // public
 const publicPath = path.resolve('./public')
@@ -15,28 +16,10 @@ app.set('views', viewsPath);
 
 
 // home
-
 app.use('/', mainRouter);
 
 // detalle de producto Hades
-app.get('/productDetailHades', (req, res) => {
-    res.sendFile(path.join(__dirname, 'views/productDetailHades.html'));
-});
-
-// detalle de producto Cyberpunk
-app.get('/productDetailCyberpunk', (req, res) => {
-    res.sendFile(path.join(__dirname, 'views/productDetailCyberpunk.html'));
-});
-
-// detalle de producto Stardew Valley
-app.get('/productDetailStardew', (req, res) => {
-    res.sendFile(path.join(__dirname, 'views/productDetailStardew.html'));
-});
-
-// detalle de producto Sekiro
-app.get('/productDetailSekiro', (req, res) => {
-    res.sendFile(path.join(__dirname, 'views/productDetailSekiro.html'));
-});
+app.use('/product', productRouter);
 
 // registro
 app.get('/registro', (req, res) => {
