@@ -1,14 +1,22 @@
 const express = require('express');
 const app = express();
 const path = require('path');
+const mainController = require('./controllers/mainController');
+const mainRouter = require('./routes/main')
 
 // public
 const publicPath = path.resolve('./public')
 app.use(express.static(publicPath));
 
+// ejs
+app.set('view engine','ejs');
+let viewsPath = path.resolve ('./src/views');
+app.set('views', viewsPath);
+
+
 // home
-const indexPath = path.resolve('./views/index.html');
-app.get('/', (req, res) => res.sendFile(indexPath));
+
+app.use('/', mainRouter);
 
 // detalle de producto Hades
 app.get('/productDetailHades', (req, res) => {
