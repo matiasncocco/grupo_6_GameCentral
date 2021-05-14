@@ -1,51 +1,6 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>GameCentral: carrito</title>
-    <!-- Todas las variantes de la tipografía Rubik -->
-    <link href="https://fonts.googleapis.com/css2?family=Rubik:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
-    <!-- Kit de íconos de Font Awesome -->
-    <script src="https://kit.fontawesome.com/47a442944c.js" crossorigin="anonymous"></script>
-    <link rel="stylesheet" href="/css/styles.css">
-</head>
-<body>
+<%- include('../partials/head')%>
 
-<!-- Header: navbar y hamburgesa -->
-<header class="header-header">
-
-    <!-- Logo y hamburguesa -->
-    <div class="logo">
-        <a href="/">
-            <img src="/img/icono.png" alt="icono">
-        </a>
-    </div>
-    <div class="hamburger">
-        <i class="fa fa-bars burger"></i>
-    </div>
-
-    <!-- Navbar de navegación -->
-    <nav class="main-navbar">
-        <ul>
-            <li class="nav-link"><a href="/">Home</a></li>
-            <!-- A implementar -->
-            <li class="nav-link"><a href="#">Tienda</a></li>
-            <li class="nav-link"><a href="#">Soporte</a></li>
-        </ul>
-    </nav>
-            
-    <!-- Navbar de acciones para el usuario -->
-    <nav class="user-navbar">
-        <ul>
-            <!-- Iconito para ir al carrito de compras -->
-            <li class="nav-link carrito"><a href="/carrito"><i class="fas fa-shopping-cart"></i></a></li>
-            <li class="nav-link"><a href="/login">Iniciar sesión</a></li>
-            <li class="nav-link"><a href="/registro">Registrarse</a></li>
-        </ul>
-    </nav>
-</header>
+<%- include('../partials/header')%>
 
 <main class="main-main">
     <!-- Título ofertas -->
@@ -134,38 +89,4 @@
     </section>
 </main>
 
-<!-- Footer -->
-<footer class="footer-footer">
-    <article class="trademark">
-        <h1 class="big-title" id="game-central">Game Central ©</h1>
-        <h2 class="small-title">Game Central ©</h2>
-    </article>
-    <article class="socials">
-        <div class="social-box">
-            <a href="https://github.com/matiasncocco/grupo_6_GameCentral" target="_blank">
-                <i class="fab fa-github"></i>
-            </a>
-        </div>
-        <div class="social-box">
-            <i class="fab fa-twitch"></i>
-        </div>
-        <div class="social-box" id="youtube">
-            <i class="fab fa-youtube"></i>
-        </div>
-        <div class="social-box">
-            <i class="fab fa-instagram"></i>
-        </div>
-        <div class="social-box">
-            <i class="fab fa-twitter"></i>
-        </div>
-        <div class="social-box">
-            <i class="fab fa-reddit-alien"></i>
-        </div>
-    </article>
-    <article class="declaration">
-        <p>© 2021, Game Central. Todos los derechos reservados. Game Central, el logotipo de Game Central, es una marca comercial o marca registrada de Game Central, Inc. Tanto en Argentina como en el resto del mundo. Otras marcas o nombres de productos son marcas comerciales de sus respectivos propietarios. Las transacciones fuera de Argentina se realizan a través de Game Central International, S.A.</p>
-    </article>
-</footer>
-
-</body>
-</html>
+<%- include('../partials/footer')%>

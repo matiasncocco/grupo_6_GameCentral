@@ -1,6 +1,7 @@
 let mainController = {
     renderHome: (req, res) => {
-        res.render('index');
+        let title = 'Game Central'
+        res.render('index', {'title': title});
     } 
 }
 

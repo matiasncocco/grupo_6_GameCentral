@@ -19,7 +19,7 @@ app.set('views', viewsPath);
 app.use('/', mainRouter);
 
 // detalle de producto Hades
-app.use('/product', productRouter);
+app.use('/', productRouter);
 
 // registro
 app.get('/registro', (req, res) => {
@@ -29,9 +29,5 @@ app.get('/registro', (req, res) => {
 // login
 const loginPath = path.resolve('./views/login.html');
 app.get('/login', (req,res) => res.sendFile(loginPath));
-
-// carrito de compras
-const cartPath = path.resolve('./views/shopping-cart.html');
-app.get('/carrito', (req,res) => res.sendFile(cartPath));
 
 app.listen(3001, () => console.log('Servidor corriendo en el puerto 3001'));
