@@ -1,7 +1,7 @@
 const express = require('express');
 const app = express();
 const path = require('path');
-const productController = require('./controllers/productController');
+
 const mainRouter = require('./routes/main')
 const productRouter = require('./routes/product')
 
@@ -13,7 +13,6 @@ app.use(express.static(publicPath));
 app.set('view engine','ejs');
 let viewsPath = path.resolve ('./src/views');
 app.set('views', viewsPath);
-
 
 // home
 app.use('/', mainRouter);
