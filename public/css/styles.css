@@ -253,7 +253,7 @@ img {
     position: relative;
     left: 5px;
     top: 2px;
-    color: white;
+    color: black;
     text-shadow: -2px 0 #fff, 0 1px #fff, 1px 0 #fff, 0 -2px #fff;
 }
 
@@ -376,20 +376,29 @@ input{
 /* productDetail */
 /**/
 
-.detalle-producto {
+.main-Hades {
     color: black;
     padding: 2%;
-    background-color: #b6b1f1ff;
+    background-color: #767889;
     font-family: 'Rubik', sans-serif;
     font-size: 13px;
     align-items: center;
+}
+
+.producto {
+    width: 90%;
+    padding-top: .1px;
+    margin: auto;
+    background-color: #858BB7;
 }
 
 .hades {
    text-align: left;
    padding: 15px;
    font-size: 30px;
-   margin: 0 auto;
+   margin: 2%;
+   border: 5px solid #b6b1f1;
+   border-left: 15px solid #b6b1f1;
 }
 
 .presentacion{
@@ -422,6 +431,9 @@ input{
 .descripcion p {
     display: block;
     margin: auto;
+    padding: 5%;
+    border: 5px solid #b6b1f1;
+    border-left: 15px solid #b6b1f1;
 }
 
 .precio-boton {
@@ -429,6 +441,7 @@ input{
     flex-direction: row;
     margin: auto;
     color: black;
+    width: 100%;
 }
 
 .precio-boton p {
@@ -436,18 +449,22 @@ input{
     padding: 5px;
     margin: auto;
     margin-right: 20px;
-    color: red;
-    background-color: #e2ddf9ff;
-    border: solid red 5px;
     font-weight: bold;
-    font-size: 20px;
+    color: black;
+    width: 50%;
 }
 
 .precio-boton button {
     display: block;
-    padding: 5px;
+    padding: 2%;
     margin: auto;
-    background-color: #e2ddf9ff;
+    background-color: #E2DDF9;
+    border-radius: 10px;
+    transition: all 500ms ease;
+    border: black 1px solid;
+}
+.precio-boton button:hover {
+    background-color: rgb(145, 93, 150);
 }
 
 .sobre-el-juego {
@@ -488,6 +505,7 @@ input{
 .requisitos h4 {
     padding-top: 20px;
     padding-bottom: 20px;
+    margin-bottom: 2%;
 }
 
 .requisitos ul {
