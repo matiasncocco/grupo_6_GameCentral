@@ -3,22 +3,52 @@
 <%- include('../partials/header')%>
 
 <main>
-        <form action="">
-            <div>
-                <label for="">Nombre del juego</label>
-                <input type="text" name="" id="">
+        <form class="formulario">
+            <div class="partes-formulario">
+                <label class="nombres-formulario" for="name">Nombre del juego</label>
+                <input class="espacio-formulario" type="text" name="" id="name" placeholder="Ej.: Hades">
             </div>
-            <div>
-                <label for="">Nombre del juego</label>
-                <input type="text" name="" id="">
+            <div class="partes-formulario">
+                <label class="nombres-formulario" for="description">Descripción</label>
+                <input class="espacio-formulario" type="text" name="" id="description" placeholder="Ej.: Desafía al dios de los muertos y protagoniza...">
             </div>
-            <div>
-                <label for="">Nombre del juego</label>
-                <input type="text" name="" id="">
+            <div class="partes-formulario">
+                <label class="nombres-formulario" for="image">Imágen</label>
+                <input class="espacio-formulario" type="file" accept=".jpg" name="" id="image">
             </div>
-            <div>
-                <label for="">Nombre del juego</label>
-                <input type="text" name="" id="">
+            <div class="partes-formulario">
+                <label class="nombres-formulario" for="category">Categorías</label>
+
+                <label class="etiquetas" for="category">
+                    <input class="etiquetas" type="checkbox" name="category" value="accion">Acción
+                </label>
+                <label class="etiquetas" for="category">
+                    <input class="etiquetas" type="checkbox" name="category" value="aventura">Aventura
+                </label>
+                <label class="etiquetas" for="category">
+                    <input class="etiquetas" type="checkbox" name="category" value="rol">Rol
+                </label>
+                <label class="etiquetas" for="category">
+                    <input class="etiquetas" type="checkbox" name="category" value="estrategia">Estrategia
+                </label>
+                <label class="etiquetas" for="category">
+                    <input class="etiquetas" type="checkbox" name="category" value="simulacion">Simulación
+                </label>
+                <label class="etiquetas" for="category">
+                    <input class="etiquetas" type="checkbox" name="category" value="deporte">Deporte
+                </label>
+            </div>
+            <div class="partes-formulario">
+                <label class="nombres-formulario" for="colors">Colores</label>
+                <input class="espacio-formulario" type="color" name="" id="colors">
+            </div>
+            <div class="partes-formulario">
+                <label class="nombres-formulario" for="price">Precio</label>
+                <input class="espacio-formulario" type="number" name="" id="price" placeholder="Ej.: 123.99">
+            </div>
+            <div class="botones">
+                <button type="submit"><a href="#">Crear</a></button>
+                <button type="reset"><a href="#">Borrar</a></button>
             </div>
         </form>
 </main>

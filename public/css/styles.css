@@ -844,6 +844,67 @@ TABLETS
         width: 40%;
     }
 
+    /* CREADOR DE PRODUCTOS */
+
+    .formulario {
+        margin: auto;
+        margin-bottom: 2%;
+        width: 50%;
+        background-color: #858BB7;
+        border: 5px solid #b6b1f1;
+        border-left: 15px solid #b6b1f1;
+    }
+
+    .partes-formulario {
+        padding: 2%;
+        display: flex;
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .nombres-formulario {
+        color: black;
+        font-weight: bold;
+        padding: 1%;
+    }
+
+    .espacio-formulario {
+        border: #b6b1f1 solid 2px;
+        color: black;
+        width: 60%;
+        margin: auto;
+
+    }
+    
+    .etiquetas {
+        display: flex;
+        flex-direction: row;
+        padding: 5px;
+        color: black;
+        margin-left: 15%;
+    }
+
+    .etiquetas input {
+        width: 20px;
+    }
+
+    .botones {
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+    }
+
+    .botones button {
+        margin: 3%;  
+        padding: 1% 2% 1% 2%;  
+        background-color: #E2DDF9;
+        border-radius: 10px;
+        transition: all 500ms ease;
+        border: black 1px solid;
+    }
+    .botones button:hover {
+        background-color: rgb(145, 93, 150);
+    }
 
     /**/
     /* FOOTER */
