@@ -1,0 +1,59 @@
+<%- include('../partials/head') %>
+<%- include('../partials/header') %>
+
+<!-- Main del producto -->
+<main class="main-Hades">
+    <div class="producto">    
+        <H1 class="hades"><%= game.title %></H1>
+        <!-- Imagen, texto y boton comprar -->
+        <div class="presentacion">
+            <div>
+                <img class="imagen-principal" src="<%= game.img %>"> 
+            </div>
+            <div class="descripcion">
+        <p><%= game.description %></p>
+        <div class="precio-boton">
+            <p><%= game.price %></p>
+            <button type="button"><a href="/cart">Agregar al carrito</a></button>
+        </div>
+        </div>
+    </div>
+    <!-- Detalles del juego e imagen -->
+    <div class="sobre-el-juego">
+        <p>Hades es un juego roguelike de exploración de mazmorras que combina los mejores aspectos de los aclamados títulos anteriores de Supergiant, como la acción rápida de Bastion, la atmósfera y la profundidad de Transistor y la narrativa centrada en los personajes de Pyre.</p>
+        <h4>COMBATE PARA ESCAPAR DEL INFIERNO</h4>
+        <p>Como el príncipe inmortal del Inframundo, tendrás a tu disposición los poderes y las armas míticas del Olimpo para liberarte de las garras del mismísimo dios de los muertos, al tiempo que te vas haciendo más fuerte y descubres más piezas de la historia con cada intento de fuga.</p>
+        <h4>DESATA LA IRA DEL OLIMPO</h4>
+        <p>¡Los dioses del Olimpo están de tu lado! Conoce a Zeus, Atenea, Poseidón y muchos más, y elige entre decenas de poderosas bendiciones que potenciarán tus habilidades. Hay miles de arquetipos de personaje viables que irás descubriendo a medida que juegues.</p>
+        <img class="imagen-dos" src="img/hadesJuego.jpeg" alt="Hades" width= 50%>
+    </div>
+    <!-- Requisitos -->
+    <div class="requisitos">
+        <h4>Requisitos del sistema</h4>
+        <div class="columnas">
+
+            <h5 class="minimo-requisito">MÍNIMO:</h5>
+            <ul>
+                <li>SO: Windows 7 SP1</li>
+                <li>Procesador: Dual Core 2.4 GHz</li>
+                <li>Memoria: 4 GB de RAM</li>
+                <li>Gráficos: 1GB VRAM / DirectX 10+ support</li>
+                <li>Almacenamiento: 15 GB de espacio disponible</li>
+            </ul>
+
+            <h5 class="minimo-requisito">RECOMENDADO:</h5>
+            <ul>
+                <li>SO: Windows 7 SP1</li>
+                <li>Procesador: Dual Core 3.0 GHz+</li>
+                <li>Memoria: 8 GB de RAM</li>
+                <li>Gráficos: 2GB VRAM / DirectX 10+ support</li>
+                <li>Almacenamiento: 20 GB de espacio disponible</li>
+            </ul>
+        </div>
+            <p class="final">© Supergiant Games, LLC 2020. All rights reserved.</p>
+    </div>
+</div>
+
+</main>
+
+<%- include('../partials/footer')%>
