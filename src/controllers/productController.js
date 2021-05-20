@@ -18,7 +18,7 @@ let productController = {
         for (i = 0 ; i < games.length ; i++) {
             if (idGame == games[i].title) {
                 res.render('./products/game-detail', {'title':games[i].title,'game':games[i]});
-                            };
+            };
        };
     },
 };
