@@ -34,7 +34,7 @@ a {
 /* REGLAS PARA TÍTULOS Y TEXTO */
 /**/
 
-/* en mobile first, olculto los <h> más grandes */
+
 .big-title {
     display: none;
 }
@@ -511,34 +511,58 @@ img {
 /**/
 
 
+.cart-section {
+    margin: 15px;
+}
+
 .cart-item {
     width: 100%;
     display: flex;
     flex-flow: row wrap;
     justify-content: flex-start;
+    border-top: 2px solid #E2DDF9;
+    border-left: 2px solid #E2DDF9;
+    box-shadow: 10px 10px 5px 5px black;
 }
 
 .cart-image {
     width: 33%;
     opacity: .9;
     border-radius: 8px;
-}
-
-.cart-image img {
-
-}
-
-.cart-price {
-
+    padding: 10px;
 }
 
 .cart-description {
     width: 33%;
     align-self: stretch;
+    padding: 10px;
+    display: flex;
+    flex-flow: column wrap;
+    justify-content: center;
+    align-items: center;
 }
 
-.cart-description p {
-    font-size: 8px;
+.cart-title {
+    padding: 5px;
+    text-shadow: -1px 0 black, 0 1px black, 1px 0 black, 0 -1px black;
+    background-image: linear-gradient(#E2DDF9,#858BB7);
+    border-radius: 5px;
+    width: fit-content;
+    flex-grow: 0;
+}
+
+.cart-text {
+    color: black;
+    width: fit-content;
+    text-align: center;
+    flex-grow: 3;
+}
+
+.cart-text p {
+    padding: 5px;
+    font-size: 6px;
+    background-image: linear-gradient(#E2DDF9,#858BB7);
+    border-radius: 5px;
 }
 
 .cart-purchase {
