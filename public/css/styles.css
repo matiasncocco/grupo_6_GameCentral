@@ -24,14 +24,17 @@ label   16px
 body {
     font-family: 'Rubik', sans-serif;
     color: #FFF;
-    /* background-image: url('../img/background.jpeg'); */
-    background-image: linear-gradient(black,white);
+    background-image: url('../img/background.jpeg');
+    /* background-image: linear-gradient(black,white); */
+    /* background-image: radial-gradient(#E2DDF9,#858BB7); */
+    /* background-image: radial-gradient(#858BB7,#E2DDF9); */
+    /* background-image: linear-gradient(#646766,#787889); */
+    /* background-image: radial-gradient(#787889,black); */
     background-position: center center;
     background-attachment: fixed;
     background-repeat: no-repeat;
     background-size: cover;
 }
-
 
 /**/
 /* REGLAS PARA LOS LINK */
@@ -72,7 +75,7 @@ img {
 
 .header-header {
     width: 100%;
-    background-image: linear-gradient(#646766,#767889,#858BB7);
+    background-image: linear-gradient(#767889,#B6B1F1);
 }
 
 .header-box {
@@ -155,6 +158,7 @@ img {
     padding: 15px;
     text-shadow: -1px 0 black, 0 1px black, 1px 0 black, 0 -1px black;
     background-image: linear-gradient(#E2DDF9,#858BB7);
+    border-radius: 8px;
 }
 
 #first-title {
@@ -197,9 +201,8 @@ img {
     left: 32%;
     width: 100px;
     padding: 8px;
-    border: 1px solid black;
     border-radius: 8px;
-    background-color: #858BB7;
+    background-image: linear-gradient(#E2DDF9,#858BB7);
     color: #FFF;
     text-shadow: -1px 0 black, 0 1px black, 1px 0 black, 0 -1px black;
     text-align: center;
@@ -212,16 +215,17 @@ img {
 }
 
 .new-price {
-    padding: 2px;
+    padding: 3px;
     position: absolute;
-    left: 5px;
+    left: 0;
     bottom: 35px;
     z-index: 25;
     text-align: center;
-    background-color:  #75FF33;
-    border: 3px solid green;
-    color: black;
-    /* text-shadow: -2px 0 green, 0 1px green, 1px 0 green, 0 -2px green; */
+    background-image: linear-gradient(#E2DDF9,#858BB7);
+    /* border-right: 5px black solid;
+    border-bottom: 5px black solid; */
+    box-shadow: 5px 5px 5px 5px black;
+    text-shadow: -1px 0 black, 0 1px black, 1px 0 black, 0 -1px black;
 }
 
 .ribbon {
@@ -230,35 +234,40 @@ img {
     width: 100%;
     height: 30px;
     z-index: 20;
-    background-color: red;
-    border-top: 3px black solid;
-    border-bottom: 3px black solid;
+    background-image: linear-gradient(#E2DDF9,#858BB7); 
+    border-top: 1px black solid;
+    border-bottom: 1px black solid;
 }
 
 .full-price {
     position: relative;
-    left: 5px;
-    top: 2px;
-    color: black;
-    text-shadow: -2px 0 #FFF, 0 1px #FFF, 1px 0 #FFF, 0 -2px #FFF;
+    left: 2px;
+    top: 3.5px;
+    text-shadow: -1px 0 black, 0 1px black, 1px 0 black, 0 -1px black;
 }
 
 .crossed-out {
     text-decoration: line-through;
-    text-shadow: none;
 }
 
 .discount {
     position: absolute;
     right: 5px;
-    bottom: -1.5px;
-    color: #FFF;
+    bottom: 0;
+    color: #2ECC40;
     text-shadow: -1px 0 black, 0 1px black, 1px 0 black, 0 -1px black;
 }
 
 
+/**/
+/* FORMULARIOS */
+/**/
 
-/*-------------------------------------------------------vvvvvv Estilos register.html (Provisorio) vvvvvvvvvv-------------------------------------*/
+
+/**/
+/* REGISTRO */
+/**/
+
 
 .cajmadreregistro{
    justify-content: center;
@@ -349,18 +358,12 @@ input{
 .CREAR{
     padding-bottom: 10px;
 }
-/*-------------------------------------------------------^^^^^^ Estilos register.html (Provisorio) ^^^^^^^^^^-------------------------------------*/
-
-
-
-
-
-
 
 
 /**/
-/* productDetail */
+/* SHOW PRODUCT */
 /**/
+
 
 .main-Hades {
     color: black;
@@ -448,6 +451,7 @@ input{
     transition: all 500ms ease;
     border: black 1px solid;
 }
+
 .precio-boton button:hover {
     background-color: rgb(145, 93, 150);
 }
@@ -519,8 +523,11 @@ input{
     text-align: center;
 }
 
-/* FEDE */
+
+/**/
 /* CARRITO */
+/**/
+
 
 .top-small-tittle {
   padding: 2px 0 8px 15px;
@@ -549,6 +556,7 @@ input{
     position: relative;
     border: #B6B1F1 solid 2px;
 }
+
 .name-game {
     font-weight: bold;
     font-size: 12px;
@@ -611,10 +619,6 @@ input{
     font-size: 10px;
 }
 
-/*.p-note{
-
-} */
-
 .button-buy {
     margin: auto;
     margin-bottom: 20px;
@@ -634,39 +638,6 @@ input{
 }
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 /**/
 /* FOOTER */
 /**/
@@ -675,8 +646,8 @@ input{
 .footer-footer {
     width: 100%;
     margin: auto;
-    background-image: linear-gradient(#646766,#767889,#858BB7);
-    /* background-color: #646766; */
+    /* background-image: linear-gradient(#B6B1F1,#767889); */
+    background-image: linear-gradient(#767889,#B6B1F1);
     display: flex;
     flex-flow: column wrap;
     align-items: center;
@@ -689,13 +660,18 @@ input{
     text-shadow: -2px 0 black, 0 2px black, 1px 0 black, 0 -1px black;
 }
 
+.socials, .declaration {
+    /* text-shadow: -.5px 0 black, 0 .5px black, .5px 0 black, 0 -.5px black; */
+    color: black;
+}
+
 .socials {
     display: flex;
     flex-flow: row wrap;
     justify-content: space-evenly;
     align-items: center;
     margin-top: 20px;
-    font-size: 20px;
+    font-size: 25px;
 }
 
 .social-box {
@@ -711,13 +687,13 @@ input{
     cursor: pointer;
 }
 
-.declaration {
+.declaration {  
     margin: 15px 35px;
 }
 
 .declaration p {
-    font-size: 8px;
     text-align: center;
+    font-size: 10px;
 }
 
 
@@ -785,13 +761,15 @@ TABLETS
         font-weight: bold;
     }
 
+
     /**/
-    /* SHOPPING CART */
+    /* CARRITO */
     /**/
 
     .botton-big-tittle{
         font-size: 25px;
     }
+
     .view-cart {
         display: flex;
         flex-wrap: wrap;
@@ -820,17 +798,29 @@ TABLETS
     .trash-cart {
         font-size: 10px;
     }
+
     .total{
         padding-left: 10px;
     }
+
     .total-price-cart{
         padding-right: 10px;
     }
+
     .button {
         width: 40%;
     }
 
-    /* CREADOR DE PRODUCTOS */
+
+    /**/
+    /* FORMULARIOS */
+    /**/
+
+
+    /**/
+    /* PRODUCT CREATE */
+    /**/
+    
 
     .formulario {
         margin: auto;
@@ -1004,7 +994,7 @@ PANTALLAS +
 
 
     .declaration {
-        width: 100%;
-        margin: 30px 200px;
+        max-width: 50%;
+        margin: 30px 0;
     }
 }
