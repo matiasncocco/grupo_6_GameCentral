@@ -24,4 +24,4 @@ app.use('/', productRouter);
 // registro y login
 app.use('/', userRouter);
 
-app.listen(3001, () => console.log('Servidor corriendo en el puerto 3001'));
+app.listen(process.env.PORT || 3001, () => console.log('Servidor corriendo en el puerto 3001'));
