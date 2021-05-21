@@ -11,9 +11,15 @@
     <form class="register-form" action="/">
 
         <section class="form-section">
+
             <div class="input-box">
                 <label class="label-label" for="name">Nombre Completo</label>
                 <input class="input-text" type="text" name="name" id="name" placeholder="Juan Pérez" required>
+            </div>
+
+            <div class="input-box">
+                <label class="label-label" for="username">Nombre de usuario</label>
+                <input class="input-text" type="text" name="username" id="username" placeholder="juanperez1992" required>
             </div>
     
             <div class="input-box">
@@ -31,6 +37,7 @@
                 <input class="input-text" type="password" name="password-check" id="password-check" placeholder="********" required>
             </div>
 
+            <!-- FILE -->
             <div class="input-box">
                 <label class="label-label" for="userImg"></label>
             </div>
@@ -53,13 +60,14 @@
             <div class="button-box">
                 <button class="button-send" type="submit">
                     <h1 class="big-title">CREAR</h1>
-                    <h2 class="small-title">CREAR</h2>
+                    <h4 class="small-title">CREAR</h4>
                 </button>
                 <button class="button-cancel" type="button">
-                    <a href="/"><h2 class="big-title">CANCELAR</h2></a>
-                    <a href="/"><h3 class="small-title">CANCELAR</h3></a>
+                    <a href="/"><h3 class="big-title">CANCELAR</h3></a>
+                    <a href="/"><h5 class="small-title">CANCELAR</h5></a>
                 </button>
             </div>
+
         </section>
 
         <section class="image-section">
@@ -68,32 +76,5 @@
 
     </form>
 
-
-
-
-
-
-
-
-    <form style="display: none" action="">
-        <p class="CREAR"> CREAR TU CUENTA	</p>
-        <p>Nombre:</p>
-        <input type="text" class="field"> <br/>
-        <p>Correo electrónico:</p>
-        <input type="text" class="field"> <br/>
-        <p>Contraseña:</p>
-        <input type="password" class="field"> <br/>
-        <p>Confirmar contraseña:</p>
-        <input type="password" class="field"></input> <br/>
-        <div class="reCaptcha"><iframe  class="input-box" title="reCAPTCHA" src="https://recaptcha.net/recaptcha/enterprise/anchor?ar=1&amp;k=6LdIFr0ZAAAAAO3vz0O0OQrtAefzdJcWQM2TMYQH&amp;co=aHR0cHM6Ly9zdG9yZS5zdGVhbXBvd2VyZWQuY29tOjQ0Mw..&amp;hl=es-419&amp;v=9qx0v7NiOAe_XnW_ULNZm9e3&amp;theme=dark&amp;size=normal&amp;s=0vNwUMdDidOm6lm-awUUkJq_H6nE9mchEEab4AEpRokpFx3pL1o9sXMGXHeoTqfVdbikAm8Itm9zbTRj2uuMHaRYiuB-K49apfGiHupnN5IclFIq1i2TNuF6MEk3uciqeVUFUIW2d6DxKV_s54S3RaMv2V5qChc_0ZhzagdnljyfILEG0uEqORe3nfH-TTIuRi1ukwAOSMMBOqE699dEaS3-7O8oxPGrG-cl_sDYvGCVrwFIytt5lOioW7qVJH_gnC-yjzDtanoIS6pn&amp;cb=aw4xs2l9rjnc" width="304" height="78" role="presentation" name="a-sluftttnmy4p" frameborder="0" scrolling="no" sandbox="allow-forms allow-popups allow-same-origin allow-scripts allow-top-navigation allow-modals allow-popups-to-escape-sandbox"></iframe></div>
-    <div class="cajaBoton">
-        <button class="btn-neon" id="send" type="submit">Enviar</button>
-        <button class="btn-neon" id="clear" type="reset">Borrar</button>
-    </div>
-
-</form>
-        
- 
 </main>
-
 <%- include('../partials/footer') %>

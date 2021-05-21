@@ -35,6 +35,30 @@ a {
 /**/
 
 
+h1 {
+    font-size: 32px;
+}
+
+h2 {
+    font-size: 24px;
+}
+
+h3 {
+    font-size: 18.72px;
+}
+
+h4 {
+    font-size: 16px;
+}
+
+h5 {
+    font-size: 13.28px;
+}
+
+h6 {
+    font-size: 10.72px;
+}
+
 .big-title {
     display: none;
 }
@@ -273,7 +297,7 @@ img {
 
 
 /**/
-/* REGISTRO */
+/* USER*/
 /**/
 
 
@@ -311,13 +335,13 @@ img {
     display: block;
     padding: 8px 0;
     color: black;
-    text-shadow: -1px 0 #808080, 0 1px #808080, 1px 0 #808080, 0 -1px #808080;
+    font-weight: 500;
     font-size: 12px;
 }
 
 .label-tyc {
     color: black;
-    text-shadow: -1px 0 #808080, 0 1px #808080, 1px 0 #808080, 0 -1px #808080;
+    font-weight: 500;   
     font-size: 10px;
 }
 
@@ -370,30 +394,11 @@ img {
 .button-cancel {
     width: fit-content;
     padding: 4px;
-}
-
-
-
-
-
-
-/* .cart-button {
-    width: fit-content;
-    padding: 15px;
     border: none;
-    border-radius: 8px;
-    color: #FFF;
-    text-shadow: -2px 2px 0 black;
-    background-image: linear-gradient(#E2DDF9,#858BB7);
-    box-shadow: 6px 6px black;
+    background-color: #858BB7;
+    border: 2px solid #E2DDF9;
     transition: all .2s cubic-bezier(.25,.25,.25,.25);
-    cursor: pointer;
-} */
-
-
-
-
-
+}
 
 /* MISC */
 ::-webkit-input-placeholder {
@@ -402,104 +407,6 @@ img {
     font-family: 'Rubik', sans-serif;
     font-size: 14px;
 }
-
-
-
-
-
-
-
-
-
-
-/* .cajmadreregistro{
-   justify-content: center;
-   margin-top: 80px;
-   margin-bottom: 90px;
-} */
-
-/* form{
-    background-color: white;
-    border-radius: 15px;
-    color: #999;
-    font-size: 0.8em;
-    padding: 20px;
-    margin: 0 auto;
-    width: 330px;
-} */
-
-/* input{
-    border: 0;
-    outline: none;
-    width: 280px;
-} */
-
-/* .field{
-    border: solid 2px #ccc;
-    padding: 10px;
-}
-
-.field:focus{
-    border-color: #18A383;
-}
-
-.center-content{
-    text-align: center;
-}
-
-.reCaptcha{
-    margin-top: 18px;
-    margin-bottom: 13px;
-}
-
-.btn-neon{
-    margin-right: 10px;
-    display: inline-block;
-    width: 80px;
-    height: 40px;
-    letter-spacing: 1px;
-    font-size: 18px;
-    background-color: #E2DDF9;
-    border-radius: 10px;
-    transition: all 500ms ease;
-
-}
-
-.btn-neon:hover{
-    background-color: rgb(145, 93, 150);
-}
-
-.btn-neon2{
-    margin-top: 10px;
-    display: inline-block;
-    width: 100px;
-    height: 70px;
-    letter-spacing: 1px;
-    font-size: 18px;
-    background-color: #E2DDF9;
-    border-radius: 10px;
-    transition: all 500ms ease;
-}
- 
-.btn-neon2:hover{
-    background-color: rgb(145, 93, 150);
-}
-
-.checkbox{
-    padding-top: 25px;
-    display: flex;
-    align-items: stretch;
-    justify-content: center;
-}
-
-.botoncito{
-    padding-left: 20px;
-    width: 75px;
-}
-
-.CREAR{
-    padding-bottom: 10px;
-} */
 
 
 /**/
@@ -988,7 +895,7 @@ TABLETS
     /**/
 
     /**/
-    /* REGISTRO */
+    /* USER */
     /**/
 
 
@@ -1131,6 +1038,13 @@ DESKTOP
         box-shadow: 3px 3px black;
     }
 
+    .button-cancel:hover {
+        color: #FFF;
+        background-color: #B14593;
+        border: 2px solid #B14593;
+        text-shadow: -2px 2px 0 black;
+    }
+
 
     /**/
     /* FOOTER */
@@ -1202,14 +1116,15 @@ PANTALLAS +
         display: flex;
         flex-flow: row wrap;
         justify-content: space-between;
-        align-items: center;
     }
 
     .form-section {
         width: 50%;
+        align-self: flex-start;
     }
 
     .image-section {
+        align-self: center;
         display: block;
         width: 50%;
         padding: 15px;
