@@ -178,6 +178,23 @@ img {
     transition: all .5s cubic-bezier(.25,.25,.25,.25);
 }
 
+.game-title {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    padding: 0;
+    border: 1px black solid;
+    border-radius: 4px;
+    background-image: linear-gradient(#E2DDF9,#858BB7);
+    text-shadow: -1px 0 black, 0 1px black, 1px 0 black, 0 -1px black;
+    visibility: hidden;
+    opacity: 0;
+    transition: opacity .5s cubic-bezier(.25,.25,.25,.25);
+    box-shadow: 5px 5px 5px 5px black;
+    text-align: center;
+}
+
 .ver-mas {
     position: absolute;
     display: inline-block;
@@ -186,12 +203,14 @@ img {
     width: 100px;
     padding: 8px;
     border: 1px black solid;
+    border-radius: 4px;
     background-image: linear-gradient(#E2DDF9,#858BB7);
-    color: #FFF;
     text-shadow: -1px 0 black, 0 1px black, 1px 0 black, 0 -1px black;
     text-align: center;
     visibility: hidden;
-    transition: all .5 cubic-bezier(.25,.25,.25,.25);
+    opacity: 0;
+    transition: opacity .5s cubic-bezier(.25,.25,.25,.25);
+    box-shadow: 5px 5px 5px 5px black;
 }
 
 .game-image {
@@ -208,6 +227,11 @@ img {
     background-image: linear-gradient(#E2DDF9,#858BB7);
     box-shadow: 5px 5px 5px 5px black;
     text-shadow: -1px 0 black, 0 1px black, 1px 0 black, 0 -1px black;
+    border: 1px black solid;
+    border-radius: 4px;
+    visibility: hidden;
+    opacity: 0;
+    transition: opacity .5s cubic-bezier(.25,.25,.25,.25);
 }
 
 .ribbon {
@@ -303,13 +327,13 @@ img {
     transition: all 500ms ease;
 
 }
-.btn-neon:hover{
-     background-color: rgb(145, 93, 150);
- }
 
- .btn-neon2{
+.btn-neon:hover{
+    background-color: rgb(145, 93, 150);
+}
+
+.btn-neon2{
     margin-top: 10px;
-    
     display: inline-block;
     width: 100px;
     height: 70px;
@@ -318,9 +342,9 @@ img {
     background-color: #E2DDF9;
     border-radius: 10px;
     transition: all 500ms ease;
- }
+}
  
- .btn-neon2:hover{
+.btn-neon2:hover{
     background-color: rgb(145, 93, 150);
 }
 
@@ -329,7 +353,6 @@ img {
     display: flex;
     align-items: stretch;
     justify-content: center;
-    
 }
 
 .botoncito{
@@ -511,8 +534,13 @@ img {
 /**/
 
 
+/* MAIN HOME */
+/* .main-title */
+/* #first-title */
+
 .cart-section {
     margin: 15px;
+    
 }
 
 .cart-item {
@@ -520,67 +548,45 @@ img {
     display: flex;
     flex-flow: row wrap;
     justify-content: flex-start;
-    border-top: 2px solid #E2DDF9;
-    border-left: 2px solid #E2DDF9;
+    align-items: center;
+    border: 1px solid black;
     box-shadow: 10px 10px 5px 5px black;
 }
 
-.cart-image {
-    width: 33%;
-    opacity: .9;
-    border-radius: 8px;
-    padding: 10px;
+.item-image, .item-title, .item-so-i, .item-price, .item-delete {
+    opacity: .8;
 }
 
-.cart-description {
-    width: 33%;
-    align-self: stretch;
-    padding: 10px;
-    display: flex;
-    flex-flow: column wrap;
-    justify-content: center;
-    align-items: center;
+.item-image, .item-title, .item-price {
+    width: 30%;
 }
 
-.cart-title {
-    padding: 5px;
-    text-shadow: -1px 0 black, 0 1px black, 1px 0 black, 0 -1px black;
-    background-image: linear-gradient(#E2DDF9,#858BB7);
-    border-radius: 5px;
-    width: fit-content;
-    flex-grow: 0;
-}
-
-.cart-text {
-    color: black;
-    width: fit-content;
+.item-title, .item-price, .item-so-i {
     text-align: center;
-    flex-grow: 3;
+    font-size: 14px;
+    text-shadow: -2px 2px 0 black;
 }
 
-.cart-text p {
-    padding: 5px;
-    font-size: 6px;
-    background-image: linear-gradient(#E2DDF9,#858BB7);
-    border-radius: 5px;
+.item-so-i {
+    display: none;
 }
 
-.cart-purchase {
-    width: 33%;
-    align-self: stretch;
-    display: flex;
-    flex-flow: column wrap;
-    justify-content: space-between;
+.item-delete {
+    width: 10%;
 }
 
-.submit-cart {
-    width: 100%;
+.item-delete button {
+    visibility: hidden;
 }
 
-.button-one {
-    width: 100%;
+.item-delete button i {
+    visibility: visible;
+    cursor: pointer;
+    font-size: 12px;
+    text-align: center;
+    text-shadow: -2px 2px 0 black;
+    color: #FFF;
 }
-
 
 /* .main-section-cart{
     border: 5px solid #B6B1F1;
@@ -814,6 +820,23 @@ TABLETS
     /**/
 
 
+    .item-so-i {
+        display: block;
+        font-size: 20px;
+    }
+
+    .item-image, .item-title, .item-so-i, .item-price {
+        width: 23%;
+    }
+
+    .item-delete {
+        width: 8%;
+    }
+    
+    .item-delete button i {
+        font-size: 20px;
+    }
+
     /* .botton-big-tittle{
         font-size: 25px;
     }
@@ -988,11 +1011,22 @@ DESKTOP
 
     .unit-product:hover .overlay-product {
         visibility: visible;
-        opacity: .7;
+        opacity: .6;
     }
 
     .unit-product:hover .ver-mas {
         visibility: visible;
+        opacity: 1;
+    }
+
+    .unit-product:hover .game-title {
+        visibility: visible;
+        opacity: 1;
+    }
+
+    .unit-product:hover .new-price {
+        visibility: visible;
+        opacity: 1;
     }
 
 
@@ -1034,6 +1068,24 @@ PANTALLAS +
     
     .unit-product {
         max-width: 25%;
+    }
+
+
+    /**/
+    /* CARRITO */
+    /**/
+
+
+    .item-title h2, .item-price h2 {
+        font-size: 40px;
+    }
+
+    .item-so-i {
+        font-size: 35px;
+    }
+    
+    .item-delete button i {
+        font-size: 30px;
     }
 
 
