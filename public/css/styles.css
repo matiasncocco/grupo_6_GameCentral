@@ -247,7 +247,7 @@ img {
 .new-price {
     padding: 3px;
     position: absolute;
-    left: 0;
+    right: 0;
     bottom: 35px;
     z-index: 25;
     text-align: center;
@@ -279,16 +279,18 @@ img {
     text-shadow: -1px 0 black, 0 1px black, 1px 0 black, 0 -1px black;
 }
 
-.crossed-out {
-    text-decoration: line-through;
-}
-
 .discount {
     position: absolute;
     right: 5px;
     bottom: 0;
     color: #2ECC40;
     text-shadow: -1px 0 black, 0 1px black, 1px 0 black, 0 -1px black;
+    opacity: 1;
+    transition: opacity .5s cubic-bezier(.25,.25,.25,.25);
+}
+
+.crossed-out {
+    transition: all .5s cubic-bezier(.25,.25,.25,.25);
 }
 
 
@@ -716,6 +718,23 @@ img {
     flex-flow: column wrap;
     align-items: center;
     justify-content: flex-start;
+    position: relative;
+}
+
+.to-the-top {
+    position: absolute;
+    right: 15px;
+    top: -15px;
+    height: 30px;
+    width: 30px;
+    background-color: #E2DDF9;
+    border-radius: 50%;
+    transition: all .2s cubic-bezier(.25,.25,.25,.25);
+}
+
+.to-the-top i{
+    color: black;
+    font-size: 30px;
 }
 
 .trademark {
@@ -1010,6 +1029,16 @@ DESKTOP
         opacity: 1;
     }
 
+    .unit-product:hover .crossed-out {
+        text-decoration: line-through;
+        color: #858BB7;
+        opacity: .5;
+    }
+
+    .unit-product:hover .discount {
+        opacity: 0;
+    }
+
 
     /**/
     /* CARRITO */
@@ -1072,7 +1101,6 @@ DESKTOP
     .button-reset:hover {
         border: 1px solid rgba(0,0,0,0.8);
         border-radius: 8px;
-        /* padding: 8px; */
         color: rgba(0,0,0,0.8);
     }
 
@@ -1090,6 +1118,26 @@ DESKTOP
     .social-box i:hover{
         color: #E2DDF9;
         background-color: #858BB7;
+    }
+
+    .to-the-top {
+        right: 20px;
+        top: -20px;
+        height: 40px;
+        width: 40px;
+        border-radius: 50%; 
+    }
+    
+    .to-the-top i{
+        font-size: 40px;
+    }
+
+    .to-the-top:hover {
+        background-color: #858BB7;
+    }
+
+    .to-the-top i:hover {
+        color: #E2DDF9;
     }
 }
 
