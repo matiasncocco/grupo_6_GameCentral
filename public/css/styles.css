@@ -12,7 +12,7 @@
 body {
     font-family: 'Rubik', sans-serif;
     color: #FFF;
-    background-image: url('../img/background.jpeg');
+    background-image: url('/img/background.jpeg');
     background-position: center center;
     background-attachment: fixed;
     background-repeat: no-repeat;
@@ -65,7 +65,7 @@ img {
     margin: auto;
     display: flex;
     flex-wrap: wrap;
-    justify-content: flex-start;
+    justify-content: center;
     align-content: center;
     max-width: 90%;
 }
@@ -88,8 +88,8 @@ img {
 }
 
 .hamburger {
-    align-self: center;
-    margin-left: 5px;
+    margin: 0 10px;
+    align-self: center;  
     width: 40px;
 }
 
@@ -98,8 +98,9 @@ img {
     width: 100%;
     font-size: 36px;
     border-radius: 5px;
-    color: #767889;
-    background-color: #E2DDF9;
+    color: #FFF;
+    background-image: linear-gradient(#858BB7,#E2DDF9);
+    text-shadow: -1px 0 black, 0 1px black, 1px 0 black, 0 -1px black;
 }
 
 .nav-link {
@@ -143,6 +144,7 @@ img {
     text-shadow: -1px 0 black, 0 1px black, 1px 0 black, 0 -1px black;
     background-image: linear-gradient(#E2DDF9,#858BB7);
     border-radius: 8px;
+    border: #858BB7 solid 2px;
 }
 
 .first-title {
@@ -275,11 +277,146 @@ img {
 /**/
 
 
-.cajmadreregistro{
+.register-form {
+    margin: auto;
+    width: 90%;
+    background-image: linear-gradient(#E2DDF9,#858BB7);
+    border: #858BB7 solid 2px;
+    border-radius: 8px;
+}
+
+.form-section {
+    width: 100%;
+}
+
+.image-section {
+    display: none;
+}
+
+
+/* BOXES */
+.input-box {
+    margin: 20px 10px;
+    padding-top: 5px;
+}
+
+.radio-box {
+    display: inline-block;
+    padding: 5px;
+    margin: 0 20px;
+}
+
+/* LABELS */
+.label-label {
+    display: block;
+    padding: 8px 0;
+    color: black;
+    text-shadow: -1px 0 #808080, 0 1px #808080, 1px 0 #808080, 0 -1px #808080;
+    font-size: 12px;
+}
+
+.label-tyc {
+    color: black;
+    text-shadow: -1px 0 #808080, 0 1px #808080, 1px 0 #808080, 0 -1px #808080;
+    font-size: 10px;
+}
+
+/* INPUTS */
+.input-text {
+    width: 100%;
+    padding: 8px;
+    border: #858BB7 solid 2px;
+    border-radius: 4px;
+}
+
+.input-text:focus {
+    outline-color: #B6B1F1;
+}
+
+.input-radio {
+    margin-left: 10px;
+}
+
+.input-checkbox {
+    margin-left: 5px;
+}
+
+/* BUTTONS */
+.button-box {
+    margin: auto;
+    display: flex;
+    padding: 30px 0;
+    flex-flow: column wrap;
+    align-items: center;
+}
+
+.button-send, .button-cancel {
+    margin: 10px;
+}
+
+.button-send {
+    width: fit-content;
+    padding: 8px 40px;
+    border: none;
+    border-radius: 8px;
+    color: #FFF;
+    text-shadow: -2px 2px 0 black;
+    background-image: linear-gradient(#E2DDF9,#858BB7);
+    box-shadow: 6px 6px black;
+    transition: all .2s cubic-bezier(.25,.25,.25,.25);
+    cursor: pointer;
+}
+
+.button-cancel {
+    width: fit-content;
+    padding: 4px;
+}
+
+
+
+
+
+
+/* .cart-button {
+    width: fit-content;
+    padding: 15px;
+    border: none;
+    border-radius: 8px;
+    color: #FFF;
+    text-shadow: -2px 2px 0 black;
+    background-image: linear-gradient(#E2DDF9,#858BB7);
+    box-shadow: 6px 6px black;
+    transition: all .2s cubic-bezier(.25,.25,.25,.25);
+    cursor: pointer;
+} */
+
+
+
+
+
+
+/* MISC */
+::-webkit-input-placeholder {
+    font-style: italic;
+    color: #666;
+    font-family: 'Rubik', sans-serif;
+    font-size: 14px;
+}
+
+
+
+
+
+
+
+
+
+
+/* .cajmadreregistro{
    justify-content: center;
    margin-top: 80px;
    margin-bottom: 90px;
-}
+} */
 
 /* form{
     background-color: white;
@@ -297,7 +434,7 @@ img {
     width: 280px;
 } */
 
-.field{
+/* .field{
     border: solid 2px #ccc;
     padding: 10px;
 }
@@ -362,7 +499,7 @@ img {
 
 .CREAR{
     padding-bottom: 10px;
-}
+} */
 
 
 /**/
@@ -812,7 +949,6 @@ TABLETS
         color: black;
         width: 60%;
         margin: auto;
-
     }
     
     .etiquetas {
@@ -846,7 +982,25 @@ TABLETS
         background-color: rgb(145, 93, 150);
     }
 
+
+    /**/
+    /* FORMULARIOS */
+    /**/
+
+    /**/
+    /* REGISTRO */
+    /**/
+
+
+    .label-label, .label-tyc {
+        font-size: 14px;
+    }
     
+    .input-text {
+        width: 70%;
+    }
+
+
     /**/
     /* FOOTER */
     /**/
@@ -948,8 +1102,31 @@ DESKTOP
     }
 
     .cart-button:hover {
-        background-image: none;
-        background-color: #B14593;
+        color: #767889;
+        transform: translate(3px,3px);
+        box-shadow: 3px 3px black;
+    }
+
+
+    /**/
+    /* FORMULARIOS */
+    /**/
+
+    /**/
+    /* REGISTRO */
+    /**/
+
+ 
+    .label-label, .label-tyc {
+        font-size: 16px;
+    }
+    
+    .input-text {
+        width: 60%;
+    }
+
+    .button-send:hover {
+        color: #767889;
         transform: translate(3px,3px);
         box-shadow: 3px 3px black;
     }
@@ -1015,6 +1192,32 @@ PANTALLAS +
 
     .item-delete button i:hover {
         font-size: 35px;
+    }
+
+    /**/
+    /**/
+    /**/
+
+    .register-form {
+        display: flex;
+        flex-flow: row wrap;
+        justify-content: space-between;
+        align-items: center;
+    }
+
+    .form-section {
+        width: 50%;
+    }
+
+    .image-section {
+        display: block;
+        width: 50%;
+        padding: 15px;
+        opacity: .5;
+    }
+
+    .input-text {
+        width: 100%;
     }
 
 
