@@ -134,6 +134,7 @@ img {
 .main-navbar li, .user-navbar li {
     list-style: none;
     display: inline-block;
+    text-shadow: -1px 0 #404040, 0 1px #404040, 1px 0 #404040, 0 -1px #404040;
 }
 
 .carrito {
@@ -183,7 +184,7 @@ img {
 }
 
 #last-section {
-    margin-bottom: 0px;
+    margin-bottom: 30px;
 }
 
 .unit-product {
@@ -307,6 +308,7 @@ img {
     background-image: linear-gradient(#E2DDF9,#858BB7);
     border: #858BB7 solid 2px;
     border-radius: 8px;
+    margin-bottom: 30px;
 }
 
 .form-section {
@@ -316,7 +318,6 @@ img {
 .image-section {
     display: none;
 }
-
 
 /* BOXES */
 .input-box {
@@ -345,6 +346,13 @@ img {
     font-size: 10px;
 }
 
+.label-file {
+    background-color: #FFF;
+    cursor: pointer;
+    font-style: italic;
+    color: #666;
+}
+
 /* INPUTS */
 .input-text {
     width: 100%;
@@ -363,6 +371,10 @@ img {
 
 .input-checkbox {
     margin-left: 5px;
+}
+
+.input-file {
+    display: none;
 }
 
 /* BUTTONS */
@@ -398,6 +410,21 @@ img {
     background-color: #858BB7;
     border: 2px solid #E2DDF9;
     transition: all .2s cubic-bezier(.25,.25,.25,.25);
+    margin-top: 60px;
+}
+
+.button-reset {
+    margin: auto;
+    width: fit-content;
+    color: black;
+    font-size: 12px;
+    font-weight: 700;
+    text-decoration: underline;
+    background-color: inherit;
+    border: none;
+    cursor: pointer;
+    padding: 10px;
+    margin-bottom: 15px;
 }
 
 /* MISC */
@@ -577,10 +604,6 @@ img {
 /* CARRITO */
 /**/
 
-
-/* MAIN HOME */
-/* .main-title */
-/* .first-title */
 
 .cart-section {
     margin: auto;
@@ -894,6 +917,7 @@ TABLETS
     /* FORMULARIOS */
     /**/
 
+
     /**/
     /* USER */
     /**/
@@ -1045,6 +1069,13 @@ DESKTOP
         text-shadow: -2px 2px 0 black;
     }
 
+    .button-reset:hover {
+        border: 1px solid rgba(0,0,0,0.8);
+        border-radius: 8px;
+        /* padding: 8px; */
+        color: rgba(0,0,0,0.8);
+    }
+
 
     /**/
     /* FOOTER */
@@ -1108,26 +1139,31 @@ PANTALLAS +
         font-size: 35px;
     }
 
+
     /**/
+    /* FORMULARIOS */
     /**/
+
     /**/
+    /* USER */
+    /**/
+
 
     .register-form {
         display: flex;
         flex-flow: row wrap;
         justify-content: space-between;
+        align-items: flex-start;
     }
 
     .form-section {
         width: 50%;
-        align-self: flex-start;
     }
 
     .image-section {
-        align-self: center;
         display: block;
         width: 50%;
-        padding: 15px;
+        padding: 15px;  
         opacity: .5;
     }
 
