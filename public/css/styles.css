@@ -128,7 +128,7 @@ img {
 }
 
 .estirar {
-    height: 2000px;
+    height: 1000px;
 }
 
 
@@ -138,14 +138,14 @@ img {
 
 
 .main-title {
-    margin: 5px 15px;
-    padding: 15px;
+    margin: 5px 0;
+    padding: 8px;
     text-shadow: -1px 0 black, 0 1px black, 1px 0 black, 0 -1px black;
     background-image: linear-gradient(#E2DDF9,#858BB7);
     border-radius: 8px;
 }
 
-#first-title {
+.first-title {
     margin-top: 20px;
 }
 
@@ -536,11 +536,11 @@ img {
 
 /* MAIN HOME */
 /* .main-title */
-/* #first-title */
+/* .first-title */
 
 .cart-section {
-    margin: 15px;
-    
+    margin: auto;
+    width: 90%;
 }
 
 .cart-item {
@@ -551,10 +551,12 @@ img {
     align-items: center;
     border: 1px solid black;
     box-shadow: 10px 10px 5px 5px black;
+    margin: 20px 0 20px 0;
+    background-image: linear-gradient(#E2DDF9,#858BB7);
 }
 
-.item-image, .item-title, .item-so-i, .item-price, .item-delete {
-    opacity: .8;
+.item-image {
+    padding: 5px;
 }
 
 .item-image, .item-title, .item-price {
@@ -587,114 +589,6 @@ img {
     text-shadow: -2px 2px 0 black;
     color: #FFF;
 }
-
-/* .main-section-cart{
-    border: 5px solid #B6B1F1;
-    border-left: 15px solid #B6B1F1;
-    margin: 15px;
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: flex-start;
-} */
-
-/* .top-small-tittle {
-  padding: 2px 0 8px 15px;
-}
-
-.botton-big-tittle{
-   padding: 0 15px;
-}
-
-.unit-product-cart {
-    position: relative;
-    padding: 15px;
-    width: 100%;
-}
-
-.game-image-cart {
-    position: relative;
-    border: #B6B1F1 solid 2px;
-}
-
-.name-game {
-    font-weight: bold;
-    font-size: 12px;
-    text-decoration: underline;
-}
-
-.Description-cart {
-    padding: 8px;
-    border: #B6B1F1 solid 2px;
-    margin-top: 3px;
-}
-
-.price-trash-cart{
-    display: flex;
-    flex-wrap: nowrap;
-    justify-content: space-between;
-    align-items: center;
-    padding: 10px;
-}
-
-.price-cart{
-    margin: 0 5px;
-    font-size: 14px;
-    font-weight: bold;
-    width: 90%;
-    text-align: center;
-}
-
-.trash-cart{
-    margin: 0 5px;
-    color:white;
-    width: 10%;
-    text-align: right;
-}
-
-.total-price{
-    display: flex;
-    flex-wrap: nowrap;
-    justify-content: space-between;
-    align-items: center;
-    padding: 15px 0;
-    background-color: #26421a; 
-    margin-bottom: 0%;   
-}
-
-.total {
-    margin: 0 5px;
-    font-size: 15px;
-    font-weight: bold;
-    text-align: left;
-}
-
-.total-price-cart {
-    margin: 0 5px;
-    color:white;
-    text-align: right;
-}
-
-.tax-note {
-    font-size: 10px;
-}
-
-.button-buy {
-    margin: auto;
-    margin-bottom: 20px;
-    display: flex;
-    width: 90%;
-    justify-content: center;
-}
-
-.button {
-    background-color: blue;
-    padding: 8px 5px;
-    color: white;
-    font-weight: bold;
-    font-size: 16px;
-    align-items: flex-end;
-    width: 100%;
-} */
 
 
 /**/
@@ -1004,6 +898,10 @@ DESKTOP
     /* HOME */
     /**/
 
+
+    .main-title {
+        padding: 15px;
+    }
     
     .unit-product {
         max-width: 33.33%;
