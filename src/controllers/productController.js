@@ -1,6 +1,11 @@
+let fs = require('fs');
+let path = require('path');
+
 let title = '';
 
-// lógica para parse mi json
+let filePath = path.join(__dirname + '/../database/products.json');
+let productsFile = fs.readFileSync(filePath,'UTF-8');
+let products = JSON.parse(productsFile);
 
 let productController = {
     // 1 index (show all)
@@ -13,13 +18,14 @@ let productController = {
 
     // 3
     show: (req,res) => {
+        title = "Más info del juego";
         let gameId = req.params.id;
         for (i = 0 ; i < products.length ; i++) {
-            if (gameId == products[i].id) {
+            if (gameId === products[i].id) {
                 return products[i];
             };
+            res.render('./products/show',{title,'product':products[i]});
         };
-        res.render('./products/detail',{'product':products[i]});
     },
     
     // 4
