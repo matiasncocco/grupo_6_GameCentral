@@ -1,0 +1,28 @@
+[{
+    "id":"",
+    "name":"",
+    "description":"",
+    "longDescription":"",
+    "img":"",
+    "imgCard":"",
+    "imgCapsule":"",
+    "price":"",
+    "discount":true,
+    "discountRate":"",
+    "category":"",
+    "creationDate":""
+},
+{
+    "id":"",
+    "name":"",
+    "description":"",
+    "longDescription":"",
+    "img":"",
+    "imgCard":"",
+    "imgCapsule":"",
+    "price":"",
+    "discount":false,
+    "discountRate":"",
+    "category":"",
+    "creationDate":""
+}]

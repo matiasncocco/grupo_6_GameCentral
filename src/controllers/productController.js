@@ -1,7 +1,7 @@
-let games = require('../database/data');
+// let games = require('../database/data');
 
 let productController = {
-    games,
+    // games,
 
     renderCart: (req, res) => {
         let title = 'Carrito de compras';
@@ -13,14 +13,14 @@ let productController = {
         res.render('./products/new-product', {'title': title});
     },
 
-   renderProduct: (req, res) => {
-        let idGame = req.params.id;
-        for (i = 0 ; i < games.length ; i++) {
-            if (idGame == games[i].title) {
-                res.render('./products/game-detail', {'title':games[i].title,'game':games[i]});
-            };
-       };
-    },
+//    renderProduct: (req, res) => {
+//         let idGame = req.params.id;
+//         for (i = 0 ; i < games.length ; i++) {
+//             if (idGame == games[i].title) {
+//                 res.render('./products/game-detail', {'title':games[i].title,'game':games[i]});
+//             };
+//        };
+//     },
 };
 
 module.exports = productController;
