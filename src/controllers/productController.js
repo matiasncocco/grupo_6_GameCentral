@@ -21,10 +21,10 @@ let productController = {
         title = "Más info del juego";
         let gameId = req.params.id;
         for (i = 0 ; i < products.length ; i++) {
-            if (gameId === products[i].id) {
-                return products[i];
+            if (products[i].id == gameId) {
+                let productCategory = products[i].category;
+                res.render('./products/show',{title,'product':products[i],productCategory});
             };
-            res.render('./products/show',{title,'product':products[i]});
         };
     },
     
