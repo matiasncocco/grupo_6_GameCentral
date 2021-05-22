@@ -1,26 +1,38 @@
-// let games = require('../database/data');
+let title = '';
+
+// lógica para parse mi json
 
 let productController = {
-    // games,
+    // 1 index (show all)
 
-    renderCart: (req, res) => {
-        let title = 'Carrito de compras';
-        res.render('./products/shopping-cart', {'title': title});
+    // 2
+    create: (req,res) => {
+        title = 'Nuevo producto';
+        res.render('./products/create',{title});
     },
 
-    renderNewProduct: (req, res) => {
-        let title = 'Nuevo producto';
-        res.render('./products/new-product', {'title': title});
+    // 3
+    show: (req,res) => {
+        let gameId = req.params.id;
+        for (i = 0 ; i < products.length ; i++) {
+            if (gameId == products[i].id) {
+                return products[i];
+            };
+        };
+        res.render('./products/detail',{'product':products[i]});
     },
+    
+    // 4
+    // store (post = add entry, send complete form)
 
-//    renderProduct: (req, res) => {
-//         let idGame = req.params.id;
-//         for (i = 0 ; i < games.length ; i++) {
-//             if (idGame == games[i].title) {
-//                 res.render('./products/game-detail', {'title':games[i].title,'game':games[i]});
-//             };
-//        };
-//     },
+    // 5
+    // edit (get = view current)
+
+    // 6
+    // update (post put = submit changes)
+
+    // 7
+    // destroy (post delete = remove item)
 };
 
 module.exports = productController;

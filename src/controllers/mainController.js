@@ -1,9 +1,13 @@
-// let games = require('../database/data');
+let title = '';
 
 let mainController = {
-    renderHome: (req, res) => {
-        let title = 'Game Central';
-        res.render('index',{'title':title});
+    index: (req, res) => {
+        title = 'Game Central';
+        res.render('index',{title});
+    },
+    cart: (req,res) => {
+        title = 'Carrito de compras';
+        res.render('cart',{title});
     }
 };
 

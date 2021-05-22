@@ -1,12 +1,20 @@
+let title = '';
+
 let userController = {
-    renderLogin : (req, res) => {
-        let title = 'Ingresar';
-        res.render('./users/login', {'title': title})
+    login : (req, res) => {
+        title = 'Ingresá';
+        res.render('./users/login', {title})
     },
-    renderRegister : (req, res) => {
-        let title = 'Registrarse';
-        res.render('./users/register', {'title': title})
-    }
+    register : (req, res) => {
+        title = 'Crea tu cuenta';
+        res.render('./users/register', {title})
+    },
+    
+    // store (post = add entry)
+    // index (show all users)
+    // edit (get = view current user detail)
+    // update (post put = submit changes)
+    // destroy (post delete = remove user)
 }
 
 module.exports = userController

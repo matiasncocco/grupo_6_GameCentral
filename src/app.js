@@ -1,27 +1,21 @@
-const express = require('express');
-const app = express();
-const path = require('path');
+let express = require('express');
+let app = express();
+let path = require('path');
 
-const mainRouter = require('./routes/main');
-const productRouter = require('./routes/product');
-const userRouter = require('./routes/user');
-
-// public
-const publicPath = path.resolve('./public');
+let publicPath = path.resolve('./public');
 app.use(express.static(publicPath));
 
-// ejs
 app.set('view engine','ejs');
 let viewsPath = path.resolve('./src/views');
 app.set('views', viewsPath);
 
-// home
+let mainRouter = require('./routes/main');
+let productRouter = require('./routes/product');
+let userRouter = require('./routes/user');
+
 app.use('/', mainRouter);
+app.use('/products', productRouter);
+app.use('/users', userRouter);
 
-// detalle de producto Hades y carrito
-app.use('/', productRouter);
-
-// registro y login
-app.use('/', userRouter);
 
 app.listen(process.env.PORT || 3001, () => console.log('Servidor corriendo en el puerto 3001'));
