@@ -1,42 +1,37 @@
 <%- include('../partials/head') %>
 <%- include('../partials/header') %>
 
-<main class="main-main estirar">
-
-    <section class="show-section">
-    
-        <section class="show-img">
-            <img class="image-image" src="/img/products/img/<%= product.img %>">
-            <img class="card-image" src="/img/products/card/<%= product.card %>">
-        </section>
-    
-        <section class="show-main">
-            <header class="show-title">
-                <h2 class="big-title"><%= product.name %></h2>
-                <h4 class="small-title"><%= product.name %></h4>
-            </header>
-            <article class="show-description">
-                <p><%= product.description %>
-            </article>
+<main class="main-main">
+        <section class="show-section">
+            <section class="show-img">
+                <img class="image-image" src="/img/products/img/<%= product.img %>">
+                <img class="card-image" src="/img/products/card/<%= product.card %>">
+            </section>
+            <section class="show-main">
+                <header class="show-title">
+                    <h2 class="big-title"><%= product.name %></h2>
+                    <h4 class="small-title"><%= product.name %></h4>
+                </header>
+                <article class="show-description">
+                    <p><%= product.description %>
+                </article>
+            </section>
+            <section class="show-category">
+                <header class="show-title category-title">
+                    <h3 class="big-title">CATEGORÍAS</h3>
+                    <h5 class="small-title">CATEGORÍAS</h5>
+                </header>
+                <article class="category-box">
+                    <% productCategory.forEach(category => { %>
+                        <p><%= category %></p>
+                    <% }) %>
+                </article>
+            </section>
+            <section class="show-long-description">
+                <p><%= product.longDescription %></p>
+            </section>
         </section>
         
-        <section class="show-category">
-            <header class="category-title">
-                <h3 class="big-title">CATEGORÍAS</h3>
-                <h5 class="small-title">CATEGORÍAS</h5>
-            </header>
-            <article class="category-box">
-                <% productCategory.forEach(category => { %>
-                    <h2><%= category %></h2>
-                <% }) %>
-            </article>
-        </section>
-
-        
-    </section>
-
-
-
 </main>
 
 <%- include('../partials/footer')%>

@@ -8,7 +8,11 @@ let mainController = {
     cart: (req,res) => {
         title = 'Carrito de compras';
         res.render('cart',{title});
-    }
+    },
+    termsConditions: (req,res) => {
+        title = 'Términos & Condiciones';
+        res.render('terms-conditions',{title});
+    },
 };
 
 module.exports = mainController;
