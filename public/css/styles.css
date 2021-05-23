@@ -485,6 +485,15 @@ img {
     margin-bottom: 30px;
 }
 
+.product-create-form {
+    margin: auto;
+    width: 90%;
+    background-image: linear-gradient(#E2DDF9,#858BB7);
+    border: #858BB7 solid 2px;
+    border-radius: 8px;
+    margin-bottom: 30px;
+}
+
 .form-section {
     width: 100%;
 }
@@ -493,16 +502,37 @@ img {
     display: none;
 }
 
+.product-create-section {
+    width: 80%;
+    margin: auto;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    border: 5px #FFF solid;
+    box-shadow: 0 0 15px 5px black;
+}
+
 /* BOXES */
 .input-box {
     margin: 20px 10px;
     padding-top: 5px;
 }
 
-.radio-box {
+/* .radio-box {
     display: inline-block;
-    padding: 5px;
-    margin: 0 20px;
+    border: #858BB7 solid 2px;
+    border-radius: 4px;
+    background-color: #FFF;
+} */
+
+.category-box {
+    display: flex;
+    flex-flow: row wrap;
+    margin: 0px;
+}
+
+.single-category {
+    width: 50%;
+    padding: 0 5px;
 }
 
 /* LABELS */
@@ -518,6 +548,7 @@ img {
     color: black;
     font-weight: 500;   
     font-size: 10px;
+    margin: 0 10px;
 }
 
 .label-file {
@@ -527,28 +558,56 @@ img {
     color: #666;
 }
 
+.label-radio {
+    padding-left: 10px;
+    cursor: pointer;
+    display: inline-block;
+    border: #858BB7 solid 2px;
+    border-radius: 4px;
+    background-color: #FFF;
+}
+
+.label-radio input {
+    display: none;
+}
+
 /* INPUTS */
 .input-text {
     width: 100%;
     padding: 8px;
     border: #858BB7 solid 2px;
     border-radius: 4px;
+    font-family: inherit;
+    font-size: 10px;
+    font-weight: 400;
 }
 
 .input-text:focus {
     outline-color: #B6B1F1;
 }
 
-.input-radio {
-    margin-left: 10px;
-}
-
 .input-checkbox {
-    margin-left: 5px;
+    margin: 2px;
+    cursor: pointer;
 }
 
 .input-file {
     display: none;
+}
+
+.text-area-product {
+    width: 100%;
+    resize: none;
+    padding: 8px;
+    border: #858BB7 solid 2px;
+    border-radius: 4px;
+    font-family: inherit;
+    font-weight: 400;
+    font-size: 10px;
+}
+
+.text-area-product:focus {
+    outline-color: #B6B1F1;
 }
 
 /* BUTTONS */
@@ -805,72 +864,6 @@ TABLETS
 
 
     /**/
-    /* PRODUCT CREATE */
-    /**/
-    
-
-    /* .formulario {
-        margin: auto;
-        margin-bottom: 2%;
-        width: 50%;
-        background-color: #858BB7;
-        border: 5px solid #B6B1F1;
-        border-left: 15px solid #B6B1F1;
-    }
-
-    .partes-formulario {
-        padding: 2%;
-        display: flex;
-        flex-direction: column;
-        text-align: center;
-    }
-
-    .nombres-formulario {
-        color: black;
-        font-weight: bold;
-        padding: 1%;
-    }
-
-    .espacio-formulario {
-        border: #B6B1F1 solid 2px;
-        color: black;
-        width: 60%;
-        margin: auto;
-    }
-    
-    .etiquetas {
-        display: flex;
-        flex-direction: row;
-        padding: 5px;
-        color: black;
-        margin-left: 15%;
-    }
-
-    .etiquetas input {
-        width: 20px;
-    }
-
-    .botones {
-        display: flex;
-        flex-direction: row;
-        justify-content: center;
-    }
-
-    .botones button {
-        margin: 3%;  
-        padding: 1% 2% 1% 2%;  
-        background-color: #E2DDF9;
-        border-radius: 10px;
-        transition: all 500ms ease;
-        border: black 1px solid;
-    }
-
-    .botones button:hover {
-        background-color: rgb(145, 93, 150);
-    } */
-
-
-    /**/
     /* FORMULARIOS */
     /**/
 
@@ -881,6 +874,15 @@ TABLETS
     
     .input-text {
         width: 70%;
+        font-size: 12px;
+    }
+    
+    .input-text-product {
+        width: 100%;
+    }
+    
+    .text-area-product {
+        font-size: 12px;
     }
 
 
@@ -1030,6 +1032,15 @@ DESKTOP
     
     .input-text {
         width: 60%;
+        font-size: 14px;
+    }
+
+    .input-text-product {
+        width: 100%;
+    }
+
+    .text-area-product {
+        font-size: 14px;
     }
 
     .button-send:hover {

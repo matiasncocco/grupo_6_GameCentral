@@ -1,37 +1,78 @@
 <%- include('../partials/head') %>
 <%- include('../partials/header') %>
 
-<main class="main-main estirar">
+<main class="main-main">
 
     <header class="main-title first-title">
         <h3 class="bit-title">AÑADIR ARTÍCULO</h3>
         <h5 class="small-title">AÑADIR ARTÍCULO</h5>
     </header>
 
-    <form class="register-form" action="/">
+    <form class="product-create-form" action="/products" method="POST">
 
-        <!-- name -->
+        <section class="product-create-section">
+            <!-- name -->
+            <div class="input-box">
+                <label class="label-label" for="name">Nombre</label>
+                <input class="input-text input-text-product" type="text" name="name" id="name" placeholder="Pac-Man" required>
+            </div>
+            
+            <!-- category -->
+            <div class="input-box category-box">
+                <% for (i = 1 ; i < 5 ; i++) { %>
+                    <div class="single-category">
+                        <label class="label-label" for="category">Categoría <%= [i] %></label>
+                        <input class="input-text input-text-product" type="text" name="category" id="category" required>
+                    </div>
+                <% } %>
+            </div>
+            
+            <!-- img : file -->
+            
+            <!-- card : file -->
+            
+            <!-- capsule : file -->
+            
+            <!-- relevant : bool -->
+            <div class="input-box">
+                <label class="label-label">¿Clasificar producto como "RELEVANT"?</label>
+                <label class="label-label label-radio" for="true">
+                    RELEVANT product<input class="input-radio" type="radio" name="relevant" value="true" id="true" required>
+                </label>
+                <label class="label-label label-radio" for="false">
+                    NOT relevant product<input class="input-radio" type="radio" name="relevant" value="false" id="false" required>
+                </label>
+            </div>
 
-        <!-- description -->
+            <!-- price : file-->
+            
+            <!-- discount : bool -->
+            
+            <!-- discount rate : number -->
+                        
+            <!-- description -->
+            <div class="input-box">
+                <label class="label-label" for="description">Descripción breve</label>
+                <textarea class="text-area-product" name="description" id="description" rows="5" maxlength="170" required></textarea>
+            </div>
 
-        <!-- longDescription -->
+            <!-- longDescription -->
+            <div class="input-box">
+                <label class="label-label" for="longDescription">Descripción extensa</label>
+                <textarea class="text-area-product" name="longDescription" id="longDescription" rows="15" maxlength="800" required></textarea>
+            </div>
 
-        <!-- img : file -->
+            <div class="button-box">
+                <button class="button-send" type="submit">
+                    <h1>CREAR</h1>
+                </button>
+                <button class="button-cancel" type="button">
+                    <a href="/"><h3 class="big-title">CANCELAR</h3></a>
+                </button>
+            </div>
 
-        <!-- card : file -->
+        </section>
 
-        <!-- capsule : file -->
-
-        <!-- price : file-->
-
-        <!-- discount : bool -->
-
-        <!-- discount rate : number -->
-
-        <!-- relevant : bool -->
-
-        <!-- category -->
-        
     </form>
 
 

@@ -6,7 +6,8 @@ let productController = require('../controllers/productController');
 router.get('/create', productController.create);
 // 3
 router.get('/:id', productController.show);
-
+// 4
+router.post('/', productController.store);
 
 // 1. /products (GET)
 // Listado de productos
@@ -16,9 +17,6 @@ router.get('/:id', productController.show);
 
 // 3. /products/:id (GET)
 // Detalle de un producto particular
-
-// 4. /products (POST)
-// Acción de creación (a donde se envía el formulario)
 
 // 5. /products/:id/edit (GET)
 // Formulario de edición de productos

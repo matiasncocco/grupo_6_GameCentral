@@ -32,7 +32,9 @@ let productController = {
     },
     
     // 4
-    // store (post = add entry, send complete form)
+    store: (req,res) => {
+        res.send(req.body);
+    },
 
     // 5
     // edit (get = view current)

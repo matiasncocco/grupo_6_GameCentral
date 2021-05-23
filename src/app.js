@@ -9,6 +9,9 @@ app.set('view engine','ejs');
 let viewsPath = path.resolve('./src/views');
 app.set('views', viewsPath);
 
+app.use(express.urlencoded ({extended:false}));
+app.use(express.json());
+
 let mainRouter = require('./routes/main');
 let productRouter = require('./routes/product');
 let userRouter = require('./routes/user');
