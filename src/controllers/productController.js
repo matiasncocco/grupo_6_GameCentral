@@ -8,7 +8,10 @@ let productsFile = fs.readFileSync(filePath,'UTF-8');
 let products = JSON.parse(productsFile);
 
 let productController = {
-    // 1 index (show all)
+    // 1 SHOW ALL PRODUCTS
+    // index: (req,res) => {
+    //   res.render('./producst/partials/product');  
+    // },
 
     // 2
     create: (req,res) => {

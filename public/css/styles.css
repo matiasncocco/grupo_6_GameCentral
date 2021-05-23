@@ -183,7 +183,7 @@ img {
     justify-content: flex-start;
 }
 
-#last-section {
+.last-section {
     margin-bottom: 30px;
 }
 
@@ -476,11 +476,6 @@ img {
 /**/
 
 
-/**/
-/* USER*/
-/**/
-
-
 .register-form {
     margin: auto;
     width: 90%;
@@ -701,7 +696,7 @@ img {
 /*
 ESPECÍFICAS
 */
-/* SHOW PRODUCT IMG SWITCH */
+/* PRODUCT SHOW: IMG SWITCH */
 @media(min-width: 370px) {
     .card-image {
         display: none;
@@ -796,7 +791,7 @@ TABLETS
 
     
     /**/
-    /* SHOW PRODUCT */
+    /* PRODUCT SHOW */
     /**/
 
 
@@ -814,7 +809,7 @@ TABLETS
     /**/
     
 
-    .formulario {
+    /* .formulario {
         margin: auto;
         margin-bottom: 2%;
         width: 50%;
@@ -872,16 +867,11 @@ TABLETS
 
     .botones button:hover {
         background-color: rgb(145, 93, 150);
-    }
+    } */
 
 
     /**/
     /* FORMULARIOS */
-    /**/
-
-
-    /**/
-    /* USER */
     /**/
 
 
@@ -1012,7 +1002,7 @@ DESKTOP
 
 
     /**/
-    /* SHOW PRODUCT */
+    /* PRODUCT SHOW */
     /**/
 
 
@@ -1034,11 +1024,6 @@ DESKTOP
     /**/
 
 
-    /**/
-    /* USER */
-    /**/
-
- 
     .label-label, .label-tyc {
         font-size: 16px;
     }
@@ -1155,11 +1140,7 @@ PANTALLAS +
 
 
     /**/
-    /* SHOW PRODUCT */
-    /**/
-
-    /**/
-    /* SHOW PRODUCT */
+    /* PRODUCT SHOW */
     /**/
 
 
@@ -1174,10 +1155,6 @@ PANTALLAS +
 
     /**/
     /* FORMULARIOS */
-    /**/
-
-    /**/
-    /* USER */
     /**/
 
 

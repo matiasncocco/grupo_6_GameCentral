@@ -3,15 +3,15 @@
 
 <main class="main-main">
 
+    <!-- Título de la oferta -->
     <header class="main-title first-title">
         <h3 class="big-title">AUTUMN SALE</h3>
         <h5 class="small-title">AUTUMN SALE</h5>
     </header>    
 
-    <!-- A COPIAR PARA ITERAR -->
     <!-- Sección de ofertas -->
     <section class="main-section">
-        <!-- ARTÍCULO A ITERAR -->
+        
         <article class="unit-product">
             <div class="game-image">
                 <img src="/img/products/card/hades-card.jpg">
@@ -40,21 +40,6 @@
                 </a>
             </div>
         </article>
-        <!--  -->
-        <!--  -->
-
-
-
-
-
-
-
-
-
-
-
-
-
 
         <!-- CYBERPUNK -->
         <article class="unit-product">
@@ -219,13 +204,13 @@
     </section>
 
     <!-- Título destacados y recomendados  -->
-    <header class="main-title" id="long-title">
+    <header class="main-title">
         <h3 class="big-title">DESTACADOS & RECOMENDADOS</h3>
-        <h4 class="small-title">DESTACADOS & RECOMENDADOS</h4>
+        <h5 class="small-title">DESTACADOS & RECOMENDADOS</h5>
     </header>
 
     <!-- Sección destacados y recomendados -->
-    <section class="main-section" id="last-section">
+    <section class="main-section">
 
         <!-- HOLLOW KNIGHT -->
         <article class="unit-product">
@@ -365,6 +350,19 @@
         </article>
 
     </section>
+
+    <!-- Título todos los juegos -->
+    <header class="main-title">
+        <h3 class="bit-title">TODOS LOS TÍTULOS</h3>
+        <h5 class="small-title">TODOS LOS TÍTULOS</h5>
+    </header>
+
+    <section class="main-section last-section">
+        <% for (i = 0 ; i < products.length ; i++) { %>
+            <%- include('./products/partials/product',{products}) %>
+        <% } %>
+    </section>
+
 </main>
 
 <%- include('./partials/footer') %>
