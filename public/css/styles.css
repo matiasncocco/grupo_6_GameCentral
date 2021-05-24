@@ -1116,9 +1116,9 @@ DESKTOP
         font-size: 14px;
     }
 
-        .product-file {
-            width: 215px;
-        }
+    .product-file {
+        width: 215px;
+    }
 
     /* BUTTONS */
     .button-send:hover {
