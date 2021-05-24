@@ -1,32 +1,34 @@
 <%- include('../partials/head') %>
 <%- include('../partials/header') %>
-
 <main class="main-main">
-
     <header class="main-title first-title">
         <h3 class="bit-title">AÑADIR ARTÍCULO</h3>
         <h5 class="small-title">AÑADIR ARTÍCULO</h5>
     </header>
 
     <form class="product-create-form" action="/products" method="POST">
-
         <section class="product-create-section">
             <!-- name -->
             <div class="input-box">
-                <label class="label-label" for="name">Nombre</label>
+                <label class="label-label" for="name">
+                    Nombre
+                </label>
                 <input class="input-text input-text-product" type="text" name="name" id="name" placeholder="Pac-Man" required>
             </div>
-            
+
             <!-- category -->
             <div class="input-box category-box">
                 <% for (i = 1 ; i < 5 ; i++) { %>
                     <div class="single-category">
-                        <label class="label-label" for="category">Categoría <%= [i] %></label>
-                        <input class="input-text input-text-product" type="text" name="category" id="category" required>
+                        <label class="label-label" for="category<%= [i]%>">
+                            Categoría <%= [i] %>
+                        </label>
+                        <input class="input-text input-text-product" type="text" name="category" id="category<%= [i] %>" required>
                     </div>
                 <% } %>
             </div>
             
+            <!-- FILES x3 -->
             <div class="input-box file-box">
                 <label class="label-label file-box-label">Imágenes</label>
                 <!-- img -->
@@ -45,7 +47,9 @@
         
             <!-- relevant -->
             <div class="input-box">
-                <label class="label-label">¿Clasificar producto como "RELEVANT"?</label>
+                <label class="label-label">
+                    ¿Clasificar producto como "RELEVANT"?
+                </label>
                 <label class="label-label label-radio" for="relevant-true">
                     RELEVANT product<input class="input-radio" type="radio" name="relevant" value="true" id="relevant-true" required>
                 </label>
@@ -56,13 +60,17 @@
 
             <!-- price -->
             <div class="input-box">
-                <label class="label-label" for="price">Precio</label>
+                <label class="label-label" for="price">
+                    Precio
+                </label>
                 <input class="input-text input-price" type="text" name="price" id="price" placeholder="$1999.99" maxlength="8" required>
             </div>
 
             <!-- discount -->
             <div class="input-box">
-                <label class="label-label">¿Está éste producto en oferta?</label>
+                <label class="label-label">
+                    ¿Está éste producto en oferta?
+                </label>
                 <label class="label-label label-radio" for="discount-true">
                     Si<input class="input-radio" type="radio" name="discount" value="true" id="discount-true" required>
                 </label>
@@ -73,48 +81,67 @@
             
             <!-- discount rate -->
             <div class="input-box">
-                <span class="rule-indicator">*Solo si el producto está EN OFERTA:</span>
-                <label class="label-label discount-rate-label" for="discountRate">¿Qué porcentaje de descuento se debe aplicar?</label>
-                <span class="discount-indicator">%</span><input class="input-text input-discount" type="text" name="discountRate" id="discountRate" placeholder="50" maxlength="2">
+                <span class="rule-indicator">
+                    *Solo si el producto está EN OFERTA:
+                </span>
+                <label class="label-label discount-rate-label" for="discountRate">
+                    ¿Qué porcentaje de descuento se debe aplicar?
+                </label>
+                <span class="discount-indicator">
+                    %
+                </span>
+                <input class="input-text input-discount" type="text" name="discountRate" id="discountRate" placeholder="50" maxlength="2">
             </div>
                         
             <!-- description -->
             <div class="input-box">
-                <label class="label-label" for="description">Descripción breve</label>
+                <label class="label-label" for="description">
+                    Descripción breve
+                </label>
                 <textarea class="text-area-product" name="description" id="description" rows="5" maxlength="170" placeholder="Max: 170 caracteres." required></textarea>
             </div>
 
             <!-- longDescription -->
             <div class="input-box">
-                <label class="label-label" for="longDescription">Descripción extensa</label>
+                <label class="label-label" for="longDescription">
+                    Descripción extensa
+                </label>
                 <textarea class="text-area-product" name="longDescription" id="longDescription" rows="15" maxlength="1000" placeholder="Max: 1000 caracteres." required></textarea>
             </div>
 
             <!-- BUTTONS -->
             <div class="button-box">
                 <button class="button-send" type="submit">
-                    <h1 class="big-title">CREAR</h1>
-                    <h4 class="small-title">CREAR</h4>
+                    <h1 class="big-title">
+                        CREAR
+                    </h1>
+                    <h4 class="small-title">
+                        CREAR
+                    </h4>
                 </button>
                 <button class="button-cancel" type="button">
                     <a href="/">
-                        <h3 class="big-title">CANCELAR</h3>
+                        <h3 class="big-title">
+                            CANCELAR
+                        </h3>
                     </a>
                     <a href="/">
-                        <h5 class="small-title">CANCELAR</h5>
+                        <h5 class="small-title">
+                            CANCELAR
+                        </h5>
                     </a>
                 </button>
             </div>
 
             <button class="button-reset" type="reset">
-                <h4 class="big-title">Limpiar campos</h4>
-                <h6 class="small-title">Limpiar campos</h6>
+                <h4 class="big-title">
+                    Limpiar campos
+                </h4>
+                <h6 class="small-title">
+                    Limpiar campos
+                </h6>
             </button>
-
         </section>
-
     </form>
-
 </main>
-
 <%- include('../partials/footer')%>

@@ -733,6 +733,7 @@ img {
     align-items: center;
     justify-content: flex-start;
     position: relative;
+    border-top: 2px solid #B6B1F1;
 }
 
 .to-the-top {
