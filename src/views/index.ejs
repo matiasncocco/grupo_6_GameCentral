@@ -10,71 +10,9 @@
     </header>    
 
     <!-- Sección de ofertas -->
-    <section class="main-section">
-        <% for (i = 0 ; i < inOffer.length ; i++) { %>
-            <article class="unit-product">
-                <div class="game-image">
-                    <!-- product.card -->
-                    <img src="/img/products/card/<%= inOffer[i].card %>">
-                    <div class="ribbon">
-                        <% if (inOffer[i].discount == true) { %>
-                            <!-- product.price -->
-                            <div class="full-price crossed-out">
-                                <h3 class="big-title">
-                                    <%= inOffer[i].price %>
-                                </h3>
-                                <h4 class="small-title">
-                                    <%= inOffer[i].price %>
-                                </h4>
-                            </div>
-                            <!-- product.discountRate -->
-                            <div class="discount">
-                                <h2 class="big-title discount-h">
-                                    <%= inOffer[i].discountRate %>%
-                                </h2>
-                                <h3 class="small-title discount-h3">
-                                    <%= inOffer[i].discountRate %>%
-                                </h3>
-                            </div>
-                            <!-- PRICE / DISCOUNT = NEW PRICE -->
-                            <!-- enviar resultado desde controlador -->
-                            <div class="new-price">
-                                <h2 class="big-title">
-                                    <%= inOffer[i].price %>
-                                </h2>
-                                <h3 class="small-title">
-                                    <%= inOffer[i].price %>
-                                </h3>
-                            </div>
-                        <% } else { %>
-                            <div class="full-price">
-                                <!-- product.price -->
-                                <h3 class="big-title">
-                                    <%= inOffer[i].price %>
-                                </h3>
-                                <h4 class="small-title">
-                                    <%= inOffer[i].price %>
-                                </h4>
-                            </div>
-                        <% } %>
-                    </div>
-                </div>
-                <div class="overlay-product"></div>
-                <div class="game-title">
-                    <!-- product.name -->
-                    <h2 class="big-title">
-                        <%= inOffer[i].name %>
-                    </h2>
-                </div>
-                <div class="ver-mas">
-                    <!-- product.id -->
-                    <a href="/products/<%= inOffer[i].id %>">
-                        <h3 class="big-title">
-                            VER MÁS
-                        </h3>
-                    </a>
-                </div>
-            </article>
+    <section class="main-section last-section">
+        <% for (i = 0 ; i < products.length ; i++) { %>
+            <%- include('./products/partials/product',{inOffer}) %>
         <% } %>
     </section>
 
@@ -83,73 +21,9 @@
         <h3 class="big-title">DESTACADOS & RECOMENDADOS</h3>
         <h5 class="small-title">DESTACADOS & RECOMENDADOS</h5>
     </header>
-
-    <!-- Sección destacados y recomendados -->
     <section class="main-section">
         <% for (i = 0 ; i < relevant.length ; i++) { %>
-        <article class="unit-product">
-            <div class="game-image">
-                <!-- product.card -->
-                <img src="/img/products/card/<%= relevant[i].card %>">
-                <div class="ribbon">
-                    <% if (relevant[i].discount == true) { %>
-                        <!-- product.price -->
-                        <div class="full-price crossed-out">
-                            <h3 class="big-title">
-                                <%= relevant[i].price %>
-                            </h3>
-                            <h4 class="small-title">
-                                <%= relevant[i].price %>
-                            </h4>
-                        </div>
-                        <!-- product.discountRate -->
-                        <div class="discount">
-                            <h2 class="big-title discount-h">
-                                <%= relevant[i].discountRate %>%
-                            </h2>
-                            <h3 class="small-title discount-h3">
-                                <%= relevant[i].discountRate %>%
-                            </h3>
-                        </div>
-                        <!-- PRICE / DISCOUNT = NEW PRICE -->
-                        <!-- enviar resultado desde controlador -->
-                        <div class="new-price">
-                            <h2 class="big-title">
-                                <%= relevant[i].price %>
-                            </h2>
-                            <h3 class="small-title">
-                                <%= relevant[i].price %>
-                            </h3>
-                        </div>
-                    <% } else { %>
-                        <div class="full-price">
-                            <!-- product.price -->
-                            <h3 class="big-title">
-                                <%= relevant[i].price %>
-                            </h3>
-                            <h4 class="small-title">
-                                <%= relevant[i].price %>
-                            </h4>
-                        </div>
-                    <% } %>
-                </div>
-            </div>
-            <div class="overlay-product"></div>
-            <div class="game-title">
-                <!-- product.name -->
-                <h2 class="big-title">
-                    <%= relevant[i].name %>
-                </h2>
-            </div>
-            <div class="ver-mas">
-                <!-- product.id -->
-                <a href="/products/<%= relevant[i].id %>">
-                    <h3 class="big-title">
-                        VER MÁS
-                    </h3>
-                </a>
-            </div>
-        </article>
+            <%- include('./products/partials/product',{relevant}) %>
         <% } %>
     </section>
 
