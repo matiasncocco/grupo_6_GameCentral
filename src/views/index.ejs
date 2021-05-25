@@ -11,196 +11,71 @@
 
     <!-- Sección de ofertas -->
     <section class="main-section">
-        
-        <article class="unit-product">
-            <div class="game-image">
-                <img src="/img/products/card/hades-card.jpg">
-                <div class="new-price">
-                    <h2 class="big-title">$139.99</h2>
-                    <h3 class="small-title">$139.99</h3>
-                </div>
-                <div class="ribbon">
-                    <div class="full-price crossed-out">
-                        <h3 class="big-title">$279.99</h3>
-                        <h4 class="small-title">%279.99</h4>
-                    </div>
-                    <div class="discount">
-                        <h2 class="big-title">50%</h2>
-                        <h3 class="small-title">50%</h3>
-                    </div>
-                </div>
-            </div>
-            <div class="overlay-product"></div>
-            <div class="game-title">
-                <h2 class="big-title">HADES</h2>
-            </div>
-            <div class="ver-mas">
-                <a href="/products/1">
-                    <h3 class="big-title">VER MÁS</h3>
-                </a>
-            </div>
-        </article>
-
-        <!-- CYBERPUNK -->
-        <article class="unit-product">
-            <a href="/productDetailCyberpunk">
-                <!-- Imágen -->
+        <% for (i = 0 ; i < inOffer.length ; i++) { %>
+            <article class="unit-product">
                 <div class="game-image">
-                    <img src="/img/products/card/cyberpunk-card.jpg" alt="cyberpunk">
-                    <!-- Nuevo precio -->
-                    <div class="new-price">
-                        <h2 class="big-title">$1099.50</h2>
-                        <h3 class="small-title">$1099.50</h3>
-                    </div>
-                    <!-- Cinta -->
+                    <!-- product.card -->
+                    <img src="/img/products/card/<%= inOffer[i].card %>">
                     <div class="ribbon">
-                        <div class="full-price crossed-out">
-                            <h3 class="big-title">$2199.00</h3>
-                            <h4 class="small-title">$2199.00</h4>
-                        </div>
-                        <div class="discount">
-                            <h2 class="big-title">50%</h2>
-                            <h3 class="small-title">50%</h3>
-                        </div>
+                        <% if (inOffer[i].discount == true) { %>
+                            <!-- product.price -->
+                            <div class="full-price crossed-out">
+                                <h3 class="big-title">
+                                    <%= inOffer[i].price %>
+                                </h3>
+                                <h4 class="small-title">
+                                    <%= inOffer[i].price %>
+                                </h4>
+                            </div>
+                            <!-- product.discountRate -->
+                            <div class="discount">
+                                <h2 class="big-title discount-h">
+                                    <%= inOffer[i].discountRate %>%
+                                </h2>
+                                <h3 class="small-title discount-h3">
+                                    <%= inOffer[i].discountRate %>%
+                                </h3>
+                            </div>
+                            <!-- PRICE / DISCOUNT = NEW PRICE -->
+                            <!-- enviar resultado desde controlador -->
+                            <div class="new-price">
+                                <h2 class="big-title">
+                                    <%= inOffer[i].price %>
+                                </h2>
+                                <h3 class="small-title">
+                                    <%= inOffer[i].price %>
+                                </h3>
+                            </div>
+                        <% } else { %>
+                            <div class="full-price">
+                                <!-- product.price -->
+                                <h3 class="big-title">
+                                    <%= inOffer[i].price %>
+                                </h3>
+                                <h4 class="small-title">
+                                    <%= inOffer[i].price %>
+                                </h4>
+                            </div>
+                        <% } %>
                     </div>
                 </div>
-                </div>
-                <div class="overlay-product">
+                <div class="overlay-product"></div>
+                <div class="game-title">
+                    <!-- product.name -->
+                    <h2 class="big-title">
+                        <%= inOffer[i].name %>
+                    </h2>
                 </div>
                 <div class="ver-mas">
-                    <h3>VER MÁS</h3>
+                    <!-- product.id -->
+                    <a href="/products/<%= inOffer[i].id %>">
+                        <h3 class="big-title">
+                            VER MÁS
+                        </h3>
+                    </a>
                 </div>
-            </a> 
-        </article>
-
-        <!-- STARDEW VALLEY -->
-        <article class="unit-product">
-            <a href="productDetailStardew">
-                <!-- Imágen -->
-                <div class="game-image">
-                    <img src="/img/products/card/stardew-valley-card.jpg" alt="stardew-valley">
-                    <!-- Nuevo precio -->
-                    <div class="new-price">
-                        <h2 class="big-title">$89.99</h2>
-                        <h3 class="small-title">$89.99</h3>
-                    </div>
-                    <!-- Cinta -->
-                    <div class="ribbon">
-                        <div class="full-price crossed-out">
-                            <h3 class="big-title">$179.99</h3>
-                            <h4 class="small-title">$179.99</h4>
-                        </div>
-                        <div class="discount">
-                            <h2 class="big-title">50%</h2>
-                            <h3 class="small-title">50%</h3>
-                        </div>
-                    </div>
-                </div>
-                </div>
-                <div class="overlay-product">
-                </div>
-                <div class="ver-mas">
-                    <h3>VER MÁS</h3>
-                </div>
-            </a> 
-        </article>
-
-        <!-- SEKIRO -->
-        <article class="unit-product">
-            <a href="productDetailSekiro">
-                <!-- Imágen -->
-                <div class="game-image">
-                    <img src="/img/products/card/sekiro-card.jpg" alt="sekiro">
-                    <!-- Nuevo precio -->
-                    <div class="new-price">
-                        <h2 class="big-title">$649.50</h2>
-                        <h3 class="small-title">$649.50</h3>
-                    </div>
-                    <!-- Cinta -->
-                    <div class="ribbon">
-                        <div class="full-price crossed-out">
-                            <h3 class="big-title">$1299.00</h3>
-                            <h4 class="small-title">$1299.00</h4>
-                        </div>
-                        <div class="discount">
-                            <h2 class="big-title">50%</h2>
-                            <h2 class="small-title">50%</h2>
-                        </div>
-                    </div>
-                </div>
-                </div>
-                <div class="overlay-product">
-                </div>
-                <div class="ver-mas">
-                    <h3>VER MÁS</h3>
-                </div>
-            </a> 
-        </article>
-
-        <!-- CELESTE -->
-        <article class="unit-product">
-            <a href="#">
-                <!-- Imágen -->
-                <div class="game-image">
-                    <img src="/img/products/card/celeste-card.jpg" alt="celeste">
-                    <!-- Nuevo precio -->
-                    <div class="new-price">
-                        <h2 class="big-title">$112.49</h2>
-                        <h3 class="small-title">$112.49</h3>
-                    </div>
-                    <!-- Cinta -->
-                    <div class="ribbon">
-                        <div class="full-price crossed-out">
-                            <h3 class="big-title">$224.99</h3>
-                            <h4 class="small-title">$224.99</h4>
-                        </div>
-                        <div class="discount">
-                            <h2 class="big-title">50%</h2>
-                            <h3 class="small-title">50%</h3>
-                        </div>
-                    </div>
-                </div>
-                </div>
-                <div class="overlay-product">
-                </div>
-                <div class="ver-mas">
-                    <h3>VER MÁS</h3>
-                </div>
-            </a> 
-        </article>
-
-        <!-- MINECRAFT -->
-        <article class="unit-product">
-            <a href="#">
-                <!-- Imágen -->
-                <div class="game-image">
-                    <img src="/img/products/card/minecraft-card.jpg" alt="minecraft">
-                    <!-- Nuevo precio -->
-                    <div class="new-price">
-                        <h2 class="big-title">$96.00</h2>
-                        <h3 class="small-title">$96.00</h3>
-                    </div>
-                    <!-- Cinta -->
-                    <div class="ribbon">
-                        <div class="full-price crossed-out">
-                            <h3 class="big-title">$192.00</h3>
-                            <h4 class="small-title">$192.00</h4>
-                        </div>
-                        <div class="discount">
-                            <h2 class="big-title">50%</h2>
-                            <h3 class="small-title">50%</h3>
-                        </div>
-                    </div>
-                </div>
-                </div>
-                <div class="overlay-product">
-                </div>
-                <div class="ver-mas">
-                    <h3>VER MÁS</h3>
-                </div>
-            </a> 
-        </article>
-
+            </article>
+        <% } %>
     </section>
 
     <!-- Título destacados y recomendados  -->
@@ -211,144 +86,71 @@
 
     <!-- Sección destacados y recomendados -->
     <section class="main-section">
-
-        <!-- HOLLOW KNIGHT -->
+        <% for (i = 0 ; i < relevant.length ; i++) { %>
         <article class="unit-product">
-            <a href="#">
-                <!-- Imágen -->
-                <div class="game-image">
-                    <img src="/img/products/card/hollow-knight-card.jpg" alt="hollow-knight">
-                    <!-- Cinta -->
-                    <div class="ribbon">
-                        <div class="full-price">
-                            <h3 class="big-title">$179.99</h3>
-                            <h4 class="small-title">$179.99</h4>
+            <div class="game-image">
+                <!-- product.card -->
+                <img src="/img/products/card/<%= relevant[i].card %>">
+                <div class="ribbon">
+                    <% if (relevant[i].discount == true) { %>
+                        <!-- product.price -->
+                        <div class="full-price crossed-out">
+                            <h3 class="big-title">
+                                <%= relevant[i].price %>
+                            </h3>
+                            <h4 class="small-title">
+                                <%= relevant[i].price %>
+                            </h4>
                         </div>
-                    </div>
-                </div>
-                <div class="overlay-product">
-                </div>
-                <div class="ver-mas">
-                    <h3>VER MÁS</h3>
-                </div>
-            </a>
-        </article>
-
-        <!-- TERRARIA -->
-        <article class="unit-product">
-            <a href="#">
-                <!-- Imágen -->
-                <div class="game-image">
-                    <img src="/img/products/card/terraria-card.jpg" alt="terraria">
-                    <!-- Cinta -->
-                    <div class="ribbon">
-                        <div class="full-price">
-                            <h3 class="big-title">$129.99</h3>
-                            <h4 class="small-title">$129.99</h4>
+                        <!-- product.discountRate -->
+                        <div class="discount">
+                            <h2 class="big-title discount-h">
+                                <%= relevant[i].discountRate %>%
+                            </h2>
+                            <h3 class="small-title discount-h3">
+                                <%= relevant[i].discountRate %>%
+                            </h3>
                         </div>
-                    </div>
-                </div>
-                </div>
-                <div class="overlay-product">
-                </div>
-                <div class="ver-mas">
-                    <h3>VER MÁS</h3>
-                </div>
-            </a> 
-        </article>
-
-        <!-- AOE II -->
-        <article class="unit-product">
-            <a href="#">
-                <!-- Imágen -->
-                <div class="game-image">
-                    <img src="/img/products/card/aoe-ii-card.jpg" alt="aoe-ii">
-                    <!-- Cinta -->
-                    <div class="ribbon">
-                        <div class="full-price">
-                            <h3 class="big-title">$299.00</h3>
-                            <h4 class="small-title">$299.00</h4>
+                        <!-- PRICE / DISCOUNT = NEW PRICE -->
+                        <!-- enviar resultado desde controlador -->
+                        <div class="new-price">
+                            <h2 class="big-title">
+                                <%= relevant[i].price %>
+                            </h2>
+                            <h3 class="small-title">
+                                <%= relevant[i].price %>
+                            </h3>
                         </div>
-                    </div>
-                </div>
-                </div>
-                <div class="overlay-product">
-                </div>
-                <div class="ver-mas">
-                    <h3>VER MÁS</h3>
-                </div>
-            </a> 
-        </article>
-
-        <!-- RAINBOW SIX SIEGE -->
-        <article class="unit-product">
-            <a href="#">
-                <!-- Imágen -->
-                <div class="game-image">
-                    <img src="/img/products/card/rainbow-six-siege-card.jpg" alt="rainbow-six-siege">
-                    <!-- Cinta -->
-                    <div class="ribbon">
+                    <% } else { %>
                         <div class="full-price">
-                            <h3 class="big-title">$999.00</h3>
-                            <h4 class="small-title">$999.00</h4>
+                            <!-- product.price -->
+                            <h3 class="big-title">
+                                <%= relevant[i].price %>
+                            </h3>
+                            <h4 class="small-title">
+                                <%= relevant[i].price %>
+                            </h4>
                         </div>
-                    </div>
+                    <% } %>
                 </div>
-                </div>
-                <div class="overlay-product">
-                </div>
-                <div class="ver-mas">
-                    <h3>VER MÁS</h3>
-                </div>
-            </a> 
+            </div>
+            <div class="overlay-product"></div>
+            <div class="game-title">
+                <!-- product.name -->
+                <h2 class="big-title">
+                    <%= relevant[i].name %>
+                </h2>
+            </div>
+            <div class="ver-mas">
+                <!-- product.id -->
+                <a href="/products/<%= relevant[i].id %>">
+                    <h3 class="big-title">
+                        VER MÁS
+                    </h3>
+                </a>
+            </div>
         </article>
-
-        <!-- COD MW -->
-        <article class="unit-product">
-            <a href="#">
-                <!-- Imágen -->
-                <div class="game-image">
-                    <img src="/img/products/card/cod-mw-card.jpg" alt="cod-mw">
-                    <!-- Cinta -->
-                    <div class="ribbon">
-                        <div class="full-price">
-                            <h3 class="big-title">$1999.00</h3>
-                            <h4 class="small-title">$1999.00</h4>
-                        </div>
-                    </div>
-                </div>
-                </div>
-                <div class="overlay-product">
-                </div>
-                <div class="ver-mas">
-                    <h3>VER MÁS</h3>
-                </div>
-            </a> 
-        </article>
-
-        <!-- PORTAL -->
-        <article class="unit-product">
-            <a href="#">
-                <!-- Imágen -->
-                <div class="game-image">
-                    <img src="/img/products/card/portal-card.jpg" alt="portal">
-                    <!-- Cinta -->
-                    <div class="ribbon">
-                        <div class="full-price">
-                            <h3 class="big-title">$129.99</h3>
-                            <h4 class="small-title">$129.99</h4>
-                        </div>
-                    </div>
-                </div>
-                </div>
-                <div class="overlay-product">
-                </div>
-                <div class="ver-mas">
-                    <h3>VER MÁS</h3>
-                </div>
-            </a> 
-        </article>
-
+        <% } %>
     </section>
 
     <!-- Título todos los juegos -->
@@ -356,13 +158,10 @@
         <h3 class="big-title">TODOS LOS TÍTULOS</h3>
         <h5 class="small-title">TODOS LOS TÍTULOS</h5>
     </header>
-
     <section class="main-section last-section">
         <% for (i = 0 ; i < products.length ; i++) { %>
             <%- include('./products/partials/product',{products}) %>
         <% } %>
     </section>
-
 </main>
-
 <%- include('./partials/footer') %>

@@ -292,12 +292,22 @@ img {
 
 .discount {
     position: absolute;
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
     right: 5px;
-    bottom: 0;
-    color: #2ECC40;
-    text-shadow: -1px 0 black, 0 1px black, 1px 0 black, 0 -1px black;
+    bottom: -10px;
+    background-color: #B14593;
+    border: 1px black solid;
+    text-shadow: -2px 0 black, 0 2px black, 2px 0 black, 0 -2px black;
     opacity: 1;
     transition: opacity .5s cubic-bezier(.25,.25,.25,.25);
+}
+
+.discount-h {
+    position: absolute;
+    bottom: 13px;
+    left: 4px;
 }
 
 .crossed-out {
@@ -882,6 +892,18 @@ TABLETS
     .unit-product {
         max-width: 50%;
         font-weight: bold;
+    }
+
+    .discount {
+        width: 55px;
+        height: 55px;
+        right: 5px;
+        bottom: -10px;
+    }
+
+    .discount-h {
+        left: 1px;
+        bottom: 12px;
     }
 
 

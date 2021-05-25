@@ -1,35 +1,63 @@
 <article class="unit-product">
     <div class="game-image">
+        <!-- product.card -->
         <img src="/img/products/card/<%= products[i].card %>">
         <div class="ribbon">
             <% if (products[i].discount == true) { %>
+                <!-- product.price -->
                 <div class="full-price crossed-out">
-                    <h3 class="big-title"><%= products[i].price %></h3>
-                    <h4 class="small-title"><%= products[i].price %></h4>
+                    <h3 class="big-title">
+                        <%= products[i].price %>
+                    </h3>
+                    <h4 class="small-title">
+                        <%= products[i].price %>
+                    </h4>
                 </div>
+                <!-- product.discountRate -->
                 <div class="discount">
-                    <h2 class="big-title">50%</h2>
-                    <h3 class="small-title">50%</h3>
+                    <h2 class="big-title discount-h">
+                        <%= products[i].discountRate %>%
+                    </h2>
+                    <h3 class="small-title discount-h3">
+                        <%= products[i].discountRate %>%
+                    </h3>
                 </div>
+                <!-- PRICE / DISCOUNT = NEW PRICE -->
+                <!-- enviar resultado desde controlador -->
                 <div class="new-price">
-                    <h2 class="big-title"><%= products[i].price %></h2>
-                    <h3 class="small-title"><%= products[i].price %></h3>
+                    <h2 class="big-title">
+                        <%= products[i].price %>
+                    </h2>
+                    <h3 class="small-title">
+                        <%= products[i].price %>
+                    </h3>
                 </div>
             <% } else { %>
                 <div class="full-price">
-                    <h3 class="big-title"><%= products[i].price %></h3>
-                    <h4 class="small-title"><%= products[i].price %></h4>
+                    <!-- product.price -->
+                    <h3 class="big-title">
+                        <%= products[i].price %>
+                    </h3>
+                    <h4 class="small-title">
+                        <%= products[i].price %>
+                    </h4>
                 </div>
             <% } %>
         </div>
     </div>
     <div class="overlay-product"></div>
     <div class="game-title">
-        <h2 class="big-title"><%= products[i].name %></h2>
+        <!-- product.name -->
+        <h2 class="big-title">
+            <%= products[i].name %>
+        </h2>
     </div>
     <div class="ver-mas">
+        <!-- product.id -->
         <a href="/products/<%= products[i].id %>">
-            <h3 class="big-title">VER MÁS</h3>
+            <h3 class="big-title">
+                VER MÁS
+            </h3>
         </a>
     </div>
 </article>

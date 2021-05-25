@@ -7,10 +7,17 @@ let filePath = path.join(__dirname + '/../database/products.json');
 let productsFile = fs.readFileSync(filePath,'UTF-8');
 let products = JSON.parse(productsFile);
 
+let inOffer = products.filter(product => {
+    return product.discount == true;
+});
+let relevant = products.filter(product => {
+    return product.relevant == true;
+});
+
 let mainController = {
     index: (req, res) => {
         title = 'Game Central';
-        res.render('index',{title,products});
+        res.render('index',{title,products,inOffer,relevant});
     },
     cart: (req,res) => {
         title = 'Carrito de compras';
