@@ -36,15 +36,29 @@
 
             <article class="category-box">
                 <% productCategory.forEach(category => { %>
-                    <p>
-                        <%= category %>
-                    </p>
+                    <div class="category-single-box">
+                        <p class="category-text">
+                            <%= category %>
+                        </p>
+                    </div>
                 <% }) %>
             </article>
         </section>
 
         <section class="show-long-description">
-            <p><%= product.longDescription %></p>
+            <header class="show-title">
+                <h3 class="big-title">
+                    MÁS SOBRE <%= product.name %>
+                </h3>
+                <h5 class="small-title">
+                    MAS SOBRE <%= product.name %>
+                </h5>
+            </header>
+            <article class="show-description long-description">
+                <p>
+                    <%= product.longDescription %>
+                </p>
+            </article>
         </section>
     </section>
 </main>

@@ -313,6 +313,7 @@ img {
 .show-section {
     margin: auto;
     margin-top: 25px;
+    margin-bottom: 25px;
     padding: 8px;
     background-image: linear-gradient(#E2DDF9,#858BB7);
     border: #858BB7 solid 2px;
@@ -360,22 +361,38 @@ img {
 }
 
 .category-title {
-    margin-left: 5px;
-    margin-bottom: 5px;
+    width: 25%;
+    text-align: center;
 }
 
 .category-box {
-    width: 100%;
-    font-size: 10px;
+    width: 75%;
+    display: flex;
+    flex-flow: column wrap;
 }
 
-.category-box p {
-    padding-top: 5px;
-    display: inline-block;
-    background-image: linear-gradient(#858BB7,#E2DDF9);
-    margin: 0 4px;
-    padding: 4px;
-    border-radius: 4px;
+.category-single-box {
+    width: 50%;
+    text-align: center;
+}
+
+.category-single-box p {
+    margin: 2px;
+    background-color: #B14593;
+    border: dotted 1px black;
+    border-radius: 8px;
+    color: black;
+    font-weight: 400;
+    font-size: 13.28px;
+    text-shadow: -1px 1px 0 #B6B1F1;
+}
+
+.show-long-description .show-title {
+    padding-top: 30px;
+}
+
+.long-description {
+    padding-left: 15px;
 }
     
     
@@ -904,8 +921,16 @@ TABLETS
         padding: 10px;
     }
 
+    .show-title h3 {
+        font-size: 24px;
+    }
+
     .show-description {
         font-size: 14px;
+    }
+
+    .category-single-box p {
+        font-size: 18.72px;
     }
 
 
@@ -1107,6 +1132,14 @@ DESKTOP
         font-size: 32px;
     }
 
+    .show-title h3 {
+        font-size: 24px;
+    }
+
+    .category-single-box p {
+        font-size: 24px;
+    }
+
     .show-description {
         font-size: 16px;
     }
@@ -1278,6 +1311,14 @@ PANTALLAS +
 
     .show-title h2 {
         font-size: 36px;
+    }
+
+    .show-title h3 {
+        font-size: 32px;
+    }
+
+    .category-single-box p {
+        font-size: 32px;
     }
 
     .show-description {
