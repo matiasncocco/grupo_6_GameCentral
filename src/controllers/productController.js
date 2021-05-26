@@ -33,7 +33,15 @@ let productController = {
     
     // 4
     store: (req,res) => {
-        res.send(req.body);
+        let product = {
+            id: lastId,
+            ... req.body,
+        }
+        products.push(product);
+        productsFile = JSON.stringify(products, null, 4);
+        fs.writeFileSync(filePath, productsFile);
+
+        res.redirect('/');
     },
 
     // 5
