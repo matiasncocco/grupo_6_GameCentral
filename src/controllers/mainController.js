@@ -3,7 +3,7 @@ let path = require('path');
 
 let title = '';
 
-let filePath = path.join(__dirname + '/../database/products.json');
+let filePath = path.join(__dirname + '/../data/products.json');
 let productsFile = fs.readFileSync(filePath,'UTF-8');
 let products = JSON.parse(productsFile);
 

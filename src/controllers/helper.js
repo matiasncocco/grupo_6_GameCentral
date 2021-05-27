@@ -1,11 +1,11 @@
 let help = {
     lastId: () => {
-        array.forEach(element => {
-            if(element.id < 0){
+        // array.forEach(element => {
+            // if(element.id < 0){
 
-            } return()
-        });
+            // } return()
+        // });
     }
 }
 
-module.exports = help
+// module.exports = help
