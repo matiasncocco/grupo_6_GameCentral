@@ -7,12 +7,13 @@ router.get('/create', productController.create); // 2 CREATE: show product <form
 router.get('/:id', productController.show); // 3 SHOW: show product detail
 router.post('/', productController.store); // 4 STORE: store product <form> fields
 
-// 5. /products/:id/edit (GET)
-// Formulario de edición de productos
+// 5 EDIT: show <form> with current product data
+// /products/:id/edit (GET)
 
-// 6. /products/:id (PUT)
-// Acción de edición (a donde se envía el formulario):
+// 6 UPDATE: submit changes to existing product
+// /products/:id (PUT)
 
-// 7. /products/:id (DELETE)
+// 7 DESTROY: remove entry
+// /products/:id (DELETE)
 
 module.exports = router;
