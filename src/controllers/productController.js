@@ -1,11 +1,10 @@
-let fs = require('fs');
-let path = require('path');
+// let fs = require('fs');
+// let path = require('path');
+
+let { readJson, writeJson, lastId } = require('./helper');
 
 let title = '';
-
-let filePath = path.join(__dirname + '/../data/products.json');
-let productsFile = fs.readFileSync(filePath,'UTF-8');
-let products = JSON.parse(productsFile);
+let products = readJson('products.json');
 
 let productController = {
     // 1 SHOW ALL PRODUCTS
@@ -15,7 +14,7 @@ let productController = {
 
     // 2
     create: (req,res) => {
-        title = 'Nuevo producto';
+        title = 'Nuevo producto';   
         res.render('./products/create',{title});
     },
 
@@ -34,13 +33,11 @@ let productController = {
     // 4
     store: (req,res) => {
         let product = {
-            id: lastId,
+            id: lastId(products) + 1,
             ... req.body,
         }
         products.push(product);
-        productsFile = JSON.stringify(products, null, 4);
-        fs.writeFileSync(filePath, productsFile);
-
+        writeJson(products,'products');
         res.redirect('/');
     },
 
