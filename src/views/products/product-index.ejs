@@ -1,19 +1,31 @@
 <%- include ('../partials/head') %>
 <%- include ('../partials/header') %>
-
 <main class="main-main">
-
     <!-- Título todos los juegos -->
-    <header class="main-title">
-        <h3 class="big-title">TODOS LOS TÍTULOS</h3>
-        <h5 class="small-title">TODOS LOS TÍTULOS</h5>
+    <header class="main-title first-title flex-title">
+        <div class="title-header-box">
+            <h3 class="big-title">
+                TODOS LOS TÍTULOS
+            </h3>
+            <h5 class="small-title">
+                TODOS LOS TÍTULOS
+            </h5>
+        </div>
+        <div class="title-icon-box">
+            <a href="/products/create">
+                <h3 class="big-title">
+                    <i class="fas fa-plus-square"></i>      
+                </h3>
+                <h5 class="small-title">
+                    <i class="fas fa-plus-square"></i>           
+                </h5>
+            </a>
+        </div>
     </header>
     <section class="main-section last-section">
         <% for (i = 0 ; i < products.length ; i++) { %>
             <%- include('../products/partials/product', { 'product': products} ) %>
         <% } %>
     </section>
-
 </main>
-
 <%- include ('../partials/footer') %>

@@ -7,13 +7,13 @@ let productController = {
     // 1 GET: show all items
     index: (req,res) => {
         title = 'Todos los títulos'
-        res.render('./products/product-index', {title, products});
+        res.render('./products/product-index', { title, products } );
     },
 
     // 2 GET: show product <form>
     create: (req,res) => {
         title = 'Nuevo producto';   
-        res.render('./products/create', {title});
+        res.render('./products/create', { title } );
     },
 
     // 3 GET: show product detail
@@ -23,7 +23,7 @@ let productController = {
         for (i = 0 ; i < products.length ; i++) {
             if (products[i].id == gameId) {
                 let productCategory = products[i].category;
-                res.render('./products/show', {title,'product':products[i],productCategory});
+                res.render('./products/show', { title,'product':products[i],productCategory } );
             };
         };
     },
