@@ -10,7 +10,7 @@
         "price": "$279.99",
         "discount": true,
         "discountRate": 50,
-        "relevant": true,
+        "relevant": false,
         "category": [
             "Roguelike de acción",
             "Indie",
@@ -27,8 +27,8 @@
         "card": "hollow-knight-card.jpg",
         "capsule": "hollow-knight-capsule.jpg",
         "price": "$179.99",
-        "discount": true,
-        "discountRate": 25,
+        "discount": false,
+        "discountRate": null,
         "relevant": true,
         "category": [
             "Metroidvania",
@@ -48,7 +48,7 @@
         "price": "$279.99",
         "discount": true,
         "discountRate": 50,
-        "relevant": true,
+        "relevant": false,
         "category": [
             "Roguelike de acción",
             "Indie",
@@ -65,8 +65,8 @@
         "card": "hollow-knight-card.jpg",
         "capsule": "hollow-knight-capsule.jpg",
         "price": "$179.99",
-        "discount": true,
-        "discountRate": 25,
+        "discount": false,
+        "discountRate": null,
         "relevant": true,
         "category": [
             "Metroidvania",
@@ -86,7 +86,7 @@
         "price": "$279.99",
         "discount": true,
         "discountRate": 50,
-        "relevant": true,
+        "relevant": false,
         "category": [
             "Roguelike de acción",
             "Indie",
@@ -103,8 +103,8 @@
         "card": "hollow-knight-card.jpg",
         "capsule": "hollow-knight-capsule.jpg",
         "price": "$179.99",
-        "discount": true,
-        "discountRate": 25,
+        "discount": false,
+        "discountRate": null,
         "relevant": true,
         "category": [
             "Metroidvania",
@@ -112,42 +112,5 @@
             "Plataformas",
             "2D"
         ]
-    },
-    {
-        "name": "12312321",
-        "category": [
-            "asd",
-            "asd",
-            "ads",
-            "asd"
-        ],
-        "img": "",
-        "card": "",
-        "capsule": "",
-        "relevant": "true",
-        "price": "1111",
-        "discount": "false",
-        "discountRate": "23",
-        "description": "sssssssssssssssssssssss",
-        "longDescription": "sssssssssssssssssssssss sssssssssssssssssssssss sssssssssssssssssssssss"
-    },
-    {
-        "id": 7,
-        "name": "123213",
-        "category": [
-            "213123",
-            "213",
-            "12311",
-            "123213"
-        ],
-        "img": "",
-        "card": "",
-        "capsule": "",
-        "relevant": "true",
-        "price": "2313",
-        "discount": "true",
-        "discountRate": "23",
-        "description": "12321313",
-        "longDescription": "123213213213213"
     }
 ]

@@ -11,8 +11,8 @@
 
     <!-- Sección de ofertas -->
     <section class="main-section last-section">
-        <% for (i = 0 ; i < products.length ; i++) { %>
-            <%- include('./products/partials/product',{inOffer}) %>
+        <% for (i = 0 ; i < inOffer.length ; i++) { %>
+            <%- include('./products/partials/product', { 'product': inOffer } ) %>
         <% } %>
     </section>
 
@@ -23,19 +23,9 @@
     </header>
     <section class="main-section">
         <% for (i = 0 ; i < relevant.length ; i++) { %>
-            <%- include('./products/partials/product',{relevant}) %>
+            <%- include('./products/partials/product', { 'product': relevant } ) %>
         <% } %>
     </section>
 
-    <!-- Título todos los juegos -->
-    <header class="main-title">
-        <h3 class="big-title">TODOS LOS TÍTULOS</h3>
-        <h5 class="small-title">TODOS LOS TÍTULOS</h5>
-    </header>
-    <section class="main-section last-section">
-        <% for (i = 0 ; i < products.length ; i++) { %>
-            <%- include('./products/partials/product',{products}) %>
-        <% } %>
-    </section>
 </main>
 <%- include('./partials/footer') %>

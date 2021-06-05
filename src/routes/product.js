@@ -2,21 +2,10 @@ let express = require('express');
 let router = express.Router();
 let productController = require('../controllers/productController');
 
-// 2
-router.get('/create', productController.create);
-// 3
-router.get('/:id', productController.show);
-// 4
-router.post('/', productController.store);
-
-// 1. /products (GET)
-// Listado de productos
-
-// 2. /products/create (GET)
-// Formulario de creación de productos
-
-// 3. /products/:id (GET)
-// Detalle de un producto particular
+router.get('/index', productController.index); // 1 INDEX: show all items
+router.get('/create', productController.create); // 2 CREATE: show product <form>
+router.get('/:id', productController.show); // 3 SHOW: show product detail
+router.post('/', productController.store); // 4 STORE: store product <form> fields
 
 // 5. /products/:id/edit (GET)
 // Formulario de edición de productos

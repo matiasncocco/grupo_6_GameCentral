@@ -1,0 +1,19 @@
+<%- include ('../partials/head') %>
+<%- include ('../partials/header') %>
+
+<main class="main-main">
+
+    <!-- Título todos los juegos -->
+    <header class="main-title">
+        <h3 class="big-title">TODOS LOS TÍTULOS</h3>
+        <h5 class="small-title">TODOS LOS TÍTULOS</h5>
+    </header>
+    <section class="main-section last-section">
+        <% for (i = 0 ; i < products.length ; i++) { %>
+            <%- include('../products/partials/product', { 'product': products} ) %>
+        <% } %>
+    </section>
+
+</main>
+
+<%- include ('../partials/footer') %>

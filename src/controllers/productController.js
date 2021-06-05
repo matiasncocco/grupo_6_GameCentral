@@ -1,36 +1,34 @@
-// let fs = require('fs');
-// let path = require('path');
-
 let { readJson, writeJson, lastId } = require('./helper');
 
 let title = '';
 let products = readJson('products.json');
 
 let productController = {
-    // 1 SHOW ALL PRODUCTS
-    // index: (req,res) => {
-    //   res.render('./producst/partials/product');  
-    // },
-
-    // 2
-    create: (req,res) => {
-        title = 'Nuevo producto';   
-        res.render('./products/create',{title});
+    // 1 GET: show all items
+    index: (req,res) => {
+        title = 'Todos los títulos'
+        res.render('./products/product-index', {title, products});
     },
 
-    // 3
+    // 2 GET: show product <form>
+    create: (req,res) => {
+        title = 'Nuevo producto';   
+        res.render('./products/create', {title});
+    },
+
+    // 3 GET: show product detail
     show: (req,res) => {
         title = "Más info del juego";
         let gameId = req.params.id;
         for (i = 0 ; i < products.length ; i++) {
             if (products[i].id == gameId) {
                 let productCategory = products[i].category;
-                res.render('./products/show',{title,'product':products[i],productCategory});
+                res.render('./products/show', {title,'product':products[i],productCategory});
             };
         };
     },
     
-    // 4
+    // 4 POST: store product <form> fields
     store: (req,res) => {
         let product = {
             id: lastId(products) + 1,
@@ -41,14 +39,14 @@ let productController = {
         res.redirect('/');
     },
 
-    // 5
-    // edit (get = view current)
+    // 5 GET: show <form> with current product data
+    // edit:
 
-    // 6
-    // update (post put = submit changes)
+    // 6 POST: submit changes to existing product
+    // update:
 
-    // 7
-    // destroy (post delete = remove item)
+    // 7 DELETE: remove entry
+    // destroy:
 };
 
 module.exports = productController;
