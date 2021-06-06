@@ -1,5 +1,3 @@
-/* background: linear-gradient(#B1455D,#B14593,#9945B1); */
-
 /**/
 /* GLOBAL THINGS */
 /**/
@@ -400,6 +398,7 @@ img {
     width: 75%;
     display: flex;
     flex-flow: column wrap;
+    align-items: center;
 }
 
 .category-single-box {
@@ -1247,13 +1246,7 @@ DESKTOP
     }
 
     .label-radio:hover, .label-file:hover {
-        background-color: #808080;
-        opacity: .8;
-    }
-
-    .label-radio:active, .label-file:active {
-        background-color: #B14593;
-        opacity: 1;
+        border: solid 2px #B6B1F1;
     }
 
     /* INPUTS */

@@ -112,5 +112,39 @@
             "Plataformas",
             "2D"
         ]
+    },
+    {
+        "id": 7,
+        "img": "1622938293138.jpg",
+        "name": "AGE OF EMPIRES II",
+        "category": [
+            "ESTRATEGIA",
+            "RTS",
+            "CONSTRUCTOR DE CIUDADES",
+            "CLÁSICO"
+        ],
+        "relevant": "true",
+        "price": "$299.00",
+        "discount": "false",
+        "discountRate": "",
+        "description": "Age of Empires II: Definitive Edition celebra el 20.º aniversario de uno de los juegos de estrategia más populares de la historia con increíbles gráficos 4K Ultra HD, ...",
+        "longDescription": "Age of Empires II: Definitive Edition celebra el 20.º aniversario de uno de los juegos de estrategia más populares de la historia con increíbles gráficos 4K Ultra HD, una nueva banda sonora totalmente remasterizada y la expansión “Los últimos kanes”, que cuenta con 3 nuevas campañas y 4 nuevas civilizaciones.\r\n\r\nDisfruta de todas las campañas originales como nunca, juega a las mejores expansiones y sumérgete en más de 200 horas de juego que abarcan 1000 años de historia de la humanidad. Juega en línea y enfréntate a otros jugadores con 35 civilizaciones diferentes para dominar el mundo por los siglos de los siglos.\r\n\r\nEmprende el camino hacia la grandeza con la remasterización definitiva de uno de los juegos de estrategia más queridos de la historia."
+    },
+    {
+        "id": 8,
+        "img": "1622940774825.jpg",
+        "name": "AGE OF EMPIRES II",
+        "category": [
+            "ESTRATEGIA",
+            "RTS",
+            "CONSTRUCTOR DE CIUDADES",
+            "CLÁSICO"
+        ],
+        "relevant": "true",
+        "price": "$299.00",
+        "discount": "false",
+        "discountRate": "",
+        "description": "Age of Empires II: Definitive Edition celebra el 20.º aniversario de uno de los juegos de estrategia más populares de la historia con increíbles gráficos 4K Ultra HD, ...",
+        "longDescription": "Age of Empires II: Definitive Edition celebra el 20.º aniversario de uno de los juegos de estrategia más populares de la historia con increíbles gráficos 4K Ultra HD, una nueva banda sonora totalmente remasterizada y la expansión “Los últimos kanes”, que cuenta con 3 nuevas campañas y 4 nuevas civilizaciones.\r\n\r\nDisfruta de todas las campañas originales como nunca, juega a las mejores expansiones y sumérgete en más de 200 horas de juego que abarcan 1000 años de historia de la humanidad. Juega en línea y enfréntate a otros jugadores con 35 civilizaciones diferentes para dominar el mundo por los siglos de los siglos.\r\n\r\nEmprende el camino hacia la grandeza con la remasterización definitiva de uno de los juegos de estrategia más queridos de la historia."
     }
 ]

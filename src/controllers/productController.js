@@ -32,7 +32,8 @@ let productController = {
     store: (req,res) => {
         let product = {
             id: lastId(products) + 1,
-            ... req.body,
+            img: req.file.filename,
+            ...req.body,
         }
         products.push(product);
         writeJson(products,'products');
