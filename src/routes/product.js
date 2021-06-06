@@ -1,29 +1,14 @@
 let express = require('express');
 let router = express.Router();
 let productController = require('../controllers/productController');
+let upload = require('../middlewares/multerMiddleware');
 
-// 2
-router.get('/create', productController.create);
-// 3
-router.get('/:id', productController.show);
-// 4
-router.post('/', productController.store);
-
-// 1. /products (GET)
-// Listado de productos
-
-// 2. /products/create (GET)
-// Formulario de creación de productos
-
-// 3. /products/:id (GET)
-// Detalle de un producto particular
-
-// 5. /products/:id/edit (GET)
-// Formulario de edición de productos
-
-// 6. /products/:id (PUT)
-// Acción de edición (a donde se envía el formulario):
-
-// 7. /products/:id (DELETE)
+router.get('/', productController.index); // 1 INDEX: show all items
+router.get('/create', productController.create); // 2 CREATE: show product <form>
+router.get('/:id', productController.show); // 3 SHOW: show product detail
+router.put('/:id', productController.update) // 6 UPDATE: submit changes to existing product
+router.delete('/:id', productController.destroy); // 7 DESTROY: remove entry
+router.post('/', upload.single('card'), productController.store); // 4 STORE: store product <form> fields
+router.get('/:id/edit', productController.edit); // 5 EDIT: show <form> with current product data
 
 module.exports = router;

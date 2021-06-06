@@ -1,57 +1,86 @@
-let fs = require('fs');
-let path = require('path');
+const { response } = require('express');
+let { readJson, writeJson, lastId } = require('./helper');
 
 let title = '';
-
-let filePath = path.join(__dirname + '/../database/products.json');
-let productsFile = fs.readFileSync(filePath,'UTF-8');
-let products = JSON.parse(productsFile);
+let products = readJson('products.json');
 
 let productController = {
-    // 1 SHOW ALL PRODUCTS
-    // index: (req,res) => {
-    //   res.render('./producst/partials/product');  
-    // },
-
-    // 2
-    create: (req,res) => {
-        title = 'Nuevo producto';
-        res.render('./products/create',{title});
+    // 1 GET: show all items
+    index: (req,res) => {
+        title = 'Todos los títulos'
+        res.render('./products/product-index', { title, products } );
     },
 
-    // 3
+    // 2 GET: show product <form>
+    create: (req,res) => {
+        title = 'Nuevo producto';   
+        res.render('./products/create', { title } );
+    },
+
+    // 3 GET: show product detail
     show: (req,res) => {
         title = "Más info del juego";
         let gameId = req.params.id;
         for (i = 0 ; i < products.length ; i++) {
             if (products[i].id == gameId) {
                 let productCategory = products[i].category;
-                res.render('./products/show',{title,'product':products[i],productCategory});
+                res.render('./products/show', { title,'product':products[i],productCategory } );
             };
         };
     },
     
-    // 4
+    // 4 POST: store product <form> fields
     store: (req,res) => {
         let product = {
-            id: lastId,
-            ... req.body,
+            id: lastId(products) + 1,
+            card: req.file.filename,
+            ...req.body,
         }
         products.push(product);
-        productsFile = JSON.stringify(products, null, 4);
-        fs.writeFileSync(filePath, productsFile);
-
+        writeJson(products, 'products');
         res.redirect('/');
     },
 
-    // 5
-    // edit (get = view current)
+    // 5 GET: show <form> with current product data
+    edit: (req,res) => {
+        title = 'Editar';
+        let gameId = req.params.id;
+        for (i = 0 ; i < products.length ; i++) {
+            if (products[i].id == gameId) {
+                let productCategory = products[i].category;
+                res.render('./products/edit', { title, 'product':products[i], productCategory } );
+            };
+        };
+    },
 
-    // 6
-    // update (post put = submit changes)
+    // 6 POST: submit changes to existing product
+    update: (req,res) => {
+        // res.send(req.url);
+        let gameId = req.params.id;
+        // for (i = 0 ; i < products.length ; i++) {
+        //     if (products[i].id == gameId) {
+        //         //
 
-    // 7
-    // destroy (post delete = remove item)
+
+
+        //     };
+        // };
+        
+        
+        // función que escribe el json
+        // writeJson()
+        
+        // res.redirect('/products');
+        // res.redirect('/product')
+    },
+
+    // 7 DELETE: remove entry
+    destroy: (req,res) => {
+        let gameId = req.params.id;
+        let newProducts = products.filter(product => product.id != gameId);
+        writeJson(newProducts, 'products');
+        res.redirect('/products');
+    },
 };
 
 module.exports = productController;
