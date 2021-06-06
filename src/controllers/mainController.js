@@ -4,10 +4,10 @@ let title = '';
 let products = readJson('products.json');
 
 let inOffer = products.filter(product => {
-    return product.discount == true;
+    return product.discount == 'true';
 });
 let relevant = products.filter(product => {
-    return product.relevant == true;
+    return product.relevant == 'true';
 });
 
 let mainController = {

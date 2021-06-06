@@ -1,11 +1,11 @@
 let multer = require('multer');
 let path = require('path');
 
-let destination = path.join(__dirname + '/..' + '/..' + '/public' + '/img' + '/aaa-multer');
+let destination = path.join(__dirname + '/..' + '/..' + '/public' + '/img' + '/products' + '/card');
 
 let storage = multer.diskStorage ({
     destination: (req,file,cb) => {
-        // 
+        cb(null, destination);
     },
     
     filename: (req,file,cb) => {

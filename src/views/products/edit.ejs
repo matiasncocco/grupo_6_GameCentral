@@ -3,29 +3,29 @@
 <main class="main-main">
     <header class="main-title first-title">
         <h3 class="big-title">
-            AÑADIR ARTÍCULO
+            EDITAR ARTÍCULO
         </h3>
         <h5 class="small-title">
-            AÑADIR ARTÍCULO
+            EDITAR ARTÍCULO
         </h5>
     </header>
-    <form class="product-create-form" action="/products" method="POST" enctype="multipart/form-data">
+    <form class="product-create-form" action="/products/<%= product.id %>?_method=PUT" method="POST" enctype="multipart/form-data">
         <section class="product-create-section">
             <!-- name -->
             <div class="input-box">
                 <label class="label-label" for="name">
                     Nombre
                 </label>
-                <input class="input-text input-text-product" type="text" name="name" id="name" placeholder="Pac-Man" required>
+                <input class="input-text input-text-product" type="text" name="name" id="name" placeholder="Pac-Man" value="<%= product.name %>" required>
             </div>
             <!-- category -->
             <div class="input-box category-box">
-                <% for (i = 1 ; i < 5 ; i++) { %>
+                <% for (i = 0 ; i < productCategory.length ; i++) { %>
                     <div class="single-category">
                         <label class="label-label" for="category<%= [i]%>">
-                            Categoría <%= [i] %>
+                            Categoría <%= [i + 1] %>
                         </label>
-                        <input class="input-text input-text-product" type="text" name="category" id="category<%= [i] %>" required>
+                        <input class="input-text input-text-product" type="text" name="category" id="category<%= [i] %>" value="<%= productCategory[i] %>" required>
                     </div>
                 <% } %>
             </div>
@@ -34,18 +34,24 @@
                 <label class="label-label file-box-label">Imágenes</label>
                 <!-- img -->
                 <label class="label-label input-text label-file product-file" for="img">
+                    <div>
+                        <img style="max-height: 100px;" src="/img/products/img/<%= product.img %>">
+                    </div>
                     Imágen principal 1920x1080
-                    <input class="input-file" type="file" name="img" id="img" accept=".jpg, .jpeg, .png">
+                    <!-- <input class="input-file" type="file" name="img" id="img" accept=".jpg, .jpeg, .png"> -->
                 </label>
                 <!-- card -->
                 <label class="label-label input-text label-file product-file" for="card">
+                    <div>
+                        <img style="max-height: 100px;" src="/img/products/card/<%= product.card %>">
+                    </div>
                     Imágen tipo tarjeta 271x377
-                    <input class="input-file" type="file" name="card" id="card" accept=".jpg, .jpeg, .png">
+                    <!-- <input class="input-file" type="file" name="card" id="card" accept=".jpg, .jpeg, .png"> -->
                 </label>
                 <!-- capsule -->
                 <label class="label-label input-text label-file product-file" for="capsule">
                     Imágen tipo cápsula 460x215
-                    <input class="input-file" type="file" name="capsule" id="capsule" accept=".jpg, .jpeg, .png">
+                    <!-- <input class="input-file" type="file" name="capsule" id="capsule" accept=".jpg, .jpeg, .png"> -->
                 </label>
             </div>
             <!-- relevant -->
@@ -55,11 +61,12 @@
                 </label>
                 <label class="label-label label-radio" for="relevant-true">
                     RELEVANT product
-                    <input class="input-radio" type="radio" name="relevant" value=true id="relevant-true" required>
+                    <!-- if( value == true : selected) -->
+                    <input class="input-radio" type="radio" name="relevant" value="true" id="relevant-true" required checked>
                 </label>
                 <label class="label-label label-radio" for="relevant-false">
                     NOT relevant product
-                    <input class="input-radio" type="radio" name="relevant" value=false id="relevant-false" required>
+                    <input class="input-radio" type="radio" name="relevant" value="false" id="relevant-false" required>
                 </label>
             </div>
             <!-- price -->
@@ -114,10 +121,10 @@
             <div class="button-box">
                 <button class="button-send" type="submit">
                     <h1 class="big-title">
-                        CREAR
+                        EDITAR
                     </h1>
                     <h4 class="small-title">
-                        CREAR
+                        EDITAR
                     </h4>
                 </button>
                 <button class="button-cancel" type="button">

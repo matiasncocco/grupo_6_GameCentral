@@ -1,6 +1,7 @@
 let express = require('express');
 let app = express();
 let path = require('path');
+let methodOverride = require('method-override');
 
 let publicPath = path.resolve('./public');
 app.use(express.static(publicPath));
@@ -11,6 +12,7 @@ app.set('views', viewsPath);
 
 app.use(express.urlencoded ({extended:false}));
 app.use(express.json());
+app.use(methodOverride('_method'));
 
 let mainRouter = require('./routes/main');
 let productRouter = require('./routes/product');

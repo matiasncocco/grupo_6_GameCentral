@@ -54,6 +54,18 @@
                     <%= product.longDescription %>
                 </p>
             </article>
+
+            <button>
+                <a href="/products/:id/edit">
+                    send
+                </a>
+            </button>
+
+            <form action="/products/<%= product.id %>?_method=DELETE" method="POST">
+                <button type="submit">
+                    ELIMINAR
+                </button>
+            </form>
         </section>
     </section>
 </main>

@@ -1,3 +1,4 @@
+const { response } = require('express');
 let { readJson, writeJson, lastId } = require('./helper');
 
 let title = '';
@@ -32,22 +33,54 @@ let productController = {
     store: (req,res) => {
         let product = {
             id: lastId(products) + 1,
-            img: req.file.filename,
+            card: req.file.filename,
             ...req.body,
         }
         products.push(product);
-        writeJson(products,'products');
+        writeJson(products, 'products');
         res.redirect('/');
     },
 
     // 5 GET: show <form> with current product data
-    // edit:
+    edit: (req,res) => {
+        title = 'Editar';
+        let gameId = req.params.id;
+        for (i = 0 ; i < products.length ; i++) {
+            if (products[i].id == gameId) {
+                let productCategory = products[i].category;
+                res.render('./products/edit', { title, 'product':products[i], productCategory } );
+            };
+        };
+    },
 
     // 6 POST: submit changes to existing product
-    // update:
+    update: (req,res) => {
+        // res.send(req.url);
+        let gameId = req.params.id;
+        // for (i = 0 ; i < products.length ; i++) {
+        //     if (products[i].id == gameId) {
+        //         //
+
+
+
+        //     };
+        // };
+        
+        
+        // función que escribe el json
+        // writeJson()
+        
+        // res.redirect('/products');
+        // res.redirect('/product')
+    },
 
     // 7 DELETE: remove entry
-    // destroy:
+    destroy: (req,res) => {
+        let gameId = req.params.id;
+        let newProducts = products.filter(product => product.id != gameId);
+        writeJson(newProducts, 'products');
+        res.redirect('/products');
+    },
 };
 
 module.exports = productController;
