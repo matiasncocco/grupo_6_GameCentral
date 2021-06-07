@@ -1,1 +1,230 @@
-[]
+[
+    {
+        "id": 1,
+        "img": "1623036797015.jpg",
+        "card": "1623036797034.jpg",
+        "capsule": "1623036797035.jpg",
+        "name": "AGE OF EMPIRES II",
+        "category": [
+            "ESTRATEGIA",
+            "RTS",
+            "CONSTRUCTOR DE CIUDADES",
+            "ACCIÓN"
+        ],
+        "relevant": "true",
+        "price": "$299.00",
+        "discount": "false",
+        "discountRate": "",
+        "description": "Age of Empires II: Definitive Edition conmemora el 20 aniversario de uno de los juegos de estrategia más aclamados de todos los tiempos, en una versión que ofrece impa...",
+        "longDescription": "Age of Empires II: Definitive Edition conmemora el 20 aniversario de uno de los juegos de estrategia más aclamados de todos los tiempos, en una versión que ofrece impactantes gráficos 4K Ultra HD, una pista sonora completamente remasterizada y contenido totalmente nuevo, como “Los últimos Khanes”, que cuenta con 3 campañas y 4 civilizaciones.\r\n\r\nExplora todas las campañas originales como nunca antes y revive las expansiones más vendidas. Sumérgete en más de 200 horas de juego y recorre mil años de la historia de la humanidad. Juega en línea y desafía a otros jugadores con 35 civilizaciones diferentes, ¿podrás conquistar el mundo a lo largo del tiempo?\r\n\r\nElige tu camino hacia la grandeza en esta edición remasterizada definitiva de uno de los juegos de estrategia más queridos de todos los tiempos."
+    },
+    {
+        "id": 2,
+        "img": "1623036931738.webp",
+        "card": "1623036931745.jpg",
+        "capsule": "1623036931746.jpg",
+        "name": "CELESTE",
+        "category": [
+            "PLATFORMER",
+            "PIXEL ART",
+            "HARD",
+            "INDIE"
+        ],
+        "relevant": "false",
+        "price": "$224.99",
+        "discount": "true",
+        "discountRate": "20",
+        "description": "Ayuda a Madeline a sobrevivir a los demonios de su interior en su viaje a la cima de la montaña Celeste; un ajustadísimo plataforma diseñado a mano por los creadores d...",
+        "longDescription": "Ayuda a Madeline a sobrevivir a los demonios de su interior en su viaje a la cima de la montaña Celeste; un ajustadísimo plataforma diseñado a mano por los creadores del clásico multijugador TowerFall.\r\n\r\n\r\n\r\nAventura de un jugador marcada por la narración; un encantador elenco de personajes y un argumento conmovedor de descubrimiento personal.\r\nGran montaña con más de 700 pantallas de duros desafíos y retorcidos secretos.\r\nBrutales capítulos \"cara B\" para desbloquear; para los más osados.\r\nFinalista en “Excellence in Audio” de IGF; más de 2 horas de música original con un asombroso piano y pegadizos ritmos de sintetizador.\r\nPastel\r\n\r\nLos mandos son sencillos y accesibles: salta, acelera en el aire y escala, pero con varias capas de profundidad de expresión que habrá que dominar, pues cada muerte enseña una lección. Las reapariciones relámpago te permiten seguir escalando mientras desvelas misterios y te enfrentas a numerosos peligros.\r\n\r\nEs el momento, Madeline. Respira hondo. Tú puedes hacerlo."
+    },
+    {
+        "id": 3,
+        "img": "1623037080881.jpg",
+        "card": "1623037080884.jpg",
+        "capsule": "1623037080885.jpg",
+        "name": "CALL OF DUTY: MODERN WARFARE",
+        "category": [
+            "SHOOTER",
+            "COOPERATIVO",
+            "BATTLE ROYALE",
+            "ACCIÓN"
+        ],
+        "relevant": "true",
+        "price": "$1999.00",
+        "discount": "false",
+        "discountRate": "",
+        "description": "Prepárate para infiltrarte en Call of Duty®: Modern Warfare®",
+        "longDescription": "El riesgo nunca había sido tan alto mientras los jugadores se ponen en la piel de letales agentes de primer nivel en una saga emocionante que afectará el equilibrio del poder global. Desarrollado por el estudio que lo inició todo, Infinity Ward entrega una nueva versión épica de la icónica serie Modern Warfare a partir de cero."
+    },
+    {
+        "id": 4,
+        "img": "1623037222144.jpg",
+        "card": "1623037222147.jpg",
+        "capsule": "1623037222150.jpg",
+        "name": "CYBERPUNK 2077",
+        "category": [
+            "CYBERPUNK",
+            "MUNDO ABIERTO",
+            "ROL",
+            "CIENCIA FICCIÓN"
+        ],
+        "relevant": "false",
+        "price": "$2199.00",
+        "discount": "true",
+        "discountRate": "60",
+        "description": "Cyberpunk 2077 es una historia de acción y aventura en mundo abierto ambientada en Night City, una megalópolis obsesionada con el poder, el glamur y la modificación co...",
+        "longDescription": "Cyberpunk 2077 es una historia de acción y aventura en mundo abierto ambientada en Night City, una megalópolis obsesionada con el poder, el glamur y la modificación corporal. Tu personaje es V, un mercenario que persigue un implante único que permite alcanzar la inmortalidad. Podrás personalizar las mejoras cibernéticas, las habilidades y el estilo de juego del personaje para dar forma a un mundo y a una historia que depende de tus decisiones."
+    },
+    {
+        "id": 5,
+        "img": "1623037310936.jpg",
+        "card": "1623037310955.jpg",
+        "capsule": "1623037310956.jpg",
+        "name": "HADES",
+        "category": [
+            "ROGUELIKE",
+            "INDIE",
+            "ACCIÓN",
+            "ROGUELITE"
+        ],
+        "relevant": "true",
+        "price": "$279.99",
+        "discount": "true",
+        "discountRate": "35",
+        "description": "Desafía al dios de los muertos y protagoniza una salvaje fuga del Inframundo en este juego de exploración de mazmorras de los creadores de Bastion, Transistor y Pyre.",
+        "longDescription": "Hades es un juego roguelike de exploración de mazmorras que combina los mejores aspectos de los aclamados títulos anteriores de Supergiant, como la acción rápida de Bastion, la atmósfera y la profundidad de Transistor y la narrativa centrada en los personajes de Pyre.\r\nCOMBATE PARA ESCAPAR DEL INFIERNO\r\nComo el príncipe inmortal del Inframundo, tendrás a tu disposición los poderes y las armas míticas del Olimpo para liberarte de las garras del mismísimo dios de los muertos, al tiempo que te vas haciendo más fuerte y descubres más piezas de la historia con cada intento de fuga.\r\nDESATA LA IRA DEL OLIMPO\r\n¡Los dioses del Olimpo están de tu lado! Conoce a Zeus, Atenea, Poseidón y muchos más, y elige entre decenas de poderosas bendiciones que potenciarán tus habilidades. Hay miles de arquetipos de personaje viables que irás descubriendo a medida que juegues."
+    },
+    {
+        "id": 6,
+        "img": "1623037405601.jpg",
+        "card": "1623037405617.jpg",
+        "capsule": "1623037405618.jpg",
+        "name": "HOLLOW KNIGHT",
+        "category": [
+            "METROIDVANIA",
+            "TIPO DARK SOULS",
+            "PLATFORMER",
+            "2D"
+        ],
+        "relevant": "true",
+        "price": "$179.99",
+        "discount": "true",
+        "discountRate": "20",
+        "description": "¡Forja tu propio camino en Hollow Knight! Una aventura épica a través de un vasto reino de insectos y héroes que se encuentra en ruinas. Explora cavernas tortuosas, co...",
+        "longDescription": "Enfréntate a las profundidades de un reino olvidado\r\nBajo la deteriorada ciudad de Petrópolis yace un antiguo reino en ruinas. A muchos les atrae la vida bajo la superficie y van en busca de riquezas, gloria o respuestas a viejos enigmas.\r\n\r\nHollow Knight es una aventura de acción clásica en 2D ambientada en un vasto mundo interconectado. Explora cavernas tortuosas, ciudades antiguas y páramos mortales. Combate contra criaturas corrompidas, haz amistad con extraños insectos y resuelve los antiguos misterios que yacen en el corazón de reino."
+    },
+    {
+        "id": 7,
+        "img": "1623037523681.jpg",
+        "card": "1623037523689.jpg",
+        "capsule": "1623037523691.jpg",
+        "name": "MINECRAFT",
+        "category": [
+            "MUNDO ABIERTO",
+            "SURVIVAL",
+            "COOPERATIVO",
+            "BLOQUES"
+        ],
+        "relevant": "true",
+        "price": "$284.00",
+        "discount": "false",
+        "discountRate": "",
+        "description": "Explora mundos generados al azar y construye cosas increíbles, desde la más humilde de las casas hasta el más majestuoso de los castillos. Juega en el modo creativo co...",
+        "longDescription": "Explora mundos generados al azar y construye cosas increíbles, desde la más humilde de las casas hasta el más majestuoso de los castillos. Juega en el modo creativo con recursos ilimitados o extrae en las profundidades del mundo, crea armas y armaduras para defenderte de enemigos peligrosos en el modo supervivencia.\r\n\r\nCARACTERÍSTICAS\r\nPacks de aspecto, textura y popurrí de la comunidad. Más información en minecraft.net/marketplace.\r\n\r\n¡COMPLEMENTOS! Visita minecraft.net/addons, allí podrás probar varios ejemplos gratuitos o aprender a crear uno propio.\r\n\r\n¡Realms! Juega multiplataforma con hasta 10 amigos en un mundo que existe en todo momento y lugar. Pruébalo gratis durante 30 días desde la aplicación. Puedes obtener más información en http://minecraft.net/realms.\r\n\r\nSoporte de Xbox Live (incluye logros)\r\n\r\nJuego entre plataformas para un máximo de ocho jugadores en PC con Windows 10, dispositivos Android, teléfonos y tablets con iOS, Xbox One y plataformas de realidad virtual.\r\n\r\nLos comandos d"
+    },
+    {
+        "id": 8,
+        "img": "1623037735638.webp",
+        "card": "1623037735639.jpg",
+        "capsule": "1623037735640.jpg",
+        "name": "PORTAL",
+        "category": [
+            "PUZZLE",
+            "PLATFORMER",
+            "SINGLE PLAYER",
+            "CLÁSICO"
+        ],
+        "relevant": "false",
+        "price": "$129.99",
+        "discount": "true",
+        "discountRate": "50",
+        "description": "Portal™ es la nueva aventura para un solo jugador de Valve. Ambientado en los misteriosos laboratorios de Aperture Science, Portal ha sido calificado como uno de los j...",
+        "longDescription": "Portal™ es la nueva aventura para un solo jugador de Valve. Ambientado en los misteriosos laboratorios de Aperture Science, Portal ha sido calificado como uno de los juegos más innovadores de los últimos tiempos y ofrece incontables horas de rompecabezas nunca vistos.\r\n\r\nEl juego está diseñado para cambiar radicalmente el modo en que los jugadores enfocan, sopesan y reaccionan a las circunstancias en un entorno determinado, al igual que la pistola antigravedad abrió un nuevo mundo de posibilidades a la hora de manipular objetos.\r\n\r\nLos jugadores deben resolver rompecabezas y desafíos basados en las leyes físicas abriendo portales y desplazando objetos, o incluso sus propios avatares, a través del espacio."
+    },
+    {
+        "id": 9,
+        "img": "1623037830924.jpg",
+        "card": "1623037830928.jpg",
+        "capsule": "1623037830929.jpg",
+        "name": "RAINBOW SIX SIEGE",
+        "category": [
+            "SHOOTER",
+            "MULTIPLAYER",
+            "COOPERATIVO",
+            "TEAM FPS"
+        ],
+        "relevant": "true",
+        "price": "$999.00",
+        "discount": "false",
+        "discountRate": "",
+        "description": "Tom Clancy's Rainbow Six Siege es el nuevo lanzamiento del shooter más aclamado desarrollado por el estudio Ubisoft Montreal.",
+        "longDescription": "Domina el arte de la destrucción y el uso de dispositivos en Tom Clancy's Rainbow Six Siege. Enfréntate a un combate intenso de rango cercano altamente letal, con decisiones tácticas, juego en equipo y una acción explosiva en todo momento. Vive un nuevo estilo de tiroteos y estrategia nacida en el seno del rico legado de los anteriores juegos Tom Clancy's Rainbow Six.\r\n\r\n\r\nEmbárcate en un nuevo tipo de asalto usando un nivel de destrucción y unos dispositivos nunca vistos.\r\nEn defensa, coordina tus acciones con tu equipo para transformar tu entorno en una fortaleza. Pon trampas, refuerza lugares y crea sistemas de defensa para evitar que el enemigo abra brecha.\r\nEn ataque, lidera tu grupo a través de estrechos pasillos, pasos de puerta reforzados y paredes con barricadas. Combina mapas tácticos, drones de vigilancia, acciones de rápel y otros movimientos para planificar, atacar y dominar cualquier situación.\r\n\r\n\r\nElige entre docenas de agentes altamente entrenados, provenientes de las mejores "
+    },
+    {
+        "id": 10,
+        "img": "1623037926110.jpg",
+        "card": "1623037926113.jpg",
+        "capsule": "1623037926114.jpg",
+        "name": "SEKIRO",
+        "category": [
+            "TIPO DARK SOULS",
+            "HARD",
+            "ACCIÓN",
+            "SINGLE PLAYER"
+        ],
+        "relevant": "true",
+        "price": "$1299.00",
+        "discount": "false",
+        "discountRate": "",
+        "description": "Juego del año - The Game Awards 2019 Mejor juego de acción de 2019 - IGN Traza tu propio camino hacia la venganza en la galardonada aventura de FromSoftware, creadores...",
+        "longDescription": "Esta Edición juego del año ahora incluye contenido adicional*:\r\n\r\n- Recuerdo y Reto de fuerza: nuevos modos de desafío de jefe\r\n- Vestigios: deja mensajes y grabaciones de tus acciones para que otros jugadores las vean y califiquen\r\n- 3 aspectos desbloqueables\r\n\r\nJuego del año - The Game Awards 2019\r\nMejor juego de acción de 2019 - IGN\r\nMás de 50 premios y nominaciones\r\n\r\nTraza tu propio camino hacia la venganza en la galardonada aventura de FromSoftware, creadores de la saga Dark Souls.\r\n\r\nEn Sekiro™: Shadows Die Twice encarnas al 'lobo manco', un guerrero desfigurado y caído en desgracia que ha sido rescatado al borde de la muerte. Tras jurar proteger a un joven señor descendiente de un antiguo linaje, te conviertes en el objetivo de despiadados enemigos, entre ellos el peligroso clan Ashina. Cuando el joven señor sea capturado, nada te detendrá en tu peligrosa aventura por restituir tu honor, ni siquiera la muerte.\r\n\r\nExplora el Japón de la era Sengoku de finales del siglo XVI, un brutal periodo "
+    },
+    {
+        "id": 11,
+        "img": "1623038023755.png",
+        "card": "1623038023759.jpg",
+        "capsule": "1623038023761.jpg",
+        "name": "STARDEW VALLEY",
+        "category": [
+            "SIMULATOR",
+            "SURVIVAL",
+            "RPG",
+            "INDIE"
+        ],
+        "relevant": "false",
+        "price": "$179.99",
+        "discount": "true",
+        "discountRate": "10",
+        "description": "Acabas de heredar la vieja parcela agrícola de tu abuelo de Stardew Valley. Decides partir hacia una nueva vida con unas herramientas usadas y algunas monedas. ¿Te ves...",
+        "longDescription": "Te vas a vivir al valle...\r\n\r\nAcabas de heredar la vieja parcela agrícola de tu abuelo de Stardew Valley. Decides partir hacia una nueva vida con unas herramientas usadas y algunas monedas. ¿Te ves capaz de vivir de la tierra y convertir estos campos descuidados en un hogar próspero?\r\n\r\n¡Crea la granja de tus sueños! Constrúyela desde cero en una de las cinco configuraciones del mapa.\r\n¡Domina tu habilidad con la ganadería! Cría animales, siembra cultivos y fabrica maquinaria útil entre muchas más cosas.\r\n¡Únete a la comunidad local! Entabla amistad con más de 30 habitantes de Pelican Town.\r\n¡Personaliza a tu granjero! Podrás elegir entre cientos de opciones de personalización de personajes.\r\n¡Instálate y empieza a formar una familia! Comparte tu vida en la granja con uno de los doce personajes con los que podrás tener una relación.\r\n¡Explora grandes y misteriosas cuevas! Encuentra monstruos peligrosos y tesoros valiosos."
+    },
+    {
+        "id": 12,
+        "img": "1623038128066.jpg",
+        "card": "1623038128075.jpg",
+        "capsule": "1623038128134.jpg",
+        "name": "TERRARIA",
+        "category": [
+            "SURVIVAL",
+            "RPG",
+            "BLOQUES",
+            "2D"
+        ],
+        "relevant": "false",
+        "price": "$129.99",
+        "discount": "true",
+        "discountRate": "20",
+        "description": "¡Cava, lucha, explora, construye! Con este juego de aventuras repleto de acción nada es imposible. ¡Pack de Cuatro también disponible!",
+        "longDescription": "¡Cava, lucha, explora, construye! Nada es imposible en este juego de aventuras repleto de acción. El mundo es tu lienzo y la tierra misma es tu pintura.\r\n¡Coge tus herramientas y adelante! Crea armas para deshacerte de una gran variedad de enemigos en numerosos ecosistemas. Excava profundo bajo tierra para encontrar accesorios, dinero y otras cosas muy útiles. Reúne recursos para crear todo lo que necesites y conformar así tu propio mundo. Construye una casa, un fuerte o incluso un castillo. La gente se mudará a vivir ahí e incluso quizás te vendan diferentes mercancías que te ayuden en tu viaje.\r\nPero ten cuidado, aún te aguardan más desafíos... ¿Estás preparado para la tarea?\r\nCaracterísticas principales:\r\nJugabilidad \"sandbox\" (juega libremente en un mundo a tu disposición)\r\nMundos generados de forma aleatoria\r\nActualizaciones gratuitas de contenido"
+    }
+]

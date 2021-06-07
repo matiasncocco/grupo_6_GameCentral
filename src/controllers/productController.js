@@ -1,14 +1,15 @@
-const { response } = require('express');
 let { readJson, writeJson, lastId } = require('./helper');
 
 let title = '';
 let products = readJson('products.json');
+
 
 let productController = {
     cart: (req,res) => {
         title = 'Carrito de compras';
         res.render('./products/cart', { title, products } );
     },
+
     // 1 GET: show all items
     index: (req,res) => {
         title = 'Todos los títulos'
@@ -17,8 +18,11 @@ let productController = {
 
     // 2 GET: show product <form>
     create: (req,res) => {
-        title = 'Nuevo producto';   
-        res.render('./products/create', { title } );
+        title = 'Nuevo producto';
+        let categoryPlaceholder = [
+            'SHOOTER','SURVIVAL','RPG','BATTLE ROYALE'
+        ];
+        res.render('./products/create', { title, categoryPlaceholder } );
     },
 
     // 3 GET: show product detail
@@ -37,6 +41,7 @@ let productController = {
     store: (req,res) => {
         let files = req.files;
         let { img, card, capsule } = files;
+
         let product = {
             id: lastId(products) + 1,
             img: img[0].filename,

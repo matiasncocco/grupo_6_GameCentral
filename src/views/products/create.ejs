@@ -16,7 +16,7 @@
                 <label class="label-label" for="name">
                     Nombre
                 </label>
-                <input class="input-text input-text-product" type="text" name="name" id="name" placeholder="Pac-Man" required>
+                <input class="input-text input-text-product" type="text" name="name" id="name" placeholder="PAC-MAN" required>
             </div>
             <!-- category -->
             <div class="input-box category-box">
@@ -25,7 +25,8 @@
                         <label class="label-label" for="category<%= [i]%>">
                             Categoría <%= [i + 1] %>
                         </label>
-                        <input class="input-text input-text-product" type="text" name="category" id="category<%= [i] %>" required>
+                        <input class="input-text input-text-product" type="text" name="category" id="category<%= [i] %>" 
+                        placeholder="<%= categoryPlaceholder[i] %>" required>
                     </div>
                 <% } %>
             </div>
@@ -35,17 +36,17 @@
                 <!-- img -->
                 <label class="label-label input-text label-file product-file" for="img">
                     Imágen principal 1920x1080
-                    <input class="input-file" type="file" name="img" id="img" accept=".jpg, .jpeg, .png">
+                    <input class="input-file" type="file" name="img" id="img" accept=".jpg, .jpeg, .png, .webp">
                 </label>
                 <!-- card -->
                 <label class="label-label input-text label-file product-file" for="card">
                     Imágen tipo tarjeta 271x377
-                    <input class="input-file" type="file" name="card" id="card" accept=".jpg, .jpeg, .png">
+                    <input class="input-file" type="file" name="card" id="card" accept=".jpg, .jpeg, .png, .webp">
                 </label>
                 <!-- capsule -->
                 <label class="label-label input-text label-file product-file" for="capsule">
                     Imágen tipo cápsula 460x215
-                    <input class="input-file" type="file" name="capsule" id="capsule" accept=".jpg, .jpeg, .png">
+                    <input class="input-file" type="file" name="capsule" id="capsule" accept=".jpg, .jpeg, .png, .webp">
                 </label>
             </div>
             <!-- relevant -->
