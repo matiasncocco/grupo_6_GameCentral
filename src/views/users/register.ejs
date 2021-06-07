@@ -1,66 +1,75 @@
-<%- include('../partials/head') %>
-<%- include('../partials/header') %>
-
+<%- include ('../partials/head') %>
+<%- include ('../partials/header') %>
 <main class="main-main">
-
     <header class="main-title first-title">
-        <h3 class="big-title">CREA TU CUENTA</h3>
-        <h5 class="small-title">CREA TU CUENTA</h5>
+        <h3 class="big-title">
+            CREA TU CUENTA
+        </h3>
+        <h5 class="small-title">
+            CREA TU CUENTA
+        </h5>
     </header>
-
     <form class="register-form" action="/">
-
         <section class="form-section">
-
             <!-- name -->
             <div class="input-box">
-                <label class="label-label" for="name">Nombre Completo</label>
+                <label class="label-label" for="name">
+                    Nombre Completo
+                </label>
                 <input class="input-text" type="text" name="name" id="name" placeholder="Juan Pérez" required>
             </div>
-
             <!-- username -->
             <div class="input-box">
-                <label class="label-label" for="username">Nombre de usuario</label>
+                <label class="label-label" for="username">
+                    Nombre de usuario
+                </label>
                 <input class="input-text" type="text" name="username" id="username" placeholder="juanperez1992" required>
             </div>
-    
             <!-- email -->
             <div class="input-box">
-                <label class="label-label" for="email">E-mail</label>
+                <label class="label-label" for="email">
+                    E-mail
+                </label>
                 <input class="input-text" type="email" name="email" id="email" placeholder="juan.perez@gmail.com" required>
             </div>
-            
             <!-- password -->
             <div class="input-box">
-                <label class="label-label" for="password">Contraseña</label>
+                <label class="label-label" for="password">
+                    Contraseña
+                </label>
                 <input class="input-text" type="password" name="password" id="password" placeholder="********" required>
             </div>
-    
             <!-- PASSWORD 2 -->
             <div class="input-box">
-                <label class="label-label" for="password-check">Confirme su contraseña</label>
+                <label class="label-label" for="password-check">
+                    Confirme su contraseña
+                </label>
                 <input class="input-text" type="password" name="password-check" id="password-check" placeholder="********" required>
             </div>
-            
             <!-- userImg -->
             <div class="input-box">
-                <label class="label-label">Suba un archivo</label>
+                <label class="label-label">
+                    Suba un archivo
+                </label>
                 <label class="label-label input-text label-file" for="userImg">
-                    Foto de perfil<input class="input-file" type="file" name="userImg" id="userImg" accept=".jpg, .jpeg, .png" required>
+                    Foto de perfil
+                    <input class="input-file" type="file" name="userImg" id="userImg" accept=".jpg, .jpeg, .png" required>
                 </label>
             </div>
-            
             <!-- newsletter -->
             <div class="input-box">
-                <label class="label-label">¿Quiere subscribirse a nuestra Newsletter?</label>
+                <label class="label-label">
+                    ¿Quiere subscribirse a nuestra Newsletter?
+                </label>
                 <label class="label-label label-radio" for="newsletter-true">
-                    Si<input class="input-radio" type="radio" name="newsletter" value="true" id="newsletter-true" required>
+                    Si
+                    <input class="input-radio" type="radio" name="newsletter" value="true" id="newsletter-true" required>
                 </label>
                 <label class="label-label label-radio" for="newsletter-false">
-                    No<input class="input-radio" type="radio" name="newsletter" value="false" id="newsletter-false" required>
+                    No
+                    <input class="input-radio" type="radio" name="newsletter" value="false" id="newsletter-false" required>
                 </label>
             </div>
-            
             <!-- TERMS & CONDITIONS -->
             <div class="input-box">
                 <label class="label-tyc">
@@ -71,35 +80,41 @@
                 </label>
                 <input class="input-checkbox" type="checkbox" required>
             </div>
-            
             <!-- BUTTONS -->
             <div class="button-box">
                 <button class="button-send" type="submit">
-                    <h1 class="big-title">CREAR</h1>
-                    <h4 class="small-title">CREAR</h4>
+                    <h1 class="big-title">
+                        CREAR
+                    </h1>
+                    <h4 class="small-title">
+                        CREAR
+                    </h4>
                 </button>
                 <button class="button-cancel" type="button">
                     <a href="/">
-                        <h3 class="big-title">CANCELAR</h3>
+                        <h3 class="big-title">
+                            CANCELAR
+                        </h3>
                     </a>
                     <a href="/">
-                        <h5 class="small-title">CANCELAR</h5>
+                        <h5 class="small-title"
+                        >CANCELAR
+                    </h5>
                     </a>
                 </button>
             </div>
-
         </section>
-
         <section class="image-section">
-            <img src="/img/form-image.jpg">
+            <img class="box-width" src="/img/form-image.jpg">
         </section>
-
         <button class="button-reset" type="reset">
-            <h4 class="big-title">Limpiar campos</h5>
-            <h6 class="small-title">Limpiar campos</h6>
+            <h4 class="big-title">
+                Limpiar campos
+            </h5>
+            <h6 class="small-title">
+                Limpiar campos
+            </h6>
         </button>
-
     </form>
-
 </main>
 <%- include('../partials/footer') %>

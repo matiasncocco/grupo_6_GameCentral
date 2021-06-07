@@ -1,41 +1,34 @@
-<%- include('../partials/head') %>
-<%- include('../partials/header') %>
-
+<%- include ('../partials/head') %>
+<%- include ('../partials/header') %>
 <main class="main-main" >
-
     <header class="main-title first-title">
         <h3 class="bit-title">INGRESÁ</h3>
         <h5 class="small-title">INGRESÁ</h5>
     </header>
-    
     <form class="register-form" action="/">
-        
         <section class="form-section">
-
             <div class="input-box">
-                <label class="label-label" for="username">Nombre de usuario</label>
+                <label class="label-label" for="username">
+                    Nombre de usuario
+                </label>
                 <input class="input-text" type="text" name="username" id="username" required>
             </div>
-
             <div class="input-box">
-                <label class="label-label" for="password">Contraseña</label>
+                <label class="label-label" for="password">
+                    Contraseña
+                </label>
                 <input class="input-text" type="text" name="password" id="password" required>
             </div>
-
             <div class="button-box">
                 <button class="button-send" type="submit">
                     <h1 class="big-title">INGRESAR</h1>
                     <h4 class="small-title">INGRESAR</h2>
                 </button>
             </div>
-
         </section>
-
         <section class="image-section">
-            <img src="/img/form-image.jpg">
+            <img class="box-width" src="/img/form-image.jpg">
         </section>
-
     </form>
-
 </main>
-<%- include('../partials/footer') %>
+<%- include ('../partials/footer') %>

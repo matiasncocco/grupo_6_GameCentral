@@ -5,6 +5,10 @@ let title = '';
 let products = readJson('products.json');
 
 let productController = {
+    cart: (req,res) => {
+        title = 'Carrito de compras';
+        res.render('./products/cart', { title, products } );
+    },
     // 1 GET: show all items
     index: (req,res) => {
         title = 'Todos los títulos'
@@ -31,10 +35,14 @@ let productController = {
     
     // 4 POST: store product <form> fields
     store: (req,res) => {
+        let files = req.files;
+        let { img, card, capsule } = files;
         let product = {
             id: lastId(products) + 1,
-            card: req.file.filename,
-            ...req.body,
+            img: img[0].filename,
+            card: card[0].filename,
+            capsule: capsule[0].filename,
+            ...req.body
         }
         products.push(product);
         writeJson(products, 'products');

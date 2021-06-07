@@ -15,10 +15,6 @@ let mainController = {
         title = 'Game Central';
         res.render('index', { title, inOffer, relevant } );
     },
-    cart: (req,res) => {
-        title = 'Carrito de compras';
-        res.render('cart', { title } );
-    },
     termsConditions: (req,res) => {
         title = 'Términos & Condiciones';
         res.render('terms-conditions', { title } );
