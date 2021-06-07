@@ -4,7 +4,7 @@
     <section class="show-section">
         <section class="show-img">
             <img class="image-image box-width" src="/img/products/<%= product.img %>">
-            <img class="card-image" src="/img/products/<%= product.card %>">
+            <img class="card-image box-width" src="/img/products/<%= product.card %>">
         </section>
         <section class="show-main">
             <header class="show-title">
@@ -23,12 +23,12 @@
         </section>
         <section class="show-category">
             <header class="show-title category-title">
-                <h3 class="big-title">
+                <h3 class="big-title big-title-category">
                     CATEGORÍAS
                 </h3>
-                <h5 class="small-title">
+                <h6 class="small-title">
                     CATEGORÍAS
-                </h5>
+                </h6>
             </header>
             <article class="category-box">
                 <% productCategory.forEach(category => { %>
@@ -40,6 +40,28 @@
                 <% }); %>
             </article>
         </section>
+
+        <section class="show-controls">
+            
+            <div class="final-price">
+
+            </div>
+
+            <div class="show-to-cart">
+                <a href="/products/cart">
+                    <h2 class="big-title">
+                        <i class="fas fa-shopping-cart"></i>
+                    </h2>
+                    <h4 class="small-title">
+                        <i class="fas fa-shopping-cart"></i>
+                    </h4>
+                </a>
+            </div>
+        </section>
+
+
+
+
         <section class="show-long-description">
             <header class="show-title">
                 <h3 class="big-title">
@@ -54,19 +76,29 @@
                     <%= product.longDescription %>
                 </p>
             </article>
-
-            <button>
-                <a href="/products/:id/edit">
-                    send
-                </a>
-            </button>
-
-            <form action="/products/<%= product.id %>?_method=DELETE" method="POST">
-                <button type="submit">
-                    ELIMINAR
-                </button>
-            </form>
         </section>
+
+
+
+
+
+
+
+            <section class="show-controls">
+                <div class="show-edit-box">
+                    <a href="/products/<%= product.id %>/edit %>">
+                        EDITAR
+                    </a>
+                </div>
+                <form class="show-delete-box" action="/products/<%= product.id %>?_method=DELETE" method="POST">
+                    <button type="button"><!-- type="submit" -->
+                        ELIMINAR
+                    </button>
+                </form>
+            </section>
+
+
+            
     </section>
 </main>
 <%- include('../partials/footer')%>

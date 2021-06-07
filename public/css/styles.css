@@ -413,18 +413,31 @@ h6 {
     border-radius: 8px;
     color: black;
     font-weight: 400;
-    font-size: 13.28px;
+    font-size: 10px;
     text-shadow: -1px 1px 0 #B6B1F1;
-}
-
-.show-long-description .show-title {
-    padding-top: 30px;
 }
 
 .long-description {
     padding-left: 15px;
 }
-    
+
+.show-controls {
+    margin: 20px 10px;
+    padding: 10px 0;
+    border: 1px solid black;
+    box-shadow: 10px 10px 5px 5px black;
+    width: 100%;
+    display: flex;
+    flex-flow: row wrap;
+}
+
+.show-to-cart i {
+    text-shadow: -2px 2px black;
+    color: #FFF;
+    transition: all .2s cubic-bezier(.25,.25,.25,.25);
+}
+
+
     
 /**/
 /* CARRITO */
@@ -984,7 +997,7 @@ TABLETS
     }
 
     .show-title h3 {
-        font-size: 24px;
+        font-size: 20px;
     }
 
     .show-description {
@@ -1394,7 +1407,7 @@ PANTALLAS +
 
 
     .show-title h2 {
-        font-size: 36px;
+        font-size: 50px;
     }
 
     .show-title h3 {
@@ -1406,7 +1419,7 @@ PANTALLAS +
     }
 
     .show-description {
-        font-size: 20px;
+        font-size: 25px;
     }
 
 
@@ -1435,7 +1448,7 @@ PANTALLAS +
 
     .file-box {
         flex-flow: row wrap;
-        justify-content: space-between;
+        justify-content: flex-start;
     }
 
     /* LABELS */
@@ -1457,7 +1470,7 @@ PANTALLAS +
     }
 
     .product-file {
-        width: 33%;
+        width: 30%;
     }
 
 

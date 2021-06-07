@@ -11,10 +11,6 @@ fields = [
     {
         name: 'card',
         maxCount: 1
-    },
-    {
-        name: 'capsule',
-        maxCount: 1
     }
 ];
 

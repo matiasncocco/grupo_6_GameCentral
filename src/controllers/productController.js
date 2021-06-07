@@ -40,13 +40,12 @@ let productController = {
     // 4 POST: store product <form> fields
     store: (req,res) => {
         let files = req.files;
-        let { img, card, capsule } = files;
+        let { img, card } = files;
 
         let product = {
             id: lastId(products) + 1,
             img: img[0].filename,
             card: card[0].filename,
-            capsule: capsule[0].filename,
             ...req.body
         }
         products.push(product);

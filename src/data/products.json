@@ -3,7 +3,6 @@
         "id": 1,
         "img": "1623036797015.jpg",
         "card": "1623036797034.jpg",
-        "capsule": "1623036797035.jpg",
         "name": "AGE OF EMPIRES II",
         "category": [
             "ESTRATEGIA",
@@ -22,7 +21,6 @@
         "id": 2,
         "img": "1623036931738.webp",
         "card": "1623036931745.jpg",
-        "capsule": "1623036931746.jpg",
         "name": "CELESTE",
         "category": [
             "PLATFORMER",
@@ -41,7 +39,6 @@
         "id": 3,
         "img": "1623037080881.jpg",
         "card": "1623037080884.jpg",
-        "capsule": "1623037080885.jpg",
         "name": "CALL OF DUTY: MODERN WARFARE",
         "category": [
             "SHOOTER",
@@ -57,29 +54,9 @@
         "longDescription": "El riesgo nunca había sido tan alto mientras los jugadores se ponen en la piel de letales agentes de primer nivel en una saga emocionante que afectará el equilibrio del poder global. Desarrollado por el estudio que lo inició todo, Infinity Ward entrega una nueva versión épica de la icónica serie Modern Warfare a partir de cero."
     },
     {
-        "id": 4,
-        "img": "1623037222144.jpg",
-        "card": "1623037222147.jpg",
-        "capsule": "1623037222150.jpg",
-        "name": "CYBERPUNK 2077",
-        "category": [
-            "CYBERPUNK",
-            "MUNDO ABIERTO",
-            "ROL",
-            "CIENCIA FICCIÓN"
-        ],
-        "relevant": "false",
-        "price": "$2199.00",
-        "discount": "true",
-        "discountRate": "60",
-        "description": "Cyberpunk 2077 es una historia de acción y aventura en mundo abierto ambientada en Night City, una megalópolis obsesionada con el poder, el glamur y la modificación co...",
-        "longDescription": "Cyberpunk 2077 es una historia de acción y aventura en mundo abierto ambientada en Night City, una megalópolis obsesionada con el poder, el glamur y la modificación corporal. Tu personaje es V, un mercenario que persigue un implante único que permite alcanzar la inmortalidad. Podrás personalizar las mejoras cibernéticas, las habilidades y el estilo de juego del personaje para dar forma a un mundo y a una historia que depende de tus decisiones."
-    },
-    {
         "id": 5,
         "img": "1623037310936.jpg",
         "card": "1623037310955.jpg",
-        "capsule": "1623037310956.jpg",
         "name": "HADES",
         "category": [
             "ROGUELIKE",
@@ -98,7 +75,6 @@
         "id": 6,
         "img": "1623037405601.jpg",
         "card": "1623037405617.jpg",
-        "capsule": "1623037405618.jpg",
         "name": "HOLLOW KNIGHT",
         "category": [
             "METROIDVANIA",
@@ -117,7 +93,6 @@
         "id": 7,
         "img": "1623037523681.jpg",
         "card": "1623037523689.jpg",
-        "capsule": "1623037523691.jpg",
         "name": "MINECRAFT",
         "category": [
             "MUNDO ABIERTO",
@@ -136,7 +111,6 @@
         "id": 8,
         "img": "1623037735638.webp",
         "card": "1623037735639.jpg",
-        "capsule": "1623037735640.jpg",
         "name": "PORTAL",
         "category": [
             "PUZZLE",
@@ -155,7 +129,6 @@
         "id": 9,
         "img": "1623037830924.jpg",
         "card": "1623037830928.jpg",
-        "capsule": "1623037830929.jpg",
         "name": "RAINBOW SIX SIEGE",
         "category": [
             "SHOOTER",
@@ -174,7 +147,6 @@
         "id": 10,
         "img": "1623037926110.jpg",
         "card": "1623037926113.jpg",
-        "capsule": "1623037926114.jpg",
         "name": "SEKIRO",
         "category": [
             "TIPO DARK SOULS",
@@ -193,7 +165,6 @@
         "id": 11,
         "img": "1623038023755.png",
         "card": "1623038023759.jpg",
-        "capsule": "1623038023761.jpg",
         "name": "STARDEW VALLEY",
         "category": [
             "SIMULATOR",
@@ -212,7 +183,6 @@
         "id": 12,
         "img": "1623038128066.jpg",
         "card": "1623038128075.jpg",
-        "capsule": "1623038128134.jpg",
         "name": "TERRARIA",
         "category": [
             "SURVIVAL",
@@ -226,5 +196,23 @@
         "discountRate": "20",
         "description": "¡Cava, lucha, explora, construye! Con este juego de aventuras repleto de acción nada es imposible. ¡Pack de Cuatro también disponible!",
         "longDescription": "¡Cava, lucha, explora, construye! Nada es imposible en este juego de aventuras repleto de acción. El mundo es tu lienzo y la tierra misma es tu pintura.\r\n¡Coge tus herramientas y adelante! Crea armas para deshacerte de una gran variedad de enemigos en numerosos ecosistemas. Excava profundo bajo tierra para encontrar accesorios, dinero y otras cosas muy útiles. Reúne recursos para crear todo lo que necesites y conformar así tu propio mundo. Construye una casa, un fuerte o incluso un castillo. La gente se mudará a vivir ahí e incluso quizás te vendan diferentes mercancías que te ayuden en tu viaje.\r\nPero ten cuidado, aún te aguardan más desafíos... ¿Estás preparado para la tarea?\r\nCaracterísticas principales:\r\nJugabilidad \"sandbox\" (juega libremente en un mundo a tu disposición)\r\nMundos generados de forma aleatoria\r\nActualizaciones gratuitas de contenido"
+    },
+    {
+        "id": 13,
+        "img": "1623072654720.jpg",
+        "card": "1623072654724.jpg",
+        "name": "CYBERPUNK 2077",
+        "category": [
+            "CYBERPUNK",
+            "MUNDO ABIERTO",
+            "RPG",
+            "CIENCIA FICCIÓN"
+        ],
+        "relevant": "false",
+        "price": "$2199.00",
+        "discount": "true",
+        "discountRate": "80",
+        "description": "Cyberpunk 2077 es una historia de acción y aventura en mundo abierto ambientada en Night City, una megalópolis obsesionada con el poder, el glamur y la modificación co...",
+        "longDescription": "Cyberpunk 2077 es una historia de acción y aventura en mundo abierto ambientada en Night City, una megalópolis obsesionada con el poder, el glamur y la modificación corporal. Tu personaje es V, un mercenario que persigue un implante único que permite alcanzar la inmortalidad. Podrás personalizar las mejoras cibernéticas, las habilidades y el estilo de juego del personaje para dar forma a un mundo y a una historia que depende de tus decisiones.\r\n\r\nJUEGA COMO UN MERCENARIO AL MARGEN DE LA LEY\r\nConviértete en un cyberpunk, un mercenario urbano equipado con mejoras cibernéticas y crea tu leyenda en las calles de Night City.\r\n\r\nDESCUBRE LA CIUDAD DEL FUTURO\r\nSumérgete en el inmenso mundo abierto de Night City, una ciudad que establece una nueva referencia en calidad visual, complejidad y profundidad.\r\n\r\nROBA EL IMPLANTE QUE CONCEDE LA VIDA ETERNA\r\nAcepta el trabajo más peligroso de tu vida y ve en busca del prototipo que permite acceder a la inmortalidad."
     }
 ]
