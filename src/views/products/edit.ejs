@@ -16,13 +16,13 @@
                 <label class="label-label" for="name">
                     Nombre
                 </label>
-                <input class="input-text input-text-product" type="text" name="name" id="name" placeholder="Pac-Man" value="<%= product.name %>" required>
+                <input class="input-text input-text-product" type="text" name="name" id="name" value="<%= product.name %>" required>
             </div>
             <!-- category -->
             <div class="input-box category-box">
                 <% for (i = 0 ; i < productCategory.length ; i++) { %>
                     <div class="single-category">
-                        <label class="label-label" for="category<%= [i]%>">
+                        <label class="label-label" for="category<%= [i] %>">
                             Categoría <%= [i + 1] %>
                         </label>
                         <input class="input-text input-text-product" type="text" name="category" id="category<%= [i] %>" value="<%= productCategory[i] %>" required>
@@ -31,24 +31,30 @@
             </div>
             <!-- FILES x2 -->
             <div class="input-box file-box">
-                <label class="label-label file-box-label">Imágenes</label>
+                <label class="label-label file-box-label">
+                    Imágenes
+                </label>
                 <!-- img -->
                 <label class="label-label input-text label-file product-file" for="img">
-                    <div>
-                        <img style="max-height: 100px;" src="/img/products/img/<%= product.img %>">
-                    </div>
+                    <% if (product.img) { %>
+                        <div class="previous-image-box">
+                            <img src="/img/products/<%= product.img %>" alt="wtf">
+                        </div>
+                    <% } %>
+                    <input class="input-file" type="file" name="img" id="img" accept=".jpg, .jpeg, .png, .webp">
                     Imágen principal 1920x1080
-                    <!-- <input class="input-file" type="file" name="img" id="img" accept=".jpg, .jpeg, .png, .webp"> -->
                 </label>
                 <!-- card -->
                 <label class="label-label input-text label-file product-file" for="card">
-                    <div>
-                        <img style="max-height: 100px;" src="/img/products/card/<%= product.card %>">
-                    </div>
+                    <% if (product.card) { %>
+                        <div class="previous-image-box">
+                            <img src="/img/products/<%= product.card %>">
+                        </div>
+                    <% } %>
+                    <input class="input-file" type="file" name="card" id="card" accept=".jpg, .jpeg, .png, .webp">
                     Imágen tipo tarjeta 271x377
-                    <!-- <input class="input-file" type="file" name="card" id="card" accept=".jpg, .jpeg, .png, .webp"> -->
                 </label>
-            </div>
+            </div>           
             <!-- relevant -->
             <div class="input-box">
                 <label class="label-label">
@@ -56,12 +62,11 @@
                 </label>
                 <label class="label-label label-radio" for="relevant-true">
                     RELEVANT product
-                    <!-- if( value == true : selected) -->
-                    <input class="input-radio" type="radio" name="relevant" value="true" id="relevant-true" required checked>
+                    <input class="input-radio" type="radio" name="relevant" value="true" id="relevant-true" required <%= product.relevant == 'true' ? 'checked' : '' %>>
                 </label>
                 <label class="label-label label-radio" for="relevant-false">
                     NOT relevant product
-                    <input class="input-radio" type="radio" name="relevant" value="false" id="relevant-false" required>
+                    <input class="input-radio" type="radio" name="relevant" value="false" id="relevant-false" required <%= product.relevant == 'false' ? 'checked' : '' %>>
                 </label>
             </div>
             <!-- price -->
@@ -69,7 +74,7 @@
                 <label class="label-label" for="price">
                     Precio
                 </label>
-                <input class="input-text input-price" type="text" name="price" id="price" placeholder="$1999.99" maxlength="8" required>
+                <input class="input-text input-price" type="text" name="price" id="price" maxlength="8" required value="<%= product.price %>">
             </div>
             <!-- discount -->
             <div class="input-box">
@@ -78,11 +83,11 @@
                 </label>
                 <label class="label-label label-radio" for="discount-true">
                     Si
-                    <input class="input-radio" type="radio" name="discount" value="true" id="discount-true" required>
+                    <input class="input-radio" type="radio" name="discount" value="true" id="discount-true" required <%= product.discount == 'true' ? 'checked' : '' %>>
                 </label>
                 <label class="label-label label-radio" for="discount-false">
                     No
-                    <input class="input-radio" type="radio" name="discount" value="false" id="discount-false" required>
+                    <input class="input-radio" type="radio" name="discount" value="false" id="discount-false" required <%= product.discount == 'false' ? 'checked' : '' %>>
                 </label>
             </div>
             <!-- discount rate -->
@@ -96,21 +101,21 @@
                 <span class="discount-indicator">
                     %
                 </span>
-                <input class="input-text input-discount" type="text" name="discountRate" id="discountRate" placeholder="50" maxlength="2">
+                <input class="input-text input-discount" type="text" name="discountRate" id="discountRate" maxlength="2" value="<%= product.discountRate %>">
             </div>
             <!-- description -->
             <div class="input-box">
                 <label class="label-label" for="description">
                     Descripción breve
                 </label>
-                <textarea class="text-area-product" name="description" id="description" rows="5" maxlength="170" placeholder="Max: 170 caracteres." required></textarea>
+                <textarea class="text-area-product" name="description" id="description" rows="5" maxlength="170" required><%= product.description %></textarea>
             </div>
             <!-- longDescription -->
             <div class="input-box">
                 <label class="label-label" for="longDescription">
                     Descripción extensa
                 </label>
-                <textarea class="text-area-product" name="longDescription" id="longDescription" rows="15" maxlength="1000" placeholder="Max: 1000 caracteres." required></textarea>
+                <textarea class="text-area-product" name="longDescription" id="longDescription" rows="15" maxlength="1000" required><%= product.longDescription %></textarea>
             </div>
             <!-- BUTTONS -->
             <div class="button-box">

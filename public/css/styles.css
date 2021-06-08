@@ -625,6 +625,14 @@ h6 {
     justify-content: flex-start;
 }
 
+.previous-image-box {
+    text-align: center;
+}
+
+.previous-image-box img {
+    max-height: 100px;
+}
+
 /* LABELS */
 .label-label {
     display: block;

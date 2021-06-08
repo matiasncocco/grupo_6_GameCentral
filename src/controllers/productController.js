@@ -67,23 +67,30 @@ let productController = {
 
     // 6 POST: submit changes to existing product
     update: (req,res) => {
-        // res.send(req.url);
-        let gameId = req.params.id;
-        // for (i = 0 ; i < products.length ; i++) {
-        //     if (products[i].id == gameId) {
-        //         //
-
-
-
-        //     };
-        // };
-        
-        
-        // función que escribe el json
-        // writeJson()
-        
-        // res.redirect('/products');
-        // res.redirect('/product')
+        let files = req.files;
+        let { img, card } = files;
+        // paramFinder();
+        let param = req.params.id;
+        products.forEach(product => {
+            if (param == product.id) {
+                if (img != undefined) {  
+                product.img = img[0].filename;
+                };
+                if (card != undefined ) {
+                product.card = card[0].filename;
+                };
+                product.name = req.body.name;
+                product.category = req.body.category;
+                product.relevant = req.body.relevant;
+                product.price = req.body.price;
+                product.discount = req.body.discount;
+                product.discountRate = req.body.discountRate;
+                product.description = req.body.description;
+                product.longDescription = req.body.longDescription;
+                writeJson(products, 'products');
+                res.redirect('/products');
+            };
+        });
     },
 
     // 7 DELETE: remove entry

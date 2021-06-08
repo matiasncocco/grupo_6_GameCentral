@@ -18,7 +18,7 @@ router.get('/cart', productController.cart);
 router.get('/', productController.index); // 1 show all items
 router.get('/create', productController.create); // 2 show product <form>
 router.get('/:id', productController.show); // 3 show product detail
-router.put('/:id', productController.update) // 6 submit changes to existing product
+router.put('/:id', upload.fields(fields), productController.update) // 6 submit changes to existing product
 router.delete('/:id', productController.destroy); // 7 remove entry
 router.post('/', upload.fields(fields), productController.store); // 4 store product <form> fields
 router.get('/:id/edit', productController.edit); // 5 show <form> with current product data
