@@ -5,6 +5,7 @@ let userController = {
         title = 'Ingresá';
         res.render('./users/login', { title } )
     },
+
     register : (req, res) => {
         title = 'Crea tu cuenta';
         res.render('./users/register', { title } )

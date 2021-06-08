@@ -15,6 +15,7 @@ let mainController = {
         title = 'Game Central';
         res.render('index', { title, inOffer, relevant } );
     },
+    
     termsConditions: (req,res) => {
         title = 'Términos & Condiciones';
         res.render('terms-conditions', { title } );

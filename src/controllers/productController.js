@@ -1,8 +1,7 @@
-let { readJson, writeJson, lastId } = require('./helper');
+let { readJson, writeJson, lastId, paramFinder } = require('./helper');
 
 let title = '';
 let products = readJson('products.json');
-
 
 let productController = {
     cart: (req,res) => {
@@ -28,9 +27,10 @@ let productController = {
     // 3 GET: show product detail
     show: (req,res) => {
         title = "Más info del juego";
-        let gameId = req.params.id;
+        // paramFinder();
+        let param = req.params.id;
         for (i = 0 ; i < products.length ; i++) {
-            if (products[i].id == gameId) {
+            if (param == products[i].id) {
                 let productCategory = products[i].category;
                 res.render('./products/show', { title,'product':products[i],productCategory } );
             };
@@ -41,13 +41,12 @@ let productController = {
     store: (req,res) => {
         let files = req.files;
         let { img, card } = files;
-
         let product = {
             id: lastId(products) + 1,
             img: img[0].filename,
             card: card[0].filename,
             ...req.body
-        }
+        };
         products.push(product);
         writeJson(products, 'products');
         res.redirect('/');
@@ -56,9 +55,10 @@ let productController = {
     // 5 GET: show <form> with current product data
     edit: (req,res) => {
         title = 'Editar';
-        let gameId = req.params.id;
+        // paramFinder();
+        let param = req.params.id;
         for (i = 0 ; i < products.length ; i++) {
-            if (products[i].id == gameId) {
+            if (param == products[i].id) {
                 let productCategory = products[i].category;
                 res.render('./products/edit', { title, 'product':products[i], productCategory } );
             };
@@ -88,8 +88,8 @@ let productController = {
 
     // 7 DELETE: remove entry
     destroy: (req,res) => {
-        let gameId = req.params.id;
-        let newProducts = products.filter(product => product.id != gameId);
+        let param = req.params.id;
+        let newProducts = products.filter(product => param != product.id);
         writeJson(newProducts, 'products');
         res.redirect('/products');
     },

@@ -3,7 +3,7 @@ let fs = require('fs');
 
 let jsonPath = path.join(__dirname + '/..' + '/data' + '/');
 
-let help = {
+let helper = {
     lastId: (data) => {
         let last = 0;
         data.forEach(item => {
@@ -13,8 +13,6 @@ let help = {
         });
         return last;
     },
-        // lee array
-        // devuelve numero + grande
 
     readJson: (jsonName) => {
         let jsonFile = fs.readFileSync(jsonPath + jsonName,'UTF-8');
@@ -27,8 +25,11 @@ let help = {
         fs.writeFileSync(jsonPath + nombre + '.json', array);
     },
 
-    // llega req.params.id
-    // devuelve número
+    // HOW??
+    paramFinder: () => {
+        let param = req.params.id;
+        return param;
+    },
 };
 
-module.exports = help
+module.exports = helper;
