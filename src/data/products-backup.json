@@ -36,24 +36,6 @@
         "longDescription": "Ayuda a Madeline a sobrevivir a los demonios de su interior en su viaje a la cima de la montaña Celeste; un ajustadísimo plataforma diseñado a mano por los creadores del clásico multijugador TowerFall.\r\n\r\n\r\n\r\nAventura de un jugador marcada por la narración; un encantador elenco de personajes y un argumento conmovedor de descubrimiento personal.\r\nGran montaña con más de 700 pantallas de duros desafíos y retorcidos secretos.\r\nBrutales capítulos \"cara B\" para desbloquear; para los más osados.\r\nFinalista en “Excellence in Audio” de IGF; más de 2 horas de música original con un asombroso piano y pegadizos ritmos de sintetizador.\r\nPastel\r\n\r\nLos mandos son sencillos y accesibles: salta, acelera en el aire y escala, pero con varias capas de profundidad de expresión que habrá que dominar, pues cada muerte enseña una lección. Las reapariciones relámpago te permiten seguir escalando mientras desvelas misterios y te enfrentas a numerosos peligros.\r\n\r\nEs el momento, Madeline. Respira hondo. Tú puedes hacerlo."
     },
     {
-        "id": 3,
-        "img": "1623037080881.jpg",
-        "card": "1623037080884.jpg",
-        "name": "CALL OF DUTY: MODERN WARFARE",
-        "category": [
-            "SHOOTER",
-            "COOPERATIVO",
-            "BATTLE ROYALE",
-            "ACCIÓN"
-        ],
-        "relevant": "true",
-        "price": "$1999.00",
-        "discount": "false",
-        "discountRate": "",
-        "description": "Prepárate para infiltrarte en Call of Duty®: Modern Warfare®",
-        "longDescription": "El riesgo nunca había sido tan alto mientras los jugadores se ponen en la piel de letales agentes de primer nivel en una saga emocionante que afectará el equilibrio del poder global. Desarrollado por el estudio que lo inició todo, Infinity Ward entrega una nueva versión épica de la icónica serie Modern Warfare a partir de cero."
-    },
-    {
         "id": 5,
         "img": "1623037310936.jpg",
         "card": "1623037310955.jpg",
@@ -214,5 +196,23 @@
         "discountRate": "80",
         "description": "Cyberpunk 2077 es una historia de acción y aventura en mundo abierto ambientada en Night City, una megalópolis obsesionada con el poder, el glamur y la modificación co...",
         "longDescription": "Cyberpunk 2077 es una historia de acción y aventura en mundo abierto ambientada en Night City, una megalópolis obsesionada con el poder, el glamur y la modificación corporal. Tu personaje es V, un mercenario que persigue un implante único que permite alcanzar la inmortalidad. Podrás personalizar las mejoras cibernéticas, las habilidades y el estilo de juego del personaje para dar forma a un mundo y a una historia que depende de tus decisiones.\r\n\r\nJUEGA COMO UN MERCENARIO AL MARGEN DE LA LEY\r\nConviértete en un cyberpunk, un mercenario urbano equipado con mejoras cibernéticas y crea tu leyenda en las calles de Night City.\r\n\r\nDESCUBRE LA CIUDAD DEL FUTURO\r\nSumérgete en el inmenso mundo abierto de Night City, una ciudad que establece una nueva referencia en calidad visual, complejidad y profundidad.\r\n\r\nROBA EL IMPLANTE QUE CONCEDE LA VIDA ETERNA\r\nAcepta el trabajo más peligroso de tu vida y ve en busca del prototipo que permite acceder a la inmortalidad."
+    },
+    {
+        "id": 14,
+        "img": "1623201090625.jpg",
+        "card": "1623201090634.jpg",
+        "name": "SKYRIM",
+        "category": [
+            "MUNDO ABIERTO",
+            "ROL",
+            "AVENTURA",
+            "SINGLE PLAYER"
+        ],
+        "relevant": "true",
+        "price": "$625.00",
+        "discount": "false",
+        "discountRate": "",
+        "description": "Skyrim Special Edition, ganador de más de 200 premios al \"Juego del año\", da vida a la fantasía épica con un nivel de detalle asombroso. La Special Edition incluye el ...",
+        "longDescription": "Skyrim Special Edition, ganador de más de 200 premios al \"Juego del año\", da vida a la fantasía épica con un nivel de detalle asombroso. La Special Edition incluye el juego aclamado por la crítica y los complementos, así como nuevas características: gráficos y efectos renovados, rayos crepusculares volumétricos, reflejos en tiempo real, profundidad de campo dinámica y muchas más. Además, Skyrim Special Edition lleva todo el poder de los mods a PC y Xbox One: nuevas misiones, entornos, personajes, diálogos, armaduras y armas, entre otras muchas cosas. ¡Con los mods, la experiencia no tiene límites!"
     }
 ]

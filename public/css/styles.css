@@ -372,6 +372,10 @@ h6 {
     width: 100%;
 }
 
+.show-title-game-title {
+    text-shadow: -2px 2px 0 black, -5px 5px 0 #B14593;
+}
+
 .show-description {
     padding-top: 5px;
     font-size: 10px;
@@ -422,21 +426,49 @@ h6 {
 }
 
 .show-controls {
-    margin: 20px 10px;
-    padding: 10px 0;
-    border: 1px solid black;
-    box-shadow: 10px 10px 5px 5px black;
     width: 100%;
     display: flex;
-    flex-flow: row wrap;
+    flex-flow: row-reverse wrap;
+    align-items: center;
 }
 
-.show-to-cart i {
+.control-icon-box {
+    width: 10%;
+    border: red 2px solid;
+    text-align: right;
     text-shadow: -2px 2px black;
-    color: #FFF;
-    transition: all .2s cubic-bezier(.25,.25,.25,.25);
 }
 
+.control-price-box {
+    width: 40%;
+    border: red 2px solid;
+}
+
+.control-discount-box {
+    width: 50%;
+    border: red 2px solid;
+    display: flex;
+    flex-flow: row wrap;
+    align-items: center;
+}
+
+.discount-first-price {
+
+}
+
+.discount-discount {
+
+}
+
+.discount-text {
+    padding: 0;
+    text-align: left;
+    
+}
+
+.discount-much {
+
+}
 
     
 /**/
@@ -1113,11 +1145,12 @@ DESKTOP
         color: black;
     }
 
-    .carrito a {
-        padding-right: 2px;
+    .carrito i {
+        padding-right: 10px;
         height: 18px;
         width: 18px;
         border-radius: 50%;
+        opacity: .9;
     }
 
     .logo:hover {
@@ -1238,6 +1271,8 @@ DESKTOP
     .show-description {
         font-size: 16px;
     }
+
+    
 
 
     /**/

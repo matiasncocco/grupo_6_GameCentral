@@ -25,9 +25,9 @@ let helper = {
         fs.writeFileSync(jsonPath + nombre + '.json', array);
     },
 
-    // HOW??
+    // HOW?? -> PARAM IS NOT DEFINED
     paramFinder: () => {
-        let param = req.params.id;
+        param = req.params.id;
         return param;
     },
 };
