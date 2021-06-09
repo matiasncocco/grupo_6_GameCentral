@@ -32,7 +32,7 @@ let productController = {
         for (i = 0 ; i < products.length ; i++) {
             if (param == products[i].id) {
                 let productCategory = products[i].category;
-                res.render('./products/show', { title,'product':products[i],productCategory } );
+                res.render('./products/show', { title,'product':products[i], productCategory } );
             };
         };
     },

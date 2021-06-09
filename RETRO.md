@@ -39,3 +39,13 @@
 5. Sin comentarios en este sprint.
 
 ---
+
+<h2>Sprint 4</h2>
+
+1. Comenzar a dividir algunas tareas y luego revisar de manera grupal.
+2. Hacer más prácticas a nivel personal. Segmentar en tareas más concretas. Reunirse al menos dos veces por semana.
+3. Continuar con la buena comunicación y predisposición. Mantener los co-coding.
+4. Dejar de procrastinar.
+5. Dejar de prolongar tiempo sin reunirnos. No ausentarnos aún sin avance en el proyecto.
+
+---
