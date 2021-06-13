@@ -10,6 +10,12 @@ let relevant = products.filter(product => {
     return product.relevant == 'true';
 });
 
+// products
+// if (discount = true)
+// let finalPrice = ¿? 
+// finalPrice = products.price / products.discountRate
+// return finalPrice
+
 let mainController = {
     index: (req, res) => {
         title = 'Game Central';

@@ -349,8 +349,6 @@ h6 {
     border-radius: 8px;
     display: flex;
     flex-flow: row wrap;
-    justify-content: flex-start;
-    justify-content: center;
 }
 
 .show-img {
@@ -373,7 +371,7 @@ h6 {
 }
 
 .show-title-game-title {
-    text-shadow: -2px 2px 0 black, -5px 5px 0 #B14593;
+    text-shadow: -2px 2px 0 black, -4px 4px 0 #B14593;
 }
 
 .show-description {
@@ -391,6 +389,7 @@ h6 {
     justify-content: flex-start;
     align-items: center;
     padding-top: 10px;
+    margin-bottom: 30px;
 }
 
 .category-title {
@@ -425,52 +424,32 @@ h6 {
     padding-left: 15px;
 }
 
-.show-controls {
-    width: 100%;
-    display: flex;
-    flex-flow: row-reverse wrap;
-    align-items: center;
-}
-
-.control-icon-box {
-    width: 10%;
-    border: red 2px solid;
-    text-align: right;
-    text-shadow: -2px 2px black;
-}
-
-.control-price-box {
-    width: 40%;
-    border: red 2px solid;
-}
-
-.control-discount-box {
-    width: 50%;
-    border: red 2px solid;
+.offer-display {
     display: flex;
     flex-flow: row wrap;
     align-items: center;
+    background: linear-gradient(#B1455D,#B14593,#9945B1);
+    border: 2px #E2DDF9 solid;
+    border-radius: 4px;
+    text-shadow: -2px 0 black, 0 2px black, 2px 0 black, 0 -2px black;
+    justify-content: flex-end;
+    width: 100%;
 }
 
-.discount-first-price {
+/* .offer-display-box {
 
+} */
+
+.te-ahorras-text {
+    font-size: 14px;
+    text-align: right;
 }
 
-.discount-discount {
-
-}
-
-.discount-text {
-    padding: 0;
+.te-ahorras-result {
     text-align: left;
-    
 }
 
-.discount-much {
 
-}
-
-    
 /**/
 /* CARRITO */
 /**/

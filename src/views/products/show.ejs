@@ -40,107 +40,83 @@
                 <% }); %>
             </article>
         </section>
+    <!-- </section>  -->
 
-        <section class="show-controls">
 
-            <!-- box 1 -->
-            <!-- BUY: icons -->
-            <div class="control-icon-box">
-                    <h2 class="big-title">
-                        <a href="/products/cart">
-                            <i class="fas fa-cart-plus"></i>
-                        </a>
-                    </h2>
-                    <h4 class="small-title">
-                        <a href="/products/cart">
-                            <i class="fas fa-cart-plus"></i>
-                        </a>
+
+        <!-- IS IT IN OFFER? -->
+        <% if (product.discount == 'true') { %>
+            <!-- SHOW THIS -->
+            <section class="offer-display">
+                <div class="offer-display-box">
+                    <h4>
+                        <%= product.price %>
                     </h4>
-
-
-            </div>
-
-
-
-
-            <!-- box 2 -->
-            <!-- FINAL PRICE -->
-            <div class="control-price-box">
-                <h2 class="big-title">
-                    <%= product.price %>
-                </h2>
-                <h4 class="small-price">
-                    <%= product.price %>
-                </h4>
-            </div>
-
-
-
-            <!-- if (in offer ) -->
-            <% if (product.discount == 'true') { %>
-
-            
-            <div class="control-discount-box">
-                <!-- precio original $ tachado -->
-                <div class="discount-first-price">
-                    <h3 class="big-title">
-                        <%= product.price %>
-                    </h3>
-                    <h5 class="small-title">
-                        <%= product.price %>
-                    </h5>
                 </div>
-
-                <!-- % de descuento -->
-                <div class="discount-discount">
-                    <h3 class="big-title">
-                        %<%= product.discountRate %>
-                    </h3>
-                    <h5 class="small-title">
-                        %<%= product.discountRate %>
-                    </h5>
+                <div class="offer-display-box">
+                    <h4>
+                        <%= product.discountRate %>%
+                    </h4>
                 </div>
-                <!-- texto te ahorras -->
-                <article class="show-description discount-text">
+                <div class="offer-display-box te-ahorras-text">
                     <p>
-                      Te ahorras
+                        Te ahorras
                     </p>
-                </article>
-                <div class="discount-much">
-                    <h3 class="big-title">
-                        $500
-                    </h3>
-                    <h5 class="small-title">
-                        $500
-                    </h5>
                 </div>
-            </div>
+                <div class="offer-display-box te-ahorras-result">
+                    <h4>
+                        <%= product.price - product.price %>!
+                    </h4>
+                </div>
+            </section>
+        <% } %>
+        
 
-            <% } %>
+
+
+
+
+        <!-- SHOW ALWAYS -->
+        <!-- FINAL PRICE & BUY BUTTON -->
+        <section>
+
+
 
 
 
 
         </section>
+            
 
 
 
 
-        <section class="show-long-description">
+
+
+
+
+
+
+
+
+
+
+        <!--  -->
+        <!-- <section class="show-long-description">
             <header class="show-title">
                 <h3 class="big-title">
-                    MÁS SOBRE <%= product.name %>
+                    MÁS SOBRE <%#= product.name %>
                 </h3>
                 <h5 class="small-title">
-                    MAS SOBRE <%= product.name %>
+                    MAS SOBRE <%#= product.name %>
                 </h5>
             </header>
             <article class="show-description long-description">
                 <p>
-                    <%= product.longDescription %>
+                    <%#= product.longDescription %>
                 </p>
             </article>
-        </section>
+        </section> -->
 
 
 
