@@ -11,7 +11,7 @@
             "ACCIÓN"
         ],
         "relevant": "true",
-        "price": "$299.00",
+        "price": 299.00,
         "discount": "false",
         "discountRate": "",
         "description": "Age of Empires II: Definitive Edition conmemora el 20 aniversario de uno de los juegos de estrategia más aclamados de todos los tiempos, en una versión que ofrece impa...",
@@ -29,7 +29,7 @@
             "INDIE"
         ],
         "relevant": "false",
-        "price": "$224.99",
+        "price": 224.99,
         "discount": "true",
         "discountRate": "20",
         "description": "Ayuda a Madeline a sobrevivir a los demonios de su interior en su viaje a la cima de la montaña Celeste; un ajustadísimo plataforma diseñado a mano por los creadores d...",
@@ -47,7 +47,7 @@
             "ROGUELITE"
         ],
         "relevant": "true",
-        "price": "$279.99",
+        "price": 279.99,
         "discount": "true",
         "discountRate": "35",
         "description": "Desafía al dios de los muertos y protagoniza una salvaje fuga del Inframundo en este juego de exploración de mazmorras de los creadores de Bastion, Transistor y Pyre.",
@@ -65,7 +65,7 @@
             "2D"
         ],
         "relevant": "true",
-        "price": "$179.99",
+        "price": 179.99,
         "discount": "true",
         "discountRate": "20",
         "description": "¡Forja tu propio camino en Hollow Knight! Una aventura épica a través de un vasto reino de insectos y héroes que se encuentra en ruinas. Explora cavernas tortuosas, co...",
@@ -83,7 +83,7 @@
             "BLOQUES"
         ],
         "relevant": "true",
-        "price": "$284.00",
+        "price": 284.00,
         "discount": "false",
         "discountRate": "",
         "description": "Explora mundos generados al azar y construye cosas increíbles, desde la más humilde de las casas hasta el más majestuoso de los castillos. Juega en el modo creativo co...",
@@ -101,7 +101,7 @@
             "CLÁSICO"
         ],
         "relevant": "false",
-        "price": "$129.99",
+        "price": 129.99,
         "discount": "true",
         "discountRate": "50",
         "description": "Portal™ es la nueva aventura para un solo jugador de Valve. Ambientado en los misteriosos laboratorios de Aperture Science, Portal ha sido calificado como uno de los j...",
@@ -119,7 +119,7 @@
             "TEAM FPS"
         ],
         "relevant": "true",
-        "price": "$999.00",
+        "price": 999.00,
         "discount": "false",
         "discountRate": "",
         "description": "Tom Clancy's Rainbow Six Siege es el nuevo lanzamiento del shooter más aclamado desarrollado por el estudio Ubisoft Montreal.",
@@ -137,7 +137,7 @@
             "SINGLE PLAYER"
         ],
         "relevant": "true",
-        "price": "$1299.00",
+        "price": 1299.00,
         "discount": "false",
         "discountRate": "",
         "description": "Juego del año - The Game Awards 2019 Mejor juego de acción de 2019 - IGN Traza tu propio camino hacia la venganza en la galardonada aventura de FromSoftware, creadores...",
@@ -155,7 +155,7 @@
             "INDIE"
         ],
         "relevant": "false",
-        "price": "$179.99",
+        "price": 179.99,
         "discount": "true",
         "discountRate": "10",
         "description": "Acabas de heredar la vieja parcela agrícola de tu abuelo de Stardew Valley. Decides partir hacia una nueva vida con unas herramientas usadas y algunas monedas. ¿Te ves...",
@@ -173,7 +173,7 @@
             "2D"
         ],
         "relevant": "false",
-        "price": "$129.99",
+        "price": 129.99,
         "discount": "true",
         "discountRate": "20",
         "description": "¡Cava, lucha, explora, construye! Con este juego de aventuras repleto de acción nada es imposible. ¡Pack de Cuatro también disponible!",
@@ -191,7 +191,7 @@
             "CIENCIA FICCIÓN"
         ],
         "relevant": "false",
-        "price": "$2199.00",
+        "price": 2199.00,
         "discount": "true",
         "discountRate": "80",
         "description": "Cyberpunk 2077 es una historia de acción y aventura en mundo abierto ambientada en Night City, una megalópolis obsesionada con el poder, el glamur y la modificación co...",
@@ -209,7 +209,7 @@
             "SINGLE PLAYER"
         ],
         "relevant": "true",
-        "price": "$625.00",
+        "price": 625.00,
         "discount": "false",
         "discountRate": "",
         "description": "Skyrim Special Edition, ganador de más de 200 premios al \"Juego del año\", da vida a la fantasía épica con un nivel de detalle asombroso. La Special Edition incluye el ...",

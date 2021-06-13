@@ -18,6 +18,9 @@
             <article class="show-description">
                 <p>
                     <%= product.description %>
+                    <a class="read-more-c" href="#read-more">
+                        LEER MÁS
+                    </a>
                 </p>
             </article>
         </section>
@@ -40,33 +43,33 @@
                 <% }); %>
             </article>
         </section>
-    <!-- </section>  -->
-
-
-
         <!-- IS IT IN OFFER? -->
         <% if (product.discount == 'true') { %>
             <!-- SHOW THIS -->
             <section class="offer-display">
-                <div class="offer-display-box">
-                    <h4>
-                        <%= product.price %>
-                    </h4>
+                <!-- 1: precio original -->
+                <div class="offer-display-box original-price">
+                    <h2 class="big-title">
+                        $<%= product.price %>
+                    </h2>
+                    <h5 class="small-title">
+                        $<%= product.price %>
+                    </h5>
                 </div>
+                <!-- 2: descuento -->
                 <div class="offer-display-box">
-                    <h4>
+                    <h2 class="big-title">
                         <%= product.discountRate %>%
-                    </h4>
+                    </h2>
+                    <h5 class="small-title">
+                        <%= product.discountRate %>%
+                    </h5>
                 </div>
-                <div class="offer-display-box te-ahorras-text">
+                <!-- 3: te ahorras -->
+                <div class="offer-display-box te-ahorras">
                     <p>
-                        Te ahorras
+                        AHORRAS $<%= product.price%>!
                     </p>
-                </div>
-                <div class="offer-display-box te-ahorras-result">
-                    <h4>
-                        <%= product.price - product.price %>!
-                    </h4>
                 </div>
             </section>
         <% } %>
@@ -102,40 +105,41 @@
 
 
         <!--  -->
-        <!-- <section class="show-long-description">
+        <section class="show-long-description" id="read-more">
             <header class="show-title">
                 <h3 class="big-title">
-                    MÁS SOBRE <%#= product.name %>
+                    MÁS SOBRE <%= product.name %>
                 </h3>
                 <h5 class="small-title">
-                    MAS SOBRE <%#= product.name %>
+                    MAS SOBRE <%= product.name %>
                 </h5>
             </header>
             <article class="show-description long-description">
                 <p>
-                    <%#= product.longDescription %>
+                    <%= product.longDescription %>
                 </p>
             </article>
-        </section> -->
+        </section>
 
 
 
 
 
 
-
-            <!-- <section class="show-controls">
-                <div class="show-edit-box">
-                    <a href="/products/<%#= product.id %>/edit %>">
-                        EDITAR
-                    </a>
-                </div>
-                <form class="show-delete-box" action="/products/<%= product.id %>?_method=DELETE" method="POST">
-                    <button type="submit">
-                        ELIMINAR
-                    </button>
-                </form>
-            </section> -->
+        <!-- ADMIN ONLY BUTTONS -->
+        <!-- EDIT / DELETE -->
+        <section class="show-controls">
+            <div class="show-edit-box">
+                <a href="/products/<%#= product.id %>/edit %>">
+                    EDITAR
+                </a>
+            </div>
+            <form class="show-delete-box" action="/products/<%= product.id %>?_method=DELETE" method="POST">
+                <button type="submit">
+                    ELIMINAR
+                </button>
+            </form>
+        </section>
 
 
             

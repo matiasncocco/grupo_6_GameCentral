@@ -382,6 +382,10 @@ h6 {
     font-weight: 600;
 }
 
+.read-more-c {
+    color: #B14593;
+}
+
 .show-category {
     width: 100%;
     display: flex;
@@ -389,7 +393,6 @@ h6 {
     justify-content: flex-start;
     align-items: center;
     padding-top: 10px;
-    margin-bottom: 30px;
 }
 
 .category-title {
@@ -431,22 +434,28 @@ h6 {
     background: linear-gradient(#B1455D,#B14593,#9945B1);
     border: 2px #E2DDF9 solid;
     border-radius: 4px;
-    text-shadow: -2px 0 black, 0 2px black, 2px 0 black, 0 -2px black;
+    text-shadow: -1px 0 black, 0 1px black, 1px 0 black, 0 -1px black;
     justify-content: flex-end;
     width: 100%;
+    opacity: .9;
+    transition: all .2s cubic-bezier(.25,.25,.25,.25);
 }
 
-/* .offer-display-box {
-
-} */
-
-.te-ahorras-text {
-    font-size: 14px;
-    text-align: right;
+.offer-display-box {
+    width: 25%;
+    text-align: center;
+    padding: 5px;
 }
 
-.te-ahorras-result {
-    text-align: left;
+.original-price {
+    text-decoration: line-through;
+    opacity: .8;
+}
+
+.te-ahorras {
+    font-size: 12px;
+    width: 50%;
+    color: #45B163;
 }
 
 
@@ -1027,6 +1036,10 @@ TABLETS
         font-size: 18.72px;
     }
 
+    .te-ahorras {
+        font-size: 16px;
+    }
+
 
     /**/
     /* FORMULARIOS */
@@ -1251,7 +1264,26 @@ DESKTOP
         font-size: 16px;
     }
 
-    
+    .read-more-c:hover {
+        text-decoration: underline;
+        font-style: italic;
+    }
+
+    .offer-display {
+        opacity: .7;
+    }
+
+    .offer-display:hover {
+        opacity: .9;
+    }
+
+    .te-ahorras {
+        font-size: 32px;
+    }
+
+    .offer-display h2 {
+        font-size: 32px;
+    }
 
 
     /**/
@@ -1443,6 +1475,15 @@ PANTALLAS +
     .show-description {
         font-size: 25px;
     }
+
+    .te-ahorras {
+        font-size: 42px;
+    }
+
+    .offer-display h2 {
+        font-size: 42px;
+    }
+
 
 
     /**/
