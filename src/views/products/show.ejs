@@ -19,7 +19,7 @@
                 <p>
                     <%= product.description %>
                     <a class="read-more-c" href="#read-more">
-                        LEER MÁS
+                        MÁS INFO
                     </a>
                 </p>
             </article>
@@ -43,11 +43,16 @@
                 <% }); %>
             </article>
         </section>
-        <!-- IS IT IN OFFER? -->
         <% if (product.discount == 'true') { %>
-            <!-- SHOW THIS -->
+            <header class="show-title offer-title">
+                <h2 class="big-title">
+                    ¡OFERTA ESPECIAL!
+                </h2>
+                <h4 class="small-title">
+                    ¡OFERTA ESPECIAL!
+                </h4>
+            </header>
             <section class="offer-display">
-                <!-- 1: precio original -->
                 <div class="offer-display-box original-price">
                     <h2 class="big-title">
                         $<%= product.price %>
@@ -56,7 +61,6 @@
                         $<%= product.price %>
                     </h5>
                 </div>
-                <!-- 2: descuento -->
                 <div class="offer-display-box">
                     <h2 class="big-title">
                         <%= product.discountRate %>%
@@ -65,7 +69,6 @@
                         <%= product.discountRate %>%
                     </h5>
                 </div>
-                <!-- 3: te ahorras -->
                 <div class="offer-display-box te-ahorras">
                     <p>
                         AHORRAS $<%= product.price%>!
@@ -81,13 +84,18 @@
 
         <!-- SHOW ALWAYS -->
         <!-- FINAL PRICE & BUY BUTTON -->
-        <section>
-
-
-
-
-
-
+        <section class="purchase-display">
+            <div class="purchase-price-box">
+                <h2 class="big-title">
+                    <%= product.price %>
+                </h2>
+                <h5 class="small-title">
+                    <%= product.price %>
+                </h5>
+            </div>
+            <div class="purchase-button-box">
+                
+            </div>
         </section>
             
 
@@ -111,7 +119,7 @@
                     MÁS SOBRE <%= product.name %>
                 </h3>
                 <h5 class="small-title">
-                    MAS SOBRE <%= product.name %>
+                    MÁS SOBRE <%= product.name %>
                 </h5>
             </header>
             <article class="show-description long-description">

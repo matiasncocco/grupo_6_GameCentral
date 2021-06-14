@@ -349,6 +349,8 @@ h6 {
     border-radius: 8px;
     display: flex;
     flex-flow: row wrap;
+    /*  */
+    justify-content: flex-end;
 }
 
 .show-img {
@@ -456,6 +458,19 @@ h6 {
     font-size: 12px;
     width: 50%;
     color: #45B163;
+}
+
+/* .offer-title {
+    margin: ???
+} */
+
+.purchase-display {
+    width: 50%;
+}
+
+.purchase-price-box, .puchase-button-box {
+    border: solid red 2px;
+    padding: 5px;
 }
 
 
