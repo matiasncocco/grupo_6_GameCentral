@@ -925,7 +925,7 @@ h6 {
 }
 
 .trademark {
-    margin-top: 20px;
+    margin-top: 30px;
     text-shadow: -2px 0 black, 0 2px black, 1px 0 black, 0 -1px black;
 }
 
@@ -963,6 +963,12 @@ h6 {
     text-align: center;
     font-size: 10px;
 }
+
+/**/
+/* TERMS & CONDITIONS */
+/**/
+
+
 
 
 /**/
@@ -1163,6 +1169,7 @@ TABLETS
     }
 
     .trademark {
+        margin: 0;
         width: 50%;
         text-align: center;
     }
