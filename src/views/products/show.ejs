@@ -87,10 +87,10 @@
         <section class="purchase-display">
             <div class="purchase-price-box">
                 <h2 class="big-title">
-                    $<%= finalPrice %>
+                    $<%= product.discount === true ? product.finalPrice : product.price %>
                 </h2>
                 <h4 class="small-title">
-                    $<%= finalPrice %>
+                    $<%= product.discount === true ? product.finalPrice : product.price %>
                 </h4>
             </div>
             <a class="purchase-button-box" href="/products/cart">
@@ -121,20 +121,20 @@
                 </p>
             </article>
         </section>
-        <!-- ADMIN ONLY BUTTONS -->
-        <!-- EDIT / DELETE -->
-        <section class="show-controls">
-            <div class="show-edit-box">
-                <a href="/products/<%#= product.id %>/edit %>">
+    </section>
+    <section class="admin-main-box">
+        <div class="admin-edit-box">
+            <button class="admin-button-edit" type="button">
+                <a href="/products/<%= product.id %>/edit %>">
                     EDITAR
                 </a>
-            </div>
-            <form class="show-delete-box" action="/products/<%= product.id %>?_method=DELETE" method="POST">
-                <button type="submit">
-                    ELIMINAR
-                </button>
-            </form>
-        </section>
+            </button> 
+        </div>
+        <form class="admin-delete-box" action="/products/<%= product.id %>?_method=DELETE" method="POST">
+            <button class="admin-button-delete" type="submit">
+                ELIMINAR
+            </button>
+        </form>
     </section>
 </main>
 <%- include('../partials/footer')%>

@@ -2,10 +2,9 @@ let { readJson, percentageFinder } = require('./helper');
 
 let title = '';
 let products = readJson('products.json');
-
 products.forEach(product => {
     if (product.discount === true) {
-        product.finalPrice = percentageFinder(product.price,product.discountRate)
+        product.finalPrice = percentageFinder(product.price,product.discountRate);
     };
 });
 let inOffer = products.filter(product => {

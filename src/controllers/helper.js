@@ -28,7 +28,8 @@ let helper = {
     percentageFinder: (price,discountRate) => {
         let multiplier = price * discountRate;
         let divider = multiplier / 100;
-        let roundResult = Math.floor(divider);
+        let result = price - divider;
+        let roundResult = Math.floor(result);
         return roundResult;
     },
 

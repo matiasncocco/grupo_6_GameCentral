@@ -335,7 +335,7 @@ h6 {
 
 
 /**/
-/* SHOW PRODUCT */
+/* PRODUCT SHOW */
 /**/
     
 
@@ -494,6 +494,30 @@ h6 {
 
 .show-long-description {
     margin-top: 5%;
+}
+
+.admin-main-box {
+    width: 100%;
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: space-between;
+    align-items: center;
+    margin: 30px 0;
+}
+
+.admin-edit-box, .admin-delete-box {
+    width: 50%;
+    text-align: center;
+}
+
+.admin-button-edit, .admin-button-delete {
+    padding: 4px;
+    background-color: #858BB7;
+    border: 2px solid #E2DDF9;
+    transition: all .2s cubic-bezier(.25,.25,.25,.25);
+    cursor: pointer;
+    font-size: 12px;
+    font-weight: 900;
 }
 
 
@@ -817,7 +841,6 @@ h6 {
 .button-cancel {
     width: fit-content;
     padding: 4px;
-    border: none;
     background-color: #858BB7;
     border: 2px solid #E2DDF9;
     transition: all .2s cubic-bezier(.25,.25,.25,.25);
@@ -1081,6 +1104,10 @@ TABLETS
         font-size: 16px;
     }
 
+    .admin-button-edit, .admin-button-delete {
+        font-size: 20px;
+    }
+
 
     /**/
     /* FORMULARIOS */
@@ -1338,6 +1365,17 @@ DESKTOP
         background: #519b3c;
     }
 
+    .admin-button-edit:hover {
+        color: #FFF;
+        background-color: blue;
+        border: 2px solid blue;
+    }
+
+    .admin-button-delete:hover {
+        color: #FFF;
+        background-color: red;
+        border: 2px solid red;
+    }
 
     /**/
     /* PRODUCT INDEX */

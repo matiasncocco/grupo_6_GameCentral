@@ -2,6 +2,11 @@ let { readJson, writeJson, lastId, percentageFinder, paramFinder } = require('./
 
 let title = '';
 let products = readJson('products.json');
+products.forEach(product => {
+    if (product.discount === true) {
+        product.finalPrice = percentageFinder(product.price,product.discountRate);
+    };
+});
 
 let productsController = {
     cart: (req,res) => {
@@ -32,15 +37,8 @@ let productsController = {
         for (i = 0 ; i < products.length ; i++) {
             if (param == products[i].id) {
                 let productCategory = products[i].category;
-                let finalPrice = percentageFinder(products[i].price,products[i].discountRate);
-                let saveOperation = (price,discountRate) => {
-                    let finalPrice = (price * discountRate) / 100;
-                    let result = price - finalPrice;
-                    let roundedResult = Math.floor(result);
-                    return roundedResult;
-                };
-                let moneySaved = saveOperation(products[i].price,products[i].discountRate);
-                res.render('./products/show', { title,'product':products[i], productCategory, finalPrice, moneySaved } );
+                let moneySaved = products[i].price - products[i].finalPrice;
+                res.render('./products/show', { title,'product':products[i], productCategory, moneySaved } );
             };
         };
     },
