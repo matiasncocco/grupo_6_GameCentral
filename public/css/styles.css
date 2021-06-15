@@ -349,8 +349,6 @@ h6 {
     border-radius: 8px;
     display: flex;
     flex-flow: row wrap;
-    /*  */
-    justify-content: flex-end;
 }
 
 .show-img {
@@ -395,6 +393,7 @@ h6 {
     justify-content: flex-start;
     align-items: center;
     padding-top: 10px;
+    margin-bottom: 5%;
 }
 
 .category-title {
@@ -416,13 +415,13 @@ h6 {
 
 .category-single-box p {
     margin: 2px;
-    background-color: #B14593;
-    border: dotted 1px black;
+    background: linear-gradient(#B1CCF1,#D6B1F1);
+    border: dotted 1px #B14593;
     border-radius: 8px;
-    color: black;
+    color: #B14593;
     font-weight: 400;
     font-size: 10px;
-    text-shadow: -1px 1px 0 #B6B1F1;
+    text-shadow: -1px 1px 0 black;
 }
 
 .long-description {
@@ -460,17 +459,41 @@ h6 {
     color: #45B163;
 }
 
-/* .offer-title {
-    margin: ???
-} */
+.pagas-box {
+    width: 50%;
+    align-self: center;
+    text-align: right;
+    padding-right: 3%;
+    text-shadow: -2px 2px 0 black;
+    color: #5DB145;
+}
 
 .purchase-display {
     width: 50%;
+    display: flex;
+    flex-flow: column wrap;
+    align-items: flex-end;
+    justify-content: center;
 }
 
-.purchase-price-box, .puchase-button-box {
-    border: solid red 2px;
+.purchase-price-box, .purchase-button-box {
     padding: 5px;
+    width: 100%;
+    background: #5DB145;
+    text-shadow: -2px 2px 0 black;
+    text-align: center;
+    border-radius: 4px;
+    border: 2px #E2DDF9 solid;
+    border-top: none;
+    transition: all .1s cubic-bezier(.25,.25,.25,.25);
+}
+
+.purchase-button-box {
+    border-radius: 0 0 30px 30px;
+}
+
+.show-long-description {
+    margin-top: 5%;
 }
 
 
@@ -733,7 +756,10 @@ h6 {
 }
 
 .input-price {
-    width: 65px;
+    width: 37px;
+    padding-left: 0;
+    border-left: none;
+    border-radius: 0 8px 8px 0;
 }
 
 .input-discount {
@@ -1073,7 +1099,7 @@ TABLETS
     }
 
     .input-price {
-        width: 75px;
+        width: 37px;
     }
 
     .input-discount {
@@ -1300,6 +1326,18 @@ DESKTOP
         font-size: 32px;
     }
 
+    .pagas-box h1 {
+        font-size: 36px;
+    }
+
+    .purchase-price-box h2, .purchase-button-box h2 {
+        font-size: 32px;
+    }
+
+    .purchase-price-box:hover, .purchase-button-box:hover {
+        background: #519b3c;
+    }
+
 
     /**/
     /* PRODUCT INDEX */
@@ -1338,7 +1376,7 @@ DESKTOP
     }
 
     .input-price {
-        width: 80px;
+        width: 42px;
     }
 
     .input-discount {
@@ -1499,6 +1537,13 @@ PANTALLAS +
         font-size: 42px;
     }
 
+    .pagas-box h1 {
+        font-size: 46px;
+    }
+
+    .purchase-price-box h2, .purchase-button-box h2 {
+        font-size: 42px;
+    }
 
 
     /**/
@@ -1540,7 +1585,7 @@ PANTALLAS +
     }
 
     .input-price {
-        width: 80px;
+        width: 47px;
     }
 
     .input-discount {

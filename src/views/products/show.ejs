@@ -76,43 +76,36 @@
                 </div>
             </section>
         <% } %>
-        
-
-
-
-
-
-        <!-- SHOW ALWAYS -->
-        <!-- FINAL PRICE & BUY BUTTON -->
+        <section class="pagas-box">
+            <h1 class="big-title">
+                PAGAS
+            </h1>
+            <h3 class="small-title">
+                PAGAS
+            </h3>
+        </section>
         <section class="purchase-display">
             <div class="purchase-price-box">
                 <h2 class="big-title">
-                    <%= product.price %>
+                    $<%= product.price %>
                 </h2>
-                <h5 class="small-title">
-                    <%= product.price %>
-                </h5>
+                <h4 class="small-title">
+                    $<%= product.price %>
+                </h4>
             </div>
-            <div class="purchase-button-box">
-                
-            </div>
+            <a class="purchase-button-box" href="/products/cart">
+                <h2 class="big-title">
+                    <i class="fas fa-shopping-cart"></i>
+                    <i class="fas fa-money-bill-wave"></i>
+                    <i class="fas fa-credit-card"></i>
+                </h2>
+                <h4 class="small-title">
+                    <i class="fas fa-shopping-cart"></i>
+                    <i class="fas fa-money-bill-wave"></i>
+                    <i class="fas fa-credit-card"></i>
+                </h4>
+            </a>
         </section>
-            
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-        <!--  -->
         <section class="show-long-description" id="read-more">
             <header class="show-title">
                 <h3 class="big-title">
@@ -128,12 +121,6 @@
                 </p>
             </article>
         </section>
-
-
-
-
-
-
         <!-- ADMIN ONLY BUTTONS -->
         <!-- EDIT / DELETE -->
         <section class="show-controls">
@@ -148,9 +135,6 @@
                 </button>
             </form>
         </section>
-
-
-            
     </section>
 </main>
 <%- include('../partials/footer')%>
