@@ -1,7 +1,6 @@
 <%- include('./partials/head') %>
 <%- include('./partials/header') %>
 <main class="main-main">
-    <!-- Título de la oferta -->
     <header class="main-title first-title">
         <h3 class="big-title">
             AUTUMN SALE
@@ -10,13 +9,11 @@
             AUTUMN SALE
         </h5>
     </header>
-    <!-- Sección de ofertas -->
     <section class="main-section last-section">
         <% for (i = 0 ; i < inOffer.length ; i++) { %>
             <%- include('./products/partials/product', { 'product': inOffer } ) %>
         <% } %>
     </section>
-    <!-- Título destacados y recomendados  -->
     <header class="main-title">
         <h3 class="big-title">
             DESTACADOS & RECOMENDADOS
@@ -30,7 +27,6 @@
             <%- include('./products/partials/product', { 'product': relevant } ) %>
         <% } %>
     </section>
-    <!-- Título a ver más -->
     <a href="/products">
         <header class="main-title link-title">
             <h3 class="big-title link-header">
