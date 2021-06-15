@@ -33,6 +33,14 @@ let helper = {
         return roundResult;
     },
 
+    storeBool: (value) => {
+        if (value == 'true') {
+            return true;
+        } else {
+            return false;
+        };
+    },
+
     // HOW?? -> PARAM IS NOT DEFINED
     paramFinder: () => {
         param = req.params.id;

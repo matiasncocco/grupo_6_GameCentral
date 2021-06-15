@@ -1,4 +1,4 @@
-let { readJson, writeJson, lastId, percentageFinder, paramFinder } = require('./helper');
+let { readJson, writeJson, lastId, percentageFinder, storeBool, paramFinder } = require('./helper');
 
 let title = '';
 let products = readJson('products.json');
@@ -51,7 +51,14 @@ let productsController = {
             id: lastId(products) + 1,
             img: img[0].filename,
             card: card[0].filename,
-            ...req.body
+            relevant: storeBool(req.body.relevant),
+            discount: storeBool(req.body.discount),
+            name: req.body.name,
+            category: req.body.category,
+            price: parseInt(req.body.price),
+            discountRate: parseInt(req.body.discountRate),
+            description: req.body.description,
+            longDescription: req.body.longDescription
         };
         products.push(product);
         writeJson(products, 'products');
