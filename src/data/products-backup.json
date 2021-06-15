@@ -33,7 +33,8 @@
         "discount": true,
         "discountRate": 20,
         "description": "Ayuda a Madeline a sobrevivir a los demonios de su interior en su viaje a la cima de la montaña Celeste; un ajustadísimo plataforma diseñado a mano por los creadores d...",
-        "longDescription": "Ayuda a Madeline a sobrevivir a los demonios de su interior en su viaje a la cima de la montaña Celeste; un ajustadísimo plataforma diseñado a mano por los creadores del clásico multijugador TowerFall.\r\n\r\n\r\n\r\nAventura de un jugador marcada por la narración; un encantador elenco de personajes y un argumento conmovedor de descubrimiento personal.\r\nGran montaña con más de 700 pantallas de duros desafíos y retorcidos secretos.\r\nBrutales capítulos \"cara B\" para desbloquear; para los más osados.\r\nFinalista en “Excellence in Audio” de IGF; más de 2 horas de música original con un asombroso piano y pegadizos ritmos de sintetizador.\r\nPastel\r\n\r\nLos mandos son sencillos y accesibles: salta, acelera en el aire y escala, pero con varias capas de profundidad de expresión que habrá que dominar, pues cada muerte enseña una lección. Las reapariciones relámpago te permiten seguir escalando mientras desvelas misterios y te enfrentas a numerosos peligros.\r\n\r\nEs el momento, Madeline. Respira hondo. Tú puedes hacerlo."
+        "longDescription": "Ayuda a Madeline a sobrevivir a los demonios de su interior en su viaje a la cima de la montaña Celeste; un ajustadísimo plataforma diseñado a mano por los creadores del clásico multijugador TowerFall.\r\n\r\n\r\n\r\nAventura de un jugador marcada por la narración; un encantador elenco de personajes y un argumento conmovedor de descubrimiento personal.\r\nGran montaña con más de 700 pantallas de duros desafíos y retorcidos secretos.\r\nBrutales capítulos \"cara B\" para desbloquear; para los más osados.\r\nFinalista en “Excellence in Audio” de IGF; más de 2 horas de música original con un asombroso piano y pegadizos ritmos de sintetizador.\r\nPastel\r\n\r\nLos mandos son sencillos y accesibles: salta, acelera en el aire y escala, pero con varias capas de profundidad de expresión que habrá que dominar, pues cada muerte enseña una lección. Las reapariciones relámpago te permiten seguir escalando mientras desvelas misterios y te enfrentas a numerosos peligros.\r\n\r\nEs el momento, Madeline. Respira hondo. Tú puedes hacerlo.",
+        "finalPrice": 179
     },
     {
         "id": 5,
@@ -51,7 +52,8 @@
         "discount": true,
         "discountRate": 35,
         "description": "Desafía al dios de los muertos y protagoniza una salvaje fuga del Inframundo en este juego de exploración de mazmorras de los creadores de Bastion, Transistor y Pyre.",
-        "longDescription": "Hades es un juego roguelike de exploración de mazmorras que combina los mejores aspectos de los aclamados títulos anteriores de Supergiant, como la acción rápida de Bastion, la atmósfera y la profundidad de Transistor y la narrativa centrada en los personajes de Pyre.\r\nCOMBATE PARA ESCAPAR DEL INFIERNO\r\nComo el príncipe inmortal del Inframundo, tendrás a tu disposición los poderes y las armas míticas del Olimpo para liberarte de las garras del mismísimo dios de los muertos, al tiempo que te vas haciendo más fuerte y descubres más piezas de la historia con cada intento de fuga.\r\nDESATA LA IRA DEL OLIMPO\r\n¡Los dioses del Olimpo están de tu lado! Conoce a Zeus, Atenea, Poseidón y muchos más, y elige entre decenas de poderosas bendiciones que potenciarán tus habilidades. Hay miles de arquetipos de personaje viables que irás descubriendo a medida que juegues."
+        "longDescription": "Hades es un juego roguelike de exploración de mazmorras que combina los mejores aspectos de los aclamados títulos anteriores de Supergiant, como la acción rápida de Bastion, la atmósfera y la profundidad de Transistor y la narrativa centrada en los personajes de Pyre.\r\nCOMBATE PARA ESCAPAR DEL INFIERNO\r\nComo el príncipe inmortal del Inframundo, tendrás a tu disposición los poderes y las armas míticas del Olimpo para liberarte de las garras del mismísimo dios de los muertos, al tiempo que te vas haciendo más fuerte y descubres más piezas de la historia con cada intento de fuga.\r\nDESATA LA IRA DEL OLIMPO\r\n¡Los dioses del Olimpo están de tu lado! Conoce a Zeus, Atenea, Poseidón y muchos más, y elige entre decenas de poderosas bendiciones que potenciarán tus habilidades. Hay miles de arquetipos de personaje viables que irás descubriendo a medida que juegues.",
+        "finalPrice": 181
     },
     {
         "id": 6,
@@ -69,7 +71,8 @@
         "discount": true,
         "discountRate": 20,
         "description": "¡Forja tu propio camino en Hollow Knight! Una aventura épica a través de un vasto reino de insectos y héroes que se encuentra en ruinas. Explora cavernas tortuosas, co...",
-        "longDescription": "Enfréntate a las profundidades de un reino olvidado\r\nBajo la deteriorada ciudad de Petrópolis yace un antiguo reino en ruinas. A muchos les atrae la vida bajo la superficie y van en busca de riquezas, gloria o respuestas a viejos enigmas.\r\n\r\nHollow Knight es una aventura de acción clásica en 2D ambientada en un vasto mundo interconectado. Explora cavernas tortuosas, ciudades antiguas y páramos mortales. Combate contra criaturas corrompidas, haz amistad con extraños insectos y resuelve los antiguos misterios que yacen en el corazón de reino."
+        "longDescription": "Enfréntate a las profundidades de un reino olvidado\r\nBajo la deteriorada ciudad de Petrópolis yace un antiguo reino en ruinas. A muchos les atrae la vida bajo la superficie y van en busca de riquezas, gloria o respuestas a viejos enigmas.\r\n\r\nHollow Knight es una aventura de acción clásica en 2D ambientada en un vasto mundo interconectado. Explora cavernas tortuosas, ciudades antiguas y páramos mortales. Combate contra criaturas corrompidas, haz amistad con extraños insectos y resuelve los antiguos misterios que yacen en el corazón de reino.",
+        "finalPrice": 143
     },
     {
         "id": 7,
@@ -105,7 +108,8 @@
         "discount": true,
         "discountRate": 50,
         "description": "Portal™ es la nueva aventura para un solo jugador de Valve. Ambientado en los misteriosos laboratorios de Aperture Science, Portal ha sido calificado como uno de los j...",
-        "longDescription": "Portal™ es la nueva aventura para un solo jugador de Valve. Ambientado en los misteriosos laboratorios de Aperture Science, Portal ha sido calificado como uno de los juegos más innovadores de los últimos tiempos y ofrece incontables horas de rompecabezas nunca vistos.\r\n\r\nEl juego está diseñado para cambiar radicalmente el modo en que los jugadores enfocan, sopesan y reaccionan a las circunstancias en un entorno determinado, al igual que la pistola antigravedad abrió un nuevo mundo de posibilidades a la hora de manipular objetos.\r\n\r\nLos jugadores deben resolver rompecabezas y desafíos basados en las leyes físicas abriendo portales y desplazando objetos, o incluso sus propios avatares, a través del espacio."
+        "longDescription": "Portal™ es la nueva aventura para un solo jugador de Valve. Ambientado en los misteriosos laboratorios de Aperture Science, Portal ha sido calificado como uno de los juegos más innovadores de los últimos tiempos y ofrece incontables horas de rompecabezas nunca vistos.\r\n\r\nEl juego está diseñado para cambiar radicalmente el modo en que los jugadores enfocan, sopesan y reaccionan a las circunstancias en un entorno determinado, al igual que la pistola antigravedad abrió un nuevo mundo de posibilidades a la hora de manipular objetos.\r\n\r\nLos jugadores deben resolver rompecabezas y desafíos basados en las leyes físicas abriendo portales y desplazando objetos, o incluso sus propios avatares, a través del espacio.",
+        "finalPrice": 64
     },
     {
         "id": 9,
@@ -159,7 +163,8 @@
         "discount": true,
         "discountRate": 10,
         "description": "Acabas de heredar la vieja parcela agrícola de tu abuelo de Stardew Valley. Decides partir hacia una nueva vida con unas herramientas usadas y algunas monedas. ¿Te ves...",
-        "longDescription": "Te vas a vivir al valle...\r\n\r\nAcabas de heredar la vieja parcela agrícola de tu abuelo de Stardew Valley. Decides partir hacia una nueva vida con unas herramientas usadas y algunas monedas. ¿Te ves capaz de vivir de la tierra y convertir estos campos descuidados en un hogar próspero?\r\n\r\n¡Crea la granja de tus sueños! Constrúyela desde cero en una de las cinco configuraciones del mapa.\r\n¡Domina tu habilidad con la ganadería! Cría animales, siembra cultivos y fabrica maquinaria útil entre muchas más cosas.\r\n¡Únete a la comunidad local! Entabla amistad con más de 30 habitantes de Pelican Town.\r\n¡Personaliza a tu granjero! Podrás elegir entre cientos de opciones de personalización de personajes.\r\n¡Instálate y empieza a formar una familia! Comparte tu vida en la granja con uno de los doce personajes con los que podrás tener una relación.\r\n¡Explora grandes y misteriosas cuevas! Encuentra monstruos peligrosos y tesoros valiosos."
+        "longDescription": "Te vas a vivir al valle...\r\n\r\nAcabas de heredar la vieja parcela agrícola de tu abuelo de Stardew Valley. Decides partir hacia una nueva vida con unas herramientas usadas y algunas monedas. ¿Te ves capaz de vivir de la tierra y convertir estos campos descuidados en un hogar próspero?\r\n\r\n¡Crea la granja de tus sueños! Constrúyela desde cero en una de las cinco configuraciones del mapa.\r\n¡Domina tu habilidad con la ganadería! Cría animales, siembra cultivos y fabrica maquinaria útil entre muchas más cosas.\r\n¡Únete a la comunidad local! Entabla amistad con más de 30 habitantes de Pelican Town.\r\n¡Personaliza a tu granjero! Podrás elegir entre cientos de opciones de personalización de personajes.\r\n¡Instálate y empieza a formar una familia! Comparte tu vida en la granja con uno de los doce personajes con los que podrás tener una relación.\r\n¡Explora grandes y misteriosas cuevas! Encuentra monstruos peligrosos y tesoros valiosos.",
+        "finalPrice": 161
     },
     {
         "id": 12,
@@ -177,7 +182,8 @@
         "discount": true,
         "discountRate": 20,
         "description": "¡Cava, lucha, explora, construye! Con este juego de aventuras repleto de acción nada es imposible. ¡Pack de Cuatro también disponible!",
-        "longDescription": "¡Cava, lucha, explora, construye! Nada es imposible en este juego de aventuras repleto de acción. El mundo es tu lienzo y la tierra misma es tu pintura.\r\n¡Coge tus herramientas y adelante! Crea armas para deshacerte de una gran variedad de enemigos en numerosos ecosistemas. Excava profundo bajo tierra para encontrar accesorios, dinero y otras cosas muy útiles. Reúne recursos para crear todo lo que necesites y conformar así tu propio mundo. Construye una casa, un fuerte o incluso un castillo. La gente se mudará a vivir ahí e incluso quizás te vendan diferentes mercancías que te ayuden en tu viaje.\r\nPero ten cuidado, aún te aguardan más desafíos... ¿Estás preparado para la tarea?\r\nCaracterísticas principales:\r\nJugabilidad \"sandbox\" (juega libremente en un mundo a tu disposición)\r\nMundos generados de forma aleatoria\r\nActualizaciones gratuitas de contenido"
+        "longDescription": "¡Cava, lucha, explora, construye! Nada es imposible en este juego de aventuras repleto de acción. El mundo es tu lienzo y la tierra misma es tu pintura.\r\n¡Coge tus herramientas y adelante! Crea armas para deshacerte de una gran variedad de enemigos en numerosos ecosistemas. Excava profundo bajo tierra para encontrar accesorios, dinero y otras cosas muy útiles. Reúne recursos para crear todo lo que necesites y conformar así tu propio mundo. Construye una casa, un fuerte o incluso un castillo. La gente se mudará a vivir ahí e incluso quizás te vendan diferentes mercancías que te ayuden en tu viaje.\r\nPero ten cuidado, aún te aguardan más desafíos... ¿Estás preparado para la tarea?\r\nCaracterísticas principales:\r\nJugabilidad \"sandbox\" (juega libremente en un mundo a tu disposición)\r\nMundos generados de forma aleatoria\r\nActualizaciones gratuitas de contenido",
+        "finalPrice": 103
     },
     {
         "id": 13,
@@ -195,7 +201,8 @@
         "discount": true,
         "discountRate": 80,
         "description": "Cyberpunk 2077 es una historia de acción y aventura en mundo abierto ambientada en Night City, una megalópolis obsesionada con el poder, el glamur y la modificación co...",
-        "longDescription": "Cyberpunk 2077 es una historia de acción y aventura en mundo abierto ambientada en Night City, una megalópolis obsesionada con el poder, el glamur y la modificación corporal. Tu personaje es V, un mercenario que persigue un implante único que permite alcanzar la inmortalidad. Podrás personalizar las mejoras cibernéticas, las habilidades y el estilo de juego del personaje para dar forma a un mundo y a una historia que depende de tus decisiones.\r\n\r\nJUEGA COMO UN MERCENARIO AL MARGEN DE LA LEY\r\nConviértete en un cyberpunk, un mercenario urbano equipado con mejoras cibernéticas y crea tu leyenda en las calles de Night City.\r\n\r\nDESCUBRE LA CIUDAD DEL FUTURO\r\nSumérgete en el inmenso mundo abierto de Night City, una ciudad que establece una nueva referencia en calidad visual, complejidad y profundidad.\r\n\r\nROBA EL IMPLANTE QUE CONCEDE LA VIDA ETERNA\r\nAcepta el trabajo más peligroso de tu vida y ve en busca del prototipo que permite acceder a la inmortalidad."
+        "longDescription": "Cyberpunk 2077 es una historia de acción y aventura en mundo abierto ambientada en Night City, una megalópolis obsesionada con el poder, el glamur y la modificación corporal. Tu personaje es V, un mercenario que persigue un implante único que permite alcanzar la inmortalidad. Podrás personalizar las mejoras cibernéticas, las habilidades y el estilo de juego del personaje para dar forma a un mundo y a una historia que depende de tus decisiones.\r\n\r\nJUEGA COMO UN MERCENARIO AL MARGEN DE LA LEY\r\nConviértete en un cyberpunk, un mercenario urbano equipado con mejoras cibernéticas y crea tu leyenda en las calles de Night City.\r\n\r\nDESCUBRE LA CIUDAD DEL FUTURO\r\nSumérgete en el inmenso mundo abierto de Night City, una ciudad que establece una nueva referencia en calidad visual, complejidad y profundidad.\r\n\r\nROBA EL IMPLANTE QUE CONCEDE LA VIDA ETERNA\r\nAcepta el trabajo más peligroso de tu vida y ve en busca del prototipo que permite acceder a la inmortalidad.",
+        "finalPrice": 439
     },
     {
         "id": 14,
@@ -214,5 +221,23 @@
         "discountRate": null,
         "description": "Skyrim Special Edition, ganador de más de 200 premios al \"Juego del año\", da vida a la fantasía épica con un nivel de detalle asombroso. La Special Edition incluye el ...",
         "longDescription": "Skyrim Special Edition, ganador de más de 200 premios al \"Juego del año\", da vida a la fantasía épica con un nivel de detalle asombroso. La Special Edition incluye el juego aclamado por la crítica y los complementos, así como nuevas características: gráficos y efectos renovados, rayos crepusculares volumétricos, reflejos en tiempo real, profundidad de campo dinámica y muchas más. Además, Skyrim Special Edition lleva todo el poder de los mods a PC y Xbox One: nuevas misiones, entornos, personajes, diálogos, armaduras y armas, entre otras muchas cosas. ¡Con los mods, la experiencia no tiene límites!"
+    },
+    {
+        "id": 15,
+        "img": "1623799991402.jpg",
+        "card": "1623799991419.jpg",
+        "relevant": true,
+        "discount": true,
+        "name": "DARK SOULS III",
+        "category": [
+            "TIPO DARK SOULS",
+            "FANTASÍA OSCURA",
+            "DIFÍCIL",
+            "ROL"
+        ],
+        "price": 649,
+        "discountRate": 10,
+        "description": "Dark Souls continúa redefiniendo los límites con el nuevo y ambicioso capítulo de esta serie revolucionaria, tan aclamada por la crítica. ¡Prepárate para sumergirte en...",
+        "longDescription": "Dark Souls continúa redefiniendo los límites con el nuevo y ambicioso capítulo de esta serie revolucionaria, tan aclamada por la crítica. ¡Prepárate para sumergirte en la oscuridad!\r\n\r\n¡Consigue ahora mismo el Season Pass de DARK SOULS™ III y ponte a prueba con todo el contenido disponible!\r\n\r\n\"Mejor juego de rol\" de la Gamescom 2015 y más de 35 premios y nominaciones en la E3 2015.\r\n\r\nDARK SOULS™ III continúa redefiniendo los límites con el nuevo y ambicioso capítulo de esta serie revolucionaria, tan aclamada por la crítica.\r\n\r\nAdéntrate en un universo lleno de enemigos y entornos descomunales, un mundo en ruinas en el que las llamas se están apagando. Los jugadores se sumergirán en la atmósfera épica de un mundo de oscuridad gracias a un juego más rápido y una intensidad de combate ampliada. Tanto fans como recién llegados disfrutarán de una acción gratificante y gráficos absorbentes.\r\nSolo quedan las ascuas... ¡Prepárate una vez más para sumergirte en la oscuridad!"
     }
 ]
