@@ -25,6 +25,13 @@ let helper = {
         fs.writeFileSync(jsonPath + nombre + '.json', array);
     },
 
+    percentageFinder: (price,discountRate) => {
+        let multiplier = price * discountRate;
+        let divider = multiplier / 100;
+        let roundResult = Math.floor(divider);
+        return roundResult;
+    },
+
     // HOW?? -> PARAM IS NOT DEFINED
     paramFinder: () => {
         param = req.params.id;

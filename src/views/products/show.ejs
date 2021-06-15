@@ -43,7 +43,7 @@
                 <% }); %>
             </article>
         </section>
-        <% if (product.discount == 'true') { %>
+        <% if (product.discount === true) { %>
             <header class="show-title offer-title">
                 <h2 class="big-title">
                     ¡OFERTA ESPECIAL!
@@ -71,7 +71,7 @@
                 </div>
                 <div class="offer-display-box te-ahorras">
                     <p>
-                        AHORRAS $<%= product.price%>!
+                        AHORRAS $<%= moneySaved %>!
                     </p>
                 </div>
             </section>
@@ -87,10 +87,10 @@
         <section class="purchase-display">
             <div class="purchase-price-box">
                 <h2 class="big-title">
-                    $<%= product.price %>
+                    $<%= finalPrice %>
                 </h2>
                 <h4 class="small-title">
-                    $<%= product.price %>
+                    $<%= finalPrice %>
                 </h4>
             </div>
             <a class="purchase-button-box" href="/products/cart">

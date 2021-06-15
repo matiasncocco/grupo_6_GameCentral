@@ -1,14 +1,14 @@
 let title = '';
 
-let userController = {
+let usersController = {
     login : (req, res) => {
         title = 'Ingresá';
-        res.render('./users/login', { title } )
+        res.render('./users/login', { title } );
     },
 
     register : (req, res) => {
         title = 'Crea tu cuenta';
-        res.render('./users/register', { title } )
+        res.render('./users/register', { title } );
     },
     
     // store (post = add entry)
@@ -18,4 +18,4 @@ let userController = {
     // destroy (post delete = remove user)
 };
 
-module.exports = userController
+module.exports = usersController;

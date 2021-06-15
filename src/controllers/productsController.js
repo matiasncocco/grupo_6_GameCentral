@@ -1,9 +1,9 @@
-let { readJson, writeJson, lastId, paramFinder } = require('./helper');
+let { readJson, writeJson, lastId, percentageFinder, paramFinder } = require('./helper');
 
 let title = '';
 let products = readJson('products.json');
 
-let productController = {
+let productsController = {
     cart: (req,res) => {
         title = 'Carrito de compras';
         res.render('./products/cart', { title, products } );
@@ -12,7 +12,7 @@ let productController = {
     // 1 GET: show all items
     index: (req,res) => {
         title = 'Todos los títulos'
-        res.render('./products/product-index', { title, products } );
+        res.render('./products/index', { title, products } );
     },
 
     // 2 GET: show product <form>
@@ -32,7 +32,15 @@ let productController = {
         for (i = 0 ; i < products.length ; i++) {
             if (param == products[i].id) {
                 let productCategory = products[i].category;
-                res.render('./products/show', { title,'product':products[i], productCategory } );
+                let finalPrice = percentageFinder(products[i].price,products[i].discountRate);
+                let saveOperation = (price,discountRate) => {
+                    let finalPrice = (price * discountRate) / 100;
+                    let result = price - finalPrice;
+                    let roundedResult = Math.floor(result);
+                    return roundedResult;
+                };
+                let moneySaved = saveOperation(products[i].price,products[i].discountRate);
+                res.render('./products/show', { title,'product':products[i], productCategory, finalPrice, moneySaved } );
             };
         };
     },
@@ -102,4 +110,4 @@ let productController = {
     },
 };
 
-module.exports = productController;
+module.exports = productsController;

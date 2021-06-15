@@ -1,9 +1,9 @@
 let express = require('express');
 let router = express.Router();
-let userController = require('../controllers/userController');
+let usersController = require('../controllers/usersController');
 
-router.get('/login', userController.login);
-router.get('/register', userController.register);
+router.get('/login', usersController.login);
+router.get('/register', usersController.register);
 
 // 1. /users (GET)
 // Listado de usuarios
