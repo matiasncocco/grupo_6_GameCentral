@@ -17,7 +17,7 @@
             </header>
             <article class="show-description">
                 <p>
-                    <%= product.description %>
+                    <%= shortDescription %>...
                     <a class="read-more-c" href="#read-more">
                         MÁS INFO
                     </a>
@@ -43,7 +43,7 @@
                 <% }); %>
             </article>
         </section>
-        <% if (product.discount === true) { %>
+        <% if (product.inOffer === true) { %>
             <header class="show-title offer-title">
                 <h2 class="big-title">
                     ¡OFERTA ESPECIAL!
@@ -63,10 +63,10 @@
                 </div>
                 <div class="offer-display-box">
                     <h2 class="big-title">
-                        <%= product.discountRate %>%
+                        <%= product.discount %>%
                     </h2>
                     <h5 class="small-title">
-                        <%= product.discountRate %>%
+                        <%= product.discount %>%
                     </h5>
                 </div>
                 <div class="offer-display-box te-ahorras">
@@ -87,10 +87,10 @@
         <section class="purchase-display">
             <div class="purchase-price-box">
                 <h2 class="big-title">
-                    $<%= product.discount === true ? product.finalPrice : product.price %>
+                    $<%= product.inOffer === true ? product.finalPrice : product.price %>
                 </h2>
                 <h4 class="small-title">
-                    $<%= product.discount === true ? product.finalPrice : product.price %>
+                    $<%= product.inOffer === true ? product.finalPrice : product.price %>
                 </h4>
             </div>
             <a class="purchase-button-box" href="/products/cart">
@@ -117,18 +117,18 @@
             </header>
             <article class="show-description long-description">
                 <p>
-                    <%= product.longDescription %>
+                    <%= product.description %>
                 </p>
             </article>
         </section>
     </section>
     <section class="admin-main-box">
         <div class="admin-edit-box">
-            <button class="admin-button-edit" type="button">
-                <a href="/products/<%= product.id %>/edit %>">
+            <a href="/products/<%= product.id %>/edit %>">
+                <button class="admin-button-edit" type="button">
                     EDITAR
-                </a>
-            </button> 
+                </button> 
+            </a>
         </div>
         <form class="admin-delete-box" action="/products/<%= product.id %>?_method=DELETE" method="POST">
             <button class="admin-button-delete" type="submit">

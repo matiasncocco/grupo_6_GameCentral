@@ -2,7 +2,7 @@
     <div class="game-image">
         <img class="box-width" src="/img/products/<%= product[i].card %>">
         <div class="ribbon">
-            <% if (product[i].discount == true) { %>
+            <% if (product[i].inOffer === true) { %>
                 <div class="full-price crossed-out">
                     <h3 class="big-title">
                         $<%= product[i].price %>
@@ -13,10 +13,10 @@
                 </div>
                 <div class="discount">
                     <h2 class="big-title discount-h">
-                        <%= product[i].discountRate %>%
+                        <%= product[i].discount %>%
                     </h2>
                     <h3 class="small-title discount-h3">
-                        <%= product[i].discountRate %>%
+                        <%= product[i].discount %>%
                     </h3>
                 </div>
                 <div class="new-price">

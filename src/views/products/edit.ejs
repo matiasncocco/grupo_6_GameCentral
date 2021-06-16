@@ -76,46 +76,40 @@
                 </label>
                 <input class="input-text input-price" type="text" name="price" id="price" maxlength="8" required value="<%= product.price %>">
             </div>
-            <!-- discount -->
+            <!-- inOffer -->
             <div class="input-box">
                 <label class="label-label">
                     ¿Está éste producto en oferta?
                 </label>
-                <label class="label-label label-radio" for="discount-true">
+                <label class="label-label label-radio" for="inOffer-true">
                     Si
-                    <input class="input-radio" type="radio" name="discount" value="true" id="discount-true" required <%= product.discount == 'true' ? 'checked' : '' %>>
+                    <input class="input-radio" type="radio" name="inOffer" value="true" id="inOffer-true" required <%= product.inOffer == 'true' ? 'checked' : '' %>>
                 </label>
-                <label class="label-label label-radio" for="discount-false">
+                <label class="label-label label-radio" for="inOffer-false">
                     No
-                    <input class="input-radio" type="radio" name="discount" value="false" id="discount-false" required <%= product.discount == 'false' ? 'checked' : '' %>>
+                    <input class="input-radio" type="radio" name="inOffer" value="false" id="inOffer-false" required <%= product.inOffer == 'false' ? 'checked' : '' %>>
                 </label>
             </div>
-            <!-- discount rate -->
+            <!-- discount -->
             <div class="input-box">
                 <span class="rule-indicator">
                     *Solo si el producto está EN OFERTA:
                 </span>
-                <label class="label-label discount-rate-label" for="discountRate">
+                <label class="label-label discount-rate-label" for="discount">
                     ¿Qué porcentaje de descuento se debe aplicar?
                 </label>
                 <span class="discount-indicator">
                     %
                 </span>
-                <input class="input-text input-discount" type="text" name="discountRate" id="discountRate" maxlength="2" value="<%= product.discountRate %>">
+                <input class="input-text input-discount" type="text" name="discount" id="discount" maxlength="2" value="<%= product.discount %>">
+            </div>
             </div>
             <!-- description -->
             <div class="input-box">
                 <label class="label-label" for="description">
-                    Descripción breve
-                </label>
-                <textarea class="text-area-product" name="description" id="description" rows="5" maxlength="170" required><%= product.description %></textarea>
-            </div>
-            <!-- longDescription -->
-            <div class="input-box">
-                <label class="label-label" for="longDescription">
                     Descripción extensa
                 </label>
-                <textarea class="text-area-product" name="longDescription" id="longDescription" rows="15" maxlength="1000" required><%= product.longDescription %></textarea>
+                <textarea class="text-area-product" name="description" id="description" rows="15" maxlength="1000" required><%= product.description %></textarea>
             </div>
             <!-- BUTTONS -->
             <div class="button-box">

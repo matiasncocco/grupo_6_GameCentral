@@ -38,7 +38,8 @@ let productsController = {
             if (param == products[i].id) {
                 let productCategory = products[i].category;
                 let moneySaved = products[i].price - products[i].finalPrice;
-                res.render('./products/show', { title,'product':products[i], productCategory, moneySaved } );
+                let shortDescription = products[i].description.substring(0,175);
+                res.render('./products/show', { title,'product':products[i], productCategory, moneySaved, shortDescription } );
             };
         };
     },
@@ -52,13 +53,12 @@ let productsController = {
             img: img[0].filename,
             card: card[0].filename,
             relevant: storeBool(req.body.relevant),
-            discount: storeBool(req.body.discount),
+            inOffer: storeBool(req.body.inOffer),
             name: req.body.name,
             category: req.body.category,
             price: parseInt(req.body.price),
-            discountRate: parseInt(req.body.discountRate),
-            description: req.body.description,
-            longDescription: req.body.longDescription
+            discount: parseInt(req.body.discount),
+            description: req.body.description
         };
         products.push(product);
         writeJson(products, 'products');

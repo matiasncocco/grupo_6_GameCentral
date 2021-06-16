@@ -68,18 +68,18 @@
                 </span>
                 <input class="input-text input-price" type="text" name="price" id="price" placeholder="1999" maxlength="4" required>
             </div>
-            <!-- discount -->
+            <!-- inOffer -->
             <div class="input-box">
                 <label class="label-label">
                     ¿Está éste producto en oferta?
                 </label>
-                <label class="label-label label-radio" for="discount-true">
+                <label class="label-label label-radio" for="inOffer-true">
                     Si
-                    <input class="input-radio" type="radio" name="discount" value="true" id="discount-true" required>
+                    <input class="input-radio" type="radio" name="inOffer" value="true" id="inOffer-true" required>
                 </label>
-                <label class="label-label label-radio" for="discount-false">
+                <label class="label-label label-radio" for="inOffer-false">
                     No
-                    <input class="input-radio" type="radio" name="discount" value="false" id="discount-false" required>
+                    <input class="input-radio" type="radio" name="inOffer" value="false" id="inOffer-false" required>
                 </label>
             </div>
             <!-- discount rate -->
@@ -87,27 +87,20 @@
                 <span class="rule-indicator">
                     *Solo si el producto está EN OFERTA:
                 </span>
-                <label class="label-label discount-rate-label" for="discountRate">
+                <label class="label-label discount-rate-label" for="discount">
                     ¿Qué porcentaje de descuento se debe aplicar?
                 </label>
                 <span class="discount-indicator">
                     %
                 </span>
-                <input class="input-text input-discount" type="text" name="discountRate" id="discountRate" placeholder="50" maxlength="2">
+                <input class="input-text input-discount" type="text" name="discount" id="discount" placeholder="50" maxlength="2">
             </div>
             <!-- description -->
             <div class="input-box">
                 <label class="label-label" for="description">
-                    Descripción breve
-                </label>
-                <textarea class="text-area-product" name="description" id="description" rows="5" maxlength="170" placeholder="Max: 170 caracteres." required></textarea>
-            </div>
-            <!-- longDescription -->
-            <div class="input-box">
-                <label class="label-label" for="longDescription">
                     Descripción extensa
                 </label>
-                <textarea class="text-area-product" name="longDescription" id="longDescription" rows="15" maxlength="1000" placeholder="Max: 1000 caracteres." required></textarea>
+                <textarea class="text-area-product" name="description" id="description" rows="15" maxlength="3000" placeholder="Max: 1000 caracteres." required></textarea>
             </div>
             <!-- BUTTONS -->
             <div class="button-box">

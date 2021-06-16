@@ -20,10 +20,10 @@
     </div>
     <div class="item-price">
         <h2 class="big-title">
-            $<%= product[i].discount === true ? product[i].finalPrice : product[i].price %>
+            $<%= product[i].inOffer === true ? product[i].finalPrice : product[i].price %>
         </h2>
         <h4 class="small-title">
-            $<%= product[i].discount === true ? product[i].finalPrice : product[i].price %>
+            $<%= product[i].inOffer === true ? product[i].finalPrice : product[i].price %>
         </h4>
     </div>
     <div class="item-delete">
