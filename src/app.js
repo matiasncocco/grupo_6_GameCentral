@@ -22,5 +22,9 @@ app.use('/', mainRouter);
 app.use('/products', productsRouter);
 app.use('/users', usersRouter);
 
+app.use((req,res,next) => {
+    res.status(404).render('error', { status: 404, 'title':'ERROR', 'errorDetail':'Page Not Found'} );
+    next();
+});
 
 app.listen(process.env.PORT || 3001, () => console.log('Servidor corriendo en el puerto 3001'));
