@@ -378,6 +378,7 @@ h6 {
 .show-description {
     padding-top: 5px;
     font-size: 10px;
+    line-height: 17px;
     color: black;
     text-align: left;
     font-weight: 600;
@@ -427,6 +428,7 @@ h6 {
 
 .long-description {
     padding-left: 15px;
+    margin-bottom: 50px;
 }
 
 .offer-display {
@@ -495,6 +497,11 @@ h6 {
 
 .show-long-description {
     margin-top: 5%;
+}
+
+.long-description {
+    margin-top: 1%;
+    margin-bottom: 50px;
 }
 
 .admin-main-box {
@@ -923,6 +930,7 @@ h6 {
 .declaration p {
     text-align: center;
     font-size: 10px;
+    line-height: 17px;
 }
 
 /**/
@@ -1070,6 +1078,7 @@ TABLETS
 
     .show-description {
         font-size: 14px;
+        line-height: 21px;
     }
 
     .category-single-box p {
@@ -1160,6 +1169,7 @@ TABLETS
     
     .declaration p {
         font-size: 12px;
+        line-height: 19px;
     }
 
 
@@ -1307,6 +1317,7 @@ DESKTOP
 
     .show-description {
         font-size: 16px;
+        line-height: 23px;
     }
 
     .read-more-c:hover {
@@ -1557,6 +1568,7 @@ PANTALLAS +
 
     .show-description {
         font-size: 25px;
+        line-height: 32px;
     }
 
     .te-ahorras {

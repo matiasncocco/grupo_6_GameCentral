@@ -3,7 +3,7 @@ let { readJson, writeJson, lastId, percentageFinder, storeBool, paramFinder } = 
 let title = '';
 let products = readJson('products.json');
 products.forEach(product => {
-    if (product.discount === true) {
+    if (product.discount == true) {
         product.finalPrice = percentageFinder(product.price,product.discountRate);
     };
 });
@@ -87,19 +87,18 @@ let productsController = {
         products.forEach(product => {
             if (param == product.id) {
                 if (img != undefined) {  
-                product.img = img[0].filename;
+                    product.img = img[0].filename;
                 };
                 if (card != undefined ) {
-                product.card = card[0].filename;
+                    product.card = card[0].filename;
                 };
                 product.name = req.body.name;
                 product.category = req.body.category;
                 product.relevant = req.body.relevant;
                 product.price = req.body.price;
+                product.inOffer = req.body.inOffer;
                 product.discount = req.body.discount;
-                product.discountRate = req.body.discountRate;
                 product.description = req.body.description;
-                product.longDescription = req.body.longDescription;
                 writeJson(products, 'products');
                 res.redirect('/products');
             };

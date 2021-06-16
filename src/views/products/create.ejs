@@ -22,11 +22,17 @@
             <div class="input-box category-box">
                 <% for (i = 0 ; i < 4 ; i++) { %>
                     <div class="single-category">
-                        <label class="label-label" for="category<%= [i]%>">
+                        <label class="label-label" for="category<%= [i] %>">
                             Categoría <%= [i + 1] %>
                         </label>
-                        <input class="input-text input-text-product" type="text" name="category" id="category<%= [i] %>" 
-                        placeholder="<%= categoryPlaceholder[i] %>" required>
+                        <input 
+                            class="input-text input-text-product" 
+                            type="text" 
+                            name="category" 
+                            id="category<%= [i] %>"
+                            placeholder="<%= categoryPlaceholder[i] %>" 
+                            required
+                        >
                     </div>
                 <% } %>
             </div>
@@ -85,10 +91,10 @@
             <!-- discount rate -->
             <div class="input-box">
                 <span class="rule-indicator">
-                    *Solo si el producto está EN OFERTA:
+                    *Solo si se quiere aplicar un DESCUENTO
                 </span>
                 <label class="label-label discount-rate-label" for="discount">
-                    ¿Qué porcentaje de descuento se debe aplicar?
+                    ¿Qué porcentaje de DESCUENTO se debe aplicar?
                 </label>
                 <span class="discount-indicator">
                     %
@@ -98,7 +104,7 @@
             <!-- description -->
             <div class="input-box">
                 <label class="label-label" for="description">
-                    Descripción extensa
+                    Descripción
                 </label>
                 <textarea class="text-area-product" name="description" id="description" rows="15" maxlength="3000" placeholder="Max: 1000 caracteres." required></textarea>
             </div>
