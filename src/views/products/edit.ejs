@@ -29,43 +29,22 @@
 
             <!-- category -->
             <div class="input-box category-box">
-                <% productCategory.forEach(category => { %>
+                <% for (i = 0 ; i < 4 ; i++) { %>
                     <div class="single-category">
-                        <label class="label-label" for="<%= category %>">
-                            Categoría
-                        </label>
-                        <input
-                            class="input-text input-text-product"
-                            type="text"
-                            name="category"
-                            value="<%= category %>"
-                        >
-                    </div>
-                <% }) %>
-            </div>
-
-            <div class="input-box category-box">
-                <% for (i = 0 ; i < productCategory.length ; i++) { %>
-
-                    <div class="single-category">
-
-                        <label class="label-label" for="<%#= productCategory[i] %>">
+                        <label class="label-label" for="category<%= [i] %>">
                             Categoría <%= [i + 1] %>
                         </label>
-                        <input
-                            class="input-text input-text-product"
-                            type="text"
-                            name="<%#= productCategory[i] %>"
-                            id="<%#= productCategory[i] %>"
-                            value="<%= productCategory[i] %>"
+                        <input 
+                            class="input-text input-text-product" 
+                            type="text" 
+                            name="category" 
+                            id="category<%= [i] %>"
                             required
+                            value="<%= productCategory[i] %>"
                         >
-
-
                     </div>
-
                 <% } %>
-            </div>
+            
 
             <!-- FILES x2 -->
             <div class="input-box file-box">
@@ -76,7 +55,7 @@
                 <label class="label-label input-text label-file product-file" for="img">
                     <% if (product.img) { %>
                         <div class="previous-image-box">
-                            <img src="/img/products/<%= product.img %>">
+                            <img class="box-width" src="/img/products/<%= product.img %>">
                         </div>
                     <% } %>
                     <input 
@@ -149,7 +128,7 @@
                     name="price" 
                     id="price" 
                     maxlength="4" 
-                    required 
+                    required
                     value="<%= product.price %>"
                 >
             </div>
@@ -214,7 +193,7 @@
                     name="description" 
                     id="description" 
                     rows="15" 
-                    maxlength="1000" 
+                    maxlength="3000" 
                     required
                 >
                     <%= product.description %>

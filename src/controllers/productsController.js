@@ -48,6 +48,7 @@ let productsController = {
     store: (req,res) => {
         let files = req.files;
         let { img, card } = files;
+        // if (products == '')
         let product = {
             id: lastId(products) + 1,
             img: img[0].filename,
@@ -94,11 +95,11 @@ let productsController = {
                 };
                 product.name = req.body.name;
                 product.category = req.body.category;
-                product.relevant = req.body.relevant;
-                product.price = req.body.price;
-                product.inOffer = req.body.inOffer;
+                product.relevant = storeBool(req.body.relevant);
+                product.price = parseInt(req.body.price),
+                product.inOffer = storeBool(req.body.inOffer);
                 product.discount = req.body.discount;
-                product.description = req.body.description;
+                product.description = parseInt(req.body.discount),
                 writeJson(products, 'products');
                 res.redirect('/products');
             };

@@ -28,10 +28,10 @@
             "INDIE"
         ],
         "relevant": false,
-        "price": 224,
+        "price": "224",
         "inOffer": true,
-        "discount": 20,
-        "description": "Ayuda a Madeline a sobrevivir a los demonios de su interior en su viaje a la cima de la montaña Celeste; un ajustadísimo plataforma diseñado a mano por los creadores del clásico multijugador TowerFall.\r\n\r\n\r\n\r\nAventura de un jugador marcada por la narración; un encantador elenco de personajes y un argumento conmovedor de descubrimiento personal.\r\nGran montaña con más de 700 pantallas de duros desafíos y retorcidos secretos.\r\nBrutales capítulos \"cara B\" para desbloquear; para los más osados.\r\nFinalista en “Excellence in Audio” de IGF; más de 2 horas de música original con un asombroso piano y pegadizos ritmos de sintetizador.\r\nPastel\r\n\r\nLos mandos son sencillos y accesibles: salta, acelera en el aire y escala, pero con varias capas de profundidad de expresión que habrá que dominar, pues cada muerte enseña una lección. Las reapariciones relámpago te permiten seguir escalando mientras desvelas misterios y te enfrentas a numerosos peligros.\r\n\r\nEs el momento, Madeline. Respira hondo. Tú puedes hacerlo.",
+        "discount": "20",
+        "description": "                                                            Ayuda a Madeline a sobrevivir a los demonios de su interior en su viaje a la cima de la montaña Celeste; un ajustadísimo plataforma diseñado a mano por los creadores del clásico multijugador TowerFall.\r\n\r\nAventura de un jugador marcada por la narración; un encantador elenco de personajes y un argumento conmovedor de descubrimiento personal.\r\nGran montaña con más de 700 pantallas de duros desafíos y retorcidos secretos.\r\nBrutales capítulos \"cara B\" para desbloquear; para los más osados.\r\nFinalista en “Excellence in Audio” de IGF; más de 2 horas de música original con un asombroso piano y pegadizos ritmos de sintetizador.\r\n\r\nLos mandos son sencillos y accesibles: salta, acelera en el aire y escala, pero con varias capas de profundidad de expresión que habrá que dominar, pues cada muerte enseña una lección. Las reapariciones relámpago te permiten seguir escalando mientras desvelas misterios y te enfrentas a numerosos peligros.\r\n\r\nEs el momento, Madeline. Respira hondo. Tú puedes hacerlo.\r\n                \r\n                \r\n                ",
         "finalPrice": 179
     },
     {
@@ -226,5 +226,22 @@
         "price": 649,
         "discount": 10,
         "description": "Dark Souls continúa redefiniendo los límites con el nuevo y ambicioso capítulo de esta serie revolucionaria, tan aclamada por la crítica. ¡Prepárate para sumergirte en la oscuridad!\r\n\r\n¡Consigue ahora mismo el Season Pass de DARK SOULS™ III y ponte a prueba con todo el contenido disponible!\r\n\r\n\"Mejor juego de rol\" de la Gamescom 2015 y más de 35 premios y nominaciones en la E3 2015.\r\n\r\nDARK SOULS™ III continúa redefiniendo los límites con el nuevo y ambicioso capítulo de esta serie revolucionaria, tan aclamada por la crítica.\r\n\r\nAdéntrate en un universo lleno de enemigos y entornos descomunales, un mundo en ruinas en el que las llamas se están apagando. Los jugadores se sumergirán en la atmósfera épica de un mundo de oscuridad gracias a un juego más rápido y una intensidad de combate ampliada. Tanto fans como recién llegados disfrutarán de una acción gratificante y gráficos absorbentes.\r\nSolo quedan las ascuas... ¡Prepárate una vez más para sumergirte en la oscuridad!"
+    },
+    {
+        "id": 16,
+        "img": "1623854229466.jpg",
+        "card": "1623854229475.jpg",
+        "relevant": true,
+        "inOffer": false,
+        "name": "THE WITCHER III",
+        "category": [
+            "MUNDO ABIERTO",
+            "ROL",
+            "BUENA TRAMA",
+            "ATMOSFÉRICO"
+        ],
+        "price": 479,
+        "discount": null,
+        "description": "The Witcher: Wild Hunt es un RPG de mundo abierto basado en la narrativa y ambientado en un universo de fantasía visualmente impresionante, repleto de decisiones significativas y consecuencias trascendentales. En The Witcher, te pones en la piel del cazador de monstruos profesional Geralt de Rivia, y tienes la tarea de encontrar a la niña de la profecía en un vasto mundo abierto repleto de ciudades de mercaderes, islas piratas, peligrosos pasos de montaña y cuevas olvidadas para explorar.\r\nCARACTERÍSTICAS PRINCIPALES\r\nCONVIÉRTETE EN UN EXPERTO CAZADOR DE MONSTRUOS A SUELDO\r\nAdiestrados desde su infancia y mutados para obtener habilidades, fuerza y reflejos sobrehumanos, los brujos sirven como contrapeso al mundo infestado de monstruos en el que viven.\r\n\r\nDestruye a tus enemigos de formas espantosas como cazador de monstruos profesional, armado con una gran variedad de armas mejorables, pociones de mutación y magia de combate.\r\nDa caza a una amplia gama de monstruos exóticos: desde bestias salvajes que merodean por los pasos de montaña, hasta astutos depredadores sobrenaturales que acechan en las sombras de ciudades densamente pobladas.\r\nInvierte tus recompensas en mejorar tus armas y comprar armaduras personalizadas, o gástatelas en carreras de caballos, juegos de cartas, peleas a puñetazos y otros placeres que te ofrece la noche."
     }
 ]
