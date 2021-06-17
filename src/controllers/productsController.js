@@ -1,4 +1,5 @@
 let { readJson, writeJson, lastId, storeBool, percentageFinder, inOfferHandler, toUpper, paramFinder } = require('./helper');
+let fs = require('fs');
 
 let title = '';
 let products = readJson('products.json');
@@ -41,9 +42,10 @@ let productsController = {
         for (i = 0 ; i < products.length ; i++) {
             if (param == products[i].id) {
                 let productCategory = products[i].category;
+                let productPlatform = products[i].platform;
                 let moneySaved = products[i].price - products[i].finalPrice;
                 let shortDescription = products[i].description.substring(0,175);
-                res.render('./products/show', { title,'product':products[i], productCategory, moneySaved, shortDescription } );
+                res.render('./products/show', { title,'product':products[i], productCategory, productPlatform, moneySaved, shortDescription } );
             };
         };
     },
@@ -112,6 +114,7 @@ let productsController = {
     // 7 DELETE: remove entry
     destroy: (req,res) => {
         let param = req.params.id;
+        // fs.unlinkSync()
         let newProducts = products.filter(product => param != product.id);
         writeJson(newProducts, 'products');
         res.redirect('/products');

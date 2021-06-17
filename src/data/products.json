@@ -251,6 +251,12 @@
             "BUENA TRAMA",
             "ATMOSFÉRICO"
         ],
+        "platform": [
+            "windows",
+            "linux",
+            null,
+            "vr"
+        ],
         "price": 479,
         "discount": null,
         "description": "The Witcher: Wild Hunt es un RPG de mundo abierto basado en la narrativa y ambientado en un universo de fantasía visualmente impresionante, repleto de decisiones significativas y consecuencias trascendentales. En The Witcher, te pones en la piel del cazador de monstruos profesional Geralt de Rivia, y tienes la tarea de encontrar a la niña de la profecía en un vasto mundo abierto repleto de ciudades de mercaderes, islas piratas, peligrosos pasos de montaña y cuevas olvidadas para explorar.\r\nCARACTERÍSTICAS PRINCIPALES\r\nCONVIÉRTETE EN UN EXPERTO CAZADOR DE MONSTRUOS A SUELDO\r\nAdiestrados desde su infancia y mutados para obtener habilidades, fuerza y reflejos sobrehumanos, los brujos sirven como contrapeso al mundo infestado de monstruos en el que viven.\r\n\r\nDestruye a tus enemigos de formas espantosas como cazador de monstruos profesional, armado con una gran variedad de armas mejorables, pociones de mutación y magia de combate.\r\nDa caza a una amplia gama de monstruos exóticos: desde bestias salvajes que merodean por los pasos de montaña, hasta astutos depredadores sobrenaturales que acechan en las sombras de ciudades densamente pobladas.\r\nInvierte tus recompensas en mejorar tus armas y comprar armaduras personalizadas, o gástatelas en carreras de caballos, juegos de cartas, peleas a puñetazos y otros placeres que te ofrece la noche.",
@@ -269,6 +275,12 @@
             "DIBUJOS ANIMADOS",
             "PLATAFORMAS",
             "2D"
+        ],
+        "platform": [
+            "windows",
+            "linux",
+            "macos",
+            "vr"
         ],
         "price": 224,
         "discount": 23,

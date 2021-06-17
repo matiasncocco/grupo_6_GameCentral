@@ -25,6 +25,8 @@ let helper = {
         fs.writeFileSync(jsonPath + nombre + '.json', array);
     },
 
+    // deleteProductPictures: ()
+
     storeBool: (value) => {
         if (value == 'true') {
             return true;
