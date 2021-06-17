@@ -25,20 +25,37 @@ let helper = {
         fs.writeFileSync(jsonPath + nombre + '.json', array);
     },
 
-    percentageFinder: (price,discountRate) => {
-        let multiplier = price * discountRate;
-        let divider = multiplier / 100;
-        let result = price - divider;
-        let roundResult = Math.floor(result);
-        return roundResult;
-    },
-
     storeBool: (value) => {
         if (value == 'true') {
             return true;
         } else {
             return false;
         };
+    },
+
+    percentageFinder: (price,discountRate) => {
+        let multiplier = (price * discountRate);
+        let divider = (multiplier / 100);
+        let result = (price - divider);
+        let roundResult = Math.floor(result);
+        return roundResult;
+    },
+
+    // HOW?? -> PERCENTAGE FINDER IS NOT A FUNCTION
+    inOfferHandler: (products) => {
+        products.forEach(product => {
+            if (product.inOffer == true) {
+                product.finalPrice = this.percentageFinder(product.price,product.discount);
+            } else {
+                product.finalPrice = null;
+                product.discount = null;
+            };
+        });
+        this.writeJson(products, 'products');
+    },
+
+    toUpper: (item) => {
+        return item.toUpperCase();
     },
 
     // HOW?? -> PARAM IS NOT DEFINED

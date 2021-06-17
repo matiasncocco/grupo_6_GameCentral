@@ -1,10 +1,14 @@
-let { readJson, writeJson, lastId, percentageFinder, storeBool, paramFinder } = require('./helper');
+let { readJson, writeJson, lastId, storeBool, percentageFinder, inOfferHandler, toUpper, paramFinder } = require('./helper');
 
 let title = '';
 let products = readJson('products.json');
+
 products.forEach(product => {
-    if (product.discount == true) {
-        product.finalPrice = percentageFinder(product.price,product.discountRate);
+    if (product.inOffer == true) {
+        product.finalPrice = percentageFinder(product.price,product.discount);
+    } else {
+        product.discount = null;
+        product.finalPrice = null;
     };
 });
 
@@ -43,20 +47,19 @@ let productsController = {
             };
         };
     },
-    
+
     // 4 POST: store product <form> fields
     store: (req,res) => {
         let files = req.files;
         let { img, card } = files;
-        // if (products == '')
         let product = {
             id: lastId(products) + 1,
             img: img[0].filename,
             card: card[0].filename,
+            name: toUpper(req.body.name),
+            category: req.body.category.map(toUpper),
             relevant: storeBool(req.body.relevant),
             inOffer: storeBool(req.body.inOffer),
-            name: req.body.name,
-            category: req.body.category,
             price: parseInt(req.body.price),
             discount: parseInt(req.body.discount),
             description: req.body.description
@@ -93,13 +96,13 @@ let productsController = {
                 if (card != undefined ) {
                     product.card = card[0].filename;
                 };
-                product.name = req.body.name;
-                product.category = req.body.category;
+                product.name = toUpper(req.body.name);
+                product.category = req.body.category.map(toUpper);
                 product.relevant = storeBool(req.body.relevant);
-                product.price = parseInt(req.body.price),
                 product.inOffer = storeBool(req.body.inOffer);
-                product.discount = req.body.discount;
-                product.description = parseInt(req.body.discount),
+                product.price = parseInt(req.body.price);
+                product.discount = parseInt(req.body.discount);
+                product.description = req.body.description;
                 writeJson(products, 'products');
                 res.redirect('/products');
             };
