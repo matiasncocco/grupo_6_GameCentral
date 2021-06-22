@@ -60,11 +60,6 @@ let helper = {
         return item.toUpperCase();
     },
 
-    // HOW?? -> PARAM IS NOT DEFINED
-    paramFinder: () => {
-        param = req.params.id;
-        return param;
-    },
 };
 
 module.exports = helper;

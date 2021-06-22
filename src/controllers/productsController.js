@@ -1,7 +1,9 @@
-let { readJson, writeJson, lastId, storeBool, percentageFinder, inOfferHandler, toUpper, paramFinder } = require('./helper');
+let { readJson, writeJson, lastId, storeBool, percentageFinder, inOfferHandler, toUpper } = require('./helper');
 let fs = require('fs');
 
 let title = '';
+
+// debería leer en cada método
 let products = readJson('products.json');
 
 products.forEach(product => {
@@ -37,7 +39,6 @@ let productsController = {
     // 3 GET: show product detail
     show: (req,res) => {
         title = "Más info del juego";
-        // paramFinder();
         let param = req.params.id;
         for (i = 0 ; i < products.length ; i++) {
             if (param == products[i].id) {
@@ -74,7 +75,6 @@ let productsController = {
     // 5 GET: show <form> with current product data
     edit: (req,res) => {
         title = 'Editar';
-        // paramFinder();
         let param = req.params.id;
         for (i = 0 ; i < products.length ; i++) {
             if (param == products[i].id) {
@@ -88,7 +88,6 @@ let productsController = {
     update: (req,res) => {
         let files = req.files;
         let { img, card } = files;
-        // paramFinder();
         let param = req.params.id;
         products.forEach(product => {
             if (param == product.id) {
