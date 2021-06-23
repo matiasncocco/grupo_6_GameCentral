@@ -1,21 +1,13 @@
 let express = require('express');
 let router = express.Router();
 let usersController = require('../controllers/usersController');
+let upload = require('../middlewares/multerMiddleware');
 
 router.get('/login', usersController.login);
-router.get('/register', usersController.register);
-
-// 1. /users (GET)
-// Listado de usuarios
-
-// 2. /users/create (GET)
-// Formulario de creación de usuarios
-
-// 3. /users/:id (GET)
-// Detalle de un usuario particular
-
-// 4. /users (POST)
-// Acción de creación (a donde se envía el formulario)
+router.get('/', usersController.index); // 1 show user list
+router.get('/register', usersController.register); // 2 show register <form>
+router.post('/', upload.single('avatar'), usersController.processRegister); // 4 store user
+router.get('/:id', usersController.show); // 3 show single user data
 
 // 5. /users/:id/edit (GET)
 // Formulario de edición de usuarios

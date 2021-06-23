@@ -287,5 +287,22 @@
         "description": "Cuphead es un juego de acción clásico estilo \"dispara y corre\" que se centra en combates contra el jefe. Inspirado en los dibujos animados de los años 30, los aspectos visual y sonoro están diseñados con esmero empleando las mismas técnicas de la época, es decir, animación tradicional a mano, fondos de acuarela y grabaciones originales de jazz.\r\n\r\nJuega como Cuphead o Mugman (en modo de un jugador o cooperativo) y cruza mundos extraños, adquiere nuevas armas, aprende poderosos supermovimientos y descubre secretos ocultos mientras procuras saldar tu deuda con el diablo.",
         "discoutn": null,
         "finalPrice": null
+    },
+    {
+        "id": 18,
+        "img": "1624416547403.jpg",
+        "card": "1624416547404.jpg",
+        "name": "FALL GUYS",
+        "category": [
+            "MULTIJUGADOR",
+            "DIVERTIDO",
+            "BATALLA REAL",
+            "COQUETO"
+        ],
+        "relevant": false,
+        "inOffer": false,
+        "price": 720,
+        "discount": null,
+        "description": "Fall Guys es un juego multijugador masivo tipo party con hasta 60 jugadores online en un enfrentamiento todos contra todos que se desarrolla ronda tras ronda entre un caos creciente hasta que solo queda un único vencedor.\r\n\r\nFall Guys: Ultimate Knockout enfrenta a hordas de contendientes online en un alocado enfrentamiento que se desarrolla ronda tras ronda entre un caos creciente hasta que solo queda un único vencedor. Supera obstáculos estrafalarios, ábrete paso entre competidores revoltosos y vence a las inflexibles leyes de la física en tu accidentado camino a la grandeza. ¡Deja la dignidad en la entrada y prepárate para sufrir descacharrantes fracasos en tu intento de reclamar la corona!\r\n\r\nDesmadre masivo online: sumérgete en una serie de ridículos desafíos y delirantes circuitos de obstáculos con montones de competidores online, todos con la esperanza de superar el corte y avanzar a la siguiente ronda de caos."
     }
 ]

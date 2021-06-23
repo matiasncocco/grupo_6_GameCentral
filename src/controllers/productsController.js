@@ -1,29 +1,42 @@
 let { readJson, writeJson, lastId, storeBool, percentageFinder, inOfferHandler, toUpper } = require('./helper');
-let fs = require('fs');
+// UNLINK FILE SYNC??
+// let fs = require('fs');
 
 let title = '';
-
-// debería leer en cada método
-let products = readJson('products.json');
-
-products.forEach(product => {
-    if (product.inOffer == true) {
-        product.finalPrice = percentageFinder(product.price,product.discount);
-    } else {
-        product.discount = null;
-        product.finalPrice = null;
-    };
-});
 
 let productsController = {
     cart: (req,res) => {
         title = 'Carrito de compras';
+        let products = readJson('products.json');
+
+        products.forEach(product => {
+            if (product.inOffer == true) {
+                product.finalPrice = percentageFinder(product.price,product.discount);
+            } else {
+                product.discount = null;
+                product.finalPrice = null;
+            };
+        });
+
         res.render('./products/cart', { title, products } );
     },
 
     // 1 GET: show all items
     index: (req,res) => {
         title = 'Todos los títulos'
+        let products = readJson('products.json');
+
+        // esto debería ser otra función
+        // inOfferHandler
+        products.forEach(product => {
+            if (product.inOffer == true) {
+                product.finalPrice = percentageFinder(product.price,product.discount);
+            } else {
+                product.finalPrice = null;
+                product.discount = null;
+            };
+        });
+
         res.render('./products/index', { title, products } );
     },
 
@@ -39,6 +52,19 @@ let productsController = {
     // 3 GET: show product detail
     show: (req,res) => {
         title = "Más info del juego";
+        let products = readJson('products.json');
+
+        // esto debería ser otra función
+        // inOfferHandler
+        products.forEach(product => {
+            if (product.inOffer == true) {
+                product.finalPrice = percentageFinder(product.price,product.discount);
+            } else {
+                product.discount = null;
+                product.finalPrice = null;
+            };
+        });
+
         let param = req.params.id;
         for (i = 0 ; i < products.length ; i++) {
             if (param == products[i].id) {
@@ -53,6 +79,7 @@ let productsController = {
 
     // 4 POST: store product <form> fields
     store: (req,res) => {
+        let products = readJson('products.json');
         let files = req.files;
         let { img, card } = files;
         let product = {
@@ -75,9 +102,10 @@ let productsController = {
     // 5 GET: show <form> with current product data
     edit: (req,res) => {
         title = 'Editar';
+        let products = readJson('products.json');
         let param = req.params.id;
         for (i = 0 ; i < products.length ; i++) {
-            if (param == products[i].id) {
+            if (products[i].id == param) {
                 let productCategory = products[i].category;
                 res.render('./products/edit', { title, 'product':products[i], productCategory } );
             };
@@ -86,6 +114,7 @@ let productsController = {
 
     // 6 POST: submit changes to existing product
     update: (req,res) => {
+        let products = readJson('products.json');
         let files = req.files;
         let { img, card } = files;
         let param = req.params.id;
@@ -112,6 +141,7 @@ let productsController = {
 
     // 7 DELETE: remove entry
     destroy: (req,res) => {
+        let products = readJson('products.json');
         let param = req.params.id;
         // fs.unlinkSync()
         let newProducts = products.filter(product => param != product.id);

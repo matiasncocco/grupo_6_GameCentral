@@ -1,18 +1,20 @@
 [
-{  "id":1,
-    "name": "Graig Bikker",
-    "username": "graigbikker",
-    "email": "gbikker0@loc.gov",
-    "password": "gSwr0y",
-    "userImg": "",
-    "newsletter": false
-},
-{   "id":2,
-    "name": "Mallorie Clerke",
-    "username": "mallorieclerke",
-    "email": "mclerke1@ed.gov",
-    "password": "6oF5O6ePVHb",
-    "userImg": "",
-    "newsletter": true
-}
+    {
+        "id": 1,
+        "name": "Santiago",
+        "surname": "Guastavino",
+        "email": "san@live",
+        "password": "123456",
+        "avatar": "1624417148377.jpg",
+        "newsletter": false
+    },
+    {
+        "id": 2,
+        "name": "Bill",
+        "surname": "Gates",
+        "email": "thebillgates@gmail.com",
+        "password": "123456",
+        "avatar": "1624417662274.jpg",
+        "newsletter": true
+    }
 ]
