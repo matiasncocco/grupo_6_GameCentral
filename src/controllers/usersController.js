@@ -1,4 +1,5 @@
 let { readJson, writeJson, lastId, storeBool } = require('./helper');
+let bcrypt = require('bcrypt');
 
 let title = '';
 
@@ -39,9 +40,9 @@ let usersController = {
             name: req.body.name,
             surname: req.body.surname,
             email: req.body.email,
-            password: req.body.password,
+            password: bcrypt.hashSync(req.body.password, 10),
             avatar: req.file.filename,
-            newsletter: storeBool(req.body.newsletter),
+            newsletter: storeBool(req.body.newsletter)
         };
         users.push(user);
         writeJson(users, 'users');

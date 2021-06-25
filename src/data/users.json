@@ -1,20 +1,20 @@
 [
     {
-        "id": 1,
-        "name": "Santiago",
-        "surname": "Guastavino",
-        "email": "san@live",
-        "password": "123456",
-        "avatar": "1624417148377.jpg",
+        "id": 3,
+        "name": "Juan",
+        "surname": "Pérez",
+        "email": "juan.perez@gmail.com",
+        "password": "$2b$10$gR/S1RuPdrBsJdv.ebaTZuEWni8WIe8nlcOgGrtlG/.4EesY3KL5y",
+        "avatar": "1624662206460.jpg",
         "newsletter": false
     },
     {
-        "id": 2,
+        "id": 4,
         "name": "Bill",
         "surname": "Gates",
-        "email": "thebillgates@gmail.com",
-        "password": "123456",
-        "avatar": "1624417662274.jpg",
-        "newsletter": true
+        "email": "bill.gates@google.com",
+        "password": "$2b$10$OE61mlhQearYyr7wP5YxDemR.thwtUWK3c6Aj0dgihQ/.Y7.lR6Eq",
+        "avatar": "1624662340581.jpg",
+        "newsletter": false
     }
 ]

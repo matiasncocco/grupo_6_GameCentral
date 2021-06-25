@@ -14,7 +14,7 @@
         "price": 299,
         "inOffer": false,
         "discount": null,
-        "description": "Age of Empires II: Definitive Edition conmemora el 20 aniversario de uno de los juegos de estrategia más aclamados de todos los tiempos, en una versión que ofrece impactantes gráficos 4K Ultra HD, una pista sonora completamente remasterizada y contenido totalmente nuevo, como “Los últimos Khanes”, que cuenta con 3 campañas y 4 civilizaciones.\r\n\r\nExplora todas las campañas originales como nunca antes y revive las expansiones más vendidas. Sumérgete en más de 200 horas de juego y recorre mil años de la historia de la humanidad. Juega en línea y desafía a otros jugadores con 35 civilizaciones diferentes, ¿podrás conquistar el mundo a lo largo del tiempo?\r\n\r\nElige tu camino hacia la grandeza en esta edición remasterizada definitiva de uno de los juegos de estrategia más queridos de todos los tiempos.",
+        "description": "                    Age of Empires II: Definitive Edition conmemora el 20 aniversario de uno de los juegos de estrategia más aclamados de todos los tiempos, en una versión que ofrece impactantes gráficos 4K Ultra HD, una pista sonora completamente remasterizada y contenido totalmente nuevo, como “Los últimos Khanes”, que cuenta con 3 campañas y 4 civilizaciones.\r\n\r\nExplora todas las campañas originales como nunca antes y revive las expansiones más vendidas. Sumérgete en más de 200 horas de juego y recorre mil años de la historia de la humanidad. Juega en línea y desafía a otros jugadores con 35 civilizaciones diferentes, ¿podrás conquistar el mundo a lo largo del tiempo?\r\n\r\nElige tu camino hacia la grandeza en esta edición remasterizada definitiva de uno de los juegos de estrategia más queridos de todos los tiempos.\r\n                ",
         "discoutn": null,
         "finalPrice": null
     },
@@ -106,7 +106,7 @@
         "price": 129,
         "inOffer": true,
         "discount": 50,
-        "description": "Portal™ es la nueva aventura para un solo jugador de Valve. Ambientado en los misteriosos laboratorios de Aperture Science, Portal ha sido calificado como uno de los juegos más innovadores de los últimos tiempos y ofrece incontables horas de rompecabezas nunca vistos.\r\n\r\nEl juego está diseñado para cambiar radicalmente el modo en que los jugadores enfocan, sopesan y reaccionan a las circunstancias en un entorno determinado, al igual que la pistola antigravedad abrió un nuevo mundo de posibilidades a la hora de manipular objetos.\r\n\r\nLos jugadores deben resolver rompecabezas y desafíos basados en las leyes físicas abriendo portales y desplazando objetos, o incluso sus propios avatares, a través del espacio.",
+        "description": "                                        Portal™ es la nueva aventura para un solo jugador de Valve. Ambientado en los misteriosos laboratorios de Aperture Science, Portal ha sido calificado como uno de los juegos más innovadores de los últimos tiempos y ofrece incontables horas de rompecabezas nunca vistos.\r\n\r\nEl juego está diseñado para cambiar radicalmente el modo en que los jugadores enfocan, sopesan y reaccionan a las circunstancias en un entorno determinado, al igual que la pistola antigravedad abrió un nuevo mundo de posibilidades a la hora de manipular objetos.\r\n\r\nLos jugadores deben resolver rompecabezas y desafíos basados en las leyes físicas abriendo portales y desplazando objetos, o incluso sus propios avatares, a través del espacio.\r\n                \r\n                ",
         "finalPrice": 64
     },
     {
@@ -251,12 +251,6 @@
             "BUENA TRAMA",
             "ATMOSFÉRICO"
         ],
-        "platform": [
-            "windows",
-            "linux",
-            null,
-            "vr"
-        ],
         "price": 479,
         "discount": null,
         "description": "The Witcher: Wild Hunt es un RPG de mundo abierto basado en la narrativa y ambientado en un universo de fantasía visualmente impresionante, repleto de decisiones significativas y consecuencias trascendentales. En The Witcher, te pones en la piel del cazador de monstruos profesional Geralt de Rivia, y tienes la tarea de encontrar a la niña de la profecía en un vasto mundo abierto repleto de ciudades de mercaderes, islas piratas, peligrosos pasos de montaña y cuevas olvidadas para explorar.\r\nCARACTERÍSTICAS PRINCIPALES\r\nCONVIÉRTETE EN UN EXPERTO CAZADOR DE MONSTRUOS A SUELDO\r\nAdiestrados desde su infancia y mutados para obtener habilidades, fuerza y reflejos sobrehumanos, los brujos sirven como contrapeso al mundo infestado de monstruos en el que viven.\r\n\r\nDestruye a tus enemigos de formas espantosas como cazador de monstruos profesional, armado con una gran variedad de armas mejorables, pociones de mutación y magia de combate.\r\nDa caza a una amplia gama de monstruos exóticos: desde bestias salvajes que merodean por los pasos de montaña, hasta astutos depredadores sobrenaturales que acechan en las sombras de ciudades densamente pobladas.\r\nInvierte tus recompensas en mejorar tus armas y comprar armaduras personalizadas, o gástatelas en carreras de caballos, juegos de cartas, peleas a puñetazos y otros placeres que te ofrece la noche.",
@@ -275,12 +269,6 @@
             "DIBUJOS ANIMADOS",
             "PLATAFORMAS",
             "2D"
-        ],
-        "platform": [
-            "windows",
-            "linux",
-            "macos",
-            "vr"
         ],
         "price": 224,
         "discount": 23,

@@ -27,21 +27,21 @@
             </div>
             <!-- category -->
             <div class="input-box category-box">
-                <% for (i = 0 ; i < 4 ; i++) { %>
+                <% productCategory.forEach(category => { %>
                     <div class="single-category">
-                        <label class="label-label" for="category<%= [i] %>">
-                            Categoría <%= [i + 1] %>
+                        <label class="label-label" for="<%= category %>">
+                            Categoría                         
                         </label>
-                        <input 
-                            class="input-text input-text-product" 
-                            type="text" 
-                            name="category" 
-                            id="category<%= [i] %>"
+                        <input
+                            class="input-text input-text-product"
+                            type="text"
+                            name="category"
+                            id="<%= category %>"
                             required
-                            value="<%= productCategory[i] %>"
+                            value="<%= category %>"
                         >
                     </div>
-                <% } %>
+                <% }) %>
             </div>
             <!-- FILES x2 -->
             <div class="input-box file-box">

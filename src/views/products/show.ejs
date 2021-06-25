@@ -24,12 +24,6 @@
                 </p>
             </article>
         </section>
-
-
-
-
-        <!--  -->
-        <!--  -->
         <section class="show-category">
             <header class="show-title category-title">
                 <h3 class="big-title big-title-category">
@@ -49,7 +43,7 @@
                 <% }); %>
             </article>
         </section>
-        <!--  -->
+        <!-- ACÁ EMPIEZA PLATAFORMAS -->
         <section class="show-category show-platforms">
             <article class="category-box">
                 <%# for (i = 0 ; i < productPlatform.length ; i++ ) { %>
@@ -84,16 +78,7 @@
                 </h6>
             </header>
         </section>
-        <!--  -->
-        <!--  -->
-
-
-
-
-
-
-
-        
+        <!-- ACÁ TERMINA PLATAFORMAS -->  
         <% if (product.inOffer == true) { %>
             <header class="show-title offer-title">
                 <h2 class="big-title">
@@ -175,7 +160,7 @@
     </section>
     <section class="admin-main-box">
         <div class="admin-edit-box">
-            <a href="/products/edit/<%= product.id %> %>">
+            <a href="/products/<%= product.id %>/edit">
                 <button class="admin-button-edit">
                     EDITAR
                 </button> 
