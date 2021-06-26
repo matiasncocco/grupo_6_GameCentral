@@ -24,7 +24,6 @@ let mainController = {
         let relevant = products.filter(product => {
             return product.relevant === true;
         });
-
         res.render('index', { title, inOffer, relevant } );
     },
     

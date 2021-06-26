@@ -2,13 +2,15 @@ let { readJson, writeJson, lastId, storeBool, percentageFinder, inOfferHandler, 
 // UNLINK FILE SYNC??
 // let fs = require('fs');
 
-let title = '';
+let title;
 
 let productsController = {
     cart: (req,res) => {
         title = 'Carrito de compras';
         let products = readJson('products.json');
 
+        // esto debería ser otra función
+        // inOfferHandler
         products.forEach(product => {
             if (product.inOffer == true) {
                 product.finalPrice = percentageFinder(product.price,product.discount);

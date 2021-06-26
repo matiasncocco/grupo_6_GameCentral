@@ -1,38 +1,61 @@
 let { readJson, writeJson, lastId, storeBool } = require('./helper');
 let bcrypt = require('bcrypt');
-
-let title = '';
+let { validationResult } = require('express-validator');
 
 let usersController = {
+    // GET: show login view
     login : (req,res) => {
-        title = 'Ingresá';
-        res.render('./users/login', { title } );
+        res.render('./users/login', { title:'Ingresá' } );
     },
 
-    // 1 GET: show user list
-    index: (req,res) => {
+    // POST: process login
+    processLogin: (req,res) => {
+        // leo la DB de usuarios
         let users = readJson('users.json');
-        res.send(users);
-    },
-
-    // 2 GET: show user <form>
-    register : (req,res) => {
-        title = 'Crea tu cuenta';
-        res.render('./users/register', { title } );
-    },
-    
-    // 3 GET: show user detail
-    show: (req,res) => {
-        let users = readJson('users.json');
-        let param = req.params.id
+        // busco coincidencia 
+        let userToLog;
         users.forEach(user => {
-            if (user.id == param) {
-                res.send(user);
+            if (user.email == req.body.email) {
+                userToLog = user;
             };
         });
+        // si encontré coincidencia
+        if (userToLog) {
+            // si coinciden las passwords
+            if (bcrypt.compareSync(req.body.password, userToLog.password)) {
+                delete userToLog.password;
+                req.session.loggedUser = userToLog;
+                res.redirect('/');
+            };
+            // si no hubo coincidencia de passwords
+            res.render('./users/login', {
+                title:'Ingresá',
+                oldEmail: req.body.email,
+                errors: {
+                    password: {
+                        msg: 'Las credenciales no coinciden'
+                    }
+                }
+            });
+        };
+        // si no hubo coincidencia de emails
+        res.render('./users/login', {
+            title:'Ingresá', 
+            oldEmail: req.body.email,
+            errors: {
+                email: {
+                    msg: 'Revisá tu e-mail'
+                }
+            }
+        });
+    },
+   
+    // GET: show register view // <form>
+    register : (req,res) => {
+        res.render('./users/register', { title:'Crea tu cuenta' } );
     },
 
-    // 4 POST: store user & process register
+    // POST: process register // store user in DB
     processRegister: (req,res) => {
         let users = readJson('users.json');
         let user = {
@@ -48,12 +71,27 @@ let usersController = {
         writeJson(users, 'users');
         res.redirect('/');
     },
+    
+    // GET: show users/:id view
+    show: (req,res) => {
+        let users = readJson('users.json');
+        let param = req.params.id
+        users.forEach(user => {
+            if (user.id == param) {
+                res.send(user);
+            };
+        });
+    },
+ 
+    // GET: show user list
+    index: (req,res) => {
+        let users = readJson('users.json');
+        res.send(users);
+    },
 
-    // 5 GET: show <form> w/ current user data
-
-    // 6 POST: submit changes to user
-
-    // 7 DELETE: remove entry
+    // GET: show <form> w/ current user data
+    // POST: submit changes to user
+    // DELETE: remove entry
 };
 
 module.exports = usersController;

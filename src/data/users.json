@@ -16,5 +16,14 @@
         "password": "$2b$10$OE61mlhQearYyr7wP5YxDemR.thwtUWK3c6Aj0dgihQ/.Y7.lR6Eq",
         "avatar": "1624662340581.jpg",
         "newsletter": false
+    },
+    {
+        "id": 5,
+        "name": "Santiago",
+        "surname": "Guastavino",
+        "email": "santi@live.com",
+        "password": "$2b$10$tx6UDvBTxcAarlgCrCAMCu21X3A2luYGaKzh/Xzn0Bho1PJeJ4enC",
+        "avatar": "1624745068283.jpg",
+        "newsletter": true
     }
 ]
