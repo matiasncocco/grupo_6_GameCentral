@@ -2,24 +2,43 @@ let express = require('express');
 let router = express.Router();
 let usersController = require('../controllers/usersController');
 let upload = require('../middlewares/multerMiddleware');
+let userMiddleware = require('../middlewares/userMiddleware');
+let guestMiddleware = require('../middlewares/guestMiddleware');
 let { check } = require('express-validator');
 
 validations = [
     // check.
 ];
 
-// show login view // <form>
-router.get('/login', usersController.login);
-// process login
-router.post('/login', usersController.processLogin);
-// show register view // <form>
-router.get('/register', usersController.register);
-// process register // store user in DB
+// vista registro de usuario <form>
+// solo pueden entrar 
+// -> GUESTS
+router.get('/register', guestMiddleware, usersController.register);
+
+// procesar registro/creación de usuario
+// (inaccesible)
 router.post('/', upload.single('avatar'), usersController.processRegister);
-// show users/:id view
-router.get('/:id', usersController.show);
-// show user list
-router.get('/', usersController.index);
+
+// vista login de usuario <form>
+// solo pueden entrar 
+// -> GUESTS
+router.get('/login', guestMiddleware, usersController.login);
+
+// procesar login de usuario
+// (inaccesible)
+router.post('/login', usersController.processLogin);
+
+// NOT IMPLEMENTED
+// vista de perfil del usuario
+// solo pueden entrar 
+// -> USUARIOS
+// router.get('/:id', userMiddleware, usersController.show);
+
+// NOT IMPLEMENTED
+// vista con lista de todos los usuarios
+// solo pueden entrar
+// -> ADMINS
+// router.get('/', usersController.index);
 
 // /users/:id/edit (GET)
 // Formulario de edición de usuarios

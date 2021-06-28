@@ -28,6 +28,9 @@ let productsController = {
         title = 'Todos los títulos'
         let products = readJson('products.json');
 
+        console.log(req.session.loggedUser);
+
+
         // esto debería ser otra función
         // inOfferHandler
         products.forEach(product => {
