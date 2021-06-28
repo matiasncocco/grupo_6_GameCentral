@@ -1,11 +1,12 @@
 let { readJson, writeJson, lastId, storeBool } = require('./helper');
 let bcrypt = require('bcrypt');
-let { validationResult } = require('express-validator');
+// no implementado
+// let { validationResult } = require('express-validator');
 
 let usersController = {
     // GET: show login view
     login : (req,res) => {
-        res.render('./users/login', { title:'Ingresá' } );
+        res.render('./users/login', { title: 'Ingresá' } );
     },
 
     // POST: process login
@@ -29,7 +30,7 @@ let usersController = {
             };
             // si no hubo coincidencia de passwords
             res.render('./users/login', {
-                title:'Ingresá',
+                title: 'Ingresá',
                 oldEmail: req.body.email,
                 errors: {
                     password: {
@@ -40,7 +41,7 @@ let usersController = {
         };
         // si no hubo coincidencia de emails
         res.render('./users/login', {
-            title:'Ingresá', 
+            title: 'Ingresá', 
             oldEmail: req.body.email,
             errors: {
                 email: {

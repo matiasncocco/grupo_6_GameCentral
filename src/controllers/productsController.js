@@ -2,11 +2,8 @@ let { readJson, writeJson, lastId, storeBool, percentageFinder, inOfferHandler, 
 // UNLINK FILE SYNC??
 // let fs = require('fs');
 
-let title;
-
 let productsController = {
     cart: (req,res) => {
-        title = 'Carrito de compras';
         let products = readJson('products.json');
 
         // esto debería ser otra función
@@ -20,16 +17,12 @@ let productsController = {
             };
         });
 
-        res.render('./products/cart', { title, products } );
+        res.render('./products/cart', { title: 'Carrito de compras', products } );
     },
 
     // 1 GET: show all items
     index: (req,res) => {
-        title = 'Todos los títulos'
         let products = readJson('products.json');
-
-        console.log(req.session.loggedUser);
-
 
         // esto debería ser otra función
         // inOfferHandler
@@ -42,21 +35,19 @@ let productsController = {
             };
         });
 
-        res.render('./products/index', { title, products } );
+        res.render('./products/index', { title: 'Todos los títulos', products } );
     },
 
     // 2 GET: show product <form>
     create: (req,res) => {
-        title = 'Nuevo producto';
         let categoryPlaceholder = [
             'SHOOTER','SURVIVAL','RPG','BATTLE ROYALE'
         ];
-        res.render('./products/create', { title, categoryPlaceholder } );
+        res.render('./products/create', { title: 'Nuevo producto', categoryPlaceholder } );
     },
 
     // 3 GET: show product detail
     show: (req,res) => {
-        title = "Más info del juego";
         let products = readJson('products.json');
 
         // esto debería ser otra función
@@ -74,10 +65,15 @@ let productsController = {
         for (i = 0 ; i < products.length ; i++) {
             if (param == products[i].id) {
                 let productCategory = products[i].category;
-                let productPlatform = products[i].platform;
                 let moneySaved = products[i].price - products[i].finalPrice;
                 let shortDescription = products[i].description.substring(0,175);
-                res.render('./products/show', { title,'product':products[i], productCategory, productPlatform, moneySaved, shortDescription } );
+                res.render('./products/show', {
+                    title: products[i].name,
+                    product: products[i], 
+                    productCategory, 
+                    moneySaved, 
+                    shortDescription 
+                });
             };
         };
     },
@@ -106,13 +102,12 @@ let productsController = {
 
     // 5 GET: show <form> with current product data
     edit: (req,res) => {
-        title = 'Editar';
         let products = readJson('products.json');
         let param = req.params.id;
         for (i = 0 ; i < products.length ; i++) {
             if (products[i].id == param) {
                 let productCategory = products[i].category;
-                res.render('./products/edit', { title, 'product':products[i], productCategory } );
+                res.render('./products/edit', { title: 'Edición de producto', 'product':products[i], productCategory } );
             };
         };
     },

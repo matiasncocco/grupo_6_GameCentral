@@ -3,6 +3,7 @@ let router = express.Router();
 let productsController = require('../controllers/productsController');
 let upload = require('../middlewares/multerMiddleware');
 let userMiddleware = require('../middlewares/userMiddleware');
+let adminMiddleware = require('../middlewares/adminMiddleware');
 
 multerFields = [
     {
@@ -27,7 +28,7 @@ router.get('/', productsController.index);
 // vista creación de producto <form>
 // solo puede acceder
 // -> ADMINS
-router.get('/create', productsController.create);
+router.get('/create', adminMiddleware, productsController.create);
 
 // vista detalle de producto
 // TODOS pueden acceder
@@ -40,7 +41,7 @@ router.post('/', upload.fields(multerFields), productsController.store);
 // vista de edición de producto. <form> de creación con datos
 // solo puede acceder
 // -> ADMINS
-router.get('/:id/edit', productsController.edit);
+router.get('/:id/edit', adminMiddleware, productsController.edit);
 
 // procesar edición de producto
 // (inaccesible)

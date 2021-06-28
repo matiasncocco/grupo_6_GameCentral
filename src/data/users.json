@@ -24,6 +24,16 @@
         "email": "santi@live.com",
         "password": "$2b$10$tx6UDvBTxcAarlgCrCAMCu21X3A2luYGaKzh/Xzn0Bho1PJeJ4enC",
         "avatar": "1624745068283.jpg",
-        "newsletter": true
+        "newsletter": true,
+        "admin": true
+    },
+    {
+        "id": 6,
+        "name": "Juan Pedro",
+        "surname": "Pérez López",
+        "email": "juan@live.com",
+        "password": "$2b$10$3LjtR.hlSdVWNsdIzTMEneZaeI8vQ6pRbOc7Bxuz6sQXlJOkzjH1u",
+        "avatar": "1624914739851.png",
+        "newsletter": false
     }
 ]
