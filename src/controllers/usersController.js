@@ -23,32 +23,35 @@ let usersController = {
         // si encontré coincidencia
         if (userToLog) {
             // si coinciden las passwords
-            if (bcrypt.compareSync(req.body.password, userToLog.password)) {
+            let passwordsMatch = bcrypt.compareSync(req.body.password, userToLog.password);
+            if (passwordsMatch) {
                 delete userToLog.password;
                 req.session.loggedUser = userToLog;
                 res.redirect('/');
+            } else {
+                // si no hubo coincidencia de passwords
+                res.render('./users/login', {
+                    title: 'Ingresá',
+                    oldEmail: req.body.email,
+                    errors: {
+                        password: {
+                            msg: 'Las credenciales no coinciden'
+                        }
+                    }
+                });
             };
-            // si no hubo coincidencia de passwords
+        } else {
+            // si no hubo coincidencia de emails
             res.render('./users/login', {
                 title: 'Ingresá',
                 oldEmail: req.body.email,
                 errors: {
-                    password: {
-                        msg: 'Las credenciales no coinciden'
+                    email: {
+                        msg: 'Revisá tu e-mail'
                     }
                 }
             });
         };
-        // si no hubo coincidencia de emails
-        res.render('./users/login', {
-            title: 'Ingresá', 
-            oldEmail: req.body.email,
-            errors: {
-                email: {
-                    msg: 'Revisá tu e-mail'
-                }
-            }
-        });
     },
    
     // GET: show register view // <form>
