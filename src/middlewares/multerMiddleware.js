@@ -1,13 +1,15 @@
 let multer = require('multer');
 let path = require('path');
 
-let destination = path.join(__dirname + '/..' + '/..' + '/public' + '/img' + '/products' + '/card');
+let productDestination = path.join(__dirname + '/..' + '/..' + '/public' + '/img' + '/products');
 
 let storage = multer.diskStorage ({
     destination: (req,file,cb) => {
-        cb(null, destination);
+        // if product
+        cb(null, productDestination);
+        // else users
+        // cb(null, userDestination);
     },
-    
     filename: (req,file,cb) => {
         cb(null, Date.now() + path.extname(file.originalname));
     },

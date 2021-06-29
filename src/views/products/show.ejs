@@ -3,11 +3,11 @@
 <main class="main-main">
     <section class="show-section">
         <section class="show-img">
-            <img class="image-image" src="/img/products/img/<%= product.img %>">
-            <img class="card-image" src="/img/products/card/<%= product.card %>">
+            <img class="image-image box-width" src="/img/products/<%= product.img %>">
+            <img class="card-image box-width" src="/img/products/<%= product.card %>">
         </section>
         <section class="show-main">
-            <header class="show-title">
+            <header class="show-title show-title-game-title">
                 <h2 class="big-title">
                     <%= product.name %>
                 </h2>
@@ -23,12 +23,12 @@
         </section>
         <section class="show-category">
             <header class="show-title category-title">
-                <h3 class="big-title">
+                <h3 class="big-title big-title-category">
                     CATEGORÍAS
                 </h3>
-                <h5 class="small-title">
+                <h6 class="small-title">
                     CATEGORÍAS
-                </h5>
+                </h6>
             </header>
             <article class="category-box">
                 <% productCategory.forEach(category => { %>
@@ -40,6 +40,92 @@
                 <% }); %>
             </article>
         </section>
+
+        <section class="show-controls">
+
+            <!-- box 1 -->
+            <!-- BUY: icons -->
+            <div class="control-icon-box">
+                    <h2 class="big-title">
+                        <a href="/products/cart">
+                            <i class="fas fa-cart-plus"></i>
+                        </a>
+                    </h2>
+                    <h4 class="small-title">
+                        <a href="/products/cart">
+                            <i class="fas fa-cart-plus"></i>
+                        </a>
+                    </h4>
+
+
+            </div>
+
+
+
+
+            <!-- box 2 -->
+            <!-- FINAL PRICE -->
+            <div class="control-price-box">
+                <h2 class="big-title">
+                    <%= product.price %>
+                </h2>
+                <h4 class="small-price">
+                    <%= product.price %>
+                </h4>
+            </div>
+
+
+
+            <!-- if (in offer ) -->
+            <% if (product.discount == 'true') { %>
+
+            
+            <div class="control-discount-box">
+                <!-- precio original $ tachado -->
+                <div class="discount-first-price">
+                    <h3 class="big-title">
+                        <%= product.price %>
+                    </h3>
+                    <h5 class="small-title">
+                        <%= product.price %>
+                    </h5>
+                </div>
+
+                <!-- % de descuento -->
+                <div class="discount-discount">
+                    <h3 class="big-title">
+                        %<%= product.discountRate %>
+                    </h3>
+                    <h5 class="small-title">
+                        %<%= product.discountRate %>
+                    </h5>
+                </div>
+                <!-- texto te ahorras -->
+                <article class="show-description discount-text">
+                    <p>
+                      Te ahorras
+                    </p>
+                </article>
+                <div class="discount-much">
+                    <h3 class="big-title">
+                        $500
+                    </h3>
+                    <h5 class="small-title">
+                        $500
+                    </h5>
+                </div>
+            </div>
+
+            <% } %>
+
+
+
+
+        </section>
+
+
+
+
         <section class="show-long-description">
             <header class="show-title">
                 <h3 class="big-title">
@@ -54,19 +140,29 @@
                     <%= product.longDescription %>
                 </p>
             </article>
-
-            <button>
-                <a href="/products/:id/edit">
-                    send
-                </a>
-            </button>
-
-            <form action="/products/<%= product.id %>?_method=DELETE" method="POST">
-                <button type="submit">
-                    ELIMINAR
-                </button>
-            </form>
         </section>
+
+
+
+
+
+
+
+            <!-- <section class="show-controls">
+                <div class="show-edit-box">
+                    <a href="/products/<%#= product.id %>/edit %>">
+                        EDITAR
+                    </a>
+                </div>
+                <form class="show-delete-box" action="/products/<%= product.id %>?_method=DELETE" method="POST">
+                    <button type="submit">
+                        ELIMINAR
+                    </button>
+                </form>
+            </section> -->
+
+
+            
     </section>
 </main>
 <%- include('../partials/footer')%>

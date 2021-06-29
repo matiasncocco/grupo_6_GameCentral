@@ -69,7 +69,7 @@ h6 {
 /**/
 
 
-img {
+.box-width {
     width: 100%;
     display: block;
 }
@@ -372,6 +372,10 @@ img {
     width: 100%;
 }
 
+.show-title-game-title {
+    text-shadow: -2px 2px 0 black, -5px 5px 0 #B14593;
+}
+
 .show-description {
     padding-top: 5px;
     font-size: 10px;
@@ -413,18 +417,59 @@ img {
     border-radius: 8px;
     color: black;
     font-weight: 400;
-    font-size: 13.28px;
+    font-size: 10px;
     text-shadow: -1px 1px 0 #B6B1F1;
-}
-
-.show-long-description .show-title {
-    padding-top: 30px;
 }
 
 .long-description {
     padding-left: 15px;
 }
+
+.show-controls {
+    width: 100%;
+    display: flex;
+    flex-flow: row-reverse wrap;
+    align-items: center;
+}
+
+.control-icon-box {
+    width: 10%;
+    border: red 2px solid;
+    text-align: right;
+    text-shadow: -2px 2px black;
+}
+
+.control-price-box {
+    width: 40%;
+    border: red 2px solid;
+}
+
+.control-discount-box {
+    width: 50%;
+    border: red 2px solid;
+    display: flex;
+    flex-flow: row wrap;
+    align-items: center;
+}
+
+.discount-first-price {
+
+}
+
+.discount-discount {
+
+}
+
+.discount-text {
+    padding: 0;
+    text-align: left;
     
+}
+
+.discount-much {
+
+}
+
     
 /**/
 /* CARRITO */
@@ -610,6 +655,14 @@ img {
     display: flex;
     flex-flow: column wrap;
     justify-content: flex-start;
+}
+
+.previous-image-box {
+    text-align: center;
+}
+
+.previous-image-box img {
+    max-height: 100px;
 }
 
 /* LABELS */
@@ -984,7 +1037,7 @@ TABLETS
     }
 
     .show-title h3 {
-        font-size: 24px;
+        font-size: 20px;
     }
 
     .show-description {
@@ -1092,11 +1145,12 @@ DESKTOP
         color: black;
     }
 
-    .carrito a {
-        padding-right: 2px;
+    .carrito i {
+        padding-right: 10px;
         height: 18px;
         width: 18px;
         border-radius: 50%;
+        opacity: .9;
     }
 
     .logo:hover {
@@ -1217,6 +1271,8 @@ DESKTOP
     .show-description {
         font-size: 16px;
     }
+
+    
 
 
     /**/
@@ -1394,7 +1450,7 @@ PANTALLAS +
 
 
     .show-title h2 {
-        font-size: 36px;
+        font-size: 50px;
     }
 
     .show-title h3 {
@@ -1406,7 +1462,7 @@ PANTALLAS +
     }
 
     .show-description {
-        font-size: 20px;
+        font-size: 25px;
     }
 
 
@@ -1435,7 +1491,7 @@ PANTALLAS +
 
     .file-box {
         flex-flow: row wrap;
-        justify-content: space-between;
+        justify-content: flex-start;
     }
 
     /* LABELS */
@@ -1457,7 +1513,7 @@ PANTALLAS +
     }
 
     .product-file {
-        width: 33%;
+        width: 30%;
     }
 
 

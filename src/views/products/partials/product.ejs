@@ -1,9 +1,9 @@
 <article class="unit-product">
     <div class="game-image">
         <!-- product.card -->
-        <img src="/img/products/card/<%= product[i].card %>">
+        <img class="box-width" src="/img/products/<%= product[i].card %>">
         <div class="ribbon">
-            <% if (product[i].discount == true) { %>
+            <% if (product[i].discount == "true") { %>
                 <!-- product.price -->
                 <div class="full-price crossed-out">
                     <h3 class="big-title">
