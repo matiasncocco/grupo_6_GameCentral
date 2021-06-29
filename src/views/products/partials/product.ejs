@@ -1,45 +1,39 @@
 <article class="unit-product">
     <div class="game-image">
-        <!-- product.card -->
         <img class="box-width" src="/img/products/<%= product[i].card %>">
         <div class="ribbon">
-            <% if (product[i].discount == "true") { %>
-                <!-- product.price -->
+            <% if (product[i].inOffer === true) { %>
                 <div class="full-price crossed-out">
                     <h3 class="big-title">
-                        <%= product[i].price %>
+                        $<%= product[i].price %>
                     </h3>
                     <h4 class="small-title">
-                        <%= product[i].price %>
+                        $<%= product[i].price %>
                     </h4>
                 </div>
-                <!-- product.discountRate -->
                 <div class="discount">
                     <h2 class="big-title discount-h">
-                        <%= product[i].discountRate %>%
+                        <%= product[i].discount %>%
                     </h2>
                     <h3 class="small-title discount-h3">
-                        <%= product[i].discountRate %>%
+                        <%= product[i].discount %>%
                     </h3>
                 </div>
-                <!-- PRICE / DISCOUNT = NEW PRICE -->
-                <!-- enviar resultado desde controlador -->
                 <div class="new-price">
                     <h2 class="big-title">
-                        <%= product[i].price %>
+                        $<%= product[i].finalPrice %>
                     </h2>
                     <h3 class="small-title">
-                        <%= product[i].price %>
+                        $<%= product[i].finalPrice %>
                     </h3>
                 </div>
             <% } else { %>
                 <div class="full-price">
-                    <!-- product.price -->
                     <h3 class="big-title">
-                        <%= product[i].price %>
+                        $<%= product[i].price %>
                     </h3>
                     <h4 class="small-title">
-                        <%= product[i].price %>
+                        $<%= product[i].price %>
                     </h4>
                 </div>
             <% } %>
@@ -47,13 +41,11 @@
     </div>
     <div class="overlay-product"></div>
     <div class="game-title">
-        <!-- product.name -->
         <h2 class="big-title">
             <%= product[i].name %>
         </h2>
     </div>
     <div class="ver-mas">
-        <!-- product.id -->
         <a href="/products/<%= product[i].id %>">
             <h3 class="big-title">
                 VER MÁS

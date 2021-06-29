@@ -19,6 +19,7 @@ body {
     background-size: cover;
 }
 
+
 /**/
 /* REGLAS PARA LOS LINK */
 /**/
@@ -335,7 +336,7 @@ h6 {
 
 
 /**/
-/* SHOW PRODUCT */
+/* PRODUCT SHOW */
 /**/
     
 
@@ -349,8 +350,6 @@ h6 {
     border-radius: 8px;
     display: flex;
     flex-flow: row wrap;
-    justify-content: flex-start;
-    justify-content: center;
 }
 
 .show-img {
@@ -373,15 +372,20 @@ h6 {
 }
 
 .show-title-game-title {
-    text-shadow: -2px 2px 0 black, -5px 5px 0 #B14593;
+    text-shadow: -2px 2px 0 black, -4px 4px 0 #B14593;
 }
 
 .show-description {
     padding-top: 5px;
     font-size: 10px;
+    line-height: 17px;
     color: black;
     text-align: left;
     font-weight: 600;
+}
+
+.read-more-c {
+    color: #B14593;
 }
 
 .show-category {
@@ -391,6 +395,11 @@ h6 {
     justify-content: flex-start;
     align-items: center;
     padding-top: 10px;
+    margin: 1%;
+}
+
+.show-platforms {
+    margin-bottom: 5%;
 }
 
 .category-title {
@@ -412,65 +421,118 @@ h6 {
 
 .category-single-box p {
     margin: 2px;
-    background-color: #B14593;
-    border: dotted 1px black;
+    background: linear-gradient(#B1CCF1,#D6B1F1);
+    border: dotted 1px #B14593;
     border-radius: 8px;
-    color: black;
+    color: #B14593;
     font-weight: 400;
     font-size: 10px;
-    text-shadow: -1px 1px 0 #B6B1F1;
+    text-shadow: -1px 1px 0 black;
 }
 
 .long-description {
     padding-left: 15px;
+    margin-bottom: 50px;
 }
 
-.show-controls {
-    width: 100%;
-    display: flex;
-    flex-flow: row-reverse wrap;
-    align-items: center;
-}
-
-.control-icon-box {
-    width: 10%;
-    border: red 2px solid;
-    text-align: right;
-    text-shadow: -2px 2px black;
-}
-
-.control-price-box {
-    width: 40%;
-    border: red 2px solid;
-}
-
-.control-discount-box {
-    width: 50%;
-    border: red 2px solid;
+.offer-display {
     display: flex;
     flex-flow: row wrap;
     align-items: center;
+    background: linear-gradient(#B1455D,#B14593,#9945B1);
+    border: 2px #E2DDF9 solid;
+    border-radius: 4px;
+    text-shadow: -1px 0 black, 0 1px black, 1px 0 black, 0 -1px black;
+    justify-content: flex-end;
+    width: 100%;
+    opacity: .9;
+    transition: all .2s cubic-bezier(.25,.25,.25,.25);
 }
 
-.discount-first-price {
-
+.offer-display-box {
+    width: 25%;
+    text-align: center;
+    padding: 5px;
 }
 
-.discount-discount {
-
+.original-price {
+    text-decoration: line-through;
+    opacity: .8;
 }
 
-.discount-text {
-    padding: 0;
-    text-align: left;
-    
+.te-ahorras {
+    font-size: 12px;
+    width: 50%;
+    color: #45B163;
 }
 
-.discount-much {
-
+.pagas-box {
+    width: 50%;
+    align-self: center;
+    text-align: right;
+    padding-right: 3%;
+    text-shadow: -2px 2px 0 black;
+    color: #5DB145;
 }
 
-    
+.purchase-display {
+    width: 50%;
+    display: flex;
+    flex-flow: column wrap;
+    align-items: flex-end;
+    justify-content: center;
+}
+
+.purchase-price-box, .purchase-button-box {
+    padding: 5px;
+    width: 100%;
+    background: #5DB145;
+    text-shadow: -2px 2px 0 black;
+    text-align: center;
+    border-radius: 4px;
+    border: 2px #E2DDF9 solid;
+    border-top: none;
+    transition: all .1s cubic-bezier(.25,.25,.25,.25);
+}
+
+.purchase-button-box {
+    border-radius: 0 0 30px 30px;
+}
+
+.show-long-description {
+    margin-top: 5%;
+}
+
+.long-description {
+    margin-top: 1%;
+    margin-bottom: 50px;
+}
+
+.admin-main-box {
+    width: 100%;
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: space-between;
+    align-items: center;
+    margin: 30px 0;
+}
+
+.admin-edit-box, .admin-delete-box {
+    width: 50%;
+    text-align: center;
+}
+
+.admin-button-edit, .admin-button-delete {
+    padding: 4px;
+    background-color: #858BB7;
+    border: 2px solid #E2DDF9;
+    transition: all .2s cubic-bezier(.25,.25,.25,.25);
+    cursor: pointer;
+    font-size: 12px;
+    font-weight: 900;
+}
+
+
 /**/
 /* CARRITO */
 /**/
@@ -529,49 +591,9 @@ h6 {
     transition: all .2s cubic-bezier(.25,.25,.25,.25);
 }
 
-.cart-footer  {
-    width: 90%;
-    margin: auto;
-    display: flex;
-    flex-flow: row wrap;
-    justify-content: space-between;
-    align-items: center;
-    padding: 30px 0;
-}
+/* .cart-footer  {
 
-.clean-cart-box {
-    width: 50%;
-    text-align: center;
-    color: black;
-    font-size: 12px;
-    font-weight: 700;
-}
-
-.clean-cart {
-    text-decoration: underline;
-}
-
-.cart-buy {
-    width: 50%;
-    text-align: center;
-}
-
-.cart-button {
-    width: fit-content;
-    padding: 15px;
-    border: none;
-    border-radius: 8px;
-    color: #FFF;
-    text-shadow: -2px 2px 0 black;
-    background: linear-gradient(#E2DDF9,#858BB7);
-    box-shadow: 6px 6px black;
-    transition: all .2s cubic-bezier(.25,.25,.25,.25);
-    cursor: pointer;
-}
-
-.cart-button h2 {
-    font-size: 16px;
-}
+} */
 
 
 /**/
@@ -730,7 +752,10 @@ h6 {
 }
 
 .input-price {
-    width: 65px;
+    width: 37px;
+    padding-left: 0;
+    border-left: none;
+    border-radius: 0 8px 8px 0;
 }
 
 .input-discount {
@@ -788,7 +813,6 @@ h6 {
 .button-cancel {
     width: fit-content;
     padding: 4px;
-    border: none;
     background-color: #858BB7;
     border: 2px solid #E2DDF9;
     transition: all .2s cubic-bezier(.25,.25,.25,.25);
@@ -873,7 +897,7 @@ h6 {
 }
 
 .trademark {
-    margin-top: 20px;
+    margin-top: 30px;
     text-shadow: -2px 0 black, 0 2px black, 1px 0 black, 0 -1px black;
 }
 
@@ -910,6 +934,90 @@ h6 {
 .declaration p {
     text-align: center;
     font-size: 10px;
+    line-height: 17px;
+}
+
+/**/
+/* TERMS & CONDITIONS */
+/**/
+
+.politic-section {
+    color: black;
+    margin: auto;
+    width: 90%;
+    background: linear-gradient(#E2DDF9,#858BB7);
+    border: #858BB7 solid 2px;
+    border-radius: 8px;
+    padding: 2%;
+    margin-bottom: 30px;
+}
+
+.politic-section p {
+    margin: 1% 0 2% 0;
+    font-size: 14px;
+    line-height: 21px;
+    text-align: justify;
+    padding: 0 2%;
+}
+
+
+/**/
+/* ERROR */
+/**/
+
+
+.error-header {
+    height: 70px;
+    position: relative;
+}
+
+.error-icon {
+    width: 70px;
+    height: 70px;
+    position: absolute;
+    right: 2%;
+}
+
+.error-header i {
+    font-size: 70px;
+    color: #FFF;
+    transition: all .1s cubic-bezier(.25,.25,.25,.25);
+}
+
+.error-trademark {
+    height: 70px;
+    position: absolute;
+    left: 2%;
+    top: 20px;
+    text-shadow: -2px 0 black, 0 2px black, 1px 0 black, 0 -1px black;
+}
+
+.error-trademark h1 {
+    font-size: 40px;
+}
+
+.error-main {
+    text-align: center;
+    color: #858BB7;
+    text-shadow: -3px -3px #E2DDF9, 2px 2px 3px black;
+}
+
+.error-text {
+    margin: 10%;
+}
+
+.error-text h1 {
+    font-size: 70px;
+    display: inline-block;
+    margin: 2%;
+}
+
+.error-detail {
+    text-shadow: none;
+    font-size: 30px;
+    color: black;
+    font-weight: 500;
+    text-shadow: 1px 1px 1px #FFF;
 }
 
 
@@ -947,10 +1055,6 @@ TABLETS
     
     .big-title {
         display: block;
-    }
-
-    #game-central {
-        font-size: 32px;
     }
 
 
@@ -1022,10 +1126,6 @@ TABLETS
         font-size: 20px;
     }
 
-    .clean-cart {
-        font-size: 14px;
-    }
-
     
     /**/
     /* PRODUCT SHOW */
@@ -1042,10 +1142,19 @@ TABLETS
 
     .show-description {
         font-size: 14px;
+        line-height: 21px;
     }
 
     .category-single-box p {
         font-size: 18.72px;
+    }
+
+    .te-ahorras {
+        font-size: 16px;
+    }
+
+    .admin-button-edit, .admin-button-delete {
+        font-size: 20px;
     }
 
 
@@ -1066,7 +1175,7 @@ TABLETS
     }
 
     .input-price {
-        width: 75px;
+        width: 37px;
     }
 
     .input-discount {
@@ -1103,10 +1212,11 @@ TABLETS
     }
 
     .trademark {
+        margin: 0;
         width: 50%;
         text-align: center;
     }
-    
+
     .socials {
         width: 50%;
         font-size: 30px;
@@ -1123,6 +1233,22 @@ TABLETS
     
     .declaration p {
         font-size: 12px;
+        line-height: 19px;
+    }
+
+
+    /**/
+    /* TERMS & CONDITIONS */
+    /**/
+    
+
+    .politic-section h3 {
+        font-size: 22px;
+    }
+
+    .politic-section p {
+        font-size: 18px;
+        line-height: 25px;
     }
 }
 
@@ -1229,23 +1355,6 @@ DESKTOP
         font-size: 25px;
     }
 
-    .clean-cart {
-        font-size: 18px;
-    }
-
-    .clean-cart:hover {
-        border: 1px solid rgba(0,0,0,0.8);
-        border-radius: 8px;
-        padding: 8px;
-        color: rgba(0,0,0,0.8);
-    }
-
-    .cart-button:hover {
-        color: #767889;
-        transform: translate(3px,3px);
-        box-shadow: 3px 3px black;
-    }
-
 
     /**/
     /* PRODUCT SHOW */
@@ -1270,10 +1379,53 @@ DESKTOP
 
     .show-description {
         font-size: 16px;
+        line-height: 23px;
     }
 
-    
+    .read-more-c:hover {
+        text-decoration: underline;
+        font-style: italic;
+    }
 
+    .offer-display {
+        opacity: .7;
+    }
+
+    .offer-display:hover {
+        opacity: .9;
+    }
+
+    .te-ahorras {
+        font-size: 32px;
+    }
+
+    .offer-display h2 {
+        font-size: 32px;
+    }
+
+    .pagas-box h1 {
+        font-size: 36px;
+    }
+
+    .purchase-price-box h2, .purchase-button-box h2 {
+        font-size: 32px;
+    }
+
+    .purchase-price-box:hover, .purchase-button-box:hover {
+        background: #519b3c;
+    }
+
+    .admin-button-edit:hover {
+        color: #FFF;
+        background-color: blue;
+        border: 2px solid blue;
+    }
+
+    .admin-button-delete:hover {
+        color: #FFF;
+        background-color: red;
+        border: 2px solid red;
+    }
 
     /**/
     /* PRODUCT INDEX */
@@ -1312,7 +1464,7 @@ DESKTOP
     }
 
     .input-price {
-        width: 80px;
+        width: 42px;
     }
 
     .input-discount {
@@ -1395,6 +1547,32 @@ DESKTOP
     .to-the-top i:hover {
         color: #E2DDF9;
     }
+
+
+    /**/
+    /* TERMS & CONDITIONS */
+    /**/
+    
+
+    .politic-section h3 {
+        font-size: 26px;
+    }
+
+    .politic-section p {
+        font-size: 22px;
+        line-height: 29px;
+    }
+
+
+    /**/
+    /* ERROR */
+    /**/
+
+    .error-header:hover .error-icon i {
+        color: #B14593;
+        opacity: .7;
+        text-shadow: -1px 0 #FFF, 0 1px #FFF, 1px 0 #FFF, 0 -1px #FFF;
+    }
 }
 
 
@@ -1463,6 +1641,23 @@ PANTALLAS +
 
     .show-description {
         font-size: 25px;
+        line-height: 32px;
+    }
+
+    .te-ahorras {
+        font-size: 42px;
+    }
+
+    .offer-display h2 {
+        font-size: 42px;
+    }
+
+    .pagas-box h1 {
+        font-size: 46px;
+    }
+
+    .purchase-price-box h2, .purchase-button-box h2 {
+        font-size: 42px;
     }
 
 
@@ -1505,7 +1700,7 @@ PANTALLAS +
     }
 
     .input-price {
-        width: 80px;
+        width: 47px;
     }
 
     .input-discount {
