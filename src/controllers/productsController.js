@@ -46,6 +46,7 @@ let productsController = {
 
     // 2 GET: show product <form>
     create: (req,res) => {
+        console.log('aca paso algo');
         res.render('./products/create', {
             title: 'Nuevo producto',
             categoryPlaceholder: [
