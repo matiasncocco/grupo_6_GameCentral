@@ -47,7 +47,12 @@
                     </a>
                 <% } else { %>
                     <li class="nav-link">
-                        <!-- <img src="/img/users/<%= locals.user.avatar %>"> -->
+                        <img src="/img/users/<%= locals.user.avatar %>" 
+                            style=
+                            "height: 35px;
+                            width: 35px;
+                            border-radius: 50%;"
+                        >
                     </li>
                     <a href="/users/login">
                         <li class="nav-link">

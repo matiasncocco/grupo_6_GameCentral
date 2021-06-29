@@ -1,10 +1,9 @@
 let adminMiddleware = (req,res,next) => {
-    let user = req.session.loggedUser;
-    if (user && user.admin === true) {
+    // let user = req.session.loggedUser;
+    if (req.session.loggedUser && req.session.loggedUser.admin === true) {
         next();
-    }else{
-        res.redirect('/');
     };
-}
+    res.redirect('/');
+};
 
 module.exports = adminMiddleware;

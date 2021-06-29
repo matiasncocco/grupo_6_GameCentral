@@ -17,7 +17,10 @@ let productsController = {
             };
         });
 
-        res.render('./products/cart', { title: 'Carrito de compras', products } );
+        res.render('./products/cart', {
+            title: 'Carrito de compras',
+            products
+        });
     },
 
     // 1 GET: show all items
@@ -35,15 +38,20 @@ let productsController = {
             };
         });
 
-        res.render('./products/index', { title: 'Todos los títulos', products } );
+        res.render('./products/index', {
+            title: 'Todos los títulos',
+            products
+        });
     },
 
     // 2 GET: show product <form>
     create: (req,res) => {
-        let categoryPlaceholder = [
-            'SHOOTER','SURVIVAL','RPG','BATTLE ROYALE'
-        ];
-        res.render('./products/create', { title: 'Nuevo producto', categoryPlaceholder } );
+        res.render('./products/create', {
+            title: 'Nuevo producto',
+            categoryPlaceholder: [
+                'SHOOTER', 'SURVIVAL', 'RPG', 'BATTLE ROAYLE'
+            ]
+        });
     },
 
     // 3 GET: show product detail
@@ -107,7 +115,11 @@ let productsController = {
         for (i = 0 ; i < products.length ; i++) {
             if (products[i].id == param) {
                 let productCategory = products[i].category;
-                res.render('./products/edit', { title: 'Edición de producto', 'product':products[i], productCategory } );
+                res.render('./products/edit', {
+                    title: 'Edición de producto', 
+                    product: products[i], 
+                    productCategory 
+                });
             };
         };
     },

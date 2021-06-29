@@ -6,18 +6,20 @@ let bcrypt = require('bcrypt');
 let usersController = {
     // GET: show login view
     login : (req,res) => {
-        res.render('./users/login', { title: 'Ingresá' } );
+        res.render('./users/login', {
+            title: 'Ingresá' 
+        });
     },
 
     // POST: process login
     processLogin: (req,res) => {
         // leo la DB de usuarios
         let users = readJson('users.json');
-        // busco coincidencia 
+        // busco coincidencia
         let userToLog;
         users.forEach(user => {
             if (user.email == req.body.email) {
-                userToLog = user;
+            userToLog = user;
             };
         });
         // si encontré coincidencia
@@ -51,12 +53,14 @@ let usersController = {
                     }
                 }
             });
-        };
+        };        
     },
    
     // GET: show register view // <form>
     register : (req,res) => {
-        res.render('./users/register', { title:'Crea tu cuenta' } );
+        res.render('./users/register', {
+            title: 'Crea tu cuenta' 
+        });
     },
 
     // POST: process register // store user in DB
