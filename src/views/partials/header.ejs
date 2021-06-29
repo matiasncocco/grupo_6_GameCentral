@@ -34,16 +34,27 @@
                         <i class="fas fa-shopping-cart"></i>
                     </li>
                 </a>
-                <a href="/users/login">
+                <% if (!locals.user) { %>
+                    <a href="/users/login">
+                        <li class="nav-link">
+                            Iniciar sesión
+                        </li>
+                    </a>
+                    <a href="/users/register">
+                        <li class="nav-link">
+                            Registrarse
+                        </li>
+                    </a>
+                <% } else { %>
                     <li class="nav-link">
-                        Iniciar sesión
+                        <!-- <img src="/img/users/<%= locals.user.avatar %>"> -->
                     </li>
-                </a>
-                <a href="/users/register">
-                    <li class="nav-link">
-                        Registrarse
-                    </li>
-                </a>
+                    <a href="/users/login">
+                        <li class="nav-link">
+                            Pefil
+                        </li>
+                    </a>
+                <% } %>
             </ul>
         </nav>
     </div>
