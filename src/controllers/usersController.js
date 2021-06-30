@@ -138,8 +138,19 @@ let usersController = {
     // GET: show user list
     index: (req,res) => {
         let users = readJson('users.json');
-        res.send(users);
+        res.render('./users/index', {
+            title: 'Usuarios',
+            users
+        });
     },
+
+    admins: (req,res) => {
+        let users = readJson('users.json');
+        
+        users.push(user);
+        writeJson(users, 'users');
+        res.redirect('/users');
+    }
 
     // GET: show <form> w/ current user data
     // POST: submit changes to user

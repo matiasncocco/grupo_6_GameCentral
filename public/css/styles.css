@@ -1028,6 +1028,73 @@ h6 {
     text-shadow: 1px 1px 1px #FFF;
 }
 
+/**/
+/* USERS INDEX */
+/**/
+
+
+.main-grid {
+    width: 100%;
+    margin: auto;
+    background: linear-gradient(#E2DDF9,#858BB7);
+    border-radius: 8px;
+    margin-bottom: 30px;
+    margin-top: 15px;
+    padding: 10px;
+}
+
+.grid-box {
+    width: 100%;
+    display: flex;
+    flex-flow: row wrap;
+    align-items: center;
+}
+
+.user-data {
+    color: black;
+    font-size: 10px;
+}
+
+.user-data-title {
+    font-weight: 600;
+}
+
+.long-data {
+    width: 20%;
+}
+
+.longest-data {
+    width: 40%;
+}
+
+.short-data {
+    width: 10%;
+    text-align: center;
+}
+
+.user-list-footer {
+    width: 100%;
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: flex-end;
+}
+
+.ok-admin-button {
+    width: 10%;
+    border: none;
+    background: #FFF;
+    padding: 1%;
+    border: black 1px solid;
+}
+
+.newsletter-true {
+    color: green;
+}
+
+.newsletter-false {
+    color: red;
+}
+
 
 /**/
 /* MEDIA QUERY */

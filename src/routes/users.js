@@ -34,11 +34,14 @@ router.post('/login', usersController.processLogin);
 // -> USUARIOS
 // router.get('/:id', userMiddleware, usersController.show);
 
-// NOT IMPLEMENTED
 // vista con lista de todos los usuarios
 // solo pueden entrar
 // -> ADMINS
-// router.get('/', usersController.index);
+router.get('/', usersController.index);
+
+// procesar cambio de user.login = true : false
+// (inaccesible)
+router.post('/', usersController.admins);
 
 // /users/:id/edit (GET)
 // Formulario de edición de usuarios
