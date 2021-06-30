@@ -117,7 +117,8 @@ let usersController = {
             email: req.body.email,
             password: bcrypt.hashSync(req.body.password, 10),
             avatar: req.file.filename,
-            newsletter: storeBool(req.body.newsletter)
+            newsletter: storeBool(req.body.newsletter),
+            admin: false,
         };
         users.push(user);
         writeJson(users, 'users');
@@ -144,13 +145,30 @@ let usersController = {
         });
     },
 
-    admins: (req,res) => {
+    admin: (req,res) => {
         let users = readJson('users.json');
-        
-        users.push(user);
-        writeJson(users, 'users');
-        res.redirect('/users');
-    }
+        let param = req.params.id;
+        users.forEach(user => {
+            if (param == user.id) {
+                res.render('./users/give-admin', {
+                    title: 'Privilegios',
+                    user
+                });
+            };
+        });
+    },
+
+    giveAdmin: (req,res) => {
+        let users = readJson('users.json');
+        let param = req.params.id;
+        users.forEach(user => {
+            if (param == user.id) {
+                user.admin = storeBool(req.body.admin);
+                writeJson(users, 'users');
+                return res.redirect('/users');
+            };
+        });
+    },
 
     // GET: show <form> w/ current user data
     // POST: submit changes to user

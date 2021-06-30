@@ -13,7 +13,7 @@
     </header>
     <section class="main-grid">
         <div class="grid-box">
-            <p class="user-data-title user-data long-data"> 
+            <p class="user-data-title user-data long-data">
                 Nombre
             </p>
             <p class="user-data-title user-data long-data">
@@ -47,22 +47,17 @@
                         <i class="fas fa-times newsletter-false"></i>
                     <% } %>
                 </p>
-                <form action="/users?_method=PUT" method="POST" class="short-data" id="admin-form">
-                    <input 
-                        type="checkbox"
-                        id="admin"
-                        value="true"
-                        name="admin"
-                        <%= users[i].admin == true ? 'checked' : 'null' %>
-                    >
-                </form>
+                <div class="user-data short-data">
+                    <a href="/users/<%= users[i].id %>">
+                        <% if (users[i].admin === true) { %>
+                            <i class="fas fa-check newsletter-true"></i>
+                        <% } else { %>
+                            <i class="fas fa-times newsletter-false"></i>
+                        <% } %>
+                    </a>
+                </div>
             </div>
         <% } %>
-        <div class="user-list-footer">
-            <button class="ok-admin-button user-data" type="submit" form="admin-form"> 
-                OK
-            </button>
-        </div>
     </section>
 </main>
 <%- include ('../partials/footer') %>

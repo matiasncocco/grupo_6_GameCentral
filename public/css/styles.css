@@ -1041,6 +1041,7 @@ h6 {
     margin-bottom: 30px;
     margin-top: 15px;
     padding: 10px;
+    border: #858BB7 solid 2px;
 }
 
 .grid-box {
@@ -1072,27 +1073,59 @@ h6 {
     text-align: center;
 }
 
-.user-list-footer {
-    width: 100%;
-    display: flex;
-    flex-flow: row wrap;
-    justify-content: flex-end;
-}
-
-.ok-admin-button {
-    width: 10%;
-    border: none;
-    background: #FFF;
-    padding: 1%;
-    border: black 1px solid;
-}
-
 .newsletter-true {
     color: green;
 }
 
 .newsletter-false {
     color: red;
+}
+
+.admin-checkbox {
+    cursor: pointer;
+}
+
+.privilege-change {
+    margin: 30px 0;
+    background: linear-gradient(#E2DDF9,#858BB7);
+    border-radius: 8px;
+    padding: 30px 0;
+    border: #858BB7 solid 2px;
+    display: flex;
+    flex-flow: row wrap;
+    align-items: center;
+}
+
+.privilege-question {
+    width: 70%;
+    text-align: left;
+    color: black;
+    font-size: 12px;
+    padding: 0 5px;
+}
+
+.privilege-form {
+    width: 30%;
+    text-align: right;
+    display: flex;
+    flex-flow: column wrap;
+}
+
+.privilege-form button {
+    font-size: 12px;
+    width: 100%;
+    /* padding: 5px; */
+    /* border: none; */
+    border: #858BB7 solid 1px;
+    background: #FFF;
+}
+
+.privilege-checkbox {
+    display: none;
+}
+
+.user-data-privilege {
+    font-weight: 600;
 }
 
 

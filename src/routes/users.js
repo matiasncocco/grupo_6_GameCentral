@@ -32,16 +32,21 @@ router.post('/login', usersController.processLogin);
 // vista de perfil del usuario
 // solo pueden entrar 
 // -> USUARIOS
-// router.get('/:id', userMiddleware, usersController.show);
+// router.get('/profile/:id', userMiddleware, usersController.show);
 
 // vista con lista de todos los usuarios
 // solo pueden entrar
 // -> ADMINS
 router.get('/', usersController.index);
 
-// procesar cambio de user.login = true : false
+// vista con user.admin ???
+// solo pueden entrar
+// -> ADMINS
+router.get('/:id', usersController.admin)
+
+// procesar cambio de user.admin === ( true || false )
 // (inaccesible)
-router.post('/', usersController.admins);
+router.put('/:id', usersController.giveAdmin);
 
 // /users/:id/edit (GET)
 // Formulario de edición de usuarios

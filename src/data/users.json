@@ -6,7 +6,8 @@
         "email": "juan.perez@gmail.com",
         "password": "$2b$10$gR/S1RuPdrBsJdv.ebaTZuEWni8WIe8nlcOgGrtlG/.4EesY3KL5y",
         "avatar": "1624662206460.jpg",
-        "newsletter": false
+        "newsletter": false,
+        "admin": false
     },
     {
         "id": 4,
@@ -25,7 +26,7 @@
         "password": "$2b$10$tx6UDvBTxcAarlgCrCAMCu21X3A2luYGaKzh/Xzn0Bho1PJeJ4enC",
         "avatar": "1624745068283.jpg",
         "newsletter": true,
-        "admin": true
+        "admin": false
     },
     {
         "id": 6,
@@ -34,7 +35,8 @@
         "email": "juan@live.com",
         "password": "$2b$10$3LjtR.hlSdVWNsdIzTMEneZaeI8vQ6pRbOc7Bxuz6sQXlJOkzjH1u",
         "avatar": "1624914739851.png",
-        "newsletter": false
+        "newsletter": false,
+        "admin": true
     },
     {
         "id": 7,
