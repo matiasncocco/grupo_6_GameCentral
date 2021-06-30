@@ -67,6 +67,12 @@ let usersController = {
             if (passwordsMatch) {
                 delete userToLog.password;
                 req.session.loggedUser = userToLog;
+                if (req.body.remember) {
+                    res.cookie('userEmail', req.body.email, {
+                        maxAge: (1000 * 60) * 30 
+                    });
+                    return res.redirect('/');
+                };
                 return res.redirect('/');
             } else {
                 // si no hubo coincidencia de passwords

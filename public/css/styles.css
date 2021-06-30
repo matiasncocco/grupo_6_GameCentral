@@ -703,6 +703,13 @@ h6 {
     margin: 0 10px;
 }
 
+.label-remember {
+    color: black;
+    text-decoration: underline;
+    cursor: pointer;
+    transition: all .1s cubic-bezier(.25,.25,.25,.25);
+}
+
 .label-file {
     background-color: #FFF;
     cursor: pointer;
@@ -830,6 +837,7 @@ h6 {
     cursor: pointer;
     padding: 10px;
     margin-bottom: 15px;
+    transition: all .1s cubic-bezier(.25,.25,.25,.25);
 }
 
 /* MISC */
@@ -1457,6 +1465,11 @@ DESKTOP
         border: solid 2px #B6B1F1;
     }
 
+    .label-remember:hover {
+        color: #404040;
+        text-decoration: none;
+    }
+
     /* INPUTS */
     .input-text {
         width: 60%;
@@ -1504,6 +1517,10 @@ DESKTOP
     }
 
     /* MISC */
+    .label-tyc:hover .terms-conditions {
+        color: #B14593;
+    }
+
     .terms-conditions:hover {
         color: #B14593;
     }
