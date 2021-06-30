@@ -13,6 +13,31 @@ let usersController = {
 
     // POST: process login
     processLogin: (req,res) => {
+        // si se envía con campos vacíos
+        if (!req.body.email && !req.body.password) {
+            return res.render('./users/login', {
+                title: 'Ingresá',
+                errors: {
+                    email: {
+                        msg: 'Debes ingresar tu e-mail'
+                    },
+                    password: {
+                        msg: 'Debes ingresar tu contraseña'
+                    }
+                }
+            });
+        };
+        // si se envía con campo e-mail vacío 
+        if (!req.body.email) {
+            return res.render('./users/login', {
+                title: 'Ingresá',
+                errors: {
+                    email: {
+                        msg: 'Debes ingresar tu e-mail'
+                    }
+                }
+            });
+        };
         // leo la DB de usuarios
         let users = readJson('users.json');
         // busco coincidencia
@@ -20,19 +45,32 @@ let usersController = {
         users.forEach(user => {
             if (user.email == req.body.email) {
             userToLog = user;
+            return userToLog;
             };
         });
         // si encontré coincidencia
         if (userToLog) {
+            // si no completan el campo password
+            if (!req.body.password) {
+                return res.render('./users/login', {
+                    title: 'Ingresá',
+                    oldEmail: req.body.email,
+                    errors: {
+                        password: {
+                            msg: 'Debes ingresar tu contraseña'
+                        }
+                    }
+                });
+            };
             // si coinciden las passwords
             let passwordsMatch = bcrypt.compareSync(req.body.password, userToLog.password);
             if (passwordsMatch) {
                 delete userToLog.password;
                 req.session.loggedUser = userToLog;
-                res.redirect('/');
+                return res.redirect('/');
             } else {
                 // si no hubo coincidencia de passwords
-                res.render('./users/login', {
+                return res.render('./users/login', {
                     title: 'Ingresá',
                     oldEmail: req.body.email,
                     errors: {
@@ -44,7 +82,7 @@ let usersController = {
             };
         } else {
             // si no hubo coincidencia de emails
-            res.render('./users/login', {
+            return res.render('./users/login', {
                 title: 'Ingresá',
                 oldEmail: req.body.email,
                 errors: {
@@ -86,7 +124,7 @@ let usersController = {
         let param = req.params.id
         users.forEach(user => {
             if (user.id == param) {
-                res.send(user);
+                return res.send(user);
             };
         });
     },

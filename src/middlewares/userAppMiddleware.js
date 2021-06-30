@@ -3,6 +3,7 @@ let globalUserMiddleware = (req,res,next) => {
     if (req.session && req.session.loggedUser) {
         res.locals.user = true;
         res.locals.user = req.session.loggedUser;
+        return next();
     };
     next();
 };

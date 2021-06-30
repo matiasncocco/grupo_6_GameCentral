@@ -11,9 +11,11 @@ let productsController = {
         products.forEach(product => {
             if (product.inOffer == true) {
                 product.finalPrice = percentageFinder(product.price,product.discount);
+                return product;
             } else {
                 product.discount = null;
                 product.finalPrice = null;
+                return product;
             };
         });
 
@@ -32,9 +34,11 @@ let productsController = {
         products.forEach(product => {
             if (product.inOffer == true) {
                 product.finalPrice = percentageFinder(product.price,product.discount);
+                return product;
             } else {
                 product.finalPrice = null;
                 product.discount = null;
+                return product;
             };
         });
 
@@ -46,7 +50,6 @@ let productsController = {
 
     // 2 GET: show product <form>
     create: (req,res) => {
-        console.log('aca paso algo');
         res.render('./products/create', {
             title: 'Nuevo producto',
             categoryPlaceholder: [
@@ -64,9 +67,11 @@ let productsController = {
         products.forEach(product => {
             if (product.inOffer == true) {
                 product.finalPrice = percentageFinder(product.price,product.discount);
+                return product;
             } else {
                 product.discount = null;
                 product.finalPrice = null;
+                return product;
             };
         });
 
@@ -76,7 +81,7 @@ let productsController = {
                 let productCategory = products[i].category;
                 let moneySaved = products[i].price - products[i].finalPrice;
                 let shortDescription = products[i].description.substring(0,175);
-                res.render('./products/show', {
+                return res.render('./products/show', {
                     title: products[i].name,
                     product: products[i], 
                     productCategory, 
@@ -116,7 +121,7 @@ let productsController = {
         for (i = 0 ; i < products.length ; i++) {
             if (products[i].id == param) {
                 let productCategory = products[i].category;
-                res.render('./products/edit', {
+                return res.render('./products/edit', {
                     title: 'Edición de producto', 
                     product: products[i], 
                     productCategory 
@@ -147,7 +152,7 @@ let productsController = {
                 product.discount = parseInt(req.body.discount);
                 product.description = req.body.description;
                 writeJson(products, 'products');
-                res.redirect('/products');
+                return res.redirect('/products');
             };
         });
     },
