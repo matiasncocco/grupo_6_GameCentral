@@ -4,6 +4,48 @@ let bcrypt = require('bcrypt');
 // let { validationResult } = require('express-validator');
 
 let usersController = {
+    // GET: show register view // <form>
+    register : (req,res) => {
+        res.render('./users/register', {
+            title: 'Crea tu cuenta' 
+        });
+    },
+
+    // POST: process register // store user in DB
+    processRegister: (req,res) => {
+        let users = readJson('users.json');
+        let oldData = req.body;
+        let emails = [];
+        users.forEach(user => {
+            emails.push(user.email);
+        });
+        if (emails.includes(req.body.email)) {
+            return res.render('./users/register', {
+                title: 'Creá tu cuenta',
+                oldData,
+                errors: {
+                    email: {
+                        msg: 'El e-mail ya está en uso'
+                    }
+                }
+            });
+        } else {
+            let user = {
+                id: lastId(users) + 1,
+                name: req.body.name,
+                surname: req.body.surname,
+                email: req.body.email,
+                password: bcrypt.hashSync(req.body.password, 10),
+                avatar: req.file.filename,
+                newsletter: storeBool(req.body.newsletter),
+                admin: false,
+            };
+            users.push(user);
+            writeJson(users, 'users');
+            return res.redirect('/');
+        };
+    },
+
     // GET: show login view
     login : (req,res) => {
         res.render('./users/login', {
@@ -99,31 +141,6 @@ let usersController = {
             });
         };        
     },
-   
-    // GET: show register view // <form>
-    register : (req,res) => {
-        res.render('./users/register', {
-            title: 'Crea tu cuenta' 
-        });
-    },
-
-    // POST: process register // store user in DB
-    processRegister: (req,res) => {
-        let users = readJson('users.json');
-        let user = {
-            id: lastId(users) + 1,
-            name: req.body.name,
-            surname: req.body.surname,
-            email: req.body.email,
-            password: bcrypt.hashSync(req.body.password, 10),
-            avatar: req.file.filename,
-            newsletter: storeBool(req.body.newsletter),
-            admin: false,
-        };
-        users.push(user);
-        writeJson(users, 'users');
-        res.redirect('/');
-    },
     
     // GET: show users/:id view
     show: (req,res) => {
@@ -131,7 +148,10 @@ let usersController = {
         let param = req.params.id
         users.forEach(user => {
             if (user.id == param) {
-                return res.send(user);
+                return res.render('./users/profile', {
+                    title: user.name + ' ' + user.surname,
+                    user
+                });
             };
         });
     },

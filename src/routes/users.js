@@ -4,6 +4,7 @@ let usersController = require('../controllers/usersController');
 let upload = require('../middlewares/multerMiddleware');
 let userMiddleware = require('../middlewares/userMiddleware');
 let guestMiddleware = require('../middlewares/guestMiddleware');
+let adminMiddleware = require('../middlewares/adminMiddleware');
 let { check } = require('express-validator');
 
 validations = [
@@ -32,17 +33,17 @@ router.post('/login', usersController.processLogin);
 // vista de perfil del usuario
 // solo pueden entrar 
 // -> USUARIOS
-// router.get('/profile/:id', userMiddleware, usersController.show);
+router.get('/profile/:id', userMiddleware, usersController.show);
 
 // vista con lista de todos los usuarios
 // solo pueden entrar
 // -> ADMINS
-router.get('/', usersController.index);
+router.get('/', adminMiddleware, usersController.index);
 
-// vista con user.admin ???
+// vista para cambiar user.admin === ( true || false )
 // solo pueden entrar
 // -> ADMINS
-router.get('/:id', usersController.admin)
+router.get('/:id', adminMiddleware, usersController.admin)
 
 // procesar cambio de user.admin === ( true || false )
 // (inaccesible)

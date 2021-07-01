@@ -1029,7 +1029,7 @@ h6 {
 }
 
 /**/
-/* USERS INDEX */
+/* USER INDEX */
 /**/
 
 
@@ -1114,8 +1114,6 @@ h6 {
 .privilege-form button {
     font-size: 12px;
     width: 100%;
-    /* padding: 5px; */
-    /* border: none; */
     border: #858BB7 solid 1px;
     background: #FFF;
 }
@@ -1126,6 +1124,67 @@ h6 {
 
 .user-data-privilege {
     font-weight: 600;
+}
+
+
+/**/
+/* USER PROFILE */
+/**/
+
+.profile-section {
+    margin: auto;
+    margin-top: 30px;
+    margin-bottom: 30px;
+    width: 90%;
+    background: linear-gradient(#E2DDF9,#858BB7);
+    border-radius: 8px;
+    border: solid 2px #858BB7;
+    color: black;
+    display: flex;
+    flex-flow: column wrap;
+}
+
+.profile-title {
+    width: 100%;
+    background: linear-gradient(#858BB7,#E2DDF9);
+    padding: 1%;
+    text-shadow: -1px 0 #FFF, 0 1px #FFF, 1px 0 #FFF, 0 -1px #FFF;
+    text-align: center;
+}
+
+.profile-name {
+    width: 100%;
+    margin-top: 30px;
+    margin-bottom: 30px;
+    padding: 1%;
+    text-shadow: -1px 0 #FFF, 0 1px #FFF, 1px 0 #FFF, 0 -1px #FFF;
+    text-align: center;
+}
+
+.profile-avatar {
+    margin: 1%;
+    width: 80%;
+    max-width: 300px;
+    align-self: center;
+}
+
+.profile-avatar img {
+    width: 100%;
+    aspect-ratio: 1/1;
+    border-radius: 50%;
+    border: solid 2px #858BB7;
+}
+
+.profile-more {
+    width: 100%;
+    align-self: center;
+    margin: 1%;
+    text-shadow: -1px 0 #FFF, 0 1px #FFF, 1px 0 #FFF, 0 -1px #FFF;
+    text-align: center;
+}
+
+.profile-more h1, .profile-more h3, .profile-more h4 {
+    padding: 1%;
 }
 
 
@@ -1357,6 +1416,16 @@ TABLETS
     .politic-section p {
         font-size: 18px;
         line-height: 25px;
+    }
+
+
+    /**/
+    /* USER PROFILE */
+    /**/
+
+
+    .profile-title {
+        text-align: left;
     }
 }
 
