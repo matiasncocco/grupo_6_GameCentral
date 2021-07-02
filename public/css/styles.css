@@ -87,41 +87,37 @@ h6 {
     border-bottom: 2px solid #B6B1F1;
 }
 
-.header-box {
-    height: 70px;
+.header-section {
+    height: 40px;
     margin: auto;
     display: flex;
-    flex-wrap: wrap;
+    flex-flow: row wrap;
     justify-content: center;
     align-content: center;
     max-width: 90%;
 }
 
 .main-navbar, .user-navbar {
-    flex-grow: 3;
-    max-width: 50%;
-    display: flex;
-    flex-wrap: wrap;
-    align-content: center;
     display: none;
 }
 
-.user-navbar {
-    justify-content: flex-end;
-}
-
-.logo {
-    margin: 0 10px;
-    width: 32px;
-    height: 32px;
+.logo-box {
+    width: 36px;
+    height: 36px;
     border-radius: 50%;
     transition: all .2s cubic-bezier(.25,.25,.25,.25);
+    font-size: 20px;
+    line-height: 36px;
+    border: 50%;
+    background: #B14593;
+    text-align: center;
 }
 
 .hamburger {
     margin: 0 10px;
     align-self: center;  
-    width: 40px;
+    width: 36px;
+    height: 36px;
 }
 
 .hamburger i {
@@ -132,25 +128,6 @@ h6 {
     color: #FFF;
     background: linear-gradient(#858BB7,#E2DDF9);
     text-shadow: -1px 0 black, 0 1px black, 1px 0 black, 0 -1px black;
-}
-
-.nav-link {
-    margin: 0 6px;
-    padding: 5px;
-    font-size: 14px;
-    cursor: pointer;
-    border-radius: 20px;
-    transition: all .2s cubic-bezier(.25,.25,.25,.25);
-}
-
-.main-navbar li, .user-navbar li {
-    list-style: none;
-    display: inline-block;
-    text-shadow: -1px 0 #404040, 0 1px #404040, 1px 0 #404040, 0 -1px #404040;
-}
-
-.carrito {
-    margin-right: 10px;
 }
 
 
@@ -975,28 +952,25 @@ h6 {
 
 
 .error-header {
-    height: 70px;
     position: relative;
 }
 
-.error-icon {
-    width: 70px;
-    height: 70px;
-    position: absolute;
-    right: 2%;
+.error-section {
+    width: 90%;
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: space-between;
+    align-items: center;
+    margin: auto;
 }
 
 .error-header i {
-    font-size: 70px;
+    font-size: 50px;
     color: #FFF;
     transition: all .1s cubic-bezier(.25,.25,.25,.25);
 }
 
 .error-trademark {
-    height: 70px;
-    position: absolute;
-    left: 2%;
-    top: 20px;
     text-shadow: -2px 0 black, 0 2px black, 1px 0 black, 0 -1px black;
 }
 
@@ -1230,17 +1204,70 @@ TABLETS
     /**/
 
 
-    .header-header {
-        justify-content: space-between;
-    }
-
-    .main-navbar, .user-navbar {
-        display: flex;
-    }
-
     .hamburger {
         display: none;
     }
+
+    .header-section {
+        height: 70px;
+        justify-content: flex-start;
+    }
+
+    .logo-box {
+        width: 66px;
+        height: 66px;
+        font-size: 40px;
+        line-height: 66px;
+    }
+
+    .main-navbar {
+        flex-grow: 3;
+        display: flex;
+        flex-flow: row wrap;
+        align-items: center;
+    }
+
+    .local-navbar, .user-navbar {
+        width: 50%;
+        display: flex;
+        flex-flow: row wrap;
+        align-items: center;
+    }
+
+    .user-navbar {
+        justify-content: flex-end;
+    }
+
+    .local-navbar-link {
+        width: 30%;
+        text-align: center;
+    }
+
+    .user-navbar-link {
+        width: 20%;
+        text-align: right;
+    }
+
+    .user-navbar-avatar img {
+        width: 50px;
+        height: 50px;
+        border-radius: 50%;
+    }
+
+    /* .nav-link {
+        margin: 0 6px;
+        padding: 5px;
+        font-size: 14px;
+        cursor: pointer;
+        border-radius: 20px;
+        transition: all .2s cubic-bezier(.25,.25,.25,.25);
+    }
+    
+    .main-navbar li, .user-navbar li {
+        list-style: none;
+        display: inline-block;
+        text-shadow: -1px 0 #404040, 0 1px #404040, 1px 0 #404040, 0 -1px #404040;
+    } */
 
 
     /**/
@@ -1418,6 +1445,19 @@ TABLETS
         line-height: 25px;
     }
 
+    /**/
+    /* ERROR */
+    /**/
+
+
+    .error-section {
+        width: 70%;
+    }
+
+    .error-icon i {
+        font-size: 70px;
+    }
+
 
     /**/
     /* USER PROFILE */
@@ -1438,7 +1478,12 @@ DESKTOP
     /* HEADER */
     /**/
 
-    .nav-link {
+    .logo-box:hover {
+        box-shadow: 0 0 10px 5px black;
+        color: black;
+    }
+
+    /* .nav-link {
         font-size: 16px;
     }
 
@@ -1454,11 +1499,7 @@ DESKTOP
         width: 18px;
         border-radius: 50%;
         opacity: .9;
-    }
-
-    .logo:hover {
-        box-shadow: 0 0 10px 5px black;
-    }
+    } */
 
     
     /**/
