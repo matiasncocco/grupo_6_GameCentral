@@ -42,7 +42,7 @@ let usersController = {
             };
             users.push(user);
             writeJson(users, 'users');
-            return res.redirect('/');
+            return res.redirect('/users/login');
         };
     },
 
@@ -109,13 +109,15 @@ let usersController = {
             if (passwordsMatch) {
                 delete userToLog.password;
                 req.session.loggedUser = userToLog;
+                // si eligen "recordarme"
                 if (req.body.remember) {
                     res.cookie('userEmail', req.body.email, {
                         maxAge: (1000 * 60) * 30 
                     });
-                    return res.redirect('/');
+                    return res.redirect('/users/profile');
                 };
-                return res.redirect('/');
+                // si no eligen recordarme
+                return res.redirect('/users/profile');
             } else {
                 // si no hubo coincidencia de passwords
                 return res.render('./users/login', {
@@ -144,16 +146,18 @@ let usersController = {
     
     // GET: show users/:id view
     show: (req,res) => {
-        let users = readJson('users.json');
-        let param = req.params.id
-        users.forEach(user => {
-            if (user.id == param) {
-                return res.render('./users/profile', {
-                    title: user.name + ' ' + user.surname,
-                    user
-                });
-            };
+        let user = req.session.loggedUser;
+        res.render('./users/profile', {
+            title: user.name + ' ' + user.surname,
+            user
         });
+    },
+
+    // GET: destroy session & cookie
+    delog: (req,res) => {
+        req.session.destroy();
+        res.clearCookie('userEmail');
+        res.redirect('/');
     },
  
     // GET: show user list
@@ -165,6 +169,7 @@ let usersController = {
         });
     },
 
+    // GET: show <form> to change or not admin
     admin: (req,res) => {
         let users = readJson('users.json');
         let param = req.params.id;
@@ -178,6 +183,7 @@ let usersController = {
         });
     },
 
+    // PUT: changes user admin status (true || false)
     giveAdmin: (req,res) => {
         let users = readJson('users.json');
         let param = req.params.id;

@@ -1232,6 +1232,9 @@ TABLETS
         display: flex;
         flex-flow: row wrap;
         align-items: center;
+        font-size: 14px;
+        color: black;
+        text-shadow: -1px 0 #404040, 0 1px #404040, 1px 0 #404040, 0 -1px #404040;
     }
 
     .user-navbar {
@@ -1239,12 +1242,12 @@ TABLETS
     }
 
     .local-navbar-link {
-        width: 30%;
+        width: 33%;
         text-align: center;
     }
 
     .user-navbar-link {
-        width: 20%;
+        width: 40%;
         text-align: right;
     }
 

@@ -12,7 +12,6 @@ validations = [
 ];
 
 // vista registro de usuario <form>
-// solo pueden entrar 
 // -> GUESTS
 router.get('/register', guestMiddleware, usersController.register);
 
@@ -21,7 +20,6 @@ router.get('/register', guestMiddleware, usersController.register);
 router.post('/', upload.single('avatar'), usersController.processRegister);
 
 // vista login de usuario <form>
-// solo pueden entrar 
 // -> GUESTS
 router.get('/login', guestMiddleware, usersController.login);
 
@@ -29,19 +27,19 @@ router.get('/login', guestMiddleware, usersController.login);
 // (inaccesible)
 router.post('/login', usersController.processLogin);
 
-// NOT IMPLEMENTED
 // vista de perfil del usuario
-// solo pueden entrar 
 // -> USUARIOS
-router.get('/profile/:id', userMiddleware, usersController.show);
+router.get('/profile', userMiddleware, usersController.show);
+
+// procesar delog de usuario & destrucción de cookie
+// (inaccesible)
+router.get('/delog', usersController.delog);
 
 // vista con lista de todos los usuarios
-// solo pueden entrar
 // -> ADMINS
 router.get('/', adminMiddleware, usersController.index);
 
 // vista para cambiar user.admin === ( true || false )
-// solo pueden entrar
 // -> ADMINS
 router.get('/:id', adminMiddleware, usersController.admin)
 

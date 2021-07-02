@@ -1,39 +1,45 @@
 <header class="header-header" id="header">
-    <!-- caja header box -->
     <section class="header-section">
-        <!-- hijo 1, logo -->
         <a href="/" class="logo-box">
             <p>
                 GC
             </p>
         </a>
-        <!-- hijo 2, hamburguesa -->
         <div class="hamburger">
             <i class="fa fa-bars burger"></i>
         </div>
-        <!-- hijo 2, navbars -->
         <nav class="main-navbar">
             <nav class="local-navbar">
-                <a href="/" class="local-navbar-link">
-                    Home
-                </a>
-                <a href="/products" class="local-navbar-link">
-                    Tienda
-                </a>
-                <a class="local-navbar-link">
-                    Soporte
-                </a>
+                <div class="local-navbar-link">
+                    <a href="/">
+                        Home
+                    </a>
+                </div>
+                <div class="local-navbar-link">
+                    <a href="/products">
+                        Tienda
+                    </a>
+                </div>
+                <div class="local-navbar-link">
+                    <a>
+                        Soporte
+                    </a>
+                </div>
             </nav>
             <nav class="user-navbar">
                 <% if (!locals.user) { %>
-                    <a href="/users/login" class="user-navbar-link">
-                        Iniciar sesión
-                    </a>
-                    <a href="/users/register" class="user-navbar-link">
-                        Registrarse
-                    </a>
+                    <div class="user-navbar-link">
+                        <a href="/users/login">
+                            Iniciar sesión
+                        </a>
+                    </div>
+                    <div class="user-navbar-link">
+                        <a href="/users/register">
+                            Registrarse
+                        </a>
+                    </div>
                 <% } else { %>
-                    <a href="/users/profile/<%= locals.user.id %>" class="user-navbar-link">
+                    <a href="/users/profile" class="user-navbar-link">
                         Perfil
                     </a>
                     <div class="user-navbar-avatar">

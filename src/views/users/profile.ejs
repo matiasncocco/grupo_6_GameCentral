@@ -19,21 +19,25 @@
             <h3>
                 <%= user.email %>
             </h3>
+            <% if (user.newsletter === true) { %>
+                <h5>
+                    Estás subscripto a nuestra newsletter
+                </h5>
+            <% } else { %>
+                <h5>
+                    No estás subscripto a nuestra newsletter
+                </h5>
+            <% } %>
             <h3>
                 Argentina
             </h3>
-            <h4>
-                ¿Estás subscripto a nuestra newsletter?
-            </h4>
-            <h1>
-                <% if (user.newsletter === true) { %>
-                    <i class="fas fa-check newsletter-true"></i>
-                <% } else { %>
-                    <i class="fas fa-times newsletter-false"></i>
-                <% } %>
-            </h1>
         </div>
     </section>
+    <form action="/users/delog" method="GET">
+        <button type="submit">
+            Cerrar sesión
+        </button>
+    </form>
     <form action="/users/profile/<%= user.id %>?_method=PUT" method="POST">
         <button>
             Editar mis datos
