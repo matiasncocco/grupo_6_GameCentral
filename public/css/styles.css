@@ -153,16 +153,12 @@ h6 {
 
 
 .main-title {
-    margin: 5px 0;
+    margin: 20px 0 5px 0;
     padding: 8px;
     text-shadow: -1px 0 black, 0 1px black, 1px 0 black, 0 -1px black;
     background: linear-gradient(#E2DDF9,#858BB7);
     border-radius: 8px;
     border: #858BB7 solid 2px;
-}
-
-.first-title {
-    margin-top: 20px;
 }
 
 .link-title {
@@ -577,15 +573,28 @@ h6 {
 .flex-title {
     display: flex;
     flex-flow: row wrap;
-    justify-content: space-between;
     align-items: center;
 }
 
-.title-icon-box i {
-    opacity: .5;
-    transition: all .2s cubic-bezier(.25,.25,.25,.25);
+.title-header-box {
+    width: 50%;
+}
+
+.store-control-box {
+    width: 50%;
+    text-align: right;
+}
+
+.store-control-link {
+    margin: 2%;
+}
+
+.store-control-link i {
     cursor: pointer;
-    text-shadow: none;
+    font-size: 13.28px;
+    color: #FFF;
+    text-shadow: -1px 0 black, 0 1px black, 1px 0 black, 0 -1px black;
+    text-shadow: -2px 2px #B14593;
 }
 
 
@@ -1112,34 +1121,44 @@ h6 {
     border: solid 2px #858BB7;
     color: black;
     display: flex;
-    flex-flow: column wrap;
+    flex-flow: row wrap;
 }
 
 .profile-title {
-    width: 100%;
-    background: linear-gradient(#858BB7,#E2DDF9);
-    padding: 1%;
+    width: 70%;
     text-shadow: -1px 0 #FFF, 0 1px #FFF, 1px 0 #FFF, 0 -1px #FFF;
-    text-align: center;
+    justify-self: flex-start;
+    margin: 3% 0;
+    padding: 0 3%;
+}
+
+.profile-cart-link {
+    justify-self: flex-end;
+    width: 30%;
+    text-align: right;
+    margin: 3% 0;
+    padding: 0 3%;
+    color: #FFF;
+    text-shadow: -1px 0 black, 0 1px black, 1px 0 black, 0 -1px black;  
 }
 
 .profile-name {
     width: 100%;
-    margin-top: 30px;
-    margin-bottom: 30px;
-    padding: 1%;
+    margin: 3% 0;
+    padding: 0 1%;
     text-shadow: -1px 0 #FFF, 0 1px #FFF, 1px 0 #FFF, 0 -1px #FFF;
     text-align: center;
 }
 
 .profile-avatar {
     margin: 1%;
-    align-self: center;
+    width: 100%;
+    text-align: center;
 }
 
 .profile-avatar img {
-    width: 300px;
-    width: 300px;
+    width: 150px;
+    width: 150px;
     border-radius: 100%;
     aspect-ratio: 1/1;
     align-self: center;
@@ -1148,14 +1167,13 @@ h6 {
 
 .profile-more {
     width: 100%;
-    align-self: center;
-    margin: 1%;
+    margin: 2% 0;
     text-shadow: -1px 0 #FFF, 0 1px #FFF, 1px 0 #FFF, 0 -1px #FFF;
     text-align: center;
 }
 
 .profile-more h1, .profile-more h3, .profile-more h4 {
-    padding: 1%;
+    margin: 2% 0;
 }
 
 
@@ -1344,6 +1362,16 @@ TABLETS
 
 
     /**/
+    /* PRODUCT INDEX */
+    /**/
+
+
+    .store-control-link i {
+        font-size: 18.72px;
+    }
+
+
+    /**/
     /* FORMULARIOS */
     /**/
 
@@ -1457,6 +1485,11 @@ TABLETS
 
     .profile-title {
         text-align: left;
+    }
+
+    .profile-avatar img {
+        width: 200px;
+        width: 200px;
     }
 }
 
@@ -1642,14 +1675,19 @@ DESKTOP
     /**/
 
 
-    .title-icon-box i {
-        font-size: 30px;
+    .store-control-link i {
+        opacity: .5;
+        color: black;
+        text-shadow: none;
+        transition: all .2s cubic-bezier(.25,.25,.25,.25);
+        font-size: 20px;
     }
 
-    .title-icon-box:hover i {
+    .store-control-link:hover i {
         opacity: 1;
-        color: #B14593;
+        color: #FFF;
         text-shadow: -1px 0 black, 0 1px black, 1px 0 black, 0 -1px black;
+        text-shadow: -2px 2px #B14593;
     }
 
 
@@ -1791,6 +1829,24 @@ DESKTOP
         color: #B14593;
         opacity: .7;
         text-shadow: -1px 0 #FFF, 0 1px #FFF, 1px 0 #FFF, 0 -1px #FFF;
+    }
+
+    /**/
+    /* USER PROFILE */
+    /**/
+
+    .profile-avatar img {
+        width: 300px;
+        width: 300px;
+    }
+
+    .profile-cart-link i {
+        transition: all .1s cubic-bezier(.25,.25,.25,.25);
+    }
+
+    .profile-cart-link i:hover {
+        color: #B14593;
+        text-shadow: none;
     }
 }
 

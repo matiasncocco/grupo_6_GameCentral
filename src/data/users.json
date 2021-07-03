@@ -7,16 +7,16 @@
         "password": "$2b$10$tx6UDvBTxcAarlgCrCAMCu21X3A2luYGaKzh/Xzn0Bho1PJeJ4enC",
         "avatar": "1624745068283.jpg",
         "newsletter": true,
-        "admin": false
+        "admin": true
     },
     {
         "id": 6,
-        "name": "Juan",
-        "surname": "Pérez",
-        "email": "juan@live.com",
-        "password": "$2b$10$t5EVooeiX5GGGy/gMT8wou.NhZUqhEvfBRcLsC2WOq4jRO5tK.F1W",
-        "avatar": "1625255587819.jpg",
-        "newsletter": false,
+        "name": "Bill",
+        "surname": "Gates",
+        "email": "bill@google.com",
+        "password": "$2b$10$kPnzvl1X74U3uucJQxSB1OUc4VWWufillGAcHePU58oSYG1xgYyhq",
+        "avatar": "1625337917735.jpg",
+        "newsletter": true,
         "admin": false
     }
 ]
