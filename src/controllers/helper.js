@@ -64,9 +64,4 @@ let helper = {
 
 };
 
-<<<<<<< HEAD
-module.exports = help
-// >>>>>>> 123470de236c557678226bde1dd7ddd9f806acda
-=======
 module.exports = helper;
->>>>>>> a89ab22cc00d30a57bdb5e71d2c562e2e4630f4c
