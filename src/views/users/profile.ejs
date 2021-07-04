@@ -1,0 +1,62 @@
+<%- include ('../partials/head') %>
+<%- include ('../partials/header') %>
+<main class="main-main profile-main">
+    <section class="profile-section">
+        <div class="profile-title">
+            <h1 class="big-title">
+                TU PERFIL
+            </h1>
+            <h3 class="small-title">
+                TU PERFIL
+            </h3>
+        </div>
+        <div class="profile-cart-link">
+            <h1 class="big-title">
+                <a href="/products/cart">
+                    <i class="fas fa-shopping-cart"></i>
+                </a>
+            </h1>
+            <h3 class="small-title">
+                <a href="/products/cart">
+                    <i class="fas fa-shopping-cart"></i>
+                </a>
+            </h3>
+        </div>
+        <div class="profile-name">
+            <h2>
+                <%= user.name %> <%= user.surname %>
+            </h2>
+        </div>
+        <div class="profile-avatar">
+            <img src="/img/users/<%= user.avatar %>">
+        </div>
+        <div class="profile-more">
+            <h3>
+                <%= user.email %>
+            </h3>
+            <% if (user.newsletter === true) { %>
+                <h5>
+                    Estás subscripto a nuestra newsletter
+                </h5>
+            <% } else { %>
+                <h5>
+                    No estás subscripto a nuestra newsletter
+                </h5>
+            <% } %>
+            <h3>
+                Argentina
+            </h3>
+        </div>
+    </section>
+    <form action="/users/delog" method="GET">
+        <button type="submit">
+            Cerrar sesión
+        </button>
+    </form>
+    <form action="/users/profile/<%= user.id %>?_method=PUT" method="POST">
+        <button>
+            Editar mis datos
+        </button>
+    </form>
+</main>
+<%- include ('../partials/footer') %>

@@ -1,23 +1,5 @@
 [
     {
-        "id": 3,
-        "name": "Juan",
-        "surname": "Pérez",
-        "email": "juan.perez@gmail.com",
-        "password": "$2b$10$gR/S1RuPdrBsJdv.ebaTZuEWni8WIe8nlcOgGrtlG/.4EesY3KL5y",
-        "avatar": "1624662206460.jpg",
-        "newsletter": false
-    },
-    {
-        "id": 4,
-        "name": "Bill",
-        "surname": "Gates",
-        "email": "bill.gates@google.com",
-        "password": "$2b$10$OE61mlhQearYyr7wP5YxDemR.thwtUWK3c6Aj0dgihQ/.Y7.lR6Eq",
-        "avatar": "1624662340581.jpg",
-        "newsletter": false
-    },
-    {
         "id": 5,
         "name": "Santiago",
         "surname": "Guastavino",
@@ -29,20 +11,12 @@
     },
     {
         "id": 6,
-        "name": "Juan Pedro",
-        "surname": "Pérez López",
-        "email": "juan@live.com",
-        "password": "$2b$10$3LjtR.hlSdVWNsdIzTMEneZaeI8vQ6pRbOc7Bxuz6sQXlJOkzjH1u",
-        "avatar": "1624914739851.png",
-        "newsletter": false
-    },
-    {
-        "id": 7,
-        "name": "Santi",
-        "surname": "Guastavino",
-        "email": "santi2@live.com",
-        "password": "$2b$10$whaioZa4fkGwsbu3370v0.GzJNQPHHjfKZbRwsFzbnoAUpShyisiK",
-        "avatar": "1625008210213.jpg",
-        "newsletter": true
+        "name": "Bill",
+        "surname": "Gates",
+        "email": "bill@google.com",
+        "password": "$2b$10$kPnzvl1X74U3uucJQxSB1OUc4VWWufillGAcHePU58oSYG1xgYyhq",
+        "avatar": "1625337917735.jpg",
+        "newsletter": true,
+        "admin": false
     }
 ]

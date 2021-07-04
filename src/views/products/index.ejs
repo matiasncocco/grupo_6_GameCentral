@@ -2,7 +2,7 @@
 <%- include ('../partials/header') %>
 <main class="main-main">
     <!-- Título todos los juegos -->
-    <header class="main-title first-title flex-title">
+    <header class="main-title flex-title">
         <div class="title-header-box">
             <h3 class="big-title">
                 TODOS LOS TÍTULOS
@@ -11,16 +11,18 @@
                 TODOS LOS TÍTULOS
             </h5>
         </div>
-        <div class="title-icon-box">
-            <a href="/products/create">
-                <h3 class="big-title">
-                    <i class="fas fa-plus-square"></i>      
-                </h3>
-                <h5 class="small-title">
-                    <i class="fas fa-plus-square"></i>           
-                </h5>
-            </a>
-        </div>
+        <% if (locals.user) { %>
+            <div class="store-control-box">
+                <% if (user.admin === true) { %>
+                    <a href="/products/create" class="store-control-link">
+                        <i class="fas fa-plus-square"></i>      
+                    </a>
+                <% } %>
+                <a href="/products/cart" class="store-control-link">
+                    <i class="fas fa-shopping-cart"></i>
+                </a>
+            </div>
+        <% } %>
     </header>
     <section class="main-section last-section">
         <% for (i = 0 ; i < products.length ; i++) { %>

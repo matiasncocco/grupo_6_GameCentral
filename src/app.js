@@ -10,6 +10,7 @@ app.set('views', viewsPath);
 
 let methodOverride = require('method-override');
 let session = require('express-session');
+let cookies = require('cookie-parser');
 
 app.use(express.static(publicPath));
 app.use(express.urlencoded ({extended:false}));
@@ -20,6 +21,7 @@ app.use(session({
     resave: false,
     saveUninitialized: true
 }));
+app.use(cookies());
 
 let userAppMiddleware = require('./middlewares/userAppMiddleware');
 

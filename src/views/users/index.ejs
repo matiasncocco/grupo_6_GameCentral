@@ -1,0 +1,63 @@
+<%- include ('../partials/head') %>
+<%- include ('../partials/header') %>
+<main class="main-main">
+    <header class="main-title first-title">
+        <div class="title-header-box">
+            <h3 class="big-title">
+                USUARIOS
+            </h3>
+            <h5 class="small-title">
+                USUARIOS
+            </h5>
+        </div>
+    </header>
+    <section class="main-grid">
+        <div class="grid-box">
+            <p class="user-data-title user-data long-data">
+                Nombre
+            </p>
+            <p class="user-data-title user-data long-data">
+                Apellido
+            </p>
+            <p class="user-data-title user-data longest-data">
+                E-mail
+            </p>
+            <p class="user-data-title user-data short-data">
+                News.
+            </p>
+            <p class="user-data-title user-data short-data">
+                Admin
+            </p>
+        </div>
+        <% for (i = 0 ; i < users.length ; i++) { %>
+            <div class="grid-box">
+                <p class="user-data long-data">
+                    <%= users[i].name %>
+                </p>
+                <p class="user-data long-data">
+                    <%= users[i].surname %>
+                </p>
+                <p class="user-data longest-data">
+                    <%= users[i].email %>
+                </p>
+                <p class="user-data short-data">
+                    <% if (users[i].newsletter === true) { %>
+                        <i class="fas fa-check newsletter-true"></i>
+                    <% } else { %>
+                        <i class="fas fa-times newsletter-false"></i>
+                    <% } %>
+                </p>
+                <div class="user-data short-data">
+                    <a href="/users/<%= users[i].id %>">
+                        <% if (users[i].admin === true) { %>
+                            <i class="fas fa-check newsletter-true"></i>
+                        <% } else { %>
+                            <i class="fas fa-times newsletter-false"></i>
+                        <% } %>
+                    </a>
+                </div>
+            </div>
+        <% } %>
+    </section>
+</main>
+<%- include ('../partials/footer') %>

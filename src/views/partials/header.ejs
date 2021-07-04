@@ -1,66 +1,54 @@
 <header class="header-header" id="header">
-    <div class="header-box">
-        <div class="logo">
-            <a href="/">
-                <img src="/img/icono.png">
-            </a>
-        </div>
+    <section class="header-section">
+        <a href="/" class="logo-box">
+            <p>
+                GC
+            </p>
+        </a>
         <div class="hamburger">
             <i class="fa fa-bars burger"></i>
         </div>
         <nav class="main-navbar">
-            <ul>
-                <a href="/">
-                    <li class="nav-link">
+            <nav class="local-navbar">
+                <div class="local-navbar-link">
+                    <a href="/">
                         Home
-                    </li>
-                </a>
-                <a href="/products">
-                    <li class="nav-link">
+                    </a>
+                </div>
+                <div class="local-navbar-link">
+                    <a href="/products">
                         Tienda
-                    </li>
-                </a>
-                <a>
-                    <li class="nav-link">
+                    </a>
+                </div>
+                <div class="local-navbar-link">
+                    <a href='/'>
                         Soporte
-                    </li>
-                </a>
-            </ul>
-        </nav>
-        <nav class="user-navbar">
-            <ul>
-                <a href="/products/cart">
-                    <li class="nav-link carrito">
-                        <i class="fas fa-shopping-cart"></i>
-                    </li>
-                </a>
+                    </a>
+                </div>
+            </nav>
+            <nav class="user-navbar">
                 <% if (!locals.user) { %>
-                    <a href="/users/login">
-                        <li class="nav-link">
+                    <div class="user-navbar-link">
+                        <a href="/users/login">
                             Iniciar sesión
-                        </li>
-                    </a>
-                    <a href="/users/register">
-                        <li class="nav-link">
+                        </a>
+                    </div>
+                    <div class="user-navbar-link">
+                        <a href="/users/register">
                             Registrarse
-                        </li>
-                    </a>
+                        </a>
+                    </div>
                 <% } else { %>
-                    <li class="nav-link">
-                        <img src="/img/users/<%= locals.user.avatar %>" 
-                            style=
-                            "height: 35px;
-                            width: 35px;
-                            border-radius: 50%;"
-                        >
-                    </li>
-                    <a href="/users/login">
-                        <li class="nav-link">
-                            Pefil
-                        </li>
-                    </a>
+                    <div  class="user-navbar-link">
+                        <a href="/users/profile">
+                            Perfil
+                        </a>
+                    </div>
+                    <div class="navbar-avatar">
+                        <img src="/img/users/<%= locals.user.avatar %>">
+                    </div>
                 <% } %>
-            </ul>
+            </nav>
         </nav>
-    </div>
+    </section>
 </header>

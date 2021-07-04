@@ -4,6 +4,7 @@ let usersController = require('../controllers/usersController');
 let upload = require('../middlewares/multerMiddleware');
 let userMiddleware = require('../middlewares/userMiddleware');
 let guestMiddleware = require('../middlewares/guestMiddleware');
+let adminMiddleware = require('../middlewares/adminMiddleware');
 let { check } = require('express-validator');
 
 validations = [
@@ -11,7 +12,6 @@ validations = [
 ];
 
 // vista registro de usuario <form>
-// solo pueden entrar 
 // -> GUESTS
 router.get('/register', guestMiddleware, usersController.register);
 
@@ -20,7 +20,6 @@ router.get('/register', guestMiddleware, usersController.register);
 router.post('/', upload.single('avatar'), usersController.processRegister);
 
 // vista login de usuario <form>
-// solo pueden entrar 
 // -> GUESTS
 router.get('/login', guestMiddleware, usersController.login);
 
@@ -28,17 +27,25 @@ router.get('/login', guestMiddleware, usersController.login);
 // (inaccesible)
 router.post('/login', usersController.processLogin);
 
-// NOT IMPLEMENTED
 // vista de perfil del usuario
-// solo pueden entrar 
 // -> USUARIOS
-// router.get('/:id', userMiddleware, usersController.show);
+router.get('/profile', userMiddleware, usersController.show);
 
-// NOT IMPLEMENTED
+// procesar delog de usuario & destrucción de cookie
+// (inaccesible)
+router.get('/delog', usersController.delog);
+
 // vista con lista de todos los usuarios
-// solo pueden entrar
 // -> ADMINS
-// router.get('/', usersController.index);
+router.get('/', adminMiddleware, usersController.index);
+
+// vista para cambiar user.admin === ( true || false )
+// -> ADMINS
+router.get('/:id', adminMiddleware, usersController.admin)
+
+// procesar cambio de user.admin === ( true || false )
+// (inaccesible)
+router.put('/:id', usersController.giveAdmin);
 
 // /users/:id/edit (GET)
 // Formulario de edición de usuarios

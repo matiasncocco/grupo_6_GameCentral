@@ -1,0 +1,53 @@
+<%- include ('../partials/head') %>
+<%- include ('../partials/header') %>
+<main class="main-main">
+    <section class="privilege-change">
+        <p class="privilege-question">
+            ¿Desea cambiar los privilegios de administrador del usuario
+            <span class="user-data-privilege">
+                <%= user.name %>
+            </span>
+            <span class="user-data-privilege">
+                <%= user.surname %>?
+            </span>
+        </p>
+        <% if (user.admin === false) { %>
+            <form action="/users/<%= user.id %>?_method=PUT" method="POST" class="privilege-form">
+                <input
+                    class="privilege-checkbox"
+                    name="admin"
+                    type="text"
+                    value="true"
+                    checked
+                >
+                <button type="submit">
+                    DAR PRIVILEGIOS
+                </button>
+                <button type="button">
+                    <a href="/users">
+                        Cancelar
+                    </a>
+                </button>
+            </form>
+        <% } else { %>
+        <form action="/users/<%= user.id %>?_method=PUT" method="POST" class="privilege-form">
+            <input
+                class="privilege-checkbox"
+                name="admin"
+                type="text"
+                value="false"
+                checked
+            >
+            <button type="submit">
+                QUITAR PRIVILEGIOS
+            </button>
+            <button type="button">
+                <a href="/users">
+                    Cancelar
+                </a>
+            </button>
+        </form>
+        <% } %>
+    </section>
+</main>
+<%- include ('../partials/footer') %>

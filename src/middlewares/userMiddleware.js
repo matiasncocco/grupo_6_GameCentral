@@ -1,6 +1,6 @@
 let userMiddleware = (req,res,next) => {
     if (!req.session.loggedUser) {
-        res.redirect('/users/login');
+        return res.redirect('/users/login');
     }
     next();
 };

@@ -1,26 +1,54 @@
 <%- include('./partials/head') %>
 <%- include('./partials/header') %>
 <main class="main-main">
-    <header class="main-title first-title">
-        <h3 class="big-title">
-            AUTUMN SALE
-        </h3>
-        <h5 class="small-title">
-            AUTUMN SALE
-        </h5>
+    <header class="main-title flex-title">
+        <div class="title-header-box">
+            <h3 class="big-title">
+                AUTUMN SALE
+            </h3>
+            <h5 class="small-title">
+                AUTUMN SALE
+            </h5>
+        </div>
+        <% if (locals.user) { %>
+            <div class="store-control-box">
+                <% if (user.admin === true) { %>
+                    <a href="/products/create" class="store-control-link">
+                        <i class="fas fa-plus-square"></i>      
+                    </a>
+                <% } %>
+                <a href="/products/cart" class="store-control-link">
+                    <i class="fas fa-shopping-cart"></i>
+                </a>
+            </div>
+        <% } %>
     </header>
     <section class="main-section last-section">
         <% for (i = 0 ; i < inOffer.length ; i++) { %>
             <%- include('./products/partials/product', { 'product': inOffer } ) %>
         <% } %>
     </section>
-    <header class="main-title">
-        <h3 class="big-title">
-            DESTACADOS & RECOMENDADOS
-        </h3>
-        <h5 class="small-title">
-            DESTACADOS & RECOMENDADOS
-        </h5>
+    <header class="main-title flex-title">
+        <div class="title-header-box">
+            <h3 class="big-title">
+                DESTACADOS & RECOMENDADOS
+            </h3>
+            <h5 class="small-title">
+                DESTACADOS & RECOMENDADOS
+            </h5>
+        </div>
+        <% if (locals.user) { %>
+            <div class="store-control-box">
+                <% if (user.admin === true) { %>
+                    <a href="/products/create" class="store-control-link">
+                        <i class="fas fa-plus-square"></i>      
+                    </a>
+                <% } %>
+                <a href="/products/cart" class="store-control-link">
+                    <i class="fas fa-shopping-cart"></i>
+                </a>
+            </div>
+        <% } %>
     </header>
     <section class="main-section last-section">
         <% for (i = 0 ; i < relevant.length ; i++) { %>

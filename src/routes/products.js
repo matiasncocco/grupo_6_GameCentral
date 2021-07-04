@@ -39,7 +39,7 @@ router.get('/:id', productsController.show);
 router.post('/', upload.fields(multerFields), productsController.store);
 
 // vista de edición de producto. <form> de creación con datos
-// solo puede acceder
+// solo puede acceder.
 // -> ADMINS
 router.get('/:id/edit', adminMiddleware, productsController.edit);
 

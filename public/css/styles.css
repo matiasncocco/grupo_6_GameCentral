@@ -87,41 +87,37 @@ h6 {
     border-bottom: 2px solid #B6B1F1;
 }
 
-.header-box {
-    height: 70px;
+.header-section {
+    height: 40px;
     margin: auto;
     display: flex;
-    flex-wrap: wrap;
+    flex-flow: row wrap;
     justify-content: center;
     align-content: center;
     max-width: 90%;
 }
 
 .main-navbar, .user-navbar {
-    flex-grow: 3;
-    max-width: 50%;
-    display: flex;
-    flex-wrap: wrap;
-    align-content: center;
     display: none;
 }
 
-.user-navbar {
-    justify-content: flex-end;
-}
-
-.logo {
-    margin: 0 10px;
-    width: 32px;
-    height: 32px;
+.logo-box {
+    width: 36px;
+    height: 36px;
     border-radius: 50%;
     transition: all .2s cubic-bezier(.25,.25,.25,.25);
+    font-size: 20px;
+    line-height: 36px;
+    border: 50%;
+    background: #B14593;
+    text-align: center;
 }
 
 .hamburger {
     margin: 0 10px;
     align-self: center;  
-    width: 40px;
+    width: 36px;
+    height: 36px;
 }
 
 .hamburger i {
@@ -132,25 +128,6 @@ h6 {
     color: #FFF;
     background: linear-gradient(#858BB7,#E2DDF9);
     text-shadow: -1px 0 black, 0 1px black, 1px 0 black, 0 -1px black;
-}
-
-.nav-link {
-    margin: 0 6px;
-    padding: 5px;
-    font-size: 14px;
-    cursor: pointer;
-    border-radius: 20px;
-    transition: all .2s cubic-bezier(.25,.25,.25,.25);
-}
-
-.main-navbar li, .user-navbar li {
-    list-style: none;
-    display: inline-block;
-    text-shadow: -1px 0 #404040, 0 1px #404040, 1px 0 #404040, 0 -1px #404040;
-}
-
-.carrito {
-    margin-right: 10px;
 }
 
 
@@ -176,16 +153,12 @@ h6 {
 
 
 .main-title {
-    margin: 5px 0;
+    margin: 20px 0 5px 0;
     padding: 8px;
     text-shadow: -1px 0 black, 0 1px black, 1px 0 black, 0 -1px black;
     background: linear-gradient(#E2DDF9,#858BB7);
     border-radius: 8px;
     border: #858BB7 solid 2px;
-}
-
-.first-title {
-    margin-top: 20px;
 }
 
 .link-title {
@@ -591,10 +564,6 @@ h6 {
     transition: all .2s cubic-bezier(.25,.25,.25,.25);
 }
 
-/* .cart-footer  {
-
-} */
-
 
 /**/
 /* PRODUCT INDEX */
@@ -604,15 +573,28 @@ h6 {
 .flex-title {
     display: flex;
     flex-flow: row wrap;
-    justify-content: space-between;
     align-items: center;
 }
 
-.title-icon-box i {
-    opacity: .5;
-    transition: all .2s cubic-bezier(.25,.25,.25,.25);
+.title-header-box {
+    width: 50%;
+}
+
+.store-control-box {
+    width: 50%;
+    text-align: right;
+}
+
+.store-control-link {
+    margin: 2%;
+}
+
+.store-control-link i {
     cursor: pointer;
-    text-shadow: none;
+    font-size: 13.28px;
+    color: #FFF;
+    text-shadow: -1px 0 black, 0 1px black, 1px 0 black, 0 -1px black;
+    text-shadow: -2px 2px #B14593;
 }
 
 
@@ -701,6 +683,13 @@ h6 {
     font-weight: 500;   
     font-size: 10px;
     margin: 0 10px;
+}
+
+.label-remember {
+    color: black;
+    text-decoration: underline;
+    cursor: pointer;
+    transition: all .1s cubic-bezier(.25,.25,.25,.25);
 }
 
 .label-file {
@@ -830,6 +819,7 @@ h6 {
     cursor: pointer;
     padding: 10px;
     margin-bottom: 15px;
+    transition: all .1s cubic-bezier(.25,.25,.25,.25);
 }
 
 /* MISC */
@@ -967,28 +957,25 @@ h6 {
 
 
 .error-header {
-    height: 70px;
     position: relative;
 }
 
-.error-icon {
-    width: 70px;
-    height: 70px;
-    position: absolute;
-    right: 2%;
+.error-section {
+    width: 90%;
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: space-between;
+    align-items: center;
+    margin: auto;
 }
 
 .error-header i {
-    font-size: 70px;
+    font-size: 50px;
     color: #FFF;
     transition: all .1s cubic-bezier(.25,.25,.25,.25);
 }
 
 .error-trademark {
-    height: 70px;
-    position: absolute;
-    left: 2%;
-    top: 20px;
     text-shadow: -2px 0 black, 0 2px black, 1px 0 black, 0 -1px black;
 }
 
@@ -1018,6 +1005,175 @@ h6 {
     color: black;
     font-weight: 500;
     text-shadow: 1px 1px 1px #FFF;
+}
+
+/**/
+/* USER INDEX */
+/**/
+
+
+.main-grid {
+    width: 100%;
+    margin: auto;
+    background: linear-gradient(#E2DDF9,#858BB7);
+    border-radius: 8px;
+    margin-bottom: 30px;
+    margin-top: 15px;
+    padding: 10px;
+    border: #858BB7 solid 2px;
+}
+
+.grid-box {
+    width: 100%;
+    display: flex;
+    flex-flow: row wrap;
+    align-items: center;
+}
+
+.user-data {
+    color: black;
+    font-size: 10px;
+}
+
+.user-data-title {
+    font-weight: 600;
+}
+
+.long-data {
+    width: 20%;
+}
+
+.longest-data {
+    width: 40%;
+}
+
+.short-data {
+    width: 10%;
+    text-align: center;
+}
+
+.newsletter-true {
+    color: green;
+}
+
+.newsletter-false {
+    color: red;
+}
+
+.admin-checkbox {
+    cursor: pointer;
+}
+
+.privilege-change {
+    margin: 30px 0;
+    background: linear-gradient(#E2DDF9,#858BB7);
+    border-radius: 8px;
+    padding: 30px 0;
+    border: #858BB7 solid 2px;
+    display: flex;
+    flex-flow: row wrap;
+    align-items: center;
+}
+
+.privilege-question {
+    width: 70%;
+    text-align: left;
+    color: black;
+    font-size: 12px;
+    padding: 0 5px;
+}
+
+.privilege-form {
+    width: 30%;
+    text-align: right;
+    display: flex;
+    flex-flow: column wrap;
+}
+
+.privilege-form button {
+    font-size: 12px;
+    width: 100%;
+    border: #858BB7 solid 1px;
+    background: #FFF;
+}
+
+.privilege-checkbox {
+    display: none;
+}
+
+.user-data-privilege {
+    font-weight: 600;
+}
+
+
+/**/
+/* USER PROFILE */
+/**/
+
+
+.profile-section {
+    margin: auto;
+    margin-top: 30px;
+    margin-bottom: 30px;
+    width: 90%;
+    background: linear-gradient(#E2DDF9,#858BB7);
+    border-radius: 8px;
+    border: solid 2px #858BB7;
+    color: black;
+    display: flex;
+    flex-flow: row wrap;
+}
+
+.profile-title {
+    width: 70%;
+    text-shadow: -1px 0 #FFF, 0 1px #FFF, 1px 0 #FFF, 0 -1px #FFF;
+    justify-self: flex-start;
+    margin: 3% 0;
+    padding: 0 3%;
+}
+
+.profile-cart-link {
+    justify-self: flex-end;
+    width: 30%;
+    text-align: right;
+    margin: 3% 0;
+    padding: 0 3%;
+    color: #FFF;
+    text-shadow: -1px 0 black, 0 1px black, 1px 0 black, 0 -1px black;  
+}
+
+.profile-name {
+    width: 100%;
+    margin: 3% 0;
+    padding: 0 1%;
+    text-shadow: -1px 0 #FFF, 0 1px #FFF, 1px 0 #FFF, 0 -1px #FFF;
+    text-align: center;
+}
+
+.profile-avatar {
+    margin: 1%;
+    width: 100%;
+    text-align: center;
+}
+
+.profile-avatar img {
+    width: 150px;
+    width: 150px;
+    border-radius: 100%;
+    aspect-ratio: 1/1;
+    align-self: center;
+    border: solid 2px #858BB7;
+}
+
+.profile-more {
+    width: 100%;
+    margin: 2% 0;
+    text-shadow: -1px 0 #FFF, 0 1px #FFF, 1px 0 #FFF, 0 -1px #FFF;
+    text-align: center;
+}
+
+.profile-more h1, .profile-more h3, .profile-more h4 {
+    margin: 2% 0;
 }
 
 
@@ -1063,16 +1219,63 @@ TABLETS
     /**/
 
 
-    .header-header {
+    .hamburger {
+        display: none;
+    }
+
+    .header-section {
+        height: 70px;
+        justify-content: flex-start;
+    }
+
+    .logo-box {
+        width: 66px;
+        height: 66px;
+        font-size: 40px;
+        line-height: 66px;
+    }
+
+    .main-navbar {
+        flex-grow: 3;
+        display: flex;
+        flex-flow: row wrap;
+        align-items: center;
         justify-content: space-between;
     }
 
-    .main-navbar, .user-navbar {
+    .local-navbar, .user-navbar {
+        width: 50%;
         display: flex;
+        flex-flow: row wrap;
+        align-items: center;
+        font-size: 14px;
+        color: black;
+        font-weight: 600;
+        text-shadow: -.5px 0 #FFF, 0 .5px #FFF, .5px 0 #FFF, 0 -.5px #FFF;
     }
 
-    .hamburger {
-        display: none;
+    .user-navbar {
+        justify-content: flex-end;
+    }
+
+    .local-navbar-link {
+        width: 33%;
+        text-align: center;
+    }
+
+    .user-navbar-link {
+        width: 45%;
+        text-align: right;
+    }
+    
+    .navbar-avatar {
+        margin-left: 1%;
+    }
+
+    .navbar-avatar img {
+        width: 50px;
+        height: 50px;
+        border-radius: 50%;
     }
 
 
@@ -1155,6 +1358,16 @@ TABLETS
 
     .admin-button-edit, .admin-button-delete {
         font-size: 20px;
+    }
+
+
+    /**/
+    /* PRODUCT INDEX */
+    /**/
+
+
+    .store-control-link i {
+        font-size: 18.72px;
     }
 
 
@@ -1250,6 +1463,34 @@ TABLETS
         font-size: 18px;
         line-height: 25px;
     }
+
+    /**/
+    /* ERROR */
+    /**/
+
+
+    .error-section {
+        width: 70%;
+    }
+
+    .error-icon i {
+        font-size: 70px;
+    }
+
+
+    /**/
+    /* USER PROFILE */
+    /**/
+
+
+    .profile-title {
+        text-align: left;
+    }
+
+    .profile-avatar img {
+        width: 200px;
+        width: 200px;
+    }
 }
 
 
@@ -1261,29 +1502,31 @@ DESKTOP
     /* HEADER */
     /**/
 
-    .nav-link {
-        font-size: 16px;
-    }
-
-    .nav-link:hover {
-        box-shadow: inset 0 0 30px 0 #FFF;
-        text-shadow: none;
+    .logo-box:hover {
+        box-shadow: 0 0 10px 5px black;
         color: black;
     }
 
-    .carrito i {
-        padding-right: 10px;
-        height: 18px;
-        width: 18px;
-        border-radius: 50%;
-        opacity: .9;
+    .local-navbar, .user-navbar {
+        font-size: 18px;
+        color: #FFF;
+        text-shadow: -1px 0 #404040, 0 1px #404040, 1px 0 #404040, 0 -1px #404040;        
     }
 
-    .logo:hover {
-        box-shadow: 0 0 10px 5px black;
+    .local-navbar-link a, .user-navbar-link a {
+        transition: all .2s cubic-bezier(.25,.25,.25,.25);
+        padding: 6px;
+        border-radius: 20px;
     }
 
-    
+    .local-navbar-link a:hover, .user-navbar-link a:hover {
+        box-shadow: inset 0 0 30px 0 #FFF;
+        text-shadow: none;
+        color: black;
+        text-shadow: none;
+    }
+
+
     /**/
     /* MAIN */
     /**/
@@ -1432,14 +1675,19 @@ DESKTOP
     /**/
 
 
-    .title-icon-box i {
-        font-size: 30px;
+    .store-control-link i {
+        opacity: .5;
+        color: black;
+        text-shadow: none;
+        transition: all .2s cubic-bezier(.25,.25,.25,.25);
+        font-size: 20px;
     }
 
-    .title-icon-box:hover i {
+    .store-control-link:hover i {
         opacity: 1;
-        color: #B14593;
+        color: #FFF;
         text-shadow: -1px 0 black, 0 1px black, 1px 0 black, 0 -1px black;
+        text-shadow: -2px 2px #B14593;
     }
 
 
@@ -1455,6 +1703,11 @@ DESKTOP
 
     .label-radio:hover, .label-file:hover {
         border: solid 2px #B6B1F1;
+    }
+
+    .label-remember:hover {
+        color: #404040;
+        text-decoration: none;
     }
 
     /* INPUTS */
@@ -1504,6 +1757,10 @@ DESKTOP
     }
 
     /* MISC */
+    .label-tyc:hover .terms-conditions {
+        color: #B14593;
+    }
+
     .terms-conditions:hover {
         color: #B14593;
     }
@@ -1573,6 +1830,24 @@ DESKTOP
         opacity: .7;
         text-shadow: -1px 0 #FFF, 0 1px #FFF, 1px 0 #FFF, 0 -1px #FFF;
     }
+
+    /**/
+    /* USER PROFILE */
+    /**/
+
+    .profile-avatar img {
+        width: 300px;
+        width: 300px;
+    }
+
+    .profile-cart-link i {
+        transition: all .1s cubic-bezier(.25,.25,.25,.25);
+    }
+
+    .profile-cart-link i:hover {
+        color: #B14593;
+        text-shadow: none;
+    }
 }
 
 
@@ -1584,6 +1859,19 @@ PANTALLAS +
         max-width: 90%;
     }
     
+    /**/
+    /* HEADER */
+    /**/
+
+
+    .local-navbar {
+        width: 30%;
+    }
+
+    .user-navbar-link {
+        width: 35%;
+    }
+
     
     /**/
     /* MAIN */
@@ -1728,7 +2016,7 @@ PANTALLAS +
 LIMITAR ANCHO MÁXIMO 
 */
 @media (min-width: 1200px) {
-    .header-box, .main-main {
+    .header-section, .main-main {
         max-width: 1200px;
     }
 }

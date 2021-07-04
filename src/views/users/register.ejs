@@ -23,6 +23,7 @@
                     id="name" 
                     placeholder="Juan" 
                     required
+                    value="<% locals.oldData && oldData.name ? oldData.name : 'null' %>"
                 >
             </div>
             <!-- surname -->
@@ -37,6 +38,7 @@
                     id="surname" 
                     placeholder="Pérez" 
                     required
+                    value="<% locals.oldData && oldData.surname ? oldData.surname : 'null' %>"
                 >
             </div>
             <!-- email -->
@@ -51,7 +53,13 @@
                     id="email" 
                     placeholder="juan.perez@gmail.com" 
                     required
+                    value="<% locals.oldData && oldData.email ? oldData.email : 'null' %>"
                 >
+                <% if (locals.errors && errors.email) { %>
+                    <span class="error-msg">
+                        <%= errors.email.msg %>
+                    </span>
+                <% } %>
             </div>
             <!-- password -->
             <div class="input-box">
@@ -111,6 +119,7 @@
                         value="true" 
                         id="newsletter-true" 
                         required
+                        <% locals.oldData && oldData.newsletter ? 'checked' : 'null' %>
                     >
                 </label>
                 <label class="label-label label-radio" for="newsletter-false">
@@ -132,12 +141,12 @@
                     <a class="terms-conditions" target="_blank" href="/terms-conditions/#terms-and-conditions">
                         términos y condiciones
                     </a>
+                    <input 
+                        class="input-checkbox" 
+                        type="checkbox"
+                        required
+                    >
                 </label>
-                <input 
-                    class="input-checkbox" 
-                    type="checkbox"
-                    required
-                >
             </div>
             <!-- BUTTONS -->
             <div class="button-box">
