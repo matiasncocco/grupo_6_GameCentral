@@ -7,8 +7,18 @@ let guestMiddleware = require('../middlewares/guestMiddleware');
 let adminMiddleware = require('../middlewares/adminMiddleware');
 let { check } = require('express-validator');
 
-validations = [
-    // check.
+let validations = [
+    check('name')
+        .notEmpty().withMessage('Fill me').bail(),
+    check('surname')
+        .notEmpty(),
+    check('email')
+        .notEmpty(),
+    check('password')
+        .notEmpty(),
+    check('passwordCheck')
+        .notEmpty(),
+
 ];
 
 // vista registro de usuario <form>

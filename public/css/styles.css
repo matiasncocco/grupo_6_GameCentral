@@ -822,6 +822,28 @@ h6 {
     transition: all .1s cubic-bezier(.25,.25,.25,.25);
 }
 
+/* ERROR */
+.error-msg {
+    display: block;
+    color: black;
+    width: fit-content;
+    border-radius: 8px;
+    box-shadow: inset 0px 0 30px red;
+    margin: 2%;
+    padding: 1%;
+    font-size: 12px;
+    font-weight: 600;
+    text-shadow: -.5px 0 #FFF, 0 .5px #FFF, .5px 0 #FFF, 0 -.5px #FFF;
+}
+
+.error-input {
+    border: red solid 2px;
+}
+
+.error-input:focus {
+    outline: red;
+}
+
 /* MISC */
 ::-webkit-input-placeholder {
     font-style: italic;
@@ -1407,6 +1429,11 @@ TABLETS
         width: 185px;
     }
 
+    /* ERROR */
+    .error-msg {
+        font-size: 14px;
+    }
+
     /* MISC */
     .discount-indicator, .rule-indicator {
         font-size: 12px;
@@ -1754,6 +1781,11 @@ DESKTOP
         border-radius: 8px;
         color: #404040;
         text-decoration: none;
+    }
+
+    /* ERROR */
+    .error-msg {
+        font-size: 16px;
     }
 
     /* MISC */

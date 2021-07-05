@@ -17,7 +17,8 @@
                     E-mail
                 </label>
                 <input 
-                    class="input-text"
+                    class="input-text
+                    <%= locals.errors && errors.email ? 'error-input' : null %>"
                     type="text"
                     name="email"
                     id="email"
@@ -35,7 +36,8 @@
                     Contraseña
                 </label>
                 <input
-                    class="input-text"
+                    class="input-text
+                    <%= locals.errors && errors.password ? 'error-input' : null %>"
                     type="password"
                     name="password"
                     id="password"

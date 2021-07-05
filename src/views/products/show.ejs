@@ -159,36 +159,29 @@
         </section>
     </section>
     <% if (locals.user && user.admin === true) { %>
-    <header class="main-title flex-title">
-        <section class="admin-main-box">
-            <div class="admin-edit-box">
-                <a href="/products/<%= product.id %>/edit">
-                    <button class="admin-button-edit">
-                        EDITAR
-                    </button> 
+        <header class="main-title">
+            <section class="admin-main-box">
+                <div class="admin-edit-box">
+                    <a href="/products/<%= product.id %>/edit">
+                        <button class="admin-button-edit">
+                            EDITAR
+                        </button> 
+                    </a>
+                </div>
+                <form class="admin-delete-box" action="/products/<%= product.id %>?_method=DELETE" method="POST">
+                    <button class="admin-button-delete" type="submit">
+                        ELIMINAR
+                    </button>
+                </form>
+            </section>
+        </header>
+        <header class="main-title">
+            <div class="store-control-box">
+                <a href="/products/create" class="store-control-link  show-square">
+                    <i class="fas fa-plus-square"></i>
                 </a>
             </div>
-            <form class="admin-delete-box" action="/products/<%= product.id %>?_method=DELETE" method="POST">
-                <button class="admin-button-delete" type="submit">
-                    ELIMINAR
-                </button>
-            </form>
-        </section>
-        <!-- cambiar ésto para que sea otro botón? -->
-        <div class="title-header-box">
-            <h3 class="big-title">
-                AGREGAR UN PRODUCTO
-            </h3>
-            <h5 class="small-title">
-                AGREGAR UN PRODUCTO
-            </h5>
-        </div>
-        <div class="store-control-box">
-            <a href="/products/create" class="store-control-link">
-                <i class="fas fa-plus-square"></i>      
-            </a>
-        </div>
-    </header>
+        </header>
     <% } %>
 </main>
 <%- include('../partials/footer')%>
