@@ -692,12 +692,12 @@ h6 {
     transition: all .1s cubic-bezier(.25,.25,.25,.25);
 }
 
-.label-file {
+/* .label-file {
     background-color: #FFF;
     cursor: pointer;
     font-style: italic;
     color: #666;
-}
+} */
 
 .label-radio {
     padding-left: 10px;
@@ -736,9 +736,9 @@ h6 {
     cursor: pointer;
 }
 
-.input-file {
+/* .input-file {
     display: none;
-}
+} */
 
 .input-price {
     width: 37px;
@@ -1728,7 +1728,7 @@ DESKTOP
         font-size: 16px;
     }
 
-    .label-radio:hover, .label-file:hover {
+    .label-radio:hover {
         border: solid 2px #B6B1F1;
     }
 

@@ -22,7 +22,6 @@
                     name="name" 
                     id="name" 
                     placeholder="Juan" 
-                    required
                     value="<% locals.oldData && oldData.name ? oldData.name : 'null' %>"
                 >
             </div>
@@ -37,7 +36,6 @@
                     name="surname" 
                     id="surname" 
                     placeholder="Pérez" 
-                    required
                     value="<% locals.oldData && oldData.surname ? oldData.surname : 'null' %>"
                 >
             </div>
@@ -52,7 +50,6 @@
                     name="email" 
                     id="email" 
                     placeholder="juan.perez@gmail.com" 
-                    required
                     value="<% locals.oldData && oldData.email ? oldData.email : 'null' %>"
                 >
                 <% if (locals.errors && errors.email) { %>
@@ -72,7 +69,6 @@
                     name="password" 
                     id="password" 
                     placeholder="********" 
-                    required
                 >
             </div>
             <!-- passwordCheck -->
@@ -86,7 +82,6 @@
                     name="passwordCheck" 
                     id="passwordCheck" 
                     placeholder="********" 
-                    required
                 >
             </div>
             <!-- avatar -->
@@ -94,16 +89,13 @@
                 <label class="label-label">
                     Suba un archivo
                 </label>
-                <label class="label-label input-text label-file" for="avatar">
-                    Foto de perfil
-                    <input 
-                        class="input-file" 
-                        type="file" 
-                        name="avatar" 
-                        id="avatar" 
-                        accept=".jpg, .jpeg, .png, .webp" 
-                    >
-                </label>
+                <input 
+                    class="" 
+                    type="file" 
+                    name="avatar" 
+                    id="avatar" 
+                    accept=".jpg, .jpeg, .png, .webp" 
+                >
             </div>
             <!-- newsletter -->
             <div class="input-box">
@@ -118,7 +110,6 @@
                         name="newsletter" 
                         value="true" 
                         id="newsletter-true" 
-                        required
                         <% locals.oldData && oldData.newsletter ? 'checked' : 'null' %>
                     >
                 </label>
@@ -129,8 +120,7 @@
                         type="radio" 
                         name="newsletter" 
                         value="false" 
-                        id="newsletter-false" 
-                        required
+                        id="newsletter-false"
                     >
                 </label>
             </div>

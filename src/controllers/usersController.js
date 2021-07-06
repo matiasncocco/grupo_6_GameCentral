@@ -1,7 +1,6 @@
 let { readJson, writeJson, lastId, storeBool } = require('./helper');
 let bcrypt = require('bcrypt');
-// no implementado
-// let { validationResult } = require('express-validator');
+let { validationResult } = require('express-validator');
 
 let usersController = {
     // GET: show register view // <form>

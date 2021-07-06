@@ -5,7 +5,7 @@ let upload = require('../middlewares/multerMiddleware');
 let userMiddleware = require('../middlewares/userMiddleware');
 let adminMiddleware = require('../middlewares/adminMiddleware');
 
-multerFields = [
+let multerFields = [
     {
         name: 'img',
         maxCount: 1
@@ -17,21 +17,19 @@ multerFields = [
 ];
 
 // vista carrito
-// solo puede aceder
 // -> USUARIOS
 router.get('/cart', userMiddleware, productsController.cart);
 
 // vista todos los productos
-// -> TODOS pueden acceder
+// -> TODOS
 router.get('/', productsController.index);
 
 // vista creación de producto <form>
-// solo puede acceder
 // -> ADMINS
 router.get('/create', adminMiddleware, productsController.create);
 
 // vista detalle de producto
-// TODOS pueden acceder
+// TODOS
 router.get('/:id', productsController.show);
 
 // procesar creación de producto
@@ -39,7 +37,6 @@ router.get('/:id', productsController.show);
 router.post('/', upload.fields(multerFields), productsController.store);
 
 // vista de edición de producto. <form> de creación con datos
-// solo puede acceder.
 // -> ADMINS
 router.get('/:id/edit', adminMiddleware, productsController.edit);
 
