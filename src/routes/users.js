@@ -40,7 +40,7 @@ router.get('/register', guestMiddleware, validations, usersController.register);
 
 // procesar registro/creación de usuario
 // (inaccesible)
-router.post('/', upload.single('avatar'), usersController.processRegister);
+router.post('/', upload.single('avatar'), validations, usersController.processRegister);
 
 // vista login de usuario <form>
 // -> GUESTS

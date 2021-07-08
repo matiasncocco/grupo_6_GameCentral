@@ -13,21 +13,29 @@ let usersController = {
     // POST: process register // store user in DB
     processRegister: (req,res) => {
         let users = readJson('users.json');
-        let oldData = req.body;
-        let emails = [];
-        users.forEach(user => {
-            emails.push(user.email);
-        });
-        if (emails.includes(req.body.email)) {
-            return res.render('./users/register', {
-                title: 'Creá tu cuenta',
-                oldData,
-                errors: {
-                    email: {
-                        msg: 'El e-mail ya está en uso'
-                    }
-                }
+        let validations = validationResult(req);
+        if (validations.errors.length > 0) {
+            let oldData = req.body;
+            let emails = [];
+            users.forEach(user => {
+                emails.push(user.email);
             });
+            if (emails.includes(req.body.email)) {
+                return res.render('./users/register', {
+                    title: 'Crea tu cuenta',
+                    oldData,
+                    errors: {
+                        email: {
+                            msg: 'El e-mail ya está en uso'
+                        }
+                    }
+                });
+            };
+            return res.render('./users/register', {
+                title: 'Crea tu cuenta',
+                oldData,
+                errors: validations.mapped()
+            })
         } else {
             let user = {
                 id: lastId(users) + 1,
@@ -35,7 +43,7 @@ let usersController = {
                 surname: req.body.surname,
                 email: req.body.email,
                 password: bcrypt.hashSync(req.body.password, 10),
-                avatar: req.file.filename,
+                // avatar: req.file.filename,
                 newsletter: storeBool(req.body.newsletter),
                 admin: false,
             };
