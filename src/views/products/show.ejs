@@ -158,21 +158,30 @@
             </article>
         </section>
     </section>
-    <%# if (locals.isLogged && locals.userLoggedCategory == 'admin') { %>
-    <section class="admin-main-box">
-        <div class="admin-edit-box">
-            <a href="/products/<%= product.id %>/edit">
-                <button class="admin-button-edit">
-                    EDITAR
-                </button> 
-            </a>
-        </div>
-        <form class="admin-delete-box" action="/products/<%= product.id %>?_method=DELETE" method="POST">
-            <button class="admin-button-delete" type="submit">
-                ELIMINAR
-            </button>
-        </form>
-    </section>
-    <%# } %>
+    <% if (locals.user && user.admin === true) { %>
+        <header class="main-title">
+            <section class="admin-main-box">
+                <div class="admin-edit-box">
+                    <a href="/products/<%= product.id %>/edit">
+                        <button class="admin-button-edit">
+                            EDITAR
+                        </button> 
+                    </a>
+                </div>
+                <form class="admin-delete-box" action="/products/<%= product.id %>?_method=DELETE" method="POST">
+                    <button class="admin-button-delete" type="submit">
+                        ELIMINAR
+                    </button>
+                </form>
+            </section>
+        </header>
+        <header class="main-title">
+            <div class="store-control-box">
+                <a href="/products/create" class="store-control-link  show-square">
+                    <i class="fas fa-plus-square"></i>
+                </a>
+            </div>
+        </header>
+    <% } %>
 </main>
 <%- include('../partials/footer')%>
