@@ -1,0 +1,16 @@
+insert into category_game (id, game_id_category, category_id) values (1, 1, 32);
+insert into category_game (id, game_id_category, category_id) values (2, 2, 2);
+insert into category_game (id, game_id_category, category_id) values (3, 3, 22);
+insert into category_game (id, game_id_category, category_id) values (4, 4, 2);
+insert into category_game (id, game_id_category, category_id) values (5, 5, 65);
+insert into category_game (id, game_id_category, category_id) values (6, 6, 3);
+insert into category_game (id, game_id_category, category_id) values (7, 7, 3);
+insert into category_game (id, game_id_category, category_id) values (8, 8, 1);
+insert into category_game (id, game_id_category, category_id) values (9, 9, 28);
+insert into category_game (id, game_id_category, category_id) values (10, 10, 24);
+insert into category_game (id, game_id_category, category_id) values (11, 11, 65);
+insert into category_game (id, game_id_category, category_id) values (12, 12, 20);
+insert into category_game (id, game_id_category, category_id) values (13, 13, 19);
+insert into category_game (id, game_id_category, category_id) values (14, 14, 19);
+insert into category_game (id, game_id_category, category_id) values (15, 15, 2);
+insert into category_game (id, game_id_category, category_id) values (16, 16, 2);
