@@ -1,3 +1,3 @@
-insert into status (id, status ) values (1, 'BASE PRICE');
-insert into status (id, status ) values (2, 'OFF');
-
+INSERT INTO status (id, name) VALUES (1, 'NONE');
+INSERT INTO status (id, name) VALUES (2, 'RELEVANT');
+INSERT INTO status (id, name) VALUES (3, 'IN OFFER');
