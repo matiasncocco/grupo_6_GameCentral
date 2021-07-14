@@ -1,3 +1,5 @@
+CREATE DATABASE  IF NOT EXISTS `game_central` /*!40100 DEFAULT CHARACTER SET utf8mb4 */;
+USE `game_central`;
 -- MySQL dump 10.13  Distrib 5.7.17, for Win64 (x86_64)
 --
 -- Host: 127.0.0.1    Database: game_central
@@ -28,8 +30,7 @@ CREATE TABLE `categories` (
   `created_at` timestamp NULL DEFAULT NULL,
   `updated_at` timestamp NULL DEFAULT NULL,
   `deleted_at` timestamp NULL DEFAULT NULL,
-  PRIMARY KEY (`id`),
-  UNIQUE KEY `id_UNIQUE` (`id`)
+  PRIMARY KEY (`id`)
 ) ENGINE=InnoDB AUTO_INCREMENT=25 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
@@ -54,7 +55,6 @@ CREATE TABLE `category_game` (
   `game_id_category` int(11) DEFAULT NULL,
   `category_id` int(11) DEFAULT NULL,
   PRIMARY KEY (`id`),
-  UNIQUE KEY `id_UNIQUE` (`id`),
   KEY `game_id_category_idx` (`game_id_category`),
   KEY `category_id_idx` (`category_id`),
   CONSTRAINT `category_id` FOREIGN KEY (`category_id`) REFERENCES `categories` (`id`) ON DELETE NO ACTION ON UPDATE NO ACTION,
@@ -83,7 +83,6 @@ CREATE TABLE `game_status` (
   `game_id_status` int(11) DEFAULT NULL,
   `status_id` int(11) DEFAULT NULL,
   PRIMARY KEY (`id`),
-  UNIQUE KEY `id_UNIQUE` (`id`),
   KEY `game_id_idx` (`game_id_status`),
   KEY `status_id_idx` (`status_id`),
   CONSTRAINT `game_id_status` FOREIGN KEY (`game_id_status`) REFERENCES `games` (`id`) ON DELETE NO ACTION ON UPDATE NO ACTION,
@@ -110,7 +109,6 @@ DROP TABLE IF EXISTS `games`;
 CREATE TABLE `games` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
   `title` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
-  `card` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
   `img` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
   `price` decimal(15,2) unsigned NOT NULL,
   `discount` int(10) unsigned DEFAULT NULL,
@@ -118,8 +116,7 @@ CREATE TABLE `games` (
   `created_at` timestamp NULL DEFAULT NULL,
   `updated_at` timestamp NULL DEFAULT NULL,
   `deleted_at` timestamp NULL DEFAULT NULL,
-  PRIMARY KEY (`id`),
-  UNIQUE KEY `id_UNIQUE` (`id`)
+  PRIMARY KEY (`id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
@@ -144,7 +141,6 @@ CREATE TABLE `platform_game` (
   `game_id_platform` int(11) DEFAULT NULL,
   `platform_id` int(11) DEFAULT NULL,
   PRIMARY KEY (`id`),
-  UNIQUE KEY `id_UNIQUE` (`id`),
   KEY `game_id_platform_idx` (`game_id_platform`),
   KEY `platform_id_idx` (`platform_id`),
   CONSTRAINT `game_id_platform` FOREIGN KEY (`game_id_platform`) REFERENCES `games` (`id`) ON DELETE NO ACTION ON UPDATE NO ACTION,
@@ -170,12 +166,11 @@ DROP TABLE IF EXISTS `platforms`;
 /*!40101 SET character_set_client = utf8 */;
 CREATE TABLE `platforms` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
-  `title` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `title` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
   `created_at` timestamp NULL DEFAULT NULL,
   `updated_at` timestamp NULL DEFAULT NULL,
   `deleted_at` timestamp NULL DEFAULT NULL,
-  PRIMARY KEY (`id`),
-  UNIQUE KEY `id_UNIQUE` (`id`)
+  PRIMARY KEY (`id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
@@ -201,9 +196,8 @@ CREATE TABLE `status` (
   `created_at` timestamp NULL DEFAULT NULL,
   `updated_at` timestamp NULL DEFAULT NULL,
   `deleted_at` timestamp NULL DEFAULT NULL,
-  PRIMARY KEY (`id`),
-  UNIQUE KEY `id_UNIQUE` (`id`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB AUTO_INCREMENT=4 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -227,7 +221,6 @@ CREATE TABLE `user_game` (
   `game_id_user` int(11) DEFAULT NULL,
   `user_id` int(11) DEFAULT NULL,
   PRIMARY KEY (`id`),
-  UNIQUE KEY `id_UNIQUE` (`id`),
   KEY `game_id_user_idx` (`game_id_user`),
   KEY `user_id_idx` (`user_id`),
   CONSTRAINT `game_id_user` FOREIGN KEY (`game_id_user`) REFERENCES `games` (`id`) ON DELETE NO ACTION ON UPDATE NO ACTION,
@@ -264,7 +257,6 @@ CREATE TABLE `users` (
   `updated_at` timestamp NULL DEFAULT NULL,
   `deleted_at` timestamp NULL DEFAULT NULL,
   PRIMARY KEY (`id`),
-  UNIQUE KEY `id_UNIQUE` (`id`),
   UNIQUE KEY `email_UNIQUE` (`email`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
@@ -287,4 +279,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2021-07-11 18:29:23
+-- Dump completed on 2021-07-13 22:23:03
