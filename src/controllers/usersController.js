@@ -205,7 +205,7 @@ let usersController = {
 
     // GET: show <form> w/ current user data
     // POST: submit changes to user
-    // DELETE: remove entry
+    // DELETE: remove entry.
 };
 
 module.exports = usersController;
