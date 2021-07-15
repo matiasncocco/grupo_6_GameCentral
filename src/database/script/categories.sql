@@ -65,3 +65,5 @@ INSERT INTO categories (id, title) VALUES (64, 'EDUCATIONAL');
 INSERT INTO categories (id, title) VALUES (65, 'SANDBOX');
 INSERT INTO categories (id, title) VALUES (66, 'CREATIVE');
 INSERT INTO categories (id, title) VALUES (67, 'OPEN WORLD');
+INSERT INTO categories (id, title) VALUES (68, 'CITY BUILDER');
+INSERT INTO categories (id, title) VALUES (69, 'MULTIPLAYER');
