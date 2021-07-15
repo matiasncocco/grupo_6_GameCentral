@@ -72,34 +72,6 @@ LOCK TABLES `category_game` WRITE;
 UNLOCK TABLES;
 
 --
--- Table structure for table `status_game`
---
-
-DROP TABLE IF EXISTS `status_game`;
-/*!40101 SET @saved_cs_client     = @@character_set_client */;
-/*!40101 SET character_set_client = utf8 */;
-CREATE TABLE `status_game` (
-  `id` int(11) NOT NULL AUTO_INCREMENT,
-  `game_id_status` int(11) DEFAULT NULL,
-  `status_id` int(11) DEFAULT NULL,
-  PRIMARY KEY (`id`),
-  KEY `game_id_idx` (`game_id_status`),
-  KEY `status_id_idx` (`status_id`),
-  CONSTRAINT `game_id_status` FOREIGN KEY (`game_id_status`) REFERENCES `games` (`id`) ON DELETE NO ACTION ON UPDATE NO ACTION,
-  CONSTRAINT `status_id` FOREIGN KEY (`status_id`) REFERENCES `status` (`id`) ON DELETE NO ACTION ON UPDATE NO ACTION
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
-/*!40101 SET character_set_client = @saved_cs_client */;
-
---
--- Dumping data for table `status_game`
---
-
-LOCK TABLES `status_game` WRITE;
-/*!40000 ALTER TABLE `status_game` DISABLE KEYS */;
-/*!40000 ALTER TABLE `status_game` ENABLE KEYS */;
-UNLOCK TABLES;
-
---
 -- Table structure for table `games`
 --
 
@@ -210,6 +182,34 @@ LOCK TABLES `status` WRITE;
 UNLOCK TABLES;
 
 --
+-- Table structure for table `status_game`
+--
+
+DROP TABLE IF EXISTS `status_game`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
+CREATE TABLE `status_game` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `game_id_status` int(11) DEFAULT NULL,
+  `status_id` int(11) DEFAULT NULL,
+  PRIMARY KEY (`id`),
+  KEY `game_id_idx` (`game_id_status`),
+  KEY `status_id_idx` (`status_id`),
+  CONSTRAINT `game_id_status` FOREIGN KEY (`game_id_status`) REFERENCES `games` (`id`) ON DELETE NO ACTION ON UPDATE NO ACTION,
+  CONSTRAINT `status_id` FOREIGN KEY (`status_id`) REFERENCES `status` (`id`) ON DELETE NO ACTION ON UPDATE NO ACTION
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `status_game`
+--
+
+LOCK TABLES `status_game` WRITE;
+/*!40000 ALTER TABLE `status_game` DISABLE KEYS */;
+/*!40000 ALTER TABLE `status_game` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
 -- Table structure for table `user_game`
 --
 
@@ -253,6 +253,7 @@ CREATE TABLE `users` (
   `newsletter` tinyint(1) NOT NULL,
   `admin` tinyint(1) NOT NULL,
   `password` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `country` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
   `created_at` timestamp NULL DEFAULT NULL,
   `updated_at` timestamp NULL DEFAULT NULL,
   `deleted_at` timestamp NULL DEFAULT NULL,
@@ -279,4 +280,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2021-07-13 22:23:03
+-- Dump completed on 2021-07-15 10:52:07
