@@ -79,8 +79,9 @@ INSERT INTO category_game (id, game_id_category, category_id) VALUES (62, 16, 90
 INSERT INTO category_game (id, game_id_category, category_id) VALUES (63, 16, 9);
 INSERT INTO category_game (id, game_id_category, category_id) VALUES (64, 16, 91);
 
-# QUERY PARA VER RESULTADOS
+# QUERY PARA VER RESULTADOS EN WORKBENCH
 SELECT category_game.id, games.title AS 'Juego', categories.title AS 'Categoría'
 FROM games
 INNER JOIN category_game ON games.id = game_id_category
-INNER JOIN categories ON categories.id = category_id;
+INNER JOIN categories ON categories.id = category_id
+ORDER BY category_game.id ASC;
