@@ -1,6 +1,3 @@
-const Sequelize = require('sequelize');
-const sequelize = require('../database'); 
-
 module.exports = (sequelize ,dataTypes) => {
 
    let alias = "games";
@@ -43,8 +40,7 @@ module.exports = (sequelize ,dataTypes) => {
     deletedAt: {
         type: DataTypes.DATE, 
         field: 'deleted_at'
-    },
-      
+    }
    };
 
    // CONFIGURACION -----------------------------------------------------------------------------------------------------------------
