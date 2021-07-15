@@ -1,0 +1,16 @@
+INSERT INTO game_status (id, game_id_status, status_id) values (1, 1, 1);
+INSERT INTO game_status (id, game_id_status, status_id) values (2, 2, 1);
+INSERT INTO game_status (id, game_id_status, status_id) values (3, 3, 3);
+INSERT INTO game_status (id, game_id_status, status_id) values (4, 4, 2);
+INSERT INTO game_status (id, game_id_status, status_id) values (5, 5, 2);
+INSERT INTO game_status (id, game_id_status, status_id) values (6, 6, 3);
+INSERT INTO game_status (id, game_id_status, status_id) values (7, 7, 3);
+INSERT INTO game_status (id, game_id_status, status_id) values (8, 8, 1);
+INSERT INTO game_status (id, game_id_status, status_id) values (9, 9, 1);
+INSERT INTO game_status (id, game_id_status, status_id) values (10, 10, 2);
+INSERT INTO game_status (id, game_id_status, status_id) values (11, 11, 3);
+INSERT INTO game_status (id, game_id_status, status_id) values (12, 12, 1);
+INSERT INTO game_status (id, game_id_status, status_id) values (13, 13, 2);
+INSERT INTO game_status (id, game_id_status, status_id) values (14, 14, 3);
+INSERT INTO game_status (id, game_id_status, status_id) values (15, 15, 2);
+INSERT INTO game_status (id, game_id_status, status_id) values (16, 16, 2);
