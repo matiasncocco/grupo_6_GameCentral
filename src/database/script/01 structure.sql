@@ -72,13 +72,13 @@ LOCK TABLES `category_game` WRITE;
 UNLOCK TABLES;
 
 --
--- Table structure for table `game_status`
+-- Table structure for table `status_game`
 --
 
-DROP TABLE IF EXISTS `game_status`;
+DROP TABLE IF EXISTS `status_game`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
 /*!40101 SET character_set_client = utf8 */;
-CREATE TABLE `game_status` (
+CREATE TABLE `status_game` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
   `game_id_status` int(11) DEFAULT NULL,
   `status_id` int(11) DEFAULT NULL,
@@ -91,12 +91,12 @@ CREATE TABLE `game_status` (
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
--- Dumping data for table `game_status`
+-- Dumping data for table `status_game`
 --
 
-LOCK TABLES `game_status` WRITE;
-/*!40000 ALTER TABLE `game_status` DISABLE KEYS */;
-/*!40000 ALTER TABLE `game_status` ENABLE KEYS */;
+LOCK TABLES `status_game` WRITE;
+/*!40000 ALTER TABLE `status_game` DISABLE KEYS */;
+/*!40000 ALTER TABLE `status_game` ENABLE KEYS */;
 UNLOCK TABLES;
 
 --
