@@ -130,6 +130,25 @@ h6 {
     text-shadow: -1px 0 black, 0 1px black, 1px 0 black, 0 -1px black;
 }
 
+.search-bar-icon{
+    display: flex;
+    align-content: space-around;
+}
+
+.search-bar{
+    background-color: whitesmoke;
+    border-radius: 5px;
+    border: 1px solid black;
+}
+
+.icon-bar{
+    padding: 2%;
+    color: black;
+    border: 1px solid black;
+    background: linear-gradient(#858BB7,#E2DDF9);
+    border-radius: 5px;
+}
+
 
 /**/
 /* MAIN */
