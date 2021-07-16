@@ -1,4 +1,4 @@
------------------------------------------------------------------------------
+-- ---------------------------------------------------------------------------
 
 -- games
 
@@ -19,7 +19,7 @@ INSERT INTO games (id, title, img, price, discount, description) VALUES (14, 'TH
 INSERT INTO games (id, title, img, price, discount, description) VALUES (15, 'CUPHEAD', '1623889097777.jpg', 224, 23, 'Cuphead es un juego de acción clásico estilo \"dispara y corre\" que se centra en combates contra el jefe. Inspirado en los dibujos animados de los años 30, los aspectos visual y sonoro están diseñados con esmero empleando las mismas técnicas de la época, es decir, animación tradicional a mano, fondos de acuarela y grabaciones originales de jazz.\r\n\r\nJuega como Cuphead o Mugman (en modo de un jugador o cooperativo) y cruza mundos extraños, adquiere nuevas armas, aprende poderosos supermovimientos y descubre secretos ocultos mientras procuras saldar tu deuda con el diablo.');
 INSERT INTO games (id, title, img, price, discount, description) VALUES (16, 'FALL GUYS', '1624416547403.jpg', 720, null, 'Fall Guys es un juego multijugador masivo tipo party con hasta 60 jugadores online en un enfrentamiento todos contra todos que se desarrolla ronda tras ronda entre un caos creciente hasta que solo queda un único vencedor.\r\n\r\nFall Guys: Ultimate Knockout enfrenta a hordas de contendientes online en un alocado enfrentamiento que se desarrolla ronda tras ronda entre un caos creciente hasta que solo queda un único vencedor. Supera obstáculos estrafalarios, ábrete paso entre competidores revoltosos y vence a las inflexibles leyes de la física en tu accidentado camino a la grandeza. ¡Deja la dignidad en la entrada y prepárate para sufrir descacharrantes fracasos en tu intento de reclamar la corona!\r\n\r\nDesmadre masivo online: sumérgete en una serie de ridículos desafíos y delirantes circuitos de obstáculos con montones de competidores online, todos con la esperanza de superar el corte y avanzar a la siguiente ronda de caos.');
 
------------------------------------------------------------------------------
+-- ---------------------------------------------------------------------------
 
 -- categories
 
@@ -115,7 +115,7 @@ INSERT INTO categories (id, title) VALUES (89, 'CARTOON');
 INSERT INTO categories (id, title) VALUES (90, 'FUNNY');
 INSERT INTO categories (id, title) VALUES (91, 'ONLINE CO-OP');
 
------------------------------------------------------------------------------
+-- ---------------------------------------------------------------------------
 
 -- platforms
 
@@ -124,14 +124,14 @@ INSERT INTO platforms (id, title) VALUES (2, 'MAC OS');
 INSERT INTO platforms (id, title) VALUES (3, 'LINUX');
 INSERT INTO platforms (id, title) VALUES (4, 'VR HEADSET');
 
------------------------------------------------------------------------------
+-- ---------------------------------------------------------------------------
 
 -- status
 
 INSERT INTO status (id, name) VALUES (1, 'RELEVANT');
 INSERT INTO status (id, name) VALUES (2, 'IN OFFER');
 
------------------------------------------------------------------------------
+-- ---------------------------------------------------------------------------
 
 -- users
 
@@ -186,7 +186,7 @@ INSERT INTO users (id, name, surname, email, avatar, newsletter, admin, password
 INSERT INTO users (id, name, surname, email, avatar, newsletter, admin, password) values (49, 'Wilbert', 'Brindley', 'wbrindley1c@microsoft.com', null, false, false, 'DpfRZ15dT2ik');
 INSERT INTO users (id, name, surname, email, avatar, newsletter, admin, password) values (50, 'Windham', 'Garnam', 'wgarnam1d@etsy.com', null, true, true, 'hfEaoqT');
 
------------------------------------------------------------------------------
+-- ---------------------------------------------------------------------------
 
 -- category_game
 
@@ -278,7 +278,7 @@ INSERT INTO category_game (id, game_id_category, category_id) VALUES (64, 16, 91
 # INNER JOIN categories ON categories.id = category_id
 # ORDER BY category_game.id ASC;
 
------------------------------------------------------------------------------
+-- ---------------------------------------------------------------------------
 
 -- platform_game
 
@@ -359,7 +359,7 @@ INSERT INTO platform_game (id, game_id_platform, platform_id) VALUES (53, 16, 3)
 # INNER JOIN platforms ON platforms.id = platform_id
 # ORDER BY platform_game.id ASC;
 
------------------------------------------------------------------------------
+-- ---------------------------------------------------------------------------
 
 -- status_game
 
@@ -387,7 +387,7 @@ INSERT INTO status_game (id, game_id_status, status_id) VALUES (16, 16, 2);
 # INNER JOIN status ON status.id = status_id
 # ORDER BY status_game.id ASC;
 
------------------------------------------------------------------------------
+-- ---------------------------------------------------------------------------
 
 -- user_game
 
@@ -549,4 +549,4 @@ INSERT INTO user_game (id, game_id_user, user_id) VALUES (150, 16, 1);
 # INNER JOIN users ON users.id = user_id
 # ORDER BY games.title ASC;
 
------------------------------------------------------------------------------
+-- ---------------------------------------------------------------------------
