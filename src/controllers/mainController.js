@@ -40,10 +40,6 @@ let mainController = {
                 res.json({
                     categories
                 });
-                // res.render('categories', {
-                //     title: 'Categorias',
-                //     categories
-                // })
             })
             .catch(err => {
                 res.send(err);
