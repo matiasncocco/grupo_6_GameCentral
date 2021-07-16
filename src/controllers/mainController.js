@@ -2,6 +2,8 @@ let { readJson, percentageFinder, inOfferHandler } = require('./helper');
 
 let title = '';
 
+let db = require('../database/models');
+
 let mainController = {
     index: (req, res) => {
         title = 'Game Central';
@@ -31,6 +33,18 @@ let mainController = {
         title = 'Términos & Condiciones';
         res.render('terms-conditions', { title } );
     },
+
+    categories: (req,res) => {
+        db.Category.findAll()
+            .then(categories => {
+                res.json({
+                    categories
+                });
+            })
+            .catch(err => {
+                res.send(err);
+            });
+    }
 };
 
 module.exports = mainController;
