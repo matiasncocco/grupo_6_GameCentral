@@ -25,10 +25,12 @@ module.exports = (sequelize ,dataTypes) => { // <--- Cuidado las mayúsculas, es
     // checkear la DB y la documentación de "sequelize"
     // https://sequelize.org/master/manual/model-basics.html#data-types
      price: {
+        // cuidado acá con "DataTypes"
          type: dataTypes.INTEGER,
          allowNull: false
      },
      disconunt: {
+        // cuidado acá con "DataTypes"
          type: dataTypes.INTEGER,
          allowNull: false
      },
