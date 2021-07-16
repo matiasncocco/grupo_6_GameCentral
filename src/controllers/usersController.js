@@ -176,7 +176,7 @@ let usersController = {
             title: 'Usuarios',
             users
         });
-        // users.findAll()
+        // db.User.findAll()
     },
 
     // GET: show <form> to change or not admin

@@ -3,6 +3,7 @@
   "version": "1.0.0",
   "description": "<h1>grupo_6_GameCentral</h1>",
   "main": "./src/app.js",
+<<<<<<< HEAD
   "start": "node app.js",
   "dependencies": {
     "bcrypt": "^5.0.1",
@@ -17,6 +18,8 @@
     "nodemon": "^2.0.12",
     "sequelize": "^6.6.5"
   },
+=======
+>>>>>>> 4b8baabe639d42f8ff79f57d01c8727884900439
   "scripts": {
     "test": "nodemon ./src/app.js"
   },
@@ -30,5 +33,17 @@
     "url": "https://github.com/matiasncocco/grupo_6_GameCentral/issues"
   },
   "homepage": "https://github.com/matiasncocco/grupo_6_GameCentral#readme",
-  "keywords": []
+  "dependencies": {
+    "mysql2": "^2.2.5",
+    "sequelize": "^6.6.5",
+    "bcrypt": "^5.0.1",
+    "cookie-parser": "^1.4.5",
+    "ejs": "^3.1.6",
+    "express": "^4.17.1",
+    "express-session": "^1.17.2",
+    "express-validator": "^6.12.0",
+    "method-override": "^3.0.0",
+    "multer": "^1.4.2",
+    "nodemon": "^2.0.9"
+  }
 }
