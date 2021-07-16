@@ -2,6 +2,8 @@ let { readJson, writeJson, lastId, storeBool } = require('./helper');
 let bcrypt = require('bcrypt');
 let { validationResult } = require('express-validator');
 
+let db = require('../database/models');
+
 let usersController = {
     // GET: show register view // <form>
     register : (req,res) => {
@@ -169,11 +171,12 @@ let usersController = {
  
     // GET: show user list
     index: (req,res) => {
-        let users = readJson('users.json');
-        res.render('./users/index', {
-            title: 'Usuarios',
-            users
-        });
+        // let users = readJson('users.json');
+        // res.render('./users/index', {
+            // title: 'Usuarios',
+            // users
+        // });
+        // users.findAll()
     },
 
     // GET: show <form> to change or not admin

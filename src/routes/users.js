@@ -60,7 +60,8 @@ router.get('/delog', usersController.delog);
 
 // vista con lista de todos los usuarios
 // -> ADMINS
-router.get('/', adminMiddleware, usersController.index);
+// adminMiddleware
+router.get('/', usersController.index);
 
 // vista para cambiar user.admin === ( true || false )
 // -> ADMINS
