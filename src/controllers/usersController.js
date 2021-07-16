@@ -2,7 +2,7 @@ let { readJson, writeJson, lastId, storeBool } = require('./helper');
 let bcrypt = require('bcrypt');
 let { validationResult } = require('express-validator');
 
-// let db = require('../database/models');
+let db = require('../database/models');
 
 let usersController = {
     // GET: show register view // <form>
@@ -171,12 +171,16 @@ let usersController = {
  
     // GET: show user list
     index: (req,res) => {
-        let users = readJson('users.json');
-        res.render('./users/index', {
-            title: 'Usuarios',
-            users
-        });
-        // db.User.findAll()
+        db.User.findAll()
+            .then(users => {
+                res.render('./users/index', {
+                    title: 'Usuarios',
+                    users
+                });
+            })
+            .catch(err => {
+                res.send(err);
+            });
     },
 
     // GET: show <form> to change or not admin

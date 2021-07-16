@@ -37,25 +37,24 @@ module.exports = (sequelize, DataTypes) => {
         },
         country: {
             type: DataTypes.STRING(255),
-            allowNull: false
         },
-        createdAt: {
-            types: DataTypes.DATE,
-            field: 'created_at'
-        },
-        updatedAt: {
-            types: DataTypes.DATE,
-            field: 'updated_at'
-        },
-        deletedAt: {
-            types: DataTypes.Date,
-            field: 'deleted_at'
-        }
+        // createdAt: {
+        //     types: DataTypes.DATE,
+        //     field: 'created_at'
+        // },
+        // updatedAt: {
+        //     types: DataTypes.DATE,
+        //     field: 'updated_at'
+        // },
+        // deletedAt: {
+        //     types: DataTypes.Date,
+        //     field: 'deleted_at'
+        // }
     };
     let config = {
         tablename: 'users',
-        timestamps: true,
-        paranoid: true,
+        timestamps: false,
+        paranoid: false,
         charset: 'utf8',
         dialectOptions: {
             collate: 'utf8mb4_unicode:ci'
@@ -66,14 +65,14 @@ module.exports = (sequelize, DataTypes) => {
         cols,
         config
     );
-    User.associate = (model) => {
-        User.belongsToMany(model.Game, {
-            as: 'games',
-            through: 'user_game',
-            foreignKey: 'user_id',
-            otherKey: 'game_id_user',
-            timestamps: false
-        });
-    };
+    // User.associate = (model) => {
+    //     User.belongsToMany(model.Game, {
+    //         as: 'games',
+    //         through: 'user_game',
+    //         foreignKey: 'user_id',
+    //         otherKey: 'game_id_user',
+    //         timestamps: false
+    //     });
+    // };
     return User;
 };
