@@ -1,9 +1,6 @@
 module.exports = (sequelize, DataTypes) => {
-
     let alias = "Category";
- 
     let columns = {
-
         id: {
             autoIncrement: true,
             primaryKey: true,
@@ -26,11 +23,7 @@ module.exports = (sequelize, DataTypes) => {
             type: DataTypes.DATE, 
             field: 'deleted_at'
         }
-       
     };
- 
-    // CONFIGURACION -----------------------------------------------------------------------------------------------------------------
-    
     let config = {
         tablename: 'categories',
         timestamps: true,
@@ -40,13 +33,11 @@ module.exports = (sequelize, DataTypes) => {
             collate: 'utf8mb4_unicode:ci'
         }
     }
- 
     const Category = sequelize.define(
         alias,
         columns,
         config
     );
-
     Category.associate = (model) => {
         // un juego tiene muchas categorías
         // una categoría puede tener muchos juegos
@@ -57,6 +48,5 @@ module.exports = (sequelize, DataTypes) => {
         //     otherKey: 'game_id_category',
         // });
     };
- 
     return Category;
 }

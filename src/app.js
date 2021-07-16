@@ -35,6 +35,12 @@ app.use('/', mainRouter);
 app.use('/products', productsRouter);
 app.use('/users', usersRouter);
 
+let apiCategoriesRouter = require('./routes/api/categories');
+let apiUsersRouter = require('./routes/api/users');
+
+app.use('/api/categories',apiCategoriesRouter);
+app.use('/api/users', apiUsersRouter);
+
 app.use((req,res,next) => {
     res.status(404).render('error', {
         status: 404,

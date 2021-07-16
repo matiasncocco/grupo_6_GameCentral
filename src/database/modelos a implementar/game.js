@@ -74,4 +74,4 @@ module.exports = (sequelize ,dataTypes) => {
 
 // faltaría hacer alguna prueba
 // antes de probar, mover archivo a /models
-// luego armar una ruta con un controlador y comprobar que todos los campos y configuraciones funcionan
+// luego armar una ruta con un controlador

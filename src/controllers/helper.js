@@ -1,5 +1,3 @@
-// <<<<<<< HEAD
-// =======
 let path = require('path');
 let fs = require('fs');
 
@@ -27,8 +25,6 @@ let helper = {
         fs.writeFileSync(jsonPath + nombre + '.json', array);
     },
 
-    // deleteProductPictures: ()
-
     storeBool: (value) => {
         if (value == 'true') {
             return true;
@@ -43,19 +39,6 @@ let helper = {
         let result = (price - divider);
         let roundResult = Math.floor(result);
         return roundResult;
-    },
-
-    // HOW?? -> PERCENTAGE FINDER IS NOT A FUNCTION
-    inOfferHandler: (products) => {
-        products.forEach(product => {
-            if (product.inOffer == true) {
-                product.finalPrice = this.percentageFinder(product.price,product.discount);
-            } else {
-                product.finalPrice = null;
-                product.discount = null;
-            };
-        });
-        this.writeJson(products, 'products');
     },
 
     toUpper: (item) => {

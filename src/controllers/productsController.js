@@ -1,13 +1,9 @@
-let { readJson, writeJson, lastId, storeBool, percentageFinder, inOfferHandler, toUpper } = require('./helper');
-// UNLINK FILE SYNC??
-// let fs = require('fs');
+let { readJson, writeJson, lastId, storeBool, percentageFinder, toUpper } = require('./helper');
+
 
 let productsController = {
     cart: (req,res) => {
         let products = readJson('products.json');
-
-        // esto debería ser otra función
-        // inOfferHandler
         products.forEach(product => {
             if (product.inOffer == true) {
                 product.finalPrice = percentageFinder(product.price,product.discount);
@@ -18,7 +14,6 @@ let productsController = {
                 return product;
             };
         });
-
         res.render('./products/cart', {
             title: 'Carrito de compras',
             products
@@ -28,9 +23,6 @@ let productsController = {
     // 1 GET: show all items
     index: (req,res) => {
         let products = readJson('products.json');
-
-        // esto debería ser otra función
-        // inOfferHandler
         products.forEach(product => {
             if (product.inOffer == true) {
                 product.finalPrice = percentageFinder(product.price,product.discount);
@@ -41,7 +33,6 @@ let productsController = {
                 return product;
             };
         });
-
         res.render('./products/index', {
             title: 'Todos los títulos',
             products
@@ -61,9 +52,6 @@ let productsController = {
     // 3 GET: show product detail
     show: (req,res) => {
         let products = readJson('products.json');
-
-        // esto debería ser otra función
-        // inOfferHandler
         products.forEach(product => {
             if (product.inOffer == true) {
                 product.finalPrice = percentageFinder(product.price,product.discount);
@@ -74,7 +62,6 @@ let productsController = {
                 return product;
             };
         });
-
         let param = req.params.id;
         for (i = 0 ; i < products.length ; i++) {
             if (param == products[i].id) {
@@ -161,7 +148,6 @@ let productsController = {
     destroy: (req,res) => {
         let products = readJson('products.json');
         let param = req.params.id;
-        // fs.unlinkSync()
         let newProducts = products.filter(product => param != product.id);
         writeJson(newProducts, 'products');
         res.redirect('/products');
