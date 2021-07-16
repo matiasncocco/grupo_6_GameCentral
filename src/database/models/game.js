@@ -1,7 +1,7 @@
 // correcciones:
 // el archivo tiene que ser mayúscula y singular
 
-module.exports = (sequelize ,dataTypes) => {
+module.exports = (sequelize ,dataTypes) => { // <--- Cuidado las mayúsculas, es "DataTypes"
 
     let alias = "Game";
 
