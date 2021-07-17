@@ -2,7 +2,7 @@ let { readJson, writeJson, lastId, storeBool } = require('./helper');
 let bcrypt = require('bcrypt');
 let { validationResult } = require('express-validator');
 
-// let db = require('../database/models');
+let db = require('../database/models');
 
 let usersController = {
     // GET: show register view // <form>
