@@ -171,12 +171,16 @@ let usersController = {
  
     // GET: show user list
     index: (req,res) => {
-        let users = readJson('users.json');
-        res.render('./users/index', {
-            title: 'Usuarios',
-            users
-        });
-        // db.User.findAll()
+        db.User.findAll()
+            .then(users => {
+                res.render('./users/index', {
+                    title: 'Usuarios',
+                    users
+                });
+            })
+            .catch(err => {
+                res.send(err);
+            });
     },
 
     // GET: show <form> to change or not admin
