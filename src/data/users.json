@@ -18,5 +18,15 @@
         "avatar": "1625337917735.jpg",
         "newsletter": true,
         "admin": false
+    },
+    {
+        "id": 3,
+        "name": "Federico",
+        "surname": "Schlatter",
+        "email": "fschlatter@gamecentral.com",
+        "password": "$2b$10$wAFWDXJu9gt3HA65ogh/TO6Re9Fe3t.xcKWffmRaodtCUy8hMipEG",
+        "avatar": "1626632726119.JPG",
+        "newsletter": false,
+        "admin": false
     }
 ]
