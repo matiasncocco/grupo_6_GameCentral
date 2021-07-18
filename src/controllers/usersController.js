@@ -45,7 +45,7 @@ let usersController = {
                 surname: req.body.surname,
                 email: req.body.email,
                 password: bcrypt.hashSync(req.body.password, 10),
-                // avatar: req.file.filename,
+                avatar: req.file.filename,
                 newsletter: storeBool(req.body.newsletter),
                 admin: false,
             };

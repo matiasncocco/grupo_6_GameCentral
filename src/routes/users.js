@@ -40,7 +40,8 @@ router.get('/register', guestMiddleware, validations, usersController.register);
 
 // procesar registro/creación de usuario
 // (inaccesible)
-router.post('/', upload.single('avatar'), validations, usersController.processRegister);
+// !! hay que pasarle las validations !!
+router.post('/', upload.single('avatar'), usersController.processRegister);
 
 // vista login de usuario <form>
 // -> GUESTS
@@ -60,7 +61,7 @@ router.get('/delog', usersController.delog);
 
 // vista con lista de todos los usuarios
 // -> ADMINS
-// adminMiddleware
+// !! hay que pasarle adminMiddleware !!
 router.get('/', usersController.index);
 
 // vista para cambiar user.admin === ( true || false )
