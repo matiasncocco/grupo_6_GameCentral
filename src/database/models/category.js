@@ -41,12 +41,12 @@ module.exports = (sequelize, DataTypes) => {
     Category.associate = (model) => {
         // un juego tiene muchas categorías
         // una categoría puede tener muchos juegos
-        // Category.belongsToMany(model.Game, {
-        //     as: 'games',
-        //     through: 'category_game',
-        //     foreignKey: 'category_id',
-        //     otherKey: 'game_id_category',
-        // });
+        Category.belongsToMany(model.Game, {
+            as: 'games',
+            through: 'category_game',
+            foreignKey: 'category_id',
+            otherKey: 'game_id_category',
+        });
     };
     return Category;
 }

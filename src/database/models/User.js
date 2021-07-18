@@ -65,14 +65,14 @@ module.exports = (sequelize, DataTypes) => {
         cols,
         config
     );
-    // User.associate = (model) => {
-    //     User.belongsToMany(model.Game, {
-    //         as: 'games',
-    //         through: 'user_game',
-    //         foreignKey: 'user_id',
-    //         otherKey: 'game_id_user',
-    //         timestamps: false
-    //     });
-    // };
+    User.associate = (model) => {
+        User.belongsToMany(model.Game, {
+            as: 'games',
+            through: 'user_game',
+            foreignKey: 'user_id',
+            otherKey: 'game_id_user',
+            timestamps: false
+        });
+    };
     return User;
 };

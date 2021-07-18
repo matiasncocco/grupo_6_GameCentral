@@ -13,7 +13,7 @@ module.exports = (sequelize, DataTypes) => {
             allowNull: false
         },
         title: {
-            type: DataTypes.STRING(500),
+            type: DataTypes.STRING(255),
             allowNull: false
         },
         // si uso columnas 'crated_at' & 'updated_at', tengo que hacer timestamps = true en config;
@@ -62,19 +62,19 @@ module.exports = (sequelize, DataTypes) => {
     Platform.associate = (model) => {
         // UNA PLATAFORMA tiene MUCHOS JUEGOS;
         // UN JUEGO se puede jugar en MUCHAS PLATAFORMAS;
-        // Platform.belongsToMany(model, {
-            // // muchas plataformas, por eso va plural;
-            // as: 'platforms', // plural;
-            // // a través de, aquí va la tabla pivot;
-            // through: 'platform_game',
-            // // columna foreign key del modelo que estoy definiendo, en este caso "Platform";
-            // foreignKey: 'platform_id',
-            // // la otra foreign key que pertenece al modelo con el que estoy relacionando, en éste caso "Games";
-            // otherKey: 'game_id_platform',
-            // // SI LA TABLA PIVOT TIENE COLUMNAS "created_at", "updated_at":
+        Platform.belongsToMany(model.Game, {
+            // muchas plataformas, por eso va plural;
+            as: 'games', // plural;
+            // a través de, aquí va la tabla pivot;
+            through: 'platform_game',
+            // columna foreign key del modelo que estoy definiendo, en este caso "Platform";
+            foreignKey: 'platform_id',
+            // la otra foreign key que pertenece al modelo con el que estoy relacionando, en éste caso "Games";
+            otherKey: 'game_id_platform',
+            // SI LA TABLA PIVOT TIENE COLUMNAS "created_at", "updated_at":
             // timestamps: true // si no, por default es false así que no decimos nada;
             // si la tabla pivot tiene éstas columnas y decimos timestamps: true, tendremos que crear un modelo para la tabla pivot también, si no no es necesario;
-        // });
+        });
     };
     // SOLO ME QUEDA HACER RETURN DE LO QUE DEFINÍ:
     return Platform;
