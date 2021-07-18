@@ -1,39 +1,31 @@
 <article class="unit-product">
     <div class="game-image">
-        <img class="box-width" src="/img/products/<%= product[i].card %>">
+        <img class="box-width" src="/img/products/<%= game[i].img %>">
         <div class="ribbon">
-            <% if (product[i].inOffer === true) { %>
+            <% if (game[i].discount != null) { %>
                 <div class="full-price crossed-out">
                     <h3 class="big-title">
-                        $<%= product[i].price %>
+                        $<%= game[i].price %>
                     </h3>
                     <h4 class="small-title">
-                        $<%= product[i].price %>
+                        $<%= game[i].price %>
                     </h4>
                 </div>
                 <div class="discount">
                     <h2 class="big-title discount-h">
-                        <%= product[i].discount %>%
+                        <%= game[i].discount %>%
                     </h2>
                     <h3 class="small-title discount-h3">
-                        <%= product[i].discount %>%
-                    </h3>
-                </div>
-                <div class="new-price">
-                    <h2 class="big-title">
-                        $<%= product[i].finalPrice %>
-                    </h2>
-                    <h3 class="small-title">
-                        $<%= product[i].finalPrice %>
+                        <%= game[i].discount %>%
                     </h3>
                 </div>
             <% } else { %>
                 <div class="full-price">
                     <h3 class="big-title">
-                        $<%= product[i].price %>
+                        $<%= game[i].price %>
                     </h3>
                     <h4 class="small-title">
-                        $<%= product[i].price %>
+                        $<%= game[i].price %>
                     </h4>
                 </div>
             <% } %>
@@ -42,11 +34,11 @@
     <div class="overlay-product"></div>
     <div class="game-title">
         <h2 class="big-title">
-            <%= product[i].name %>
+            <%= game[i].title %>
         </h2>
     </div>
     <div class="ver-mas">
-        <a href="/products/<%= product[i].id %>">
+        <a href="/products/<%= game[i].id %>">
             <h3 class="big-title">
                 VER MÁS
             </h3>

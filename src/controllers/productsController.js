@@ -1,5 +1,6 @@
 let { readJson, writeJson, lastId, storeBool, percentageFinder, toUpper } = require('./helper');
 
+let db = require('../database/models');
 
 let productsController = {
     cart: (req,res) => {
@@ -22,21 +23,16 @@ let productsController = {
 
     // 1 GET: show all items
     index: (req,res) => {
-        let products = readJson('products.json');
-        products.forEach(product => {
-            if (product.inOffer == true) {
-                product.finalPrice = percentageFinder(product.price,product.discount);
-                return product;
-            } else {
-                product.finalPrice = null;
-                product.discount = null;
-                return product;
-            };
-        });
-        res.render('./products/index', {
-            title: 'Todos los títulos',
-            products
-        });
+        db.Game.findAll()
+            .then(games => {
+                res.render('./products/index', {
+                    title: 'Todos los títulos',
+                    games
+                });
+            })
+            .catch(err => {
+                res.render(err);
+            });
     },
 
     // 2 GET: show product <form>
