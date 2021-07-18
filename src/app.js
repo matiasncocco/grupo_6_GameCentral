@@ -37,9 +37,12 @@ app.use('/users', usersRouter);
 
 let apiCategoriesRouter = require('./routes/api/categories');
 let apiUsersRouter = require('./routes/api/users');
+let apiPlatformsRouter = require('./routes/api/platforms');
+
 
 app.use('/api/categories',apiCategoriesRouter);
 app.use('/api/users', apiUsersRouter);
+app.use('/api/platforms', apiPlatformsRouter);
 
 app.use((req,res,next) => {
     res.status(404).render('error', {
