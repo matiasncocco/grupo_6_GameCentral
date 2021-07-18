@@ -17,24 +17,22 @@ module.exports = (sequelize, DataTypes) => {
             allowNull: false
         },
         // si uso columnas 'crated_at' & 'updated_at', tengo que hacer timestamps = true en config;
-        createdAt: {
-            type: DataTypes.DATE,
-            field: 'created_at'
+        created_at: {
+            type: DataTypes.DATE
         },
         // éstas llevan 'TIMESTAMP' en MySQL, y aquí usamos DataTypes.DATE;
-        updatedAt: {
-            type: DataTypes.DATE,
-            field: 'updated_at'
+        updated_at: {
+            type: DataTypes.DATE
         },
         // si uso la columna 'deleted_at', tengo que hacer paranoid = true en config;
-        deletedAt: {
-            type: DataTypes.DATE,
-            field: 'deleted_at'
+        deleted_at: {
+            type: DataTypes.DATE
         },
     };
 
     // hora de definir la configuración;
     let config = {
+        underscored: true,
         // es buena práctica decirle el nombre de la tabla, ya que puede no coincidir 100% y nos ahorramos un dolor de cabeza;
         tablename: 'platforms',
         // si miramos arriba, tenemos tablas 'created_at' y 'updated_at', por eso timestamps = true;
@@ -71,6 +69,7 @@ module.exports = (sequelize, DataTypes) => {
             foreignKey: 'platform_id',
             // la otra foreign key que pertenece al modelo con el que estoy relacionando, en éste caso "Games";
             otherKey: 'game_id_platform',
+            timestamps: 'true'
             // SI LA TABLA PIVOT TIENE COLUMNAS "created_at", "updated_at":
             // timestamps: true // si no, por default es false así que no decimos nada;
             // si la tabla pivot tiene éstas columnas y decimos timestamps: true, tendremos que crear un modelo para la tabla pivot también, si no no es necesario;

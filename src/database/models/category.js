@@ -11,20 +11,18 @@ module.exports = (sequelize, DataTypes) => {
             type: DataTypes.STRING(255),
             allowNull: false
         },
-            createdAt: {
+            created_at: {
             type: DataTypes.DATE,
-            field: 'created_at'
         },
-            updatedAt: {
+            updated_at: {
             type: DataTypes.DATE,
-            field: 'updated_at'
         },
-            deletedAt: {
+            deleted_at: {
             type: DataTypes.DATE, 
-            field: 'deleted_at'
         }
     };
     let config = {
+        underscored: true,
         tablename: 'categories',
         timestamps: true,
         paranoid: true,
@@ -46,6 +44,7 @@ module.exports = (sequelize, DataTypes) => {
             through: 'category_game',
             foreignKey: 'category_id',
             otherKey: 'game_id_category',
+            timestamps: true
         });
     };
     return Category;
