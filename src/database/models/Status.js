@@ -43,7 +43,8 @@ module.exports = (sequelize, DataTypes) => {
         charset: 'utf8',
         dialectOptions: {
             collate: 'utf8mb4_unicode:ci'
-        }
+        },
+        freezeTableName: true,
     };
 
     // habiendo definido todo arriba, aquí decimos lo que lleva nuestro modelo, definiéndolo;
