@@ -2,7 +2,6 @@ module.exports = (sequelize ,DataTypes) => {
 
     let alias = "Game";
 
-    // a partir de acá hay tabulaciones raras (indentaciones)
     let columns = {
    
         id: {
@@ -19,7 +18,6 @@ module.exports = (sequelize ,DataTypes) => {
             type: DataTypes.STRING
         },
         price: {
-        
             type: DataTypes.DECIMAL(15,2).UNSIGNED,
             allowNull: false
         },
@@ -27,28 +25,25 @@ module.exports = (sequelize ,DataTypes) => {
             type: DataTypes.INTEGER.UNSIGNED,
             allowNull: true
         },
-    // description no es DataTypes.STRING, checkear la DB
-      description: {
-         type: DataTypes.TEXT,
-         allowNull: true
-     },
-     createdAt: {
-         type: DataTypes.DATE,
-         field: 'created_at'
-     },
-     updatedAt: {
-         type: DataTypes.DATE,
-         field: 'updated_at'
-     },
-     deletedAt: {
-         type: DataTypes.DATE, 
-         field: 'deleted_at'
-     }
+        description: {
+            type: DataTypes.TEXT,
+            allowNull: true
+        },
+        created_at: {
+            type: DataTypes.DATE,
+        },
+        updated_at: {
+            type: DataTypes.DATE,
+        },
+        deleted_at: {
+            type: DataTypes.DATE, 
+        }
     };
 
     
    
     let config = {
+        underscored: true,
         tablename: 'games',
         timestamps: true,
         paranoid: true,
@@ -67,25 +62,28 @@ module.exports = (sequelize ,DataTypes) => {
             through: 'platform_game',
             foreignKey: 'game_id_platform',
             otherKey: 'platform_id',
+            timestamps: true
         });
         Game.belongsToMany(model.Status, {
             as: 'status',
             through: 'status_game',
             foreignKey: 'game_id_status',
             otherKey: 'status_id',
+            timestamps: true
         });
         Game.belongsToMany(model.Category, {
             as: 'categories',
             through: 'category_game',
             foreignKey: 'game_id_category',
             otherKey: 'category_id',
-            timestamps: false
+            timestamps: true
         });
         Game.belongsToMany(model.User, {
             as: 'users',
             through: 'user_game',
             foreignKey: 'game_id_user',
             otherKey: 'user_id',
+            timestamps: true
         });
     };
 

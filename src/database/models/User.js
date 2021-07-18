@@ -38,23 +38,21 @@ module.exports = (sequelize, DataTypes) => {
         country: {
             type: DataTypes.STRING(255),
         },
-        createdAt: {
-            type: DataTypes.DATE,
-            field: 'created_at'
+        created_at: {
+            type: DataTypes.DATE
         },
-        updatedAt: {
-            type: DataTypes.DATE,
-            field: 'updated_at'
+        updated_at: {
+            type: DataTypes.DATE
         },
-        deletedAt: {
-            type: DataTypes.DATE,
-            field: 'deleted_at'
+        deleted_at: {
+            type: DataTypes.DATE
         }
     };
     let config = {
+        underscored: true,
         tablename: 'users',
-        timestamps: false,
-        paranoid: false,
+        timestamps: true,
+        paranoid: true,
         charset: 'utf8',
         dialectOptions: {
             collate: 'utf8mb4_unicode:ci'
@@ -71,7 +69,7 @@ module.exports = (sequelize, DataTypes) => {
             through: 'user_game',
             foreignKey: 'user_id',
             otherKey: 'game_id_user',
-            timestamps: false
+            timestamps: true
         });
     };
     return User;
