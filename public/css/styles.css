@@ -97,7 +97,7 @@ h6 {
     max-width: 90%;
 }
 
-.main-navbar, .user-navbar {
+.main-navbar, .user-navbar .search-bar{
     display: none;
 }
 
