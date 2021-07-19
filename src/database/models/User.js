@@ -22,7 +22,8 @@ module.exports = (sequelize, DataTypes) => {
             unique: true
         },
         avatar: {
-            type: DataTypes.STRING(255)
+            type: DataTypes.STRING(255),
+            allowNull: true
         },
         newsletter: {
             type: DataTypes.BOOLEAN,

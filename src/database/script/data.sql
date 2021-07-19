@@ -363,22 +363,42 @@ INSERT INTO platform_game (id, game_id_platform, platform_id) VALUES (53, 16, 3)
 
 -- status_game
 
+-- el juego 1 es RELEVANT
 INSERT INTO status_game (id, game_id_status, status_id) VALUES (1, 1, 1);
-INSERT INTO status_game (id, game_id_status, status_id) VALUES (2, 1, 2);
-INSERT INTO status_game (id, game_id_status, status_id) VALUES (3, 2, 1);
-INSERT INTO status_game (id, game_id_status, status_id) VALUES (4, 2, 2);
+-- el juego 2 es RELEVANT
+INSERT INTO status_game (id, game_id_status, status_id) VALUES (2, 2, 1);
+-- el juego 2 es IN OFFER
+INSERT INTO status_game (id, game_id_status, status_id) VALUES (3, 2, 2);
+-- el juego 3 es IN OFFER
+INSERT INTO status_game (id, game_id_status, status_id) VALUES (4, 3, 2);
+-- el juego 4 es IN OFFER
 INSERT INTO status_game (id, game_id_status, status_id) VALUES (5, 4, 2);
-INSERT INTO status_game (id, game_id_status, status_id) VALUES (6, 5, 2);
-INSERT INTO status_game (id, game_id_status, status_id) VALUES (7, 8, 1);
-INSERT INTO status_game (id, game_id_status, status_id) VALUES (8, 8, 2);
+-- el juego 5 es RELEVANT
+INSERT INTO status_game (id, game_id_status, status_id) VALUES (6, 5, 1);
+-- el juego 6 es IN OFFER
+INSERT INTO status_game (id, game_id_status, status_id) VALUES (7, 6, 2);
+-- el juego 8 es RELEVANT
+INSERT INTO status_game (id, game_id_status, status_id) VALUES (8, 8, 1);
+-- el juego 9 es RELEVANT
 INSERT INTO status_game (id, game_id_status, status_id) VALUES (9, 9, 1);
+-- el juego 9 es IN OFFER
 INSERT INTO status_game (id, game_id_status, status_id) VALUES (10, 9, 2);
+-- el juego 10 es IN OFFER
 INSERT INTO status_game (id, game_id_status, status_id) VALUES (11, 10, 2);
-INSERT INTO status_game (id, game_id_status, status_id) VALUES (12, 12, 1);
-INSERT INTO status_game (id, game_id_status, status_id) VALUES (13, 12, 2);
+-- el juego 11 es IN OFFER
+INSERT INTO status_game (id, game_id_status, status_id) VALUES (12, 11, 2);
+-- el juego 12 es RELEVANT             
+INSERT INTO status_game (id, game_id_status, status_id) VALUES (13, 12, 1);
+-- el juego 13 es RELEVANT
 INSERT INTO status_game (id, game_id_status, status_id) VALUES (14, 13, 1);
-INSERT INTO status_game (id, game_id_status, status_id) VALUES (15, 15, 1);
-INSERT INTO status_game (id, game_id_status, status_id) VALUES (16, 16, 2);
+-- el juego 13 es RELEVANT
+INSERT INTO status_game (id, game_id_status, status_id) VALUES (15, 13, 2);
+-- el juego 15 es RELEVANT
+INSERT INTO status_game (id, game_id_status, status_id) VALUES (16, 15, 1);
+-- el juego 15 es IN OFFER
+INSERT INTO status_game (id, game_id_status, status_id) VALUES (17, 15, 2);
+-- el juego 16 es RELEVANT
+INSERT INTO status_game (id, game_id_status, status_id) VALUES (18, 16, 1);
 
 -- QUERY PARA VER RESULTADOS EN WORKBENCH
 # SELECT status_game.id, games.title AS 'Juego', status.name AS 'Estado'

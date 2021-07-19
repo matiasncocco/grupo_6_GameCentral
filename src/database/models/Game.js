@@ -13,7 +13,8 @@ module.exports = (sequelize, DataTypes) => {
             allowNull: false
         },
         img: {
-            type: DataTypes.STRING
+            type: DataTypes.STRING,
+            allowNull: true
         },
         price: {
             type: DataTypes.DECIMAL(15,2).UNSIGNED,
@@ -25,7 +26,7 @@ module.exports = (sequelize, DataTypes) => {
         },
         description: {
             type: DataTypes.TEXT,
-            allowNull: true
+            allowNull: false
         },
         createdAt: 'created_at',
         updatedAt: 'updated_at',
@@ -50,8 +51,6 @@ module.exports = (sequelize, DataTypes) => {
     );
 
     Game.associate = (model) => {
-        // un juego tiene muchas plataformas
-        // una plataforma puede tener muchos juegos
         Game.belongsToMany(model.Platform, {
             as: 'platforms',
             through: 'platform_game',
