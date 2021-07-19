@@ -66,7 +66,8 @@ router.get('/', usersController.index);
 
 // vista para cambiar user.admin === ( true || false )
 // -> ADMINS
-router.get('/:id', adminMiddleware, usersController.admin)
+// !! hay que pasarle adminMiddleware !!
+router.get('/:id', usersController.admin)
 
 // procesar cambio de user.admin === ( true || false )
 // (inaccesible)

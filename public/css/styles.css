@@ -1081,11 +1081,12 @@ h6 {
 }
 
 .long-data {
-    width: 20%;
+    width: 25%;
 }
 
 .longest-data {
     width: 40%;
+    text-overflow: clip;
 }
 
 .short-data {
@@ -1093,11 +1094,11 @@ h6 {
     text-align: center;
 }
 
-.newsletter-true {
+.admin-true {
     color: green;
 }
 
-.newsletter-false {
+.admin-false {
     color: red;
 }
 
@@ -1219,22 +1220,8 @@ h6 {
 
 
 /**/
-/* MEDIA QUERY */
+/* MEDIA QUERIES */
 /**/
-
-
-/*
-ESPECÍFICAS
-*/
-/* PRODUCT SHOW: IMG SWITCH */
-@media(min-width: 370px) {
-    .card-image {
-        display: none;
-    }
-    .image-image {
-        display: block;
-    }
-}
 
 
 /*
@@ -1521,6 +1508,16 @@ TABLETS
 
     .error-icon i {
         font-size: 70px;
+    }
+
+
+    /**/
+    /* USER INDEX */
+    /**/
+
+
+    .user-data {
+        font-size: 14px;
     }
 
 
@@ -1882,6 +1879,17 @@ DESKTOP
         text-shadow: -1px 0 #FFF, 0 1px #FFF, 1px 0 #FFF, 0 -1px #FFF;
     }
 
+
+    /**/
+    /* USER INDEX */
+    /**/
+
+
+    .user-data {
+        font-size: 20px;
+    }
+
+
     /**/
     /* USER PROFILE */
     /**/
@@ -2059,6 +2067,16 @@ PANTALLAS +
     .declaration {
         max-width: 50%;
         margin: 30px 0;
+    }
+
+
+    /**/
+    /* USER INDEX */
+    /**/
+
+
+    .user-data {
+        font-size: 24px;
     }
 }
 

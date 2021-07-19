@@ -23,9 +23,6 @@
                 E-mail
             </p>
             <p class="user-data-title user-data short-data">
-                News.
-            </p>
-            <p class="user-data-title user-data short-data">
                 Admin
             </p>
         </div>
@@ -40,19 +37,12 @@
                 <p class="user-data longest-data">
                     <%= users[i].email %>
                 </p>
-                <p class="user-data short-data">
-                    <% if (users[i].newsletter === true) { %>
-                        <i class="fas fa-check newsletter-true"></i>
-                    <% } else { %>
-                        <i class="fas fa-times newsletter-false"></i>
-                    <% } %>
-                </p>
                 <div class="user-data short-data">
                     <a href="/users/<%= users[i].id %>">
                         <% if (users[i].admin === true) { %>
-                            <i class="fas fa-check newsletter-true"></i>
+                            <i class="fas fa-check admin-true"></i>
                         <% } else { %>
-                            <i class="fas fa-times newsletter-false"></i>
+                            <i class="fas fa-times admin-false"></i>
                         <% } %>
                     </a>
                 </div>

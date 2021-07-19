@@ -25,7 +25,7 @@
     </header>
     <section class="main-section last-section">
         <% for (i = 0 ; i < games.length ; i++) { %>
-            <% if (games[i].discount != null) { %>
+            <% if (games[i].status[0] && games[i].status[0].name === 'IN OFFER' ||games[i].status[1] && games[i].status[1].name === 'IN OFFER') { %>
                 <%- include('./products/partials/game', { game: games } ) %>
             <% } %>
         <% } %>
@@ -54,7 +54,7 @@
     </header>
     <section class="main-section last-section">
         <% for (i = 0 ; i < games.length ; i++) { %>
-            <% if (games[i].status[0]) { %>
+            <% if (games[i].status[0] && games[i].status[0].name === 'RELEVANT') { %>
                 <%- include('./products/partials/game', { game: games } ) %>
             <% } %>
         <% } %>
