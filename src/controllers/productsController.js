@@ -23,7 +23,9 @@ let productsController = {
 
     // 1 GET: show all items
     index: (req,res) => {
-        db.Game.findAll()
+        db.Game.findAll({
+            include: ['status']
+        })
             .then(games => {
                 res.render('./products/index', {
                     title: 'Todos los títulos',

@@ -54,7 +54,7 @@
     </header>
     <section class="main-section last-section">
         <% for (i = 0 ; i < games.length ; i++) { %>
-            <% if (games[i].status[0] != undefined) { %>
+            <% if (games[i].status[0]) { %>
                 <%- include('./products/partials/game', { game: games } ) %>
             <% } %>
         <% } %>
