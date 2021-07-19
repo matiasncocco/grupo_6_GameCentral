@@ -1,5 +1,6 @@
 module.exports = (sequelize, DataTypes) => {
     let alias = 'User';
+
     let cols = {
         id: {
             autoIncrement: true,
@@ -38,16 +39,11 @@ module.exports = (sequelize, DataTypes) => {
         country: {
             type: DataTypes.STRING(255),
         },
-        created_at: {
-            type: DataTypes.DATE
-        },
-        updated_at: {
-            type: DataTypes.DATE
-        },
-        deleted_at: {
-            type: DataTypes.DATE
-        }
+        createdAt: 'created_at',
+        updatedAt: 'updated_at',
+        deletedAt: 'deleted_at'
     };
+
     let config = {
         underscored: true,
         tablename: 'users',
@@ -58,11 +54,13 @@ module.exports = (sequelize, DataTypes) => {
             collate: 'utf8mb4_unicode:ci'
         }
     };
+
     let User = sequelize.define(
         alias,
         cols,
         config
     );
+
     User.associate = (model) => {
         User.belongsToMany(model.Game, {
             as: 'games',
@@ -72,5 +70,6 @@ module.exports = (sequelize, DataTypes) => {
             timestamps: true
         });
     };
+
     return User;
 };

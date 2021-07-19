@@ -17,17 +17,11 @@ module.exports = (sequelize, DataTypes) => {
             allowNull: false
         },
         // si uso columnas 'crated_at' & 'updated_at', tengo que hacer timestamps = true en config;
-        created_at: {
-            type: DataTypes.DATE
-        },
+        createdAt: 'created_at',
         // éstas llevan 'TIMESTAMP' en MySQL, y aquí usamos DataTypes.DATE;
-        updated_at: {
-            type: DataTypes.DATE
-        },
+        updatedAt: 'updated_at',
         // si uso la columna 'deleted_at', tengo que hacer paranoid = true en config;
-        deleted_at: {
-            type: DataTypes.DATE
-        },
+        deletedAt: 'deleted_at'
     };
 
     // hora de definir la configuración;
@@ -54,7 +48,7 @@ module.exports = (sequelize, DataTypes) => {
         cols,
         // agarrá la config que te dije arriba;
         config
-        );
+    );
 
     // en éste momento hay que decirle a sequelize las relaciones que tiene mi columna;
     Platform.associate = (model) => {
@@ -75,6 +69,7 @@ module.exports = (sequelize, DataTypes) => {
             // si la tabla pivot tiene éstas columnas y decimos timestamps: true, tendremos que crear un modelo para la tabla pivot también, si no no es necesario;
         });
     };
+
     // SOLO ME QUEDA HACER RETURN DE LO QUE DEFINÍ:
     return Platform;
 };

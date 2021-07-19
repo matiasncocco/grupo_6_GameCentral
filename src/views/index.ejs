@@ -24,8 +24,10 @@
         <% } %>
     </header>
     <section class="main-section last-section">
-        <% for (i = 0 ; i < inOffer.length ; i++) { %>
-            <%- include('./products/partials/product', { 'product': inOffer } ) %>
+        <% for (i = 0 ; i < games.length ; i++) { %>
+            <% if (games[i].discount != null) { %>
+                <%- include('./products/partials/game', { game: games } ) %>
+            <% } %>
         <% } %>
     </section>
     <header class="main-title flex-title">
@@ -51,8 +53,10 @@
         <% } %>
     </header>
     <section class="main-section last-section">
-        <% for (i = 0 ; i < relevant.length ; i++) { %>
-            <%- include('./products/partials/product', { 'product': relevant } ) %>
+        <% for (i = 0 ; i < games.length ; i++) { %>
+            <% if (games[i].status[0] != undefined) { %>
+                <%- include('./products/partials/game', { game: games } ) %>
+            <% } %>
         <% } %>
     </section>
     <a href="/products">

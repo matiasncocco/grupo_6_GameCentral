@@ -1,9 +1,7 @@
-module.exports = (sequelize ,DataTypes) => {
-
-    let alias = "Game";
+module.exports = (sequelize, DataTypes) => {
+    let alias = 'Game';
 
     let columns = {
-   
         id: {
             autoIncrement: true,
             primaryKey: true,
@@ -29,19 +27,11 @@ module.exports = (sequelize ,DataTypes) => {
             type: DataTypes.TEXT,
             allowNull: true
         },
-        created_at: {
-            type: DataTypes.DATE,
-        },
-        updated_at: {
-            type: DataTypes.DATE,
-        },
-        deleted_at: {
-            type: DataTypes.DATE, 
-        }
+        createdAt: 'created_at',
+        updatedAt: 'updated_at',
+        deletedAt: 'deleted_at'
     };
 
-    
-   
     let config = {
         underscored: true,
         tablename: 'games',
@@ -53,7 +43,12 @@ module.exports = (sequelize ,DataTypes) => {
         }
     };
 
-    const Game = sequelize.define(alias, columns, config)
+    let Game = sequelize.define(
+        alias,
+        columns,
+        config
+    );
+
     Game.associate = (model) => {
         // un juego tiene muchas plataformas
         // una plataforma puede tener muchos juegos
@@ -88,8 +83,4 @@ module.exports = (sequelize ,DataTypes) => {
     };
 
     return Game;
- }
-
-// faltaría hacer alguna prueba
-// antes de probar, mover archivo a /models
-// luego armar una ruta con un controlador
+};
