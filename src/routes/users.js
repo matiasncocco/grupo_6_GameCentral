@@ -72,13 +72,13 @@ router.get('/:id', adminMiddleware, usersController.admin)
 // (inaccesible)
 router.put('/:id', usersController.giveAdmin);
 
-// /users/:id/edit (GET)
+// /users/profile/edit (GET)
 // Formulario de edición de usuarios
 
-// /users/:id (PUT)
+// /users/profile (PUT)
 // Acción de edición (a donde se envía el formulario):
 
-// /users/:id (DELETE)
+// /users (DELETE)
 // Eliminar usuario de la DB
 
 module.exports = router;
