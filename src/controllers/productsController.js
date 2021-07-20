@@ -38,6 +38,7 @@ let productsController = {
     },
 
     // 2 GET: show product <form>
+    // por sequelize: en progreso
     create: async (req,res) => {
         let result = {};
         let categories = await db.Category.findAll();
