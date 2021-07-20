@@ -3,25 +3,25 @@ let { readJson, writeJson, lastId, storeBool, percentageFinder, toUpper } = requ
 let db = require('../database/models');
 
 let productsController = {
+    // 0 GET: carrito
+    // ¡LISTO POR SEQUELIZE!
     cart: (req,res) => {
-        let products = readJson('products.json');
-        products.forEach(product => {
-            if (product.inOffer == true) {
-                product.finalPrice = percentageFinder(product.price,product.discount);
-                return product;
-            } else {
-                product.discount = null;
-                product.finalPrice = null;
-                return product;
-            };
-        });
-        res.render('./products/cart', {
-            title: 'Carrito de compras',
-            products
-        });
+        db.Game.findAll({
+            include: ['status']
+        })
+            .then(games => {
+                res.render('./products/cart', {
+                    title: 'Carrito de compras',
+                    games
+                });
+            })
+            .catch(err => {
+                res.send(err);
+            });
     },
 
     // 1 GET: show all items
+    // ¡LISTO POR SEQUELIZE!
     index: (req,res) => {
         db.Game.findAll({
             include: ['status']
@@ -38,13 +38,23 @@ let productsController = {
     },
 
     // 2 GET: show product <form>
-    create: (req,res) => {
-        res.render('./products/create', {
-            title: 'Nuevo producto',
-            categoryPlaceholder: [
-                'SHOOTER', 'SURVIVAL', 'RPG', 'BATTLE ROAYLE'
-            ]
-        });
+    create: async (req,res) => {
+        let result = {};
+        let categories = await db.Category.findAll();
+        let platforms = await db.Platform.findAll();
+        let status = await db.Status.findAll();
+        try {
+            result.categories = categories;
+            result.platforms = platforms;
+            result.status = status;
+            res.render('./products/create', {
+                title: 'Nuevo producto',
+                result
+            });
+        }
+        catch(err) {
+            res.send(err)
+        }
     },
 
     // 3 GET: show product detail

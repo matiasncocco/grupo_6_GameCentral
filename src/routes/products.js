@@ -18,7 +18,8 @@ let multerFields = [
 
 // vista carrito
 // -> USUARIOS
-router.get('/cart', userMiddleware, productsController.cart);
+// !! hay que pasarle userMiddleware !!
+router.get('/cart', productsController.cart);
 
 // vista todos los productos
 // -> TODOS
@@ -26,7 +27,8 @@ router.get('/', productsController.index);
 
 // vista creación de producto <form>
 // -> ADMINS
-router.get('/create', adminMiddleware, productsController.create);
+// !! hay que pasarle adminMiddleware !!
+router.get('/create', productsController.create);
 
 // vista detalle de producto
 // TODOS

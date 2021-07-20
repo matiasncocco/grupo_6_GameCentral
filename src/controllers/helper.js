@@ -33,14 +33,6 @@ let helper = {
         };
     },
 
-    percentageFinder: (price,discount) => {
-        let multiplier = (price * discount);
-        let divider = (multiplier / 100);
-        let result = (price - divider);
-        let roundResult = Math.floor(result);
-        return roundResult;
-    },
-
     toUpper: (item) => {
         return item.toUpperCase();
     },

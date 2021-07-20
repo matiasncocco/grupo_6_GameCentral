@@ -1,15 +1,17 @@
+<script src="/js/game.js" defer>
+</script>
 <article class="cart-item">
     <div class="item-image">
-        <a href="/products/<%= product[i].id %>">
-            <img class="box-width" src="/img/products/<%= product[i].img %>">
+        <a href="/products/<%= game[i].id %>">
+            <img class="box-width" src="/img/products/<%= game[i].img %>">
         </a>
     </div>
     <div class="item-title">
         <h2 class="big-title">
-            <%= product[i].name %>
+            <%= game[i].title %>
         </h2>
         <h4 class="small-title">
-            <%= product[i].name %>
+            <%= game[i].title %>
         </h4>
     </div>
     <div class="item-so-i">
@@ -19,15 +21,24 @@
         <i class="fas fa-vr-cardboard"></i>
     </div>
     <div class="item-price">
-        <h2 class="big-title">
-            $<%= product[i].inOffer === true ? product[i].finalPrice : product[i].price %>
-        </h2>
-        <h4 class="small-title">
-            $<%= product[i].inOffer === true ? product[i].finalPrice : product[i].price %>
-        </h4>
+        <% if (games[i].status[0] && games[i].status[0].name === 'IN OFFER' ||games[i].status[1] && games[i].status[1].name === 'IN OFFER') { %>
+            <h2 class="big-title new-price-math">
+                <%= game[i].price - ((game[i].price * game[i].discount) / 100) %>
+            </h2>
+            <h4 class="small-title new-price-math">
+                <%= game[i].price - ((game[i].price * game[i].discount) / 100) %>
+            </h4>
+        <% } else { %>
+            <h2 class="big-title">
+                $<%= game[i].price %>
+            </h2>
+            <h4 class="small-title">
+                $<%= game[i].price %>
+            </h4>
+        <% } %>
     </div>
     <div class="item-delete">
-        <button>
+        <button type="button">
             <i class="fas fa-trash-alt"></i>
         </button>
     </div>

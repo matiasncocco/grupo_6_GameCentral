@@ -7,8 +7,8 @@
     </header>
     <form action="/">
         <section class="cart-section">
-            <% for (i = 0 ; i < products.length ; i++) { %>
-                <%- include ('./partials/capsule', { 'product': products } ) %>
+            <% for (i = 0 ; i < games.length ; i++) { %>
+                <%- include ('./partials/capsule', { game: games } ) %>
             <% } %>
         </section>
         <footer class="cart-footer">
