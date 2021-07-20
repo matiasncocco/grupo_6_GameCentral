@@ -1,3 +1,4 @@
+<script src="/js/game.js" defer></script>
 <article class="unit-product">
     <div class="game-image">
         <img class="box-width" src="/img/products/<%= game[i].img %>">
@@ -10,6 +11,14 @@
                     <h4 class="small-title">
                         $<%= game[i].price %>
                     </h4>
+                </div>
+                <div class="new-price">
+                    <h2 class="big-title new-price-math">
+                        <%= game[i].price - ((game[i].price * game[i].discount) / 100) %>
+                    </h2>
+                    <h3 class="small-title new-price-math">
+                        <%= game[i].price - ((game[i].price * game[i].discount) / 100) %>
+                    </h3>
                 </div>
                 <div class="discount">
                     <h2 class="big-title discount-h">
