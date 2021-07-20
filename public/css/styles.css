@@ -663,15 +663,10 @@ h6 {
     padding-top: 5px;
 }
 
-.category-box {
+.properties-categories {
     display: flex;
     flex-flow: row wrap;
-    margin: 0px;
-}
 
-.single-category {
-    width: 50%;
-    padding: 0 5px;
 }
 
 .file-box {
@@ -711,13 +706,6 @@ h6 {
     transition: all .1s cubic-bezier(.25,.25,.25,.25);
 }
 
-/* .label-file {
-    background-color: #FFF;
-    cursor: pointer;
-    font-style: italic;
-    color: #666;
-} */
-
 .label-radio {
     padding-left: 10px;
     cursor: pointer;
@@ -755,10 +743,6 @@ h6 {
     cursor: pointer;
 }
 
-/* .input-file {
-    display: none;
-} */
-
 .input-price {
     width: 37px;
     padding-left: 0;
@@ -789,7 +773,17 @@ h6 {
 }
 
 .product-file {
-    width: 160px;
+    width: 100%;
+    background-color: #FFF;
+}
+
+.input-file {
+    font-style: inherit;
+    font-size: inherit;
+}
+
+.properties-category {
+    width: 50%;
 }
 
 /* BUTTONS */
@@ -886,11 +880,9 @@ h6 {
     border-radius: 8px 0 0 8px;
 }
 
-.rule-indicator {
-    display: block;
-    font-size: 10px;
-    font-style: italic;
+.enable-disable-offer {
     color: #404040;
+    background-color: #808080;
 }
 
 
@@ -1432,7 +1424,11 @@ TABLETS
     }
 
     .product-file {
-        width: 185px;
+        width: 100%;
+    }
+
+    .properties-category {
+        width: 50%;
     }
 
     /* ERROR */
@@ -1441,7 +1437,7 @@ TABLETS
     }
 
     /* MISC */
-    .discount-indicator, .rule-indicator {
+    .discount-indicator {
         font-size: 12px;
     }
 
@@ -1776,7 +1772,11 @@ DESKTOP
     }
 
     .product-file {
-        width: 215px;
+        width: 50%;
+    }
+
+    .properties-category {
+        width: 50%;
     }
 
     /* BUTTONS */
@@ -1813,7 +1813,7 @@ DESKTOP
         color: #B14593;
     }
 
-    .discount-indicator, .rule-indicator {
+    .discount-indicator {
         font-size: 14px;
     }
 
@@ -2055,7 +2055,11 @@ PANTALLAS +
     }
 
     .product-file {
-        width: 30%;
+        width: 50%;
+    }
+
+    .properties-category {
+        width: 50%;
     }
 
 

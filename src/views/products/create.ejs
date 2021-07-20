@@ -1,5 +1,7 @@
 <%- include ('../partials/head') %>
 <%- include ('../partials/header') %>
+<script src="/js/gameCreate.js" defer>
+</script>
 <main class="main-main">
     <header class="main-title first-title">
         <h3 class="big-title">
@@ -11,88 +13,106 @@
     </header>
     <form class="product-create-form" action="/products" method="POST" enctype="multipart/form-data">
         <section class="product-create-section">
-            <!-- name -->
+            <!-- title -->
             <div class="input-box">
-                <label class="label-label" for="name">
+                <label class="label-label" for="title">
                     Nombre
                 </label>
-                <input 
-                    class="input-text input-text-product" 
-                    type="text" 
-                    name="name" 
-                    id="name" 
-                    placeholder="PAC-MAN" 
+                <input
+                    class="input-text input-text-product"
+                    type="text"
+                    name="title"
+                    id="title"
+                    placeholder="PAC-MAN"
                     required
                 >
             </div>
-            <!-- category -->
-            <div class="input-box category-box">
-                <% for (i = 0 ; i < 4 ; i++) { %>
-                    <div class="single-category">
-                        <label class="label-label" for="category<%= [i] %>">
-                            Categoría <%= [i + 1] %>
-                        </label>
-                        <input 
-                            class="input-text input-text-product" 
-                            type="text" 
-                            name="category" 
-                            id="category<%= [i] %>"
-                            placeholder="<%= categoryPlaceholder[i] %>" 
-                            required
-                        >
-                    </div>
-                <% } %>
+            <!-- categories -->
+            <div class="input-box">
+                <label class="label-label" for="categories">
+                    Categorías
+                </label>
+                <div class="properties-categories">
+                    <% for (i = 1; i < 5; i++) { %>
+                        <select class="input-text properties-category" name="categories">
+                            <option disabled selected>
+                                CATEGORÍA Nº<%= [i] %>
+                            </option>
+                            <% for (j = 0; j < properties.categories.length; j++) { %>
+                                <option value="<%= [j] %>">
+                                    <%= properties.categories[j].title %>
+                                </option>
+                            <% } %>
+                        </select>
+                    <% } %>
+                </div>
             </div>
-            <!-- FILES x2 -->
+            <!-- img -->
             <div class="input-box file-box">
-                <label class="label-label file-box-label">Imágenes</label>
-                <!-- img -->
-                <label class="label-label input-text label-file product-file" for="img">
-                    Imágen principal 1920x1080
+                <label class="label-label file-box-label">
+                    Imágen
+                </label>
+                <label class="label-label input-text product-file" for="img">
                     <input 
                         class="input-file" 
                         type="file" 
                         name="img" 
                         id="img" 
                         accept=".jpg, .jpeg, .png, .webp"
-                    >
-                </label>
-                <!-- card -->
-                <label class="label-label input-text label-file product-file" for="card">
-                    Imágen tipo tarjeta 271x377
-                    <input 
-                        class="input-file" 
-                        type="file" 
-                        name="card" 
-                        id="card" 
-                        accept=".jpg, .jpeg, .png, .webp"
+                        required
                     >
                 </label>
             </div>
             <!-- relevant -->
             <div class="input-box">
                 <label class="label-label">
-                    ¿Clasificar producto como "RELEVANT"?
+                    ¿Pertenece a sección "RECOMENDADOS"?
                 </label>
                 <label class="label-label label-radio" for="relevant-true">
-                    RELEVANT product
-                    <input 
-                        class="input-radio" 
-                        type="radio" 
-                        name="relevant" 
-                        value="true" 
+                    SI
+                    <input
+                        class="input-radio"
+                        type="radio"
+                        name="status"
+                        value="1"
                         id="relevant-true"
                         required
                     >
                 </label>
                 <label class="label-label label-radio" for="relevant-false">
-                    NOT relevant product
-                    <input 
-                        class="input-radio" 
-                        type="radio" 
-                        name="relevant" 
-                        value="false" 
-                        id="relevant-false" 
+                    NO
+                    <input
+                        class="input-radio"
+                        type="radio"
+                        id="relevant-false"
+                        required
+                    >
+                </label>
+            </div>
+            <!-- inOffer -->
+            <div class="input-box">
+                <label class="label-label">
+                    ¿Producto "EN OFERTA"?
+                </label>
+                <label class="label-label label-radio" for="inOffer-true">
+                    SI
+                    <input
+                        class="input-radio"
+                        type="radio"
+                        name="status"
+                        value="2"
+                        id="inOffer-true"
+                        required
+                    >
+                </label>
+                <label class="label-label label-radio" for="inOffer-false">
+                    NO
+                    <input
+                        class="input-radio"
+                        type="radio"
+                        name="status"
+                        value=NULL
+                        id="inOffer-false"
                         required
                     >
                 </label>
@@ -110,26 +130,12 @@
                     type="text" 
                     name="price" 
                     id="price" 
-                    placeholder="1999" 
+                    placeholder="1999"
                     maxlength="4" 
                     required
                 >
             </div>
-            <!-- inOffer -->
-            <div class="input-box">
-                <label class="label-label">
-                    ¿Está éste producto en oferta?
-                </label>
-                <label class="label-label label-radio" for="inOffer-true">
-                    Si
-                    <input class="input-radio" type="radio" name="inOffer" value="true" id="inOffer-true" required>
-                </label>
-                <label class="label-label label-radio" for="inOffer-false">
-                    No
-                    <input class="input-radio" type="radio" name="inOffer" value="false" id="inOffer-false" required>
-                </label>
-            </div>
-            <!-- discount rate -->
+            <!-- discount -->
             <div class="input-box">
                 <span class="rule-indicator">
                     *Solo si se quiere aplicar un DESCUENTO
@@ -137,10 +143,17 @@
                 <label class="label-label discount-rate-label" for="discount">
                     ¿Qué porcentaje de DESCUENTO se debe aplicar?
                 </label>
-                <span class="discount-indicator">
+                <span id="discount-span" class="discount-indicator">
                     %
                 </span>
-                <input class="input-text input-discount" type="text" name="discount" id="discount" placeholder="50" maxlength="2">
+                <input
+                    class="input-text input-discount"
+                    type="text"
+                    name="discount"
+                    id="discount"
+                    placeholder="50"
+                    maxlength="2"
+                >
             </div>
             <!-- description -->
             <div class="input-box">

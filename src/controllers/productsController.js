@@ -40,17 +40,17 @@ let productsController = {
     // 2 GET: show product <form>
     // por sequelize: en progreso
     create: async (req,res) => {
-        let result = {};
+        let properties = {};
         let categories = await db.Category.findAll();
         let platforms = await db.Platform.findAll();
         let status = await db.Status.findAll();
         try {
-            result.categories = categories;
-            result.platforms = platforms;
-            result.status = status;
+            properties.categories = categories;
+            properties.platforms = platforms;
+            properties.status = status;
             res.render('./products/create', {
                 title: 'Nuevo producto',
-                result
+                properties
             });
         }
         catch(err) {
