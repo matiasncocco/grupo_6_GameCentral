@@ -11,8 +11,11 @@ let offerFalse = document.querySelector('#inOffer-false');
 let inputDiscount = document.querySelector('.input-discount');
 let discountSpan = document.querySelector('#discount-span');
 
+
+
 offerTrue.addEventListener('change', () => {
     inputDiscount.disabled = false;
+    inputDiscount.required = true;
     inputDiscount.classList.remove('enable-disable-offer');
     discountSpan.classList.remove('enable-disable-offer');
 });

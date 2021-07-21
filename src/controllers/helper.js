@@ -33,8 +33,20 @@ let helper = {
         };
     },
 
-    toUpper: (item) => {
-        return item.toUpperCase();
+    numberOrNull: (value) => {
+        if (value == '') {
+            return null;
+        } else {
+            return parseInt(value);
+        };
+    },
+
+    stringOrNull: (value) => {
+        if (value == '') {
+            return null;
+        } else {
+            return value;
+        }
     },
 
 };

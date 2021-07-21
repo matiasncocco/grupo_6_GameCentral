@@ -8,6 +8,16 @@
     margin: 0;
     box-sizing: border-box;
 }
+
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+input[type=number] {
+  -moz-appearance: textfield;
+}
             
 body {
     font-family: 'Rubik', sans-serif;
@@ -744,14 +754,14 @@ h6 {
 }
 
 .input-price {
-    width: 37px;
+    width: 50%;
     padding-left: 0;
     border-left: none;
     border-radius: 0 8px 8px 0;
 }
 
 .input-discount {
-    width: 25px;
+    width: 50%;
     padding-left: 0;
     border-left: none;
     border-radius: 0 8px 8px 0;
@@ -1408,11 +1418,11 @@ TABLETS
     }
 
     .input-price {
-        width: 37px;
+        width: 50%;
     }
 
     .input-discount {
-        width: 25px;
+        width: 50%;
     }
     
     .input-text-product {
@@ -1756,11 +1766,11 @@ DESKTOP
     }
 
     .input-price {
-        width: 42px;
+        width: 50%;
     }
 
     .input-discount {
-        width: 30px;
+        width: 50%;
     }
 
     .input-text-product {
@@ -2047,11 +2057,11 @@ PANTALLAS +
     }
 
     .input-price {
-        width: 47px;
+        width: 50%;
     }
 
     .input-discount {
-        width: 35px;
+        width: 50%;
     }
 
     .product-file {

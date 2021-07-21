@@ -1,4 +1,4 @@
-let { readJson, writeJson, lastId, storeBool, percentageFinder, toUpper } = require('./helper');
+let { readJson, writeJson, storeBool, numberOrNull, stringOrNull } = require('./helper');
 
 let db = require('../database/models');
 
@@ -90,24 +90,18 @@ let productsController = {
 
     // 4 POST: store product <form> fields
     store: (req,res) => {
-        let products = readJson('products.json');
-        let files = req.files;
-        let { img, card } = files;
-        let product = {
-            id: lastId(products) + 1,
-            img: img[0].filename,
-            card: card[0].filename,
-            name: toUpper(req.body.name),
-            category: req.body.category.map(toUpper),
-            relevant: storeBool(req.body.relevant),
-            inOffer: storeBool(req.body.inOffer),
-            price: parseInt(req.body.price),
-            discount: parseInt(req.body.discount),
-            description: req.body.description
-        };
-        products.push(product);
-        writeJson(products, 'products');
-        res.redirect('/');
+        db.Game.create({
+            title: req.body.title.toUpperCase(),
+            img: req.file.filename,
+            price: parseFloat(req.body.price),
+            discount: numberOrNull(req.body.discount),
+            description: stringOrNull(req.body.description),
+            categories: req.body.categories
+            // platform:
+            // status: []
+        }, {
+            include: [categories]
+        });
     },
 
     // 5 GET: show <form> with current product data

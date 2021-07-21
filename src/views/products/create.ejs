@@ -73,7 +73,7 @@
                     <input
                         class="input-radio"
                         type="radio"
-                        name="status"
+                        name="status-relevant"
                         value="1"
                         id="relevant-true"
                         required
@@ -84,6 +84,7 @@
                     <input
                         class="input-radio"
                         type="radio"
+                        name="status-relevant"
                         id="relevant-false"
                         required
                     >
@@ -99,7 +100,7 @@
                     <input
                         class="input-radio"
                         type="radio"
-                        name="status"
+                        name="status-offer"
                         value="2"
                         id="inOffer-true"
                         required
@@ -110,7 +111,7 @@
                     <input
                         class="input-radio"
                         type="radio"
-                        name="status"
+                        name="status-offer"
                         value=NULL
                         id="inOffer-false"
                         required
@@ -126,12 +127,15 @@
                     $
                 </span>
                 <input 
-                    class="input-text input-price" 
-                    type="text" 
+                    class="input-text input-price"
+                    type="number" 
                     name="price" 
                     id="price" 
                     placeholder="1999"
                     maxlength="4" 
+                    min="1"
+                    max="9999"
+                    step=".01"
                     required
                 >
             </div>
@@ -145,11 +149,13 @@
                 </span>
                 <input
                     class="input-text input-discount"
-                    type="text"
+                    type="number"
                     name="discount"
                     id="discount"
                     placeholder="50"
-                    maxlength="2"
+                    min="1"
+                    max="99"
+                    step="1"
                 >
             </div>
             <!-- description -->
@@ -157,7 +163,13 @@
                 <label class="label-label" for="description">
                     Descripción
                 </label>
-                <textarea class="text-area-product" name="description" id="description" rows="15" maxlength="3000" placeholder="Max: 1000 caracteres." required></textarea>
+                <textarea
+                    class="text-area-product"
+                    name="description"
+                    id="description"
+                    rows="15"
+                    maxlength="3000"
+                ></textarea>
             </div>
             <!-- BUTTONS -->
             <div class="button-box">

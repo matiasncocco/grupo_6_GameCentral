@@ -1,7 +1,7 @@
 let db = require('../../database/models');
 
 let gamesApiController = {
-    list: (req, res) => {
+    list: (req,res) => {
         db.Game.findAll({
             include: [
                 'categories',
