@@ -1,32 +1,33 @@
 <%- include('../partials/head') %>
 <%- include('../partials/header') %>
+<script src="/js/gameShow.js" defer>    
+</script>
 <main class="main-main">
     <section class="show-section">
         <section class="show-img">
-            <img class="image-image box-width" src="/img/products/<%= product.img %>">
-            <img class="card-image box-width" src="/img/products/<%= product.card %>">
+            <img src="/img/products/<%= game.img %>">
         </section>
         <section class="show-main">
             <header class="show-title show-title-game-title">
                 <h2 class="big-title">
-                    <%= product.name %>
+                    <%= game.title %>
                 </h2>
                 <h4 class="small-title">
-                    <%= product.name %>
+                    <%= game.title %>
                 </h4>
             </header>
             <article class="show-description">
-                <p>
-                    <%= shortDescription %>...
-                    <a class="read-more-c" href="#read-more">
-                        MÁS INFO
-                    </a>
+                <p id="shorten-description">
+                    <%= game.description %>
                 </p>
+                <a class="read-more-link" href="#read-more">
+                    MÁS INFO
+                </a>
             </article>
         </section>
         <section class="show-category">
             <header class="show-title category-title">
-                <h3 class="big-title big-title-category">
+                <h3 class="big-title">
                     CATEGORÍAS
                 </h3>
                 <h6 class="small-title">
@@ -34,10 +35,10 @@
                 </h6>
             </header>
             <article class="category-box">
-                <% productCategory.forEach(category => { %>
+                <% game.categories.forEach(category => { %>
                     <div class="category-single-box">
                         <p class="category-text">
-                            <%= category %>
+                            <%= category.title %>
                         </p>
                     </div>
                 <% }); %>
@@ -49,22 +50,23 @@
                 <%# for (i = 0 ; i < productPlatform.length ; i++ ) { %>
                     <div class="category-single-box">
                         <p class="category-text">
-                            <i class="fab fa-windows"></i>
+                            <i class="<%= game.platforms[0] ? 'fab fa-windows' : null %>"></i>
                         </p>
                     </div>
                     <div class="category-single-box">
                         <p class="category-text">
-                            <i class="fab fa-linux"></i>
+                            
+                            <i class="<%= game.platforms[1] ? 'fab fa-apple' : null %>"></i>
                         </p>
                     </div>
                     <div class="category-single-box">
                         <p class="category-text">
-                            <i class="fab fa-apple"></i>
+                            <i class="<%= game.platforms[2] ? 'fab fa-linux' : null %>"></i>
                         </p>
                     </div>
                     <div class="category-single-box">
                         <p class="category-text">
-                            <i class="fas fa-vr-cardboard"></i>
+                            <i class="<%= game.platforms[3] ? 'fas fa-vr-cardboard' : null %>"></i>
                         </p>
                     </div>
                 <%# } %>
@@ -79,7 +81,7 @@
             </header>
         </section>
         <!-- ACÁ TERMINA PLATAFORMAS -->  
-        <% if (product.inOffer == true) { %>
+        <% if (game.satus && game.status[0] && game.status[0].name === 'IN OFFER' || game.status && game.status[1] && game.status[1].name === 'IN OFFER') { %>
             <header class="show-title offer-title">
                 <h2 class="big-title">
                     ¡OFERTA ESPECIAL!
@@ -91,23 +93,23 @@
             <section class="offer-display">
                 <div class="offer-display-box original-price">
                     <h2 class="big-title">
-                        $<%= product.price %>
+                        $<%= game.price %>
                     </h2>
                     <h5 class="small-title">
-                        $<%= product.price %>
+                        $<%= game.price %>
                     </h5>
                 </div>
                 <div class="offer-display-box">
                     <h2 class="big-title">
-                        <%= product.discount %>%
+                        <%= game.discount %>%
                     </h2>
                     <h5 class="small-title">
-                        <%= product.discount %>%
+                        <%= game.discount %>%
                     </h5>
                 </div>
                 <div class="offer-display-box te-ahorras">
                     <p>
-                        AHORRAS $<%= moneySaved %>!
+                        AHORRAS <p class="p-math"></p>!
                     </p>
                 </div>
             </section>
@@ -123,10 +125,10 @@
         <section class="purchase-display">
             <div class="purchase-price-box">
                 <h2 class="big-title">
-                    $<%= product.inOffer == true ? product.finalPrice : product.price %>
+                    $<%#= product.inOffer == true ? product.finalPrice : product.price %>
                 </h2>
                 <h4 class="small-title">
-                    $<%= product.inOffer == true ? product.finalPrice : product.price %>
+                    $<%#= product.inOffer == true ? product.finalPrice : product.price %>
                 </h4>
             </div>
             <a class="purchase-button-box" href="/products/cart">
@@ -145,15 +147,15 @@
         <section class="show-long-description" id="read-more">
             <header class="show-title">
                 <h3 class="big-title">
-                    MÁS SOBRE <%= product.name %>
+                    MÁS SOBRE <%= game.title %>
                 </h3>
                 <h5 class="small-title">
-                    MÁS SOBRE <%= product.name %>
+                    MÁS SOBRE <%= game.title %>
                 </h5>
             </header>
             <article class="show-description long-description">
                 <p>
-                    <%= product.description %>
+                    <%= game.description %>
                 </p>
             </article>
         </section>
@@ -162,13 +164,13 @@
         <header class="main-title">
             <section class="admin-main-box">
                 <div class="admin-edit-box">
-                    <a href="/products/<%= product.id %>/edit">
+                    <a href="/products/<%= game.id %>/edit">
                         <button class="admin-button-edit">
                             EDITAR
                         </button> 
                     </a>
                 </div>
-                <form class="admin-delete-box" action="/products/<%= product.id %>?_method=DELETE" method="POST">
+                <form class="admin-delete-box" action="/products/<%= game.id %>?_method=DELETE" method="POST">
                     <button class="admin-button-delete" type="submit">
                         ELIMINAR
                     </button>

@@ -1,6 +1,7 @@
 let { readJson, writeJson, storeBool, numberOrNull, stringOrNull } = require('./helper');
 
 let db = require('../database/models');
+// const { sequelize } = require('../database/models');
 
 let productsController = {
     // 0 GET: carrito
@@ -59,49 +60,57 @@ let productsController = {
     },
 
     // 3 GET: show product detail
+    // por sequelize: en progreso
     show: (req,res) => {
-        let products = readJson('products.json');
-        products.forEach(product => {
-            if (product.inOffer == true) {
-                product.finalPrice = percentageFinder(product.price,product.discount);
-                return product;
-            } else {
-                product.discount = null;
-                product.finalPrice = null;
-                return product;
-            };
-        });
-        let param = req.params.id;
-        for (i = 0 ; i < products.length ; i++) {
-            if (param == products[i].id) {
-                let productCategory = products[i].category;
-                let moneySaved = products[i].price - products[i].finalPrice;
-                let shortDescription = products[i].description.substring(0,175);
-                return res.render('./products/show', {
-                    title: products[i].name,
-                    product: products[i], 
-                    productCategory, 
-                    moneySaved, 
-                    shortDescription 
+        db.Game.findByPk(req.params.id, {
+            include: [
+                'categories',
+                'platforms'
+            ]
+        })
+            .then(game => {
+                res.render('./products/show', {
+                    title: game.title,
+                    game
                 });
-            };
-        };
+            })
+            .catch(err => {
+                res.send(err);
+            });
     },
 
     // 4 POST: store product <form> fields
-    store: (req,res) => {
-        db.Game.create({
+    store: async (req,res) => {
+        // return res.send(req.body)
+        // await sequelize.sync()
+        await db.Game.create({
+            include: ['categories']
+        },{
             title: req.body.title.toUpperCase(),
             img: req.file.filename,
             price: parseFloat(req.body.price),
             discount: numberOrNull(req.body.discount),
             description: stringOrNull(req.body.description),
-            categories: req.body.categories
-            // platform:
-            // status: []
-        }, {
-            include: [categories]
+            category: {}
+        })
+        .then(() => {
+            res.redirect('/products');
+        })
+        .catch(err => {
+            res.send(err);
         });
+    //     include: []
+    //     title: req.body.title.toUpperCase(),
+    //     img: req.file.filename,
+    //     price: parseFloat(req.body.price),
+    //     discount: numberOrNull(req.body.discount),
+    //     description: stringOrNull(req.body.description),
+    //     categories: req.body.categories
+    //     // platform:
+    //     // status: []
+    // }, {
+    //     include: [categories]
+
     },
 
     // 5 GET: show <form> with current product data

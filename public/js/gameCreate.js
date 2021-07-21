@@ -1,17 +1,11 @@
-let categories = document.querySelector('.properties-category');
-let categoryBox = document.querySelector('.properties-categories');
-
-// categories.addEventListener('change', () => {
-    // quiero que cuando cambie un select, me aparezca otro
-    // cambie un select = elija una categoría
-// });
-
+// A continuación, para que si al crear un producto,
+// si elijo "¿en oferta?" = "NO", se deshabilita
+// el campo de "DESCUENTO"
 let offerTrue = document.querySelector('#inOffer-true');
 let offerFalse = document.querySelector('#inOffer-false');
 let inputDiscount = document.querySelector('.input-discount');
 let discountSpan = document.querySelector('#discount-span');
-
-
+let form = document.querySelector('.product-create-form');
 
 offerTrue.addEventListener('change', () => {
     inputDiscount.disabled = false;
@@ -24,4 +18,11 @@ offerFalse.addEventListener('change', () => {
     inputDiscount.disabled = true;
     inputDiscount.classList.add('enable-disable-offer')
     discountSpan.classList.add('enable-disable-offer');
-})
+    form.addEventListener('submit', () => {
+        inputDiscount.value = null;
+    });
+});
+
+// Quiero programar que cuando el usuario elige, en el <select>,
+// una categoría, otro <select> aparece, permitiendo que el
+// usuario agrege así otra categoría

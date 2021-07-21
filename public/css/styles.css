@@ -9,16 +9,20 @@
     box-sizing: border-box;
 }
 
+/* ESTOS SIRVEN PARA QUE LOS */
+/* INPUT TYPE="NUMBER" NO TENGAN */
+/* ESAS FLECHITAS HORRIBLES */
 input::-webkit-outer-spin-button,
 input::-webkit-inner-spin-button {
   -webkit-appearance: none;
   margin: 0;
 }
-
 input[type=number] {
   -moz-appearance: textfield;
 }
-            
+
+/**/
+
 body {
     font-family: 'Rubik', sans-serif;
     color: #FFF;
@@ -80,7 +84,7 @@ h6 {
 /**/
 
 
-.box-width {
+img {
     width: 100%;
     display: block;
 }
@@ -355,15 +359,11 @@ h6 {
 }
 
 .show-img {
-    width: 50%;
-}
-
-.image-image {
-    display: none;
+    width: 60%;
 }
 
 .show-main {
-    width: 50%;
+    width: 40%;
     padding: 0 5px;
 }
 
@@ -386,7 +386,7 @@ h6 {
     font-weight: 600;
 }
 
-.read-more-c {
+.read-more-link {
     color: #B14593;
 }
 
@@ -412,7 +412,7 @@ h6 {
 .category-box {
     width: 75%;
     display: flex;
-    flex-flow: column wrap;
+    flex-flow: row wrap;
     align-items: center;
 }
 
@@ -422,7 +422,8 @@ h6 {
 }
 
 .category-single-box p {
-    margin: 2px;
+    line-height: 26px;  
+    height: 26px;
     background: linear-gradient(#B1CCF1,#D6B1F1);
     border: dotted 1px #B14593;
     border-radius: 8px;
@@ -1379,6 +1380,8 @@ TABLETS
     }
 
     .category-single-box p {
+        height: 46px;
+        line-height: 46px;
         font-size: 18.72px;
     }
 
@@ -1666,6 +1669,8 @@ DESKTOP
     }
 
     .category-single-box p {
+        height: 58px;
+        line-height: 58px;
         font-size: 24px;
     }
 
@@ -1674,7 +1679,7 @@ DESKTOP
         line-height: 23px;
     }
 
-    .read-more-c:hover {
+    .read-more-link:hover {
         text-decoration: underline;
         font-style: italic;
     }
@@ -1993,6 +1998,8 @@ PANTALLAS +
     }
 
     .category-single-box p {
+        height: 78px;
+        line-height: 78px;
         font-size: 32px;
     }
 
