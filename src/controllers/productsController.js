@@ -50,7 +50,7 @@ let productsController = {
     },
 
     // 2 GET: show product <form>
-    // ¡LISTO POR SEQUELIZE!
+    // por sequelize: en progreso
     create: async (req,res) => {
         let properties = {};
         let categories = await db.Category.findAll();
@@ -71,11 +71,11 @@ let productsController = {
                 title: 'ERROR',
                 errorDetail: err
             });
-        }
+        };
     },
 
     // 3 GET: show product detail
-    // por sequelize: en progreso
+    // ¡LISTO POR SEQUELIZE!
     show: (req,res) => {
         db.Game.findByPk(req.params.id, {
             include: [
@@ -101,27 +101,45 @@ let productsController = {
     // 4 POST: store product <form> fields
     // por sequelize: en progreso
     store: async (req,res) => {
+        let categories = req.body.categories;
+        return res.send(categories)
         await db.Game.create({
             title: req.body.title.toUpperCase(),
             img: req.file.filename,
             price: parseFloat(req.body.price),
             discount: numberOrNull(req.body.discount),
-            description: stringOrNull(req.body.description)        
+            description: stringOrNull(req.body.description),
+            categories: await db.CategoryGame.bulkCreate([
+                {
+                    categoryId: req.body.categories[0]
+                },
+                {
+                    categoryId: req.body.categories[1]
+                },
+                {
+                    categoryId: req.body.categories[2]
+                },
+                {
+                    categoryId: req.body.categories[3]
+                }
+            ])
+        },{
+            include: ['categories']
         });
-        await db.CategoryGame.bulkCreate([
-            {
-                categoryId: req.body.categories[0]
-            },
-            {
-                categoryId: req.body.categories[1]
-            },
-            {
-                categoryId: req.body.categories[2]
-            },
-            {
-                categoryId: req.body.categories[3]
-            }
-        ]);
+        // await db.CategoryGame.bulkCreate([
+        //     {
+        //         categoryId: req.body.categories[0]
+        //     },
+        //     {
+        //         categoryId: req.body.categories[1]
+        //     },
+        //     {
+        //         categoryId: req.body.categories[2]
+        //     },
+        //     {
+        //         categoryId: req.body.categories[3]
+        //     }
+        // ]);
         try {
             res.redirect('/products');
         }

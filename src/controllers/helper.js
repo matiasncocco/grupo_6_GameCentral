@@ -34,7 +34,7 @@ let helper = {
     },
 
     numberOrNull: (value) => {
-        if (value == '') {
+        if (value == '' || value == 0) {
             return null;
         } else {
             return parseInt(value);

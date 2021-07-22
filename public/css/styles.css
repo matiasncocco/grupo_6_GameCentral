@@ -677,13 +677,18 @@ img {
 .properties-categories {
     display: flex;
     flex-flow: row wrap;
-
 }
 
 .file-box {
     display: flex;
     flex-flow: column wrap;
     justify-content: flex-start;
+}
+
+.platform-check-box {
+    display: flex;
+    flex-flow: row wrap;
+    width: 50%;
 }
 
 .previous-image-box {
@@ -703,12 +708,30 @@ img {
     font-size: 12px;
 }
 
+.label-smaller {
+    font-weight: 400;
+    font-size: 10px;
+    color: black;
+    padding: 8px 0;
+}
+
 .label-tyc {
     color: black;
     font-weight: 500;   
     font-size: 10px;
     margin: 0 10px;
 }
+
+.label-platforms {
+    width: 50%;
+    /* text-align: center; */
+    padding: 0;
+    margin: 0;
+}
+
+/* .label-platforms i {
+    /* font-size: 20px; */
+/* } */
 
 .label-remember {
     color: black;
@@ -724,6 +747,14 @@ img {
     border: #858BB7 solid 2px;
     border-radius: 4px;
     background-color: #FFF;
+}
+
+.label-platform-checked {
+    background-color: blue;
+}
+
+.label-platform-checked-i {
+    color: #FFF;
 }
 
 .discount-rate-label {
@@ -752,6 +783,11 @@ img {
 
 .input-checkbox {
     cursor: pointer;
+    margin: 5px;
+}
+
+.input-checkbox-platform {
+    display: none;
 }
 
 .input-price {
@@ -1413,6 +1449,10 @@ TABLETS
     .label-label, .label-tyc {
         font-size: 14px;
     }
+
+    .label-smaller {
+        font-size: 12px;
+    }
     
     /* INPUTS */
     .input-text {
@@ -1753,6 +1793,10 @@ DESKTOP
     /* LABELS */
     .label-label, .label-tyc {
         font-size: 16px;
+    }
+
+    .label-smaller {
+        font-size: 14px;
     }
 
     .label-radio:hover {

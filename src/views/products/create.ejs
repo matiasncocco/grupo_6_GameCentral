@@ -34,17 +34,68 @@
                 </label>
                 <div class="properties-categories">
                     <% for (i = 1; i < 5; i++) { %>
-                        <select class="input-text properties-category" name="categories">
+                        <select class="input-text properties-category" name="categories" required>
                             <option disabled selected>
                                 CATEGORÍA Nº<%= [i] %>
                             </option>
                             <% for (j = 0; j < properties.categories.length; j++) { %>
-                                <option value="<%= [j] %>">
+                                <option value="<%= properties.categories[j].title %>">
                                     <%= properties.categories[j].title %>
                                 </option>
                             <% } %>
                         </select>
                     <% } %>
+                </div>
+            </div>
+            <!-- platforms -->
+            <div class="input-box">
+                <label class="label-label">
+                    Plataformas
+                </label>
+                <label class="label-smaller">
+                    Marque las plataformas en las que éste producto está disponible
+                </label>
+                <div class="platform-check-box">
+                    <label class="label-label label-radio label-platforms" for="windows">
+                        <i class="fab fa-windows"></i>
+                        <input
+                            class="input-checkbox-platform"
+                            type="checkbox"
+                            name="platforms"
+                            id="windows"
+                            value="0"
+                        >
+                    </label>
+                    <label class="label-label label-radio label-platforms" for="mac-os">
+                        <i class="fab fa-apple"></i>
+                        <input
+                            class="input-checkbox-platform"
+                            type="checkbox"
+                            name="platforms"
+                            id="mac-os"
+                            value="1"
+                        >
+                    </label>
+                    <label class="label-label label-radio label-platforms" for="linux">
+                        <i class="fab fa-linux"></i>
+                        <input
+                            class="input-checkbox-platform"
+                            type="checkbox"
+                            name="platforms"
+                            id="linux"
+                            value="2"
+                        >
+                    </label>
+                    <label class="label-label label-radio label-platforms" for="vr-headset">
+                        <i class="fas fa-vr-cardboard"></i>
+                        <input
+                            class="input-checkbox-platform"
+                            type="checkbox"
+                            name="platforms"
+                            id="vr-headset"
+                            value="3"
+                        >
+                    </label>
                 </div>
             </div>
             <!-- img -->

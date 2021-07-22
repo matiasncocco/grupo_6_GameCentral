@@ -26,3 +26,23 @@ offerFalse.addEventListener('change', () => {
 // Quiero programar que cuando el usuario elige, en el <select>,
 // una categoría, otro <select> aparece, permitiendo que el
 // usuario agrege así otra categoría
+
+// Quiero programar no ver el checkbox de cada plataforma
+// y cambiar las clases de la label cuando check o uncheck el checkbox
+let platformLabel = document.querySelectorAll('.label-platforms');
+let platformCheckbox = document.querySelectorAll('.input-checkbox-platform');
+
+console.log(platformLabel);
+console.log(platformCheckbox);
+
+for (i = 0; i < platformCheckbox; i++) {
+//     if (this.checked == true) {
+//         console.log('click');
+//         console.log(this.labels[0]);
+// //         this[platformLabel].classList.add('label-platform-checked');
+//     };
+    platformCheckbox[i].addEventListener('click', () => {
+        console.log('click');
+    })
+};
+
