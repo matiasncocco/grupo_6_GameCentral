@@ -1,7 +1,7 @@
 let express = require('express');
 let router = express.Router();
-let { list } = require('../../controllers/api/categoriesApiController');
+let categoriesApiController = require('../../controllers/api/categoriesApiController');
 
-router.get('/', list);
+router.get('/', categoriesApiController.list);
 
 module.exports = router;

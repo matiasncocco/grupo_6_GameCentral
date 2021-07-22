@@ -55,6 +55,7 @@ let productsController = {
         let properties = {};
         let categories = await db.Category.findAll();
         let platforms = await db.Platform.findAll();
+        // status no va?
         let status = await db.Status.findAll();
         try {
             properties.categories = categories;
@@ -100,49 +101,51 @@ let productsController = {
 
     // 4 POST: store product <form> fields
     // por sequelize: en progreso
-    store: async (req,res) => {
-        await db.Game.create({
+    store: (req,res) => {
+        db.Game.create({
             title: req.body.title.toUpperCase(),
             img: req.file.filename,
             price: parseFloat(req.body.price),
             discount: numberOrNull(req.body.discount),
-            description: stringOrNull(req.body.description),
-            categories: db.CategoryGame.bulkCreate([
-                {
-                    title: db.Category.title,
-                    categoryId: req.body.categories[0]
-                },
-                {
-                    title: db.Category.title,
-                    categoryId: req.body.categories[1]
-                },
-                {
-                    title: db.Category.title,
-                    categoryId: req.body.categories[2]
-                },
-                {
-                    title: db.Category.title,
-                    categoryId: req.body.categories[3]
-                }
-            ],{
-                include: [
-                    'categories',
-                    'games'
-                ]
-            })
+            description: stringOrNull(req.body.description)
         },{
             include: ['categories']
-        });
-        try {
-            res.redirect('/products');
-        }
-        catch(err) {
-            res.status(500).render('error', {
-                status: 500,
-                title: 'ERROR',
-                errorDetail: err
+        })
+            .then(() => {
+                let lastGame = db.Game.findAll({
+                    limit: 1,
+                    order: [['id','DESC']]
+                });
+                return lastGame;
+            })
+            .then((lastGame) => {
+                let game = {
+                    ...lastGame[0]
+                }
+                let { dataValues } = game;
+                let lastId = dataValues.id ++;
+                return lastId
+            })
+            .then((lastId) => {
+                console.log(lastId);
+                let categories = req.body.categories;
+                categories.forEach(category => {
+                    db.CategoryGame.create({
+                        gameId: lastId,
+                        categoryId: category
+                    });
+                });
+            })
+            .then(() => {
+                res.redirect('/products')
+            })
+            .catch(err => {
+                res.status(500).render('error', {
+                    status: 500,
+                    title: 'ERROR',
+                    errorDetail: err
+                });
             });
-        };
     },
 
     // 5 GET: show <form> with current product data
