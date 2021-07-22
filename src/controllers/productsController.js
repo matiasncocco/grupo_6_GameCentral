@@ -8,7 +8,10 @@ let productsController = {
     // ¡LISTO POR SEQUELIZE!
     cart: (req,res) => {
         db.Game.findAll({
-            include: ['status']
+            include: [
+                'status',
+                'platforms'
+            ]
         })
             .then(games => {
                 res.render('./products/cart', {
@@ -17,7 +20,11 @@ let productsController = {
                 });
             })
             .catch(err => {
-                res.send(err);
+                res.status(500).render('error', {
+                    status: 500,
+                    title: 'ERROR',
+                    errorDetail: err
+                });
             });
     },
 
@@ -34,12 +41,16 @@ let productsController = {
                 });
             })
             .catch(err => {
-                res.render(err);
+                res.status(500).render('error', {
+                    status: 500,
+                    title: 'ERROR',
+                    errorDetail: err
+                });
             });
     },
 
     // 2 GET: show product <form>
-    // por sequelize: en progreso
+    // ¡LISTO POR SEQUELIZE!
     create: async (req,res) => {
         let properties = {};
         let categories = await db.Category.findAll();
@@ -55,7 +66,11 @@ let productsController = {
             });
         }
         catch(err) {
-            res.send(err)
+            res.status(500).render('error', {
+                status: 500,
+                title: 'ERROR',
+                errorDetail: err
+            });
         }
     },
 
@@ -75,42 +90,48 @@ let productsController = {
                 });
             })
             .catch(err => {
-                res.send(err);
+                res.status(500).render('error', {
+                    status: 500,
+                    title: 'ERROR',
+                    errorDetail: err
+                });
             });
     },
 
     // 4 POST: store product <form> fields
+    // por sequelize: en progreso
     store: async (req,res) => {
-        // return res.send(req.body)
-        // await sequelize.sync()
         await db.Game.create({
-            include: ['categories']
-        },{
             title: req.body.title.toUpperCase(),
             img: req.file.filename,
             price: parseFloat(req.body.price),
             discount: numberOrNull(req.body.discount),
-            description: stringOrNull(req.body.description),
-            category: {}
-        })
-        .then(() => {
-            res.redirect('/products');
-        })
-        .catch(err => {
-            res.send(err);
+            description: stringOrNull(req.body.description)        
         });
-    //     include: []
-    //     title: req.body.title.toUpperCase(),
-    //     img: req.file.filename,
-    //     price: parseFloat(req.body.price),
-    //     discount: numberOrNull(req.body.discount),
-    //     description: stringOrNull(req.body.description),
-    //     categories: req.body.categories
-    //     // platform:
-    //     // status: []
-    // }, {
-    //     include: [categories]
-
+        await db.CategoryGame.bulkCreate([
+            {
+                categoryId: req.body.categories[0]
+            },
+            {
+                categoryId: req.body.categories[1]
+            },
+            {
+                categoryId: req.body.categories[2]
+            },
+            {
+                categoryId: req.body.categories[3]
+            }
+        ]);
+        try {
+            res.redirect('/products');
+        }
+        catch(err) {
+            res.status(500).render('error', {
+                status: 500,
+                title: 'ERROR',
+                errorDetail: err
+            });
+        };
     },
 
     // 5 GET: show <form> with current product data

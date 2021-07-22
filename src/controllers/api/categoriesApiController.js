@@ -2,9 +2,7 @@ let db = require('../../database/models');
 
 let categoriesApiController = {
     list: (req,res) => {
-        db.Category.findAll({
-            include: ['games']
-        })
+        db.Category.findAll()
             .then(categories => {
                 res.json(categories);
             })

@@ -28,7 +28,7 @@ module.exports = (sequelize, DataTypes) => {
     let config = {
         underscored: true,
         // es buena práctica decirle el nombre de la tabla, ya que puede no coincidir 100% y nos ahorramos un dolor de cabeza;
-        tablename: 'status',
+        tableName: 'status',
         // si miramos arriba, tenemos tablas 'created_at' y 'updated_at', por eso timestamps = true;
         timestamps: true,
         // si miramos arriba, tenemos tabla 'deleted_at' por eso paranoid = true;

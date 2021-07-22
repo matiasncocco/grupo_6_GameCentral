@@ -1,5 +1,5 @@
 module.exports = (sequelize, DataTypes) => {
-    let alias = 'Category';
+    let alias = 'CategoryGame';
     let cols = {
         id: {
             autoIncrement: true,
@@ -7,9 +7,13 @@ module.exports = (sequelize, DataTypes) => {
             type: DataTypes.INTEGER.UNSIGNED,
             allowNull: false
         },
-        title: {
-            type: DataTypes.STRING(255),
-            allowNull: false
+        gameId: {
+            type: DataTypes.INTEGER,
+            field: 'game_id_category'
+        },
+        categoryId: {
+            type: DataTypes.INTEGER,
+            field: 'category_id'
         },
         createdAt: 'created_at',
         updatedAt: 'updated_at',
@@ -17,27 +21,27 @@ module.exports = (sequelize, DataTypes) => {
     };
     let config = {
         underscored: true,
-        tableName: 'categories',
+        tableName: 'category_game',
         timestamps: true,
         paranoid: true,
         charset: 'utf8',
         dialectOptions: {
             collate: 'utf8mb4_unicode:ci'
-        }
+        },
+        freezeTableName: true
     };
-    let Category = sequelize.define(
+    let CategoryGame = sequelize.define(
         alias,
         cols,
         config
     );
-    Category.associate = (model) => {
-        Category.belongsToMany(model.Game, {
-            as: 'games',
-            through: 'category_game',
-            foreignKey: 'category_id',
-            otherKey: 'game_id_category',
-            timestamps: true
+    CategoryGame.associate = (model) => {
+        CategoryGame.belongsTo(model.Category, {
+            foreignKey: 'category_id'
+        });
+        CategoryGame.belongsTo(model.Game, {
+            foreignKey: 'game_id_category'
         });
     };
-    return Category;
+    return CategoryGame;
 };

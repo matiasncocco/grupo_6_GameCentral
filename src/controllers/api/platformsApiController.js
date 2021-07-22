@@ -2,9 +2,7 @@ let db = require('../../database/models');
 
 let platformsApiController = {
     list: (req,res) => {
-        db.Platform.findAll({
-            include: ['games']
-        })
+        db.Platform.findAll()
             .then(platforms => {
                 res.json(platforms);
             })

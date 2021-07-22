@@ -2,9 +2,7 @@ let db = require('../../database/models');
 
 let statusApiController = {
     list: (req,res) => {
-        db.Status.findAll({
-            include: ['games']
-        })
+        db.Status.findAll()
             .then(status => {
                 res.json(status);
             })
