@@ -11,6 +11,9 @@
                 TODOS LOS TÍTULOS
             </h5>
         </div>
+        <!--  -->
+        <!--  -->
+        <!-- DESCOMENTAR LUEGO -->
         <% if (locals.user) { %>
             <div class="store-control-box">
                 <% if (user.admin === true) { %>
@@ -24,6 +27,9 @@
             </div>
         <% } %>
     </header>
+    <!-- DESCOMENTAR LUEGO -->
+    <!--  -->
+    <!--  -->
     <section class="main-section last-section">
         <% for (i = 0 ; i < games.length ; i++) { %>
             <%- include('../products/partials/game', { game: games } ) %>

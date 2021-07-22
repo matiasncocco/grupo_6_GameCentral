@@ -29,7 +29,8 @@ router.post('/', upload.single('img'), productsController.store);
 
 // vista de edición de producto. <form> de creación con datos
 // -> ADMINS
-router.get('/:id/edit', adminMiddleware, productsController.edit);
+// !! hay que pasarle adminMiddleware !!
+router.get('/:id/edit', productsController.edit);
 
 // procesar edición de producto
 // (inaccesible)

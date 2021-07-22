@@ -189,12 +189,23 @@ let productsController = {
     },
 
     // 7 DELETE: remove entry
+    // ¡LISTO POR SEQUELIZE!
     destroy: (req,res) => {
-        let products = readJson('products.json');
-        let param = req.params.id;
-        let newProducts = products.filter(product => param != product.id);
-        writeJson(newProducts, 'products');
-        res.redirect('/products');
+        db.Game.destroy({
+            where: {
+                id: req.params.id
+            }
+        })
+            .then(() => {
+                res.redirect('/products');
+            })
+            .catch(err => {
+                res.status(500).render('error', {
+                    status: 500,
+                    title: 'ERROR',
+                    errorDetail: err
+                });
+            });
     },
 };
 

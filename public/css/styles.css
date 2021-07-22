@@ -194,6 +194,10 @@ img {
     border: #858BB7 solid 2px;
 }
 
+.admin-controls-title {
+    width: 100%;
+}
+
 .link-title {
     width: fit-content;
     margin-bottom: 30px;
@@ -1776,7 +1780,7 @@ DESKTOP
         color: black;
         text-shadow: none;
         transition: all .2s cubic-bezier(.25,.25,.25,.25);
-        font-size: 20px;
+        font-size: 30px;
     }
 
     .store-control-link:hover i {
