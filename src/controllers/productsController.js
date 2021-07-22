@@ -107,12 +107,24 @@ let productsController = {
             price: parseFloat(req.body.price),
             discount: numberOrNull(req.body.discount),
             description: stringOrNull(req.body.description),
-            categories: db.CategoryGame.bulkCreate({
-                categoryId: req.body.categories[0],
-                categoryId: req.body.categories[1],
-                categoryId: req.body.categories[2],
-                categoryId: req.body.categories[3]
-            },{
+            categories: db.CategoryGame.bulkCreate([
+                {
+                    title: db.Category.title,
+                    categoryId: req.body.categories[0]
+                },
+                {
+                    title: db.Category.title,
+                    categoryId: req.body.categories[1]
+                },
+                {
+                    title: db.Category.title,
+                    categoryId: req.body.categories[2]
+                },
+                {
+                    title: db.Category.title,
+                    categoryId: req.body.categories[3]
+                }
+            ],{
                 include: [
                     'categories',
                     'games'
