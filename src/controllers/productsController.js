@@ -171,29 +171,52 @@ let productsController = {
 
     // 6 POST: submit changes to existing product
     update: (req,res) => {
-        let products = readJson('products.json');
-        let files = req.files;
-        let { img, card } = files;
-        let param = req.params.id;
-        products.forEach(product => {
-            if (param == product.id) {
-                if (img != undefined) {  
-                    product.img = img[0].filename;
-                };
-                if (card != undefined ) {
-                    product.card = card[0].filename;
-                };
-                product.name = toUpper(req.body.name);
-                product.category = req.body.category.map(toUpper);
-                product.relevant = storeBool(req.body.relevant);
-                product.inOffer = storeBool(req.body.inOffer);
-                product.price = parseInt(req.body.price);
-                product.discount = parseInt(req.body.discount);
-                product.description = req.body.description;
-                writeJson(products, 'products');
-                return res.redirect('/products');
-            };
+        db.Game.update({
+            name: req.body.name,
+            category: req.body.category,
+            relevant: req.body.relevant,
+            inOffer: req.body.inOffer,
+            price: req.body.price,
+            discount: req.body.discount,
+            description: req.body.description
+        }, {
+            where: {
+                id: req.params.id
+            }
+        })
+        .then(() => {
+            res.redirect('/products');
+        })
+        .catch(err => {
+            res.status(500).render('error', {
+                status: 500,
+                title: 'ERROR',
+                errorDetail: err
+            });
         });
+        // let products = readJson('products.json');
+        // let files = req.files;
+        // let { img, card } = files;
+        // let param = req.params.id;
+        // products.forEach(product => {
+        //     if (param == product.id) {
+        //         if (img != undefined) {  
+        //             product.img = img[0].filename;
+        //         };
+        //         if (card != undefined ) {
+        //             product.card = card[0].filename;
+        //         };
+        //         product.name = toUpper(req.body.name);
+        //         product.category = req.body.category.map(toUpper);
+        //         product.relevant = storeBool(req.body.relevant);
+        //         product.inOffer = storeBool(req.body.inOffer);
+        //         product.price = parseInt(req.body.price);
+        //         product.discount = parseInt(req.body.discount);
+        //         product.description = req.body.description;
+        //         writeJson(products, 'products');
+        //         return res.redirect('/products');
+        //     };
+        // });
     },
 
     // 7 DELETE: remove entry
