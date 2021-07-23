@@ -1,5 +1,5 @@
 module.exports = (sequelize, DataTypes) => {
-    let alias = 'CategoryGame';
+    let alias = 'PlatformGame';
     let cols = {
         id: {
             autoIncrement: true,
@@ -9,9 +9,9 @@ module.exports = (sequelize, DataTypes) => {
         },
         gameId: {
             type: DataTypes.INTEGER,
-            field: 'game_id_category'
+            field: 'game_id_platform'
         },
-        categoryId: {
+        platformId: {
             type: DataTypes.INTEGER,
             field: 'category_id'
         },
@@ -21,7 +21,7 @@ module.exports = (sequelize, DataTypes) => {
     };
     let config = {
         underscored: true,
-        tableName: 'category_game',
+        tableName: 'platform_game',
         timestamps: true,
         paranoid: true,
         charset: 'utf8',
@@ -30,18 +30,18 @@ module.exports = (sequelize, DataTypes) => {
         },
         freezeTableName: true
     };
-    let CategoryGame = sequelize.define(
+    let PlatformGame = sequelize.define(
         alias,
         cols,
         config
     );
-    CategoryGame.associate = (model) => {
-        CategoryGame.belongsTo(model.Category, {
-            foreignKey: 'category_id'
+    PlatformGame.associate = (model) => {
+        PlatformGame.belongsTo(model.Platform, {
+            foreignKey: 'platform_id'
         });
-        CategoryGame.belongsTo(model.Game, {
-            foreignKey: 'game_id_category'
+        PlatformGame.belongsTo(model.Game, {
+            foreignKey: 'game_id_platform'
         });
     };
-    return CategoryGame;
+    return PlatformGame;
 };

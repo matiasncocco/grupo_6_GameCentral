@@ -1,7 +1,7 @@
 let express = require('express');
 let router = express.Router();
-let { list } = require('../../controllers/api/usersApiController');
+let usersApiController = require('../../controllers/api/usersApiController');
 
-router.get('/', list);
+router.get('/', usersApiController.list);
 
 module.exports = router;

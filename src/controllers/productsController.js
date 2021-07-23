@@ -1,4 +1,4 @@
-let { readJson, writeJson, storeBool, numberOrNull, stringOrNull } = require('./helper');
+let { readJson, writeJson, storeBool, numberOrNull, stringOrNull, addOne, giveNumber } = require('./helper');
 
 let db = require('../database/models');
 // const { sequelize } = require('../database/models');
@@ -57,12 +57,9 @@ let productsController = {
         let properties = {};
         let categories = await db.Category.findAll();
         let platforms = await db.Platform.findAll();
-        // status no va?
-        let status = await db.Status.findAll();
         try {
             properties.categories = categories;
             properties.platforms = platforms;
-            properties.status = status;
             res.render('./products/create', {
                 title: 'Nuevo producto',
                 properties
@@ -112,32 +109,37 @@ let productsController = {
             description: stringOrNull(req.body.description)
         })
             .then((creation) => {
-                // let lastId = creation.id ++;
-                return lastId
-            })
-            .then((lastId) => {
-                let lala = async () => {
-                    await sorete
-                }
-                let categories = req.body.categories;
-                categories.forEach(category => {
-                    db.CategoryGame.create({
-                        gameId: lastId,
-                        categoryId: category
+                // let categories = req.body.categories.map(addOne);
+
+                if (Array.isArray(req.body.platforms)) {
+                    let platforms = req.body.platforms.map(giveNumber);
+                    platforms = platforms.map(addOne);
+                    platforms.forEach(platforms => {
+                        db.PlatformGame.create({
+                            gameId: creation.id,
+                            platformId: platforms
+                        });
                     });
-                });
-                // let platforms = req.body.platforms;
-                // let platformsCreation = await platforms.forEach(platform => {
-                    // db.
+                } else {
+                    let platform = parseInt(req.body.platform);
+                    platform ++;
+                    db.PlatformGame.create({
+                        gameId: creation.id,
+                        platformId: platform
+                    });
+
+                };
+
+                // categories.forEach(category => {                    
+                //     db.CategoryGame.create({
+                //         gameId: creation.id,
+                //         categoryId: category
+                //     });
                 // });
 
-                // return Promise.all([
-                //     // categoriesCreation
-                //     // platformsCreation
-                // ]);
             })
             .then(() => {
-                res.redirect('/products')
+                res.redirect('/products');
             })
             .catch(err => {
                 res.status(500).render('error', {
