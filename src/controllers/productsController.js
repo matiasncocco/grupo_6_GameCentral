@@ -1,7 +1,6 @@
 let { readJson, writeJson, storeBool, numberOrNull, stringOrNull, addOne, giveNumber } = require('./helper');
 
 let db = require('../database/models');
-// const { sequelize } = require('../database/models');
 
 let productsController = {
     // 0 GET: carrito
@@ -99,7 +98,7 @@ let productsController = {
     },
 
     // 4 POST: store product <form> fields
-    // ¡LISTO POR SEQUELIZE!
+    // por sequelize: en progreso
     store: (req,res) => {
         db.Game.create({
             title: req.body.title.toUpperCase(),
@@ -109,37 +108,41 @@ let productsController = {
             description: stringOrNull(req.body.description)
         })
             .then((creation) => {
-                // let categories = req.body.categories.map(addOne);
-
                 if (Array.isArray(req.body.platforms)) {
+                    console.log('ENTRÉ a SI ES ARRAY');
                     let platforms = req.body.platforms.map(giveNumber);
                     platforms = platforms.map(addOne);
-                    platforms.forEach(platforms => {
+                    platforms.forEach(platform => {
                         db.PlatformGame.create({
                             gameId: creation.id,
-                            platformId: platforms
+                            platformId: platform
                         });
                     });
                 } else {
-                    let platform = parseInt(req.body.platform);
+                    let platform = parseInt(req.body.platforms);
                     platform ++;
                     db.PlatformGame.create({
                         gameId: creation.id,
                         platformId: platform
                     });
-
                 };
-
-                // categories.forEach(category => {                    
-                //     db.CategoryGame.create({
-                //         gameId: creation.id,
-                //         categoryId: category
-                //     });
-                // });
-
+                return creation;
+            })
+            .then((creation) => {
+                let categories = req.body.categories.map(addOne);
+                categories.forEach(category => {                    
+                    db.CategoryGame.create({
+                        gameId: creation.id,
+                        categoryId: category
+                    });
+                });
+                return creation;
+            })
+            .then((creation) => {
+                // res.send(req.body.)
             })
             .then(() => {
-                res.redirect('/products');
+                // res.redirect('/products');
             })
             .catch(err => {
                 res.status(500).render('error', {
