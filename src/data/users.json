@@ -28,5 +28,15 @@
         "avatar": "1626632726119.JPG",
         "newsletter": false,
         "admin": false
+    },
+    {
+        "id": 4,
+        "name": "Melina",
+        "surname": "Gimenez",
+        "email": "meli.gimenez@gamecentral.com",
+        "password": "$2b$10$0y.nF9CskLWRMCQqy/AtEOUI14A6/ehugWOAEUc1LsRz.wbNtDlAC",
+        "avatar": "1627000856813.PNG",
+        "newsletter": false,
+        "admin": false
     }
 ]
