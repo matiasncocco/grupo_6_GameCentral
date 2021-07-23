@@ -34,10 +34,10 @@ let helper = {
     },
 
     numberOrNull: (value) => {
-        if (value === '' || value === 0) {
-            return null;
-        } else {
+        if (value != null) {
             return parseInt(value);
+        } else {
+            return null;
         };
     },
 
@@ -47,6 +47,16 @@ let helper = {
         } else {
             return value;
         }
+    },
+
+    addOne: (n) => {
+        n++;
+        return n;
+    },
+
+    giveNumber: (s) => {
+        n = parseInt(s);
+        return n;
     },
 
 };

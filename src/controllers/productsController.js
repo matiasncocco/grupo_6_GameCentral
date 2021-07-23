@@ -1,4 +1,4 @@
-let { readJson, writeJson, storeBool, numberOrNull, stringOrNull } = require('./helper');
+let { readJson, writeJson, storeBool, numberOrNull, stringOrNull, addOne, giveNumber } = require('./helper');
 
 let db = require('../database/models');
 // const { sequelize } = require('../database/models');
@@ -32,7 +32,9 @@ let productsController = {
     // ¡LISTO POR SEQUELIZE!
     index: (req,res) => {
         db.Game.findAll({
-            include: ['status']
+            include: [
+                'status'
+            ]
         })
             .then(games => {
                 res.render('./products/index', {
@@ -55,12 +57,9 @@ let productsController = {
         let properties = {};
         let categories = await db.Category.findAll();
         let platforms = await db.Platform.findAll();
-        // status no va?
-        let status = await db.Status.findAll();
         try {
             properties.categories = categories;
             properties.platforms = platforms;
-            properties.status = status;
             res.render('./products/create', {
                 title: 'Nuevo producto',
                 properties
@@ -100,7 +99,7 @@ let productsController = {
     },
 
     // 4 POST: store product <form> fields
-    // por sequelize: en progreso
+    // ¡LISTO POR SEQUELIZE!
     store: (req,res) => {
         db.Game.create({
             title: req.body.title.toUpperCase(),
@@ -108,36 +107,39 @@ let productsController = {
             price: parseFloat(req.body.price),
             discount: numberOrNull(req.body.discount),
             description: stringOrNull(req.body.description)
-        },{
-            include: ['categories']
         })
-            .then(() => {
-                let lastGame = db.Game.findAll({
-                    limit: 1,
-                    order: [['id','DESC']]
-                });
-                return lastGame;
-            })
-            .then((lastGame) => {
-                let game = {
-                    ...lastGame[0]
-                }
-                let { dataValues } = game;
-                let lastId = dataValues.id ++;
-                return lastId
-            })
-            .then((lastId) => {
-                console.log(lastId);
-                let categories = req.body.categories;
-                categories.forEach(category => {
-                    db.CategoryGame.create({
-                        gameId: lastId,
-                        categoryId: category
+            .then((creation) => {
+                // let categories = req.body.categories.map(addOne);
+
+                if (Array.isArray(req.body.platforms)) {
+                    let platforms = req.body.platforms.map(giveNumber);
+                    platforms = platforms.map(addOne);
+                    platforms.forEach(platforms => {
+                        db.PlatformGame.create({
+                            gameId: creation.id,
+                            platformId: platforms
+                        });
                     });
-                });
+                } else {
+                    let platform = parseInt(req.body.platform);
+                    platform ++;
+                    db.PlatformGame.create({
+                        gameId: creation.id,
+                        platformId: platform
+                    });
+
+                };
+
+                // categories.forEach(category => {                    
+                //     db.CategoryGame.create({
+                //         gameId: creation.id,
+                //         categoryId: category
+                //     });
+                // });
+
             })
             .then(() => {
-                res.redirect('/products')
+                res.redirect('/products');
             })
             .catch(err => {
                 res.status(500).render('error', {
