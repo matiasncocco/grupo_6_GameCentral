@@ -130,7 +130,7 @@ let productsController = {
             })
             .then((creation) => {
                 let categories = req.body.categories.map(addOne);
-                categories.forEach(category => {                    
+                categories.forEach(category => {         
                     db.CategoryGame.create({
                         gameId: creation.id,
                         categoryId: category
@@ -138,11 +138,11 @@ let productsController = {
                 });
                 return creation;
             })
-            .then((creation) => {
-                // res.send(req.body.)
-            })
+            // .then((creation) => {
+            //     // res.send(req.body.)
+            // })
             .then(() => {
-                // res.redirect('/products');
+                res.redirect('/products');
             })
             .catch(err => {
                 res.status(500).render('error', {

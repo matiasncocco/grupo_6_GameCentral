@@ -4,8 +4,8 @@ let form = document.querySelector('.product-create-form');
 // A continuación, para que si al crear un producto,
 // si elijo "¿en oferta?" = "NO", se deshabilita
 // el campo de "DESCUENTO"
-let offerTrue = document.querySelector('#inOffer-true');
-let offerFalse = document.querySelector('#inOffer-false');
+let offerTrue = document.querySelector('#offer-true');
+let offerFalse = document.querySelector('#offer-false');
 let inputDiscount = document.querySelector('.input-discount');
 let discountSpan = document.querySelector('#discount-span');
 
