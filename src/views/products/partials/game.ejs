@@ -4,7 +4,7 @@
     <div class="game-image">
         <img class="box-width" src="/img/products/<%= game[i].img %>">
         <div class="ribbon">
-            <% if (games[i].status[0] && games[i].status[0].name === 'IN OFFER' || games[i].status[1] && games[i].status[1].name === 'IN OFFER') { %>
+            <% if (game[i].status[0] && game[i].status[0].name === 'IN OFFER' || game[i].status[1] && game[i].status[1].name === 'IN OFFER') { %>
                 <div class="full-price crossed-out">
                     <h3 class="big-title">
                         $<%= game[i].price %>

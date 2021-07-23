@@ -32,7 +32,9 @@ let productsController = {
     // ¡LISTO POR SEQUELIZE!
     index: (req,res) => {
         db.Game.findAll({
-            include: ['status']
+            include: [
+                'status'
+            ]
         })
             .then(games => {
                 res.render('./products/index', {
@@ -100,7 +102,7 @@ let productsController = {
     },
 
     // 4 POST: store product <form> fields
-    // por sequelize: en progreso
+    // ¡LISTO POR SEQUELIZE!
     store: (req,res) => {
         db.Game.create({
             title: req.body.title.toUpperCase(),
@@ -108,26 +110,15 @@ let productsController = {
             price: parseFloat(req.body.price),
             discount: numberOrNull(req.body.discount),
             description: stringOrNull(req.body.description)
-        },{
-            include: ['categories']
         })
-            .then(() => {
-                let lastGame = db.Game.findAll({
-                    limit: 1,
-                    order: [['id','DESC']]
-                });
-                return lastGame;
-            })
-            .then((lastGame) => {
-                let game = {
-                    ...lastGame[0]
-                }
-                let { dataValues } = game;
-                let lastId = dataValues.id ++;
+            .then((creation) => {
+                // let lastId = creation.id ++;
                 return lastId
             })
             .then((lastId) => {
-                console.log(lastId);
+                let lala = async () => {
+                    await sorete
+                }
                 let categories = req.body.categories;
                 categories.forEach(category => {
                     db.CategoryGame.create({
@@ -135,6 +126,15 @@ let productsController = {
                         categoryId: category
                     });
                 });
+                // let platforms = req.body.platforms;
+                // let platformsCreation = await platforms.forEach(platform => {
+                    // db.
+                // });
+
+                // return Promise.all([
+                //     // categoriesCreation
+                //     // platformsCreation
+                // ]);
             })
             .then(() => {
                 res.redirect('/products')

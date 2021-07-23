@@ -34,10 +34,10 @@ let helper = {
     },
 
     numberOrNull: (value) => {
-        if (value === '' || value === 0) {
-            return null;
-        } else {
+        if (value != null) {
             return parseInt(value);
+        } else {
+            return null;
         };
     },
 
