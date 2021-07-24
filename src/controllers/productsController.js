@@ -1,4 +1,4 @@
-let { readJson, writeJson, storeBool, numberOrNull, stringOrNull, addOne, giveNumber } = require('./helper');
+let { readJson, storeBool, numberOrNull, stringOrNull, addOne, giveNumber } = require('./helper');
 
 let db = require('../database/models');
 
@@ -138,9 +138,31 @@ let productsController = {
                 });
                 return creation;
             })
-            // .then((creation) => {
-            //     // res.send(req.body.)
-            // })
+            .then((creation) => {
+                let relevant = req.body.relevant;
+                let offer = req.body.offer;
+                if (relevant === 'true' && offer === 'true') {
+                    let status = [1,2];
+                    return status.forEach(status => {
+                        db.StatusGame.create({
+                            gameId: creation.id,
+                            statusId: status
+                        });
+                    });
+                };
+                if (relevant === 'true' && offer != 'true') {
+                    return db.StatusGame.create({
+                        gameId: creation.id,
+                        statusId: 1
+                    });
+                };
+                if (relevant != 'true' && offer === 'true') {
+                    return db.StatusGame.create({
+                        gameId: creation.id,
+                        statusId: 2
+                    });
+                };
+            })
             .then(() => {
                 res.redirect('/products');
             })
