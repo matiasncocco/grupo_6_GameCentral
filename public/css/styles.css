@@ -539,6 +539,10 @@ img {
     font-weight: 900;
 }
 
+.math-values-show {
+    display: none;
+}
+
 
 /**/
 /* CARRITO */

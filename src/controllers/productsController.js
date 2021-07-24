@@ -1,4 +1,4 @@
-let { readJson, storeBool, numberOrNull, stringOrNull, addOne, giveNumber } = require('./helper');
+let { readJson, numberOrNull, stringOrNull, addOne, giveNumber } = require('./helper');
 
 let db = require('../database/models');
 
@@ -79,7 +79,8 @@ let productsController = {
         db.Game.findByPk(req.params.id, {
             include: [
                 'categories',
-                'platforms'
+                'platforms',
+                'status'
             ]
         })
             .then(game => {
@@ -98,7 +99,7 @@ let productsController = {
     },
 
     // 4 POST: store product <form> fields
-    // por sequelize: en progreso
+    // ¡LISTO POR SEQUELIZE!
     store: (req,res) => {
         db.Game.create({
             title: req.body.title.toUpperCase(),

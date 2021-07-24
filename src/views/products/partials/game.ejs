@@ -1,8 +1,7 @@
-<script src="/js/game.js" defer>
-</script>
 <article class="unit-product">
     <div class="game-image">
-        <img class="box-width" src="/img/products/<%= game[i].img %>">
+        <!-- <div class="game-partial-img"></div> -->
+        <img src="/img/products/<%= game[i].img %>">
         <div class="ribbon">
             <% if (game[i].status[0] && game[i].status[0].name === 'IN OFFER' || game[i].status[1] && game[i].status[1].name === 'IN OFFER') { %>
                 <div class="full-price crossed-out">
