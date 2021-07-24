@@ -4,5 +4,4 @@ let platformsApiController = require ('../../controllers/api/platformsApiControl
 
 router.get('/', platformsApiController.list);
 
-
 module.exports = router;

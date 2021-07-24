@@ -4,5 +4,4 @@ let statusApiController = require ('../../controllers/api/statusApiController');
 
 router.get('/', statusApiController.list);
 
-
 module.exports = router;
