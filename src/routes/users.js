@@ -36,7 +36,8 @@ let validations = [
 
 // vista registro de usuario <form>
 // -> GUESTS
-router.get('/register', guestMiddleware, validations, usersController.register);
+// !! hay que pasarle guestMiddleware !!
+router.get('/register', usersController.register);
 
 // procesar registro/creación de usuario
 // (inaccesible)
@@ -45,7 +46,8 @@ router.post('/', upload.single('avatar'), usersController.processRegister);
 
 // vista login de usuario <form>
 // -> GUESTS
-router.get('/login', guestMiddleware, usersController.login);
+// !! hay que pasarle guestMiddleware !!
+router.get('/login', usersController.login);
 
 // procesar login de usuario
 // (inaccesible)
@@ -53,7 +55,8 @@ router.post('/login', usersController.processLogin);
 
 // vista de perfil del usuario
 // -> USUARIOS
-router.get('/profile', userMiddleware, usersController.show);
+// !! hay que pasarle userMiddleware !!
+router.get('/profile', usersController.show);
 
 // procesar delog de usuario & destrucción de cookie
 // (inaccesible)

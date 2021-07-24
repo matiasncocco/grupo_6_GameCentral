@@ -6,9 +6,10 @@ let db = require('../database/models');
 
 let usersController = {
     // GET: show register view // <form>
+    // sequelize: en progreso
     register : (req,res) => {
         res.render('./users/register', {
-            title: 'Crea tu cuenta' 
+            title: 'Crea tu cuenta'
         });
     },
 
