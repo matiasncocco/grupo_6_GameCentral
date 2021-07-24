@@ -20,7 +20,8 @@ input::-webkit-inner-spin-button {
 input[type=number] {
   -moz-appearance: textfield;
 }
-
+/**/
+/**/
 /**/
 
 body {
@@ -283,6 +284,12 @@ img {
 
 .game-image {
     position: relative;
+}
+
+.game-img-img {
+    image-rendering: auto;
+    image-rendering: crisp-edges;
+    height: auto;
 }
 
 .new-price {
@@ -1353,17 +1360,11 @@ TABLETS
 
 
     /**/
-    /* MAIN */
-    /**/
-
-
-    /**/
     /* HOME */
     /**/
 
 
     .unit-product {
-        max-width: 50%;
         font-weight: bold;
     }
 
@@ -1656,7 +1657,7 @@ DESKTOP
     }
     
     .unit-product {
-        max-width: 33.33%;
+        max-width: 50%;
     }
 
     .unit-product:hover .overlay-product {
@@ -2005,21 +2006,6 @@ PANTALLAS +
     }
 
     
-    /**/
-    /* MAIN */
-    /**/
-
-
-    /**/
-    /* HOME */
-    /**/
-
-    
-    .unit-product {
-        max-width: 25%;
-    }
-
-
     /**/
     /* CARRITO */
     /**/
