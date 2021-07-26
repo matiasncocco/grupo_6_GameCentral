@@ -9,7 +9,7 @@
             EDITAR ARTÍCULO
         </h5>
     </header>
-    <form class="product-create-form" action="/products/<%= product.id %>?_method=PUT" method="POST" enctype="multipart/form-data">
+    <form class="product-create-form" action="/products/<%= editableGame.id %>?_method=PUT" method="POST" enctype="multipart/form-data">
         <section class="product-create-section">
             <!-- name -->
             <div class="input-box">
@@ -19,26 +19,26 @@
                 <input 
                     class="input-text input-text-product" 
                     type="text" 
-                    name="name" 
-                    id="name" 
-                    value="<%= product.name %>" 
+                    name="title" 
+                    id="title" 
+                    value="<%= editableGame.title%>" 
                     required
                 >
             </div>
             <!-- category -->
             <div class="input-box category-box">
-                <% productCategory.forEach(category => { %>
+                <% editableGame.categories.forEach(category => { %>
                     <div class="single-category">
-                        <label class="label-label" for="<%= category %>">
+                        <label class="label-label" for="<%= category.title %>">
                             Categoría                         
                         </label>
                         <input
                             class="input-text input-text-product"
                             type="text"
-                            name="category"
-                            id="<%= category %>"
+                            name="title"
+                            id="<%= category.title %>"
                             required
-                            value="<%= category %>"
+                            value="<%= category.title %>"
                         >
                     </div>
                 <% }) %>
@@ -50,9 +50,9 @@
                 </label>
                 <!-- img -->
                 <label class="label-label input-text label-file product-file" for="img">
-                    <% if (product.img) { %>
+                    <% if (editableGame.img) { %>
                         <div class="previous-image-box">
-                            <img class="box-width" src="/img/products/<%= product.img %>">
+                            <img class="box-width" src="/img/products/<%= editableGame.img %>">
                         </div>
                     <% } %>
                     <input 
@@ -66,7 +66,7 @@
                 </label>
                 <!-- card -->
                 <label class="label-label input-text label-file product-file" for="card">
-                    <% if (product.card) { %>
+                    <% if (editableGame.card) { %>
                         <div class="previous-image-box">
                             <img src="/img/products/<%= product.card %>">
                         </div>
@@ -95,7 +95,7 @@
                         value="true" 
                         id="relevant-true" 
                         required 
-                        <%= product.relevant == true ? 'checked' : '' %>
+                        <%= editableGame.relevant == true ? 'checked' : '' %>
                     >
                 </label>
                 <label class="label-label label-radio" for="relevant-false">
@@ -107,7 +107,7 @@
                         value="false" 
                         id="relevant-false" 
                         required 
-                        <%= product.relevant == false ? 'checked' : '' %>
+                        <%= editableGame.relevant == false ? 'checked' : '' %>
                     >
                 </label>
             </div>
@@ -121,12 +121,16 @@
                 </span>
                 <input 
                     class="input-text input-price" 
-                    type="text" 
+                    type="number" 
                     name="price" 
                     id="price" 
+                    placeholder="1999"
                     maxlength="4" 
+                    min="1"
+                    max="9999"
+                    step=".01"
                     required
-                    value="<%= product.price %>"
+                    value="<%= editableGame.price %>"
                 >
             </div>
             <!-- inOffer -->
@@ -139,11 +143,11 @@
                     <input 
                         class="input-radio" 
                         type="radio" 
-                        name="inOffer" 
+                        name="offer" 
                         value="true" 
-                        id="inOffer-true" 
+                        id="offer-true" 
                         required 
-                        <%= product.inOffer == true ? 'checked' : '' %>
+                        <%= editableGame.inOffer == true ? 'checked' : '' %>
                     >
                 </label>
                 <label class="label-label label-radio" for="inOffer-false">
@@ -151,11 +155,11 @@
                     <input 
                         class="input-radio" 
                         type="radio" 
-                        name="inOffer" 
+                        name="offer" 
                         value="false" 
-                        id="inOffer-false" 
+                        id="offer-false" 
                         required 
-                        <%= product.inOffer == false ? 'checked' : '' %>
+                        <%= editableGame.inOffer == false ? 'checked' : '' %>
                     >
                 </label>
             </div>
@@ -172,11 +176,14 @@
                 </span>
                 <input 
                     class="input-text input-discount" 
-                    type="text" 
+                    type="number" 
                     name="discount" 
-                    id="discount" 
-                    maxlength="2" 
-                    value="<%= product.discount %>"
+                    id="discount"
+                    placeholder="50"
+                    min="1"
+                    max="99"
+                    step="1" 
+                    value="<%= editableGame.discount %>"
                 >
             </div>
             </div>
@@ -193,7 +200,7 @@
                     maxlength="3000" 
                     required
                 >
-                    <%= product.description %>
+                    <%= editableGame.description %>
                 </textarea>
             </div>
             <!-- BUTTONS -->
@@ -207,12 +214,12 @@
                     </h4>
                 </button>
                 <button class="button-cancel" type="button">
-                    <a href="/products/<%= product.id %>">
+                    <a href="/products/<%= editableGame.id %>">
                         <h3 class="big-title">
                             CANCELAR
                         </h3>
                     </a>
-                    <a href="/products/<%= product.id %>">
+                    <a href="/products/<%= editableGame.id %>">
                         <h5 class="small-title">
                             CANCELAR
                         </h5>
