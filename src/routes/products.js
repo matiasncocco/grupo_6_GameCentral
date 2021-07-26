@@ -34,7 +34,7 @@ router.get('/:id/edit', productsController.edit);
 
 // procesar edición de producto
 // (inaccesible)
-router.post('/:id', upload.single('img'), productsController.update)
+router.put('/:id', upload.single('img'), productsController.update)
 
 // eliminar producto
 // (inaccesible)

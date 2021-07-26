@@ -178,18 +178,40 @@ let productsController = {
 
     // 5 GET: show <form> with current product data
     edit: (req,res) => {
-        let products = readJson('products.json');
-        let param = req.params.id;
-        for (i = 0 ; i < products.length ; i++) {
-            if (products[i].id == param) {
-                let productCategory = products[i].category;
-                return res.render('./products/edit', {
-                    title: 'Edición de producto', 
-                    product: products[i], 
-                    productCategory 
-                });
-            };
-        };
+        db.Game.findByPk(req.params.id, {
+            include: [
+                'categories',
+                'platforms',
+                'status'
+            ]
+        })
+        .then((editableGame) => {
+            return res.render('./products/edit',{
+                title: 'Edicion de producto',
+                editableGame
+            })
+ 
+        })
+        .catch(err =>{
+            res.status(500).render('error', {
+                status: 500,
+                title: 'ERROR',
+                errorDetail: err
+            });
+        });
+
+    //     let products = readJson('products.json');
+    //     let param = req.params.id;
+    //     for (i = 0 ; i < products.length ; i++) {
+    //         if (products[i].id == param) {
+    //             let productCategory = products[i].category;
+    //             return res.render('./products/edit', {
+    //                 title: 'Edición de producto', 
+    //                 product: products[i], 
+    //                 productCategory 
+    //             });
+    //         };
+    //     };
     },
 
     // 6 POST: submit changes to existing product
