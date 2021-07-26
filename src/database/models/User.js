@@ -22,7 +22,7 @@ module.exports = (sequelize, DataTypes) => {
         },
         avatar: {
             type: DataTypes.STRING(255),
-            allowNull: true
+            allowNull: false
         },
         newsletter: {
             type: DataTypes.BOOLEAN,
@@ -30,7 +30,7 @@ module.exports = (sequelize, DataTypes) => {
         },
         admin: {
             type: DataTypes.BOOLEAN,
-            allowNull: false
+            allowNull: true
         },
         password: {
             type: DataTypes.STRING(255),

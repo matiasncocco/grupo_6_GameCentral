@@ -8,7 +8,6 @@ let regions = [
     'Oceanía'
 ];
 
-
 function createOptionGroups(array) {
     let newThings = [];
     for (i = 0; i < array.length; i++) {
@@ -57,10 +56,5 @@ fetch('https://restcountries.eu/rest/v2/all')
     .catch(err => {
         console.log(err);
     });
-
-
-
-
-
 
 let countryOption = document.createElement('option');

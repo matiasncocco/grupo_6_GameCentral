@@ -24,7 +24,7 @@
                     name="name"
                     id="name"
                     placeholder="Juan"
-                    value="<%# locals.oldData && oldData.name ? oldData.name : 'null' %>"
+                    value="<%= locals.oldData && oldData.name ? oldData.name : null %>"
                     required
                 >
             </div>
@@ -39,7 +39,7 @@
                     name="surname"
                     id="surname"
                     placeholder="Pérez"
-                    value="<%# locals.oldData && oldData.surname ? oldData.surname : 'null' %>"
+                    value="<%= locals.oldData && oldData.surname ? oldData.surname : null %>"
                     required
                 >
             </div>
@@ -54,7 +54,7 @@
                     name="email"
                     id="email"
                     placeholder="juan.perez@gmail.com"
-                    value="<%# locals.oldData && oldData.email ? oldData.email : 'null' %>"
+                    value="<%= locals.oldData && oldData.email ? oldData.email : null %>"
                     required
                 >
                 <!--  -->
@@ -62,11 +62,11 @@
                 <!-- DESCOMENTAR LUEGO -->
                 <!-- error custom -->
                 <!-- EMAIL EN USO -->
-                <%# if (locals.errors && errors.email) { %>
-                    <!-- <span class="error-msg"> -->
-                        <%#= errors.email.msg %>
-                    <!-- </span> -->
-                <%# } %>
+                <% if (locals.errors && errors.email) { %>
+                    <span class="error-msg">
+                        <%= errors.email.msg %>
+                    </span>
+                <% } %>
                 <!-- DESCOMENTAR LUEGO -->
                 <!--  -->
                 <!--  -->
@@ -131,8 +131,8 @@
                         class="input-text select-country"
                         name="country"
                         id="country"
-                        required
                     >
+                    <!-- cuando funcione, agregarle required -->
                     </select>
                 </div>
             </div>
@@ -147,9 +147,9 @@
                         class="input-radio"
                         type="radio"
                         name="newsletter"
-                        value="true"
+                        value="1"
                         id="newsletter-true"
-                        <%# locals.oldData && oldData.newsletter ? 'checked' : 'null' %>
+                        <%= locals.oldData && oldData.newsletter === '1' ? 'checked' : null %>
                     >
                 </label>
                 <label class="label-label label-radio" for="newsletter-false">
@@ -158,7 +158,7 @@
                         class="input-radio"
                         type="radio"
                         name="newsletter"
-                        value="false"
+                        value="0"
                         id="newsletter-false"
                     >
                 </label>
@@ -173,6 +173,7 @@
                     <input 
                         class="input-checkbox" 
                         type="checkbox"
+                        required
                     >
                 </label>
             </div>

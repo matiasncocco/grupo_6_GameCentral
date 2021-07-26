@@ -1,4 +1,4 @@
-let { readJson, writeJson, lastId, storeBool } = require('./helper');
+let { readJson, writeJson, storeBool, numberOrNull } = require('./helper');
 let bcrypt = require('bcrypt');
 let { validationResult } = require('express-validator');
 
@@ -14,16 +14,35 @@ let usersController = {
     },
 
     // POST: process register // store user in DB
-    processRegister: (req,res) => {
-        let users = readJson('users.json');
-        let validations = validationResult(req);
-        if (validations.errors.length > 0) {
-            let oldData = req.body;
-            let emails = [];
-            users.forEach(user => {
-                emails.push(user.email);
-            });
-            if (emails.includes(req.body.email)) {
+    // ¡LISTO POR SEQUELIZE!
+    processRegister: async (req,res) => {
+        let oldData = req.body;
+        let user = await db.User.findOne({
+            where: {
+                email: req.body.email
+            }
+        });
+        try {
+            if (user === null) {
+                return db.User.create({
+                    name: req.body.name,
+                    surname: req.body.surname,
+                    email: req.body.email,
+                    password: bcrypt.hashSync(req.body.password, 10),
+                    avatar: req.file.filename,
+                    newsletter: numberOrNull(req.body.newsletter)
+                })
+                .then(() => {
+                    res.redirect('/users/profile');
+                })
+                .catch(err => {
+                    res.status(500).render('error', {
+                        status: 500,
+                        title: 'ERROR',
+                        errorDetail: err
+                    });
+                });
+            } else {
                 return res.render('./users/register', {
                     title: 'Crea tu cuenta',
                     oldData,
@@ -34,29 +53,18 @@ let usersController = {
                     }
                 });
             };
-            return res.render('./users/register', {
-                title: 'Crea tu cuenta',
-                oldData,
-                errors: validations.mapped()
-            })
-        } else {
-            let user = {
-                id: lastId(users) + 1,
-                name: req.body.name,
-                surname: req.body.surname,
-                email: req.body.email,
-                password: bcrypt.hashSync(req.body.password, 10),
-                avatar: req.file.filename,
-                newsletter: storeBool(req.body.newsletter),
-                admin: false,
-            };
-            users.push(user);
-            writeJson(users, 'users');
-            return res.redirect('/users/login');
+        }
+        catch(err) {
+            res.status(500).render('error', {
+                status: 500,
+                title: 'ERROR',
+                errorDetail: err
+            });
         };
     },
 
     // GET: show login view
+    // ¡LISTO POR SEQUELIZE!
     login : (req,res) => {
         res.render('./users/login', {
             title: 'Ingresá' 
@@ -64,7 +72,8 @@ let usersController = {
     },
 
     // POST: process login
-    processLogin: (req,res) => {
+    // ¡LISTO POR SEQUELIZE!
+    processLogin: async (req,res) => {
         // si se envía con campos vacíos
         if (!req.body.email && !req.body.password) {
             return res.render('./users/login', {
@@ -90,70 +99,81 @@ let usersController = {
                 }
             });
         };
-        // leo la DB de usuarios
-        let users = readJson('users.json');
+        // de acá para arriba lo puedo hacer en validaciones en la ruta
+
+        // LÓGICA PARA LOGEAR EL USUARIO:
+        // leo la tabla de usuarios
         // busco coincidencia
-        let userToLog;
-        users.forEach(user => {
-            if (user.email == req.body.email) {
-            userToLog = user;
-            return userToLog;
-            };
-        });
-        // si encontré coincidencia
-        if (userToLog) {
-            // si no completan el campo password
-            if (!req.body.password) {
-                return res.render('./users/login', {
-                    title: 'Ingresá',
-                    oldEmail: req.body.email,
-                    errors: {
-                        password: {
-                            msg: 'Debes ingresar tu contraseña'
+        // y obtengo usuario a logearse
+        let userToLog = await db.User.findOne({
+            where: {
+                email: req.body.email
+            }
+        })        
+        try {
+            if (userToLog != null) {
+                // si encontré coincidencia
+                if (!req.body.password) {
+                    // no completan el campo password
+                    return res.render('./users/login', {
+                        title: 'Ingresá',
+                        oldEmail: req.body.email,
+                        errors: {
+                            password: {
+                                msg: 'Debes ingresar tu contraseña'
+                            }
                         }
-                    }
-                });
-            };
-            // si coinciden las passwords
-            let passwordsMatch = bcrypt.compareSync(req.body.password, userToLog.password);
-            if (passwordsMatch) {
-                delete userToLog.password;
-                req.session.loggedUser = userToLog;
-                // si eligen "recordarme"
-                if (req.body.remember) {
-                    res.cookie('userEmail', req.body.email, {
-                        maxAge: (1000 * 60) * 30 
                     });
-                    return res.redirect('/users/profile');
                 };
-                // si no eligen recordarme
-                return res.redirect('/users/profile');
+                // variable de coincidencia de passwords
+                let passwordsMatch = bcrypt.compareSync(req.body.password, userToLog.password);
+                if (passwordsMatch) {
+                    // si hay match de passwords
+                    delete userToLog.password;
+                    req.session.loggedUser = userToLog;
+                    if (req.body.remember) {
+                        // si eligen "recordarme"
+                        res.cookie('userEmail', req.body.email, {
+                            maxAge: (1000 * 60) * 30 
+                        });
+                        return res.redirect('/users/profile');
+                    };
+                    // si no eligen recordarme
+                    return res.redirect('/users/profile');
+                } else {
+                    // si no hay match en las passwords
+                    return res.render('./users/login', {
+                        title: 'Ingresá',
+                        oldEmail: req.body.email,
+                        errors: {
+                            password: {
+                                msg: 'Las credenciales no coinciden'
+                            }
+                        }
+                    });
+                };
             } else {
-                // si no hubo coincidencia de passwords
+                // si no hubo coincidencia de emails
                 return res.render('./users/login', {
                     title: 'Ingresá',
                     oldEmail: req.body.email,
                     errors: {
-                        password: {
-                            msg: 'Las credenciales no coinciden'
+                        email: {
+                            msg: 'Revisá tu e-mail'
                         }
                     }
                 });
             };
-        } else {
-            // si no hubo coincidencia de emails
-            return res.render('./users/login', {
-                title: 'Ingresá',
-                oldEmail: req.body.email,
-                errors: {
-                    email: {
-                        msg: 'Revisá tu e-mail'
-                    }
-                }
+        }
+        catch(err) {
+            res.status(500).render('error', {
+                status: 500,
+                title: 'ERROR',
+                errorDetail: err
             });
-        };        
+        };
     },
-    
+
     // GET: show users/:id view
     show: (req,res) => {
         let user = req.session.loggedUser;
