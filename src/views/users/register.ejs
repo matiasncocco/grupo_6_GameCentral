@@ -1,5 +1,7 @@
 <%- include ('../partials/head') %>
 <%- include ('../partials/header') %>
+<script src="/js/userCreate.js" defer>
+</script>
 <main class="main-main">
     <header class="main-title first-title">
         <h3 class="big-title">
@@ -16,13 +18,13 @@
                 <label class="label-label" for="name">
                     Nombre
                 </label>
-                <input 
-                    class="input-text" 
-                    type="text" 
-                    name="name" 
-                    id="name" 
-                    placeholder="Juan" 
-                    value="<% locals.oldData && oldData.name ? oldData.name : 'null' %>"
+                <input
+                    class="input-text"
+                    type="text"
+                    name="name"
+                    id="name"
+                    placeholder="Juan"
+                    value="<%# locals.oldData && oldData.name ? oldData.name : 'null' %>"
                     required
                 >
             </div>
@@ -31,13 +33,13 @@
                 <label class="label-label" for="surname">
                     Apellido
                 </label>
-                <input 
-                    class="input-text" 
-                    type="text" 
-                    name="surname" 
-                    id="surname" 
-                    placeholder="Pérez" 
-                    value="<% locals.oldData && oldData.surname ? oldData.surname : 'null' %>"
+                <input
+                    class="input-text"
+                    type="text"
+                    name="surname"
+                    id="surname"
+                    placeholder="Pérez"
+                    value="<%# locals.oldData && oldData.surname ? oldData.surname : 'null' %>"
                     required
                 >
             </div>
@@ -46,58 +48,93 @@
                 <label class="label-label" for="email">
                     E-mail
                 </label>
-                <input 
-                    class="input-text" 
-                    type="email" 
-                    name="email" 
-                    id="email" 
-                    placeholder="juan.perez@gmail.com" 
-                    value="<% locals.oldData && oldData.email ? oldData.email : 'null' %>"
+                <input
+                    class="input-text"
+                    type="email"
+                    name="email"
+                    id="email"
+                    placeholder="juan.perez@gmail.com"
+                    value="<%# locals.oldData && oldData.email ? oldData.email : 'null' %>"
+                    required
                 >
-                <% if (locals.errors && errors.email) { %>
-                    <span class="error-msg">
-                        <%= errors.email.msg %>
-                    </span>
-                <% } %>
+                <!--  -->
+                <!--  -->
+                <!-- DESCOMENTAR LUEGO -->
+                <!-- error custom -->
+                <!-- EMAIL EN USO -->
+                <%# if (locals.errors && errors.email) { %>
+                    <!-- <span class="error-msg"> -->
+                        <%#= errors.email.msg %>
+                    <!-- </span> -->
+                <%# } %>
+                <!-- DESCOMENTAR LUEGO -->
+                <!--  -->
+                <!--  -->
             </div>
             <!-- password -->
             <div class="input-box">
                 <label class="label-label" for="password">
                     Contraseña
                 </label>
-                <input 
-                    class="input-text" 
-                    type="password" 
-                    name="password" 
-                    id="password" 
-                    placeholder="********" 
+                <input
+                    class="input-text"
+                    type="password"
+                    name="password"
+                    id="password"
+                    placeholder="********"
+                    required
                 >
             </div>
+            <!--  -->
+            <!--  -->
+            <!-- DESCOMENTAR LUEGO -->
             <!-- passwordCheck -->
-            <div class="input-box">
+            <!-- NECESITA VALIDACIÓN CUSTOM -->
+            <!-- <div class="input-box">
                 <label class="label-label" for="passwordCheck">
                     Confirme su contraseña
                 </label>
-                <input 
-                    class="input-text" 
-                    type="password" 
-                    name="passwordCheck" 
-                    id="passwordCheck" 
-                    placeholder="********" 
-                >
+                <input
+                    class="input-text"
+                    type="password"
+                    name="passwordCheck"
+                    id="passwordCheck"
+                    placeholder="********"
+                > -->
+                <!-- DESCOMENTAR LUEGO -->
+                <!--  -->
+                <!--  -->
             </div>
             <!-- avatar -->
-            <div class="input-box">
-                <label class="label-label">
+            <div class="input-box file-box">
+                <label class="label-label file-box-label">
                     Foto de perfil
                 </label>
-                <input 
-                    class="" 
-                    type="file" 
-                    name="avatar" 
-                    id="avatar" 
-                    accept=".jpg, .jpeg, .png, .webp" 
-                >
+                <label class="label-label input-text product-file" for="avatar">
+                    <input
+                        class="input-file"
+                        type="file"
+                        name="avatar"
+                        id="avatar"
+                        accept=".jpg, .jpeg, .png, .webp"
+                        required
+                    >
+                </label>
+            </div>
+            <!-- country -->
+            <div class="input-box">
+                <label class="label-label country-label" for="country">
+                    Nacionalidad
+                </label>
+                <div class="country-container">
+                    <select
+                        class="input-text select-country"
+                        name="country"
+                        id="country"
+                        required
+                    >
+                    </select>
+                </div>
             </div>
             <!-- newsletter -->
             <div class="input-box">
@@ -106,22 +143,22 @@
                 </label>
                 <label class="label-label label-radio" for="newsletter-true">
                     Si
-                    <input 
-                        class="input-radio" 
-                        type="radio" 
-                        name="newsletter" 
-                        value="true" 
-                        id="newsletter-true" 
-                        <% locals.oldData && oldData.newsletter ? 'checked' : 'null' %>
+                    <input
+                        class="input-radio"
+                        type="radio"
+                        name="newsletter"
+                        value="true"
+                        id="newsletter-true"
+                        <%# locals.oldData && oldData.newsletter ? 'checked' : 'null' %>
                     >
                 </label>
                 <label class="label-label label-radio" for="newsletter-false">
                     No
-                    <input 
-                        class="input-radio" 
-                        type="radio" 
-                        name="newsletter" 
-                        value="false" 
+                    <input
+                        class="input-radio"
+                        type="radio"
+                        name="newsletter"
+                        value="false"
                         id="newsletter-false"
                     >
                 </label>

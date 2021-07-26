@@ -694,6 +694,11 @@ img {
     flex-flow: row wrap;
 }
 
+.country-container {
+    display: flex;
+    flex-flow: row wrap;
+}
+
 .file-box {
     display: flex;
     flex-flow: column wrap;
@@ -842,7 +847,25 @@ img {
     font-size: inherit;
 }
 
-.properties-category {
+.select-country {
+    font-size: inherit;
+    font-style: inherit;
+    font-weight: inherit;
+}
+
+.select-country optgroup {
+    font-size: inherit;
+    font-style: inherit;
+    font-weight: inherit;
+}
+
+.select-country optgroup option {
+    font-size: inherit;
+    font-style: inherit;
+    font-weight: inherit;
+}
+
+.properties-category, .select-country {
     width: 50%;
 }
 
@@ -1487,8 +1510,8 @@ TABLETS
         font-size: 12px;
     }
 
-    .product-file {
-        width: 100%;
+    .product-file, .select-country {
+        width: 70%;
     }
 
     .properties-category {
@@ -1845,8 +1868,8 @@ DESKTOP
         font-size: 14px;
     }
 
-    .product-file {
-        width: 50%;
+    .product-file, .select-country {
+        width: 60%;
     }
 
     .properties-category {
@@ -2115,8 +2138,8 @@ PANTALLAS +
         width: 50%;
     }
 
-    .product-file {
-        width: 50%;
+    .product-file, .select-country {
+        width: 100%
     }
 
     .properties-category {
