@@ -1,14 +1,26 @@
-let { readJson } = require('../controllers/helper');
+let db = require('../database/models');
 
 let globalUserMiddleware = (req,res,next) => {
-    let users = readJson('users.json');
     if (req.cookies.userEmail) {
         let cookieEmail = req.cookies.userEmail;
-        let userCookie = users.find(user => user.email == cookieEmail);
-        if (userCookie) {
-            delete userCookie.password;
-            req.session.loggedUser = userCookie;
-        };
+        db.User.findOne({
+            where: {
+                email: cookieEmail
+            }
+        })
+        .then(cookieUser => {
+            if (cookieUser != null) {
+                delete cookieUser.password;
+                return req.session.loggedUser = cookieUser;
+            };
+        })
+        .catch(err => {
+            res.status(500).render('error', {
+                status: 500,
+                title: 'ERROR',
+                errorDetail: err
+            });
+        })
     };
     res.locals.user = false;
     if (req.session.loggedUser) {
@@ -16,7 +28,7 @@ let globalUserMiddleware = (req,res,next) => {
         res.locals.user = req.session.loggedUser;
         return next();
     };
-    next();
+    return next();
 };
 
 module.exports = globalUserMiddleware;

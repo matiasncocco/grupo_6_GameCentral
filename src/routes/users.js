@@ -83,6 +83,7 @@ router.put('/:id', usersController.giveAdmin);
 // Acción de edición (a donde se envía el formulario):
 
 // /users (DELETE)
+router.delete('/users/profile')
 // Eliminar usuario de la DB
 
 module.exports = router;

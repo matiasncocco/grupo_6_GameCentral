@@ -108,7 +108,7 @@ let productsController = {
             discount: numberOrNull(req.body.discount),
             description: stringOrNull(req.body.description)
         })
-            .then((creation) => {
+            .then(creation => {
                 if (Array.isArray(req.body.platforms)) {
                     console.log('ENTRÉ a SI ES ARRAY');
                     let platforms = req.body.platforms.map(giveNumber);
@@ -129,7 +129,7 @@ let productsController = {
                 };
                 return creation;
             })
-            .then((creation) => {
+            .then(creation => {
                 let categories = req.body.categories.map(addOne);
                 categories.forEach(category => {         
                     db.CategoryGame.create({
@@ -139,7 +139,7 @@ let productsController = {
                 });
                 return creation;
             })
-            .then((creation) => {
+            .then(creation => {
                 let relevant = req.body.relevant;
                 let offer = req.body.offer;
                 if (relevant === 'true' && offer === 'true') {

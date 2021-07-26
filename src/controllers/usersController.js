@@ -33,7 +33,7 @@ let usersController = {
                     newsletter: numberOrNull(req.body.newsletter)
                 })
                 .then(() => {
-                    res.redirect('/users/profile');
+                    res.redirect('/users/login');
                 })
                 .catch(err => {
                     res.status(500).render('error', {
@@ -184,13 +184,28 @@ let usersController = {
     },
 
     // GET: destroy session & cookie
-    delog: (req,res) => {
-        req.session.destroy();
-        res.clearCookie('userEmail');
-        res.redirect('/');
+    // ¡LISTO POR SEQUELIZE!
+    // éste método me tira el error:
+    // Error [ERR_HTTP_HEADERS_SENT]: Cannot set headers after they are sent to the client
+    delog: async (req,res) => {
+        let sessionDestroy = await req.session.destroy();
+        let cookieDestroy = await res.clearCookie('userEmail');
+        try {
+            sessionDestroy;
+            cookieDestroy;
+            res.redirect('/');
+        }
+        catch(err) {
+            res.status(500).render('error', {
+                status: 500,
+                title: 'ERROR',
+                errorDetail: err
+            });
+        };
     },
  
     // GET: show user list
+    // ¡LISTO POR SEQUELIZE!
     index: (req,res) => {
         db.User.findAll()
             .then(users => {
@@ -200,7 +215,11 @@ let usersController = {
                 });
             })
             .catch(err => {
-                res.send(err);
+                res.status(500).render('error', {
+                    status: 500,
+                    title: 'ERROR',
+                    errorDetail: err
+                });
             });
     },
 
@@ -232,8 +251,28 @@ let usersController = {
     },
 
     // GET: show <form> w/ current user data
+    
     // POST: submit changes to user
-    // DELETE: remove entry.
+
+    // DELETE: remove entry
+    // ¡LISTO POR SEQUELIZE!
+    destroy: (req,res) => {
+        db.User.destroy({
+            where: {
+                id: req.params.id
+            }
+        })
+            .then(() => {
+                res.redirect('/');
+            })
+            .catch(err => {
+                res.status(500).render('error', {
+                    status: 500,
+                    title: 'ERROR',
+                    errorDetail: err
+                });
+            });
+    },
 };
 
 module.exports = usersController;
