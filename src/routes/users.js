@@ -60,7 +60,7 @@ router.get('/profile', usersController.show);
 
 // procesar delog de usuario & destrucción de cookie
 // (inaccesible)
-router.get('/delog', usersController.delog);
+// router.get('/delog', usersController.delog);
 
 // vista con lista de todos los usuarios
 // -> ADMINS
@@ -82,8 +82,9 @@ router.put('/:id', usersController.giveAdmin);
 // /users/profile (PUT)
 // Acción de edición (a donde se envía el formulario):
 
-// /users (DELETE)
-router.delete('/users/profile')
+// elimiar usuario
+// (inaccesible)
+router.delete('/profile', usersController.destroy);
 // Eliminar usuario de la DB
 
 module.exports = router;

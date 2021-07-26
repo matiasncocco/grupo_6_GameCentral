@@ -20,7 +20,7 @@ let globalUserMiddleware = (req,res,next) => {
                 title: 'ERROR',
                 errorDetail: err
             });
-        })
+        });
     };
     res.locals.user = false;
     if (req.session.loggedUser) {

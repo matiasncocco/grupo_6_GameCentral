@@ -54,8 +54,13 @@
         </button>
     </form>
     <form action="/users/profile/<%= user.id %>?_method=PUT" method="POST">
-        <button>
+        <button type="submit">
             Editar mis datos
+        </button>
+    </form>
+    <form action="/users/profile?_method=DELETE" method="POST">
+        <button type="submit">
+            Elimiar mi cuenta
         </button>
     </form>
 </main>

@@ -1,4 +1,4 @@
-let { readJson, writeJson, storeBool, numberOrNull } = require('./helper');
+let { storeBool, numberOrNull, delog } = require('./helper');
 let bcrypt = require('bcrypt');
 let { validationResult } = require('express-validator');
 
@@ -188,11 +188,9 @@ let usersController = {
     // éste método me tira el error:
     // Error [ERR_HTTP_HEADERS_SENT]: Cannot set headers after they are sent to the client
     delog: async (req,res) => {
-        let sessionDestroy = await req.session.destroy();
-        let cookieDestroy = await res.clearCookie('userEmail');
+        await req.session.destroy();
+        await res.clearCookie('userEmail');
         try {
-            sessionDestroy;
-            cookieDestroy;
             res.redirect('/');
         }
         catch(err) {
@@ -255,15 +253,26 @@ let usersController = {
     // POST: submit changes to user
 
     // DELETE: remove entry
-    // ¡LISTO POR SEQUELIZE!
+    // por sequelize: en progreso
     destroy: (req,res) => {
         db.User.destroy({
             where: {
-                id: req.params.id
+                id: req.session.loggedUser.id
             }
         })
-            .then(() => {
-                res.redirect('/');
+            .then( async () => {
+                await req.session.destroy();
+                await res.clearCookie('userEmail');
+                try {
+                    res.redirect('/');
+                }
+                catch(err) {
+                    res.status(500).render('error', {
+                        status: 500,
+                        title: 'ERROR',
+                        errorDetail: err
+                    });
+                };
             })
             .catch(err => {
                 res.status(500).render('error', {
