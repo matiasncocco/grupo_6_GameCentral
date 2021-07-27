@@ -60,12 +60,26 @@ router.get('/profile', usersController.show);
 
 // procesar delog de usuario & destrucción de cookie
 // (inaccesible)
-// router.get('/delog', usersController.delog);
+router.get('/delog', usersController.delog);
 
 // vista con lista de todos los usuarios
 // -> ADMINS
 // !! hay que pasarle adminMiddleware !!
 router.get('/', usersController.index);
+
+// vista de edición de producto. <form> de creación con datos
+// -> USUARIOS
+// ¡¡ hay que pasarle userMiddleware !!
+router.get('/profile/edit', usersController.edit)
+
+// procesar edición de producto
+// (inaccesible)
+router.put('/profile', usersController.update);
+
+// elimiar usuario
+// (inaccesible)
+router.delete('/profile', usersController.destroy);
+// Eliminar usuario de la DB
 
 // vista para cambiar user.admin === ( true || false )
 // -> ADMINS
@@ -75,16 +89,5 @@ router.get('/:id', usersController.admin)
 // procesar cambio de user.admin === ( true || false )
 // (inaccesible)
 router.put('/:id', usersController.giveAdmin);
-
-// /users/profile/edit (GET)
-// Formulario de edición de usuarios
-
-// /users/profile (PUT)
-// Acción de edición (a donde se envía el formulario):
-
-// elimiar usuario
-// (inaccesible)
-router.delete('/profile', usersController.destroy);
-// Eliminar usuario de la DB
 
 module.exports = router;

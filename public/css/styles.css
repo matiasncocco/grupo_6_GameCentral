@@ -1239,6 +1239,7 @@ img {
     color: black;
     display: flex;
     flex-flow: row wrap;
+    justify-content: center;
 }
 
 .profile-title {
@@ -1268,17 +1269,13 @@ img {
 }
 
 .profile-avatar {
-    margin: 1%;
-    width: 100%;
-    text-align: center;
+    margin: 1% 0;
+    width: 150px;
 }
 
 .profile-avatar img {
-    width: 150px;
-    width: 150px;
+    width: 100%;
     border-radius: 100%;
-    aspect-ratio: 1/1;
-    align-self: center;
     border: solid 2px #858BB7;
 }
 
@@ -1613,8 +1610,7 @@ TABLETS
         text-align: left;
     }
 
-    .profile-avatar img {
-        width: 200px;
+    .profile-avatar {
         width: 200px;
     }
 }
@@ -1991,8 +1987,7 @@ DESKTOP
     /* USER PROFILE */
     /**/
 
-    .profile-avatar img {
-        width: 300px;
+    .profile-avatar {
         width: 300px;
     }
 

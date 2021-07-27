@@ -1,4 +1,4 @@
-let { storeBool, numberOrNull, delog } = require('./helper');
+let { storeBool, numberOrNull } = require('./helper');
 let bcrypt = require('bcrypt');
 let { validationResult } = require('express-validator');
 
@@ -7,6 +7,7 @@ let db = require('../database/models');
 let usersController = {
     // GET: show register view // <form>
     // sequelize: en progreso
+    // FALTA MOSTRAR PAÍSES: API REST
     register : (req,res) => {
         res.render('./users/register', {
             title: 'Crea tu cuenta'
@@ -14,7 +15,8 @@ let usersController = {
     },
 
     // POST: process register // store user in DB
-    // ¡LISTO POR SEQUELIZE!
+    // sequelize: en progreso
+    // FALTA country: req.body.country
     processRegister: async (req,res) => {
         let oldData = req.body;
         let user = await db.User.findOne({
@@ -185,8 +187,6 @@ let usersController = {
 
     // GET: destroy session & cookie
     // ¡LISTO POR SEQUELIZE!
-    // éste método me tira el error:
-    // Error [ERR_HTTP_HEADERS_SENT]: Cannot set headers after they are sent to the client
     delog: async (req,res) => {
         await req.session.destroy();
         await res.clearCookie('userEmail');
@@ -221,39 +221,19 @@ let usersController = {
             });
     },
 
-    // GET: show <form> to change or not admin
-    admin: (req,res) => {
-        let users = readJson('users.json');
-        let param = req.params.id;
-        users.forEach(user => {
-            if (param == user.id) {
-                res.render('./users/give-admin', {
-                    title: 'Privilegios',
-                    user
-                });
-            };
-        });
-    },
-
-    // PUT: changes user admin status (true || false)
-    giveAdmin: (req,res) => {
-        let users = readJson('users.json');
-        let param = req.params.id;
-        users.forEach(user => {
-            if (param == user.id) {
-                user.admin = storeBool(req.body.admin);
-                writeJson(users, 'users');
-                return res.redirect('/users');
-            };
-        });
-    },
-
     // GET: show <form> w/ current user data
+    // por sequelize: en progreso
+    edit: (req,res) => {
+
+    },
     
     // POST: submit changes to user
+    update: (req,res) => {
+
+    },
 
     // DELETE: remove entry
-    // por sequelize: en progreso
+    // ¡LISTO POR SEQUELIZE!
     destroy: (req,res) => {
         db.User.destroy({
             where: {
@@ -281,6 +261,33 @@ let usersController = {
                     errorDetail: err
                 });
             });
+    },
+
+    // GET: show <form> to change or not admin
+    admin: (req,res) => {
+        // let users = readJson('users.json');
+        let param = req.params.id;
+        users.forEach(user => {
+            if (param == user.id) {
+                res.render('./users/give-admin', {
+                    title: 'Privilegios',
+                    user
+                });
+            };
+        });
+    },
+
+    // PUT: changes user admin status (true || false)
+    giveAdmin: (req,res) => {
+        // let users = readJson('users.json');
+        let param = req.params.id;
+        users.forEach(user => {
+            if (param == user.id) {
+                user.admin = storeBool(req.body.admin);
+                writeJson(users, 'users');
+                return res.redirect('/users');
+            };
+        });
     },
 };
 

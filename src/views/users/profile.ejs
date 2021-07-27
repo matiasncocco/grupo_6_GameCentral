@@ -34,13 +34,13 @@
             <h3>
                 <%= user.email %>
             </h3>
-            <% if (user.newsletter === true) { %>
+            <% if (user.newsletter == 1) { %>
                 <h5>
                     Estás subscripto a nuestra newsletter
                 </h5>
             <% } else { %>
                 <h5>
-                    No estás subscripto a nuestra newsletter
+                   No estás subscripto a nuestra newsletter
                 </h5>
             <% } %>
             <h3>
