@@ -1,6 +1,7 @@
 <%- include ('../partials/head') %>
 <%- include ('../partials/header') %>
 <script src="/js/finalPriceMath.js" defer></script>
+<script src="/js/gameIndex.js" defer></script>
 <main class="main-main">
     <!-- Título todos los juegos -->
     <header class="main-title flex-title">
@@ -15,22 +16,40 @@
         <!--  -->
         <!--  -->
         <!-- DESCOMENTAR LUEGO -->
-        <% if (locals.user) { %>
+        <%# if (locals.user) { %>
             <div class="store-control-box">
-                <% if (user.admin === true) { %>
+                <%# if (user.admin === true) { %>
                     <a href="/products/create" class="store-control-link">
                         <i class="fas fa-plus-square"></i>      
                     </a>
-                <% } %>
+                <%# } %>
                 <a href="/products/cart" class="store-control-link">
                     <i class="fas fa-shopping-cart"></i>
                 </a>
             </div>
-        <% } %>
+        <%# } %>
         <!-- DESCOMENTAR LUEGO -->
         <!--  -->
         <!--  -->
     </header>
+    <section class="search-bar-section">
+        <form class="search-bar-box" action="" method="GET">
+            <input
+                class="search-bar"
+                type="text"
+                name="busqueda"
+                placeholder="Buscar un juego..."
+            >
+            <button class="search-button" type="submit">
+                <h3 class="big-title">
+                    <i class="fas fa-search"></i>
+                </h3>
+                <h5 class="small-title">
+                    <i class="fas fa-search"></i>
+                </h5>
+            </button>
+        </form>
+    </section>
     <section class="main-section last-section">
         <% for (i = 0; i < games.length; i++) { %>
             <%- include('../products/partials/game', { game: games } ) %>

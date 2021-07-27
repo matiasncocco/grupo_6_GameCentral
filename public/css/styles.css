@@ -20,6 +20,13 @@ input::-webkit-inner-spin-button {
 input[type=number] {
   -moz-appearance: textfield;
 }
+/* ESTE ES PARA DARLE ESTILO AL PLACEHOLDER */
+::-webkit-input-placeholder {
+    font-style: italic;
+    color: #666;
+    font-family: 'Rubik', sans-serif;
+    font-size: inherit;
+}
 /**/
 /**/
 /**/
@@ -112,7 +119,7 @@ img {
     max-width: 90%;
 }
 
-.main-navbar, .user-navbar .search-bar{
+.main-navbar, .user-navbar {
     display: none;
 }
 
@@ -143,17 +150,6 @@ img {
     color: #FFF;
     background: linear-gradient(#858BB7,#E2DDF9);
     text-shadow: -1px 0 black, 0 1px black, 1px 0 black, 0 -1px black;
-}
-
-.search-bar-icon{
-    display: flex;
-    align-content: space-around;
-}
-
-.search-bar{
-    background-color: whitesmoke;
-    border-radius: 5px;
-    border: 1px solid black;
 }
 
 .icon-bar{
@@ -642,6 +638,42 @@ img {
     text-shadow: -2px 2px #B14593;
 }
 
+.search-bar-section {
+    width: 80%;
+    margin: auto;
+}
+
+.search-bar-box {
+    margin: 2% 0;
+    display: flex;
+    flex-flow: row wrap;
+}
+
+.search-bar {
+    width: 90%;
+    padding: 1%;
+    border: #858BB7 solid 2px;
+    border-radius: 4px 0 0 4px;
+    font-family: inherit;
+    font-weight: 400;
+    transition: all .1s cubic-bezier(.25,.25,.25,.25);
+}
+
+.search-bar:focus {
+    outline-color: #B6B1F1;
+}
+
+.search-button {
+    width: 10%;
+    padding: 1%;
+    cursor: pointer;
+    background-color: #858BB7;
+    border: none;
+    color: #FFF;
+    text-shadow: 0px 0px 5px black;
+    border-radius: 0 4px 4px 0;
+    transition: all .1s cubic-bezier(.25,.25,.25,.25);
+}
 
 /**/
 /* FORMULARIOS */
@@ -941,13 +973,6 @@ img {
 }
 
 /* MISC */
-::-webkit-input-placeholder {
-    font-style: italic;
-    color: #666;
-    font-family: 'Rubik', sans-serif;
-    font-size: inherit;
-}
-
 .terms-conditions {
     text-decoration: underline;
 }
@@ -1288,6 +1313,44 @@ img {
 
 .profile-more h1, .profile-more h3, .profile-more h4 {
     margin: 2% 0;
+}
+
+.profile-user-games {
+    width: 100%;
+    text-align: left;
+    margin: 0;  
+    padding: 2%;
+}
+
+.profile-user-games p {
+    text-shadow: none;
+}
+
+.user-control-footer {
+    background: linear-gradient(#E2DDF9,#858BB7);
+    border-radius: 8px;
+    border: solid 2px #858BB7;
+    margin: auto;
+    width: 90%;
+    display: flex;
+    flex-flow: row wrap;
+    align-items: center;
+    padding: 20px 0;
+    margin-bottom: 30px;
+}
+
+.user-control-box {
+    width: 33%;
+    text-align: center;
+}
+
+.user-control-button {
+    width: fit-content;
+    padding: 4px;
+    background-color: #858BB7;
+    border: 2px solid #E2DDF9;
+    transition: all .2s cubic-bezier(.25,.25,.25,.25);
+    cursor: pointer;
 }
 
 
@@ -1814,6 +1877,10 @@ DESKTOP
         text-shadow: -2px 2px #B14593;
     }
 
+    .search-button-hover-me {
+        box-shadow: 5px 5px 5px 2px black;
+    }
+
 
     /**/
     /* FORMULARIOS */
@@ -1998,6 +2065,18 @@ DESKTOP
     .profile-cart-link i:hover {
         color: #B14593;
         text-shadow: none;
+    }
+
+    .user-control-button:hover {
+        color: #FFF;
+        background-color: #B14593;
+        border: 2px solid #B14593;
+        text-shadow: -2px 2px 0 black;
+    }
+
+    .user-eliminar:hover {
+        background: red;
+        border: 2px solid red;
     }
 }
 

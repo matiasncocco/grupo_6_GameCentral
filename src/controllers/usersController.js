@@ -76,6 +76,7 @@ let usersController = {
     // POST: process login
     // ¡LISTO POR SEQUELIZE!
     processLogin: async (req,res) => {
+        // LAS SIGUIENTES LÍNEAS DESAPARECERÁN CUANDO IMPLEMENTE VALIDACIONES CON EXPRESS-VALIDATOR
         // si se envía con campos vacíos
         if (!req.body.email && !req.body.password) {
             return res.render('./users/login', {
@@ -102,6 +103,7 @@ let usersController = {
             });
         };
         // de acá para arriba lo puedo hacer en validaciones en la ruta
+        // DESAPARECEÁN CUANDO IMPLEMENTE VALIDACIONES CON EXPRESS-VALIDATOR
 
         // LÓGICA PARA LOGEAR EL USUARIO:
         // leo la tabla de usuarios
@@ -177,12 +179,27 @@ let usersController = {
     },
 
     // GET: show users/:id view
+    // ¡LISTO POR SEQUELIZE!
     show: (req,res) => {
         let user = req.session.loggedUser;
-        res.render('./users/profile', {
-            title: user.name + ' ' + user.surname,
-            user
-        });
+        db.User.findByPk(user.id, {
+            include: [
+                'games'
+            ]
+        })
+            .then(loggedUser => {
+                res.render('./users/profile', {
+                    title: loggedUser.name + ' ' + loggedUser.surname,
+                    user: loggedUser
+                });
+            })
+            .catch(err => {
+                res.status(500).render('error', {
+                    status: 500,
+                    title: 'ERROR',
+                    errorDetail: err
+                });
+            });
     },
 
     // GET: destroy session & cookie

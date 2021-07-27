@@ -47,21 +47,45 @@
                 Argentina
             </h3>
         </div>
+        <% if (user.games.length > 0) { %>
+            <div class="profile-more profile-user-games">
+                <h3 class="big-title">
+                    En mi librería
+                </h3>
+                <h5 class="small-title">
+                    En mi librería
+                </h5>
+                <% user.games.forEach(game => { %>
+                    <p>
+                        <i class="fab fa-get-pocket"></i>
+                        <%= game.title %>
+                    </p>
+                <% }) %>
+            </div>
+        <% } %>
     </section>
-    <form action="/users/delog" method="GET">
-        <button type="submit">
-            Cerrar sesión
-        </button>
-    </form>
-    <form action="/users/profile/<%= user.id %>?_method=PUT" method="POST">
-        <button type="submit">
-            Editar mis datos
-        </button>
-    </form>
-    <form action="/users/profile?_method=DELETE" method="POST">
-        <button type="submit">
-            Elimiar mi cuenta
-        </button>
-    </form>
+    <footer class="user-control-footer">
+        <form class="user-control-box" action="/users/delog" method="GET">
+            <button class="user-control-button" type="submit">
+                <h3>
+                    CERRAR SESIÓN
+                </h3>
+            </button>
+        </form>
+        <form class="user-control-box" action="/users/profile/<%= user.id %>?_method=PUT" method="POST">
+            <button class="user-control-button" type="submit">
+                <h3>
+                    EDITAR MIS DATOS
+                </h3>
+            </button>
+        </form>
+        <form class="user-control-box" action="/users/profile?_method=DELETE" method="POST">
+            <button class="user-control-button user-eliminar" type="submit">
+                <h3>
+                    ELIMINAR MI CUENTA
+                </h3>
+            </button>
+        </form>
+    </footer>
 </main>
 <%- include ('../partials/footer') %>
