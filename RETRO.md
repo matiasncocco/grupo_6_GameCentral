@@ -49,3 +49,14 @@
 5. Dejar de prolongar tiempo sin reunirnos. No ausentarnos aún sin avance en el proyecto.
 
 ---
+
+<h2>Sprint 5</h2>
+
+1. Profundizar la division de tareas y revisiones grupales.
+2. Mantener un contacto diario para ver al menos los avances menores.
+3. Hacer con mas frecuencia reuniones de co-coding con el fin de a afianzar conceptos y ver otras miradas con respecto a la resolucion de problemas.
+4. Procuremos dar señales de participacion recurrentemente. 
+5. Basta de procrastinar.
+
+---
+
