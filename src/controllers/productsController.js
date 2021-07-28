@@ -110,7 +110,6 @@ let productsController = {
         })
             .then(creation => {
                 if (Array.isArray(req.body.platforms)) {
-                    console.log('ENTRÉ a SI ES ARRAY');
                     let platforms = req.body.platforms.map(giveNumber);
                     platforms = platforms.map(addOne);
                     platforms.forEach(platform => {
