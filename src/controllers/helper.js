@@ -7,14 +7,6 @@ let helper = {
         };
     },
 
-    numberOrNull: (value) => {
-        if (value != null) {
-            return parseInt(value);
-        } else {
-            return null;
-        };
-    },
-
     stringOrNull: (value) => {
         if (value == '') {
             return null;

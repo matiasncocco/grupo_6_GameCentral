@@ -872,6 +872,7 @@ img {
 .product-file {
     width: 100%;
     background-color: #FFF;
+    cursor: pointer;
 }
 
 .input-file {
@@ -899,6 +900,14 @@ img {
 
 .properties-category, .select-country {
     width: 50%;
+}
+
+.edit-product-file {
+    width: 50%;
+}
+
+.edit-product-file img {
+    margin-bottom: 2%;
 }
 
 /* BUTTONS */
@@ -1578,6 +1587,10 @@ TABLETS
         width: 50%;
     }
 
+    .edit-product-file {
+        width: 50%;
+    }
+
     /* ERROR */
     .error-msg {
         font-size: 14px;
@@ -1939,6 +1952,14 @@ DESKTOP
         width: 50%;
     }
 
+    .edit-product-file {
+        width: 50%;
+    }
+
+    .edit-product-file {
+        width: 50%;
+    }
+
     /* BUTTONS */
     .button-send:hover {
         color: #767889;
@@ -2217,6 +2238,10 @@ PANTALLAS +
     }
 
     .properties-category {
+        width: 50%;
+    }
+
+    .edit-product-file {
         width: 50%;
     }
 

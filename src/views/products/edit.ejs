@@ -1,5 +1,7 @@
 <%- include ('../partials/head') %>
 <%- include ('../partials/header') %>
+<script src="/js/gameCreate.js" defer>
+</script>
 <main class="main-main">
     <header class="main-title first-title">
         <h3 class="big-title">
@@ -9,105 +11,199 @@
             EDITAR ARTÍCULO
         </h5>
     </header>
-    <form class="product-create-form" action="/products/<%= editableGame.id %>?_method=PUT" method="POST" enctype="multipart/form-data">
+    <form
+        class="product-create-form"
+        action="/products/<%= editableGame.id %>?_method=PUT"
+        method="POST"
+        enctype="multipart/form-data"
+    >
         <section class="product-create-section">
-            <!-- name -->
+            <!-- title -->
             <div class="input-box">
-                <label class="label-label" for="name">
+                <label class="label-label" for="title">
                     Nombre
                 </label>
-                <input 
-                    class="input-text input-text-product" 
-                    type="text" 
-                    name="title" 
-                    id="title" 
-                    value="<%= editableGame.title%>" 
+                <input
+                    class="input-text input-text-product"
+                    type="text"
+                    name="title"
+                    id="title"
+                    value="<%= editableGame.title %>"
                     required
                 >
             </div>
-            <!-- category -->
-            <div class="input-box category-box">
-                <% editableGame.categories.forEach(category => { %>
-                    <div class="single-category">
-                        <label class="label-label" for="<%= category.title %>">
-                            Categoría                         
-                        </label>
-                        <input
-                            class="input-text input-text-product"
-                            type="text"
-                            name="title"
-                            id="<%= category.title %>"
-                            required
-                            value="<%= category.title %>"
-                        >
-                    </div>
-                <% }) %>
+            <!-- categories -->
+            <div class="input-box">
+                <label class="label-label" for="categories">
+                    Categorías
+                </label>
+                <div class="properties-categories">
+                    <% for (i = 0; i < editableGame.categories.length; i++) { %>
+                        <select
+                                class="input-text properties-category"
+                                name="categories"
+                                required
+                            >
+                            <option>
+                                <%= editableGame.categories[i].title %>
+                            </option>
+                            <% for (j = 0; j < oldCategories.length; j++) { %>
+                                <option value="<%#= [j] %>">
+                                    <%= oldCategories[j].title %>
+                                </option>
+                            <% } %>
+                        </select>
+                    <% } %>
+                </div>
             </div>
-            <!-- FILES x2 -->
+            <!-- platforms -->
+            <div class="input-box">
+                <label class="label-label">
+                    Plataformas
+                </label>
+                <label class="label-smaller">
+                    Marque las plataformas en las que éste producto está disponible
+                </label>
+                <div class="platform-check-box">
+                    <label class="label-label label-radio label-platforms" for="windows">
+                        <i class="fab fa-windows"></i>
+                        <input
+                            class="input-checkbox-platform"
+                            type="checkbox"
+                            name="platforms"
+                            id="windows"
+                            value="0"
+                            <% editableGame.platforms.forEach(platform => { %>
+                                <%= platform.title == 'WINDOWS' ? 'checked' : null %>
+                            <% }) %>
+                        >
+                    </label>
+                    <label class="label-label label-radio label-platforms" for="mac-os">
+                        <i class="fab fa-apple"></i>
+                        <input
+                            class="input-checkbox-platform"
+                            type="checkbox"
+                            name="platforms"
+                            id="mac-os"
+                            value="1"
+                            <% editableGame.platforms.forEach(platform => { %>
+                                <%= platform.title == 'MAC OS' ? 'checked' : null %>
+                            <% }) %>
+                        >
+                    </label>
+                    <label class="label-label label-radio label-platforms" for="linux">
+                        <i class="fab fa-linux"></i>
+                        <input
+                            class="input-checkbox-platform"
+                            type="checkbox"
+                            name="platforms"
+                            id="linux"
+                            value="2"
+                            <% editableGame.platforms.forEach(platform => { %>
+                                <%= platform.title == 'LINUX' ? 'checked' : null %>
+                            <% }) %>
+                        >
+                    </label>
+                    <label class="label-label label-radio label-platforms" for="vr-headset">
+                        <i class="fas fa-vr-cardboard"></i>
+                        <input
+                            class="input-checkbox-platform"
+                            type="checkbox"
+                            name="platforms"
+                            id="vr-headset"
+                            value="3"
+                            <% editableGame.platforms.forEach(platform => { %>
+                                <%= platform.title == 'VR HEADSET' ? 'checked' : null %>
+                            <% }) %>
+                        >
+                    </label>
+                    <div class="error-box">
+
+                    </div>
+                </div>
+            </div>
+            <!-- img -->
             <div class="input-box file-box">
                 <label class="label-label file-box-label">
-                    Imágenes
+                    Imágen
                 </label>
-                <!-- img -->
-                <label class="label-label input-text label-file product-file" for="img">
-                    <% if (editableGame.img) { %>
-                        <div class="previous-image-box">
-                            <img class="box-width" src="/img/products/<%= editableGame.img %>">
-                        </div>
-                    <% } %>
+                <label class="label-label input-text product-file edit-product-file" for="img">
+                    <img src="/img/products/<%= editableGame.img %>">
                     <input 
                         class="input-file" 
                         type="file" 
                         name="img" 
                         id="img" 
                         accept=".jpg, .jpeg, .png, .webp"
+                        required
                     >
-                    Imágen principal 1920x1080
                 </label>
-                <!-- card -->
-                <label class="label-label input-text label-file product-file" for="card">
-                    <% if (editableGame.card) { %>
-                        <div class="previous-image-box">
-                            <img src="/img/products/<%= product.card %>">
-                        </div>
-                    <% } %>
-                    <input 
-                        class="input-file" 
-                        type="file"
-                        name="card" 
-                        id="card" 
-                        accept=".jpg, .jpeg, .png, .webp"
-                    >
-                    Imágen tipo tarjeta 271x377
-                </label>
-            </div>           
-            <!-- relevant -->
+            </div> 
+            <!-- RELEVANT -->
             <div class="input-box">
                 <label class="label-label">
-                    ¿Clasificar producto como "RELEVANT"?
+                    ¿Pertenece a sección "RECOMENDADOS"?
                 </label>
                 <label class="label-label label-radio" for="relevant-true">
-                    RELEVANT product
-                    <input 
-                        class="input-radio" 
-                        type="radio" 
-                        name="relevant" 
-                        value="true" 
-                        id="relevant-true" 
-                        required 
-                        <%= editableGame.relevant == true ? 'checked' : '' %>
+                    SI
+                    <input
+                        class="input-radio"
+                        type="radio"
+                        name="relevant"
+                        value="true"
+                        id="relevant-true"
+                        required
+                        <% editableGame.status.forEach(status => { %>
+                            <%= status.name == 'RELEVANT' ? 'checked' : null %>
+                        <% }) %>
                     >
                 </label>
                 <label class="label-label label-radio" for="relevant-false">
-                    NOT relevant product
-                    <input 
-                        class="input-radio" 
-                        type="radio" 
-                        name="relevant" 
-                        value="false" 
-                        id="relevant-false" 
-                        required 
-                        <%= editableGame.relevant == false ? 'checked' : '' %>
+                    NO
+                    <input
+                        class="input-radio"
+                        type="radio"
+                        name="relevant"
+                        value="false"
+                        id="relevant-false"
+                        required
+                        <% editableGame.status.forEach(status => { %>
+                            <%= status.name != 'RELEVANT' ? 'checked' : null %>
+                        <% }) %>
+                    >
+                </label>
+            </div>
+            <!-- IN OFFER -->
+            <div class="input-box">
+                <label class="label-label">
+                    ¿Producto "EN OFERTA"?
+                </label>
+                <label class="label-label label-radio" for="offer-true">
+                    SI
+                    <input
+                        class="input-radio"
+                        type="radio"
+                        name="offer"
+                        value="true"
+                        id="offer-true"
+                        required
+                        <% editableGame.status.forEach(status => { %>
+                            <%= status.name == 'IN OFFER' ? 'checked' : null %>
+                        <% }) %>
+                    >
+                </label>
+                <label class="label-label label-radio" for="offer-false">
+                    NO
+                    <input
+                        class="input-radio"
+                        type="radio"
+                        name="offer"
+                        value="false"
+                        id="offer-false"
+                        required
+                        <% editableGame.status.forEach(status => { %>
+                            <%= status.name != 'IN OFFER' ? 'checked' : null %>
+                        <% }) %>
                     >
                 </label>
             </div>
@@ -120,7 +216,7 @@
                     $
                 </span>
                 <input 
-                    class="input-text input-price" 
+                    class="input-text input-price"
                     type="number" 
                     name="price" 
                     id="price" 
@@ -133,56 +229,23 @@
                     value="<%= editableGame.price %>"
                 >
             </div>
-            <!-- inOffer -->
-            <div class="input-box">
-                <label class="label-label">
-                    ¿Está éste producto en oferta?
-                </label>
-                <label class="label-label label-radio" for="inOffer-true">
-                    Si
-                    <input 
-                        class="input-radio" 
-                        type="radio" 
-                        name="offer" 
-                        value="true" 
-                        id="offer-true" 
-                        required 
-                        <%= editableGame.inOffer == true ? 'checked' : '' %>
-                    >
-                </label>
-                <label class="label-label label-radio" for="inOffer-false">
-                    No
-                    <input 
-                        class="input-radio" 
-                        type="radio" 
-                        name="offer" 
-                        value="false" 
-                        id="offer-false" 
-                        required 
-                        <%= editableGame.inOffer == false ? 'checked' : '' %>
-                    >
-                </label>
-            </div>
             <!-- discount -->
             <div class="input-box">
-                <span class="rule-indicator">
-                    *Solo si se quiere aplicar un DESCUENTO
-                </span>
                 <label class="label-label discount-rate-label" for="discount">
                     ¿Qué porcentaje de DESCUENTO se debe aplicar?
                 </label>
-                <span class="discount-indicator">
+                <span id="discount-span" class="discount-indicator">
                     %
                 </span>
-                <input 
-                    class="input-text input-discount" 
-                    type="number" 
-                    name="discount" 
+                <input
+                    class="input-text input-discount"
+                    type="number"
+                    name="discount"
                     id="discount"
                     placeholder="50"
                     min="1"
                     max="99"
-                    step="1" 
+                    step="1"
                     value="<%= editableGame.discount %>"
                 >
             </div>
@@ -197,11 +260,8 @@
                     name="description" 
                     id="description" 
                     rows="15" 
-                    maxlength="3000" 
-                    required
-                >
-                    <%= editableGame.description %>
-                </textarea>
+                    maxlength="3000"
+                ><%= editableGame.description %></textarea>
             </div>
             <!-- BUTTONS -->
             <div class="button-box">

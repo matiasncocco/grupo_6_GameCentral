@@ -1,4 +1,4 @@
-let { numberOrNull, stringOrNull, addOne, giveNumber } = require('./helper');
+let { stringOrNull, addOne, giveNumber } = require('./helper');
 
 let db = require('../database/models');
 
@@ -53,15 +53,11 @@ let productsController = {
     // 2 GET: show product <form>
     // ¡LISTO POR SEQUELIZE!
     create: async (req,res) => {
-        let properties = {};
         let categories = await db.Category.findAll();
-        let platforms = await db.Platform.findAll();
         try {
-            properties.categories = categories;
-            properties.platforms = platforms;
             res.render('./products/create', {
                 title: 'Nuevo producto',
-                properties
+                categories
             });
         }
         catch(err) {
@@ -105,7 +101,7 @@ let productsController = {
             title: req.body.title.toUpperCase(),
             img: req.file.filename,
             price: parseFloat(req.body.price),
-            discount: numberOrNull(req.body.discount),
+            discount: req.body.discount,
             description: stringOrNull(req.body.description)
         })
             .then(creation => {
@@ -176,60 +172,74 @@ let productsController = {
     },
 
     // 5 GET: show <form> with current product data
-    edit: (req,res) => {
-        db.Game.findByPk(req.params.id, {
+    // ¡LISTO POR SEQUELIZE!
+    edit: async (req,res) => {
+        let oldCategories = await db.Category.findAll();
+        let editableGame = await db.Game.findByPk(req.params.id, {
             include: [
                 'categories',
                 'platforms',
                 'status'
             ]
-        })
-        .then((editableGame) => {
-            return res.render('./products/edit',{
+        });
+        try {
+            res.render('./products/edit', {
                 title: 'Edicion de producto',
-                editableGame
-            })
- 
-        })
-        .catch(err =>{
+                editableGame,
+                oldCategories
+            });
+        }
+        catch(err) {
             res.status(500).render('error', {
                 status: 500,
                 title: 'ERROR',
                 errorDetail: err
             });
-        });
-
-    //     let products = readJson('products.json');
-    //     let param = req.params.id;
-    //     for (i = 0 ; i < products.length ; i++) {
-    //         if (products[i].id == param) {
-    //             let productCategory = products[i].category;
-    //             return res.render('./products/edit', {
-    //                 title: 'Edición de producto', 
-    //                 product: products[i], 
-    //                 productCategory 
-    //             });
-    //         };
-    //     };
+        };
     },
 
     // 6 POST: submit changes to existing product
+    // por sequelize: en progreso
     update: (req,res) => {
         db.Game.update({
-            name: req.body.name,
-            category: req.body.category,
-            relevant: req.body.relevant,
-            inOffer: req.body.inOffer,
-            price: req.body.price,
-            discount: req.body.discount,
+            title: req.body.title.toUpperCase(),
+            img: req.file.filename,
+            price: parseFloat(req.body.price),
+            discount: parseInt(req.body.discount),
             description: req.body.description
         }, {
             where: {
                 id: req.params.id
             }
         })
-        .then(() => {
-            res.redirect('/products');
+        // .then(() => {
+        //     if (Array.isArray(req.body.platforms)) {
+        //         let platforms = req.body.platforms.map(giveNumber);
+        //         platforms = platforms.map(addOne);
+        //         platforms.forEach(platform => {
+        //             console.log(platform);
+        //             db.PlatformGame.update({
+        //                 platformId: platform
+        //             },{
+        //                 where: {
+        //                     gameId: req.params.id
+        //                 }
+        //             });
+        //         });
+        //     } else {
+        //         let platform = parseInt(req.body.platforms);
+        //         platform ++;
+        //         db.PlatformGame.update({
+        //             platformId: platform
+        //         },{
+        //             where: {
+        //                 gameId: req.params.id
+        //             }
+        //         });
+        //     };
+        // })
+        .then(result => {
+            res.send(result);
         })
         .catch(err => {
             res.status(500).render('error', {
@@ -238,29 +248,6 @@ let productsController = {
                 errorDetail: err
             });
         });
-        // let products = readJson('products.json');
-        // let files = req.files;
-        // let { img, card } = files;
-        // let param = req.params.id;
-        // products.forEach(product => {
-        //     if (param == product.id) {
-        //         if (img != undefined) {  
-        //             product.img = img[0].filename;
-        //         };
-        //         if (card != undefined ) {
-        //             product.card = card[0].filename;
-        //         };
-        //         product.name = toUpper(req.body.name);
-        //         product.category = req.body.category.map(toUpper);
-        //         product.relevant = storeBool(req.body.relevant);
-        //         product.inOffer = storeBool(req.body.inOffer);
-        //         product.price = parseInt(req.body.price);
-        //         product.discount = parseInt(req.body.discount);
-        //         product.description = req.body.description;
-        //         writeJson(products, 'products');
-        //         return res.redirect('/products');
-        //     };
-        // });
     },
 
     // 7 DELETE: remove entry

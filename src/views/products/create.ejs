@@ -11,7 +11,12 @@
             AÑADIR ARTÍCULO
         </h5>
     </header>
-    <form class="product-create-form" action="/products" method="POST" enctype="multipart/form-data">
+    <form
+        class="product-create-form"
+        action="/products"
+        method="POST"
+        enctype="multipart/form-data"
+    >
         <section class="product-create-section">
             <!-- title -->
             <div class="input-box">
@@ -42,9 +47,9 @@
                             <option disabled selected>
                                 CATEGORÍA Nº<%= [i] %>
                             </option>
-                            <% for (j = 0; j < properties.categories.length; j++) { %>
+                            <% for (j = 0; j < categories.length; j++) { %>
                                 <option value="<%= [j] %>">
-                                    <%= properties.categories[j].title %>
+                                    <%= categories[j].title %>
                                 </option>
                             <% } %>
                         </select>

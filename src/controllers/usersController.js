@@ -19,6 +19,7 @@ let usersController = {
     // FALTA country: req.body.country
     processRegister: async (req,res) => {
         let oldData = req.body;
+        // busco un usuario por email
         let user = await db.User.findOne({
             where: {
                 email: req.body.email
@@ -26,6 +27,7 @@ let usersController = {
         });
         try {
             if (user === null) {
+                // si el usuario no existe, lo creo
                 return db.User.create({
                     name: req.body.name,
                     surname: req.body.surname,
@@ -45,6 +47,7 @@ let usersController = {
                     });
                 });
             } else {
+                // si el usuario existe, el email ya está en uso y envío error
                 return res.render('./users/register', {
                     title: 'Crea tu cuenta',
                     oldData,
@@ -252,12 +255,27 @@ let usersController = {
     // DELETE: remove entry
     // ¡LISTO POR SEQUELIZE!
     destroy: (req,res) => {
-        db.User.destroy({
+        db.User.findOne({
             where: {
                 id: req.session.loggedUser.id
             }
         })
-            .then( async () => {
+            .then(user => {
+                db.UserGame.destroy({
+                    where: {
+                        userId: user.id
+                    }
+                });
+                return user;
+            })
+            .then(user => {
+                db.User.destroy({
+                    where: {
+                        id: user.id
+                    }
+                });
+            })
+            .then(async () => {
                 await req.session.destroy();
                 await res.clearCookie('userEmail');
                 try {
@@ -297,6 +315,7 @@ let usersController = {
     // PUT: changes user admin status (true || false)
     giveAdmin: (req,res) => {
         // let users = readJson('users.json');
+        
         let param = req.params.id;
         users.forEach(user => {
             if (param == user.id) {
