@@ -41,28 +41,44 @@
                             <%= category.title %>
                         </p>
                     </div>
-                <% }); %>
+                <% }) %>
             </article>
         <section class="show-category show-platforms">
             <article class="category-box">
                 <div class="category-single-box">
                     <p class="category-text">
-                        <i class="<%= game.platforms[0] ? 'fab fa-windows' : null %>"></i>
+                        <i 
+                            class="<% game.platforms.forEach(platform => { %>
+                                <%= platform.title == 'WINDOWS' ? 'fab fa-windows' : null %>
+                            <% }) %>"
+                        ></i>
                     </p>
                 </div>
                 <div class="category-single-box">
                     <p class="category-text">
-                        <i class="<%= game.platforms[1] ? 'fab fa-apple' : null %>"></i>
+                        <i 
+                            class="<% game.platforms.forEach(platform => { %>
+                                <%= platform.title == 'MAC OS' ? 'fab fa-apple' : null %>
+                            <% }) %>"
+                        ></i>
                     </p>
                 </div>
                 <div class="category-single-box">
                     <p class="category-text">
-                        <i class="<%= game.platforms[2] ? 'fab fa-linux' : null %>"></i>
+                        <i 
+                            class="<% game.platforms.forEach(platform => { %>
+                                <%= platform.title == 'LINUX' ? 'fab fa-linux' : null %>
+                            <% }) %>"
+                        ></i>
                     </p>
                 </div>
                 <div class="category-single-box">
                     <p class="category-text">
-                        <i class="<%= game.platforms[3] ? 'fas fa-vr-cardboard' : null %>"></i>
+                        <i 
+                            class="<% game.platforms.forEach(platform => { %>
+                                <%= platform.title == 'VR HEADSET' ? 'fas fa-vr-cardboard' : null %>
+                            <% }) %>"
+                        ></i>
                     </p>
                 </div>
             </article>
@@ -75,40 +91,42 @@
                 </h6>
             </header>
         </section>
-        <% if (game.status[0] && game.status[0].name === 'IN OFFER' || game.status[1] && game.status[1].name === 'IN OFFER') { %>
-            <header class="show-title offer-title">
-                <h2 class="big-title">
-                    ¡OFERTA ESPECIAL!
-                </h2>
-                <h4 class="small-title">
-                    ¡OFERTA ESPECIAL!
-                </h4>
-            </header>
-            <section class="offer-display">
-                <div class="offer-display-box original-price">
+        <% game.status.forEach(status => { %>
+            <% if (status.name == 'IN OFFER') { %>
+                <header class="show-title offer-title">
                     <h2 class="big-title">
-                        $<%= game.price %>
+                        ¡OFERTA ESPECIAL!
                     </h2>
-                    <h5 class="small-title">
-                        $<%= game.price %>
-                    </h5>
-                </div>
-                <div class="offer-display-box">
-                    <h2 class="big-title">
-                        <%= game.discount %>%
-                    </h2>
-                    <h5 class="small-title">
-                        <%= game.discount %>%
-                    </h5>
-                </div>
-                <div class="offer-display-box te-ahorras">
-                    <p class="saved-money-math">
-                        <span class="math-values-show"><%= game.price %></span>
-                        <span class="math-values-show"><%= game.discount %></span>
-                    </p>
-                </div>
-            </section>
-        <% } %>
+                    <h4 class="small-title">
+                        ¡OFERTA ESPECIAL!
+                    </h4>
+                </header>
+                <section class="offer-display">
+                    <div class="offer-display-box original-price">
+                        <h2 class="big-title">
+                            $<%= game.price %>
+                        </h2>
+                        <h5 class="small-title">
+                            $<%= game.price %>
+                        </h5>
+                    </div>
+                    <div class="offer-display-box">
+                        <h2 class="big-title">
+                            <%= game.discount %>%
+                        </h2>
+                        <h5 class="small-title">
+                            <%= game.discount %>%
+                        </h5>
+                    </div>
+                    <div class="offer-display-box te-ahorras">
+                        <p class="saved-money-math">
+                            <span class="math-values-show"><%= game.price %></span>
+                            <span class="math-values-show"><%= game.discount %></span>
+                        </p>
+                    </div>
+                </section>
+            <% } %>
+        <% }) %>
         <section class="pagas-box">
             <h1 class="big-title">
                 PAGAS

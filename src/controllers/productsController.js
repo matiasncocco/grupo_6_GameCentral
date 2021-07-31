@@ -59,8 +59,7 @@ let productsController = {
                 title: 'Nuevo producto',
                 categories
             });
-        }
-        catch(err) {
+        } catch(err) {
             res.status(500).render('error', {
                 status: 500,
                 title: 'ERROR',
@@ -71,27 +70,26 @@ let productsController = {
 
     // 3 GET: show product detail
     // ¡LISTO POR SEQUELIZE!
-    show: (req,res) => {
-        db.Game.findByPk(req.params.id, {
+    show: async (req,res) => {
+        let game = await db.Game.findByPk(req.params.id, {
             include: [
                 'categories',
                 'platforms',
                 'status'
             ]
-        })
-            .then(game => {
-                res.render('./products/show', {
-                    title: game.title,
-                    game
-                });
-            })
-            .catch(err => {
-                res.status(500).render('error', {
-                    status: 500,
-                    title: 'ERROR',
-                    errorDetail: err
-                });
+        });
+        try {
+            res.render('./products/show', {
+                title: game.title,
+                game
             });
+        } catch(err) {
+            res.status(500).render('error', {
+                status: 500,
+                title: 'ERROR',
+                errorDetail: err
+            });
+        };
     },
 
     // 4 POST: store product <form> fields
@@ -188,8 +186,7 @@ let productsController = {
                 editableGame,
                 oldCategories
             });
-        }
-        catch(err) {
+        } catch(err) {
             res.status(500).render('error', {
                 status: 500,
                 title: 'ERROR',
@@ -199,7 +196,7 @@ let productsController = {
     },
 
     // 6 POST: submit changes to existing product
-    // por sequelize: en progreso
+    // ¡LISTO POR SEQUELIZE!
     update: (req,res) => {
         db.Game.update({
             title: req.body.title.toUpperCase(),
@@ -212,37 +209,102 @@ let productsController = {
                 id: req.params.id
             }
         })
-        .then(() => {
-            
+        .then(async () => {
+            let platforms = await req.body.platforms;
+            let platformGameDelete = await db.PlatformGame.destroy({
+                where: {
+                    gameId: req.params.id
+                }
+            });
+            try {
+                if (Array.isArray(platforms)) {
+                    platforms = platforms.map(giveNumber);
+                    platforms = platforms.map(addOne);
+                    platforms.forEach(platform => {
+                        db.PlatformGame.create({
+                            gameId: req.params.id,
+                            platformId: platform
+                        });
+                    });
+                } else {
+                    let platform = parseInt(platforms);
+                    platform ++;
+                    db.PlatformGame.create({
+                        gameId: req.params.id,
+                        platformId: platform
+                    });
+                };
+            } catch(err) {
+                res.status(500).render('error', {
+                    status: 500,
+                    title: 'ERROR',
+                    errorDetail: err
+                });
+            };
         })
-        // .then(() => {
-        //     if (Array.isArray(req.body.platforms)) {
-        //         let platforms = req.body.platforms.map(giveNumber);
-        //         platforms = platforms.map(addOne);
-        //         platforms.forEach(platform => {
-        //             console.log(platform);
-        //             db.PlatformGame.update({
-        //                 platformId: platform
-        //             },{
-        //                 where: {
-        //                     gameId: req.params.id
-        //                 }
-        //             });
-        //         });
-        //     } else {
-        //         let platform = parseInt(req.body.platforms);
-        //         platform ++;
-        //         db.PlatformGame.update({
-        //             platformId: platform
-        //         },{
-        //             where: {
-        //                 gameId: req.params.id
-        //             }
-        //         });
-        //     };
-        // })
-        .then(result => {
-            res.send(result);
+        .then(async () => {
+            let categories = await req.body.categories;
+            let categoryGameDelete = await db.CategoryGame.destroy({
+                where: {
+                    gameId: req.params.id
+                }
+            });
+            try {
+                categories = categories.map(addOne);
+                categories.forEach(category => {         
+                    db.CategoryGame.create({
+                        gameId: req.params.id,
+                        categoryId: category
+                    });
+                });
+            } catch(err) {
+                res.status(500).render('error', {
+                    status: 500,
+                    title: 'ERROR',
+                    errorDetail: err
+                });
+            };
+        })
+        .then(async () => {
+            let relevant = await req.body.relevant;
+            let offer = await req.body.offer;
+            let statusGameDelete = await db.StatusGame.destroy({
+                where: {
+                    gameId: req.params.id
+                }
+            });
+            try {
+                if (relevant === 'true' && offer === 'true') {
+                    let status = [1,2];
+                    return status.forEach(status => {
+                        db.StatusGame.create({
+                            gameId: req.params.id,
+                            statusId: status
+                        });
+                    });
+                };
+                if (relevant === 'true' && offer != 'true') {
+                    return db.StatusGame.create({
+                        gameId: req.params.id,
+                        statusId: 1
+                    });
+                };
+                if (relevant != 'true' && offer === 'true') {
+                    return db.StatusGame.create({
+                        gameId: req.params.id,
+                        statusId: 2
+                    });
+                };
+            } catch(err) {
+                res.status(500).render('error', {
+                    status: 500,
+                    title: 'ERROR',
+                    errorDetail: err
+                });
+            };
+        })
+        .then(() => {
+            res.redirect('/products/' + req.params.id);
         })
         .catch(err => {
             res.status(500).render('error', {
