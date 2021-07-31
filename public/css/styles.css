@@ -2079,11 +2079,11 @@ DESKTOP
         width: 300px;
     }
 
-    .profile-cart-link i {
+    .profile-cart-link a {
         transition: all .1s cubic-bezier(.25,.25,.25,.25);
     }
 
-    .profile-cart-link i:hover {
+    .profile-cart-link a:hover {
         color: #B14593;
         text-shadow: none;
     }
