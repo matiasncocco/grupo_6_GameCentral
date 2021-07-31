@@ -261,12 +261,20 @@ let usersController = {
             }
         })
             .then(user => {
-                db.UserGame.destroy({
-                    where: {
-                        userId: user.id
-                    }
-                });
-                return user;
+                if (user.email != 'admin') {
+                    db.UserGame.destroy({
+                        where: {
+                            userId: user.id
+                        }
+                    });
+                    return user;
+                } else {
+                    res.status(401).render('error', {
+                        status: 401,
+                        title: 'ERROR',
+                        errorDetail: 'Unauthorized: FORBIDDEN. Reason: UNDELETABLE ADMIN ACCOUNT'
+                    });
+                }
             })
             .then(user => {
                 db.User.destroy({
