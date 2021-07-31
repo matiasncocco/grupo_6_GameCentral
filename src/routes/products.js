@@ -13,8 +13,7 @@ let adminMiddleware = require('../middlewares/adminMiddleware');
 
 // vista carrito
 // -> USUARIOS
-// !! hay que pasarle userMiddleware !!
-router.get('/cart', productsController.cart);
+router.get('/cart', userMiddleware, productsController.cart);
 
 // vista todos los productos
 // -> TODOS
@@ -22,8 +21,7 @@ router.get('/', productsController.index);
 
 // vista creación de producto <form>
 // -> ADMINS
-// !! hay que pasarle adminMiddleware !!
-router.get('/create', productsController.create);
+router.get('/create', adminMiddleware, productsController.create);
 
 // vista detalle de producto
 // TODOS
@@ -35,8 +33,7 @@ router.post('/', upload.single('img'), productsController.store);
 
 // vista de edición de producto. <form> de creación con datos
 // -> ADMINS
-// !! hay que pasarle adminMiddleware !!
-router.get('/:id/edit', productsController.edit);
+router.get('/:id/edit', adminMiddleware, productsController.edit);
 
 // procesar edición de producto
 // (inaccesible)

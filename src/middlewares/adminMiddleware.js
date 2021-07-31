@@ -1,5 +1,5 @@
 let adminMiddleware = (req,res,next) => {
-    if (req.session.loggedUser && req.session.loggedUser.admin === true) {
+    if (req.session.loggedUser && req.session.loggedUser.admin == 1) {
         return next();
     };
     res.redirect('/');

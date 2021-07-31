@@ -42,8 +42,7 @@ let validations = [
 
 // vista registro de usuario <form>
 // -> GUESTS
-// !! hay que pasarle guestMiddleware !!
-router.get('/register', usersController.register);
+router.get('/register', guestMiddleware, usersController.register);
 
 // procesar registro/creación de usuario
 // (inaccesible)
@@ -52,8 +51,7 @@ router.post('/', upload.single('avatar'), usersController.processRegister);
 
 // vista login de usuario <form>
 // -> GUESTS
-// !! hay que pasarle guestMiddleware !!
-router.get('/login', usersController.login);
+router.get('/login', guestMiddleware, usersController.login);
 
 // procesar login de usuario
 // (inaccesible)
@@ -61,8 +59,7 @@ router.post('/login', usersController.processLogin);
 
 // vista de perfil del usuario
 // -> USUARIOS
-// !! hay que pasarle userMiddleware !!
-router.get('/profile', usersController.show);
+router.get('/profile', userMiddleware, usersController.show);
 
 // procesar delog de usuario & destrucción de cookie
 // (inaccesible)
@@ -70,15 +67,13 @@ router.get('/delog', usersController.delog);
 
 // vista con lista de todos los usuarios
 // -> ADMINS
-// !! hay que pasarle adminMiddleware !!
-router.get('/', usersController.index);
+router.get('/', adminMiddleware, usersController.index);
 
 // vista de edición de producto. <form> de creación con datos
 // -> USUARIOS
-// ¡¡ hay que pasarle userMiddleware !!
-router.get('/profile/edit', usersController.edit)
+router.get('/profile/edit', userMiddleware, usersController.edit)
 
-// procesar edición de producto
+// procesar edición de usuario
 // (inaccesible)
 router.put('/profile', usersController.update);
 
@@ -87,12 +82,11 @@ router.put('/profile', usersController.update);
 router.delete('/profile', usersController.destroy);
 // Eliminar usuario de la DB
 
-// vista para cambiar user.admin === ( true || false )
+// vista para cambiar user.admin === ( 1 || 0 )
 // -> ADMINS
-// !! hay que pasarle adminMiddleware !!
-router.get('/:id', usersController.admin)
+router.get('/:id', adminMiddleware, usersController.admin)
 
-// procesar cambio de user.admin === ( true || false )
+// procesar cambio de user.admin === ( 1 || 0 )
 // (inaccesible)
 router.put('/:id', usersController.giveAdmin);
 
