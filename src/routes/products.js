@@ -5,6 +5,12 @@ let upload = require('../middlewares/multerMiddleware');
 let userMiddleware = require('../middlewares/userMiddleware');
 let adminMiddleware = require('../middlewares/adminMiddleware');
 
+// // // // // // // // //
+// USAR                 //
+// email: admin         //
+// password: admin      //
+// // // // // // // // //
+
 // vista carrito
 // -> USUARIOS
 // !! hay que pasarle userMiddleware !!

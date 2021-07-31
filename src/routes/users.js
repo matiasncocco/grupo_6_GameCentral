@@ -7,6 +7,12 @@ let guestMiddleware = require('../middlewares/guestMiddleware');
 let adminMiddleware = require('../middlewares/adminMiddleware');
 let { check } = require('express-validator');
 
+// // // // // // // // //
+// USAR                 //
+// email: admin         //
+// password: admin      //
+// // // // // // // // //
+
 let validations = [
     check('name')
         .notEmpty().withMessage('Completa este campo').bail()

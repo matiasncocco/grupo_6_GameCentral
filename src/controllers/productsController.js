@@ -212,6 +212,9 @@ let productsController = {
                 id: req.params.id
             }
         })
+        .then(() => {
+            
+        })
         // .then(() => {
         //     if (Array.isArray(req.body.platforms)) {
         //         let platforms = req.body.platforms.map(giveNumber);

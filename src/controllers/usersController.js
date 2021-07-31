@@ -272,7 +272,7 @@ let usersController = {
                     res.status(401).render('error', {
                         status: 401,
                         title: 'ERROR',
-                        errorDetail: 'Unauthorized: FORBIDDEN. Reason: UNDELETABLE ADMIN ACCOUNT'
+                        errorDetail: 'Unauthorized: FORBIDDEN'
                     });
                 }
             })
