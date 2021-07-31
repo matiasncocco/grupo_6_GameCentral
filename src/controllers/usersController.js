@@ -1,4 +1,4 @@
-let { storeBool, numberOrNull } = require('./helper');
+let { storeBool } = require('./helper');
 let bcrypt = require('bcrypt');
 let { validationResult } = require('express-validator');
 
@@ -34,7 +34,7 @@ let usersController = {
                     email: req.body.email,
                     password: bcrypt.hashSync(req.body.password, 10),
                     avatar: req.file.filename,
-                    newsletter: numberOrNull(req.body.newsletter)
+                    newsletter: req.body.newsletter
                 })
                 .then(() => {
                     res.redirect('/users/login');
