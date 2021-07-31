@@ -14,13 +14,15 @@ module.exports = (sequelize, DataTypes) => {
         userId: {
             type: DataTypes.INTEGER,
             field: 'user_id'
-        }
+        },
+        createdAt: 'created_at',
+        updatedAt: 'updated_at'
     };
     let config = {
         underscored: true,
         tableName: 'user_game',
         timestamps: true,
-        paranoid: true,
+        paranoid: false,
         charset: 'utf8',
         dialectOptions: {
             collate: 'utf8mb4_unicode:ci'

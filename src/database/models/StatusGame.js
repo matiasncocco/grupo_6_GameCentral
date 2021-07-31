@@ -16,14 +16,16 @@ module.exports = (sequelize, DataTypes) => {
             field: 'status_id'
         },
         createdAt: 'created_at',
-        updatedAt: 'updated_at',
-        deletedAt: 'deleted_at'
+        updatedAt: 'updated_at'
     };
     let config = {
+        define: {
+            timestamps: false
+        },
         underscored: true,
         tableName: 'status_game',
         timestamps: true,
-        paranoid: true,
+        paranoid: false,
         charset: 'utf8',
         dialectOptions: {
             collate: 'utf8mb4_unicode:ci'

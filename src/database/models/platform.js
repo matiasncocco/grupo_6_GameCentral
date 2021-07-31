@@ -63,8 +63,8 @@ module.exports = (sequelize, DataTypes) => {
             foreignKey: 'platform_id',
             // la otra foreign key que pertenece al modelo con el que estoy relacionando, en éste caso "Games";
             otherKey: 'game_id_platform',
-            timestamps: 'true'
             // SI LA TABLA PIVOT TIENE COLUMNAS "created_at", "updated_at":
+            timestamps: true
             // timestamps: true // si no, por default es false así que no decimos nada;
             // si la tabla pivot tiene éstas columnas y decimos timestamps: true, tendremos que crear un modelo para la tabla pivot también, si no no es necesario;
         });

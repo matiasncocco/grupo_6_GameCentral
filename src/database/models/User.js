@@ -41,13 +41,12 @@ module.exports = (sequelize, DataTypes) => {
         },
         createdAt: 'created_at',
         updatedAt: 'updated_at'
-        // deletedAt: 'deleted_at'
     };
     let config = {
         underscored: true,
         tableName: 'users',
         timestamps: true,
-        // paranoid: true,
+        paranoid: false,
         charset: 'utf8',
         dialectOptions: {
             collate: 'utf8mb4_unicode:ci'
