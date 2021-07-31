@@ -25,7 +25,7 @@ module.exports = (sequelize, DataTypes) => {
         },
         description: {
             type: DataTypes.TEXT,
-            allowNull: true
+            allowNull: false
         },
         createdAt: 'created_at',
         updatedAt: 'updated_at',

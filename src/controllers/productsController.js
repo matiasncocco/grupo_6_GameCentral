@@ -102,7 +102,7 @@ let productsController = {
             img: req.file.filename,
             price: parseFloat(req.body.price),
             discount: req.body.discount,
-            description: stringOrNull(req.body.description)
+            description: req.body.description
         })
             .then(creation => {
                 if (Array.isArray(req.body.platforms)) {
@@ -205,7 +205,7 @@ let productsController = {
             title: req.body.title.toUpperCase(),
             img: req.file.filename,
             price: parseFloat(req.body.price),
-            discount: parseInt(req.body.discount),
+            discount: req.body.discount,
             description: req.body.description
         }, {
             where: {
