@@ -19,7 +19,7 @@
         <i class="<%= game[i].platforms[3] ? 'fas fa-vr-cardboard' : null %>"></i>
     </div>
     <div class="item-price">
-        <% if (games[i].status[0] && games[i].status[0].name === 'IN OFFER' ||games[i].status[1] && games[i].status[1].name === 'IN OFFER') { %>
+        <% if (games[i].status[0] && games[i].status[0].name === 'IN OFFER' || games[i].status[1] && games[i].status[1].name === 'IN OFFER') { %>
             <h2 class="big-title new-price-math">
                 <%= game[i].price - ((game[i].price * game[i].discount) / 100) %>
             </h2>

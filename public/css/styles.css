@@ -172,10 +172,6 @@ img {
     margin: auto;
 }
 
-.estirar {
-    height: 1000px;
-}
-
 
 /**/
 /* HOME */
@@ -1276,8 +1272,12 @@ img {
     justify-content: center;
 }
 
+.profile-section-hide {
+    display: none;
+}
+
 .profile-title {
-    width: 70%;
+    width: 60%;
     text-shadow: -1px 0 #FFF, 0 1px #FFF, 1px 0 #FFF, 0 -1px #FFF;
     justify-self: flex-start;
     margin: 3% 0;
@@ -1286,7 +1286,7 @@ img {
 
 .profile-cart-link {
     justify-self: flex-end;
-    width: 30%;
+    width: 40%;
     text-align: right;
     margin: 3% 0;
     padding: 0 3%;
@@ -1361,6 +1361,45 @@ img {
     transition: all .2s cubic-bezier(.25,.25,.25,.25);
     cursor: pointer;
 }
+
+.user-control-disable {
+    width: fit-content;
+    padding: 4px;
+    background-color: #808080;
+    color: #404040;
+    border: 2px solid #E2DDF9;
+    transition: all .2s cubic-bezier(.25,.25,.25,.25);
+}
+
+/**/
+/* FORMULARIO DE EDICIÓN DE USUARIO */
+/**/
+
+
+.edit-user-main {
+    display: flex;
+    flex-flow: row wrap;
+    margin: 0;
+    padding: 0;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    font-size: 14px;
+    font-family: inherit;
+}
+
+.edit-user-box {
+    width: 25%;
+}
+
+.edit-user-input {
+    display: block;
+    width: 100%;
+    font-family: inherit;
+    font-size: inherit;
+    text-align: center;
+}
+
 
 
 /**/

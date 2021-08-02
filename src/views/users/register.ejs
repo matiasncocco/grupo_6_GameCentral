@@ -57,19 +57,11 @@
                     value="<%= locals.oldData && oldData.email ? oldData.email : null %>"
                     required
                 >
-                <!--  -->
-                <!--  -->
-                <!-- DESCOMENTAR LUEGO -->
-                <!-- error custom -->
-                <!-- EMAIL EN USO -->
                 <% if (locals.errors && errors.email) { %>
                     <span class="error-msg">
                         <%= errors.email.msg %>
                     </span>
                 <% } %>
-                <!-- DESCOMENTAR LUEGO -->
-                <!--  -->
-                <!--  -->
             </div>
             <!-- password -->
             <div class="input-box">

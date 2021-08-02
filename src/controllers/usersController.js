@@ -249,7 +249,7 @@ let usersController = {
     
     // POST: submit changes to user
     update: (req,res) => {
-
+        res.redirect('/users/profile');
     },
 
     // DELETE: remove entry

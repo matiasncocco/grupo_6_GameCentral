@@ -173,10 +173,7 @@
             </article>
         </section>
     </section>
-    <!--  -->
-    <!--  -->
-    <!-- DESCOMENTAR LUEGO -->
-    <%# if (locals.user && user.admin === true) { %>
+    <% if (locals.user && user.admin == 1) { %>
         <header class="main-title admin-controls-title">
             <section class="admin-main-box">
                 <div class="admin-edit-box">
@@ -200,9 +197,6 @@
                 </a>
             </div>
         </header>
-    <%# } %>
-    <!-- DESCOMENTAR LUEGO -->
-    <!--  -->
-    <!--  -->
+    <% } %>
 </main>
 <%- include('../partials/footer')%>

@@ -11,24 +11,16 @@
                 SEASON SALE
             </h5>
         </div>
-        <!--  -->
-        <!--  -->
-        <!-- DESCOMENTAR LUEGO -->
-        <%# if (locals.user) { %>
-            <div class="store-control-box">
-                <%# if (user.admin === true) { %>
-                    <a href="/products/create" class="store-control-link">
-                        <i class="fas fa-plus-square"></i>      
-                    </a>
-                <%# } %>
-                <a href="/products/cart" class="store-control-link">
-                    <i class="fas fa-shopping-cart"></i>
+        <div class="store-control-box">
+            <% if (locals.user && user.admin == 1) { %>
+                <a href="/products/create" class="store-control-link">
+                    <i class="fas fa-plus-square"></i>      
                 </a>
-            </div>
-        <%# } %>
-        <!-- DESCOMENTAR LUEGO -->
-        <!--  -->
-        <!--  -->
+            <% } %>
+            <a href="/products/cart" class="store-control-link">
+                <i class="fas fa-shopping-cart"></i>
+            </a>
+        </div>
     </header>
     <section class="main-section last-section">
         <% for (i = 0 ; i < games.length ; i++) { %>

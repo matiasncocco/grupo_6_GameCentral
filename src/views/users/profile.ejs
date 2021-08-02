@@ -1,7 +1,9 @@
 <%- include ('../partials/head') %>
 <%- include ('../partials/header') %>
-<main class="main-main profile-main">
-    <section class="profile-section">
+<script src="/js/userProfile.js" defer>
+</script>
+<main class="main-main">
+    <section class="profile-section profile-section-profile">
         <div class="profile-title">
             <h1 class="big-title">
                 TU PERFIL
@@ -11,16 +13,16 @@
             </h3>
         </div>
         <div class="profile-cart-link">
-            <h1 class="big-title">
+            <h2 class="big-title">
                 <a href="/products/cart">
                     Mi carrito<i class="fas fa-shopping-cart"></i>
                 </a>
-            </h1>
-            <h3 class="small-title">
+            </h2>
+            <h4 class="small-title">
                 <a href="/products/cart">
                     <i class="fas fa-shopping-cart"></i>
                 </a>
-            </h3>
+            </h4>
         </div>
         <div class="profile-name">
             <h2>
@@ -64,23 +66,83 @@
             </div>
         <% } %>
     </section>
+    <form class="profile-section profile-section-form profile-section-hide" action="/users/profile?_method=PUT" method="POST" id="edit-profile-form">
+        <div class="profile-title">
+            <h1 class="big-title">
+                TU PERFIL
+            </h1>
+            <h3 class="small-title">
+                TU PERFIL
+            </h3>
+        </div>
+        <div class="profile-cart-link">
+            <h2 class="big-title">
+                Editando <i class="fas fa-user-edit"></i>
+            </h2>
+            <h4 class="small-title">
+                <i class="fas fa-user-edit"></i>
+            </h4>
+        </div>
+        <div class="profile-name edit-user-main">
+            <label class="edit-user-box">
+                <label class="edit-user-input" for="">
+                    Nombre
+                </label>
+                <input
+                class="edit-user-input"
+                type="text"
+                name="name"
+                value="<%= user.name %>"
+            >
+            </label>
+            <label class="edit-user-box">
+                <label class="edit-user-input" for="">
+                    Apellido
+                </label>
+                <input
+                    class="edit-user-input"
+                    type="text"
+                    name="surname"
+                    value="<%= user.surname %>"
+                >
+            </label>
+        </div>
+        <div class="profile-avatar">
+            <img src="/img/users/<%= user.avatar %>">
+        </div>
+        <div class="profile-more">
+            <h3>
+                <%= user.email %>
+            </h3>
+            <% if (user.newsletter == 1) { %>
+                <h5>
+                    Estás subscripto a nuestra newsletter
+                </h5>
+            <% } else { %>
+                <h5>
+                   No estás subscripto a nuestra newsletter
+                </h5>
+            <% } %>
+            <h3>
+                Argentina
+            </h3>
+        </div>
+    </form>
     <footer class="user-control-footer">
         <form class="user-control-box" action="/users/delog" method="GET">
-            <button class="user-control-button" type="submit">
+            <button class="user-control-button" id="delog-button" type="submit">
                 <h3>
                     CERRAR SESIÓN
                 </h3>
             </button>
         </form>
-        <form class="user-control-box" action="/users/profile/<%= user.id %>?_method=PUT" method="POST">
-            <button class="user-control-button" type="submit">
-                <h3>
-                    EDITAR MIS DATOS
-                </h3>
+        <div class="user-control-box">
+            <button class="user-control-button edit-profile-button" type="submit" form="edit-profile-form">
+                <h3></h3>
             </button>
-        </form>
+        </div>
         <form class="user-control-box" action="/users/profile?_method=DELETE" method="POST">
-            <button class="user-control-button user-eliminar" type="submit">
+            <button class="user-control-button user-eliminar" id="delete-button" type="submit">
                 <h3>
                     ELIMINAR MI CUENTA
                 </h3>
