@@ -240,12 +240,6 @@ let usersController = {
                 });
             });
     },
-
-    // GET: show <form> w/ current user data
-    // por sequelize: en progreso
-    edit: (req,res) => {
-
-    },
     
     // POST: submit changes to user
     update: (req,res) => {

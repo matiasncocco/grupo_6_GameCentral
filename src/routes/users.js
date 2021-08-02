@@ -69,10 +69,6 @@ router.get('/delog', usersController.delog);
 // -> ADMINS
 router.get('/', adminMiddleware, usersController.index);
 
-// vista de edición de usuario. perfil de usuario con formulario
-// -> USUARIOS
-router.get('/profile/edit', userMiddleware, usersController.edit)
-
 // procesar edición de usuario
 // (inaccesible)
 router.put('/profile', usersController.update);
