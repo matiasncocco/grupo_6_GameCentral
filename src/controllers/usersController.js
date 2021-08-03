@@ -307,6 +307,7 @@ let usersController = {
 
     // GET: show <form> to change or not admin
     admin: (req,res) => {
+        // esto vuela pronto, cuando termine el update vengo para acá
         // let users = readJson('users.json');
         let param = req.params.id;
         users.forEach(user => {
@@ -321,8 +322,8 @@ let usersController = {
 
     // PUT: changes user admin status (true || false)
     giveAdmin: (req,res) => {
+        // esto vuela pronto, cuando termine el update vengo para acá
         // let users = readJson('users.json');
-        
         let param = req.params.id;
         users.forEach(user => {
             if (param == user.id) {
