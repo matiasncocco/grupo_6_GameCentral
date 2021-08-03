@@ -1320,15 +1320,28 @@ img {
     text-align: center;
 }
 
+.profile-newsletter, .profile-acquired-games {
+    margin: 1% 0;
+    padding: 1% 0;
+    font-weight: 500;
+    font-size: 11px;
+}
+
 .profile-more h1, .profile-more h3, .profile-more h4 {
     margin: 2% 0;
 }
 
 .profile-user-games {
+    border-top: double 5px #B14593;
     width: 100%;
     text-align: left;
-    margin: 0;  
     padding: 2%;
+}
+
+.profile-user-games h2, .profile-user-games h4 {
+    color: #B14593;
+    text-decoration: underline;
+    text-shadow: -1px 0 #FFF, 0 1px #FFF, 1px 0 #FFF, 0 -1px #FFF;
 }
 
 .profile-user-games p {
@@ -1720,6 +1733,10 @@ TABLETS
     /* USER PROFILE */
     /**/
 
+    
+    .user-control-button h4 {
+        font-size: 13px;
+    }
 
     .profile-title {
         text-align: left;
@@ -1727,6 +1744,10 @@ TABLETS
 
     .profile-avatar {
         width: 200px;
+    }
+
+    .profile-newsletter, .profile-acquired-games {
+        font-size: 14px;
     }
 }
 
@@ -2122,6 +2143,14 @@ DESKTOP
         transition: all .1s cubic-bezier(.25,.25,.25,.25);
     }
 
+    .profile-newsletter, .profile-acquired-games {
+        font-size: 16px;
+    }
+
+    .user-control-button h4 {
+        font-size: 16px;
+    }
+
     .profile-cart-link a:hover {
         color: #B14593;
         text-shadow: none;
@@ -2303,6 +2332,16 @@ PANTALLAS +
 
     .user-data {
         font-size: 24px;
+    }
+    
+
+    /**/
+    /* USER PROFILE */
+    /**/
+
+
+    .user-control-button h4 {
+        font-size: 18.72px;
     }
 }
 

@@ -4,17 +4,20 @@
 let profileSection = document.querySelector('.profile-section-profile');
 let profileForm = document.querySelector('.profile-section-form');
 let editButton = document.querySelector('.edit-profile-button');
-let editButtonText = document.querySelector('.edit-profile-button h3');
+let editButtonTextBig = document.querySelector('.edit-profile-button h4');
+let editButtonTextSmall = document.querySelector('.edit-profile-button h6');
 let delogButton = document.querySelector('#delog-button');
 let deleteButton = document.querySelector('#delete-button');
 
-editButtonText.innerText = 'EDITAR MIS DATOS'
+editButtonTextBig.innerText = 'EDITAR MIS DATOS'
+editButtonTextSmall.innerText = 'EDITAR MIS DATOS';
 
 editButton.addEventListener('click', () => {
     if (profileForm.classList.contains('profile-section-hide')) {
         switchClasses();
         switchButtonClasses();
-        switchText(editButtonText);
+        switchText(editButtonTextBig);
+        switchText(editButtonTextSmall);
         profileForm.addEventListener('submit', (e) => {
             e.preventDefault();
         });
@@ -22,7 +25,8 @@ editButton.addEventListener('click', () => {
         console.log('acá debería enviar el form');
         switchClasses();
         switchButtonClasses();
-        switchText(editButtonText);
+        switchText(editButtonTextBig);
+        switchText(editButtonTextSmall);
         profileForm.submit();
     };
 });

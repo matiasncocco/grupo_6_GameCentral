@@ -25,40 +25,51 @@
             </h4>
         </div>
         <div class="profile-name">
-            <h2>
+            <h2 class="big-title">
                 <%= user.name %> <%= user.surname %>
             </h2>
+            <h4 class="small-title">
+                <%= user.name %> <%= user.surname %>
+            </h4>
         </div>
         <div class="profile-avatar">
             <img src="/img/users/<%= user.avatar %>">
         </div>
         <div class="profile-more">
-            <h3>
+            <h3 class="big-title">
                 <%= user.email %>
             </h3>
+            <h5 class="small-title">
+                <%= user.email %>
+            </h5>
             <% if (user.newsletter == 1) { %>
-                <h5>
-                    Estás subscripto a nuestra newsletter
-                </h5>
+                <p class="profile-newsletter">
+                    Estas subscripto a nuestra newsletter
+                </p>
             <% } else { %>
-                <h5>
+                <p class="profile-newsletter">
                    No estás subscripto a nuestra newsletter
-                </h5>
+                </p>
             <% } %>
-            <h3>
+            <h3 class="big-title">
+                <!-- user.country -->
                 Argentina
             </h3>
+            <h5 class="small-title">
+                <!-- user.country -->
+                Argentina
+            </h5>
         </div>
         <% if (user.games.length > 0) { %>
             <div class="profile-more profile-user-games">
-                <h3 class="big-title">
+                <h2 class="big-title">
                     En mi librería
-                </h3>
-                <h5 class="small-title">
+                </h2>
+                <h4 class="small-title">
                     En mi librería
-                </h5>
+                </h4>
                 <% user.games.forEach(game => { %>
-                    <p>
+                    <p class="profile-acquired-games">
                         <i class="fab fa-get-pocket"></i>
                         <%= game.title %>
                     </p>
@@ -131,21 +142,28 @@
     <footer class="user-control-footer">
         <form class="user-control-box" action="/users/delog" method="GET">
             <button class="user-control-button" id="delog-button" type="submit">
-                <h3>
+                <h4 class="big-title">
                     CERRAR SESIÓN
-                </h3>
+                </h4>
+                <h6 class="small-title">
+                    CERRAR SESIÓN
+                </h6>
             </button>
         </form>
         <div class="user-control-box">
             <button class="user-control-button edit-profile-button" type="submit" form="edit-profile-form">
-                <h3></h3>
+                <h4 class="big-title"></h4>
+                <h6 class="small-title"></h6>
             </button>
         </div>
         <form class="user-control-box" action="/users/profile?_method=DELETE" method="POST">
             <button class="user-control-button user-eliminar" id="delete-button" type="submit">
-                <h3>
+                <h4 class="big-title">
                     ELIMINAR MI CUENTA
-                </h3>
+                </h4>
+                <h6 class="small-title">
+                    ELIMINAR MI CUENTA
+                </h6>
             </button>
         </form>
     </footer>

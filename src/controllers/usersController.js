@@ -243,6 +243,15 @@ let usersController = {
     
     // POST: submit changes to user
     update: (req,res) => {
+        // db.User.update({
+
+        // })
+        //     .then(() => {
+        //         res.redirect('/users/profile');
+        //     })
+        //     .catch(err => {
+
+        //     });
         res.redirect('/users/profile');
     },
 
