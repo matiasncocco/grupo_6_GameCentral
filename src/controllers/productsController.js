@@ -4,7 +4,6 @@ let db = require('../database/models');
 
 let productsController = {
     // 0 GET: carrito
-    // ¡LISTO POR SEQUELIZE!
     cart: (req,res) => {
         db.Game.findAll({
             include: [
@@ -28,7 +27,6 @@ let productsController = {
     },
 
     // 1 GET: show all items
-    // ¡LISTO POR SEQUELIZE!
     index: (req,res) => {
         db.Game.findAll({
             include: [
@@ -51,7 +49,6 @@ let productsController = {
     },
 
     // 2 GET: show product <form>
-    // ¡LISTO POR SEQUELIZE!
     create: async (req,res) => {
         let categories = await db.Category.findAll();
         try {
@@ -69,7 +66,6 @@ let productsController = {
     },
 
     // 3 GET: show product detail
-    // ¡LISTO POR SEQUELIZE!
     show: async (req,res) => {
         let game = await db.Game.findByPk(req.params.id, {
             include: [
@@ -93,7 +89,6 @@ let productsController = {
     },
 
     // 4 POST: store product <form> fields
-    // ¡LISTO POR SEQUELIZE!
     store: (req,res) => {
         db.Game.create({
             title: req.body.title.toUpperCase(),
@@ -170,7 +165,6 @@ let productsController = {
     },
 
     // 5 GET: show <form> with current product data
-    // ¡LISTO POR SEQUELIZE!
     edit: async (req,res) => {
         let oldCategories = await db.Category.findAll();
         let editableGame = await db.Game.findByPk(req.params.id, {
@@ -196,7 +190,6 @@ let productsController = {
     },
 
     // 6 POST: submit changes to existing product
-    // ¡LISTO POR SEQUELIZE!
     update: (req,res) => {
         db.Game.update({
             title: req.body.title.toUpperCase(),
@@ -316,7 +309,6 @@ let productsController = {
     },
 
     // 7 DELETE: remove entry
-    // ¡LISTO POR SEQUELIZE!
     destroy: (req,res) => {
         db.Game.destroy({
             where: {

@@ -6,8 +6,7 @@ let db = require('../database/models');
 
 let usersController = {
     // GET: show register view // <form>
-    // sequelize: en progreso
-    // FALTA MOSTRAR PAÍSES: API REST
+    // FALTA MOSTRAR countries de la API rest
     register : (req,res) => {
         res.render('./users/register', {
             title: 'Crea tu cuenta'
@@ -15,8 +14,7 @@ let usersController = {
     },
 
     // POST: process register // store user in DB
-    // sequelize: en progreso
-    // FALTA country: req.body.country
+    // FALTA countries de la API rest países: req.body.country
     processRegister: async (req,res) => {
         let oldData = req.body;
         // busco un usuario por email
@@ -69,7 +67,6 @@ let usersController = {
     },
 
     // GET: show login view
-    // ¡LISTO POR SEQUELIZE!
     login : (req,res) => {
         res.render('./users/login', {
             title: 'Ingresá' 
@@ -77,7 +74,6 @@ let usersController = {
     },
 
     // POST: process login
-    // ¡LISTO POR SEQUELIZE!
     processLogin: async (req,res) => {
         // LAS SIGUIENTES LÍNEAS DESAPARECERÁN CUANDO IMPLEMENTE VALIDACIONES CON EXPRESS-VALIDATOR
         // si se envía con campos vacíos
@@ -182,7 +178,6 @@ let usersController = {
     },
 
     // GET: show users/:id view
-    // ¡LISTO POR SEQUELIZE!
     show: (req,res) => {
         let user = req.session.loggedUser;
         db.User.findByPk(user.id, {
@@ -206,7 +201,6 @@ let usersController = {
     },
 
     // GET: destroy session & cookie
-    // ¡LISTO POR SEQUELIZE!
     delog: async (req,res) => {
         await req.session.destroy();
         await res.clearCookie('userEmail');
@@ -223,7 +217,6 @@ let usersController = {
     },
  
     // GET: show user list
-    // ¡LISTO POR SEQUELIZE!
     index: (req,res) => {
         db.User.findAll()
             .then(users => {
@@ -243,6 +236,8 @@ let usersController = {
     
     // POST: submit changes to user
     update: (req,res) => {
+        // así va a ser la lógica cuando termine de armar la vista:
+
         // db.User.update({
 
         // })
@@ -252,11 +247,12 @@ let usersController = {
         //     .catch(err => {
 
         //     });
+
+
         res.redirect('/users/profile');
     },
 
     // DELETE: remove entry
-    // ¡LISTO POR SEQUELIZE!
     destroy: (req,res) => {
         db.User.findOne({
             where: {
