@@ -3,6 +3,7 @@
 <script src="/js/userProfile.js" defer>
 </script>
 <main class="main-main">
+    <!-- perfil -->
     <section class="profile-section profile-section-profile">
         <div class="profile-title">
             <h1 class="big-title">
@@ -77,6 +78,7 @@
             </div>
         <% } %>
     </section>
+    <!-- formulario de edición -->
     <form class="profile-section profile-section-form profile-section-hide" action="/users/profile?_method=PUT" method="POST" id="edit-profile-form">
         <div class="profile-title">
             <h1 class="big-title">
@@ -95,28 +97,30 @@
             </h4>
         </div>
         <div class="profile-name edit-user-main">
-            <label class="edit-user-box">
-                <label class="edit-user-input" for="">
+            <div class="edit-user-box">
+                <label class="edit-user-label" for="name">
                     Nombre
                 </label>
                 <input
-                class="edit-user-input"
-                type="text"
-                name="name"
-                value="<%= user.name %>"
-            >
-            </label>
-            <label class="edit-user-box">
-                <label class="edit-user-input" for="">
+                    class="edit-user-input"
+                    type="text"
+                    name="name"
+                    id="name"
+                    value="<%= user.name %>"
+                >
+            </div>
+            <div class="edit-user-box">
+                <label class="edit-user-label" for="surname">
                     Apellido
                 </label>
                 <input
                     class="edit-user-input"
                     type="text"
                     name="surname"
+                    id="surname"
                     value="<%= user.surname %>"
                 >
-            </label>
+            </div>
         </div>
         <div class="profile-avatar">
             <img src="/img/users/<%= user.avatar %>">

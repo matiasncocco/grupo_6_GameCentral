@@ -1403,14 +1403,26 @@ img {
 
 .edit-user-box {
     width: 25%;
+    text-align: center;
+    align-items: center;
+    font-weight: 600;
+    font-size: 12px;
+    margin: 3% 0;
+}
+
+.edit-user-label {
+    margin: auto;
+    width: 90%;
 }
 
 .edit-user-input {
-    display: block;
-    width: 100%;
+    margin: auto;
+    width: 95%;
+    text-align: center;
+    padding: 4px;
+    font-weight: inherit;
     font-family: inherit;
     font-size: inherit;
-    text-align: center;
 }
 
 
