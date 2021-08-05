@@ -71,7 +71,7 @@ router.get('/', adminMiddleware, usersController.index);
 
 // procesar edición de usuario
 // (inaccesible)
-router.put('/profile', usersController.update);
+router.put('/profile', upload.any('avatar'), usersController.update);
 
 // elimiar usuario
 // (inaccesible)

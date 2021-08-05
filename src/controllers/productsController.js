@@ -190,122 +190,123 @@ let productsController = {
     },
 
     // 6 POST: submit changes to existing product
-    update: (req,res) => {
-        db.Game.update({
-            title: req.body.title.toUpperCase(),
-            img: req.file.filename,
-            price: parseFloat(req.body.price),
-            discount: req.body.discount,
-            description: req.body.description
-        }, {
+    update: async (req,res) => {
+
+        // edito el producto
+        if (req.file != undefined) {
+            // si hay cambios en la imágen
+            await db.Game.update({
+                title: req.body.title.toUpperCase(),
+                img: req.file.filename,
+                price: parseFloat(req.body.price),
+                discount: req.body.discount,
+                description: req.body.description
+            }, {
+                where: {
+                    id: req.params.id
+                }
+            });
+        } else {
+            // si no hay cambios en la imágen
+            await db.Game.update({
+                title: req.body.title.toUpperCase(),
+                price: parseFloat(req.body.price),
+                discount: req.body.discount,
+                description: req.body.description
+            }, {
+                where: {
+                    id: req.params.id
+                }
+            });
+        };
+
+        // borro las entradas en la pivot plataformas
+        await db.PlatformGame.destroy({
             where: {
-                id: req.params.id
+                gameId: req.params.id
             }
-        })
-        .then(async () => {
-            let platforms = await req.body.platforms;
-            let platformGameDelete = await db.PlatformGame.destroy({
-                where: {
-                    gameId: req.params.id
-                }
+        });
+
+        // creo nuevas entradas en la pivot plataformas
+        let platforms = req.body.platforms;
+        if (Array.isArray(platforms)) {
+            plaforms = platforms.map(giveNumber);
+            platforms = platforms.map(addOne);
+            await platforms.forEach(platform => {
+                db.PlatformGame.create({
+                    gameId: req.params.id,
+                    platformId: platform
+                });
             });
-            try {
-                if (Array.isArray(platforms)) {
-                    platforms = platforms.map(giveNumber);
-                    platforms = platforms.map(addOne);
-                    platforms.forEach(platform => {
-                        db.PlatformGame.create({
-                            gameId: req.params.id,
-                            platformId: platform
-                        });
-                    });
-                } else {
-                    let platform = parseInt(platforms);
-                    platform ++;
-                    db.PlatformGame.create({
-                        gameId: req.params.id,
-                        platformId: platform
-                    });
-                };
-            } catch(err) {
-                res.status(500).render('error', {
-                    status: 500,
-                    title: 'ERROR',
-                    errorDetail: err
-                });
-            };
-        })
-        .then(async () => {
-            let categories = await req.body.categories;
-            let categoryGameDelete = await db.CategoryGame.destroy({
-                where: {
-                    gameId: req.params.id
-                }
+        } else {
+            let platform = parseInt(platforms);
+            platform ++;
+            await db.PlatformGame.create({
+                gameId: req.params.id,
+                platformId: platform
             });
-            try {
-                categories = categories.map(addOne);
-                categories.forEach(category => {         
-                    db.CategoryGame.create({
-                        gameId: req.params.id,
-                        categoryId: category
-                    });
-                });
-            } catch(err) {
-                res.status(500).render('error', {
-                    status: 500,
-                    title: 'ERROR',
-                    errorDetail: err
-                });
-            };
-        })
-        .then(async () => {
-            let relevant = await req.body.relevant;
-            let offer = await req.body.offer;
-            let statusGameDelete = await db.StatusGame.destroy({
-                where: {
-                    gameId: req.params.id
-                }
+        };
+
+        // borro las entradas de la pivot categorías
+        await db.CategoryGame.destroy({
+            where: {
+                gameId: req.params.id
+            }
+        });
+
+        // creo nuevas entradas en la pivot categorías
+        let categories = req.body.categories;
+        cateogries = categories.map(addOne);
+        await categories.forEach(category => {
+            db.CategoryGame.create({
+                gameId: req.params.id,
+                categoryId: category
             });
-            try {
-                if (relevant === 'true' && offer === 'true') {
-                    let status = [1,2];
-                    return status.forEach(status => {
-                        db.StatusGame.create({
-                            gameId: req.params.id,
-                            statusId: status
-                        });
-                    });
-                };
-                if (relevant === 'true' && offer != 'true') {
-                    return db.StatusGame.create({
-                        gameId: req.params.id,
-                        statusId: 1
-                    });
-                };
-                if (relevant != 'true' && offer === 'true') {
-                    return db.StatusGame.create({
-                        gameId: req.params.id,
-                        statusId: 2
-                    });
-                };
-            } catch(err) {
-                res.status(500).render('error', {
-                    status: 500,
-                    title: 'ERROR',
-                    errorDetail: err
+        });
+
+        // borro las entradas en la pivot status
+        await db.StatusGame.destroy({
+            where: {
+                gameId: req.params.id
+            }
+        });
+
+        // creo nuevas entradas en la pivot status
+        let relevant = req.body.relevant;
+        let offer = req.body.offer;
+        if (relevant == 'true' && offer == 'true') {
+            let status = [
+                1,
+                2
+            ];
+            await status.forEach(status => {
+                db.StatusGame.create({
+                    gameId: req.params.id,
+                    statusId: status
                 });
-            };
-        })
-        .then(() => {
-            res.redirect('/products/' + req.params.id);
-        })
-        .catch(err => {
+            });
+        } else if (relevant == 'true' && offer != 'true') {
+            await db.StatusGame.create({
+                gameId: req.params.id,
+                statusId: 1
+            });
+        } else if (relevant != 'true' && offer == 'true') {
+            await db.StatusGame.create({
+                gameId: req.params.id,
+                statusId: 2
+            });
+        };
+
+        // cuando haga todo lo anterior:
+        try {
+            res.redirect('/products');
+        } catch(err) {
             res.status(500).render('error', {
                 status: 500,
                 title: 'ERROR',
                 errorDetail: err
             });
-        });
+        };
     },
 
     // 7 DELETE: remove entry

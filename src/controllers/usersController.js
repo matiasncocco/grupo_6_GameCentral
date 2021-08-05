@@ -249,7 +249,7 @@ let usersController = {
         //     });
 
 
-        res.redirect('/users/profile');
+        res.send(req.body);
     },
 
     // DELETE: remove entry
