@@ -234,8 +234,46 @@ let usersController = {
             });
     },
     
-    // POST: submit changes to user
-    update: (req,res) => {
+    // PUT: submit changes to user
+    update: async (req,res) => {
+
+        console.log(loggedUser);
+        // edito el producto
+        if (req.file != undefined) {
+            // si hay cambios en la imágen
+            await db.User.update({
+                name: req.body.name,
+                surname: req.body.surname,
+                avatar: req.file.filename,
+                newsletter: req.body.newsletter
+            }, {
+                where: {
+                    id: loggedUser.id
+                }
+            });
+        } else {
+            // si no hay cambios en la imágen
+            await db.User.update({
+                name: req.body.name,
+                surname: req.body.surname,
+                newsletter: req.body.newsletter
+            }, {
+                where: {
+                    id: loggedUser.id
+                }
+            });
+        };
+
+        // cuando haga todo lo anterior:
+        try {
+            res.redirect('/users/profile');
+        } catch(err) {
+            res.status(500).render('error', {
+                status: 500,
+                title: 'ERROR',
+                errorDetail: err
+            });
+        };
         // así va a ser la lógica cuando termine de armar la vista:
 
         // db.User.update({
