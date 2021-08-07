@@ -274,20 +274,6 @@ let usersController = {
                 errorDetail: err
             });
         };
-        // así va a ser la lógica cuando termine de armar la vista:
-
-        // db.User.update({
-
-        // })
-        //     .then(() => {
-        //         res.redirect('/users/profile');
-        //     })
-        //     .catch(err => {
-
-        //     });
-
-
-        res.send(req.body);
     },
 
     // DELETE: remove entry
