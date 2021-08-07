@@ -237,8 +237,7 @@ let usersController = {
     // PUT: submit changes to user
     update: async (req,res) => {
 
-        console.log(loggedUser);
-        // edito el producto
+        // edito el usuario
         if (req.file != undefined) {
             // si hay cambios en la imágen
             await db.User.update({
