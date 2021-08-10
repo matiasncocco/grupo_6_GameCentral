@@ -1,6 +1,6 @@
 fetch('http://localhost:3001/api/users/emails')
     .then(response => {
-        response.json();
+        return response.json();
     })
     .then(data => {
         console.log(data);
