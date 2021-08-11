@@ -800,11 +800,12 @@ img {
 }
 
 .label-platform-checked {
-    background-color: blue;
+    background-color: #B14593;
 }
 
-.label-platform-checked-i {
+.label-platform-checked i {
     color: #FFF;
+    text-shadow: -1px 0 #858BB7, 0 1px #858BB7, 1px 0 #858BB7, 0 -1px #858BB7;
 }
 
 .discount-rate-label {

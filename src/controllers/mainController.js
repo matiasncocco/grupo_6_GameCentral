@@ -18,7 +18,7 @@ let mainController = {
             });
     },
     
-    termsConditions: (req,res) => {
+    termsConditions: (req, res) => {
         res.render('terms-conditions', {
             title: 'Términos y condiciones' 
         });

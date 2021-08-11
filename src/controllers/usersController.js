@@ -7,7 +7,7 @@ let db = require('../database/models');
 let usersController = {
     // GET: show register view // <form>
     // FALTA MOSTRAR countries de la API rest
-    register : (req,res) => {
+    register: (req, res) => {
         res.render('./users/register', {
             title: 'Crea tu cuenta'
         });
@@ -15,7 +15,7 @@ let usersController = {
 
     // POST: process register // store user in DB
     // FALTA countries de la API rest países: req.body.country
-    processRegister: async (req,res) => {
+    processRegister: async (req, res) => {
         let oldData = req.body;
         // busco un usuario por email
         let user = await db.User.findOne({
@@ -67,14 +67,14 @@ let usersController = {
     },
 
     // GET: show login view
-    login : (req,res) => {
+    login: (req, res) => {
         res.render('./users/login', {
             title: 'Ingresá' 
         });
     },
 
     // POST: process login
-    processLogin: async (req,res) => {
+    processLogin: async (req, res) => {
         // LAS SIGUIENTES LÍNEAS DESAPARECERÁN CUANDO IMPLEMENTE VALIDACIONES CON EXPRESS-VALIDATOR
         // si se envía con campos vacíos
         if (!req.body.email && !req.body.password) {
@@ -178,7 +178,7 @@ let usersController = {
     },
 
     // GET: show users/:id view
-    show: (req,res) => {
+    show: (req, res) => {
         let user = req.session.loggedUser;
         db.User.findByPk(user.id, {
             include: [
@@ -201,7 +201,7 @@ let usersController = {
     },
 
     // GET: destroy session & cookie
-    delog: async (req,res) => {
+    delog: async (req, res) => {
         await req.session.destroy();
         await res.clearCookie('userEmail');
         try {
@@ -217,7 +217,7 @@ let usersController = {
     },
  
     // GET: show user list
-    index: (req,res) => {
+    index: (req, res) => {
         db.User.findAll()
             .then(users => {
                 res.render('./users/index', {
@@ -235,7 +235,7 @@ let usersController = {
     },
     
     // PUT: submit changes to user
-    update: async (req,res) => {
+    update: async (req, res) => {
 
         // edito el usuario
         if (req.file != undefined) {
@@ -276,7 +276,7 @@ let usersController = {
     },
 
     // DELETE: remove entry
-    destroy: (req,res) => {
+    destroy: (req, res) => {
         db.User.findOne({
             where: {
                 id: req.session.loggedUser.id
@@ -329,7 +329,7 @@ let usersController = {
     },
 
     // GET: show <form> to change or not admin
-    admin: (req,res) => {
+    admin: (req, res) => {
         // esto vuela pronto, cuando termine el update vengo para acá
         // let users = readJson('users.json');
         let param = req.params.id;
@@ -344,7 +344,7 @@ let usersController = {
     },
 
     // PUT: changes user admin status (true || false)
-    giveAdmin: (req,res) => {
+    giveAdmin: (req, res) => {
         // esto vuela pronto, cuando termine el update vengo para acá
         // let users = readJson('users.json');
         let param = req.params.id;

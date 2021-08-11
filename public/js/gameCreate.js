@@ -44,15 +44,12 @@ function switchIt(box) {
 
 for (let label of platformLabel) {
     let box = label.lastElementChild;
-    let icon = label.firstElementChild;
     label.addEventListener('click', () => {
         switchIt(box);
         if (box.checked) {
             label.classList.add('label-platform-checked');
-            icon.classList.add('label-platform-checked-i');
         } else {
             label.classList.remove('label-platform-checked');
-            icon.classList.remove('label-platform-checked-i');
         };
     });
 };
@@ -62,13 +59,10 @@ for (let label of platformLabel) {
 window.addEventListener('load', () => {
     for (let label of platformLabel) {
         let box = label.lastElementChild;
-        let icon = label.firstElementChild;
         if (box.checked) {
             label.classList.add('label-platform-checked');
-            icon.classList.add('label-platform-checked-i');
         } else {
             label.classList.remove('label-platform-checked');
-            icon.classList.remove('label-platform-checked-i');
         };
     };
 });
@@ -84,13 +78,16 @@ for (let label of platformLabel) {
     let previousClass = icon.className;
     label.addEventListener('mouseenter', () => {
         icon.className = '';
+        label.innerHTML = 'TEXT';
     });
     label.addEventListener('mouseout', () => {
         icon.className = previousClass;
+        label.innerHTML = '';
     });
 };
  
 // Quiero por lo menos, 1 cajita de "platforms" con valor:
+// Esto es una validación, hay que moverlo a /validations.
 function isChecked(array) {
     for (let thing of array) {
         if (thing.checked) {
@@ -109,7 +106,3 @@ form.addEventListener('submit', (e) => {
         form.submit();
     };
 });
-
-// Quiero programar que cuando el usuario elige, en el <select>,
-// una categoría, otro <select> aparece, permitiendo que el
-// usuario agrege así otra categoría

@@ -41,49 +41,77 @@ let validations = [
 ];
 
 // vista registro de usuario <form>
-// -> GUESTS
-router.get('/register', guestMiddleware, usersController.register);
+router.get(
+    '/register',
+    guestMiddleware,
+    usersController.register
+);
 
 // procesar registro/creación de usuario
-// (inaccesible)
-// !! hay que pasarle las validations !!
-router.post('/', upload.single('avatar'), usersController.processRegister);
+router.post(
+    '/',
+    upload.single('avatar'),
+    // validations,
+    usersController.processRegister
+);
 
 // vista login de usuario <form>
-// -> GUESTS
-router.get('/login', guestMiddleware, usersController.login);
+router.get(
+    '/login',
+    guestMiddleware,
+    usersController.login
+);
 
 // procesar login de usuario
-// (inaccesible)
-router.post('/login', usersController.processLogin);
+router.post(
+    '/login',
+    usersController.processLogin
+);
 
 // vista de perfil del usuario
-// -> USUARIOS
-router.get('/profile', userMiddleware, usersController.show);
+router.get(
+    '/profile',
+    userMiddleware,
+    usersController.show
+);
 
 // procesar delog de usuario & destrucción de cookie
-// (inaccesible)
-router.get('/delog', usersController.delog);
+router.get(
+    '/delog',
+    usersController.delog
+);
 
 // vista con lista de todos los usuarios
-// -> ADMINS
-router.get('/', adminMiddleware, usersController.index);
+router.get(
+    '/',
+    adminMiddleware,
+    usersController.index
+);
 
 // procesar edición de usuario
-// (inaccesible)
-router.put('/profile', upload.any('avatar'), usersController.update);
+router.put(
+    '/profile',
+    upload.any('avatar'),
+    usersController.update
+);
 
 // elimiar usuario
-// (inaccesible)
-router.delete('/profile', usersController.destroy);
-// Eliminar usuario de la DB
+router.delete(
+    '/profile',
+    usersController.destroy
+);
 
-// vista para cambiar user.admin === ( 1 || 0 )
-// -> ADMINS
-router.get('/:id', adminMiddleware, usersController.admin)
+// vista para cambiar, pregunto: user.admin === ( 1 || 0 )
+router.get(
+    '/:id',
+    adminMiddleware,
+    usersController.admin
+);
 
-// procesar cambio de user.admin === ( 1 || 0 )
-// (inaccesible)
-router.put('/:id', usersController.giveAdmin);
+// procesar cambio de, submit: user.admin === ( 1 || 0 )
+router.put(
+    '/:id',
+    usersController.giveAdmin
+);
 
 module.exports = router;

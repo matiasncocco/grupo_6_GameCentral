@@ -1,10 +1,13 @@
-let { stringOrNull, addOne, giveNumber } = require('./helper');
+let {
+    addOne,
+    giveNumber
+} = require('./helper');
 
 let db = require('../database/models');
 
 let productsController = {
     // 0 GET: carrito
-    cart: (req,res) => {
+    cart: (req, res) => {
         db.Game.findAll({
             include: [
                 'status',
@@ -27,7 +30,7 @@ let productsController = {
     },
 
     // 1 GET: show all items
-    index: (req,res) => {
+    index: (req, res) => {
         db.Game.findAll({
             include: [
                 'status'
@@ -49,7 +52,7 @@ let productsController = {
     },
 
     // 2 GET: show product <form>
-    create: async (req,res) => {
+    create: async (req, res) => {
         let categories = await db.Category.findAll();
         try {
             res.render('./products/create', {
@@ -66,7 +69,7 @@ let productsController = {
     },
 
     // 3 GET: show product detail
-    show: async (req,res) => {
+    show: async (req, res) => {
         let game = await db.Game.findByPk(req.params.id, {
             include: [
                 'categories',
@@ -89,7 +92,7 @@ let productsController = {
     },
 
     // 4 POST: store product <form> fields
-    store: (req,res) => {
+    store: (req, res) => {
         db.Game.create({
             title: req.body.title.toUpperCase(),
             img: req.file.filename,
@@ -165,7 +168,7 @@ let productsController = {
     },
 
     // 5 GET: show <form> with current product data
-    edit: async (req,res) => {
+    edit: async (req, res) => {
         let oldCategories = await db.Category.findAll();
         let editableGame = await db.Game.findByPk(req.params.id, {
             include: [
@@ -190,7 +193,7 @@ let productsController = {
     },
 
     // 6 POST: submit changes to existing product
-    update: async (req,res) => {
+    update: async (req, res) => {
 
         // edito el producto
         if (req.file != undefined) {
@@ -310,7 +313,7 @@ let productsController = {
     },
 
     // 7 DELETE: remove entry
-    destroy: (req,res) => {
+    destroy: (req, res) => {
         db.Game.destroy({
             where: {
                 id: req.params.id
