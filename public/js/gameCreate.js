@@ -126,3 +126,13 @@ form.addEventListener('submit', (e) => {
         form.submit();
     };
 });
+
+// console.log(form.title);
+let title = form.title;
+console.log(title);
+
+if (title.value.length < 5) {
+    title.addEventListener('blur', () => {
+        alert('hola');
+    })
+}
