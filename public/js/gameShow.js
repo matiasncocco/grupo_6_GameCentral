@@ -1,8 +1,5 @@
 // Con éste código capturo la descripción que va abajo del header
 // y la acorto, para que no quede una pared de texto.
-// También hago que, si la descripción está vacía, no muestre nada
-// y 
-// QUIERO QUE oculte el "VER MÁS", todavía NO SÉ CÓMO
 let shortenDescription = document.querySelector('#shorten-description');
 let readMore = document.querySelector('.read-more-link');
 
@@ -19,13 +16,15 @@ for (i = 0; i < newPrice.length; i++) {
 
 // acá programo para dar el resultado de $$$ ahorrado
 let savedMoneyMath = document.querySelector('.saved-money-math');
-let price = parseInt(savedMoneyMath.children[0].innerHTML);
-let discount = parseInt(savedMoneyMath.children[1].innerHTML);
-function math(n1,n2) {
-    multiplier = n1 * n2;
-    division = multiplier / 100;
-    result = n1 - division;
-    saved = n1 - result;
-    return Math.floor(saved);
-};
-savedMoneyMath.innerHTML = `AHORRAS $${math(price,discount)}!`;
+if (savedMoneyMath) {
+    let price = parseInt(savedMoneyMath.children[0].innerHTML);
+    let discount = parseInt(savedMoneyMath.children[1].innerHTML);
+    function math(n1,n2) {
+        multiplier = n1 * n2;
+        division = multiplier / 100;
+        result = n1 - division;
+        saved = n1 - result;
+        return Math.floor(saved);
+    };
+    savedMoneyMath.innerHTML = `AHORRAS $${math(price,discount)}!`;
+}

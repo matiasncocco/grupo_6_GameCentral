@@ -25,15 +25,18 @@ offerFalse.addEventListener('change', () => {
     });
 });
 
-// Acá programé no ver el checkbox de cada plataforma
-// y cambiar las clases de la label cuando check o uncheck el checkbox
+console.log(offerTrue);
+
+// quiero cambiar las clases de la label cuando check o uncheck el checkbox.
 let platformLabel = document.querySelectorAll('.label-platforms');
 let platformCheckbox = document.querySelectorAll('.input-checkbox-platform');
 
+// no quiero ver el checkbox en las plataformas.
 for (let box of platformCheckbox) {
     box.style.display = 'none';
 };
 
+// función que check y uncheck el checkbox que esta oculto.
 function switchIt(box) {
     if (box.checked) {
         box.checked = false;
@@ -42,6 +45,7 @@ function switchIt(box) {
     };
 };
 
+// acá capturo y aplico las clases a las label si está checkeado o no el input checkbox.
 for (let label of platformLabel) {
     let box = label.lastElementChild;
     label.addEventListener('click', () => {
@@ -71,23 +75,39 @@ window.addEventListener('load', () => {
 // me muestre el nombre de lo que es, no solo ver el ícono.
 // Lo voy a hacer a parte porque ésto lo quiero llevar a otras
 // vistas.
-// LOGRADO: SE BORRA EL ÍCNO.
-// SIN LOGRAR: MOSTRAR UN TEXTO
-for (let label of platformLabel) {
-    let icon = label.firstElementChild;
+for (i = 0; i < platformLabel.length; i++) {
+    let icon = platformLabel[i].firstElementChild;
     let previousClass = icon.className;
-    label.addEventListener('mouseenter', () => {
-        icon.className = '';
-        label.innerHTML = 'TEXT';
+    platformLabel[i].addEventListener('mouseover', () => {
+        if (icon.classList.contains('fa-windows')) {
+            icon.innerText = 'WINDOWS',
+            icon.className = '';
+            icon.classList.add('label-platforms-icon-text');
+        };
+        if (icon.classList.contains('fa-apple')) {
+            icon.innerText = 'MAC OS',
+            icon.className = '';
+            icon.classList.add('label-platforms-icon-text');
+        };
+        if (icon.classList.contains('fa-linux')) {
+            icon.innerText = 'LINUX',
+            icon.className = '';
+            icon.classList.add('label-platforms-icon-text');
+        };
+        if (icon.classList.contains('fa-vr-cardboard')) {
+            icon.innerText = 'VR HEADSET';
+            icon.className = '';
+            icon.classList.add('label-platforms-icon-text');
+        };
     });
-    label.addEventListener('mouseout', () => {
+    platformLabel[i].addEventListener('mouseout', () => {
         icon.className = previousClass;
-        label.innerHTML = '';
+        icon.innerText = '';
     });
 };
  
 // Quiero por lo menos, 1 cajita de "platforms" con valor:
-// Esto es una validación, hay que moverlo a /validations.
+// Esto es una validación, hay que moverlo a /validations
 function isChecked(array) {
     for (let thing of array) {
         if (thing.checked) {
