@@ -17,6 +17,7 @@ let usersController = {
     // FALTA countries de la API rest países: req.body.country
     processRegister: async (req, res) => {
         let oldData = req.body;
+        let validations = validationResult(req);
         // busco un usuario por email
         let user = await db.User.findOne({
             where: {
@@ -24,8 +25,11 @@ let usersController = {
             }
         });
         try {
-            if (user === null) {
-                // si el usuario no existe, lo creo
+            console.log(validations);
+            if (!user && validations.errors.length < 0) {
+                console.log('CREANDO USUARIO');
+                // si el usuario no existe, y no hay errores,
+                // creo un usuario nuevo
                 return db.User.create({
                     name: req.body.name,
                     surname: req.body.surname,
