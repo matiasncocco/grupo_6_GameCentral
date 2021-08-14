@@ -28,3 +28,5 @@ let registerValidations = [
 ];
 
 module.exports = registerValidations;
+
+// asd
