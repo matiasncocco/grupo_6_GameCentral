@@ -1,7 +1,7 @@
 <%- include ('../partials/head') %>
 <%- include ('../partials/header') %>
-<!-- <script src="/js/gameCreate.js" defer>
-</script> -->
+<script src="/js/gameCreate.js" defer>
+</script>
 <main class="main-main">
     <header class="main-title first-title">
         <h3 class="big-title">
@@ -92,7 +92,7 @@
                             <%= locals.errors && errors.platforms ? 'error-input' : null %>"
                         for="windows"
                     >
-                        <i class="fab fa-windows"></i>
+                        <i class="fab fa-windows label-platforms-icon"></i>
                         <input
                             class="input-checkbox-platform"
                             type="checkbox"
@@ -111,7 +111,7 @@
                             <%= locals.errors && errors.platforms ? 'error-input' : null %>"
                         for="mac-os"
                     >
-                        <i class="fab fa-apple"></i>
+                        <i class="fab fa-apple label-platforms-icon"></i>
                         <input
                             class="input-checkbox-platform"
                             type="checkbox"
@@ -130,7 +130,7 @@
                             <%= locals.errors && errors.platforms ? 'error-input' : null %>"
                         for="linux"
                     >
-                        <i class="fab fa-linux"></i>
+                        <i class="fab fa-linux label-platforms-icon"></i>
                         <input
                             class="input-checkbox-platform"
                             type="checkbox"
@@ -149,7 +149,7 @@
                             <%= locals.errors && errors.platforms ? 'error-input' : null %>"
                         for="vr-headset"
                     >
-                        <i class="fas fa-vr-cardboard"></i>
+                        <i class="fas fa-vr-cardboard label-platforms-icon"></i>
                         <input
                             class="input-checkbox-platform"
                             type="checkbox"

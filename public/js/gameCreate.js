@@ -20,14 +20,8 @@ offerFalse.addEventListener('change', () => {
     inputDiscount.disabled = true;
     inputDiscount.classList.add('enable-disable-offer')
     discountSpan.classList.add('enable-disable-offer');
-    form.addEventListener('submit', () => {
-        inputDiscount.value = null;
-    });
+    inputDiscount.value = null;
 });
-
-if (offerTrue.checked) {
-    console.log('yep');
-}
 
 // quiero cambiar las clases de la label cuando check o uncheck el checkbox.
 let platformLabel = document.querySelectorAll('.label-platforms');
@@ -62,6 +56,7 @@ for (let label of platformLabel) {
 
 // con esto hago que si la página refresca y las cajas están "CHECKED",
 // aparecen pintadas desde la carga.
+// ésto también me sirvió para la edición del producto.
 window.addEventListener('load', () => {
     for (let label of platformLabel) {
         let box = label.lastElementChild;
@@ -70,6 +65,18 @@ window.addEventListener('load', () => {
         } else {
             label.classList.remove('label-platform-checked');
         };
+    };
+});
+
+// como con el código anterior, quiero que si voy a editar el producto
+// y el mismo NO ESTÁ EN OFERTA, quiero que el input de "discount"
+// se muestre deshabilitado
+window.addEventListener('load', () => {
+    if (offerFalse.checked) {
+        inputDiscount.disabled = true;
+        inputDiscount.classList.add('enable-disable-offer')
+        discountSpan.classList.add('enable-disable-offer');
+        inputDiscount.value = null;
     };
 });
 

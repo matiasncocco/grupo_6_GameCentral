@@ -66,7 +66,7 @@ let productValidations = {
                     throw new Error('Asigna un porcentaje de descuento');
                 } else if (offer === 'true' && value < 1 || value > 99) {
                     throw new Error('Igresa un número entre 1 y 99');
-                } else if (offer === 'false' && value != '') {
+                } else if (offer === 'false' && value != null) {
                     throw new Error('Este campo debe estar vacío');
                 } else {
                     return true;
@@ -141,7 +141,7 @@ let productValidations = {
                     throw new Error('Asigna un porcentaje de descuento');
                 } else if (offer === 'true' && value < 1 || value > 99) {
                     throw new Error('Igresa un número entre 1 y 99');
-                } else if (offer === 'false' && value != '') {
+                } else if (offer === 'false' && value != null) {
                     throw new Error('Este campo debe estar vacío');
                 } else {
                     return true;
