@@ -4,6 +4,10 @@ let productsController = require('../controllers/productsController');
 let upload = require('../middlewares/multerMiddleware');
 let userMiddleware = require('../middlewares/userMiddleware');
 let adminMiddleware = require('../middlewares/adminMiddleware');
+let {
+    creationValidations,
+    // editValidations
+} = require('../middlewares/productValidations');
 
 // // // // // // // // //
 // USAR                 //
@@ -41,6 +45,7 @@ router.get(
 router.post(
     '/',
     upload.single('img'),
+    creationValidations,
     productsController.store
 );
 
@@ -55,6 +60,7 @@ router.get(
 router.put(
     '/:id',
     upload.single('img'),
+    // editValidations,
     productsController.update
 );
 

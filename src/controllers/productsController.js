@@ -2,8 +2,8 @@ let {
     addOne,
     giveNumber
 } = require('./helper');
-
 let db = require('../database/models');
+let { validationResult } = require('express-validator');
 
 let productsController = {
     // 0 GET: carrito
@@ -93,6 +93,12 @@ let productsController = {
 
     // 4 POST: store product <form> fields
     store: (req, res) => {
+        let oldData = req.body;
+        let validations = validationResult(req);
+        // busco un juego por título
+        // si hay errores los mando a la vista
+        // si encontré coincidencia en el nombre, envío un error más
+        // si no hay errores, creo el juego
         db.Game.create({
             title: req.body.title.toUpperCase(),
             img: req.file.filename,

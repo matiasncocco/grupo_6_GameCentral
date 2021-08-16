@@ -5,8 +5,10 @@ let upload = require('../middlewares/multerMiddleware');
 let userMiddleware = require('../middlewares/userMiddleware');
 let guestMiddleware = require('../middlewares/guestMiddleware');
 let adminMiddleware = require('../middlewares/adminMiddleware');
-let registerValidations = require('../middlewares/registerValidations');
-
+let {
+    registerValidations,
+    // loginValidations
+} = require('../middlewares/userValidations');
 
 // // // // // // // // //
 // USAR                 //
@@ -39,6 +41,7 @@ router.get(
 // procesar login de usuario
 router.post(
     '/login',
+    // loginValidations,
     usersController.processLogin
 );
 

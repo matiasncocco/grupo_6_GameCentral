@@ -1,7 +1,7 @@
 <%- include ('../partials/head') %>
 <%- include ('../partials/header') %>
-<script src="/js/gameCreate.js" defer>
-</script>
+<!-- <script src="/js/gameCreate.js" defer>
+</script> -->
 <main class="main-main">
     <header class="main-title first-title">
         <h3 class="big-title">
@@ -29,8 +29,8 @@
                     name="title"
                     id="title"
                     placeholder="PAC-MAN"
-                    required
                 >
+                <!-- span error -->
             </div>
             <!-- categories -->
             <div class="input-box">
@@ -42,7 +42,6 @@
                         <select
                                 class="input-text properties-category"
                                 name="categories"
-                                required
                             >
                             <option disabled selected>
                                 CATEGORÍA Nº<%= [i] %>
@@ -55,6 +54,7 @@
                         </select>
                     <% } %>
                 </div>
+                <!-- span error -->
             </div>
             <!-- platforms -->
             <div class="input-box">
@@ -105,10 +105,8 @@
                             value="3"
                         >
                     </label>
-                    <div class="error-box">
-
-                    </div>
                 </div>
+                <!-- span error -->
             </div>
             <!-- img -->
             <div class="input-box file-box">
@@ -122,9 +120,9 @@
                         name="img" 
                         id="img" 
                         accept=".jpg, .jpeg, .png, .webp"
-                        required
                     >
                 </label>
+                <!-- span error -->
             </div>
             <!-- RELEVANT -->
             <div class="input-box">
@@ -139,7 +137,6 @@
                         name="relevant"
                         value="true"
                         id="relevant-true"
-                        required
                     >
                 </label>
                 <label class="label-label label-radio" for="relevant-false">
@@ -150,9 +147,9 @@
                         name="relevant"
                         value="false"
                         id="relevant-false"
-                        required
                     >
                 </label>
+                <!-- span error -->
             </div>
             <!-- IN OFFER -->
             <div class="input-box">
@@ -167,7 +164,6 @@
                         name="offer"
                         value="true"
                         id="offer-true"
-                        required
                     >
                 </label>
                 <label class="label-label label-radio" for="offer-false">
@@ -178,9 +174,9 @@
                         name="offer"
                         value="false"
                         id="offer-false"
-                        required
                     >
                 </label>
+                <!-- span error -->
             </div>
             <!-- price -->
             <div class="input-box">
@@ -195,13 +191,10 @@
                     type="number" 
                     name="price" 
                     id="price" 
-                    placeholder="1999"
-                    maxlength="4" 
-                    min="1"
-                    max="9999"
+                    placeholder="1999.99"
                     step=".01"
-                    required
                 >
+                <!-- span error -->
             </div>
             <!-- discount -->
             <div class="input-box">
@@ -217,10 +210,9 @@
                     name="discount"
                     id="discount"
                     placeholder="50"
-                    min="1"
-                    max="99"
                     step="1"
                 >
+                <!-- span error -->
             </div>
             <!-- description -->
             <div class="input-box">
@@ -233,8 +225,8 @@
                     id="description"
                     rows="15"
                     maxlength="3000"
-                    required
                 ></textarea>
+                <!-- span error -->
             </div>
             <!-- BUTTONS -->
             <div class="button-box">
