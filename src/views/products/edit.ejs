@@ -1,7 +1,7 @@
 <%- include ('../partials/head') %>
 <%- include ('../partials/header') %>
-<script src="/js/gameCreate.js" defer>
-</script>
+<!-- <script src="/js/gameCreate.js" defer>
+</script> -->
 <main class="main-main">
     <header class="main-title first-title">
         <h3 class="big-title">
@@ -18,19 +18,33 @@
         enctype="multipart/form-data"
     >
         <section class="product-create-section">
+            <!-- ADVERTENCIA: ERRORES -->
+            <% if (locals.errors) { %>
+                <div class="edit-warning-box">
+                    <span class="error-msg">
+                        LA EDICIÓN NO SE COMPLETÓ. REVISA LOS ERRORES
+                    </span>
+                </div>
+            <% } %>
             <!-- title -->
             <div class="input-box">
                 <label class="label-label" for="title">
                     Nombre
                 </label>
                 <input
-                    class="input-text input-text-product"
+                    class="input-text
+                        input-text-product
+                        <%= locals.errors && errors.title ? 'error-input' : null %>"
                     type="text"
                     name="title"
                     id="title"
                     value="<%= editableGame.title %>"
-                    required
                 >
+                <% if (locals.errors && errors.title) { %>
+                    <span class="error-msg">
+                        <%= errors.title.msg %>
+                    </span>
+                <% } %>
             </div>
             <!-- categories -->
             <div class="input-box">
@@ -40,11 +54,12 @@
                 <div class="properties-categories">
                     <% for (i = 0; i < editableGame.categories.length; i++) { %>
                         <select
-                                class="input-text properties-category"
-                                name="categories"
-                                required
-                            >
-                            <option>
+                            class="input-text
+                                properties-category
+                                <%= locals.errors && errors.categories ? 'error-input' : null %>"
+                            name="categories"
+                        >
+                            <option value="<%= editableGame.categories[i].id %>">
                                 <%= editableGame.categories[i].title %>
                             </option>
                             <% for (j = 0; j < categories.length; j++) { %>
@@ -55,6 +70,11 @@
                         </select>
                     <% } %>
                 </div>
+                <% if (locals.errors && errors.categories) { %>
+                    <span class="error-msg">
+                        <%= errors.categories.msg %>
+                    </span>
+                <% } %>
             </div>
             <!-- platforms -->
             <div class="input-box">
@@ -65,7 +85,13 @@
                     Marque las plataformas en las que éste producto está disponible
                 </label>
                 <div class="platform-check-box">
-                    <label class="label-label label-radio label-platforms" for="windows">
+                    <label 
+                        class="label-label
+                            label-radio
+                            label-platforms
+                            <%= locals.errors && errors.platforms ? 'error-input' : null %>"
+                        for="windows"
+                    >
                         <i class="fab fa-windows"></i>
                         <input
                             class="input-checkbox-platform"
@@ -78,7 +104,13 @@
                             <% }) %>
                         >
                     </label>
-                    <label class="label-label label-radio label-platforms" for="mac-os">
+                    <label 
+                        class="label-label
+                            label-radio
+                            label-platforms
+                            <%= locals.errors && errors.platforms ? 'error-input' : null %>"
+                        for="mac-os"
+                    >
                         <i class="fab fa-apple"></i>
                         <input
                             class="input-checkbox-platform"
@@ -91,7 +123,13 @@
                             <% }) %>
                         >
                     </label>
-                    <label class="label-label label-radio label-platforms" for="linux">
+                    <label 
+                        class="label-label
+                            label-radio
+                            label-platforms
+                            <%= locals.errors && errors.platforms ? 'error-input' : null %>"
+                        for="linux"
+                    >
                         <i class="fab fa-linux"></i>
                         <input
                             class="input-checkbox-platform"
@@ -104,7 +142,13 @@
                             <% }) %>
                         >
                     </label>
-                    <label class="label-label label-radio label-platforms" for="vr-headset">
+                    <label 
+                        class="label-label
+                            label-radio
+                            label-platforms
+                            <%= locals.errors && errors.platforms ? 'error-input' : null %>"
+                        for="vr-headset"
+                    >
                         <i class="fas fa-vr-cardboard"></i>
                         <input
                             class="input-checkbox-platform"
@@ -117,17 +161,25 @@
                             <% }) %>
                         >
                     </label>
-                    <div class="error-box">
-
-                    </div>
                 </div>
+                <% if (locals.errors && errors.platforms) { %>
+                    <span class="error-msg">
+                        <%= errors.platforms.msg %>
+                    </span>
+                <% } %>
             </div>
             <!-- img -->
             <div class="input-box file-box">
                 <label class="label-label file-box-label">
                     Imágen
                 </label>
-                <label class="label-label input-text product-file edit-product-file" for="img">
+                <label 
+                    class="label-label
+                        input-text
+                        product-file
+                        <%= locals.errors && errors.img ? 'error-input' : null %>"
+                    for="img"
+                >
                     <img src="/img/products/<%= editableGame.img %>">
                     <input 
                         class="input-file" 
@@ -137,13 +189,23 @@
                         accept=".jpg, .jpeg, .png, .webp"
                     >
                 </label>
+                <% if (locals.errors && errors.img) { %>
+                    <span class="error-msg">
+                        <%= errors.img.msg %>
+                    </span>
+                <% } %>
             </div> 
             <!-- RELEVANT -->
             <div class="input-box">
                 <label class="label-label">
                     ¿Pertenece a sección "RECOMENDADOS"?
                 </label>
-                <label class="label-label label-radio" for="relevant-true">
+                <label
+                    class="label-label
+                        label-radio
+                        <%= locals.errors && errors.relevant ? 'error-input' : null %>"
+                    for="relevant-true"
+                >
                     SI
                     <input
                         class="input-radio"
@@ -151,13 +213,15 @@
                         name="relevant"
                         value="true"
                         id="relevant-true"
-                        required
-                        <% editableGame.status.forEach(status => { %>
-                            <%= status.id === 1 ? 'checked' : null %>
-                        <% }) %>
+                        <%= editableGame.status[0] && editableGame.status[0].id === 1 ? 'checked' : null %>
                     >
                 </label>
-                <label class="label-label label-radio" for="relevant-false">
+                <label
+                    class="label-label
+                        label-radio
+                        <%= locals.errors && errors.relevant ? 'error-input' : null %>"
+                    for="relevant-false"
+                >
                     NO
                     <input
                         class="input-radio"
@@ -165,17 +229,26 @@
                         name="relevant"
                         value="false"
                         id="relevant-false"
-                        required
-                        <%= editableGame.status[0].id === 1 ? null : 'checked' %>
+                        <%= editableGame.status[0] && editableGame.status[0].id === 1 ? null : 'checked' %>
                     >
                 </label>
+                <% if (locals.errors && errors.relevant) { %>
+                    <span class="error-msg">
+                        <%= errors.relevant.msg %>
+                    </span>
+                <% } %>
             </div>
             <!-- IN OFFER -->
             <div class="input-box">
                 <label class="label-label">
                     ¿Producto "EN OFERTA"?
                 </label>
-                <label class="label-label label-radio" for="offer-true">
+                <label
+                    class="label-label
+                        label-radio
+                        <%= locals.errors && errors.offer ? 'error-input' : null %>"
+                    for="offer-true"
+                >
                     SI
                     <input
                         class="input-radio"
@@ -183,13 +256,15 @@
                         name="offer"
                         value="true"
                         id="offer-true"
-                        required
-                        <% editableGame.status.forEach(status => { %>
-                            <%= status.id === 2 ? 'checked' : null %>
-                        <% }) %>
+                        <%= editableGame.status[0] && editableGame.status[0].id === 2 || editableGame.status[1] && editableGame.status[1].id === 2 ? 'checked' : null %>
                     >
                 </label>
-                <label class="label-label label-radio" for="offer-false">
+                <label
+                    class="label-label
+                        label-radio
+                        <%= locals.errors && errors.offer ? 'error-input' : null %>"
+                    for="offer-false"
+                >
                     NO
                     <input
                         class="input-radio"
@@ -197,52 +272,71 @@
                         name="offer"
                         value="false"
                         id="offer-false"
-                        required
-                        <%= editableGame.status.length === 2 ? null : 'checked' %>
+                        <%= editableGame.status[0] && editableGame.status[0].id === 2 || editableGame.status[1] && editableGame.status[1].id === 2 ? null : 'checked' %>
                     >
                 </label>
+                <% if (locals.errors && errors.offer) { %>
+                    <span class="error-msg">
+                        <%= errors.offer.msg %>
+                    </span>
+                <% } %>
             </div>
             <!-- price -->
             <div class="input-box">
                 <label class="label-label" for="price">
                     Precio
                 </label>
-                <span class="discount-indicator">
+                <span
+                    class="discount-indicator
+                        <%= locals.errors && errors.price ? 'error-span-price' : null %>"
+                >
                     $
                 </span>
                 <input 
-                    class="input-text input-price"
-                    type="number" 
-                    name="price" 
-                    id="price" 
-                    placeholder="1999"
-                    maxlength="4" 
-                    min="1"
-                    max="9999"
+                    class="input-text
+                        input-price
+                        <%= locals.errors && errors.price ? 'error-input-price' : null %>"
+                    type="number"
+                    name="price"
+                    id="price"
+                    placeholder="1999.99"
                     step=".01"
-                    required
                     value="<%= editableGame.price %>"
                 >
+                <% if (locals.errors && errors.price) { %>
+                    <span class="error-msg">
+                        <%= errors.price.msg %>
+                    </span>
+                <% } %>
             </div>
             <!-- discount -->
             <div class="input-box">
                 <label class="label-label discount-rate-label" for="discount">
                     ¿Qué porcentaje de DESCUENTO se debe aplicar?
                 </label>
-                <span id="discount-span" class="discount-indicator">
+                <span 
+                    id="discount-span"
+                    class="discount-indicator
+                        <%= locals.errors && errors.discount ? 'error-span-price' : null %>"
+                >
                     %
                 </span>
                 <input
-                    class="input-text input-discount"
+                    class="input-text
+                        input-discount
+                        <%= locals.errors && errors.discount ? 'error-input-price' : null %>"
                     type="number"
                     name="discount"
                     id="discount"
                     placeholder="50"
-                    min="1"
-                    max="99"
                     step="1"
                     value="<%= editableGame.discount %>"
                 >
+                <% if (locals.errors && errors.discount) { %>
+                    <span class="error-msg">
+                        <%= errors.discount.msg %>
+                    </span>
+                <% } %>
             </div>
             </div>
             <!-- description -->
@@ -251,12 +345,18 @@
                     Descripción
                 </label>
                 <textarea 
-                    class="text-area-product" 
-                    name="description" 
-                    id="description" 
-                    rows="15" 
+                    class="text-area-product
+                        <%= locals.errors && errors.description ? 'error-input' : null %>"
+                    name="description"
+                    id="description"
+                    rows="15"
                     maxlength="3000"
                 ><%= editableGame.description %></textarea>
+                <% if (locals.errors && errors.description) { %>
+                    <span class="error-msg">
+                        <%= errors.description.msg %>
+                    </span>
+                <% } %>
             </div>
             <!-- BUTTONS -->
             <div class="button-box">

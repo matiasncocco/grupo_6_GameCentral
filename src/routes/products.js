@@ -6,7 +6,7 @@ let userMiddleware = require('../middlewares/userMiddleware');
 let adminMiddleware = require('../middlewares/adminMiddleware');
 let {
     creationValidations,
-    // editValidations
+    editValidations
 } = require('../middlewares/productValidations');
 
 // // // // // // // // //
@@ -60,7 +60,7 @@ router.get(
 router.put(
     '/:id',
     upload.single('img'),
-    // editValidations,
+    editValidations,
     productsController.update
 );
 

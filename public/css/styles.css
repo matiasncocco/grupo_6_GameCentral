@@ -1015,6 +1015,13 @@ img {
     border-radius: 8px 0 0 8px;
 }
 
+.edit-warning-box .error-msg {
+    width: 100%;
+    text-align: center;
+    margin: 0;
+    padding: 3%;
+}
+
 
 /**/
 /* FOOTER */
