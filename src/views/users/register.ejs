@@ -27,8 +27,12 @@
                     id="name"
                     placeholder="Juan"
                     value="<%= locals.oldData && oldData.name ? oldData.name : null %>"
-                    required
                 >
+                <% if (locals.errors && errors.name) { %>
+                    <span class="error-msg">
+                        <%= errors.name.msg %>
+                    </span>
+                <% } %>
             </div>
             <!-- surname -->
             <div class="input-box">
@@ -42,8 +46,12 @@
                     id="surname"
                     placeholder="Pérez"
                     value="<%= locals.oldData && oldData.surname ? oldData.surname : null %>"
-                    required
                 >
+                <% if (locals.errors && errors.surname) { %>
+                    <span class="error-msg">
+                        <%= errors.surname.msg %>
+                    </span>
+                <% } %>
             </div>
             <!-- email -->
             <div class="input-box">
@@ -57,7 +65,6 @@
                     id="email"
                     placeholder="juan.perez@gmail.com"
                     value="<%= locals.oldData && oldData.email ? oldData.email : null %>"
-                    required
                 >
                 <% if (locals.errors && errors.email) { %>
                     <span class="error-msg">
@@ -76,15 +83,15 @@
                     name="password"
                     id="password"
                     placeholder="********"
-                    required
                 >
+                <% if (locals.errors && errors.password) { %>
+                    <span class="error-msg">
+                        <%= errors.password.msg %>
+                    </span>
+                <% } %>
             </div>
-            <!--  -->
-            <!--  -->
-            <!-- DESCOMENTAR LUEGO -->
             <!-- passwordCheck -->
-            <!-- NECESITA VALIDACIÓN CUSTOM -->
-            <!-- <div class="input-box">
+            <div class="input-box">
                 <label class="label-label" for="passwordCheck">
                     Confirme su contraseña
                 </label>
@@ -94,10 +101,12 @@
                     name="passwordCheck"
                     id="passwordCheck"
                     placeholder="********"
-                > -->
-                <!-- DESCOMENTAR LUEGO -->
-                <!--  -->
-                <!--  -->
+                >
+                <% if (locals.errors && errors.passwordCheck) { %>
+                    <span class="error-msg">
+                        <%= errors.passwordCheck.msg %>
+                    </span>
+                <% } %>
             </div>
             <!-- avatar -->
             <div class="input-box file-box">
@@ -111,12 +120,17 @@
                         name="avatar"
                         id="avatar"
                         accept=".jpg, .jpeg, .png, .webp"
-                        required
                     >
                 </label>
+                <% if (locals.errors && errors.avatar) { %>
+                    <span class="error-msg">
+                        <%= errors.avatar.msg %>
+                    </span>
+                <% } %>
             </div>
             <!-- country -->
-            <div class="input-box">
+            <!-- WIP -->
+            <!-- <div class="input-box">
                 <label class="label-label country-label" for="country">
                     Nacionalidad
                 </label>
@@ -126,10 +140,11 @@
                         name="country"
                         id="country"
                     >
-                    <!-- cuando funcione, agregarle required -->
                     </select>
                 </div>
-            </div>
+                cuando funcione, agregarle agregarle validación
+            </div> -->
+            <!-- WIP -->
             <!-- newsletter -->
             <div class="input-box">
                 <label class="label-label">
@@ -154,22 +169,33 @@
                         name="newsletter"
                         value="0"
                         id="newsletter-false"
+                        <= locals.oldData && oldData.newsletter === '0' ? 'checked' : null %>
                     >
                 </label>
+                <% if (locals.errors && errors.newsletter) { %>
+                    <span class="error-msg">
+                        <%= errors.newsletter.msg %>
+                    </span>
+                <% } %>
             </div>
             <!-- TERMS & CONDITIONS -->
             <div class="input-box">
-                <label class="label-tyc">
+                <label class="label-label label-tyc">
                     He leído y acepto los 
                     <a class="terms-conditions" target="_blank" href="/terms-conditions/#terms-and-conditions">
                         términos y condiciones
                     </a>
                     <input 
-                        class="input-checkbox" 
+                        class="input-checkbox"
                         type="checkbox"
-                        required
+                        name="tyc"
                     >
                 </label>
+                <% if (locals.errors && errors.tyc) { %>
+                    <span class="error-msg">
+                        <%= errors.tyc.msg %>
+                    </span>
+                <% } %>
             </div>
             <!-- BUTTONS -->
             <div class="button-box">

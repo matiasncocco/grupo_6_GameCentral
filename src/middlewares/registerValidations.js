@@ -3,30 +3,53 @@ let { check } = require('express-validator');
 let registerValidations = [
     check('name')
         .notEmpty().withMessage('Completa este campo').bail()
-        .isLength( { min: 2, max: 20 } ).withMessage('Debe ser entre 2 y 20 caracteres').bail()
-        .isAlpha([ 'es-ES' ]).withMessage('Debe ser solo letras').bail(),
+        .isLength({ min: 2, max: 20 }).withMessage('Ingresa entre 2 y 20 caracteres').bail()
+        .isAlpha().withMessage('Ingresa solo letras').bail(),
     check('surname')
         .notEmpty().withMessage('Completa este campo').bail()
-        .isLength( { min: 2, max: 20 } ).withMessage('Debe ser entre 2 y 20 caracteres').bail()
-        .isAlpha([ 'es-ES' ]).withMessage('Debe ser solo letras').bail(),
+        .isLength({ min: 2, max: 20 }).withMessage('Ingresa entre 2 y 20 caracteres').bail()
+        .isAlpha().withMessage('Ingresa solo letras').bail(),
     check('email')
         .notEmpty().withMessage('Completa este campo').bail()
-        .isEmail().withMessage('Debe ser una dirección de e-mail válida').bail(),
+        .isEmail().withMessage('Ingresa una dirección de e-mail válida').bail(),
     check('password')
         .notEmpty().withMessage('Completa este campo').bail()
-        .isLength( { min: 4, max: 12 } ).withMessage('Debe ser entre 4 y 12 caracteres').bail(),
+        .isLength( {min: 8, max: 20} ).withMessage('Ingresa entre 8 y 20 caracteres').bail(),
+        // Cómo la hago STRONG? Se puede hacer custom no más.
     check('passwordCheck')
-        .notEmpty().withMessage('Completa este campo').bail()
-        .custom((match, { req } ) => {
+        .custom((match, { req }) => {
             let password = req.body.password;
             if (password != match) {
-                throw new Error('Las contraseñas no coinciden');
+                throw new Error('Las contraseñas deben coincidir');
+            } else {
+                return true;
             };
         }).bail(),
     check('avatar')
-        .notEmpty().withMessage('Completa este campo').bail(),
+        .custom((value, { req }) => {
+            let file = req.file;
+            let okExtensions = [
+                '.jpg',
+                '.jpeg',
+                '.png',
+                '.webp'
+            ];
+            if (!file) {
+                throw new Error('Subi una imágen de perfil');
+            } else {
+                if (!okExtensions.includes(file.orignalname)) {
+                    throw new Error(
+                        'La imágen solo puede ser \'.jpg\', \'.jpeg\', \'.png\' o \'.webp\''
+                    );
+                } else {
+                    return true;
+                };
+            };
+        }).bail(),
+    check('newsletter')
+        .notEmpty().withMessage('Debes seleccionar una opción').bail(),
+    check('tyc')
+        .notEmpty().withMessage('Debes leer y aceptar los términos y condiciones').bail(),
 ];
 
 module.exports = registerValidations;
-
-// asd

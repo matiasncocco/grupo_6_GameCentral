@@ -25,11 +25,28 @@ let usersController = {
             }
         });
         try {
-            console.log(validations);
-            if (!user && validations.errors.length < 0) {
-                console.log('CREANDO USUARIO');
-                // si el usuario no existe, y no hay errores,
-                // creo un usuario nuevo
+            if (validations.errors.length > 0) {
+                // si hay errores los mando a la vista
+                if (user) {
+                    // si encontré coincidencia con el email, envío un error más
+                    validations.errors.push({
+                        param: 'email',
+                        msg: 'El e-mail ya está en uso'
+                    });
+                    return res.render('./users/register', {
+                        title: 'Crea tu cuenta',
+                        oldData,
+                        errors: validations.mapped()
+                    });
+                } else {
+                    return res.render('./users/register', {
+                        title: 'Crea tu cuenta',
+                        oldData,
+                        errors: validations.mapped()
+                    });
+                };
+            } else {
+                // si no hay errores, creo el usuario
                 return db.User.create({
                     name: req.body.name,
                     surname: req.body.surname,
@@ -48,20 +65,8 @@ let usersController = {
                         errorDetail: err
                     });
                 });
-            } else {
-                // si el usuario existe, el email ya está en uso y envío error
-                return res.render('./users/register', {
-                    title: 'Crea tu cuenta',
-                    oldData,
-                    errors: {
-                        email: {
-                            msg: 'El e-mail ya está en uso'
-                        }
-                    }
-                });
             };
-        }
-        catch(err) {
+        } catch(err) {
             res.status(500).render('error', {
                 status: 500,
                 title: 'ERROR',
