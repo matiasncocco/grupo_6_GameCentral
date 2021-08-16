@@ -33,18 +33,12 @@ let usersController = {
                         param: 'email',
                         msg: 'El e-mail ya está en uso'
                     });
-                    return res.render('./users/register', {
-                        title: 'Crea tu cuenta',
-                        oldData,
-                        errors: validations.mapped()
-                    });
-                } else {
-                    return res.render('./users/register', {
-                        title: 'Crea tu cuenta',
-                        oldData,
-                        errors: validations.mapped()
-                    });
                 };
+                res.render('./users/register', {
+                    title: 'Crea tu cuenta',
+                    oldData,
+                    errors: validations.mapped()
+                });
             } else {
                 // si no hay errores, creo el usuario
                 return db.User.create({

@@ -91,86 +91,115 @@ let productsController = {
         };
     },
 
-    // 4 POST: store product <form> fields
-    store: (req, res) => {
+    // 4 POST: store product <form> fields // create new product
+    store: async (req, res) => {
         let oldData = req.body;
         let validations = validationResult(req);
+        let categories = await db.Category.findAll();
         // busco un juego por título
-        // si hay errores los mando a la vista
-        // si encontré coincidencia en el nombre, envío un error más
-        // si no hay errores, creo el juego
-        db.Game.create({
-            title: req.body.title.toUpperCase(),
-            img: req.file.filename,
-            price: parseFloat(req.body.price),
-            discount: req.body.discount,
-            description: req.body.description
-        })
-            .then(creation => {
-                if (Array.isArray(req.body.platforms)) {
-                    let platforms = req.body.platforms.map(giveNumber);
-                    platforms = platforms.map(addOne);
-                    platforms.forEach(platform => {
-                        db.PlatformGame.create({
-                            gameId: creation.id,
-                            platformId: platform
+        let game = await db.Game.findOne({
+            where: {
+                title: req.body.title.toUpperCase(),
+            }
+        });
+        try {
+            if (validations.errors.length > 0) {
+                // si hay errores los mando a la vista
+                if (game) {
+                    // si encontré coincidencia en el nombre, envío un error más
+                    validations.errors.push({
+                        param: 'title',
+                        msg: 'El título ingresado ya existe en nuestra base de datos'
+                    });
+                };
+                return res.render('./products/create', {
+                    title: 'Nuevo producto',
+                    categories,
+                    oldData,
+                    errors: validations.mapped()
+                });
+            } else {
+                // si no hay errores, creo el juego
+                db.Game.create({
+                    title: req.body.title.toUpperCase(),
+                    img: req.file.filename,
+                    price: parseFloat(req.body.price),
+                    discount: req.body.discount,
+                    description: req.body.description
+                })
+                    .then(creation => {
+                        if (Array.isArray(req.body.platforms)) {
+                            let platforms = req.body.platforms.map(giveNumber);
+                            platforms = platforms.map(addOne);
+                            platforms.forEach(platform => {
+                                db.PlatformGame.create({
+                                    gameId: creation.id,
+                                    platformId: platform
+                                });
+                            });
+                        } else {
+                            let platform = parseInt(req.body.platforms);
+                            platform ++;
+                            db.PlatformGame.create({
+                                gameId: creation.id,
+                                platformId: platform
+                            });
+                        };
+                        return creation;
+                    })
+                    .then(creation => {
+                        let categories = req.body.categories.map(addOne);
+                        categories.forEach(category => {         
+                            db.CategoryGame.create({
+                                gameId: creation.id,
+                                categoryId: category
+                            });
+                        });
+                        return creation;
+                    })
+                    .then(creation => {
+                        let relevant = req.body.relevant;
+                        let offer = req.body.offer;
+                        if (relevant === 'true' && offer === 'true') {
+                            let status = [1,2];
+                            return status.forEach(status => {
+                                db.StatusGame.create({
+                                    gameId: creation.id,
+                                    statusId: status
+                                });
+                            });
+                        };
+                        if (relevant === 'true' && offer != 'true') {
+                            return db.StatusGame.create({
+                                gameId: creation.id,
+                                statusId: 1
+                            });
+                        };
+                        if (relevant != 'true' && offer === 'true') {
+                            return db.StatusGame.create({
+                                gameId: creation.id,
+                                statusId: 2
+                            });
+                        };
+                    })
+                    .then(() => {
+                        res.redirect('/products');
+                    })
+                    .catch(err => {
+                        res.status(500).render('error', {
+                            status: 500,
+                            title: 'ERROR',
+                            errorDetail: err
                         });
                     });
-                } else {
-                    let platform = parseInt(req.body.platforms);
-                    platform ++;
-                    db.PlatformGame.create({
-                        gameId: creation.id,
-                        platformId: platform
-                    });
                 };
-                return creation;
-            })
-            .then(creation => {
-                let categories = req.body.categories.map(addOne);
-                categories.forEach(category => {         
-                    db.CategoryGame.create({
-                        gameId: creation.id,
-                        categoryId: category
-                    });
-                });
-                return creation;
-            })
-            .then(creation => {
-                let relevant = req.body.relevant;
-                let offer = req.body.offer;
-                if (relevant === 'true' && offer === 'true') {
-                    let status = [1,2];
-                    return status.forEach(status => {
-                        db.StatusGame.create({
-                            gameId: creation.id,
-                            statusId: status
-                        });
-                    });
-                };
-                if (relevant === 'true' && offer != 'true') {
-                    return db.StatusGame.create({
-                        gameId: creation.id,
-                        statusId: 1
-                    });
-                };
-                if (relevant != 'true' && offer === 'true') {
-                    return db.StatusGame.create({
-                        gameId: creation.id,
-                        statusId: 2
-                    });
-                };
-            })
-            .then(() => {
-                res.redirect('/products');
-            })
-            .catch(err => {
-                res.status(500).render('error', {
-                    status: 500,
-                    title: 'ERROR',
-                    errorDetail: err
-                });
+        } catch(err) {
+            res.status(500).render('error', {
+                status: 500,
+                title: 'ERROR',
+                errorDetail: err
             });
+        };
     },
 
     // 5 GET: show <form> with current product data

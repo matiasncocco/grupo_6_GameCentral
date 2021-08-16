@@ -1,3 +1,4 @@
+let path = require('path');
 let { check } = require('express-validator');
 
 let userValidations = {
@@ -38,7 +39,7 @@ let userValidations = {
                 if (!file) {
                     throw new Error('Subi una imágen de perfil');
                 } else {
-                    if (!okExtensions.includes(file.orignalname)) {
+                    if (!okExtensions.includes(path.extname(file.originalname))) {
                         throw new Error(
                             'La imágen solo puede ser \'.jpg\', \'.jpeg\', \'.png\' o \'.webp\''
                         );

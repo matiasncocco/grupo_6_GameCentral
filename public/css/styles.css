@@ -956,28 +956,6 @@ img {
     transition: all .1s cubic-bezier(.25,.25,.25,.25);
 }
 
-/* ERROR */
-.error-msg {
-    display: block;
-    color: black;
-    width: fit-content;
-    border-radius: 8px;
-    box-shadow: inset 0px 0 30px red;
-    margin: 2%;
-    padding: 1%;
-    font-size: 12px;
-    font-weight: 600;
-    text-shadow: -.5px 0 #FFF, 0 .5px #FFF, .5px 0 #FFF, 0 -.5px #FFF;
-}
-
-.error-input {
-    border: red solid 2px;
-}
-
-.error-input:focus {
-    outline: red;
-}
-
 /* MISC */
 .terms-conditions {
     text-decoration: underline;
@@ -997,6 +975,44 @@ img {
 .enable-disable-offer {
     color: #404040;
     background-color: #808080;
+}
+
+/* ERROR */
+.error-msg {
+    display: block;
+    color: black;
+    width: fit-content;
+    border-radius: 8px;
+    box-shadow: inset 0px 0 30px red;
+    margin: 2% 0;
+    padding: 1%;
+    font-size: 12px;
+    font-weight: 600;
+    text-shadow: -.5px 0 #FFF, 0 .5px #FFF, .5px 0 #FFF, 0 -.5px #FFF;
+}
+
+.error-input {
+    border: red solid 2px;
+}
+
+.error-input:focus {
+    outline: red;
+}
+
+.error-input-price {
+    border: red solid 2px;
+    border-left: none;
+    border-radius: 0 8px 8px 0;
+}
+
+.error-input-price:focus {
+    outline: red;
+}
+
+.error-span-price {
+    border: red solid 2px;
+    border-right: none;
+    border-radius: 8px 0 0 8px;
 }
 
 

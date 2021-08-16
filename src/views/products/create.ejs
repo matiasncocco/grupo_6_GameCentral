@@ -24,13 +24,20 @@
                     Nombre
                 </label>
                 <input
-                    class="input-text input-text-product"
+                    class="input-text
+                        input-text-product
+                        <%= locals.errors && errors.title ? 'error-input' : null %>"
                     type="text"
                     name="title"
                     id="title"
                     placeholder="PAC-MAN"
+                    value="<%= locals.oldData && oldData.title ? oldData.title : null %>"
                 >
-                <!-- span error -->
+                <% if (locals.errors && errors.title) { %>
+                    <span class="error-msg">
+                        <%= errors.title.msg %>
+                    </span>
+                <% } %>
             </div>
             <!-- categories -->
             <div class="input-box">
@@ -40,21 +47,30 @@
                 <div class="properties-categories">
                     <% for (i = 1; i < 5; i++) { %>
                         <select
-                                class="input-text properties-category"
-                                name="categories"
-                            >
+                            class="input-text
+                                properties-category
+                                <%= locals.errors && errors.categories ? 'error-input' : null %>"
+                            name="categories"
+                        >
                             <option disabled selected>
                                 CATEGORÍA Nº<%= [i] %>
                             </option>
                             <% for (j = 0; j < categories.length; j++) { %>
-                                <option value="<%= [j] %>">
+                                <option 
+                                    value="<%= [j] %>"
+                                >
+                                <!-- how to persist data?? -->
                                     <%= categories[j].title %>
                                 </option>
                             <% } %>
                         </select>
                     <% } %>
                 </div>
-                <!-- span error -->
+                <% if (locals.errors && errors.categories) { %>
+                    <span class="error-msg">
+                        <%= errors.categories.msg %>
+                    </span>
+                <% } %>
             </div>
             <!-- platforms -->
             <div class="input-box">
@@ -65,7 +81,13 @@
                     Marque las plataformas en las que éste producto está disponible
                 </label>
                 <div class="platform-check-box">
-                    <label class="label-label label-radio label-platforms" for="windows">
+                    <label 
+                        class="label-label
+                            label-radio
+                            label-platforms
+                            <%= locals.errors && errors.platforms ? 'error-input' : null %>"
+                        for="windows"
+                    >
                         <i class="fab fa-windows label-platforms-icon"></i>
                         <input
                             class="input-checkbox-platform"
@@ -73,9 +95,16 @@
                             name="platforms"
                             id="windows"
                             value="0"
+                            <%= locals.oldData && oldData.platforms === '0' || locals.oldData && Array.isArray(oldData.platforms) && oldData.platforms.includes('0') ? 'checked' : null %>
                         >
                     </label>
-                    <label class="label-label label-radio label-platforms" for="mac-os">
+                    <label 
+                        class="label-label
+                            label-radio
+                            label-platforms
+                            <%= locals.errors && errors.platforms ? 'error-input' : null %>"
+                        for="mac-os"
+                >
                         <i class="fab fa-apple label-platforms-icon"></i>
                         <input
                             class="input-checkbox-platform"
@@ -83,9 +112,16 @@
                             name="platforms"
                             id="mac-os"
                             value="1"
+                            <%= locals.oldData && oldData.platforms === '1' || locals.oldData && Array.isArray(oldData.platforms) && oldData.platforms.includes('1') ? 'checked' : null %>
                         >
                     </label>
-                    <label class="label-label label-radio label-platforms" for="linux">
+                    <label 
+                        class="label-label
+                            label-radio
+                            label-platforms
+                            <%= locals.errors && errors.platforms ? 'error-input' : null %>"
+                        for="linux"
+                    >
                         <i class="fab fa-linux label-platforms-icon"></i>
                         <input
                             class="input-checkbox-platform"
@@ -93,9 +129,16 @@
                             name="platforms"
                             id="linux"
                             value="2"
+                            <%= locals.oldData && oldData.platforms === '2' || locals.oldData && Array.isArray(oldData.platforms) && oldData.platforms.includes('2') ? 'checked' : null %>
                         >
                     </label>
-                    <label class="label-label label-radio label-platforms" for="vr-headset">
+                    <label 
+                        class="label-label
+                            label-radio
+                            label-platforms
+                            <%= locals.errors && errors.platforms ? 'error-input' : null %>"
+                        for="vr-headset"
+                    >
                         <i class="fas fa-vr-cardboard label-platforms-icon"></i>
                         <input
                             class="input-checkbox-platform"
@@ -103,17 +146,28 @@
                             name="platforms"
                             id="vr-headset"
                             value="3"
+                            <%= locals.oldData && oldData.platforms === '3' || locals.oldData && Array.isArray(oldData.platforms) && oldData.platforms.includes('3') ? 'checked' : null %>
                         >
                     </label>
                 </div>
-                <!-- span error -->
+                <% if (locals.errors && errors.platforms) { %>
+                    <span class="error-msg">
+                        <%= errors.platforms.msg %>
+                    </span>
+                <% } %>
             </div>
             <!-- img -->
             <div class="input-box file-box">
                 <label class="label-label file-box-label">
                     Imágen
                 </label>
-                <label class="label-label input-text product-file" for="img">
+                <label 
+                    class="label-label
+                        input-text
+                        product-file
+                        <%= locals.errors && errors.img ? 'error-input' : null %>"
+                    for="img"
+                >
                     <input 
                         class="input-file" 
                         type="file" 
@@ -122,14 +176,23 @@
                         accept=".jpg, .jpeg, .png, .webp"
                     >
                 </label>
-                <!-- span error -->
+                <% if (locals.errors && errors.img) { %>
+                    <span class="error-msg">
+                        <%= errors.img.msg %>
+                    </span>
+                <% } %>
             </div>
             <!-- RELEVANT -->
             <div class="input-box">
                 <label class="label-label">
                     ¿Pertenece a sección "RECOMENDADOS"?
                 </label>
-                <label class="label-label label-radio" for="relevant-true">
+                <label
+                    class="label-label
+                        label-radio
+                        <%= locals.errors && errors.relevant ? 'error-input' : null %>"
+                    for="relevant-true"
+                >
                     SI
                     <input
                         class="input-radio"
@@ -137,9 +200,15 @@
                         name="relevant"
                         value="true"
                         id="relevant-true"
+                        <%= locals.oldData && oldData.relevant === 'true' ? 'checked' : null %>
                     >
                 </label>
-                <label class="label-label label-radio" for="relevant-false">
+                <label
+                    class="label-label
+                        label-radio
+                        <%= locals.errors && errors.relevant ? 'error-input' : null %>"
+                    for="relevant-false"
+                >
                     NO
                     <input
                         class="input-radio"
@@ -147,16 +216,26 @@
                         name="relevant"
                         value="false"
                         id="relevant-false"
+                        <%= locals.oldData && oldData.relevant === 'false' ? 'checked' : null %>
                     >
                 </label>
-                <!-- span error -->
+                <% if (locals.errors && errors.relevant) { %>
+                    <span class="error-msg">
+                        <%= errors.relevant.msg %>
+                    </span>
+                <% } %>
             </div>
             <!-- IN OFFER -->
             <div class="input-box">
                 <label class="label-label">
                     ¿Producto "EN OFERTA"?
                 </label>
-                <label class="label-label label-radio" for="offer-true">
+                <label
+                    class="label-label
+                        label-radio
+                        <%= locals.errors && errors.offer ? 'error-input' : null %>"
+                    for="offer-true"
+                >
                     SI
                     <input
                         class="input-radio"
@@ -164,9 +243,15 @@
                         name="offer"
                         value="true"
                         id="offer-true"
+                        <%= locals.oldData && oldData.offer === 'true' ? 'checked' : null %>
                     >
                 </label>
-                <label class="label-label label-radio" for="offer-false">
+                <label
+                    class="label-label
+                        label-radio
+                        <%= locals.errors && errors.offer ? 'error-input' : null %>"
+                    for="offer-false"
+                >
                     NO
                     <input
                         class="input-radio"
@@ -174,45 +259,71 @@
                         name="offer"
                         value="false"
                         id="offer-false"
+                        <%= locals.oldData && oldData.offer === 'false' ? 'checked' : null %>
                     >
                 </label>
-                <!-- span error -->
+                <% if (locals.errors && errors.offer) { %>
+                    <span class="error-msg">
+                        <%= errors.offer.msg %>
+                    </span>
+                <% } %>
             </div>
             <!-- price -->
             <div class="input-box">
                 <label class="label-label" for="price">
                     Precio
                 </label>
-                <span class="discount-indicator">
+                <span
+                    class="discount-indicator
+                        <%= locals.errors && errors.price ? 'error-span-price' : null %>"
+                >
                     $
                 </span>
                 <input 
-                    class="input-text input-price"
+                    class="input-text
+                        input-price
+                        <%= locals.errors && errors.price ? 'error-input-price' : null %>"
                     type="number" 
                     name="price" 
                     id="price" 
                     placeholder="1999.99"
                     step=".01"
+                    value="<%= locals.oldData && oldData.price ? oldData.price : null %>"
                 >
-                <!-- span error -->
+                <% if (locals.errors && errors.price) { %>
+                    <span class="error-msg">
+                        <%= errors.price.msg %>
+                    </span>
+                <% } %>
             </div>
             <!-- discount -->
             <div class="input-box">
                 <label class="label-label discount-rate-label" for="discount">
                     ¿Qué porcentaje de DESCUENTO se debe aplicar?
                 </label>
-                <span id="discount-span" class="discount-indicator">
+                <span 
+                    id="discount-span"
+                    class="discount-indicator
+                        <%= locals.errors && errors.discount ? 'error-span-price' : null %>"
+                >
                     %
                 </span>
                 <input
-                    class="input-text input-discount"
+                    class="input-text
+                        input-discount
+                        <%= locals.errors && errors.discount ? 'error-input-price' : null %>"
                     type="number"
                     name="discount"
                     id="discount"
                     placeholder="50"
                     step="1"
+                    value="<%= locals.oldData && oldData.discount ? oldData.discount : null %>"
                 >
-                <!-- span error -->
+                <% if (locals.errors && errors.discount) { %>
+                    <span class="error-msg">
+                        <%= errors.discount.msg %>
+                    </span>
+                <% } %>
             </div>
             <!-- description -->
             <div class="input-box">
@@ -220,13 +331,18 @@
                     Descripción
                 </label>
                 <textarea
-                    class="text-area-product"
+                    class="text-area-product
+                        <%= locals.errors && errors.description ? 'error-input' : null %>"
                     name="description"
                     id="description"
                     rows="15"
                     maxlength="3000"
-                ></textarea>
-                <!-- span error -->
+                ><%= locals.oldData && oldData.description ? oldData.description : null %></textarea>
+                <% if (locals.errors && errors.description) { %>
+                    <span class="error-msg">
+                        <%= errors.description.msg %>
+                    </span>
+                <% } %>
             </div>
             <!-- BUTTONS -->
             <div class="button-box">
