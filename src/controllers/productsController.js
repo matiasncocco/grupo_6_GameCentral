@@ -204,7 +204,7 @@ let productsController = {
 
     // 5 GET: show <form> with current product data
     edit: async (req, res) => {
-        let oldCategories = await db.Category.findAll();
+        let categories = await db.Category.findAll();
         let editableGame = await db.Game.findByPk(req.params.id, {
             include: [
                 'categories',
@@ -216,7 +216,7 @@ let productsController = {
             res.render('./products/edit', {
                 title: 'Edicion de producto',
                 editableGame,
-                oldCategories
+                categories,
             });
         } catch(err) {
             res.status(500).render('error', {

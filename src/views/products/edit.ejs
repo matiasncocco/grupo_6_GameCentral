@@ -47,9 +47,9 @@
                             <option>
                                 <%= editableGame.categories[i].title %>
                             </option>
-                            <% for (j = 0; j < oldCategories.length; j++) { %>
+                            <% for (j = 0; j < categories.length; j++) { %>
                                 <option value="<%= [j] %>">
-                                    <%= oldCategories[j].title %>
+                                    <%= categories[j].title %>
                                 </option>
                             <% } %>
                         </select>
@@ -153,7 +153,7 @@
                         id="relevant-true"
                         required
                         <% editableGame.status.forEach(status => { %>
-                            <%= status.name == 'RELEVANT' ? 'checked' : null %>
+                            <%= status.id === 1 ? 'checked' : null %>
                         <% }) %>
                     >
                 </label>
@@ -166,9 +166,7 @@
                         value="false"
                         id="relevant-false"
                         required
-                        <% editableGame.status.forEach(status => { %>
-                            <%= status.name != 'RELEVANT' ? 'checked' : null %>
-                        <% }) %>
+                        <%= editableGame.status[0].id === 1 ? null : 'checked' %>
                     >
                 </label>
             </div>
@@ -187,7 +185,7 @@
                         id="offer-true"
                         required
                         <% editableGame.status.forEach(status => { %>
-                            <%= status.name == 'IN OFFER' ? 'checked' : null %>
+                            <%= status.id === 2 ? 'checked' : null %>
                         <% }) %>
                     >
                 </label>
@@ -200,9 +198,7 @@
                         value="false"
                         id="offer-false"
                         required
-                        <% editableGame.status.forEach(status => { %>
-                            <%= status.name != 'IN OFFER' ? 'checked' : null %>
-                        <% }) %>
+                        <%= editableGame.status.length === 2 ? null : 'checked' %>
                     >
                 </label>
             </div>
