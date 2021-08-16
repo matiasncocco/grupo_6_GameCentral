@@ -3,10 +3,10 @@
 <main class="main-main" >
     <header class="main-title">
         <h3 class="big-title">
-            INGRESÁ
+            INGRESA
         </h3>
         <h5 class="small-title">
-            INGRESÁ
+            INGRESA
         </h5>
     </header>
     <form class="register-form" action="/users/login" method="POST">
@@ -22,7 +22,7 @@
                     type="text"
                     name="email"
                     id="email"
-                    value="<%= locals.oldEmail ? locals.oldEmail : null %>"
+                    value="<%= locals.email ? email : null %>"
                 >
                 <% if (locals.errors && errors.email) { %>
                     <span class="error-msg">

@@ -1,7 +1,6 @@
 let { storeBool } = require('./helper');
 let bcrypt = require('bcrypt');
 let { validationResult } = require('express-validator');
-
 let db = require('../database/models');
 
 let usersController = {
@@ -25,15 +24,15 @@ let usersController = {
             }
         });
         try {
+            if (user) {
+                // si encontré coincidencia con el email, envío un error más
+                validations.errors.push({
+                    param: 'email',
+                    msg: 'El e-mail ya está en uso'
+                });
+            };
             if (validations.errors.length > 0) {
                 // si hay errores los mando a la vista
-                if (user) {
-                    // si encontré coincidencia con el email, envío un error más
-                    validations.errors.push({
-                        param: 'email',
-                        msg: 'El e-mail ya está en uso'
-                    });
-                };
                 res.render('./users/register', {
                     title: 'Crea tu cuenta',
                     oldData,
@@ -72,106 +71,72 @@ let usersController = {
     // GET: show login view
     login: (req, res) => {
         res.render('./users/login', {
-            title: 'Ingresá' 
+            title: 'Ingresa' 
         });
     },
 
     // POST: process login
     processLogin: async (req, res) => {
-        // LAS SIGUIENTES LÍNEAS DESAPARECERÁN CUANDO IMPLEMENTE VALIDACIONES CON EXPRESS-VALIDATOR
-        // si se envía con campos vacíos
-        if (!req.body.email && !req.body.password) {
-            return res.render('./users/login', {
-                title: 'Ingresá',
-                errors: {
-                    email: {
-                        msg: 'Debes ingresar tu e-mail'
-                    },
-                    password: {
-                        msg: 'Debes ingresar tu contraseña'
-                    }
-                }
-            });
-        };
-        // si se envía con campo e-mail vacío 
-        if (!req.body.email) {
-            return res.render('./users/login', {
-                title: 'Ingresá',
-                errors: {
-                    email: {
-                        msg: 'Debes ingresar tu e-mail'
-                    }
-                }
-            });
-        };
-        // de acá para arriba lo puedo hacer en validaciones en la ruta
-        // DESAPARECEÁN CUANDO IMPLEMENTE VALIDACIONES CON EXPRESS-VALIDATOR
-
-        // LÓGICA PARA LOGEAR EL USUARIO:
-        // leo la tabla de usuarios
-        // busco coincidencia
-        // y obtengo usuario a logearse
+        let email = req.body.email;
+        let validations = validationResult(req);
         let userToLog = await db.User.findOne({
             where: {
-                email: req.body.email
+                email: email
             }
-        })        
+        });
         try {
-            if (userToLog != null) {
-                // si encontré coincidencia
-                if (!req.body.password) {
-                    // no completan el campo password
-                    return res.render('./users/login', {
-                        title: 'Ingresá',
-                        oldEmail: req.body.email,
-                        errors: {
-                            password: {
-                                msg: 'Debes ingresar tu contraseña'
-                            }
-                        }
-                    });
-                };
-                // variable de coincidencia de passwords
-                let passwordsMatch = bcrypt.compareSync(req.body.password, userToLog.password);
-                if (passwordsMatch) {
-                    // si hay match de passwords
-                    delete userToLog.password;
-                    req.session.loggedUser = userToLog;
-                    if (req.body.remember) {
-                        // si eligen "recordarme"
-                        res.cookie('userEmail', req.body.email, {
-                            maxAge: (1000 * 60) * 30 
-                        });
-                        return res.redirect('/users/profile');
-                    };
-                    // si no eligen recordarme
-                    return res.redirect('/users/profile');
-                } else {
-                    // si no hay match en las passwords
-                    return res.render('./users/login', {
-                        title: 'Ingresá',
-                        oldEmail: req.body.email,
-                        errors: {
-                            password: {
-                                msg: 'Las credenciales no coinciden'
-                            }
-                        }
-                    });
-                };
-            } else {
-                // si no hubo coincidencia de emails
-                return res.render('./users/login', {
-                    title: 'Ingresá',
-                    oldEmail: req.body.email,
-                    errors: {
-                        email: {
-                            msg: 'Revisá tu e-mail'
-                        }
-                    }
+            if (!userToLog) {
+                // si el email no coincide con ninguno en la db
+                validations.errors.push({
+                    param: 'email',
+                    msg: 'Revisá tu e-mail'
                 });
             };
-        }
-        catch(err) {
+            if (!userToLog && req.body.password) {
+                // si el email no coincide y se ingresa una password
+                validations.errors.push({
+                    param: 'password',
+                    msg: 'No pudimos validar tu contraseña'
+                });
+            };
+            if (userToLog && req.body.password) {
+                // si encontré usuario y se ingresó una contraseña
+                let passwordMatch = bcrypt.compareSync(
+                    req.body.password, userToLog.password
+                );
+                if (!passwordMatch) {
+                    // si no conciden las password, envío un error más
+                    validations.errors.push({
+                        param: 'password',
+                        msg: 'Las credenciales no coinciden'
+                    });
+                };
+            };
+            if (validations.errors.length > 0) {
+                // hay errores: los mando a la vista
+                return res.render('./users/login', {
+                    title: 'Ingresa',
+                    email,
+                    errors: validations.mapped()
+                });
+            } else {
+                // no hay errores: logeo el usuario
+                delete userToLog.password;
+                req.session.loggedUser = userToLog;
+                if (req.body.remember) {
+                    // si eligen "recordarme"
+                    res.cookie(
+                        'userEmail',
+                        email,
+                        {
+                            maxAge: (1000 * 60) * 30
+                        }
+                    );
+                };
+                // elijan o no "recordarme", lo úlitmo que hago es redirijir:
+                return res.redirect('/users/profile');
+            };
+        } catch(err) {
             res.status(500).render('error', {
                 status: 500,
                 title: 'ERROR',

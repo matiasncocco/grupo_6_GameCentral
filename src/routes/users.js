@@ -7,7 +7,7 @@ let guestMiddleware = require('../middlewares/guestMiddleware');
 let adminMiddleware = require('../middlewares/adminMiddleware');
 let {
     registerValidations,
-    // loginValidations
+    loginValidations
 } = require('../middlewares/userValidations');
 
 // // // // // // // // //
@@ -41,7 +41,7 @@ router.get(
 // procesar login de usuario
 router.post(
     '/login',
-    // loginValidations,
+    loginValidations,
     usersController.processLogin
 );
 

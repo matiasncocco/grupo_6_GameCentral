@@ -54,9 +54,12 @@ let userValidations = {
             .notEmpty().withMessage('Lee y acepta los términos y condiciones').bail(),
     ],
 
-    // login: [
-
-    // ]
+    loginValidations: [
+        check('email')
+            .notEmpty().withMessage('Ingresa tu e-mail').bail(),
+        check('password')
+            .notEmpty().withMessage('Ingresa tu contraseña').bail(),
+    ]
 };
 
 module.exports = userValidations;
