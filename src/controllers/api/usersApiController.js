@@ -11,16 +11,21 @@ let usersApiController = {
             });
     },
 
-    emails: (req, res) => {
-        db.User.findAll({
-            attributes: ['email']
-        })
-        .then(emails => {
-            res.json(emails);
-        })
-        .catch(err => {
-            res.send(err);
+    checkEmail: async (req, res) => {
+        let checkUser = await db.User.findOne({
+            where: {
+                email: req.body.email
+            }
         });
+        try {
+            if (checkUser) {
+                console.log('el usuario ya existe');
+            } else {
+                return true;
+            };
+        } catch(err) {
+            console.log(err);
+        };
     },
 };
 

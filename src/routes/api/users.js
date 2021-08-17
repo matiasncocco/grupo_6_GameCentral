@@ -7,9 +7,9 @@ router.get(
     usersApiController.list
 );
 
-router.get(
-    '/emails',
-    usersApiController.emails
+router.post(
+    '/email',
+    usersApiController.checkEmail
 );
 
 module.exports = router;

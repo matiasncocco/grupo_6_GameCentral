@@ -68,9 +68,9 @@ window.addEventListener('load', () => {
     };
 });
 
-// como con el código anterior, quiero que si voy a editar el producto
-// y el mismo NO ESTÁ EN OFERTA, quiero que el input de "discount"
-// se muestre deshabilitado
+// como con el bloque de código anterior, quiero que si voy a editar 
+// el producto y el mismo NO ESTÁ EN OFERTA, quiero que el input de 
+// "discount" se muestre deshabilitado
 window.addEventListener('load', () => {
     if (offerFalse.checked) {
         inputDiscount.disabled = true;
