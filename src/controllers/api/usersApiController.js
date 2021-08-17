@@ -19,6 +19,7 @@ let usersApiController = {
         });
         try {
             if (checkUser) {
+                // throw new Error('el usuario ya existe')
                 console.log('el usuario ya existe');
             } else {
                 return true;

@@ -3,8 +3,8 @@
 
 // ésta es la información que voy a enviar
 let data = {
-    email: 'asdasds'
-}
+    email: form.email.value
+};
 
 // configuración del envío por post
 let settings = {
@@ -18,7 +18,7 @@ let settings = {
 // fetch con endpoint y configuración
 fetch('http://localhost:3001/api/users/email', settings)
     .then(response => { return response.json() })
-    .then(info => { console.log(info) })
+    .then(data => { console.log(data) })
     .catch(err => { console.log(err) });
 
 
@@ -28,6 +28,7 @@ let form = document.querySelector('.register-form');
 // capturo los campos del formulario
 let name = form.name;
 let surname = form.surname;
+let email = form.email;
 
 // agrupo según validación
 let notEmpty = [
@@ -39,6 +40,10 @@ let someLenght = [
     name,
     surname
 ];
+
+// let otherLenght = [
+
+// ]
 
 let onlyAlpha = [
     name,
@@ -109,6 +114,8 @@ for (let field of notEmpty) {
 
 for (let field of someLenght) {
     field.addEventListener('input', () => {
+        console.log('estoy acá checkeando el largo');
+        console.log(field.value.length);
         checkLength(field);
     });
 };
@@ -126,6 +133,7 @@ for (let field of onlyAlpha) {
 form.addEventListener('submit', (e) => {
     for (let field of notEmpty) {
         checkEmpty(field);
+        checkEmpty()
     };
     if (Object.keys(errors).length > 0) {
         console.log(errors);
@@ -133,4 +141,4 @@ form.addEventListener('submit', (e) => {
     } else {
         form.submit();
     };
-});
+}); 
