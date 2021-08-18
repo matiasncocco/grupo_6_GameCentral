@@ -114,24 +114,3 @@ for (i = 0; i < platformLabel.length; i++) {
         icon.innerText = '';
     });
 };
- 
-// Quiero por lo menos, 1 cajita de "platforms" con valor:
-// Esto es una validación, hay que moverlo a /validations
-function isChecked(array) {
-    for (let thing of array) {
-        if (thing.checked) {
-            return true;
-        };
-    };
-};
-
-form.addEventListener('submit', (e) => {
-    if (isChecked(platformCheckbox) == undefined) {
-        e.preventDefault();
-        // POR AHORA VOY A HACER ÉSTO, ACÁ VENDRÍA
-        // ENVIAR UNA ALERTA, ADVERTENCIA, SPAN, ECT
-        console.log('TENES QUE ELEGIR POR LO MENOS 1 PLATAFORMA');
-    } else {
-        form.submit();
-    };
-});
