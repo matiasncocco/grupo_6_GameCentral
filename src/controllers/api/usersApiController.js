@@ -11,23 +11,23 @@ let usersApiController = {
             });
     },
 
-    checkEmail: async (req, res) => {
-        let checkUser = await db.User.findOne({
-            where: {
-                email: req.body.email
-            }
-        });
-        try {
-            if (checkUser) {
-                // throw new Error('el usuario ya existe')
-                console.log('el usuario ya existe');
-            } else {
-                return true;
-            };
-        } catch(err) {
-            console.log(err);
-        };
-    },
+    // checkEmail: async (req, res) => {
+    //     let checkUser = await db.User.findOne({
+    //         where: {
+    //             email: req.body.email
+    //         }
+    //     });
+    //     try {
+    //         if (checkUser) {
+    //             // throw new Error('el usuario ya existe')
+    //             console.log('el usuario ya existe');
+    //         } else {
+    //             return true;
+    //         };
+    //     } catch(err) {
+    //         console.log(err);
+    //     };
+    // },
 };
 
 module.exports = usersApiController;
