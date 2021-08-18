@@ -1,7 +1,7 @@
 <%- include ('../partials/head') %>
 <%- include ('../partials/header') %>
-<script src="/js/userCreate.js" defer>
-</script>
+<!-- <script src="/js/userCreate.js" defer>
+</script> -->
 <script src="/js/validations/register.js" defer>
 </script>
 <main class="main-main">
@@ -28,6 +28,9 @@
                     placeholder="Juan"
                     value="<%= locals.oldData && oldData.name ? oldData.name : null %>"
                 >
+                <div class="error-box-front" id="name">
+
+                </div>
                 <% if (locals.errors && errors.name) { %>
                     <span class="error-msg">
                         <%= errors.name.msg %>
