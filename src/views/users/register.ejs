@@ -93,6 +93,9 @@
                     id="password"
                     placeholder="********"
                 >
+                <div class="error-box" id="password">
+
+                </div>
                 <% if (locals.errors && errors.password) { %>
                     <span class="error-msg">
                         <%= errors.password.msg %>
@@ -111,6 +114,9 @@
                     id="passwordCheck"
                     placeholder="********"
                 >
+                <div class="error-box" id="passwordCheck">
+
+                </div>
                 <% if (locals.errors && errors.passwordCheck) { %>
                     <span class="error-msg">
                         <%= errors.passwordCheck.msg %>
@@ -122,15 +128,17 @@
                 <label class="label-label file-box-label">
                     Foto de perfil
                 </label>
-                <label class="label-label input-text product-file" for="avatar">
+                <label class="label-label input-text product-file" id="avatar-label" for="avatar">
                     <input
                         class="input-file"
                         type="file"
                         name="avatar"
                         id="avatar"
-                        accept=".jpg, .jpeg, .png, .webp"
                     >
                 </label>
+                <div class="error-box" id="avatar">
+
+                </div>
                 <% if (locals.errors && errors.avatar) { %>
                     <span class="error-msg">
                         <%= errors.avatar.msg %>
