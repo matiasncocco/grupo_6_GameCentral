@@ -1,6 +1,3 @@
-// capturo el <form>, lo voy a usar bastante
-let form = document.querySelector('.product-create-form');
-
 // A continuación, para que si al crear un producto,
 // si elijo "¿en oferta?" = "NO", se deshabilita
 // el campo de "DESCUENTO"

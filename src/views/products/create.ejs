@@ -4,6 +4,8 @@
 </script>
 <script src="/js/validations/create.js" defer>
 </script>
+<!-- <script src="/js/validations/product.js" defer>
+</script> -->
 <main class="main-main">
     <header class="main-title first-title">
         <h3 class="big-title">
@@ -35,6 +37,9 @@
                     placeholder="PAC-MAN"
                     value="<%= locals.oldData && oldData.title ? oldData.title : null %>"
                 >
+                <div class="error-box" id="title">
+
+                </div>
                 <% if (locals.errors && errors.title) { %>
                     <span class="error-msg">
                         <%= errors.title.msg %>
@@ -53,12 +58,13 @@
                                 properties-category
                                 <%= locals.errors && errors.categories ? 'error-input' : null %>"
                             name="categories"
+                            id="<%= [i] %>"
                         >
-                            <option disabled selected>
+                            <option disabled selected value="0">
                                 CATEGORÍA Nº<%= [i] %>
                             </option>
                             <% for (j = 0; j < categories.length; j++) { %>
-                                <option 
+                                <option
                                     value="<%= [j] %>"
                                 >
                                 <!-- how to persist data?? -->
@@ -67,6 +73,9 @@
                             <% } %>
                         </select>
                     <% } %>
+                </div>
+                <div class="error-box" id="categories">
+
                 </div>
                 <% if (locals.errors && errors.categories) { %>
                     <span class="error-msg">
@@ -152,6 +161,9 @@
                         >
                     </label>
                 </div>
+                <div class="error-box" id="platforms">
+
+                </div>
                 <% if (locals.errors && errors.platforms) { %>
                     <span class="error-msg">
                         <%= errors.platforms.msg %>
@@ -168,16 +180,19 @@
                         input-text
                         product-file
                         <%= locals.errors && errors.img ? 'error-input' : null %>"
+                    id="img-label"
                     for="img"
                 >
                     <input 
-                        class="input-file" 
-                        type="file" 
-                        name="img" 
-                        id="img" 
-                        accept=".jpg, .jpeg, .png, .webp"
+                        class="input-file"
+                        type="file"
+                        name="img"
+                        id="img"
                     >
                 </label>
+                <div class="error-box" id="img">
+
+                </div>
                 <% if (locals.errors && errors.img) { %>
                     <span class="error-msg">
                         <%= errors.img.msg %>
@@ -192,6 +207,7 @@
                 <label
                     class="label-label
                         label-radio
+                        label-relevant
                         <%= locals.errors && errors.relevant ? 'error-input' : null %>"
                     for="relevant-true"
                 >
@@ -208,6 +224,7 @@
                 <label
                     class="label-label
                         label-radio
+                        label-relevant
                         <%= locals.errors && errors.relevant ? 'error-input' : null %>"
                     for="relevant-false"
                 >
@@ -221,6 +238,9 @@
                         <%= locals.oldData && oldData.relevant === 'false' ? 'checked' : null %>
                     >
                 </label>
+                <div class="error-box" id="relevant">
+
+                </div>
                 <% if (locals.errors && errors.relevant) { %>
                     <span class="error-msg">
                         <%= errors.relevant.msg %>
@@ -235,6 +255,7 @@
                 <label
                     class="label-label
                         label-radio
+                        label-offer
                         <%= locals.errors && errors.offer ? 'error-input' : null %>"
                     for="offer-true"
                 >
@@ -251,6 +272,7 @@
                 <label
                     class="label-label
                         label-radio
+                        label-offer
                         <%= locals.errors && errors.offer ? 'error-input' : null %>"
                     for="offer-false"
                 >
@@ -264,6 +286,9 @@
                         <%= locals.oldData && oldData.offer === 'false' ? 'checked' : null %>
                     >
                 </label>
+                <div class="error-box" id="offer">
+
+                </div>
                 <% if (locals.errors && errors.offer) { %>
                     <span class="error-msg">
                         <%= errors.offer.msg %>
@@ -292,6 +317,9 @@
                     step=".01"
                     value="<%= locals.oldData && oldData.price ? oldData.price : null %>"
                 >
+                <div class="error-box" id="price">
+
+                </div>
                 <% if (locals.errors && errors.price) { %>
                     <span class="error-msg">
                         <%= errors.price.msg %>
@@ -321,6 +349,9 @@
                     step="1"
                     value="<%= locals.oldData && oldData.discount ? oldData.discount : null %>"
                 >
+                <div class="error-box" id="discount">
+
+                </div>
                 <% if (locals.errors && errors.discount) { %>
                     <span class="error-msg">
                         <%= errors.discount.msg %>
@@ -340,6 +371,9 @@
                     rows="15"
                     maxlength="3000"
                 ><%= locals.oldData && oldData.description ? oldData.description : null %></textarea>
+                <div class="error-box" id="description">
+
+                </div>
                 <% if (locals.errors && errors.description) { %>
                     <span class="error-msg">
                         <%= errors.description.msg %>

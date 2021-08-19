@@ -14,7 +14,7 @@ let tyc = form.tyc;
 // capturo otras cosas donde voy a mostrar error
 let avatarLabel = document.querySelector('#avatar-label');
 let newsletterLabel = document.querySelectorAll('.label-radio');
-let labelTyc = document.querySelector('.label-tyc');
+let tycLabel = document.querySelector('.label-tyc');
 
 // creo un array donde voy a guardar los errores
 let errors = [];
@@ -297,12 +297,12 @@ function validateTyc() {
             field: 'tyc',
             msg: 'Leé y acepta los términos y condiciones'
         });
-        labelTyc.classList.add('tyc-error');
+        tycLabel.classList.add('tyc-error');
     } else {
         errors = errors.filter(
             error => error.field !== 'tyc'
         );
-        labelTyc.classList.remove('tyc-error');
+        tycLabel.classList.remove('tyc-error');
     };
     printErr(errorBoxes);
 };
@@ -313,6 +313,7 @@ function errorClass(field) {
     errors.forEach(error => {
         if (error.field === field.id) {
             field.classList.add('error-input');
+            field.focus();
         };
     });
 };
@@ -332,7 +333,7 @@ function printErr(boxes) {
 // función para checkear si mis radio/checkbox están "checked"
 function isChecked(thing) {
     if (Array.isArray(thing)) {
-        for (let item of array) {
+        for (let item of thing) {
             if (item.checked) {
                 return true
             };
