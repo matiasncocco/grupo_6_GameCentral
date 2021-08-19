@@ -1,25 +1,3 @@
-// lógica para hacer un fetch por post preguntando si el e-mail ya está en uso
-
-// ésta es la información que voy a enviar
-// let data = {
-    // email: form.email.value
-// };
-
-// configuración del envío por post
-// let settings = {
-//     'method': 'POST',
-//     'headers': {
-//         'Content-Type': 'application/json'
-//     },
-//     'body': JSON.stringify(data)
-// };
-
-// fetch con endpoint y configuración
-// fetch('http://localhost:3001/api/users/email', settings)
-//     .then(response => { return response.json() })
-//     .then(data => { console.log(data) })
-//     .catch(err => { console.log(err) });
-
 // voy a validar los campos del siguiente formulario
 let form = document.querySelector('.register-form');
 
@@ -175,8 +153,32 @@ function validateEmail() {
             field: 'email',
             msg: 'Ingresa una dirección de e-mail válida'
         });
+    } else if (regexEmail.test(email.value)) {
+        // almaceno el email "válido"
+        let validEmail = email.value;
+        // configuraciones del feth por POST
+        let settings = {
+            'method': 'POST',
+            'headers': {
+                'Content-Type': 'application/json'
+            },
+            'body': JSON.stringify({
+                email: validEmail
+            })
+        };
+        // fetch con endpoint y configuración
+        fetch('http://localhost:3001/api/users/email', settings)
+            .then(response => { return response.json() })
+            .then(info => { 
+                if (info.ok === false) {
+                    errors.push({
+                        field: 'email',
+                        msg: info.msg
+                    });
+                };
+            })
+            .catch(err => { console.log(err) });
     } else {
-        // me parece que por el fetch pregunto acá. si no voy a validar sin parar
         errors = errors.filter(
             error => error.field !== 'email'
         );
