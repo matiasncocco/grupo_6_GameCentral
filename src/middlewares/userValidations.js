@@ -51,7 +51,7 @@ let userValidations = {
         check('newsletter')
             .notEmpty().withMessage('Selecciona una opción').bail(),
         check('tyc')
-            .notEmpty().withMessage('Lee y acepta los términos y condiciones').bail(),
+            .notEmpty().withMessage('Leé y acepta los términos y condiciones').bail(),
     ],
 
     loginValidations: [

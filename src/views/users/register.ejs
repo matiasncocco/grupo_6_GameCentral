@@ -189,6 +189,9 @@
                         <= locals.oldData && oldData.newsletter === '0' ? 'checked' : null %>
                     >
                 </label>
+                <div class="error-box" id="newsletter">
+
+                </div>
                 <% if (locals.errors && errors.newsletter) { %>
                     <span class="error-msg">
                         <%= errors.newsletter.msg %>
@@ -206,8 +209,12 @@
                         class="input-checkbox"
                         type="checkbox"
                         name="tyc"
+                        id="tyc"
                     >
                 </label>
+                <div class="error-box" id="tyc">
+
+                </div>
                 <% if (locals.errors && errors.tyc) { %>
                     <span class="error-msg">
                         <%= errors.tyc.msg %>

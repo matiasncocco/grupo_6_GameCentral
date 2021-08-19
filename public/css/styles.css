@@ -1026,6 +1026,11 @@ img {
     width: 100%;
 }
 
+.tyc-error {
+    color: red;
+    text-decoration: underline;
+}
+
 
 /**/
 /* FOOTER */
