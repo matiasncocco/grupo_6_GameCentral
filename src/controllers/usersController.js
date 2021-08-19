@@ -323,7 +323,7 @@ let usersController = {
                 return res.redirect('/users');
             };
         });
-    },
+    }
 };
 
 module.exports = usersController;

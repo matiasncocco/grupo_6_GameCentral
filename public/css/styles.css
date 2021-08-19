@@ -1459,6 +1459,53 @@ img {
 }
 
 
+/**/
+/* CONTACTO */
+/**/
+
+
+.contact-section {
+    color: black;
+    margin: auto;
+    width: 90%;
+    background: linear-gradient(#E2DDF9,#858BB7);
+    border: #858BB7 solid 2px;
+    border-radius: 8px;
+    padding: 2%;
+    margin-bottom: 30px;
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: center;
+}
+
+.contact-box {
+    width: 80%;
+    height: 100px;
+    box-shadow: 5px 5px 5px 5px black;
+    margin: 10px 0;
+    display: flex;
+    flex-flow: row wrap;
+    align-items: center;
+    justify-content: flex-start;
+}
+
+.contact-img {
+    width: 25%;
+}
+
+.contact-img img {
+    border-radius: 50%;
+    width: 80%;
+    margin: auto;
+    box-shadow: 0 0 5px 0 #B14593;
+}
+
+.contact-data {
+    width: 75%;
+    display: flex;
+    flex-flow: column wrap;
+}
+
 
 /**/
 /* MEDIA QUERIES */

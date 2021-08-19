@@ -9,7 +9,7 @@ let platformsApiController = {
             .catch(err => {
                 res.send(err);
             });
-    },
+    }
 };
 
 module.exports = platformsApiController;

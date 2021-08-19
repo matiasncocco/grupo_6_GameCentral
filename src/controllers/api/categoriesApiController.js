@@ -9,7 +9,7 @@ let categoriesApiController = {
             .catch(err => {
                 res.send(err);
             });
-    },
+    }
 };
 
 module.exports = categoriesApiController;

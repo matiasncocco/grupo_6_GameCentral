@@ -24,6 +24,17 @@ let mainController = {
         });
     },
 
+    contact: (req, res) => {
+        res.render('contact', {
+            title: 'Contacto'
+        });
+    },
+
+    processContact: (req, res) => {
+        res.send({
+            body: req.body
+        })
+    }
 };
 
 module.exports = mainController;

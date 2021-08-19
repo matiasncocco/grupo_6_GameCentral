@@ -9,7 +9,7 @@ let statusApiController = {
             .catch(err => {
                 res.send(err);
             });
-    },
+    }
 };
 
 module.exports = statusApiController;

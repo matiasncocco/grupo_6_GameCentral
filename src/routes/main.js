@@ -12,4 +12,14 @@ router.get(
     mainController.termsConditions
 );
 
+router.get(
+    '/contact',
+    mainController.contact
+);
+
+router.post(
+    '/contact',
+    mainController.processContact
+);
+
 module.exports= router;

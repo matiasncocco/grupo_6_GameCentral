@@ -9,7 +9,7 @@ let gamesApiController = {
             .catch(err => {
                 res.send(err);
             });
-    },
+    }
 };
 
 module.exports = gamesApiController;

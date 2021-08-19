@@ -7,8 +7,7 @@ let helper = {
     giveNumber: (s) => {
         n = parseInt(s);
         return n;
-    },
-
+    }
 };
 
 module.exports = helper;

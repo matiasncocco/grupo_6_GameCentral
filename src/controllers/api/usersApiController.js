@@ -59,7 +59,7 @@ let usersApiController = {
         } catch(err) {
             console.log(err);
         };
-    },
+    }
 };
 
 module.exports = usersApiController;

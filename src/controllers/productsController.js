@@ -402,7 +402,7 @@ let productsController = {
                     errorDetail: err
                 });
             });
-    },
+    }
 };
 
 module.exports = productsController;
