@@ -11,6 +11,31 @@ let usersApiController = {
             });
     },
 
+    freeEmail: async (req, res) => {
+        let checkUser = await db.User.findOne({
+            where: {
+                email: req.body.email
+            }
+        });
+        try {
+            if (!checkUser) {
+                res.status(200).json({
+                    result: true,
+                    status: 200,
+                    msg: 'Available'
+                });
+            } else {
+                res.status(200).json({
+                    result: false,
+                    status: 200,
+                    msg: 'El e-mail ya está en uso'
+                });
+            };
+        } catch(err) {
+            console.log(err);
+        };
+    },
+
     checkEmail: async (req, res) => {
         let checkUser = await db.User.findOne({
             where: {
@@ -18,17 +43,17 @@ let usersApiController = {
             }
         });
         try {
-            if (checkUser) {
+            if (!checkUser) {
                 res.status(200).json({
-                    ok: false,
+                    result: false,
                     status: 200,
-                    msg: 'El e-mail ya está en uso'
+                    msg: 'Revisá tu e-mail'
                 });
             } else {
                 res.status(200).json({
-                    ok: true,
-                    status: 200,
-                    msg: 'Available'
+                    result: true,
+                    satuts: 200,
+                    msg: 'OK'
                 });
             };
         } catch(err) {

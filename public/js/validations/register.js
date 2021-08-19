@@ -69,7 +69,7 @@ form.addEventListener('submit', (e) => {
         e.preventDefault();
     } else {
         // no hay errores
-        return form.submit();
+        form.submit();
     };
 });
 
@@ -153,9 +153,7 @@ function validateEmail() {
             field: 'email',
             msg: 'Ingresa una dirección de e-mail válida'
         });
-    } else if (regexEmail.test(email.value)) {
-        // almaceno el email "válido"
-        let validEmail = email.value;
+    } else {
         // configuraciones del feth por POST
         let settings = {
             'method': 'POST',
@@ -163,25 +161,23 @@ function validateEmail() {
                 'Content-Type': 'application/json'
             },
             'body': JSON.stringify({
-                email: validEmail
+                email: email.value
             })
         };
         // fetch con endpoint y configuración
-        fetch('http://localhost:3001/api/users/email', settings)
+        fetch('http://localhost:3001/api/users/free-email', settings)
             .then(response => { return response.json() })
-            .then(info => { 
-                if (info.ok === false) {
-                    errors.push({
-                        field: 'email',
-                        msg: info.msg
-                    });
-                };
+            .then(info => {
+                info.result === false ? errors.push({
+                    field: 'email',
+                    msg: info.msg
+                }) : errors = errors.filter(
+                    error => error.field !== 'email'
+                );
             })
-            .catch(err => { console.log(err) });
-    } else {
-        errors = errors.filter(
-            error => error.field !== 'email'
-        );
+            .catch(err => {
+                console.log(err);
+            });
     };
     errorClass(email);
     printErr(errorBoxes);

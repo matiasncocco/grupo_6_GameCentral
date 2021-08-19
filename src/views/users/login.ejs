@@ -1,5 +1,7 @@
 <%- include ('../partials/head') %>
 <%- include ('../partials/header') %>
+<script src="/js/validations/login.js" defer>
+</script>
 <main class="main-main" >
     <header class="main-title">
         <h3 class="big-title">
@@ -24,6 +26,9 @@
                     id="email"
                     value="<%= locals.email ? email : null %>"
                 >
+                <div class="error-box" id="email">
+
+                </div>
                 <% if (locals.errors && errors.email) { %>
                     <span class="error-msg">
                         <%= errors.email.msg %>
@@ -42,6 +47,9 @@
                     name="password"
                     id="password"
                 >
+                <div class="error-box" id="password">
+
+                </div>
                 <% if (locals.errors && errors.password) { %>
                     <span class="error-msg">
                         <%= errors.password.msg %>

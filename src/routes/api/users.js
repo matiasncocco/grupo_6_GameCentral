@@ -8,8 +8,13 @@ router.get(
 );
 
 router.post(
-    '/email',
-    usersApiController.checkEmail
+    '/free-email',
+    usersApiController.freeEmail
 );
+
+router.post(
+    '/ok-email',
+    usersApiController.checkEmail
+)
 
 module.exports = router;
