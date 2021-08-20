@@ -1,8 +1,10 @@
+import User from './User';
+
 let App = () => {
   return (
     <>
-      <h1>React App</h1>
-      <h2>React App</h2>
+      <h1>hello world</h1>
+      <User />
     </>
   )
 };

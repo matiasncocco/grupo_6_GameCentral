@@ -7,6 +7,11 @@ router.get(
     usersApiController.list
 );
 
+router.get(
+    '/:id',
+    usersApiController.oneUser
+);
+
 router.post(
     '/free-email',
     usersApiController.freeEmail

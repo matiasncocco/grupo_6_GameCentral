@@ -4,10 +4,47 @@ let usersApiController = {
     list: (req, res) => {
         db.User.findAll()
             .then(users => {
-                res.json(users);
+                let newUsers = users.map(user => {
+                    return {
+                        id: user.id,
+                        name: user.name,
+                        surname: user.surname,
+                        email: user.email,
+                        avatar: user.avatar,
+                        newsletter: user.newsletter,
+                        // country: user.country
+                    };
+                });
+                res.status(200).json({
+                    status: 200,
+                    count: users.length,
+                    newUsers
+                });
             })
             .catch(err => {
-                console.log(err);
+                res.status(500).json({
+                    status: 500,
+                    err
+                });
+            });
+    },
+
+    oneUser: (req,res) => {
+        db.User.findByPk(req.params.id)
+            .then(user => {
+                // console.log(user.dataValues.password);
+                delete user.dataValues.password;
+                // delete user.
+                res.status(200).json({
+                    stauts: 200,
+                    user
+                });
+            })
+            .catch(err => {
+                res.status(500).json({
+                    status: 500,
+                    err
+                });
             });
     },
 
@@ -32,7 +69,7 @@ let usersApiController = {
                 });
             };
         } catch(err) {
-            console.log(err);
+            throw new Error(err);
         };
     },
 
@@ -57,7 +94,7 @@ let usersApiController = {
                 });
             };
         } catch(err) {
-            console.log(err);
+            throw new Error(err);
         };
     }
 };

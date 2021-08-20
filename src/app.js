@@ -1,6 +1,7 @@
 let express = require('express');
 let app = express();
 let path = require('path');
+let cors = require('cors');
 
 // public y views path
 let publicPath = path.resolve('./public');
@@ -27,6 +28,7 @@ app.use(session({
     saveUninitialized: true
 }));
 app.use(cookies());
+app.use(cors());
 
 // middleware global p/ etiquetas HTML
 let userAppMiddleware = require('./middlewares/userAppMiddleware');
