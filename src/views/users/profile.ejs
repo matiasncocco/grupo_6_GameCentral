@@ -33,6 +33,20 @@
                 <%= user.name %> <%= user.surname %>
             </h4>
         </div>
+        <% if (user.admin == 1) { %>
+            <div class="profile-is-admin">
+                <div class="link-box">
+                    <a class="admin-link" href="/products/create">
+                        Creación de producto
+                        <i class="fas fa-external-link-alt"></i>
+                    </a>
+                    <a class="admin-link" href="/users">
+                        Listado de usuarios
+                        <i class="fas fa-external-link-alt"></i>
+                    </a>
+                </div>
+            </div>
+        <% } %>
         <div class="profile-avatar">
             <img src="/img/users/<%= user.avatar %>">
         </div>
@@ -143,6 +157,7 @@
             </h3>
         </div>
     </form>
+    <!-- caja de controles -->
     <footer class="user-control-footer">
         <form class="user-control-box" action="/users/delog" method="GET">
             <button class="user-control-button" id="delog-button" type="submit">

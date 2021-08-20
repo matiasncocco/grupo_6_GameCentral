@@ -1,7 +1,9 @@
 <%- include ('../partials/head') %>
 <%- include ('../partials/header') %>
-<script src="/js/finalPriceMath.js" defer></script>
-<script src="/js/gameIndex.js" defer></script>
+<script src="/js/finalPriceMath.js" defer>
+</script>
+<script src="/js/gameIndex.js" defer>
+</script>
 <main class="main-main">
     <!-- Título todos los juegos -->
     <header class="main-title flex-title">
@@ -25,22 +27,14 @@
         </div>
     </header>
     <section class="search-bar-section">
-        <form class="search-bar-box" action="" method="GET">
+        <div class="search-bar-box">
             <input
                 class="search-bar"
                 type="text"
                 name="busqueda"
                 placeholder="Buscar un juego..."
             >
-            <button class="search-button" type="submit">
-                <h3 class="big-title">
-                    <i class="fas fa-search"></i>
-                </h3>
-                <h5 class="small-title">
-                    <i class="fas fa-search"></i>
-                </h5>
-            </button>
-        </form>
+        </div>
     </section>
     <section class="main-section last-section">
         <% for (i = 0; i < games.length; i++) { %>
