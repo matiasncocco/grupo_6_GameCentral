@@ -31,7 +31,7 @@ router.get(
 // vista creación de producto <form>
 router.get(
     '/create',
-    // adminMiddleware,
+    adminMiddleware,
     productsController.create
 );
 
@@ -52,7 +52,7 @@ router.post(
 // vista de edición de producto. <form> de creación con datos
 router.get(
     '/:id/edit',
-    // adminMiddleware,
+    adminMiddleware,
     productsController.edit
 );
 
