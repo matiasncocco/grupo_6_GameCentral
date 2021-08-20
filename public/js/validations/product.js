@@ -1,7 +1,4 @@
 let form = document.querySelector('.product-create-form');
-form.addEventListener('submit', (e) => {
-    e.preventDefault();
-});
 
 let title = form.title;
 let categories = form.categories;
@@ -17,6 +14,8 @@ let platformsLabel = document.querySelectorAll('.label-platforms');
 let imgLabel = document.querySelector('#img-label');
 let relevantLabel = document.querySelectorAll('.label-relevant');
 let offerLabel = document.querySelectorAll('.label-offer');
+let priceSpanValidation = document.querySelector('#price-span');
+let discountSpanValidation = document.querySelector('#discount-span');
 
 let errors = [];
 
@@ -26,60 +25,54 @@ let errorBoxes = document.querySelectorAll('.error-box');
 title.addEventListener('input', validateTitle, false);
 title.addEventListener('blur', validateTitle, false);
 // <!-- categories -->
-for (let select of categories) {
-    select.addEventListener('change', () => {
-        validateCategories(select);
+for (let category of categories) {
+    category.addEventListener('change', () => {
+        validateCategories(category);
     });
 };
 // <!-- platforms -->
-for (let checkbox of platforms) {
-    checkbox.addEventListener('change', () => {
-        validatePlatforms(checkbox);
+for (let platform of platforms) {
+    platform.addEventListener('change', () => {
+        validatePlatforms();
     });
 };
 // <!-- img -->
 img.addEventListener('input', validateImg, false);
 img.addEventListener('blur', validateImg, false);
 // <!-- relevant -->
-for (let radio of relevant) {
-    radio.addEventListener('change', () => {
-        validateRelevant(radio);
+for (let option of relevant) {
+    option.addEventListener('change', () => {
+        validateRelevant();
     });
 };
 // <!-- offer -->
-for (let radio of offer) {
-    radio.addEventListener('change', () => {
-        validateOffer(radio);
+for (let option of offer) {
+    option.addEventListener('change', () => {
+        validateOffer();
     });
 };
 // <!-- price -->
+price.addEventListener('input', validatePrice, false);
+price.addEventListener('blur', validatePrice, false);
 // <!-- discount -->
+discount.addEventListener('input', validateDiscount, false);
+discount.addEventListener('blur', validateDiscount, false);
 // <!-- description -->
+description.addEventListener('input', validateDescription, false);
+description.addEventListener('blur', validateDescription, false);
 
 form.addEventListener('submit', (e) => {
-    // <!-- title -->
     validateTitle();
-    // <!-- categories -->
-    for (let select of categories) {
-        validateCategories(select);
+    for (let category of categories) {
+        validateCategories(category);
     };
-    // <!-- platforms -->
-    for (let checkbox of platforms) {
-        validatePlatforms(checkbox);
-    };
-    // <!-- img -->
+    validatePlatforms();
     validateImg();
-    // <!-- relevant -->
-    for (let radio of relevant) {
-        validateRelevant(radio);
-    };
-    // <!-- offer -->
-    for (let radio of offer) {
-        validateOffer(radio);
-    };
-    // <!-- price -->
-    // <!-- discount -->
-    // <!-- description -->
+    validateRelevant();
+    validateOffer();
+    validatePrice();
+    validateDiscount();
+    validateDescription();
     if (errors.length > 0) {
         e.preventDefault();
     } else {
@@ -88,6 +81,8 @@ form.addEventListener('submit', (e) => {
 });
 
 let regexImgExt = /\.(gif|jpe?g|png|webp)$/i;
+let regexDecimal = /^\s*-?\d+(\.\d{1,2})?\s*$/;
+let regexTwoDigitNumber = /^[0-9]{2}$/;
 
 function validateTitle() {
     if (!title.value) {
@@ -106,82 +101,33 @@ function validateTitle() {
         );
     };
     errorClass(title);
-    printErr(errorBoxes);
+    printErr();
 };
 
-function validateCategories(select) {
-    // me falta comprobar que los valores sean únicos (que la categoría no esté repetida)
-    let error = [];
-    switch (select.id) {
-        case '1':
-            if (select.value === '0') {
-                error.push({
-                    id: 1,
-                    ok: 'false'
-                });
-            } else {
-                error = false;
-            };
-            break;
-        case '2':
-            if (select.value === '0') {
-                error = true;
-            } else {
-                error = false;
-            };
-            break;
-        case '3':
-            if (select.value === '0') {
-                error = true;
-            } else {
-                error = false;
-            };
-            break;
-        case '4':
-            if (select.value === '0') {
-                error = true;
-            } else {
-                error = false;
-            };
-            break;
-    };
-    console.log(error);
-    if (error === true) {
+function validateCategories(category) {
+    if (category.value === '0') {
         errors.push({
-            field: 'categories',
-            msg: 'Asigna cuatro categorías'
+            field: 'categories' + category.id,
+            msg: 'Asigna la ' + category.id + 'º categoría'
         });
-        select.classList.add('error-input');
+        category.classList.add('error-input');
+    } else {
+        errors = errors.filter(
+            error => error.field !== 'categories' + category.id
+        );
+        category.classList.remove('error-input');
     };
-    //     (select.id == '1' && select.value === '0') && 
-    //     (select.id == '2' && select.value === '0') &&
-    //     (select.id == '3' && select.value === '0') &&
-    //     (select.id == '4' && select.value === '0')
-    //     ) {
-    //     errors.push({
-    //         field: 'categories',
-    //         msg: 'Asigna cuatro categorías'
-    //     });
-    //     select.classList.add('error-input');
-    // } else {
-    //     errors = errors.filter(
-    //         error => error.field !== 'categories'
-    //     );
-    //     select.classList.remove('error-input');
-    // };
-    // console.log(errors);
-    printErr(errorBoxes);
+    printErr();
 };
 
-function validatePlatforms(checkbox) {
-    if (isChecked(checkbox) === true) {
-        errors = errors.filter(
-            error => error.field !== 'platforms'
-        );
-        for (let label of platformsLabel) {
-            label.classList.remove('error-input');
+function validatePlatforms() {
+    let oneChecked = false;
+    platforms.forEach(platform => {
+        if (platform.checked === true) {
+            return oneChecked = true;
         };
-    } else {
+    });
+    if (oneChecked !== true) {
         errors.push({
             field: 'platforms',
             msg: 'Elije al menos una plataforma'
@@ -189,34 +135,57 @@ function validatePlatforms(checkbox) {
         for (let label of platformsLabel) {
             label.classList.add('error-input');
         };
+    } else {
+        errors = errors.filter(
+            error => error.field !== 'platforms'
+        );
+        for (let label of platformsLabel) {
+            label.classList.remove('error-input');
+        };
     };
-    printErr(errorBoxes);
+    printErr();
 };
 
 function validateImg() {
-    if (!img.value) {
-        errors.push({
-            field: 'img',
-            msg: 'Subi una imágen del producto'
-        });
-        imgLabel.classList.add('error-input');
-    } else if (!regexImgExt.test(img.value)) {
-        errors.push({
-            field: 'img',
-            msg: 'La imágen solo puede ser \'.jpg\', \'.jpeg\', \'.png\' o \'.webp\''
-        });
-        imgLabel.classList.add('error-input');
+    if (document.URL === 'http://localhost:3001/products/create') {
+        if (!img.value) {
+            errors.push({
+                field: 'img',
+                msg: 'Subi una imágen del producto'
+            });
+            imgLabel.classList.add('error-input');
+        } else if (!regexImgExt.test(img.value)) {
+            errors.push({
+                field: 'img',
+                msg: 'La imágen solo puede ser \'.jpg\', \'.jpeg\', \'.png\' o \'.webp\''
+            });
+            imgLabel.classList.add('error-input');
+        } else {
+            errors = errors.filter(
+                error => error.field !== 'img'
+            );
+            imgLabel.classList.remove('error-input');
+        };
+        printErr();
     } else {
-        errors = errors.filter(
-            error => error.field !== 'img'
-        );
-        imgLabel.classList.remove('error-input');
-    }
-    printErr(errorBoxes);
+        if (img.value && !regexImgExt.test(img.value)) {
+            errors.push({
+                field: 'img',
+                msg: 'La imágen solo puede ser \'.jpg\', \'.jpeg\', \'.png\' o \'.webp\''
+            });
+            imgLabel.classList.add('error-input');
+        } else {
+            errors = errors.filter(
+                error => error.field !== 'img'
+            );
+            imgLabel.classList.remove('error-input');
+        };
+        printErr();
+    };
 };
 
-function validateRelevant(radio) {
-    if (isChecked(radio) === undefined) {
+function validateRelevant() {
+    if (relevant.value === '') {
         errors.push({
             field: 'relevant',
             msg: 'Selecciona una opción'
@@ -232,11 +201,11 @@ function validateRelevant(radio) {
             label.classList.remove('error-input');
         };
     };
-    printErr(errorBoxes);
+    printErr();
 };
 
-function validateOffer(radio) {
-    if (isChecked(radio) === undefined) {
+function validateOffer() {
+    if (offer.value === '') {
         errors.push({
             field: 'offer',
             msg: 'Selecciona una opción'
@@ -252,7 +221,83 @@ function validateOffer(radio) {
             label.classList.remove('error-input');
         };
     };
-    printErr(errorBoxes);
+    validateDiscount();
+    printErr();
+};
+
+function validatePrice() {
+    if (!price.value) {
+        errors.push({
+            field: 'price',
+            msg: 'Completa este campo'
+        });
+    } else if (price.value === 0 || price.value < 1 || price.value > 9999) {
+        errors.push({
+            field: 'price',
+            msg: 'Ingresa un número entre 1 y 9999'
+        });
+    } else if (!regexDecimal.test(price.value)) {
+        errors.push({
+            field: 'price',
+            msg: 'Ingresa hasta dos decimales'
+        });
+    } else {
+        errors = errors.filter(
+            error => error.field !== 'price'
+        );
+    };
+    errorPriceClass();
+    printErr();
+};
+
+function validateDiscount() {
+    if (!discount.value) {
+        errors.push({
+            field: 'discount',
+            msg: 'Asigna un porcentaje de descuento'
+        });
+    } else if (discount.value === 0 || discount.value < 1 || discount.value > 99) {
+        errors.push({
+            field: 'discount',
+            msg: 'Ingresa un número entre 1 y 99'
+        });
+    } else if (!regexTwoDigitNumber.test(discount.value)) {
+        errors.push({
+            field: 'discount',
+            msg: 'Ingresa dos dígitos sin decimales'
+        });
+    } else {
+        errors = errors.filter(
+            error => error.field !== 'discount'
+        );
+    };
+    if (offer.value === 'false') {
+        errors = errors.filter(
+            error => error.field !== 'discount'
+        );
+    };
+    errorDiscountClass();
+    printErr();
+};
+
+function validateDescription() {
+    if (!description.value) {
+        errors.push({
+            field: 'description',
+            msg: 'Completa este campo'
+        });
+    } else if (description.value.length < 20 || description.value.length > 3000) {
+        errors.push({
+            field: 'description',
+            msg: 'Ingresa entre 20 y 3000 caracteres'
+        });
+    } else {
+        errors = errors.filter(
+            error => error.field !== 'description'
+        );
+    };
+    errorClass(description);
+    printErr();
 };
 
 function errorClass(field) {
@@ -260,32 +305,39 @@ function errorClass(field) {
     errors.forEach(error => {
         if (error.field === field.id) {
             field.classList.add('error-input');
-            field.focus();
         };
     });
 };
 
-function printErr(boxes) {
-    for (let box of boxes) {
+function errorPriceClass() {
+    price.classList.remove('error-input-price');
+    priceSpanValidation.classList.remove('error-span-price');
+    errors.forEach(error => {
+        if (error.field === 'price') {
+            price.classList.add('error-input-price');
+            priceSpanValidation.classList.add('error-span-price');
+        };
+    });
+};
+
+function errorDiscountClass() {
+    discount.classList.remove('error-input-price');
+    discountSpanValidation.classList.remove('error-span-price');
+    errors.forEach(error => {
+        if (error.field === 'discount') {
+            discount.classList.add('error-input-price');
+            discountSpanValidation.classList.add('error-span-price');
+        };
+    });
+};
+
+function printErr() {
+    for (let box of errorBoxes) {
         box.innerHTML = '';
         errors.forEach(error => {
             if (error.field === box.id) {
                 box.innerHTML = `<span class="error-msg">${ error.msg }</span>`;
             };
         });
-    };
-};
-
-function isChecked(thing) {
-    if (Array.isArray(thing)) {
-        for (let item of thing) {
-            if (item.checked) {
-                return true
-            };
-        };
-    } else {
-        if (thing.checked) {
-            return true;
-        };
     };
 };

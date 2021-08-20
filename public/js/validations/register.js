@@ -43,9 +43,9 @@ passwordCheck.addEventListener('blur', validatePasswordCheck, false);
 avatar.addEventListener('input', validateAvatar, false);
 avatar.addEventListener('blur', validateAvatar, false);
 // <!-- newsletter -->
-for (let radio of newsletter) {
-    radio.addEventListener('change', () => {
-        validateNewsletter(radio);
+for (let option of newsletter) {
+    option.addEventListener('change', () => {
+        validateNewsletter();
     });
 };
 // <!-- TERMS & CONDITIONS -->
@@ -60,9 +60,7 @@ form.addEventListener('submit', (e) => {
     validatePassword();
     validatePasswordCheck();
     validateAvatar();
-    for (let radio of newsletter) {
-        validateNewsletter(radio);
-    };
+    validateNewsletter();
     validateTyc();
     if (errors.length > 0) {
         // si hay errores
@@ -109,7 +107,7 @@ function validateName() {
         );
     };
     errorClass(name);
-    printErr(errorBoxes);
+    printErr();
 };
 
 function validateSurname() {
@@ -137,7 +135,7 @@ function validateSurname() {
         );
     };
     errorClass(surname);
-    printErr(errorBoxes);
+    printErr();
 };
 
 function validateEmail() {
@@ -180,7 +178,7 @@ function validateEmail() {
             });
     };
     errorClass(email);
-    printErr(errorBoxes);
+    printErr();
 };
 
 function validatePassword() {
@@ -226,7 +224,7 @@ function validatePassword() {
         );
     };
     errorClass(password);
-    printErr(errorBoxes);
+    printErr();
 };
 
 function validatePasswordCheck() {
@@ -246,7 +244,7 @@ function validatePasswordCheck() {
         );
     };
     errorClass(passwordCheck);
-    printErr(errorBoxes);
+    printErr();
 };
 
 function validateAvatar() {
@@ -268,11 +266,11 @@ function validateAvatar() {
         );
         avatarLabel.classList.remove('error-input');
     };
-    printErr(errorBoxes);
+    printErr();
 };
 
-function validateNewsletter(radio) {
-    if (isChecked(radio) === undefined) {
+function validateNewsletter(option) {
+    if (newsletter.value === '') {
         errors.push({
             field: 'newsletter',
             msg: 'Selecciona una opción'
@@ -287,12 +285,12 @@ function validateNewsletter(radio) {
         for (let label of newsletterLabel) {
             label.classList.remove('error-input');
         };
-    };
-    printErr(errorBoxes);
+    }
+    printErr();
 };
 
 function validateTyc() {
-    if (isChecked(tyc) === undefined) {
+    if (tyc.checked === false) {
         errors.push({
             field: 'tyc',
             msg: 'Leé y acepta los términos y condiciones'
@@ -304,7 +302,7 @@ function validateTyc() {
         );
         tycLabel.classList.remove('tyc-error');
     };
-    printErr(errorBoxes);
+    printErr();
 };
 
 // función que aplica clase "con error" al input
@@ -313,34 +311,18 @@ function errorClass(field) {
     errors.forEach(error => {
         if (error.field === field.id) {
             field.classList.add('error-input');
-            field.focus();
         };
     });
 };
 
 // función que imprime el error dentro del <div> para errores
-function printErr(boxes) {
-    for (let box of boxes) {
+function printErr() {
+    for (let box of errorBoxes) {
         box.innerHTML = '';
         errors.forEach(error => {
             if (error.field === box.id) {
                 box.innerHTML = `<span class="error-msg">${ error.msg }</span>`;
             };
         });
-    };
-};
-
-// función para checkear si mis radio/checkbox están "checked"
-function isChecked(thing) {
-    if (Array.isArray(thing)) {
-        for (let item of thing) {
-            if (item.checked) {
-                return true
-            };
-        };
-    } else {
-        if (thing.checked) {
-            return true;
-        };
     };
 };

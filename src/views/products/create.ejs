@@ -2,10 +2,8 @@
 <%- include ('../partials/header') %>
 <script src="/js/gameCreate.js" defer>
 </script>
-<script src="/js/validations/create.js" defer>
+<script src="/js/validations/product.js" defer>
 </script>
-<!-- <script src="/js/validations/product.js" defer>
-</script> -->
 <main class="main-main">
     <header class="main-title first-title">
         <h3 class="big-title">
@@ -20,6 +18,7 @@
         action="/products"
         method="POST"
         enctype="multipart/form-data"
+        novalidate
     >
         <section class="product-create-section">
             <!-- title -->
@@ -68,15 +67,17 @@
                                     value="<%= [j] %>"
                                 >
                                 <!-- how to persist data?? -->
-                                        <%= categories[j].title %>
+                                    <%= categories[j].title %>
                                 </option>
                             <% } %>
                         </select>
                     <% } %>
                 </div>
-                <div class="error-box" id="categories">
-
-                </div>
+                <% for (i = 1; i < 5; i++) { %>
+                    <div class="error-box" id="categories<%= [i] %>">
+    
+                    </div>
+                <% } %>
                 <% if (locals.errors && errors.categories) { %>
                     <span class="error-msg">
                         <%= errors.categories.msg %>
@@ -301,6 +302,7 @@
                     Precio
                 </label>
                 <span
+                    id="price-span"
                     class="discount-indicator
                         <%= locals.errors && errors.price ? 'error-span-price' : null %>"
                 >

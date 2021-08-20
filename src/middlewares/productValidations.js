@@ -60,11 +60,12 @@ let productValidations = {
                 };
             }).bail(),
         check('discount')
+            .isNumeric({ no_symbols: true }).withMessage('Ingresa un número entre 1 y 99').bail()
             .custom((value, { req }) => {
                 let offer = req.body.offer;
                 if (offer === 'true' && value === '') {
                     throw new Error('Asigna un porcentaje de descuento');
-                } else if (offer === 'true' && value < 1 || value > 99) {
+                } else if (offer === 'true' && value === 0 || value < 1 || value > 99) {
                     throw new Error('Igresa un número entre 1 y 99');
                 } else if (offer === 'false' && value != null) {
                     throw new Error('Este campo debe estar vacío');
