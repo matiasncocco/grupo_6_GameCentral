@@ -1,0 +1,1 @@
+éste sería los assets que afectan al index.js, digamos al entry point sería
