@@ -7,7 +7,7 @@ let usersApiController = {
                 res.json(users);
             })
             .catch(err => {
-                res.send(err);
+                console.log(err);
             });
     },
 

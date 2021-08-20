@@ -96,9 +96,29 @@ function validateTitle() {
             msg: 'Ingresa entre 2 y 30 caracteres'
         });
     } else {
-        errors = errors.filter(
-            error => error.field !== 'title'
-        );
+        let newTitle = title.value.toUpperCase();
+        let settings = {
+            'method': 'POST',
+            'headers': {
+                'Content-Type': 'application/json'
+            },
+            'body': JSON.stringify({
+                title: newTitle
+            })
+        };
+        fetch('http://localhost:3001/api/games/free-title', settings)
+            .then(response => { return response.json() })
+            .then(response => {
+                response.result === false ? errors.push({
+                    field: 'title',
+                    msg: response.msg
+                }) : errors = errors.filter(
+                    error => error.field !== 'title'
+                );
+            })
+            .catch(err => {
+                console.log(err);
+            });
     };
     errorClass(title);
     printErr();

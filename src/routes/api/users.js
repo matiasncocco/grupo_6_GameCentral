@@ -15,6 +15,6 @@ router.post(
 router.post(
     '/ok-email',
     usersApiController.checkEmail
-)
+);
 
 module.exports = router;

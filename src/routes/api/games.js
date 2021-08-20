@@ -7,4 +7,9 @@ router.get(
     gamesApiController.list
 );
 
+router.post(
+    '/free-title',
+    gamesApiController.freeTitle
+);
+
 module.exports = router;
