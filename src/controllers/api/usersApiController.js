@@ -32,9 +32,7 @@ let usersApiController = {
     oneUser: (req,res) => {
         db.User.findByPk(req.params.id)
             .then(user => {
-                // console.log(user.dataValues.password);
                 delete user.dataValues.password;
-                // delete user.
                 res.status(200).json({
                     stauts: 200,
                     user

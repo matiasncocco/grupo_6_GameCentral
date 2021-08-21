@@ -10,7 +10,7 @@ let User = () => {
     ] = useState({});
 
     useEffect(() => {
-        fetch(`http://localhost:3001/api/users/51`)
+        fetch(`http://localhost:3001/api/users/20`)
             .then(response => { return response.json() })
             .then(data => {
                 setUser(
