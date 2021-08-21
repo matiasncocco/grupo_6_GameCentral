@@ -1,6 +1,7 @@
 let {
     addOne,
-    giveNumber
+    giveNumber,
+    times
 } = require('./helper');
 let db = require('../database/models');
 let { validationResult } = require('express-validator');
@@ -31,10 +32,17 @@ let productsController = {
 
     // 1 GET: show all items
     index: (req, res) => {
+        let param = 0;
+        if (req.params.id) {
+            let page = parseInt(req.params.id);
+            param = times((page - 1), 4);
+        };
         db.Game.findAll({
+            limit: 4,
+            offset: param,
             include: [
                 'status'
-            ]
+            ],
         })
             .then(games => {
                 res.render('./products/index', {

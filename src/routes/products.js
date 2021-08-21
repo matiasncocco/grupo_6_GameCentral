@@ -24,7 +24,7 @@ router.get(
 
 // vista todos los productos
 router.get(
-    '/',
+    '/:id?',
     productsController.index
 );
 
