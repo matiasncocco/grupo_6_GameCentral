@@ -1,7 +1,6 @@
 let {
     addOne,
     giveNumber,
-    times
 } = require('./helper');
 let db = require('../database/models');
 let { validationResult } = require('express-validator');
@@ -35,7 +34,7 @@ let productsController = {
         let param = 0;
         if (req.params.id) {
             let page = parseInt(req.params.id);
-            param = times((page - 1), 4);
+            param = (page - 1) * 4;
         };
         db.Game.findAll({
             limit: 4,
