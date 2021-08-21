@@ -58,6 +58,13 @@ let productsController = {
             });
     },
 
+    // 1.5 GET: resultados de búsqueda
+    results: (req,res) => {
+        res.send({
+            ...req
+        })
+    },
+
     // 2 GET: show product <form>
     create: async (req, res) => {
         let categories = await db.Category.findAll();

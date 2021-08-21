@@ -7,7 +7,7 @@ let productsApiController = {
                 res.json(games);
             })
             .catch(err => {
-                console.log(err);
+                throw new Error(err)
             });
     },
 
@@ -32,7 +32,7 @@ let productsApiController = {
                 });
             };
         } catch(err) {
-            console.log(err);
+            throw new Error(err)
         };
     },
 };

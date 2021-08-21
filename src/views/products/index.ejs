@@ -27,14 +27,22 @@
         </div>
     </header>
     <section class="search-bar-section">
-        <div class="search-bar-box">
+        <form class="search-bar-box" action="/product/results" method="GET">
             <input
                 class="search-bar"
                 type="text"
-                name="busqueda"
+                name="query"
                 placeholder="Buscar un juego..."
             >
-        </div>
+            <button class="search-button" type="submit">
+                <h3 class="big-title">
+                    <i class="fas fa-search"></i>
+                </h3>
+                <h5 class="small-title">
+                    <i class="fas fa-search"></i>
+                </h5>
+            </button>
+        </form>
     </section>
     <section class="main-section last-section">
         <% for (i = 0; i < games.length; i++) { %>

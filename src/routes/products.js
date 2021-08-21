@@ -28,6 +28,12 @@ router.get(
     productsController.index
 );
 
+// resultados de búsqueda
+router.get(
+    '/results',
+    productsController.results
+);
+
 // vista creación de producto <form>
 router.get(
     '/create',
