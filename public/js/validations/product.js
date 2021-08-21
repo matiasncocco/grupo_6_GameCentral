@@ -271,31 +271,34 @@ function validatePrice() {
 };
 
 function validateDiscount() {
-    if (!discount.value) {
-        errors.push({
-            field: 'discount',
-            msg: 'Asigna un porcentaje de descuento'
-        });
-    } else if (discount.value === 0 || discount.value < 1 || discount.value > 99) {
-        errors.push({
-            field: 'discount',
-            msg: 'Ingresa un número entre 1 y 99'
-        });
-    } else if (!regexTwoDigitNumber.test(discount.value)) {
-        errors.push({
-            field: 'discount',
-            msg: 'Ingresa dos dígitos sin decimales'
-        });
-    } else {
+    console.log(offer.value);
+    if (offer.value === 'true') {
+        if (!discount.value) {
+            errors.push({
+                field: 'discount',
+                msg: 'Asigna un porcentaje de descuento'
+            });
+        } else if (discount.value < 1 || discount.value > 99) {
+            errors.push({
+                field: 'discount',
+                msg: 'Ingresa un número entre 1 y 99'
+            });
+        } else if (!regexTwoDigitNumber.test(discount.value)) {
+            errors.push({
+                field: 'discount',
+                msg: 'Ingresa dos dígitos sin decimales'
+            });
+        } else {
+            errors = errors.filter(
+                error => error.field !== 'discount'
+            );
+        };
+    } else if (offer.value === 'false' || !offer.value) {
         errors = errors.filter(
             error => error.field !== 'discount'
         );
     };
-    if (offer.value === 'false') {
-        errors = errors.filter(
-            error => error.field !== 'discount'
-        );
-    };
+    console.log(errors);
     errorDiscountClass();
     printErr();
 };

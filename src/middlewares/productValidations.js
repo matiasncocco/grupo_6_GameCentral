@@ -60,7 +60,6 @@ let productValidations = {
                 };
             }).bail(),
         check('discount')
-            .isNumeric({ no_symbols: true }).withMessage('Ingresa un número entre 1 y 99').bail()
             .custom((value, { req }) => {
                 let offer = req.body.offer;
                 if (offer === 'true' && value === '') {
