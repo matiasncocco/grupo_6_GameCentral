@@ -18,102 +18,57 @@ INSERT INTO games (id, title, img, price, discount, description) VALUES (13, 'DA
 INSERT INTO games (id, title, img, price, discount, description) VALUES (14, 'THE WITCHER III', '1623854229466.jpg', 479, null, 'The Witcher: Wild Hunt es un RPG de mundo abierto basado en la narrativa y ambientado en un universo de fantasía visualmente impresionante, repleto de decisiones significativas y consecuencias trascendentales. En The Witcher, te pones en la piel del cazador de monstruos profesional Geralt de Rivia, y tienes la tarea de encontrar a la niña de la profecía en un vasto mundo abierto repleto de ciudades de mercaderes, islas piratas, peligrosos pasos de montaña y cuevas olvidadas para explorar. CARACTERÍSTICAS PRINCIPALES CONVIÉRTETE EN UN EXPERTO CAZADOR DE MONSTRUOS A SUELDO Adiestrados desde su infancia y mutados para obtener habilidades, fuerza y reflejos sobrehumanos, los brujos sirven como contrapeso al mundo infestado de monstruos en el que viven. Destruye a tus enemigos de formas espantosas como cazador de monstruos profesional, armado con una gran variedad de armas mejorables, pociones de mutación y magia de combate. Da caza a una amplia gama de monstruos exóticos: desde bestias salvajes que merodean por los pasos de montaña, hasta astutos depredadores sobrenaturales que acechan en las sombras de ciudades densamente pobladas. Invierte tus recompensas en mejorar tus armas y comprar armaduras personalizadas, o gástatelas en carreras de caballos, juegos de cartas, peleas a puñetazos y otros placeres que te ofrece la noche.');
 INSERT INTO games (id, title, img, price, discount, description) VALUES (15, 'CUPHEAD', '1623889097777.jpg', 224, 23, 'Cuphead es un juego de acción clásico estilo "dispara y corre" que se centra en combates contra el jefe. Inspirado en los dibujos animados de los años 30, los aspectos visual y sonoro están diseñados con esmero empleando las mismas técnicas de la época, es decir, animación tradicional a mano, fondos de acuarela y grabaciones originales de jazz. Juega como Cuphead o Mugman (en modo de un jugador o cooperativo) y cruza mundos extraños, adquiere nuevas armas, aprende poderosos supermovimientos y descubre secretos ocultos mientras procuras saldar tu deuda con el diablo.');
 INSERT INTO games (id, title, img, price, discount, description) VALUES (16, 'FALL GUYS', '1624416547403.jpg', 720, null, 'Fall Guys es un juego multijugador masivo tipo party con hasta 60 jugadores online en un enfrentamiento todos contra todos que se desarrolla ronda tras ronda entre un caos creciente hasta que solo queda un único vencedor. Fall Guys: Ultimate Knockout enfrenta a hordas de contendientes online en un alocado enfrentamiento que se desarrolla ronda tras ronda entre un caos creciente hasta que solo queda un único vencedor. Supera obstáculos estrafalarios, ábrete paso entre competidores revoltosos y vence a las inflexibles leyes de la física en tu accidentado camino a la grandeza. ¡Deja la dignidad en la entrada y prepárate para sufrir descacharrantes fracasos en tu intento de reclamar la corona! Desmadre masivo online: sumérgete en una serie de ridículos desafíos y delirantes circuitos de obstáculos con montones de competidores online, todos con la esperanza de superar el corte y avanzar a la siguiente ronda de caos.');
+INSERT INTO games (id, title, img, price, discount, description) VALUES (17, 'HUMANKIND', '1624416547403-17-h.jpg', 3199, null, 'HUMANKIND™ es un juego de estrategia histórica en el que reescribirás todo el curso de la historia de la humanidad. ¡Compra la Edición Digital Deluxe de HUMANKIND™ antes del 24 de agosto para obtener contenido adicional exclusivo para primeros compradores! Contenido adicional para primeros compradores: Set de avatares e iconos de jugador de Boudica, Lucy y Edgar Allan Poe. Set de símbolos y decoración de perfil del jugador. HUMANKIND™ es un juego de estrategia histórica por turnos en el que reescribirás la historia de la humanidad y combinarás culturas para crear una civilización tan única como tú. CREA TU PROPIA CIVILIZACIÓN. Combina hasta 60 culturas históricas mientras llevas a tu pueblo desde la Edad Antigua hasta la Contemporánea. A partir de unos orígenes humildes como tribu del Neolítico, llega a la Edad Antigua llevando a los babilonios, conviértete en los mayas de la Época Clásica, los omeyas de la Edad Media, los británicos de la Edad Moderna, etc. Cada cultura añadirá su propio sistema de juego, por lo que las posibilidades son casi infinitas. ES MÁS QUE HISTORIA: ES TU HISTORIA. Afronta hechos históricos, toma decisiones morales impactantes y realiza avances científicos. Descubre las maravillas naturales del mundo o erige las más increíbles creaciones de la raza humana. Cada elemento del juego ofrece rigor histórico. Combínalos para crear tu propia visión del mundo. DEJA TU HUELLA EN EL MUNDO. El trayecto importa más que el destino. La fama como nueva condición de victoria unificadora. Cada gran hazaña lograda, cada decisión moral tomada y cada batalla ganada moldearán tu fama y dejarán su imperecedera huella en el mundo. El jugador con el mayor nivel de fama obtendrá la victoria. ¿Serás tú quien deje la mayor huella en el mundo? DOMINA LAS BATALLAS TÁCTICAS POR TIERRA, MAR Y AIRE. En HUMANKIND™, cada batalla se juega como un minijuego de tablero por turnos que se superpone al mapamundi. Despliega a los ejércitos y ponte al frente de cada unidad, incluidas las unidades emblemáticas de tu cultura y sus habilidades especiales. Construye armas de asedio para sitiar y ocupar ciudades. Libra grandes batallas que abarcan varios turnos y no dudes en pedir refuerzos. PERSONALIZA A TU LÍDER. En HUMANKIND™, llevarás al líder de tu sociedad como un avatar que puedes crear y personalizar. El aspecto del avatar evolucionará a medida que la partida y la civilización avancen. También podrás subir de nivel al líder mediante un metasistema de progresión para desbloquear apariencias personalizadas de las que presumir ante amigos y desconocidos por igual en partidas multijugador con hasta 8 personas.');
+INSERT INTO games (id, title, img, price, discount, description) VALUES (18, 'AGE OF EMPIRES III', '1624416547403-18-aoeiii.jpg', 229, 25, 'Age of Empires III: Definitive Edition encumbra la celebración de una de las franquicias de estrategia en tiempo real más queridas en una edición definitiva con características mejoradas y un sistema de juego modernizado. Dirige civilizaciones poderosas de toda Europa y América o lánzate a los campos de batalla de Asia con unos increíbles gráficos 4K Ultra HD y una banda sonora totalmente remasterizada. Incluye dos nuevos modos de juego: Batallas históricas y las misiones de desafío de El arte de la guerra, además de todas las expansiones ya publicadas y las 14 civilizaciones, más dos totalmente nuevas: los suecos y los incas. Conéctate a la red para desafiar a otros jugadores con el modo multijugador en línea actualizado con juego cruzado en red y descubre las más modernas funciones de juego, como los modos espectador y la compatibilidad con mods. Completa tu colección con el último capítulo del viaje de Age of Empires Definitive Edition.');
+INSERT INTO games (id, title, img, price, discount, description) VALUES (19, 'RIMWORLD', '1624416547403-19-r.jpg', 389.99, null, 'RimWorld es un simulador de Colonia de Ciencia Ficción creado por una brillante Inteligencia Artificial que narrará la historia. Inspirado por Dwarf Fortress, Firefly, y Dune. Comenzarás con tres colonos que han sobrevivido una catástrofe en un mundo distante. Tendrás que llevar un control del estado de animo, necesidades, heridas, enfermedades y adicciones de tus colonos. Construye en el bosque, desierto, jungla, tundra y más. Ve cómo los colonos desarrollan y terminan relaciones con familia, amantes y parejas. Reemplaza extremidades y órganos lesionados con prótesis, partes biónicas, o partes biológicas extraídas de otros. Pelea contra piratas, tribus, animales salvajes, insectos gigantes y antiguas máquinas de matar. Crea estructuras, armas, y utensilios utilizando metal, madera, piedra, textil y materiales futuristas. Domina y entrena bellas mascotas, animales de granja y mortales bestias de ataque. Intercambia con naves que van de paso y caravanas. Crea caravanas para completar misiones, intercambiar, atacar otras facciones, o migrar a otra colonia. Atraviesa nieve, fuertes tormentas y combate contra incendios. Captura refugiados o prisioneros y conviértelos a tu facción o véndelos como esclavos. Descubre un nuevo mundo generado cada vez que juegas. Explora cientos de mods locos e interesantes en el Steam Workshop. Aprende a jugar fácilmente con la ayuda de una inteligente y discreta IA. RimWorld es un generador de historias Está diseñado para ser co-autor de historias trágicas, alocadas y llenas de triunfos, relatando la vida de piratas, colonos desesperados, gente muriendo de hambre y supervivencia IA Narradora. Hay varios narradores a elegir. Randy Random hace cosas locas, Cassandra Classic prefiere que vaya subiendo la tensión poco a poco, y Phoebe Chillax que prefiere relajarse. Tus colonos no son colonizadores expertos - son supervivientes de una catástrofe, cuando se encontraban en un transbordador de pasajeros que fue destruido en órbita. Podrías terminar con un noble, un contador, una ama de casa. Obtendrás más colonos al capturarlos en combate y convertirlos a tu facción, comprarlos de comerciantes de esclavos, o simplemente al aceptar refugiados. Así que tu colonia siempre será un equipo variopinto. Los antecedentes de la persona serán registrados y esto afectará la forma en que se juegan. Un noble será perfecto para situaciones sociales (reclutando prisioneros, negociando precios con comerciantes), pero se negará a hacer trabajo físico. Un granjero sabrá como cosechar alimento para esas largas temporadas, pero no es bueno investigando. Un científico será un excelente investigador, pero no cuenta con habilidades sociales. Un asesino genéticamente modificado sólo sabrá matar - pero por lo menos será muy bueno en esto. Los colonos desarrollarán - y destruirán - relaciones. Cada uno tiene una opinión distinta de los demás, lo que determina si se harán amantes, se casarán, habrá engaños, o pelearán.');
+INSERT INTO games (id, title, img, price, discount, description) VALUES (20, 'COUNTER-STRIKE GO', '1624416547403-20-csgo.jpg', 1381.99, null, 'Counter-Strike: Global Offensive (CS:GO) amplía el juego de acción por equipos del que fue pionero cuando salió hace más de 20 años. CS:GO incluye nuevos mapas, personajes, armas y modos de juego, y ofrece versiones actualizadas del contenido clásico de Counter-Strike (de_dust2, etc.). «Counter-Strike sorprendió a la industria de los videojuegos cuando el insólito mod se convirtió en el juego de acción en línea para PC más jugado del mundo casi inmediatamente después de su lanzamiento en agosto de 1999», dijo Doug Lombardi, de Valve. «Durante los últimos 12 años, se ha mantenido como uno de los títulos más jugados del mundo, ha ocupado un papel protagonista en los torneos de videojuegos competitivos y ha vendido más de 25 millones de copias de la franquicia en todo el mundo. CS:GO promete ampliar la galardonada jugabilidad de Counter-Strike y ofrecérsela tanto a los jugadores de PC como a los de consolas de nueva generación y de Mac».');
+INSERT INTO games (id, title, img, price, discount, description) VALUES (21, 'NIPPON MARATHON', '1624416547403-21-nm.jpg', 179.99, 33, '¡San! ¡Ni! ¡Ichi! ¡¡¡Hajime!!! Estira los músculos y embárcate en el maratón definitivo de Japón en un estridente juego de carreras multijugador en el que puede pasar de todo. Supera barriles, corre más rápido que los Shiba Inu y lánzate fuera del camino de las bicicletas, todo ello mientras lanzas fruta a tus oponentes y atraviesas tablones en precario equilibrio sobre cascadas, en una experiencia irreal que hay que jugar para creer. Características: Una locura para cuatro jugadores que se pueden ir y venir. El juego en solitario es compatible, pero coge hasta cuatro almohadillas y disfruta de la suprema tontería de la mayor maratón de juegos. ¿Necesitas ir al baño para quitarte el zumo de piña del body? ¿Un peatón cualquiera pasa por tu sofá y quiere jugar? Sea cual sea la causa, ¡sube y baja para disfrutar de la mejor fiesta! ¡Experimenta sorpresas en abundancia en una carrera a través de todo Japón! Atraviesa el país nipón en una serie de niveles creativos que abarcan calles urbanas concurridas, calles estrechas y antiguas, mercados bulliciosos, santuarios en las cimas de las montañas e incluso la parte superior de un tren bala. En el Maratón de Nippon nunca se sabe qué ocurrirá a continuación. ¿Quizás encuentres tiempo para una improvisada diversión en una máquina tragaperras? ¿Quizás un presentador de noticias llegue en jetpack para entrevistarte en la pista de carreras? Demonios, todo es posible... Un extenso modo historia con un extraño elenco de personajes. Asciende de corredor novato a maestro del maratón. Vive las historias del hombre langosta J DARWIN, la entusiasta de los narvales Elizabeth Nishibori, el viejo tío marinero Zenbei "XEN BAE" y el aspirante a dueño de una agencia de citas Snuguru Maestro, todo ello mientras se revelan los turbios secretos de las fuerzas invisibles que están en juego detrás del Maratón de Nippon. ¿Podrás vencer al diez veces campeón Handsome Hazuki y a sus compinches? ¡Relájate con algunos Party Games! A algunas personas les gusta observar los pájaros. A algunos les gusta dar un paseo en coche el domingo por la tarde. A otros les gusta subirse a un carrito y chocar de frente con bolos del tamaño de un hombre. Fija la posición de tu carro de la compra, da un salto en marcha, haz una mueca de dolor mientras te lanzas hacia peligros aleatorios y reza para no acabar en la sala de urgencias. ¿Has dominado el pavo en los bolos? Entonces enfréntate al guante L.O.B.S.T.E.R. Un recorrido de asalto precariamente estrecho y generado aleatoriamente. Martillos oscilantes, guantes de boxeo neumáticos y furiosos jugadores de fútbol americano conspiran para tirarte a la bebida.');
 
+-- INSERT INTO games (id, title, img, price, discount, description) VALUES ('id', 'name', 'img', 'price', '%des', 'descr.');
 -- ---------------------------------------------------------------------------
 
 -- categories
 
-INSERT INTO categories (id, title) VALUES (1, 'ACTION');
-INSERT INTO categories (id, title) VALUES (2, 'PLATFORMER');
-INSERT INTO categories (id, title) VALUES (3, 'SHOOTER');
-INSERT INTO categories (id, title) VALUES (4, 'FIGHTING');
-INSERT INTO categories (id, title) VALUES (5, 'BEAT EM'' UP');
-INSERT INTO categories (id, title) VALUES (6, 'STEALTH');
-INSERT INTO categories (id, title) VALUES (7, 'SURVIVAL');
-INSERT INTO categories (id, title) VALUES (8, 'RHYTHM');
-INSERT INTO categories (id, title) VALUES (9, 'BATTLE ROYALE');
-INSERT INTO categories (id, title) VALUES (10, 'ACTION-ADVENTURE');
-INSERT INTO categories (id, title) VALUES (11, 'SURVIVAL HORROR');
-INSERT INTO categories (id, title) VALUES (12, 'METROIDVANIA');
-INSERT INTO categories (id, title) VALUES (13, 'ADVENTURE');
-INSERT INTO categories (id, title) VALUES (14, 'TEXT ADVENTURE');
-INSERT INTO categories (id, title) VALUES (15, 'GRAPHIC ADVENTURE');
-INSERT INTO categories (id, title) VALUES (16, 'VISUAL NOVEL');
-INSERT INTO categories (id, title) VALUES (17, 'INTERACTIVE MOVIE');
-INSERT INTO categories (id, title) VALUES (18, 'REAL-TIME 3D ADVENTURE');
-INSERT INTO categories (id, title) VALUES (19, 'ROLE-PLAYING');
-INSERT INTO categories (id, title) VALUES (20, 'ACTION RPG');
-INSERT INTO categories (id, title) VALUES (21, 'MMORPG');
-INSERT INTO categories (id, title) VALUES (22, 'ROGUELIKE');
-INSERT INTO categories (id, title) VALUES (23, 'TACTICAL RPG');
-INSERT INTO categories (id, title) VALUES (24, 'SANDBOX RPG');
-INSERT INTO categories (id, title) VALUES (25, 'FIRST-PERSON PARTY-BASED RPG');
-INSERT INTO categories (id, title) VALUES (26, 'JRPG');
-INSERT INTO categories (id, title) VALUES (27, 'MONSTER TAMER');
-INSERT INTO categories (id, title) VALUES (28, 'SIMULATION');
-INSERT INTO categories (id, title) VALUES (29, 'CONSTRUCTION AND MANAGEMENT');
-INSERT INTO categories (id, title) VALUES (30, 'LIFE SIMULATION');
-INSERT INTO categories (id, title) VALUES (31, 'VEHICLE SIMULATION');
-INSERT INTO categories (id, title) VALUES (32, 'STRATEGY');
-INSERT INTO categories (id, title) VALUES (33, '4X GAME');
-INSERT INTO categories (id, title) VALUES (34, 'ARTILLERY');
-INSERT INTO categories (id, title) VALUES (35, 'AUTO BATTLER (AUTO CHESS)');
-INSERT INTO categories (id, title) VALUES (36, 'MOBA');
-INSERT INTO categories (id, title) VALUES (37, 'REAL-TIME STRATEGY');
-INSERT INTO categories (id, title) VALUES (38, 'REAL-TIME TACTICS');
-INSERT INTO categories (id, title) VALUES (39, 'TURN-BASED TACTICS');
-INSERT INTO categories (id, title) VALUES (40, 'WARGAME');
-INSERT INTO categories (id, title) VALUES (41, 'GRAND STRATEGY WARGAME');
-INSERT INTO categories (id, title) VALUES (42, 'SPORTS');
-INSERT INTO categories (id, title) VALUES (43, 'RACING');
-INSERT INTO categories (id, title) VALUES (44, 'SPORTS');
-INSERT INTO categories (id, title) VALUES (45, 'COMPETITIVE');
-INSERT INTO categories (id, title) VALUES (46, 'SPORTS-BASED FIGHTING');
-INSERT INTO categories (id, title) VALUES (47, 'MMO');
-INSERT INTO categories (id, title) VALUES (48, 'BOARD');
-INSERT INTO categories (id, title) VALUES (49, 'CARD');
-INSERT INTO categories (id, title) VALUES (50, 'CASINO');
-INSERT INTO categories (id, title) VALUES (51, 'CASUAL');
-INSERT INTO categories (id, title) VALUES (52, 'GACHA');
-INSERT INTO categories (id, title) VALUES (53, 'HORROR');
-INSERT INTO categories (id, title) VALUES (54, 'IDLE');
-INSERT INTO categories (id, title) VALUES (55, 'LOGIC');
-INSERT INTO categories (id, title) VALUES (56, 'PARTY');
-INSERT INTO categories (id, title) VALUES (57, 'PHOTOGRAPHY');
-INSERT INTO categories (id, title) VALUES (58, 'PROGRAMMING');
-INSERT INTO categories (id, title) VALUES (59, 'SOCIAL DEDUCTION');
-INSERT INTO categories (id, title) VALUES (60, 'TRIVIA');
-INSERT INTO categories (id, title) VALUES (61, 'TYPING');
-INSERT INTO categories (id, title) VALUES (62, 'ART');
-INSERT INTO categories (id, title) VALUES (63, 'CASUAL');
-INSERT INTO categories (id, title) VALUES (64, 'EDUCATIONAL');
-INSERT INTO categories (id, title) VALUES (65, 'SANDBOX');
-INSERT INTO categories (id, title) VALUES (66, 'CREATIVE');
-INSERT INTO categories (id, title) VALUES (67, 'OPEN WORLD');
-INSERT INTO categories (id, title) VALUES (68, 'CITY BUILDER');
-INSERT INTO categories (id, title) VALUES (69, 'MULTIPLAYER');
-INSERT INTO categories (id, title) VALUES (70, 'PRECISION PLATFORMER');
-INSERT INTO categories (id, title) VALUES (71, 'DIFFICULT');
-INSERT INTO categories (id, title) VALUES (72, 'GREAT SOUNDTRACK');
-INSERT INTO categories (id, title) VALUES (73, 'PIXEL GRAPHICS');
-INSERT INTO categories (id, title) VALUES (74, 'INDIE');
-INSERT INTO categories (id, title) VALUES (75, 'RPG');
-INSERT INTO categories (id, title) VALUES (76, 'SOULS-LIKE');
-INSERT INTO categories (id, title) VALUES (77, 'FIRST-PERSON');
-INSERT INTO categories (id, title) VALUES (78, 'SINGLEPLAYER');
-INSERT INTO categories (id, title) VALUES (79, 'PUZZLE');
-INSERT INTO categories (id, title) VALUES (80, 'FIRST-PERSON SHOOTER');
-INSERT INTO categories (id, title) VALUES (81, 'TACTICAL');
-INSERT INTO categories (id, title) VALUES (82, 'TEAM-BASED');
-INSERT INTO categories (id, title) VALUES (83, 'FARMING SIM');
-INSERT INTO categories (id, title) VALUES (84, 'CYBERPUNK');
-INSERT INTO categories (id, title) VALUES (85, 'SCI-FI');
-INSERT INTO categories (id, title) VALUES (86, 'DARK FANTASY');
-INSERT INTO categories (id, title) VALUES (87, 'STORY RICH');
-INSERT INTO categories (id, title) VALUES (88, 'ATMOSPHERIC');
-INSERT INTO categories (id, title) VALUES (89, 'CARTOON');
-INSERT INTO categories (id, title) VALUES (90, 'FUNNY');
-INSERT INTO categories (id, title) VALUES (91, 'ONLINE CO-OP');
+INSERT INTO categories (id, title) VALUES (1, 'STRATEGY'); -- check
+INSERT INTO categories (id, title) VALUES (2, 'REAL-TIME STRATEGY'); -- check
+INSERT INTO categories (id, title) VALUES (3, 'CITY BUILDER'); -- check
+INSERT INTO categories (id, title) VALUES (4, 'MULTIPLAYER'); -- check
+INSERT INTO categories (id, title) VALUES (5, 'SPORTS');
+INSERT INTO categories (id, title) VALUES (6, 'DIFFICULT');
+INSERT INTO categories (id, title) VALUES (7, 'GREAT SOUNDTRACK');
+INSERT INTO categories (id, title) VALUES (8, 'PIXEL GRAPHICS');
+INSERT INTO categories (id, title) VALUES (9, 'ACTION');
+INSERT INTO categories (id, title) VALUES (10, 'INDIE');
+INSERT INTO categories (id, title) VALUES (11, 'ROGUELIKE');
+INSERT INTO categories (id, title) VALUES (12, 'RPG');
+INSERT INTO categories (id, title) VALUES (13, 'METROIDVANIA');
+INSERT INTO categories (id, title) VALUES (14, 'SOULS-LIKE');
+INSERT INTO categories (id, title) VALUES (15, 'PLATFORMER');
+INSERT INTO categories (id, title) VALUES (16, 'SURVIVAL');
+INSERT INTO categories (id, title) VALUES (17, 'ADVENTURE');
+INSERT INTO categories (id, title) VALUES (18, 'CREATIVE');
+INSERT INTO categories (id, title) VALUES (19, 'OPEN WORLD');
+INSERT INTO categories (id, title) VALUES (20, 'PUZZLE');
+INSERT INTO categories (id, title) VALUES (21, 'FIRST-PERSON');
+INSERT INTO categories (id, title) VALUES (22, 'SINGLEPLAYER');
+INSERT INTO categories (id, title) VALUES (23, 'FIRST-PERSON SHOOTER');
+INSERT INTO categories (id, title) VALUES (24, 'TACTICAL');
+INSERT INTO categories (id, title) VALUES (25, 'TEAM-BASED');
+INSERT INTO categories (id, title) VALUES (26, 'FARMING SIM');
+INSERT INTO categories (id, title) VALUES (27, 'LIFE SIMULATION');
+INSERT INTO categories (id, title) VALUES (28, 'SANDBOX');
+INSERT INTO categories (id, title) VALUES (29, 'CYBERPUNK');
+INSERT INTO categories (id, title) VALUES (30, 'SCI-FI');
+INSERT INTO categories (id, title) VALUES (31, 'DARK FANTASY');
+INSERT INTO categories (id, title) VALUES (32, 'STORY RICH');
+INSERT INTO categories (id, title) VALUES (33, 'ATMOSPHERIC');
+INSERT INTO categories (id, title) VALUES (34, 'CARTOON');
+INSERT INTO categories (id, title) VALUES (35, 'FUNNY');
+INSERT INTO categories (id, title) VALUES (36, 'BATTLE ROYALE');
+INSERT INTO categories (id, title) VALUES (37, 'ONLINE CO-OP');
+INSERT INTO categories (id, title) VALUES (38, 'TURN-BASED');
+INSERT INTO categories (id, title) VALUES (39, 'HISTORICAL');
+INSERT INTO categories (id, title) VALUES (40, 'MANAGEMENT');
 
 -- ---------------------------------------------------------------------------
 
@@ -135,56 +90,56 @@ INSERT INTO status (id, name) VALUES (2, 'IN OFFER');
 
 -- users
 
-INSERT INTO users (id, name, surname, email, avatar, newsletter, admin, password) values (1, 'Alisander', 'Garfit', 'agarfit0@globo.com', 'default.jgp', true, true, 'mVOeeAA');
-INSERT INTO users (id, name, surname, email, avatar, newsletter, admin, password) values (2, 'Erna', 'Britch', 'ebritch1@over-blog.com', 'default.jgp', true, false, 'ivBhSkV');
-INSERT INTO users (id, name, surname, email, avatar, newsletter, admin, password) values (3, 'Ainslee', 'Crother', 'acrother2@tumblr.com', 'default.jgp', true, false, 'h4C1GRhsj06');
-INSERT INTO users (id, name, surname, email, avatar, newsletter, admin, password) values (4, 'Retha', 'Laffling', 'rlaffling3@nba.com', 'default.jgp', true, true, '5RLGMRnbjZD');
-INSERT INTO users (id, name, surname, email, avatar, newsletter, admin, password) values (5, 'Vivianne', 'Cringle', 'vcringle4@mediafire.com', 'default.jgp', false, false, 'SZSl9L');
-INSERT INTO users (id, name, surname, email, avatar, newsletter, admin, password) values (6, 'Thibaut', 'Cusiter', 'tcusiter5@ebay.com', 'default.jgp', false, false, 'rf3Y9BbIR');
-INSERT INTO users (id, name, surname, email, avatar, newsletter, admin, password) values (7, 'Patty', 'Esby', 'pesby6@toplist.cz', 'default.jgp', false, true, 'DgL2zR6OM25');
-INSERT INTO users (id, name, surname, email, avatar, newsletter, admin, password) values (8, 'Lynsey', 'Ong', 'long7@google.com.au', 'default.jgp', true, false, 'Ya5QqNR');
-INSERT INTO users (id, name, surname, email, avatar, newsletter, admin, password) values (9, 'Haley', 'Haucke', 'hhaucke8@shinystat.com', 'default.jgp', false, false, '8toNZs20vJQI');
-INSERT INTO users (id, name, surname, email, avatar, newsletter, admin, password) values (10, 'Rossie', 'Attac', 'rattac9@drupal.org', 'default.jgp', true, true, '33Ywxj5Y7BId');
-INSERT INTO users (id, name, surname, email, avatar, newsletter, admin, password) values (11, 'Derward', 'Duling', 'ddulinga@123-reg.co.uk', 'default.jgp', false, false, 'Ce0c7SQ2S');
-INSERT INTO users (id, name, surname, email, avatar, newsletter, admin, password) values (12, 'Norry', 'Renne', 'nrenneb@liveinternet.ru', 'default.jgp', true, true, '4vF1ACQbE1U');
-INSERT INTO users (id, name, surname, email, avatar, newsletter, admin, password) values (13, 'Norbie', 'Matskevich', 'nmatskevichc@ucla.edu', 'default.jgp', false, false, 'nZaswvCE3N');
-INSERT INTO users (id, name, surname, email, avatar, newsletter, admin, password) values (14, 'Creighton', 'Beining', 'cbeiningd@slate.com', 'default.jgp', false, true, '8CtaZzIy');
-INSERT INTO users (id, name, surname, email, avatar, newsletter, admin, password) values (15, 'Melessa', 'Umney', 'mumneye@wsj.com', 'default.jgp', true, false, '49X84k5F7Z');
-INSERT INTO users (id, name, surname, email, avatar, newsletter, admin, password) values (16, 'Ruttger', 'Cambling', 'rcamblingf@tuttocitta.it', 'default.jgp', false, false, 'grzvJax8I2');
-INSERT INTO users (id, name, surname, email, avatar, newsletter, admin, password) values (17, 'Hercules', 'Glasspoole', 'hglasspooleg@topsy.com', 'default.jgp', false, false, 'SJeK4tK62');
-INSERT INTO users (id, name, surname, email, avatar, newsletter, admin, password) values (18, 'Almeta', 'Extil', 'aextilh@ebay.com', 'default.jgp', true, false, 'kzYrKq');
-INSERT INTO users (id, name, surname, email, avatar, newsletter, admin, password) values (19, 'Clayton', 'Caillou', 'ccailloui@privacy.gov.au', 'default.jgp', true, false, 'GBHPCvse');
-INSERT INTO users (id, name, surname, email, avatar, newsletter, admin, password) values (20, 'Boot', 'Axup', 'baxupj@telegraph.co.uk', 'default.jgp', true, false, 'MnHrmmN');
-INSERT INTO users (id, name, surname, email, avatar, newsletter, admin, password) values (21, 'Jules', 'Herrieven', 'jherrievenk@japanpost.jp', 'default.jgp', true, false, '67wqhX');
-INSERT INTO users (id, name, surname, email, avatar, newsletter, admin, password) values (22, 'William', 'Parriss', 'wparrissl@adobe.com', 'default.jgp', false, true, 'SU6rU5xyvL');
-INSERT INTO users (id, name, surname, email, avatar, newsletter, admin, password) values (23, 'Goldarina', 'Girkin', 'ggirkinm@xinhuanet.com', 'default.jgp', true, false, 'OgJ3d9');
-INSERT INTO users (id, name, surname, email, avatar, newsletter, admin, password) values (24, 'Cthrine', 'Brough', 'cbroughn@wikipedia.org', 'default.jgp', false, false, 'rJwMDrIOMGf');
-INSERT INTO users (id, name, surname, email, avatar, newsletter, admin, password) values (25, 'Emogene', 'Averill', 'eaverillo@ibm.com', 'default.jgp', true, false, 'hiYOX8PVFq');
-INSERT INTO users (id, name, surname, email, avatar, newsletter, admin, password) values (26, 'Aldous', 'Kemmons', 'akemmonsp@slate.com', 'default.jgp', true, false, 'cMl4oF5P');
-INSERT INTO users (id, name, surname, email, avatar, newsletter, admin, password) values (27, 'Gayel', 'Curds', 'gcurdsq@hc360.com', 'default.jgp', true, false, 'jUJGGWhfTLd');
-INSERT INTO users (id, name, surname, email, avatar, newsletter, admin, password) values (28, 'Erhart', 'Swinney', 'eswinneyr@printfriendly.com', 'default.jgp', true, false, 'vKnhhh');
-INSERT INTO users (id, name, surname, email, avatar, newsletter, admin, password) values (29, 'Audrey', 'Ollerton', 'aollertons@bloglovin.com', 'default.jgp', false, true, 'hZbFTZEi');
-INSERT INTO users (id, name, surname, email, avatar, newsletter, admin, password) values (30, 'Dalis', 'Wicher', 'dwichert@theglobeandmail.com', 'default.jgp', false, false, 'wedfOGL4a');
-INSERT INTO users (id, name, surname, email, avatar, newsletter, admin, password) values (31, 'Glori', 'Ollerton', 'gollertonu@youtube.com', 'default.jgp', false, false, 'LmlNCoYouH');
-INSERT INTO users (id, name, surname, email, avatar, newsletter, admin, password) values (32, 'Putnem', 'Vowles', 'pvowlesv@mashable.com', 'default.jgp', true, false, 'Qn2mGqUwJv');
-INSERT INTO users (id, name, surname, email, avatar, newsletter, admin, password) values (33, 'Ely', 'Bewlay', 'ebewlayw@addtoany.com', 'default.jgp', false, false, 'A28n6HRw');
-INSERT INTO users (id, name, surname, email, avatar, newsletter, admin, password) values (34, 'Niven', 'Jozsef', 'njozsefx@over-blog.com', 'default.jgp', false, false, 'I1ZGe3');
-INSERT INTO users (id, name, surname, email, avatar, newsletter, admin, password) values (35, 'Cass', 'Cadden', 'ccaddeny@technorati.com', 'default.jgp', false, false, 'M7fMRf');
-INSERT INTO users (id, name, surname, email, avatar, newsletter, admin, password) values (36, 'Burty', 'Bascomb', 'bbascombz@usgs.gov', 'default.jgp', true, true, 'kPCqznS');
-INSERT INTO users (id, name, surname, email, avatar, newsletter, admin, password) values (37, 'Leticia', 'Extill', 'lextill10@mashable.com', 'default.jgp', false, false, 'cxw8ll6x');
-INSERT INTO users (id, name, surname, email, avatar, newsletter, admin, password) values (38, 'Aleece', 'Broadbear', 'abroadbear11@senate.gov', 'default.jgp', true, true, '5C7OQOgWQJ0');
-INSERT INTO users (id, name, surname, email, avatar, newsletter, admin, password) values (39, 'Tammi', 'Santore', 'tsantore12@sakura.ne.jp', 'default.jgp', false, false, 'szVFEv4k');
-INSERT INTO users (id, name, surname, email, avatar, newsletter, admin, password) values (40, 'Vanda', 'Rilston', 'vrilston13@wix.com', 'default.jgp', false, false, 'ieJ6lB');
-INSERT INTO users (id, name, surname, email, avatar, newsletter, admin, password) values (41, 'Darwin', 'Nurden', 'dnurden14@arizona.edu', 'default.jgp', false, false, 'L1yNDNTi');
-INSERT INTO users (id, name, surname, email, avatar, newsletter, admin, password) values (42, 'Nev', 'Philippe', 'nphilippe15@joomla.org', 'default.jgp', true, false, 'OdoEmY6f');
-INSERT INTO users (id, name, surname, email, avatar, newsletter, admin, password) values (43, 'Tris', 'Tythe', 'ttythe16@washingtonpost.com', 'default.jgp', false, true, 'QZIJfQF');
-INSERT INTO users (id, name, surname, email, avatar, newsletter, admin, password) values (44, 'Rubie', 'Rodgier', 'rrodgier17@privacy.gov.au', 'default.jgp', false, true, 'SBKtUAN');
-INSERT INTO users (id, name, surname, email, avatar, newsletter, admin, password) values (45, 'Biddie', 'Jarrett', 'bjarrett18@usgs.gov', 'default.jgp', false, false, '6w2bVfe');
-INSERT INTO users (id, name, surname, email, avatar, newsletter, admin, password) values (46, 'Martica', 'Ney', 'mney19@flickr.com', 'default.jgp', false, false, 'VCJOBWeT');
-INSERT INTO users (id, name, surname, email, avatar, newsletter, admin, password) values (47, 'Dew', 'Craig', 'dcraig1a@usda.gov', 'default.jgp', false, false, 'SbxDi1x9Ubt');
-INSERT INTO users (id, name, surname, email, avatar, newsletter, admin, password) values (48, 'Kimbra', 'Sultana', 'ksultana1b@princeton.edu', 'default.jgp', true, false, '4zfDVrDBpK4');
-INSERT INTO users (id, name, surname, email, avatar, newsletter, admin, password) values (49, 'Wilbert', 'Brindley', 'wbrindley1c@microsoft.com', 'default.jgp', false, false, 'DpfRZ15dT2ik');
-INSERT INTO users (id, name, surname, email, avatar, newsletter, admin, password) values (50, 'Windham', 'Garnam', 'wgarnam1d@etsy.com', 'default.jgp', true, true, 'hfEaoqT');
+INSERT INTO users (id, name, surname, email, avatar, newsletter, admin, password) values (1, 'Alisander', 'Garfit', 'agarfit0@globo.com', 'https://thispersondoesnotexist.com/', true, true, 'mVOeeAA');
+INSERT INTO users (id, name, surname, email, avatar, newsletter, admin, password) values (2, 'Erna', 'Britch', 'ebritch1@over-blog.com', 'https://thispersondoesnotexist.com/', true, false, 'ivBhSkV');
+INSERT INTO users (id, name, surname, email, avatar, newsletter, admin, password) values (3, 'Ainslee', 'Crother', 'acrother2@tumblr.com', 'https://thispersondoesnotexist.com/', true, false, 'h4C1GRhsj06');
+INSERT INTO users (id, name, surname, email, avatar, newsletter, admin, password) values (4, 'Retha', 'Laffling', 'rlaffling3@nba.com', 'https://thispersondoesnotexist.com/', true, true, '5RLGMRnbjZD');
+INSERT INTO users (id, name, surname, email, avatar, newsletter, admin, password) values (5, 'Vivianne', 'Cringle', 'vcringle4@mediafire.com', 'https://thispersondoesnotexist.com/', false, false, 'SZSl9L');
+INSERT INTO users (id, name, surname, email, avatar, newsletter, admin, password) values (6, 'Thibaut', 'Cusiter', 'tcusiter5@ebay.com', 'https://thispersondoesnotexist.com/', false, false, 'rf3Y9BbIR');
+INSERT INTO users (id, name, surname, email, avatar, newsletter, admin, password) values (7, 'Patty', 'Esby', 'pesby6@toplist.cz', 'https://thispersondoesnotexist.com/', false, true, 'DgL2zR6OM25');
+INSERT INTO users (id, name, surname, email, avatar, newsletter, admin, password) values (8, 'Lynsey', 'Ong', 'long7@google.com.au', 'https://thispersondoesnotexist.com/', true, false, 'Ya5QqNR');
+INSERT INTO users (id, name, surname, email, avatar, newsletter, admin, password) values (9, 'Haley', 'Haucke', 'hhaucke8@shinystat.com', 'https://thispersondoesnotexist.com/', false, false, '8toNZs20vJQI');
+INSERT INTO users (id, name, surname, email, avatar, newsletter, admin, password) values (10, 'Rossie', 'Attac', 'rattac9@drupal.org', 'https://thispersondoesnotexist.com/', true, true, '33Ywxj5Y7BId');
+INSERT INTO users (id, name, surname, email, avatar, newsletter, admin, password) values (11, 'Derward', 'Duling', 'ddulinga@123-reg.co.uk', 'https://thispersondoesnotexist.com/', false, false, 'Ce0c7SQ2S');
+INSERT INTO users (id, name, surname, email, avatar, newsletter, admin, password) values (12, 'Norry', 'Renne', 'nrenneb@liveinternet.ru', 'https://thispersondoesnotexist.com/', true, true, '4vF1ACQbE1U');
+INSERT INTO users (id, name, surname, email, avatar, newsletter, admin, password) values (13, 'Norbie', 'Matskevich', 'nmatskevichc@ucla.edu', 'https://thispersondoesnotexist.com/', false, false, 'nZaswvCE3N');
+INSERT INTO users (id, name, surname, email, avatar, newsletter, admin, password) values (14, 'Creighton', 'Beining', 'cbeiningd@slate.com', 'https://thispersondoesnotexist.com/', false, true, '8CtaZzIy');
+INSERT INTO users (id, name, surname, email, avatar, newsletter, admin, password) values (15, 'Melessa', 'Umney', 'mumneye@wsj.com', 'https://thispersondoesnotexist.com/', true, false, '49X84k5F7Z');
+INSERT INTO users (id, name, surname, email, avatar, newsletter, admin, password) values (16, 'Ruttger', 'Cambling', 'rcamblingf@tuttocitta.it', 'https://thispersondoesnotexist.com/', false, false, 'grzvJax8I2');
+INSERT INTO users (id, name, surname, email, avatar, newsletter, admin, password) values (17, 'Hercules', 'Glasspoole', 'hglasspooleg@topsy.com', 'https://thispersondoesnotexist.com/', false, false, 'SJeK4tK62');
+INSERT INTO users (id, name, surname, email, avatar, newsletter, admin, password) values (18, 'Almeta', 'Extil', 'aextilh@ebay.com', 'https://thispersondoesnotexist.com/', true, false, 'kzYrKq');
+INSERT INTO users (id, name, surname, email, avatar, newsletter, admin, password) values (19, 'Clayton', 'Caillou', 'ccailloui@privacy.gov.au', 'https://thispersondoesnotexist.com/', true, false, 'GBHPCvse');
+INSERT INTO users (id, name, surname, email, avatar, newsletter, admin, password) values (20, 'Boot', 'Axup', 'baxupj@telegraph.co.uk', 'https://thispersondoesnotexist.com/', true, false, 'MnHrmmN');
+INSERT INTO users (id, name, surname, email, avatar, newsletter, admin, password) values (21, 'Jules', 'Herrieven', 'jherrievenk@japanpost.jp', 'https://thispersondoesnotexist.com/', true, false, '67wqhX');
+INSERT INTO users (id, name, surname, email, avatar, newsletter, admin, password) values (22, 'William', 'Parriss', 'wparrissl@adobe.com', 'https://thispersondoesnotexist.com/', false, true, 'SU6rU5xyvL');
+INSERT INTO users (id, name, surname, email, avatar, newsletter, admin, password) values (23, 'Goldarina', 'Girkin', 'ggirkinm@xinhuanet.com', 'https://thispersondoesnotexist.com/', true, false, 'OgJ3d9');
+INSERT INTO users (id, name, surname, email, avatar, newsletter, admin, password) values (24, 'Cthrine', 'Brough', 'cbroughn@wikipedia.org', 'https://thispersondoesnotexist.com/', false, false, 'rJwMDrIOMGf');
+INSERT INTO users (id, name, surname, email, avatar, newsletter, admin, password) values (25, 'Emogene', 'Averill', 'eaverillo@ibm.com', 'https://thispersondoesnotexist.com/', true, false, 'hiYOX8PVFq');
+INSERT INTO users (id, name, surname, email, avatar, newsletter, admin, password) values (26, 'Aldous', 'Kemmons', 'akemmonsp@slate.com', 'https://thispersondoesnotexist.com/', true, false, 'cMl4oF5P');
+INSERT INTO users (id, name, surname, email, avatar, newsletter, admin, password) values (27, 'Gayel', 'Curds', 'gcurdsq@hc360.com', 'https://thispersondoesnotexist.com/', true, false, 'jUJGGWhfTLd');
+INSERT INTO users (id, name, surname, email, avatar, newsletter, admin, password) values (28, 'Erhart', 'Swinney', 'eswinneyr@printfriendly.com', 'https://thispersondoesnotexist.com/', true, false, 'vKnhhh');
+INSERT INTO users (id, name, surname, email, avatar, newsletter, admin, password) values (29, 'Audrey', 'Ollerton', 'aollertons@bloglovin.com', 'https://thispersondoesnotexist.com/', false, true, 'hZbFTZEi');
+INSERT INTO users (id, name, surname, email, avatar, newsletter, admin, password) values (30, 'Dalis', 'Wicher', 'dwichert@theglobeandmail.com', 'https://thispersondoesnotexist.com/', false, false, 'wedfOGL4a');
+INSERT INTO users (id, name, surname, email, avatar, newsletter, admin, password) values (31, 'Glori', 'Ollerton', 'gollertonu@youtube.com', 'https://thispersondoesnotexist.com/', false, false, 'LmlNCoYouH');
+INSERT INTO users (id, name, surname, email, avatar, newsletter, admin, password) values (32, 'Putnem', 'Vowles', 'pvowlesv@mashable.com', 'https://thispersondoesnotexist.com/', true, false, 'Qn2mGqUwJv');
+INSERT INTO users (id, name, surname, email, avatar, newsletter, admin, password) values (33, 'Ely', 'Bewlay', 'ebewlayw@addtoany.com', 'https://thispersondoesnotexist.com/', false, false, 'A28n6HRw');
+INSERT INTO users (id, name, surname, email, avatar, newsletter, admin, password) values (34, 'Niven', 'Jozsef', 'njozsefx@over-blog.com', 'https://thispersondoesnotexist.com/', false, false, 'I1ZGe3');
+INSERT INTO users (id, name, surname, email, avatar, newsletter, admin, password) values (35, 'Cass', 'Cadden', 'ccaddeny@technorati.com', 'https://thispersondoesnotexist.com/', false, false, 'M7fMRf');
+INSERT INTO users (id, name, surname, email, avatar, newsletter, admin, password) values (36, 'Burty', 'Bascomb', 'bbascombz@usgs.gov', 'https://thispersondoesnotexist.com/', true, true, 'kPCqznS');
+INSERT INTO users (id, name, surname, email, avatar, newsletter, admin, password) values (37, 'Leticia', 'Extill', 'lextill10@mashable.com', 'https://thispersondoesnotexist.com/', false, false, 'cxw8ll6x');
+INSERT INTO users (id, name, surname, email, avatar, newsletter, admin, password) values (38, 'Aleece', 'Broadbear', 'abroadbear11@senate.gov', 'https://thispersondoesnotexist.com/', true, true, '5C7OQOgWQJ0');
+INSERT INTO users (id, name, surname, email, avatar, newsletter, admin, password) values (39, 'Tammi', 'Santore', 'tsantore12@sakura.ne.jp', 'https://thispersondoesnotexist.com/', false, false, 'szVFEv4k');
+INSERT INTO users (id, name, surname, email, avatar, newsletter, admin, password) values (40, 'Vanda', 'Rilston', 'vrilston13@wix.com', 'https://thispersondoesnotexist.com/', false, false, 'ieJ6lB');
+INSERT INTO users (id, name, surname, email, avatar, newsletter, admin, password) values (41, 'Darwin', 'Nurden', 'dnurden14@arizona.edu', 'https://thispersondoesnotexist.com/', false, false, 'L1yNDNTi');
+INSERT INTO users (id, name, surname, email, avatar, newsletter, admin, password) values (42, 'Nev', 'Philippe', 'nphilippe15@joomla.org', 'https://thispersondoesnotexist.com/', true, false, 'OdoEmY6f');
+INSERT INTO users (id, name, surname, email, avatar, newsletter, admin, password) values (43, 'Tris', 'Tythe', 'ttythe16@washingtonpost.com', 'https://thispersondoesnotexist.com/', false, true, 'QZIJfQF');
+INSERT INTO users (id, name, surname, email, avatar, newsletter, admin, password) values (44, 'Rubie', 'Rodgier', 'rrodgier17@privacy.gov.au', 'https://thispersondoesnotexist.com/', false, true, 'SBKtUAN');
+INSERT INTO users (id, name, surname, email, avatar, newsletter, admin, password) values (45, 'Biddie', 'Jarrett', 'bjarrett18@usgs.gov', 'https://thispersondoesnotexist.com/', false, false, '6w2bVfe');
+INSERT INTO users (id, name, surname, email, avatar, newsletter, admin, password) values (46, 'Martica', 'Ney', 'mney19@flickr.com', 'https://thispersondoesnotexist.com/', false, false, 'VCJOBWeT');
+INSERT INTO users (id, name, surname, email, avatar, newsletter, admin, password) values (47, 'Dew', 'Craig', 'dcraig1a@usda.gov', 'https://thispersondoesnotexist.com/', false, false, 'SbxDi1x9Ubt');
+INSERT INTO users (id, name, surname, email, avatar, newsletter, admin, password) values (48, 'Kimbra', 'Sultana', 'ksultana1b@princeton.edu', 'https://thispersondoesnotexist.com/', true, false, '4zfDVrDBpK4');
+INSERT INTO users (id, name, surname, email, avatar, newsletter, admin, password) values (49, 'Wilbert', 'Brindley', 'wbrindley1c@microsoft.com', 'https://thispersondoesnotexist.com/', false, false, 'DpfRZ15dT2ik');
+INSERT INTO users (id, name, surname, email, avatar, newsletter, admin, password) values (50, 'Windham', 'Garnam', 'wgarnam1d@etsy.com', 'https://thispersondoesnotexist.com/', true, true, 'hfEaoqT');
 INSERT INTO users (id, name, surname, email, avatar, newsletter, admin, password) values (51, 'admin', 'admin', 'admin', '1627698902593.jpg', false, true, '$2b$10$9brKXibQBlPSF04m8lkbjeLj66uDTNyIvFYXHjNGrU6XOFlIupYhW');
 
 -- ---------------------------------------------------------------------------
@@ -192,85 +147,105 @@ INSERT INTO users (id, name, surname, email, avatar, newsletter, admin, password
 -- category_game
 
 -- AGE OF EMPIRES II ('STRATEGY', 'REAL-TIME STRATEGY', 'CITY BUILDER', 'MULTIPLAYER')
-INSERT INTO category_game (id, game_id_category, category_id) VALUES (1, 1, 32);
-INSERT INTO category_game (id, game_id_category, category_id) VALUES (2, 1, 37);
-INSERT INTO category_game (id, game_id_category, category_id) VALUES (3, 1, 68);
-INSERT INTO category_game (id, game_id_category, category_id) VALUES (4, 1, 69);
+INSERT INTO category_game (id, game_id_category, category_id) VALUES (1, 1, 1);
+INSERT INTO category_game (id, game_id_category, category_id) VALUES (2, 1, 2);
+INSERT INTO category_game (id, game_id_category, category_id) VALUES (3, 1, 3);
+INSERT INTO category_game (id, game_id_category, category_id) VALUES (4, 1, 4);
 -- CELESTE ('PRECISION PLATFORMER', 'DIFFICULT', 'GREAT SOUNDTRACK', 'PIXEL GRAPHICS')
-INSERT INTO category_game (id, game_id_category, category_id) VALUES (5, 2, 70);
-INSERT INTO category_game (id, game_id_category, category_id) VALUES (6, 2, 71);
-INSERT INTO category_game (id, game_id_category, category_id) VALUES (7, 2, 72);
-INSERT INTO category_game (id, game_id_category, category_id) VALUES (8, 2, 73);
+INSERT INTO category_game (id, game_id_category, category_id) VALUES (5, 2, 5);
+INSERT INTO category_game (id, game_id_category, category_id) VALUES (6, 2, 6);
+INSERT INTO category_game (id, game_id_category, category_id) VALUES (7, 2, 7);
+INSERT INTO category_game (id, game_id_category, category_id) VALUES (8, 2, 8);
 -- HADES ('ACTION', 'INDIE', 'ROGUELIKE', 'RPG')
-INSERT INTO category_game (id, game_id_category, category_id) VALUES (9, 3, 1);
-INSERT INTO category_game (id, game_id_category, category_id) VALUES (10, 3, 74);
-INSERT INTO category_game (id, game_id_category, category_id) VALUES (11, 3, 22);
-INSERT INTO category_game (id, game_id_category, category_id) VALUES (12, 3, 75);
+INSERT INTO category_game (id, game_id_category, category_id) VALUES (9, 3, 9);
+INSERT INTO category_game (id, game_id_category, category_id) VALUES (10, 3, 10);
+INSERT INTO category_game (id, game_id_category, category_id) VALUES (11, 3, 11);
+INSERT INTO category_game (id, game_id_category, category_id) VALUES (12, 3, 12);
 -- HOLLOW KNIGHT ('METROIDVANIA', 'SOULS-LIKE', 'PLATFORMER', 'GREAT SOUNDTRACK')
-INSERT INTO category_game (id, game_id_category, category_id) VALUES (13, 4, 12);
-INSERT INTO category_game (id, game_id_category, category_id) VALUES (14, 4, 76);
-INSERT INTO category_game (id, game_id_category, category_id) VALUES (15, 4, 2);
-INSERT INTO category_game (id, game_id_category, category_id) VALUES (16, 4, 72);
+INSERT INTO category_game (id, game_id_category, category_id) VALUES (13, 4, 13);
+INSERT INTO category_game (id, game_id_category, category_id) VALUES (14, 4, 14);
+INSERT INTO category_game (id, game_id_category, category_id) VALUES (15, 4, 15);
+INSERT INTO category_game (id, game_id_category, category_id) VALUES (16, 4, 7);
 -- MINECRAFT ('SURVIVAL', 'ADVENTURE', 'CREATIVE', 'OPEN WORLD')
-INSERT INTO category_game (id, game_id_category, category_id) VALUES (17, 5, 7);
-INSERT INTO category_game (id, game_id_category, category_id) VALUES (18, 5, 13);
-INSERT INTO category_game (id, game_id_category, category_id) VALUES (19, 5, 66);
-INSERT INTO category_game (id, game_id_category, category_id) VALUES (20, 5, 67);
+INSERT INTO category_game (id, game_id_category, category_id) VALUES (17, 5, 16);
+INSERT INTO category_game (id, game_id_category, category_id) VALUES (18, 5, 17);
+INSERT INTO category_game (id, game_id_category, category_id) VALUES (19, 5, 18);
+INSERT INTO category_game (id, game_id_category, category_id) VALUES (20, 5, 19);
 -- PORTAL ('PUZZLE', 'PLATFORMER', 'FIRST-PERSON', 'SINGLEPLAYER')
-INSERT INTO category_game (id, game_id_category, category_id) VALUES (21, 6, 79);
-INSERT INTO category_game (id, game_id_category, category_id) VALUES (22, 6, 2);
-INSERT INTO category_game (id, game_id_category, category_id) VALUES (23, 6, 77);
-INSERT INTO category_game (id, game_id_category, category_id) VALUES (24, 6, 78);
--- RAINBOW SIX SIEGE ('FIRST-PERSON SHOOTER', 'MULTIPLAYER', 'TACTICAL', 
-INSERT INTO category_game (id, game_id_category, category_id) VALUES (25, 7, 80);
-INSERT INTO category_game (id, game_id_category, category_id) VALUES (26, 7, 69);
-INSERT INTO category_game (id, game_id_category, category_id) VALUES (27, 7, 81);
-INSERT INTO category_game (id, game_id_category, category_id) VALUES (28, 7, 82);
+INSERT INTO category_game (id, game_id_category, category_id) VALUES (21, 6, 20);
+INSERT INTO category_game (id, game_id_category, category_id) VALUES (22, 6, 15);
+INSERT INTO category_game (id, game_id_category, category_id) VALUES (23, 6, 21);
+INSERT INTO category_game (id, game_id_category, category_id) VALUES (24, 6, 22);
+-- RAINBOW SIX SIEGE ('FIRST-PERSON SHOOTER', 'MULTIPLAYER', 'TACTICAL', 'TEAM-BASED')
+INSERT INTO category_game (id, game_id_category, category_id) VALUES (25, 7, 23);
+INSERT INTO category_game (id, game_id_category, category_id) VALUES (26, 7, 4);
+INSERT INTO category_game (id, game_id_category, category_id) VALUES (27, 7, 24);
+INSERT INTO category_game (id, game_id_category, category_id) VALUES (28, 7, 25);
 -- SEKIRO ('SOULS-LIKE', 'DIFFICULT', 'ACTION', 'SINGLEPLAYER')
-INSERT INTO category_game (id, game_id_category, category_id) VALUES (29, 8, 76);
-INSERT INTO category_game (id, game_id_category, category_id) VALUES (30, 8, 71);
-INSERT INTO category_game (id, game_id_category, category_id) VALUES (31, 8, 1);
-INSERT INTO category_game (id, game_id_category, category_id) VALUES (32, 8, 78);
+INSERT INTO category_game (id, game_id_category, category_id) VALUES (29, 8, 14);
+INSERT INTO category_game (id, game_id_category, category_id) VALUES (30, 8, 6);
+INSERT INTO category_game (id, game_id_category, category_id) VALUES (31, 8, 9);
+INSERT INTO category_game (id, game_id_category, category_id) VALUES (32, 8, 22);
 -- STARDEW VALLEY ('FARMING SIM', 'LIFE SIMULATION', 'RPG', 'PIXEL GRAPHICS')
-INSERT INTO category_game (id, game_id_category, category_id) VALUES (33, 9, 83);
-INSERT INTO category_game (id, game_id_category, category_id) VALUES (34, 9, 30);
-INSERT INTO category_game (id, game_id_category, category_id) VALUES (35, 9, 75);
-INSERT INTO category_game (id, game_id_category, category_id) VALUES (36, 9, 73);
+INSERT INTO category_game (id, game_id_category, category_id) VALUES (33, 9, 26);
+INSERT INTO category_game (id, game_id_category, category_id) VALUES (34, 9, 27);
+INSERT INTO category_game (id, game_id_category, category_id) VALUES (35, 9, 12);
+INSERT INTO category_game (id, game_id_category, category_id) VALUES (36, 9, 8);
 -- TERRARIA ('OPEN WORLD', 'SURVIVAL', 'SANDBOX', 'MULTIPLAYER')
-INSERT INTO category_game (id, game_id_category, category_id) VALUES (37, 10, 67);
-INSERT INTO category_game (id, game_id_category, category_id) VALUES (38, 10, 7);
-INSERT INTO category_game (id, game_id_category, category_id) VALUES (39, 10, 65);
-INSERT INTO category_game (id, game_id_category, category_id) VALUES (40, 10, 69);
+INSERT INTO category_game (id, game_id_category, category_id) VALUES (37, 10, 19);
+INSERT INTO category_game (id, game_id_category, category_id) VALUES (38, 10, 16);
+INSERT INTO category_game (id, game_id_category, category_id) VALUES (39, 10, 28);
+INSERT INTO category_game (id, game_id_category, category_id) VALUES (40, 10, 4);
 -- CYBERPUNK 2077 ('CYBERPUNK', 'OPEN WORLD', 'RPG', 'SCI-FI')
-INSERT INTO category_game (id, game_id_category, category_id) VALUES (41, 11, 84);
-INSERT INTO category_game (id, game_id_category, category_id) VALUES (42, 11, 67);
-INSERT INTO category_game (id, game_id_category, category_id) VALUES (43, 11, 75);
-INSERT INTO category_game (id, game_id_category, category_id) VALUES (44, 11, 85);
+INSERT INTO category_game (id, game_id_category, category_id) VALUES (41, 11, 29);
+INSERT INTO category_game (id, game_id_category, category_id) VALUES (42, 11, 19);
+INSERT INTO category_game (id, game_id_category, category_id) VALUES (43, 11, 12);
+INSERT INTO category_game (id, game_id_category, category_id) VALUES (44, 11, 30);
 -- SKYRIM ('OPEN WORLD', 'RPG', 'ADVENTURE', 'SINGLEPLAYER')
-INSERT INTO category_game (id, game_id_category, category_id) VALUES (45, 12, 67);
-INSERT INTO category_game (id, game_id_category, category_id) VALUES (46, 12, 75);
-INSERT INTO category_game (id, game_id_category, category_id) VALUES (47, 12, 13);
-INSERT INTO category_game (id, game_id_category, category_id) VALUES (48, 12, 78);
+INSERT INTO category_game (id, game_id_category, category_id) VALUES (45, 12, 19);
+INSERT INTO category_game (id, game_id_category, category_id) VALUES (46, 12, 12);
+INSERT INTO category_game (id, game_id_category, category_id) VALUES (47, 12, 17);
+INSERT INTO category_game (id, game_id_category, category_id) VALUES (48, 12, 22);
 -- DARK SOULS III ('SOULS-LIKE', 'DARK FANTASY', 'DIFFICULT', 'RPG')
-INSERT INTO category_game (id, game_id_category, category_id) VALUES (49, 13, 76);
-INSERT INTO category_game (id, game_id_category, category_id) VALUES (50, 13, 86);
-INSERT INTO category_game (id, game_id_category, category_id) VALUES (51, 13, 71);
-INSERT INTO category_game (id, game_id_category, category_id) VALUES (52, 13, 75);
+INSERT INTO category_game (id, game_id_category, category_id) VALUES (49, 13, 14);
+INSERT INTO category_game (id, game_id_category, category_id) VALUES (50, 13, 31);
+INSERT INTO category_game (id, game_id_category, category_id) VALUES (51, 13, 6);
+INSERT INTO category_game (id, game_id_category, category_id) VALUES (52, 13, 12);
 -- THE WITCHER III ('OPEN WORLD', 'RPG', 'STORY RICH', 'ATMOSPHERIC')
-INSERT INTO category_game (id, game_id_category, category_id) VALUES (53, 14, 67);
-INSERT INTO category_game (id, game_id_category, category_id) VALUES (54, 14, 75);
-INSERT INTO category_game (id, game_id_category, category_id) VALUES (55, 14, 87);
-INSERT INTO category_game (id, game_id_category, category_id) VALUES (56, 14, 88);
+INSERT INTO category_game (id, game_id_category, category_id) VALUES (53, 14, 19);
+INSERT INTO category_game (id, game_id_category, category_id) VALUES (54, 14, 12);
+INSERT INTO category_game (id, game_id_category, category_id) VALUES (55, 14, 32);
+INSERT INTO category_game (id, game_id_category, category_id) VALUES (56, 14, 33);
 -- CUPHEAD ('DIFFICULT', 'CARTOON', 'PLATFORMER', 'GREAT SOUNDTRACK')
-INSERT INTO category_game (id, game_id_category, category_id) VALUES (57, 15, 71);
-INSERT INTO category_game (id, game_id_category, category_id) VALUES (58, 15, 89);
-INSERT INTO category_game (id, game_id_category, category_id) VALUES (59, 15, 2);
-INSERT INTO category_game (id, game_id_category, category_id) VALUES (60, 15, 72);
+INSERT INTO category_game (id, game_id_category, category_id) VALUES (57, 15, 6);
+INSERT INTO category_game (id, game_id_category, category_id) VALUES (58, 15, 34);
+INSERT INTO category_game (id, game_id_category, category_id) VALUES (59, 15, 15);
+INSERT INTO category_game (id, game_id_category, category_id) VALUES (60, 15, 7);
 -- FALL GUYS ('MULTIPLAYER', 'FUNNY', 'BATTLE ROYALE', 'ONLINE CO-OP')
-INSERT INTO category_game (id, game_id_category, category_id) VALUES (61, 16, 69);
-INSERT INTO category_game (id, game_id_category, category_id) VALUES (62, 16, 90);
-INSERT INTO category_game (id, game_id_category, category_id) VALUES (63, 16, 9);
-INSERT INTO category_game (id, game_id_category, category_id) VALUES (64, 16, 91);
+INSERT INTO category_game (id, game_id_category, category_id) VALUES (61, 16, 4);
+INSERT INTO category_game (id, game_id_category, category_id) VALUES (62, 16, 35);
+INSERT INTO category_game (id, game_id_category, category_id) VALUES (63, 16, 36);
+INSERT INTO category_game (id, game_id_category, category_id) VALUES (64, 16, 37);
+-- HUMANKIND ('STRAGETY', 'TURN-BASED', 'HISTORICAL', 'MULTIPLAYER')
+INSERT INTO category_game (id, game_id_category, category_id) VALUES (65, 17, 1);
+INSERT INTO category_game (id, game_id_category, category_id) VALUES (66, 17, 38);
+INSERT INTO category_game (id, game_id_category, category_id) VALUES (67, 17, 39);
+INSERT INTO category_game (id, game_id_category, category_id) VALUES (68, 17, 4);
+-- AGE OF EMPIRES III ('STRATEGY', 'REAL-TIME STRATEGY', 'CITY BUILDER', 'MULTIPLAYER')
+INSERT INTO category_game (id, game_id_category, category_id) VALUES (69, 18, 1);
+INSERT INTO category_game (id, game_id_category, category_id) VALUES (70, 18, 2);
+INSERT INTO category_game (id, game_id_category, category_id) VALUES (71, 18, 3);
+INSERT INTO category_game (id, game_id_category, category_id) VALUES (72, 18, 4);
+-- RIMWORLD ('CITY BUILDER', 'SURVIVAL', 'STRATEGY', 'MANAGEMENT')
+INSERT INTO category_game (id, game_id_category, category_id) VALUES (73, 19, 3);
+INSERT INTO category_game (id, game_id_category, category_id) VALUES (74, 19, 16);
+INSERT INTO category_game (id, game_id_category, category_id) VALUES (75, 19, 1);
+INSERT INTO category_game (id, game_id_category, category_id) VALUES (76, 19, 40);
+-- COUNTER-STRIKE GO ('MULTIPLAYER', 'FIRST-PERSON SHOOTER', 'ACTION', 'TEAM-BASED')
+INSERT INTO category_game (id, game_id_category, category_id) VALUES (77, 20, 4);
+INSERT INTO category_game (id, game_id_category, category_id) VALUES (78, 20, 23);
+INSERT INTO category_game (id, game_id_category, category_id) VALUES (79, 20, 9);
+INSERT INTO category_game (id, game_id_category, category_id) VALUES (80, 20, 25);
 
 -- QUERY PARA VER RESULTADOS EN WORKBENCH
 # SELECT category_game.id, games.title AS 'Juego', categories.title AS 'Categoría'
@@ -352,6 +327,22 @@ INSERT INTO platform_game (id, game_id_platform, platform_id) VALUES (50, 15, 3)
 INSERT INTO platform_game (id, game_id_platform, platform_id) VALUES (51, 16, 1);
 INSERT INTO platform_game (id, game_id_platform, platform_id) VALUES (52, 16, 2);
 INSERT INTO platform_game (id, game_id_platform, platform_id) VALUES (53, 16, 3);
+-- HUMANKIND
+INSERT INTO platform_game (id, game_id_platform, platform_id) VALUES (51, 17, 1);
+INSERT INTO platform_game (id, game_id_platform, platform_id) VALUES (52, 17, 2);
+INSERT INTO platform_game (id, game_id_platform, platform_id) VALUES (53, 17, 3);
+-- AGE OF EMPIRES III
+INSERT INTO platform_game (id, game_id_platform, platform_id) VALUES (54, 18, 1);
+INSERT INTO platform_game (id, game_id_platform, platform_id) VALUES (55, 18, 2);
+INSERT INTO platform_game (id, game_id_platform, platform_id) VALUES (56, 18, 3);
+-- RIMWORLD
+INSERT INTO platform_game (id, game_id_platform, platform_id) VALUES (57, 19, 1);
+INSERT INTO platform_game (id, game_id_platform, platform_id) VALUES (58, 19, 3);
+-- COUNTER-STRIKE GO
+INSERT INTO platform_game (id, game_id_platform, platform_id) VALUES (59, 20, 1);
+INSERT INTO platform_game (id, game_id_platform, platform_id) VALUES (60, 20, 2);
+INSERT INTO platform_game (id, game_id_platform, platform_id) VALUES (61, 20, 3);
+INSERT INTO platform_game (id, game_id_platform, platform_id) VALUES (62, 20, 4);
 
 -- QUERY PARA VER RESULTADOS EN WORKBENCH
 # SELECT platform_game.id, games.title AS 'Juego', platforms.title AS 'Plataforma'
@@ -364,42 +355,46 @@ INSERT INTO platform_game (id, game_id_platform, platform_id) VALUES (53, 16, 3)
 
 -- status_game
 
--- el juego 1 es RELEVANT
+-- age of empires ii
 INSERT INTO status_game (id, game_id_status, status_id) VALUES (1, 1, 1);
--- el juego 2 es RELEVANT
+-- celeste
 INSERT INTO status_game (id, game_id_status, status_id) VALUES (2, 2, 1);
--- el juego 2 es IN OFFER
 INSERT INTO status_game (id, game_id_status, status_id) VALUES (3, 2, 2);
--- el juego 3 es IN OFFER
+-- hades
 INSERT INTO status_game (id, game_id_status, status_id) VALUES (4, 3, 2);
--- el juego 4 es IN OFFER
+-- hollow knight
 INSERT INTO status_game (id, game_id_status, status_id) VALUES (5, 4, 2);
--- el juego 5 es RELEVANT
+-- minecraft
 INSERT INTO status_game (id, game_id_status, status_id) VALUES (6, 5, 1);
--- el juego 6 es IN OFFER
+-- portal
 INSERT INTO status_game (id, game_id_status, status_id) VALUES (7, 6, 2);
--- el juego 8 es RELEVANT
+-- rainbow six siege
+-- sekiro
 INSERT INTO status_game (id, game_id_status, status_id) VALUES (8, 8, 1);
--- el juego 9 es RELEVANT
+-- stardew valley
 INSERT INTO status_game (id, game_id_status, status_id) VALUES (9, 9, 1);
--- el juego 9 es IN OFFER
 INSERT INTO status_game (id, game_id_status, status_id) VALUES (10, 9, 2);
--- el juego 10 es IN OFFER
+-- terraria
 INSERT INTO status_game (id, game_id_status, status_id) VALUES (11, 10, 2);
--- el juego 11 es IN OFFER
+-- cyberpunk 2077
 INSERT INTO status_game (id, game_id_status, status_id) VALUES (12, 11, 2);
--- el juego 12 es RELEVANT             
+-- skyrim
 INSERT INTO status_game (id, game_id_status, status_id) VALUES (13, 12, 1);
--- el juego 13 es RELEVANT
+-- dark souls iii
 INSERT INTO status_game (id, game_id_status, status_id) VALUES (14, 13, 1);
--- el juego 13 es RELEVANT
 INSERT INTO status_game (id, game_id_status, status_id) VALUES (15, 13, 2);
--- el juego 15 es RELEVANT
+-- the witcher iii
+-- cuphead
 INSERT INTO status_game (id, game_id_status, status_id) VALUES (16, 15, 1);
--- el juego 15 es IN OFFER
 INSERT INTO status_game (id, game_id_status, status_id) VALUES (17, 15, 2);
--- el juego 16 es RELEVANT
+-- fall guys
 INSERT INTO status_game (id, game_id_status, status_id) VALUES (18, 16, 1);
+-- humankind
+INSERT INTO status_game (id, game_id_status, status_id) VALUES (19, 17, 1);
+-- age of empires iii
+INSERT INTO status_game (id, game_id_status, status_id) VALUES (20, 18, 2);
+-- rimworld
+-- csgo
 
 -- QUERY PARA VER RESULTADOS EN WORKBENCH
 # SELECT status_game.id, games.title AS 'Juego', status.name AS 'Estado'
