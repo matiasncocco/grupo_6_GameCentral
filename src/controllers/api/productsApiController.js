@@ -1,6 +1,6 @@
 let db = require('../../database/models');
 
-let gamesApiController = {
+let productsApiController = {
     list: (req,res) => {
         db.Game.findAll()
             .then(games => {
@@ -37,4 +37,4 @@ let gamesApiController = {
     },
 };
 
-module.exports = gamesApiController;
+module.exports = productsApiController;

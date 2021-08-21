@@ -106,7 +106,7 @@ function validateTitle() {
                 title: newTitle
             })
         };
-        fetch('http://localhost:3001/api/games/free-title', settings)
+        fetch('http://localhost:3001/api/products/free-title', settings)
             .then(response => { return response.json() })
             .then(response => {
                 response.result === false ? errors.push({
@@ -117,7 +117,7 @@ function validateTitle() {
                 );
             })
             .catch(err => {
-                console.log(err);
+                throw new Error(err);
             });
     };
     errorClass(title);

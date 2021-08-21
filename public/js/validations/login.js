@@ -61,7 +61,7 @@ function validateEmail() {
                 );
             })
             .catch(err => {
-                console.log(err);
+                throw new Error(err);
             });
     }
     errorClass(email);

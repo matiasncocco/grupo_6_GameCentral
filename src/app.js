@@ -55,28 +55,28 @@ app.use(
 );
 
 // requiero ruteos para API REST
-let apiCategoriesRouter = require('./routes/api/categories');
 let apiUsersRouter = require('./routes/api/users');
+let apiProductsRouter = require('./routes/api/products');
+let apiCategoriesRouter = require('./routes/api/categories');
 let apiPlatformsRouter = require('./routes/api/platforms');
-let apiGamesRouter = require('./routes/api/games');
 let apiStatusRouter = require('./routes/api/status');
 
 // middlewares de rutas API REST
-app.use(
-    '/api/categories',
-    apiCategoriesRouter
-);
 app.use(
     '/api/users',
     apiUsersRouter
 );
 app.use(
-    '/api/platforms',
-    apiPlatformsRouter
+    '/api/products',
+    apiProductsRouter
 );
 app.use(
-    '/api/games',
-    apiGamesRouter
+    '/api/categories',
+    apiCategoriesRouter
+);
+app.use(
+    '/api/platforms',
+    apiPlatformsRouter
 );
 app.use(
     '/api/status',
