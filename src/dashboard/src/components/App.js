@@ -1,10 +1,9 @@
-import User from './User';
+import Sidebar from './Sidebar';
 
 let App = () => {
   return (
     <>
-      <h1>hello world</h1>
-      <User />
+      <Sidebar />
     </>
   )
 };

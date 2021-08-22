@@ -22,17 +22,12 @@ router.get(
     productsController.cart
 );
 
-// vista todos los productos
-router.get(
-    '/:id?',
-    productsController.index
-);
-
 // resultados de búsqueda
-router.get(
-    '/results',
-    productsController.results
-);
+// YET TO IMPLEMENT
+// router.get(
+//     '/results',
+//     productsController.results
+// );
 
 // vista creación de producto <form>
 router.get(
@@ -43,8 +38,29 @@ router.get(
 
 // vista detalle de producto
 router.get(
-    '/:id',
+    '/detail/:id',
     productsController.show
+);
+
+// procesar edición de producto
+router.put(
+    '/detail/:id',
+    upload.single('img'),
+    editValidations,
+    productsController.update
+);
+
+// vista de edición de producto. <form> de creación con datos
+router.get(
+    '/edit/:id',
+    adminMiddleware,
+    productsController.edit
+);
+
+// vista todos los productos
+router.get(
+    '/:id?',
+    productsController.index
 );
 
 // procesar creación de producto
@@ -53,21 +69,6 @@ router.post(
     upload.single('img'),
     creationValidations,
     productsController.store
-);
-
-// vista de edición de producto. <form> de creación con datos
-router.get(
-    '/:id/edit',
-    adminMiddleware,
-    productsController.edit
-);
-
-// procesar edición de producto
-router.put(
-    '/:id',
-    upload.single('img'),
-    editValidations,
-    productsController.update
 );
 
 // eliminar producto

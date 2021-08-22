@@ -388,7 +388,9 @@ let productsController = {
 
             // cuando haga todo lo anterior:
             try {
-                res.redirect('/products');
+                res.redirect(
+                    '/products/detail/' + req.params.id
+                );
             } catch(err) {
                 res.status(500).render('error', {
                     status: 500,
