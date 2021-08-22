@@ -1,0 +1,36 @@
+.sidebar {
+    width: 30%;
+    background: linear-gradient(#E2DDF9,#858BB7);
+    margin-bottom: -5000px;
+    padding-bottom: 5000px;
+}
+
+/*
+TABLETS
+*/
+@media (min-width: 576px) {
+
+}
+
+/*
+DESKTOP
+*/
+@media (min-width: 768px) {
+
+}
+
+/*
+PANTALLAS +
+*/
+@media (min-width: 992px) {
+
+}
+
+/*
+LIMITAR ANCHO MÁXIMO 
+*/
+@media (min-width: 1200px) {
+
+    /* max-width: 1200px; */
+
+}
