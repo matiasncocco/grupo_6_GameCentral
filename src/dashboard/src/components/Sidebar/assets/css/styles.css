@@ -1,8 +1,8 @@
 .sidebar {
-    width: 30%;
+    width: 10%;
+    height: 100vh;
     background: linear-gradient(#E2DDF9,#858BB7);
-    margin-bottom: -5000px;
-    padding-bottom: 5000px;
+    border-right: 2px solid #B6B1F1;
 }
 
 /*

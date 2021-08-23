@@ -5,20 +5,14 @@ let usersApiController = {
         db.User.findAll()
             .then(users => {
                 let newUsers = users.map(user => {
-                    return {
-                        id: user.id,
-                        name: user.name,
-                        surname: user.surname,
-                        email: user.email,
-                        avatar: user.avatar,
-                        newsletter: user.newsletter,
-                        // country: user.country
-                    };
+                    delete user.dataValues.password;
+                    delete user.dataValues.admin;
+                    return user.dataValues;
                 });
                 res.status(200).json({
                     status: 200,
                     count: users.length,
-                    newUsers
+                    users: newUsers
                 });
             })
             .catch(err => {
@@ -33,9 +27,10 @@ let usersApiController = {
         db.User.findByPk(req.params.id)
             .then(user => {
                 delete user.dataValues.password;
+                delete user.dataValues.admin;
                 res.status(200).json({
                     stauts: 200,
-                    user
+                    user: user
                 });
             })
             .catch(err => {

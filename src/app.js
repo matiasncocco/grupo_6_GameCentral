@@ -85,7 +85,6 @@ app.use(
 
 // middleware error handling
 app.use((req, res, next) => {
-    console.log(req.status);
     res.status(404).render('error', {
         status: 404,
         title: 'ERROR',
