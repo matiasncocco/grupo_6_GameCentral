@@ -2,14 +2,14 @@ import './assets/css/styles.css'
 
 let Sidebar = () => {
     return (
-        <div className="sidebar">
-            <h1>
-                Sidebar
-            </h1>
-            <h2>
-                Sidebar
-            </h2>
-        </div>
+        <aside className="sidebar">
+            <p className="logo-box">
+                GC
+            </p>
+            <h3 className="trademark">
+                Game Central ©
+            </h3>
+        </aside>
     )
 };
 

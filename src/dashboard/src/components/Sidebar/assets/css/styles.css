@@ -1,15 +1,50 @@
 .sidebar {
-    width: 10%;
+    width: 30%;
     height: 100vh;
     background: linear-gradient(#E2DDF9,#858BB7);
     border-right: 2px solid #B6B1F1;
+    display: flex;
+    flex-flow: column wrap;
+    align-items: center;
+    text-align: center;
+}
+
+.logo-box {
+    color: white;
+    width: 100%;
+    margin: 5% 0;
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    font-size: 30px;
+    line-height: 50px;
+    border: 50%;
+    background: #B14593;
+}
+
+.trademark {
+    display: none;
 }
 
 /*
 TABLETS
 */
 @media (min-width: 576px) {
+    .sidebar {
+        width: 175px;
+    }
 
+    .logo-box {
+        display: none;
+    }
+
+    .trademark {
+        display: block;
+        margin: 10% 0;
+        color: #FFF;
+        text-shadow: -2px 0 black, 0 2px black, 1px 0 black, 0 -1px black;
+        width: 100%;
+    }
 }
 
 /*

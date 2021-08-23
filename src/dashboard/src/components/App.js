@@ -14,7 +14,6 @@ let App = () => {
   return (
     <div style={ appStyle } className="container">
       <Sidebar />
-
     </div>
   )
 };
