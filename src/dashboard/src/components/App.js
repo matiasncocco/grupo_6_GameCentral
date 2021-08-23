@@ -1,6 +1,7 @@
 import '../assets/css/styles.css';
 import background from '../assets/img/background.jpeg'
 import Sidebar from './Sidebar';
+import CountPanel from './CountPanel';
 
 let appStyle = {
   backgroundImage: `url(${background})`,
@@ -14,6 +15,7 @@ let App = () => {
   return (
     <div style={ appStyle } className="container">
       <Sidebar />
+      <CountPanel />
     </div>
   )
 };
