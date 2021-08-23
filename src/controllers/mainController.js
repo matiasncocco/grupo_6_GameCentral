@@ -14,7 +14,11 @@ let mainController = {
                 });
             })
             .catch(err => {
-                res.send(err);
+                res.status(500).render('error', {
+                    status: 500,
+                    title: 'ERROR',
+                    errorDetail: err
+                });
             });
     },
     
@@ -24,16 +28,18 @@ let mainController = {
         });
     },
 
+    // en construcción
     contact: (req, res) => {
         res.render('contact', {
             title: 'Contacto'
         });
     },
 
+    // en construcción
     processContact: (req, res) => {
         res.send({
             body: req.body
-        })
+        });
     }
 };
 

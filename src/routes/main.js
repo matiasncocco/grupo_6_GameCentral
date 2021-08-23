@@ -12,11 +12,13 @@ router.get(
     mainController.termsConditions
 );
 
+// en construcción
 router.get(
     '/contact',
     mainController.contact
 );
 
+// en construcción
 router.post(
     '/contact',
     mainController.processContact
