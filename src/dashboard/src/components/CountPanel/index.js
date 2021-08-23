@@ -7,10 +7,7 @@ let CountPanel = () => {
             <header className='count-header'>
                 <h2>Recuento</h2>
             </header>
-            <header className='count-subheader'>
-                Juegos
-            </header>
-            <section className='count-subpanel'>
+            <section className="count-panel-section">
                 <CountItem 
                     title='Juegos'
                     number='20'
@@ -29,11 +26,6 @@ let CountPanel = () => {
                     icon=''
                     color=''
                 />
-            </section>
-            <header className='count-subheader'>
-                Juegos
-            </header>
-            <section className='count-subpanel'>
                 <CountItem 
                     title='Usuarios'
                     number='51'

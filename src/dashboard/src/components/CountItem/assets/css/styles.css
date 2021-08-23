@@ -1,6 +1,20 @@
 .count-item {
-    width: 33%;
+    width: 50%;
     border: #404040 2px solid;
     border-radius: 8px;
     background-color: #FFF;
+    display: flex;
+    flex-flow: row wrap;
+}
+
+.count-item-title {
+
+}
+
+.count-item-number {
+
+}
+
+.count-item-icon {
+
 }
