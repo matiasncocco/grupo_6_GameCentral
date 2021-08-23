@@ -1,7 +1,6 @@
 let express = require('express');
 let router = express.Router();
 let productsApiController = require ('../../controllers/api/productsApiController');
-const usersApiController = require('../../controllers/api/usersApiController');
 
 router.get(
     '/',
@@ -11,7 +10,7 @@ router.get(
 router.get(
     '/:id',
     productsApiController.oneGame
-)
+);
 
 router.post(
     '/free-title',
