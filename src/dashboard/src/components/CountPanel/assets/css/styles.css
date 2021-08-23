@@ -1,9 +1,5 @@
 .count-panel {
     width: 50%;
-}
-
-.count-panel-section {
-    width: 100%;
     display: flex;
     flex-flow: row wrap;
 }

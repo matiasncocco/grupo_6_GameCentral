@@ -1,13 +1,13 @@
 .count-item {
     width: 50%;
-    border: #404040 2px solid;
+    border: #808080 2px solid;
     border-radius: 8px;
     background-color: #FFF;
     display: flex;
     flex-flow: row wrap;
 }
 
-.count-item-title {
+/* .count-item-title {
 
 }
 
@@ -17,4 +17,4 @@
 
 .count-item-icon {
 
-}
+} */
