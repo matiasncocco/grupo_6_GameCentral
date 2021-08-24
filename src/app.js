@@ -17,7 +17,7 @@ let session = require('express-session');
 let cookies = require('cookie-parser');
 
 // middlewares para: 
-// public, req.body, PUT & DELETE, session & cookies
+// public, req.body, PUT & DELETE, session & cookies, cors
 app.use(express.static(publicPath));
 app.use(express.urlencoded ({ extended:false }));
 app.use(express.json());
@@ -83,7 +83,7 @@ app.use(
     apiStatusRouter
 );
 
-// middleware error handling
+// middleware error 404 not found handling
 app.use((req, res, next) => {
     res.status(404).render('error', {
         status: 404,
@@ -94,4 +94,6 @@ app.use((req, res, next) => {
 });
 
 // levanto el server
-app.listen(3001, () => console.log('Servidor corriendo en el puerto 3001'));
+app.listen(
+    3001, () => console.log('Servidor corriendo en el puerto 3001')
+);

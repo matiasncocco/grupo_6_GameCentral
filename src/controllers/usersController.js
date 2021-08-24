@@ -259,12 +259,8 @@ let usersController = {
                     });
                     return user;
                 } else {
-                    res.status(401).render('error', {
-                        status: 401,
-                        title: 'ERROR',
-                        errorDetail: 'Unauthorized: FORBIDDEN'
-                    });
-                }
+                    throw new Error('Unauthorized: FORBIDDEN');
+                };
             })
             .then(user => {
                 db.User.destroy({
