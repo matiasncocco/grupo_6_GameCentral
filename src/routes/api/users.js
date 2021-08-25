@@ -7,6 +7,11 @@ router.get(
     usersApiController.list
 );
 
+router.get(
+    '/last',
+    usersApiController.lastUser
+)
+
 // para validación del front
 router.post(
     '/free-email',

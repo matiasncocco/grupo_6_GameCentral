@@ -12,6 +12,12 @@ router.get(
     mainController.termsConditions
 );
 
+// this is wrong, but works
+router.get(
+    '/img/users/https://thispersondoesnotexist.com/',
+    mainController.thisIsWrong
+);
+
 // en construcción
 router.get(
     '/contact',

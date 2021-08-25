@@ -10,6 +10,7 @@ let usersApiController = {
                     delete user.dataValues.country;
                     delete user.dataValues.createdAt;
                     delete user.dataValues.updatedAt;
+                    user.dataValues.avatar = 'http://localhost:3001/img/users/' + user.dataValues.avatar;
                     return user.dataValues;
                 });
                 res.status(200).json({
@@ -17,6 +18,32 @@ let usersApiController = {
                     count: users.length,
                     users
                 });
+            })
+            .catch(err => {
+                res.status(500).json({
+                    status: 500,
+                    err
+                });
+            });
+    },
+
+    lastUser: (req, res) => {
+        db.User.findOne({
+            order: [
+                ['id', 'DESC']
+            ]
+        })
+            .then(user => {
+                delete user.dataValues.password;
+                delete user.dataValues.admin;
+                delete user.dataValues.country;
+                delete user.dataValues.createdAt;
+                delete user.dataValues.updatedAt;
+                user.dataValues.avatar = 'http://localhost:3001/img/users/' + user.dataValues.avatar;
+                res.status(200).json({
+                    stauts: 200,
+                    user
+                })
             })
             .catch(err => {
                 res.status(500).json({
@@ -34,6 +61,7 @@ let usersApiController = {
                 delete user.dataValues.country;
                 delete user.dataValues.createdAt;
                 delete user.dataValues.updatedAt;
+                user.dataValues.avatar = 'http://localhost:3001/img/users/' + user.dataValues.avatar;
                 res.status(200).json({
                     stauts: 200,
                     user

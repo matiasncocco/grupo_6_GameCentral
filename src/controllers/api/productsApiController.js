@@ -45,9 +45,7 @@ let productsApiController = {
     lastGame: (req, res) => {
         db.Game.findOne({
             order: [
-                [
-                    'id', 'DESC'
-                ]
+                ['id', 'DESC']
             ]
         })
             .then(game => {
@@ -71,12 +69,14 @@ let productsApiController = {
     oneGame: (req, res) => {
         db.Game.findByPk(req.params.id)
             .then (game => {
+                delete game.description;
+                delete game.createdAt;
+                delete game.updatedAt;
+                delete game.deletedAt;
                 res.status(200).json({
                     status: 200,
                     game
-                    // categorias:
-                    // plataformas:
-                })
+                });
             })
             .catch(err => {
                 res.status(500).json({

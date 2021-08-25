@@ -28,6 +28,11 @@ let mainController = {
         });
     },
 
+    // this is wrong, but works
+    thisIsWrong: (req, res) => {
+        res.redirect('http://thispersondoesnotexist.com/');
+    },
+
     // en construcción
     contact: (req, res) => {
         res.render('contact', {
