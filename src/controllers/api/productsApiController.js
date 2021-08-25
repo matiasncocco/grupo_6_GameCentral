@@ -53,6 +53,7 @@ let productsApiController = {
                 delete game.dataValues.createdAt;
                 delete game.dataValues.updatedAt;
                 delete game.dataValues.deletedAt;
+                game.dataValues.img = 'http://localhost:3001/img/users/' + game.dataValues.img;
                 res.status(200).json({
                     status: 200,
                     game
@@ -73,6 +74,7 @@ let productsApiController = {
                 delete game.createdAt;
                 delete game.updatedAt;
                 delete game.deletedAt;
+                game.dataValues.img = 'http://localhost:3001/img/users/' + game.dataValues.img;
                 res.status(200).json({
                     status: 200,
                     game

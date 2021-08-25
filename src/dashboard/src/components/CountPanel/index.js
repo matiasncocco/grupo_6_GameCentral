@@ -45,18 +45,18 @@ let CountPanel = () => {
         <section className='count-panel'>
             {
                 count.length === 0 &&
-                <div>
+                <p>
                     SPINNER
-                </div>
+                </p>
             }
             {
                 count.length > 0 &&
                 count.map((thing, i) => {
                     return (
                         <CountItem key={ thing + i}
-                        title={ thing.thing }
-                        number={ thing.total }
-                    />
+                            title={ thing.thing }
+                            number={ thing.total }
+                        />
                     )
                 })
             }

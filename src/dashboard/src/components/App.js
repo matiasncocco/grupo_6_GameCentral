@@ -1,21 +1,12 @@
 import '../assets/css/styles.css';
-import background from '../assets/img/background.jpeg'
 import Sidebar from './Sidebar';
-import CountPanel from './CountPanel';
-
-let appStyle = {
-  backgroundImage: `url(${background})`,
-  backgroundPosition: 'center center',
-  backgroundAttachment: 'fixed',
-  backgroundRepeat: 'no-repeat',
-  backgroundSize: 'cover'
-}
+import Main from './Main';
 
 let App = () => {
   return (
-    <div style={ appStyle } className='container'>
+    <div className='container'>
       <Sidebar />
-      <CountPanel />
+      <Main />
     </div>
   )
 };

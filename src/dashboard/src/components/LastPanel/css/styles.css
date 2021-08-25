@@ -1,18 +1,18 @@
-.count-panel {
-    width: 100%;
+.last-panel {
+    width: 90%;
     height: fit-content;
     display: flex;
     flex-flow: row wrap;
+    align-items: flex-start;
     margin-top: 50px;
-    justify-content: space-evenly;
 }
 
 /*
 TABLETS
 */
 @media (min-width: 576px) {
-    .count-panel {
-        width: 50%;
+    .last-panel {
+        width: 40%;
     }
 }
 
@@ -31,8 +31,10 @@ PANTALLAS +
 }
 
 /*
-PANTALLAS +++
+LIMITAR ANCHO MÁXIMO 
 */
 @media (min-width: 1200px) {
+
+    /* max-width: 1200px; */
 
 }

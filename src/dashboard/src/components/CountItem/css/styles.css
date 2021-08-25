@@ -1,12 +1,12 @@
 .count-item {
-    width: 100%;
+    width: 90%;
     border: #404040 2px solid;
     border-radius: 8px;
     background-color: #FFF;
     display: flex;
     flex-flow: column wrap;
     text-align: center;
-    margin: 1% 5px;
+    margin-top: 3%;
     box-shadow: inset 0px 0px 50px 10px #B6B1F1, 5px 5px 5px 5px black;;
 }
 
@@ -47,15 +47,12 @@ PANTALLAS +
 @media (min-width: 992px) {
     .count-item {
         width: 45%;
-        margin: 5px 1%;
     }
 }
 
 /*
-LIMITAR ANCHO MÁXIMO 
+PANTALLAS +++
 */
 @media (min-width: 1200px) {
-
-    /* max-width: 1200px; */
 
 }
