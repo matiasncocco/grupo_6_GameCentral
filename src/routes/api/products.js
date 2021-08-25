@@ -8,13 +8,19 @@ router.get(
 );
 
 router.get(
-    '/:id',
-    productsApiController.oneGame
+    '/last',
+    productsApiController.lastGame
 );
 
 router.post(
     '/free-title',
     productsApiController.freeTitle
+);
+
+// para validación del front
+router.get(
+    '/:id',
+    productsApiController.oneGame
 );
 
 module.exports = router;

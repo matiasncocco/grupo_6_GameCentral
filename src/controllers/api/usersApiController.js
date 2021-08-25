@@ -7,6 +7,9 @@ let usersApiController = {
                 users = users.map(user => {
                     delete user.dataValues.password;
                     delete user.dataValues.admin;
+                    delete user.dataValues.country;
+                    delete user.dataValues.createdAt;
+                    delete user.dataValues.updatedAt;
                     return user.dataValues;
                 });
                 res.status(200).json({
@@ -28,6 +31,9 @@ let usersApiController = {
             .then(user => {
                 delete user.dataValues.password;
                 delete user.dataValues.admin;
+                delete user.dataValues.country;
+                delete user.dataValues.createdAt;
+                delete user.dataValues.updatedAt;
                 res.status(200).json({
                     stauts: 200,
                     user
@@ -41,6 +47,7 @@ let usersApiController = {
             });
     },
 
+    // para validación del front
     freeEmail: async (req, res) => {
         let checkUser = await db.User.findOne({
             where: {
@@ -66,6 +73,7 @@ let usersApiController = {
         };
     },
 
+    // para validación del front
     checkEmail: async (req, res) => {
         let checkUser = await db.User.findOne({
             where: {

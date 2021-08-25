@@ -7,19 +7,21 @@ router.get(
     usersApiController.list
 );
 
-router.get(
-    '/:id',
-    usersApiController.oneUser
-);
-
+// para validación del front
 router.post(
     '/free-email',
     usersApiController.freeEmail
 );
 
+// para validación del front
 router.post(
     '/ok-email',
     usersApiController.checkEmail
+);
+
+router.get(
+    '/:id',
+    usersApiController.oneUser
 );
 
 module.exports = router;

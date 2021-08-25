@@ -42,6 +42,32 @@ let productsApiController = {
             });
     },
 
+    lastGame: (req, res) => {
+        db.Game.findOne({
+            order: [
+                [
+                    'id', 'DESC'
+                ]
+            ]
+        })
+            .then(game => {
+                delete game.dataValues.description;
+                delete game.dataValues.createdAt;
+                delete game.dataValues.updatedAt;
+                delete game.dataValues.deletedAt;
+                res.status(200).json({
+                    status: 200,
+                    game
+                });
+            })
+            .catch(err => {
+                res.status(500).json({
+                    status: 500,
+                    err
+                })
+            });
+    },
+
     oneGame: (req, res) => {
         db.Game.findByPk(req.params.id)
             .then (game => {
@@ -60,6 +86,7 @@ let productsApiController = {
             });
     },
 
+    // para validación del front
     freeTitle: async (req, res) => {
         let checkTitle = await db.Game.findOne({
             where: {

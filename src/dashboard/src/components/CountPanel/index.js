@@ -11,33 +11,36 @@ let CountPanel = () => {
         setCount
     ] = useState([]);
 
-    
-
     useEffect(() => {
-        setCount([
-            {
-                thing: 'JUEGOS',
-                total: 23
-            },
-            {
-                thing: 'CATEGORIES',
-                total: 40
-            },
-            {
-                thing: 'PLATAFORMAS',
-                total: 4
-            },
-            {
-                thing: 'USUARIOS',
-                total: 51
-            },
-            {
-                thing: 'VENTAS',
-                total: 200
-            }
-        ])
-    }, [])
-
+        fetch('http://localhost:3001/api')
+            .then(response => response.json())
+            .then(data => {
+                setCount([
+                    {
+                        thing: 'JUEGOS',
+                        total: data.totals.gameCount
+                    },
+                    {
+                        thing: 'CATEGORIES',
+                        total: data.totals.categoryCount
+                    },
+                    {
+                        thing: 'PLATAFORMAS',
+                        total: data.totals.platformCount
+                    },
+                    {
+                        thing: 'USUARIOS',
+                        total: data.totals.userCount
+                    },
+                    {
+                        thing: 'VENTAS',
+                        total: data.totals.saleCount
+                    }
+                ]);
+            }, [])
+            .catch(err => console.log(err));
+        }, []);
+   
     return (
         <section className='count-panel'>
             {
