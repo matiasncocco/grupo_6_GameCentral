@@ -1,31 +1,55 @@
 import './css/styles.css';
 import CountItem from '../CountItem';
-
-// fetch
+// import {
+//     useState,
+//     useEffect
+// }
 
 let CountPanel = () => {
+    // let 
+    let gameCount = 20;
+    let categoryCount = 40;
+    let platformCount = 4;
+    let userCount = 51;
+    let saleCount = 200;
+
     return (
         <section className='count-panel'>
-            <CountItem 
-                title='Juegos'
-                number='20'                
-            />
-            <CountItem 
-                title='Categorías'
-                number='40'                
-            />
-            <CountItem 
-                title='Plataformas'
-                number='4'                
-            />
-            <CountItem 
-                title='Usuarios'
-                number='51'                
-            />
-            <CountItem 
-                title='Ventas'
-                number='200'                
-            />
+            {
+                gameCount &&
+                <CountItem 
+                    title='JUEGOS'
+                    number={ gameCount }
+                />
+            }
+            {
+                categoryCount &&
+                <CountItem 
+                    title='CATEGORÍAS'
+                    number={ categoryCount }
+                />
+            }
+            {
+                platformCount &&
+                <CountItem 
+                    title='PLATAFORMAS'
+                    number={ platformCount }
+                />
+            }
+            {
+                userCount &&
+                <CountItem 
+                    title='USUARIOS'
+                    number={ userCount }
+                />
+            }
+            {
+                saleCount &&
+                <CountItem 
+                    title='VENTAS'
+                    number={ saleCount }
+                />
+            }
         </section>
     )
 };
