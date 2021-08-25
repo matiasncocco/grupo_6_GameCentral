@@ -4,7 +4,7 @@ let usersApiController = {
     list: (req, res) => {
         db.User.findAll()
             .then(users => {
-                let newUsers = users.map(user => {
+                users = users.map(user => {
                     delete user.dataValues.password;
                     delete user.dataValues.admin;
                     return user.dataValues;
@@ -12,7 +12,7 @@ let usersApiController = {
                 res.status(200).json({
                     status: 200,
                     count: users.length,
-                    users: newUsers
+                    users
                 });
             })
             .catch(err => {
@@ -23,14 +23,14 @@ let usersApiController = {
             });
     },
 
-    oneUser: (req,res) => {
+    oneUser: (req, res) => {
         db.User.findByPk(req.params.id)
             .then(user => {
                 delete user.dataValues.password;
                 delete user.dataValues.admin;
                 res.status(200).json({
                     stauts: 200,
-                    user: user
+                    user
                 });
             })
             .catch(err => {

@@ -1,7 +1,7 @@
 let db = require('../../database/models');
 
 let productsApiController = {
-    list: (req,res) => {
+    list: (req, res) => {
         db.Game.findAll({ include : [ 'platforms', 'categories' ] })
         .then(games => {
             let newGames = 
@@ -60,7 +60,7 @@ let productsApiController = {
             });
     },
 
-    freeTitle: async (req,res) => {
+    freeTitle: async (req, res) => {
         let checkTitle = await db.Game.findOne({
             where: {
                 title: req.body.title

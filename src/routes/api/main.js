@@ -1,10 +1,10 @@
 let express = require('express');
 let router = express.Router();
-let statusApiController = require('../../controllers/api/statusApiController');
+let mainApiController = require('../../controllers/api/mainApiController');
 
 router.get(
     '/',
-    statusApiController.list
+    mainApiController.totals
 );
 
 module.exports = router;

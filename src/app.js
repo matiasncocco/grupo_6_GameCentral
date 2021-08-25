@@ -55,13 +55,15 @@ app.use(
 );
 
 // requiero ruteos para API REST
+let apiMainRouter = require('./routes/api/main');
 let apiUsersRouter = require('./routes/api/users');
 let apiProductsRouter = require('./routes/api/products');
-let apiCategoriesRouter = require('./routes/api/categories');
-let apiPlatformsRouter = require('./routes/api/platforms');
-let apiStatusRouter = require('./routes/api/status');
 
 // middlewares de rutas API REST
+app.use(
+    '/api',
+    apiMainRouter
+);
 app.use(
     '/api/users',
     apiUsersRouter
@@ -69,18 +71,6 @@ app.use(
 app.use(
     '/api/products',
     apiProductsRouter
-);
-app.use(
-    '/api/categories',
-    apiCategoriesRouter
-);
-app.use(
-    '/api/platforms',
-    apiPlatformsRouter
-);
-app.use(
-    '/api/status',
-    apiStatusRouter
 );
 
 // middleware error 404 not found handling
