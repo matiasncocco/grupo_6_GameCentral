@@ -2,24 +2,39 @@ let db = require('../../database/models');
 
 let productsApiController = {
     list: (req,res) => {
-        db.Game.findAll()
-            .then(games => {
-                let newGames = games.map(game => {
-                    return{
-                        id: game.id,
-                        title: game.title,
-                        description: game.description,
-                        // platform: array con plataformas
-                    };
-                })
+        db.Game.findAll({ include : [ 'platforms', 'categories' ] })
+        .then(games => {
+            let newGames = 
+            games.map(game => {   
+                // category = game.categories.findByPk(game.categories.id)
+                //     .then(categ => {
+                //         res.send(categ)
+                // //     });
+                // return {
+                //     categoryById: game.categories.map(cate => {
+                //         return cate.id
+                //         }
+                //     ),
+                    // game: game,
+                    // id: game.id,
+                    // title: game.title,
+                    // description: game.description,
+                    // platform: game.platforms.map(plat => {
+                    //     return { title: plat.title }
+                    // }),
+                    // categories: game.categories.map(cate => {
+                    //     return { title: cate.title }
+                    // }),
+                // };
+            })
                 res.status(200).json({
                     status: 200,
                     count: games.length,
-                    // countPlatform: 
-                    newGames
+                    // countByCategorie: ,
+                    newGames,
                 })
             })
-            .catch(err => {
+        .catch(err => {
                 res.status(500).json({
                     status: 500,
                     err
