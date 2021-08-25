@@ -1,20 +1,61 @@
 .count-item {
-    width: 33%;
-    border: #808080 2px solid;
+    width: 100%;
+    border: #404040 2px solid;
     border-radius: 8px;
     background-color: #FFF;
     display: flex;
-    flex-flow: row wrap;
+    flex-flow: column wrap;
+    text-align: center;
+    margin: 1% 5px;
+    box-shadow: inset 0px 0px 50px 10px #B6B1F1, 5px 5px 5px 5px black;;
 }
 
-/* .count-item-title {
+.count-item-title, .count-item-number {
+    width: 100%;
+    font-weight: 600;
+}
 
+.count-item-title {
+    font-size: 22px;
+    color: #FFF;
+    text-shadow: -1px 0 #404040, 0 1px #404040, 1px 0 #404040, 0 -1px #404040, -2px 2px 0 black;
 }
 
 .count-item-number {
+    font-size: 40px;
+    color: #B14593;
+    text-shadow: -1px 0 #FFF, 0 1px #FFF, 1px 0 #FFF, 0 -1px #FFF, -2px 2px 0 black;
+}
+
+/*
+TABLETS
+*/
+@media (min-width: 576px) {
 
 }
 
-.count-item-icon {
+/*
+DESKTOP
+*/
+@media (min-width: 768px) {
 
-} */
+}
+
+/*
+PANTALLAS +
+*/
+@media (min-width: 992px) {
+    .count-item {
+        width: 45%;
+        margin: 5px 1%;
+    }
+}
+
+/*
+LIMITAR ANCHO MÁXIMO 
+*/
+@media (min-width: 1200px) {
+
+    /* max-width: 1200px; */
+
+}

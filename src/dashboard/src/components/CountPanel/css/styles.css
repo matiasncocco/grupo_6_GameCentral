@@ -1,5 +1,40 @@
 .count-panel {
-    width: 50%;
+    width: 90%;
+    height: fit-content;
     display: flex;
     flex-flow: row wrap;
+    align-items: flex-start;
+    margin-top: 50px;
+}
+
+/*
+TABLETS
+*/
+@media (min-width: 576px) {
+    .count-panel {
+        width: 40%;
+    }
+}
+
+/*
+DESKTOP
+*/
+@media (min-width: 768px) {
+
+}
+
+/*
+PANTALLAS +
+*/
+@media (min-width: 992px) {
+
+}
+
+/*
+LIMITAR ANCHO MÁXIMO 
+*/
+@media (min-width: 1200px) {
+
+    /* max-width: 1200px; */
+
 }

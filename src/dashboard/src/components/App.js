@@ -13,7 +13,7 @@ let appStyle = {
 
 let App = () => {
   return (
-    <div style={ appStyle } className="container">
+    <div style={ appStyle } className='container'>
       <Sidebar />
       <CountPanel />
     </div>
