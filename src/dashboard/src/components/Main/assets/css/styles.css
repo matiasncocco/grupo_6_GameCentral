@@ -8,6 +8,14 @@
     height: 100vh;
 }
 
+.last-container {
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: flex-start;
+    align-items: flex-start;
+    width: 100%;
+}
+
 /*
 TABLETS
 */

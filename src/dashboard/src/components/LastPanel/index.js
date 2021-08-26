@@ -3,12 +3,15 @@ import './css/styles.css';
 let LastPanel = (props) => {
     return (
         <section className='last-panel'>
-            <header className='last-panel-header'>
+            <h3 className='last-panel-header'>{ props.itemName }</h3>
+            <article className='last-panel-article'>
                 <p className='last-panel-id'>{ props.id }</p>
                 <p className='last-panel-title'>{ props.title }</p>
-                <img src={ props.img } alt={ props.title + props.id.toString() }/>
+                <div className='last-panel-img'>
+                    <img src={ props.img } alt={ props.title + props.id.toString() }/>
+                </div> 
                 {/* link */}
-            </header>
+            </article>
         </section>
     )
 };

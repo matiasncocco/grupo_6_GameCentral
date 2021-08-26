@@ -1,20 +1,72 @@
 .last-panel {
-    width: 90%;
+    width: 60%;
     border: #404040 2px solid;
     border-radius: 8px;
     background-color: #FFF;
     display: flex;
-    flex-flow: column wrap;
+    /* flex-flow: column wrap; */
+    justify-content: flex-start;
     box-shadow: inset 0px 0px 50px 10px #B6B1F1, 5px 5px 5px 5px black;
-    margin: 50px auto 0 auto;
+}
+
+.last-panel-header {
+    /* padding: 3% 0 0 3%; */
+    /* height: 100%; */
+    width: 25%;
+    text-align: center;
+    font-weight: 600;
+    text-shadow: -1px 0 #FFF, 0 1px #FFF, 1px 0 #FFF, 0 -1px #FFF, -2px 2px 0 black;
+}
+
+.last-panel-article {
+    width: 100%;
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: flex-start;
+}
+
+.last-panel-id, .last-panel-title {
+    font-weight: 600;
+}
+
+.last-panel-id {
+    width: fit-content;
+    padding: 0 5px;
+    font-size: 40px;
+    color: #B14593;
+    text-shadow: -1px 0 #FFF, 0 1px #FFF, 1px 0 #FFF, 0 -1px #FFF, -2px 2px 0 black;
+}
+
+.last-panel-title {
+    flex-grow: 3;
+    font-size: 14px;
+    line-height: 44px;
+    color: #FFF;
+    text-shadow: -1px 0 #404040, 0 1px #404040, 1px 0 #404040, 0 -1px #404040, -2px 2px 0 black;
+}
+
+.last-panel-img {
+    margin: 0 5% 5% 5%;
+    border: outset #B14593 5px;
+    box-shadow: inset 0 0 5px 5px #9945B1;
+}
+
+.last-panel img {
+    width: 100%;
+    display: block;
+    padding: 1%;
 }
 
 /*
 TABLETS
 */
 @media (min-width: 576px) {
-    .last-panel {
-        width: 45%;
+    .last-panel-id {
+        font-size: 30px;
+    }
+
+    .last-panel-title {
+        line-height: 35px;
     }
 }
 
@@ -22,16 +74,31 @@ TABLETS
 DESKTOP
 */
 @media (min-width: 768px) {
+    .last-panel-header {
+        font-size: 20px;
+    }
 
+    .last-panel-title {
+        font-size: 16px;
+    }
 }
 
 /*
 PANTALLAS +
 */
 @media (min-width: 992px) {
-    /* .last-panel {
-        width: 45%;
-    } */
+    .last-panel-header {
+        font-size: 26px;
+    }
+
+    .last-panel-id {
+        font-size: 44px;
+    }
+
+    .last-panel-title {
+        font-size: 22px;
+        line-height: 50px;
+    }
 }
 
 /*

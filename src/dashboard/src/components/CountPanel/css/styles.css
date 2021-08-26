@@ -3,17 +3,15 @@
     height: fit-content;
     display: flex;
     flex-flow: row wrap;
-    margin-top: 50px;
-    justify-content: space-evenly;
+    justify-content: flex-start;
+    align-items: flex-start;
 }
 
 /*
 TABLETS
 */
 @media (min-width: 576px) {
-    .count-panel {
-        width: 50%;
-    }
+
 }
 
 /*

@@ -21,7 +21,7 @@ let CountPanel = () => {
                         total: data.totals.gameCount
                     },
                     {
-                        item: 'CATEGORIES',
+                        item: 'CATEGORIAS',
                         total: data.totals.categoryCount
                     },
                     {
