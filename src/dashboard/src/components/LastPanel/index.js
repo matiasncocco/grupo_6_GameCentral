@@ -1,9 +1,14 @@
 import './css/styles.css';
 
-let LastPanel = () => {
+let LastPanel = (props) => {
     return (
-        <section className="last-panel">
-            <h1>yello</h1>
+        <section className='last-panel'>
+            <header className='last-panel-header'>
+                <p className='last-panel-id'>{ props.id }</p>
+                <p className='last-panel-title'>{ props.title }</p>
+                <img src={ props.img } alt={ props.title + props.id.toString() }/>
+                {/* link */}
+            </header>
         </section>
     )
 };

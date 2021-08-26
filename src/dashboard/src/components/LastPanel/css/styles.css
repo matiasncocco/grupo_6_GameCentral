@@ -1,10 +1,12 @@
 .last-panel {
     width: 90%;
-    height: fit-content;
+    border: #404040 2px solid;
+    border-radius: 8px;
+    background-color: #FFF;
     display: flex;
-    flex-flow: row wrap;
-    align-items: flex-start;
-    margin-top: 50px;
+    flex-flow: column wrap;
+    box-shadow: inset 0px 0px 50px 10px #B6B1F1, 5px 5px 5px 5px black;
+    margin: 50px auto 0 auto;
 }
 
 /*
@@ -12,7 +14,7 @@ TABLETS
 */
 @media (min-width: 576px) {
     .last-panel {
-        width: 40%;
+        width: 45%;
     }
 }
 
@@ -27,14 +29,14 @@ DESKTOP
 PANTALLAS +
 */
 @media (min-width: 992px) {
-
+    /* .last-panel {
+        width: 45%;
+    } */
 }
 
 /*
-LIMITAR ANCHO MÁXIMO 
+PANTALLAS +++
 */
 @media (min-width: 1200px) {
-
-    /* max-width: 1200px; */
 
 }

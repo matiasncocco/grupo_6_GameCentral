@@ -6,9 +6,9 @@ let Sidebar = () => {
             <p className='logo-box'>
                 GC
             </p>
-            <h3 className='trademark'>
+            <h5 className='trademark'>
                 Game Central ©
-            </h3>
+            </h5>
         </aside>
     )
 };

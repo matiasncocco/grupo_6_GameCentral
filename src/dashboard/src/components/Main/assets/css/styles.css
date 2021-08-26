@@ -1,8 +1,11 @@
 .main-main {
-    width: 90vw;
+    width: 90%;
     display: flex;
     flex-flow: row wrap;
+    justify-content: flex-start;
     align-items: flex-start;
+    overflow-y: scroll;
+    height: 100vh;
 }
 
 /*
@@ -10,7 +13,7 @@ TABLETS
 */
 @media (min-width: 576px) {
     .main-main {
-        width: 80vw;
+        width: 80%;
     }
 }
 
@@ -19,7 +22,7 @@ DESKTOP
 */
 @media (min-width: 768px) {
     .main-main {
-        width: 85vw;
+        width: 85%;
     }
 }
 
@@ -35,6 +38,6 @@ PANTALLAS +++
 */
 @media (min-width: 1200px) {
     .main-main {
-        width: 90vw;
+        width: 90%;
     }
 }

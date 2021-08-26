@@ -17,23 +17,23 @@ let CountPanel = () => {
             .then(data => {
                 setCount([
                     {
-                        thing: 'JUEGOS',
+                        item: 'JUEGOS',
                         total: data.totals.gameCount
                     },
                     {
-                        thing: 'CATEGORIES',
+                        item: 'CATEGORIES',
                         total: data.totals.categoryCount
                     },
                     {
-                        thing: 'PLATAFORMAS',
+                        item: 'PLATAFORMAS',
                         total: data.totals.platformCount
                     },
                     {
-                        thing: 'USUARIOS',
+                        item: 'USUARIOS',
                         total: data.totals.userCount
                     },
                     {
-                        thing: 'VENTAS',
+                        item: 'VENTAS',
                         total: data.totals.saleCount
                     }
                 ]);
@@ -51,11 +51,11 @@ let CountPanel = () => {
             }
             {
                 count.length > 0 &&
-                count.map((thing, i) => {
+                count.map((item, i) => {
                     return (
-                        <CountItem key={ thing + i}
-                            title={ thing.thing }
-                            number={ thing.total }
+                        <CountItem key={ item + i}
+                            title={ item.item }
+                            number={ item.total }
                         />
                     )
                 })

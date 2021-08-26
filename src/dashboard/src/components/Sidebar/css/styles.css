@@ -1,5 +1,5 @@
 .sidebar {
-    width: 10vw;
+    width: 10%;
     height: 100vh;
     background: linear-gradient(#E2DDF9,#858BB7);
     border-right: 2px solid #B6B1F1;
@@ -31,7 +31,7 @@ TABLETS
 */
 @media (min-width: 576px) {
     .sidebar {
-        width: 20vw;
+        width: 20%;
     }
 
     .logo-box {
@@ -52,7 +52,7 @@ DESKTOP
 */
 @media (min-width: 768px) {
     .sidebar {
-        width: 15vw;
+        width: 15%;
     }
 }
 
@@ -60,7 +60,9 @@ DESKTOP
 PANTALLAS +
 */
 @media (min-width: 992px) {
-
+    .trademark {
+        font-size: 18px;
+    }
 }
 
 /*
@@ -68,6 +70,19 @@ PANTALLAS +++
 */
 @media (min-width: 1200px) {
     .sidebar {
-        width: 10vw;
+        width: 10%;
+    }
+
+    .trademark {
+        font-size: 14px;
+    }
+}
+
+/*
+regla muy particular
+*/
+@media (min-width: 1400px) {
+    .trademark {
+        font-size: 18px;
     }
 }
