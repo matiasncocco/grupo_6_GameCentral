@@ -73,7 +73,7 @@ let Main = () => {
                                 <header className='panel-header'>
                                     <p>ÚLTIMO</p>
                                     <p>{ item.name }</p>
-                                    </header>
+                                </header>
                             </Panel>
                         )
                     })

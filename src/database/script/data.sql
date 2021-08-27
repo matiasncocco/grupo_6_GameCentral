@@ -143,7 +143,7 @@ INSERT INTO users (id, name, surname, email, avatar, newsletter, admin, password
 INSERT INTO users (id, name, surname, email, avatar, newsletter, admin, password) values (48, 'Kimbra', 'Sultana', 'ksultana1b@princeton.edu', 'user-48', true, false, '4zfDVrDBpK4');
 INSERT INTO users (id, name, surname, email, avatar, newsletter, admin, password) values (49, 'Wilbert', 'Brindley', 'wbrindley1c@microsoft.com', 'user-49', false, false, 'DpfRZ15dT2ik');
 INSERT INTO users (id, name, surname, email, avatar, newsletter, admin, password) values (50, 'Windham', 'Garnam', 'wgarnam1d@etsy.com', 'user-50', true, true, 'hfEaoqT');
-INSERT INTO users (id, name, surname, email, avatar, newsletter, admin, password) values (51, 'admin', 'admin', 'admin', '1627698902593.jpg', false, true, '$2b$10$9brKXibQBlPSF04m8lkbjeLj66uDTNyIvFYXHjNGrU6XOFlIupYhW');
+INSERT INTO users (id, name, surname, email, avatar, newsletter, admin, password) values (51, 'admin', 'admin', 'admin', 'user-51.jpg', false, true, '$2b$10$9brKXibQBlPSF04m8lkbjeLj66uDTNyIvFYXHjNGrU6XOFlIupYhW');
 INSERT INTO users (id, name, surname, email, avatar, newsletter, admin, password) values (52, 'Sarah', 'Richards', 'sarah.richards@gmail.com', 'user-52.jpg', false, true, '$2b$10$9brKXibQBlPSF04m8lkbjeLj66uDTNyIvFYXHjNGrU6XOFlIupYhW');
 
 -- ---------------------------------------------------------------------------

@@ -1,4 +1,3 @@
-// const { QueryTypes } = require('sequelize')
 let { sequelize } = require('../../database/models');
 let db = require('../../database/models');
 
@@ -10,7 +9,7 @@ let productsApiController = {
             model: db.CategoryGame
         });
         let countByPlatform = await sequelize.query(
-            'SELECT COUNT(platform_id) AS \'quantity\', platforms.title AS \'title\' FROM platform_game INNER JOIN platforms ON platforms.id = platform_id GROUP BY platform_id ORDER BY quantity DESC;', {
+            'SELECT COUNT(platform_id) AS \'quantity\', platforms.title AS \'title\' FROM platform_game INNER JOIN platforms ON platforms.id = platform_id GROUP BY platform_id ORDER BY quantity DESC', {
             model: db.PlatformGame
         });
             try {
