@@ -6,26 +6,22 @@ let productsApiController = {
         .then(games => {
             let newGames = 
             games.map(game => {   
-                // category = game.categories.findByPk(game.categories.id)
-                //     .then(categ => {
-                //         res.send(categ)
-                // //     });
-                // return {
-                //     categoryById: game.categories.map(cate => {
-                //         return cate.id
-                //         }
-                //     ),
-                    // game: game,
-                    // id: game.id,
-                    // title: game.title,
-                    // description: game.description,
-                    // platform: game.platforms.map(plat => {
-                    //     return { title: plat.title }
-                    // }),
-                    // categories: game.categories.map(cate => {
-                    //     return { title: cate.title }
-                    // }),
-                // };
+                category = game.categories.findByPk(game.categories.id)
+                    .then(categ => {
+                        res.send(categ)
+                    });
+                return {
+                    game: game,
+                    id: game.id,
+                    title: game.title,
+                    description: game.description,
+                    platform: game.platforms.map(plat => {
+                        return { title: plat.title }
+                    }),
+                    categories: game.categories.map(cate => {
+                        return { title: cate.title }
+                    }),
+                };
             })
                 res.status(200).json({
                     status: 200,
@@ -43,13 +39,17 @@ let productsApiController = {
     },
 
     oneGame: (req, res) => {
-        db.Game.findByPk(req.params.id)
+        db.Game.findByPk(req.params.id, { include: ['platform', 'categories'] })
             .then (game => {
                 res.status(200).json({
                     status: 200,
                     game
-                    // categorias:
-                    // plataformas:
+                    // platform: game.platforms.map(plat => {
+                    //     return { title: plat.title }
+                    // }),
+                    // categories: game.categories.map(cate => {
+                    //     return { title: cate.title }
+                    // }),
                 })
             })
             .catch(err => {
