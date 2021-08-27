@@ -1,7 +1,7 @@
 import './assets/css/styles.css';
 import background from './assets/img/background.jpeg'
 import CountPanel from '../CountPanel';
-import LastPanel from '../LastPanel';
+import Panel from '../Panel';
 import {
     useState,
     useEffect
@@ -16,26 +16,38 @@ let mainStyle = {
 }
 
 let Main = () => {
+
     let [
         data,
         setData
     ] = useState([]);
 
     useEffect(() => {
-        setData([
-            {
-                itemName: 'ÚLTIMO USUARIO',
-                id: 1,
-                title: 'Santiago Martín Guastavino',
-                img: 'http://localhost:3001/img/users/1627698902593.jpg'
-            },
-            {
-                itemName: 'ÚLTIMO PRODUCTO',
-                id: 2,
-                title: 'RAINBOW SIX SIEGE',
-                img: 'http://localhost:3001/img/users/1627698902593.jpg'
-            }
-        ])
+
+        let fetchData = async () => {
+            let lastUser = await fetch('http://localhost:3001/api/users/last')
+                .then(res => res.json());
+            let lastProduct = await fetch('http://localhost:3001/api/products/last')
+                .then(res => res.json());
+            try {
+                setData([
+                    {
+                        name: 'USUARIO',
+                        title: lastUser.user.name + ' ' + lastUser.user.surname,
+                        img: lastUser.user.avatar
+                    },
+                    {
+                        name: 'PRODUCTO',
+                        title: lastProduct.game.title,
+                        img: lastProduct.game.img
+                    }
+                ])
+            } catch(err) {
+                console.log(err);
+            };
+        };
+        
+        fetchData();
     }, [])
 
     return (
@@ -51,9 +63,8 @@ let Main = () => {
                 {   data &&
                     data.map((item, i) => {
                         return (
-                            <LastPanel key={ item + i }
-                                itemName={ item.itemName }
-                                id={ item.id }
+                            <Panel key={ item + i }
+                                name={ item.name }
                                 title={ item.title }
                                 img={ item.img }
                             />

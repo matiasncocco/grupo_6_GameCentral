@@ -13,7 +13,7 @@ let CountPanel = () => {
 
     useEffect(() => {
         fetch('http://localhost:3001/api')
-            .then(response => response.json())
+            .then(res => res.json())
             .then(data => {
                 setCount([
                     {
@@ -21,7 +21,7 @@ let CountPanel = () => {
                         total: data.totals.gameCount
                     },
                     {
-                        item: 'CATEGORIAS',
+                        item: 'CATEGORÍAS',
                         total: data.totals.categoryCount
                     },
                     {
