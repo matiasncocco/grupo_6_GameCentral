@@ -8,10 +8,15 @@ import {
 
 let Main = () => {
 
+    useEffect(() => {
+        let thisLink = document.querySelector('#home-link');
+        thisLink.classList.add('active-link');
+    }, [])
+
     let [
         data,
         setData
-    ] = useState([]);
+    ] = useState([])
 
     useEffect(() => {
 
@@ -41,10 +46,17 @@ let Main = () => {
         fetchData();
     }, [])
 
+    useEffect(() => {
+        let thisLink = document.querySelector('#home-link');
+        return () => {
+            thisLink.classList.remove('active-link');
+        }
+    }, [])
+
     return (
         <main className='main-main'>
             <CountPanel />
-            <div className='last-container'>
+            <div className='panel-container'>
                 {
                     data.length === 0 &&
                     <p>
