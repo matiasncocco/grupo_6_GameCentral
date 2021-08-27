@@ -1,19 +1,10 @@
-import './assets/css/styles.css';
-import background from './assets/img/background.jpeg'
+import './css/styles.css';
 import CountPanel from '../CountPanel';
 import Panel from '../Panel';
 import {
     useState,
     useEffect
 } from 'react';
-
-let mainStyle = {
-    backgroundImage: `url(${background})`,
-    backgroundPosition: 'center center',
-    backgroundAttachment: 'fixed',
-    backgroundRepeat: 'no-repeat',
-    backgroundSize: 'cover'
-}
 
 let Main = () => {
 
@@ -51,7 +42,7 @@ let Main = () => {
     }, [])
 
     return (
-        <main className='main-main' style={ mainStyle }>
+        <main className='main-main'>
             <CountPanel />
             <div className='last-container'>
                 {
@@ -63,11 +54,15 @@ let Main = () => {
                 {   data &&
                     data.map((item, i) => {
                         return (
-                            <Panel key={ item + i }
-                                name={ item.name }
+                            <Panel key={ item + i } 
                                 title={ item.title }
                                 img={ item.img }
-                            />
+                            >
+                                <header className='panel-header'>
+                                    <p>ÚLTIMO</p>
+                                    <p>{ item.name }</p>
+                                    </header>
+                            </Panel>
                         )
                     })
                 }

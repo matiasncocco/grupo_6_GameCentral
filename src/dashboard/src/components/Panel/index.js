@@ -3,10 +3,7 @@ import './css/styles.css';
 let Panel = (props) => {
     return (
         <section className='panel'>
-            <header className='panel-header'>
-                <p>ÚLTIMO</p>
-                <p>{ props.name }</p>
-            </header>
+            { props.children }
             <article className='panel-article'>
                 <p className='panel-title'>{ props.title }</p>
                 <div className='panel-img'>
