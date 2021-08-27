@@ -51,7 +51,7 @@ function validateEmail() {
             })
         };
         fetch('http://localhost:3001/api/users/ok-email', settings)
-            .then(response => { return response.json() })
+            .then(response => response.json())
             .then(info => {
                 info.result === false ? errors.push({
                     field: 'email',
