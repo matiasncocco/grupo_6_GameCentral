@@ -2,6 +2,7 @@
     padding: 0;
     margin: 0;
     box-sizing: border-box;
+    font-family: 'Rubik', sans-serif;
 }
 
 h1 {
@@ -29,7 +30,6 @@ h6 {
 }
 
 .container {
-    font-family: 'Rubik', sans-serif;
     display: flex;
     flex-flow: row wrap;
 }

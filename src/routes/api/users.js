@@ -8,18 +8,25 @@ router.get(
 );
 
 router.get(
-    '/:id',
-    usersApiController.oneUser
-);
+    '/last',
+    usersApiController.lastUser
+)
 
+// para validación del front
 router.post(
     '/free-email',
     usersApiController.freeEmail
 );
 
+// para validación del front
 router.post(
     '/ok-email',
     usersApiController.checkEmail
+);
+
+router.get(
+    '/:id',
+    usersApiController.oneUser
 );
 
 module.exports = router;

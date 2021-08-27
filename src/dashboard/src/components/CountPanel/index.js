@@ -1,54 +1,64 @@
 import './css/styles.css';
 import CountItem from '../CountItem';
-// import {
-//     useState,
-//     useEffect
-// }
+import {
+    useState,
+    useEffect
+} from 'react';
 
 let CountPanel = () => {
-    // let 
-    let gameCount = 20;
-    let categoryCount = 40;
-    let platformCount = 4;
-    let userCount = 51;
-    let saleCount = 200;
+    let [
+        count,
+        setCount
+    ] = useState([]);
 
+    useEffect(() => {
+        fetch('http://localhost:3001/api')
+            .then(res => res.json())
+            .then(data => {
+                setCount([
+                    {
+                        item: 'JUEGOS',
+                        total: data.totals.gameCount
+                    },
+                    {
+                        item: 'CATEGORÍAS',
+                        total: data.totals.categoryCount
+                    },
+                    {
+                        item: 'PLATAFORMAS',
+                        total: data.totals.platformCount
+                    },
+                    {
+                        item: 'USUARIOS',
+                        total: data.totals.userCount
+                    },
+                    {
+                        item: 'VENTAS',
+                        total: data.totals.saleCount
+                    }
+                ]);
+            }, [])
+            .catch(err => console.log(err));
+        }, []);
+   
     return (
         <section className='count-panel'>
             {
-                gameCount &&
-                <CountItem 
-                    title='JUEGOS'
-                    number={ gameCount }
-                />
+                count.length === 0 &&
+                <p>
+                    SPINNER
+                </p>
             }
             {
-                categoryCount &&
-                <CountItem 
-                    title='CATEGORÍAS'
-                    number={ categoryCount }
-                />
-            }
-            {
-                platformCount &&
-                <CountItem 
-                    title='PLATAFORMAS'
-                    number={ platformCount }
-                />
-            }
-            {
-                userCount &&
-                <CountItem 
-                    title='USUARIOS'
-                    number={ userCount }
-                />
-            }
-            {
-                saleCount &&
-                <CountItem 
-                    title='VENTAS'
-                    number={ saleCount }
-                />
+                count.length > 0 &&
+                count.map((item, i) => {
+                    return (
+                        <CountItem key={ item + i}
+                            title={ item.item }
+                            number={ item.total }
+                        />
+                    )
+                })
             }
         </section>
     )

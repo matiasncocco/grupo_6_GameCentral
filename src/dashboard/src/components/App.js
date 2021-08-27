@@ -1,7 +1,12 @@
 import '../assets/css/styles.css';
-import background from '../assets/img/background.jpeg'
+import background from '../assets/img/background.jpeg';
 import Sidebar from './Sidebar';
-import CountPanel from './CountPanel';
+import Main from './Main';
+import Products from './Products';
+import {
+  Route,
+  Switch
+} from 'react-router-dom';
 
 let appStyle = {
   backgroundImage: `url(${background})`,
@@ -13,9 +18,13 @@ let appStyle = {
 
 let App = () => {
   return (
-    <div style={ appStyle } className='container'>
+    <div className='container' style={ appStyle }>
       <Sidebar />
-      <CountPanel />
+      <Switch>
+        <Route path='/' exact component={ Main } />
+        <Route path='/products' exact component={ Products } />
+        {/* <Route component={ NotFound } /> */}
+      </Switch>
     </div>
   )
 };
