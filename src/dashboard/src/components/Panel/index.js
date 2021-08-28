@@ -13,20 +13,15 @@ let Panel = (props) => {
         }
     }, [])
 
-    // useEffect(() => {
-    //     let panel = document.querySelector('.panel');
-    //     return () => {
-    //         panel.classList.remove('panel-thinner');
-    //     }
-    // }, [])
-
     return (
         <section className='panel'>
             { props.children }
             <article className='panel-article'>
                 <p className='panel-title'>{ props.title }</p>
                 <div className='panel-img'>
-                    <img src={ props.img } alt={ `img${props.title}` }/>
+                    <a target='_blank' href={ props.img }>
+                        <img src={ props.img } alt={ `img${props.title}` }/>
+                    </a>
                 </div>
                 {/* <Link to={`/products/:${props.id}`}></Link> */}
             </article>

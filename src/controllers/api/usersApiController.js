@@ -34,12 +34,18 @@ let usersApiController = {
             ]
         })
             .then(user => {
-                delete user.dataValues.password;
-                delete user.dataValues.admin;
-                delete user.dataValues.country;
-                delete user.dataValues.createdAt;
-                delete user.dataValues.updatedAt;
-                user.dataValues.avatar = 'http://localhost:3001/img/users/' + user.dataValues.avatar;
+                user = {
+                    identity: 'USUARIO',
+                    id: user.id,
+                    title: user.name + ' ' + user.surname,
+                    img: 'http://localhost:3001/img/users/' + user.dataValues.avatar,
+                };
+                // delete user.dataValues.password;
+                // delete user.dataValues.admin;
+                // delete user.dataValues.country;
+                // delete user.dataValues.createdAt;
+                // delete user.dataValues.updatedAt;
+                // user.dataValues.avatar = 'http://localhost:3001/img/users/' + user.dataValues.avatar;
                 res.status(200).json({
                     stauts: 200,
                     user

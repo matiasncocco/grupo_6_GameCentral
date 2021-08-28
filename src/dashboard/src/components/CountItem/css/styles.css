@@ -8,6 +8,7 @@
     text-align: center;
     margin: 3% 3%;
     box-shadow: inset 0px 0px 50px 10px #B6B1F1, 5px 5px 5px 5px black;
+    transition: all .1s cubic-bezier(.25, .25, .25, .25);
 }
 
 .count-item-title, .count-item-number {
@@ -41,7 +42,10 @@ TABLETS
 DESKTOP
 */
 @media (min-width: 768px) {
-
+    .count-item:hover {
+        box-shadow: inset 0px 0px 50px 10px #B6B1F1;
+        border: black 2px solid;
+    }
 }
 
 /*

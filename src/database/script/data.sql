@@ -272,7 +272,8 @@ INSERT INTO category_game (id, game_id_category, category_id) VALUES (88, 22, 23
 #FROM category_game
 #INNER JOIN categories ON categories.id = category_id
 #GROUP BY category_id
-#ORDER BY quantity DESC;
+#ORDER BY quantity DESC
+#LIMIT 4;
 
 -- ---------------------------------------------------------------------------
 
@@ -382,7 +383,8 @@ INSERT INTO platform_game (id, game_id_platform, platform_id) VALUES (70, 22, 4)
 #FROM platform_game
 #INNER JOIN platforms ON platforms.id = platform_id
 #GROUP BY platform_id
-#ORDER BY quantity DESC;
+#ORDER BY quantity DESC
+#LIMIT 4;
 
 -- ---------------------------------------------------------------------------
 
@@ -619,5 +621,13 @@ INSERT INTO user_game (id, game_id_user, user_id) VALUES (167, 16, 51);
 # INNER JOIN user_game ON games.id = game_id_user
 # INNER JOIN users ON users.id = user_id
 # ORDER BY games.title ASC;
+
+#SELECT COUNT(user_id) AS 'quantity', users.name AS 'name', users.surname AS 'surname' 
+#FROM user_game 
+#INNER JOIN users ON users.id = user_id
+#WHERE name <> 'admin'
+#GROUP BY user_id 
+#ORDER BY quantity DESC
+#LIMIT 4;
 
 -- ---------------------------------------------------------------------------
