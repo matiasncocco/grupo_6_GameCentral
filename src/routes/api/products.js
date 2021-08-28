@@ -12,12 +12,12 @@ router.get(
     productsApiController.lastGame
 );
 
+// para validación del front
 router.post(
     '/free-title',
     productsApiController.freeTitle
 );
 
-// para validación del front
 router.get(
     '/:id',
     productsApiController.oneGame

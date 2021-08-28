@@ -6,7 +6,7 @@
     box-shadow: inset 0px 0px 50px 10px #B6B1F1, 5px 5px 5px 5px black;
     display: flex;
     flex-flow: row wrap;
-    margin: 3% 10%;
+    margin: 2% 10%;
 }
 
 .panel-header {
@@ -23,6 +23,10 @@
     display: flex;
     flex-flow: row wrap;
     justify-content: flex-start;
+}
+
+.panel-thinner {
+    justify-content: center;
 }
 
 .panel-title {
@@ -77,6 +81,10 @@ PANTALLAS +
         width: 600px;
         margin-left: auto;
         margin-right: auto;
+    }
+
+    .panel-thinner {
+        width: 450px;
     }
 
     .panel-title {

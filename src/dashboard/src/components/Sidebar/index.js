@@ -18,6 +18,9 @@ let Sidebar = () => {
                 <Link id='products-link' className='link-link' to='/products'>
                     Productos
                 </Link>
+                <Link id='users-link' className='link-link' to='/users'>
+                    Usuarios
+                </Link>
             </ul>
         </aside>
     )

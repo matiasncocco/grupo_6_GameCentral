@@ -7,13 +7,20 @@ import {
 let Products = () => {
 
     let [
-        data,
-        setData
+        games,
+        setGames
     ] = useState([])
 
     useEffect(() => {
-        
-    })
+        fetch('http://localhost:3001/api/products')
+            .then(res => res.json())
+            .then(data => {
+                setGames(
+                    data.games
+                )
+            })
+            .catch(err => console.log(err));
+    }, [])
 
     useEffect(() => {
         let thisLink = document.querySelector('#products-link');
@@ -28,20 +35,27 @@ let Products = () => {
     }, [])
 
     return (
-        <main className='main-main'> {}
+        <main className='main-main'>
         {/* main-main => Main.css */}
             <div className='panel-container'>
                 {/* panel-container => Main.css */}
                 {
-                    data.length === 0 &&
+                    games.length === 0 &&
                     <p>
                         SPINNER
                     </p>
                 }
-                <Panel
-                    title={ 'lul' }
-                />
-                <Panel/>
+                {
+                    games &&
+                    games.map((game, i) => {
+                        return (
+                            <Panel key={ game.title + i } 
+                                title={ game.title }
+                                img={ game.img }
+                            />
+                        )
+                    })
+                }
             </div>
         </main>
     )
