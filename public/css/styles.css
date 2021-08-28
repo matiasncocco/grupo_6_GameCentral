@@ -1525,7 +1525,7 @@ img {
 }
 
 .contact-img {
-    width: 25%;
+    width: 30%;
 }
 
 .contact-img img {
@@ -1536,9 +1536,21 @@ img {
 }
 
 .contact-data {
-    width: 75%;
+    width: 70%;
     display: flex;
     flex-flow: column wrap;
+    text-align: center;
+}
+
+.contact-data-name {
+    font-size: 14px;
+    font-weight: bold;
+    padding: 5px;
+}
+
+.contact-data-email {
+    font-size: 10px;
+    padding: 5px;
 }
 
 
@@ -1707,6 +1719,33 @@ TABLETS
         font-size: 20px;
     }
 
+    /**/
+    /* CONTACT */
+    /**/
+
+    .contact-img {
+        width: 20%;
+        margin-left: 10%;
+    }
+    
+    .contact-data {
+        width: 70%;
+        display: flex;
+        flex-flow: column wrap;
+        text-align: center;
+    }
+    
+    .contact-data-name {
+        font-size: 18px;
+        font-weight: bold;
+        padding: 10px;
+    }
+    
+    .contact-data-email {
+        font-size: 14px;
+        padding: 10px;
+    }
+
 
     /**/
     /* PRODUCT INDEX */
@@ -1780,6 +1819,9 @@ TABLETS
         font-size: 12px;
     }
 
+    .contact-data {
+        font-size: 20px;
+    }
 
     /**/
     /* FOOTER */
@@ -2093,6 +2135,33 @@ DESKTOP
         box-shadow: 5px 5px 5px 2px black;
     }
 
+    /**/
+    /* CONTACT */
+    /**/
+
+    .contact-img {
+        width: 15%;
+        margin-left: 10%;
+    }
+    
+    .contact-data {
+        width: 75%;
+        display: flex;
+        flex-direction: center;
+        /* flex-flow: row; */
+    }
+    
+    .contact-data-name {
+        font-size: 24px;
+        font-weight: bold;
+        padding: 5px;
+    }
+    
+    .contact-data-email {
+        font-size: 18px;
+        padding: 5px;
+    }
+
 
     /**/
     /* FORMULARIOS */
@@ -2340,8 +2409,6 @@ DESKTOP
     .admin-link:hover.admin-link i {
         opacity: 1;
     }
-}
-
 
 /*
 PANTALLAS +
@@ -2530,4 +2597,6 @@ LIMITAR ANCHO MÁXIMO
     .header-section, .main-main {
         max-width: 1200px;
     }
+}
+
 }
