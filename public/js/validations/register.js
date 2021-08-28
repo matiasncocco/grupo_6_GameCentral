@@ -164,7 +164,7 @@ function validateEmail() {
         };
         // fetch con endpoint y configuración
         fetch('http://localhost:3001/api/users/free-email', settings)
-            .then(response => { return response.json() })
+            .then(response => response.json())
             .then(response => {
                 response.result === false ? errors.push({
                     field: 'email',

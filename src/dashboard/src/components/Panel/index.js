@@ -1,6 +1,25 @@
 import './css/styles.css';
+import { useEffect } from 'react';
+// import { Link } from 'react-router-dom';
 
 let Panel = (props) => {
+    
+    useEffect(() => {
+        let panel = document.querySelectorAll('.panel');
+        for (let i = 0; i < panel.length; i++) {
+            if (panel[i].firstChild.localName !== 'header') {
+                panel[i].classList.add('panel-thinner');
+            };
+        }
+    }, [])
+
+    // useEffect(() => {
+    //     let panel = document.querySelector('.panel');
+    //     return () => {
+    //         panel.classList.remove('panel-thinner');
+    //     }
+    // }, [])
+
     return (
         <section className='panel'>
             { props.children }
@@ -8,8 +27,8 @@ let Panel = (props) => {
                 <p className='panel-title'>{ props.title }</p>
                 <div className='panel-img'>
                     <img src={ props.img } alt={ `img${props.title}` }/>
-                </div> 
-                {/* link */}
+                </div>
+                {/* <Link to={`/products/:${props.id}`}></Link> */}
             </article>
         </section>
     )

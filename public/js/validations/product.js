@@ -107,7 +107,7 @@ function validateTitle() {
             })
         };
         fetch('http://localhost:3001/api/products/free-title', settings)
-            .then(response => { return response.json() })
+            .then(response => response.json())
             .then(response => {
                 response.result === false ? errors.push({
                     field: 'title',
