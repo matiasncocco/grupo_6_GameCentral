@@ -26,6 +26,7 @@ INSERT INTO games (id, title, img, price, discount, description) VALUES (21, 'NI
 INSERT INTO games (id, title, img, price, discount, description) VALUES (22, 'DOOM ETERNAL', '1624416547403-22-de.png', 599.99, 50, 'Los ejércitos del infierno han invadido la Tierra. Ponte en la piel del Slayer en una épica campaña para un jugador y cruza dimensiones aniquilando demonios para detener la destrucción definitiva de la humanidad. No Le Tienen Miedo A Nada... Salvo A Ti. Disfruta de la mejor combinación de velocidad y potencia en DOOM Eternal, que trae un salto cualitativo del combate en primera persona. Nivel De Amenaza Del Slayer Al Máximo. Armado con un lanzallamas en el hombro, una hoja retráctil en la muñeca, armas y modificaciones mejoradas, y habilidades, eres más rápido, fuerte y versátil que nunca. La Impía Trinidad. Obtén lo que necesites de tus enemigos: consigue salud al ejecutarlos, armadura al incinerarlos y munición al destriparlos con la motosierra; conviértete en el matademonios supremo. Juega A Battlemode. Una nueva experiencia multijugador 2 contra 1. Un DOOM Slayer armado hasta los dientes se enfrenta a dos jugadores demonio en cinco rondas de intenso combate en primera persona.');
 INSERT INTO games (id, title, img, price, discount, description) VALUES (23, 'RED DEAD REDEMPTION 2', '162303243654.jpg', 599.99, 40, 'Con más de 175 premios al Juego del año y más de 250 valoraciones perfectas, Red Dead Redemption 2 es la épica historia de Arthur Morgan y la banda de Van der Linde, que huyen por toda América en el albor de una nueva era. También incluye acceso al mundo multijugador compartido de Red Dead Online.');
 INSERT INTO games (id, title, img, price, discount, description) VALUES (24, 'DIRT RALLY 2.0', 'dirtrally2-head.jpg', 249.99, 30, 'DiRT Rally 2.0 te reta a abrirte camino a través de una selección de ubicaciones de rally icónicas por todo el mundo, en los vehículos todoterreno más potentes de la historia, teniendo en cuenta que el menor de los fallos puede poner fin a tu carrera.');
+INSERT INTO games (id, title, img, price, discount, description) VALUES (25, 'PLAYERUNKNOWN’S BATTLEGROUNDS', '48550.jpg', 399.99, 50, 'PLAYERUNKNOWN’S BATTLEGROUNDS es un shooter basado en el modo Battle Royale que está siendo desarrollado a través de la retroalimentación con la comunidad. Comenzando de la nada, los usuarios tienen que luchar uno contra el otro para localizar armas y suministros para ser el único.');
 
 -- INSERT INTO games (id, title, img, price, discount, description) VALUES ('id', 'name', 'img', 'price', '%des', 'descr.');
 -- ---------------------------------------------------------------------------
@@ -273,6 +274,12 @@ INSERT INTO category_game (id, game_id_category, category_id) VALUES (93, 24, 41
 INSERT INTO category_game (id, game_id_category, category_id) VALUES (94, 24, 5);
 INSERT INTO category_game (id, game_id_category, category_id) VALUES (95, 24, 6);
 INSERT INTO category_game (id, game_id_category, category_id) VALUES (96, 24, 4);
+-- PLAYERUNKNOWN’S BATTLEGROUNDS ('BATTLE ROYAL', 'MULTIPLAYER', 'SURVIVAL', 'FIRST PERSON SHOOTER')
+INSERT INTO category_game (id, game_id_category, category_id) VALUES (97, 25, 36);
+INSERT INTO category_game (id, game_id_category, category_id) VALUES (98, 25, 4);
+INSERT INTO category_game (id, game_id_category, category_id) VALUES (99, 25, 16);
+INSERT INTO category_game (id, game_id_category, category_id) VALUES (100, 25, 23);
+
 
 -- QUERY PARA VER RESULTADOS EN WORKBENCH
 # SELECT category_game.id, games.title AS 'Juego', categories.title AS 'Categoría'
@@ -394,6 +401,11 @@ INSERT INTO platform_game (id, game_id_platform, platform_id) VALUES (75, 24, 1)
 INSERT INTO platform_game (id, game_id_platform, platform_id) VALUES (76, 24, 2);
 INSERT INTO platform_game (id, game_id_platform, platform_id) VALUES (77, 24, 3);
 INSERT INTO platform_game (id, game_id_platform, platform_id) VALUES (78, 24, 4);
+-- PLAYERUNKNOWN’S BATTLEGROUNDS
+INSERT INTO platform_game (id, game_id_platform, platform_id) VALUES (79, 25, 1);
+INSERT INTO platform_game (id, game_id_platform, platform_id) VALUES (80, 25, 2);
+INSERT INTO platform_game (id, game_id_platform, platform_id) VALUES (81, 25, 3);
+INSERT INTO platform_game (id, game_id_platform, platform_id) VALUES (82, 25, 4);
 
 
 -- QUERY PARA VER RESULTADOS EN WORKBENCH
@@ -465,6 +477,9 @@ INSERT INTO status_game (id, game_id_status, status_id) VALUES (25, 23, 2);
 -- Dirt Rally 2.0
 INSERT INTO status_game (id, game_id_status, status_id) VALUES (26, 24, 1);
 INSERT INTO status_game (id, game_id_status, status_id) VALUES (27, 24, 2);
+-- PLAYERUNKNOWN’S BATTLEGROUNDS
+INSERT INTO status_game (id, game_id_status, status_id) VALUES (28, 25, 1);
+INSERT INTO status_game (id, game_id_status, status_id) VALUES (29, 25, 2);
 
 
 -- QUERY PARA VER RESULTADOS EN WORKBENCH
