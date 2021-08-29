@@ -1379,6 +1379,13 @@ img {
     width: 100%;
     border-radius: 100%;
     border: solid 2px #858BB7;
+
+}
+
+.profile-game-libreria {
+    width: 3%;
+    height: 3%;
+    margin-right: 1%;
 }
 
 .profile-more {
@@ -1388,8 +1395,18 @@ img {
     text-align: center;
 }
 
-.profile-newsletter, .profile-acquired-games {
-    margin: 1% 0;
+.profile-newsletter{
+    
+    margin: 3% 0;
+    padding: 1% 0;
+    font-weight: 500;
+    font-size: 11px;
+}
+
+.profile-acquired-games {
+    display: flex;
+    margin-left: 4% 0;
+    margin-top: 1%;
     padding: 1% 0;
     font-weight: 500;
     font-size: 11px;
@@ -1525,7 +1542,7 @@ img {
 }
 
 .contact-img {
-    width: 25%;
+    width: 30%;
 }
 
 .contact-img img {
@@ -1536,9 +1553,21 @@ img {
 }
 
 .contact-data {
-    width: 75%;
+    width: 70%;
     display: flex;
     flex-flow: column wrap;
+    text-align: center;
+}
+
+.contact-data-name {
+    font-size: 14px;
+    font-weight: bold;
+    padding: 5px;
+}
+
+.contact-data-email {
+    font-size: 10px;
+    padding: 5px;
 }
 
 
@@ -1707,6 +1736,33 @@ TABLETS
         font-size: 20px;
     }
 
+    /**/
+    /* CONTACT */
+    /**/
+
+    .contact-img {
+        width: 20%;
+        margin-left: 10%;
+    }
+    
+    .contact-data {
+        width: 70%;
+        display: flex;
+        flex-flow: column wrap;
+        text-align: center;
+    }
+    
+    .contact-data-name {
+        font-size: 18px;
+        font-weight: bold;
+        padding: 10px;
+    }
+    
+    .contact-data-email {
+        font-size: 14px;
+        padding: 10px;
+    }
+
 
     /**/
     /* PRODUCT INDEX */
@@ -1780,6 +1836,9 @@ TABLETS
         font-size: 12px;
     }
 
+    .contact-data {
+        font-size: 20px;
+    }
 
     /**/
     /* FOOTER */
@@ -2093,6 +2152,33 @@ DESKTOP
         box-shadow: 5px 5px 5px 2px black;
     }
 
+    /**/
+    /* CONTACT */
+    /**/
+
+    .contact-img {
+        width: 15%;
+        margin-left: 10%;
+    }
+    
+    .contact-data {
+        width: 75%;
+        display: flex;
+        flex-direction: center;
+        /* flex-flow: row; */
+    }
+    
+    .contact-data-name {
+        font-size: 24px;
+        font-weight: bold;
+        padding: 5px;
+    }
+    
+    .contact-data-email {
+        font-size: 18px;
+        padding: 5px;
+    }
+
 
     /**/
     /* FORMULARIOS */
@@ -2340,8 +2426,6 @@ DESKTOP
     .admin-link:hover.admin-link i {
         opacity: 1;
     }
-}
-
 
 /*
 PANTALLAS +
@@ -2531,3 +2615,8 @@ LIMITAR ANCHO MÁXIMO
         max-width: 1200px;
     }
 }
+
+}
+
+
+

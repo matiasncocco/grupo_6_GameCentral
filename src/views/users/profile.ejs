@@ -84,10 +84,15 @@
                     En mi librería
                 </h4>
                 <% user.games.forEach(game => { %>
-                    <p class="profile-acquired-games">
-                        <i class="fab fa-get-pocket"></i>
-                        <%= game.title %>
-                    </p>
+
+                        <a href="/products/detail/<%= game.id %>">
+                            <p class="profile-acquired-games">
+                            <img class="profile-game-libreria" src="/img/products/<%= game.img %>"> 
+                            <%= game.title %>
+                          </p>
+                        </a>
+                        
+                    
                 <% }) %>
             </div>
         <% } %>

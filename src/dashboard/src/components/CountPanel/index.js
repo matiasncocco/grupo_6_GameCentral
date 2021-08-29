@@ -1,66 +1,31 @@
 import './css/styles.css';
-import CountItem from '../CountItem';
-import {
-    useState,
-    useEffect
-} from 'react';
 
-let CountPanel = () => {
-    let [
-        count,
-        setCount
-    ] = useState([]);
-
-    useEffect(() => {
-        fetch('http://localhost:3001/api')
-            .then(res => res.json())
-            .then(data => {
-                setCount([
-                    {
-                        item: 'JUEGOS',
-                        total: data.totals.gameCount
-                    },
-                    {
-                        item: 'CATEGORÍAS',
-                        total: data.totals.categoryCount
-                    },
-                    {
-                        item: 'PLATAFORMAS',
-                        total: data.totals.platformCount
-                    },
-                    {
-                        item: 'USUARIOS',
-                        total: data.totals.userCount
-                    },
-                    {
-                        item: 'VENTAS',
-                        total: data.totals.saleCount
-                    }
-                ]);
-            }, [])
-            .catch(err => console.log(err));
-        }, []);
-   
+let CountPanel = (props) => {
     return (
-        <section className='count-panel'>
-            {
-                count.length === 0 &&
-                <p>
-                    SPINNER
-                </p>
-            }
-            {
-                count.length > 0 &&
-                count.map((item, i) => {
-                    return (
-                        <CountItem key={ item + i}
-                            title={ item.item }
-                            number={ item.total }
-                        />
-                    )
-                })
-            }
-        </section>
+        <article className='count-panel'>
+            <header className='count-header'>
+                <p>{ props.identity }</p>
+                <p>OCURRENCIAS</p>
+            </header>
+            <article className='count-article'>
+                <div className='article-one-fourth'>
+                    <p className='count-title'>{ props.itemOne }</p>
+                    <p className='count-number'>{ props.numberOne }</p>
+                </div>
+                <div className='article-one-fourth'>
+                    <p className='count-title'>{ props.itemTwo }</p>
+                    <p className='count-number'>{ props.numberTwo }</p>
+                </div>
+                <div className='article-one-fourth'>
+                    <p className='count-title'>{ props.itemThree }</p>
+                    <p className='count-number'>{ props.numberThree }</p>
+                </div>
+                <div className='article-one-fourth'>
+                    <p className='count-title'>{ props.itemFour }</p>
+                    <p className='count-number'>{ props.numberFour }</p>
+                </div>
+            </article>
+        </article>
     )
 };
 

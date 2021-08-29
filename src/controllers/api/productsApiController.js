@@ -5,13 +5,20 @@ let productsApiController = {
     list: async (req, res) => {
         let games = await db.Game.findAll();
         let countByCategory = await sequelize.query(
-            'SELECT COUNT(category_id) as \'quantity\', categories.title AS \'title\' FROM category_game INNER JOIN categories ON categories.id = category_id GROUP BY category_id ORDER BY quantity DESC', {
-            model: db.CategoryGame
-        });
+            'SELECT COUNT(category_id) as \'quantity\', categories.title AS \'title\' FROM category_game INNER JOIN categories ON categories.id = category_id GROUP BY category_id ORDER BY quantity DESC LIMIT 4', {
+                model: db.CategoryGame
+            }
+        );
         let countByPlatform = await sequelize.query(
-            'SELECT COUNT(platform_id) AS \'quantity\', platforms.title AS \'title\' FROM platform_game INNER JOIN platforms ON platforms.id = platform_id GROUP BY platform_id ORDER BY quantity DESC', {
-            model: db.PlatformGame
-        });
+            'SELECT COUNT(platform_id) AS \'quantity\', platforms.title AS \'title\' FROM platform_game INNER JOIN platforms ON platforms.id = platform_id GROUP BY platform_id ORDER BY quantity DESC LIMIT 4', {
+                model: db.PlatformGame
+            }
+        );
+        let bestSellers = await sequelize.query(
+            'SELECT COUNT(user_id) AS \'quantity\', users.name AS \'name\', users.surname AS \'surname\' FROM user_game  INNER JOIN users ON users.id = user_id WHERE name <> \'admin\' GROUP BY user_id ORDER BY quantity DESC LIMIT 4', {
+                model: db.UserGame
+            }
+        );
             try {
                 games = games.map(game => {
                     game = {
@@ -24,10 +31,10 @@ let productsApiController = {
                 });
                 res.status(200).json({
                     status: 200,
-                    count: games.length,
                     games,
                     countByCategory,
-                    countByPlatform
+                    countByPlatform,
+                    bestSellers
                 });
             } catch(err) {
                 res.status(500).json({
@@ -45,6 +52,7 @@ let productsApiController = {
         })
             .then(game => {
                 game = {
+                    identity: 'PRODUCTO',
                     id: game.id,
                     title: game.title,
                     img: 'http://localhost:3001/img/products/' + game.dataValues.img,

@@ -1,31 +1,102 @@
 .count-panel {
-    width: 100%;
-    height: fit-content;
+    width: 80%;
+    border: #404040 2px solid;
+    border-radius: 8px;
+    background-color: #FFF;
+    box-shadow: inset 0px 0px 50px 10px #B6B1F1, 5px 5px 5px 5px black;
     display: flex;
     flex-flow: row wrap;
-    justify-content: flex-start;
-    align-items: flex-start;
+    margin: 2% 10%;
+    transition: all .1s cubic-bezier(.25, .25, .25, .25);
+}
+
+.count-header {
+    width: 25%;
+    align-self: center;
+    font-weight: 600;
+    text-shadow: -1px 0 #FFF, 0 1px #FFF, 1px 0 #FFF, 0 -1px #FFF, -2px 2px 0 black;
+    font-size: 8px;
+    padding: 6px 6px 6px 2%;
+}
+
+.count-article {
+    width: 75%;
+    display: flex;
+    flex-flow: row wrap;
+    padding: 2%;
+}
+
+.article-one-fourth {
+    width: 50%;
+    border: #404040 2px solid;
+    border-radius: 8px;
+    background-color: #FFF;
+    box-shadow: inset 0px 0px 50px 10px #B6B1F1, 5px 5px 5px 5px black;
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: space-between;
+}
+
+.count-title, .count-number {
+    font-weight: 600;
+}
+
+.count-title {
+    padding-left: 2%;
+    font-size: 12px;
+    line-height: 25px;
+    color: #FFF;
+    text-shadow: -1px 0 #404040, 0 1px #404040, 1px 0 #404040, 0 -1px #404040, -2px 2px 0 black;
+}
+
+.count-number {
+    padding-right: 2%;
+    font-size: 20px;
+    color: #B14593;
+    text-shadow: -1px 0 #FFF, 0 1px #FFF, 1px 0 #FFF, 0 -1px #FFF, -2px 2px 0 black;
 }
 
 /*
 TABLETS
 */
 @media (min-width: 576px) {
+    .count-header {
+        font-size: 14px;
+    }
 
+    .count-title {
+        font-size: 20px;
+        line-height: 35px;
+    }
+
+    .count-number {
+        font-size: 30px;
+    }
 }
 
 /*
 DESKTOP
 */
 @media (min-width: 768px) {
+    .count-panel:hover {
+        box-shadow: inset 0px 0px 50px 10px #B6B1F1;
+        border: black 2px solid;
+    }
 
+    .count-header {
+        font-size: 20px;
+    }    
 }
 
 /*
 PANTALLAS +
 */
 @media (min-width: 992px) {
-
+    .count-panel {
+        width: 600px;
+        margin-left: auto;
+        margin-right: auto;
+    }
 }
 
 /*

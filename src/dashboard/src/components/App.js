@@ -3,6 +3,7 @@ import background from '../assets/img/background.jpeg';
 import Sidebar from './Sidebar';
 import Main from './Main';
 import Products from './Products';
+import Users from './Users';
 import {
   Route,
   Switch
@@ -23,6 +24,7 @@ let App = () => {
       <Switch>
         <Route path='/' exact component={ Main } />
         <Route path='/products' exact component={ Products } />
+        <Route path='/users' exact component={ Users } />
         {/* <Route component={ NotFound } /> */}
       </Switch>
     </div>

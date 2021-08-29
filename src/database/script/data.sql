@@ -24,6 +24,9 @@ INSERT INTO games (id, title, img, price, discount, description) VALUES (19, 'RI
 INSERT INTO games (id, title, img, price, discount, description) VALUES (20, 'COUNTER STRIKE', '1624416547403-20-csgo.jpg', 1381.99, null, 'Counter-Strike: Global Offensive (CS:GO) amplía el juego de acción por equipos del que fue pionero cuando salió hace más de 20 años. CS:GO incluye nuevos mapas, personajes, armas y modos de juego, y ofrece versiones actualizadas del contenido clásico de Counter-Strike (de_dust2, etc.). «Counter-Strike sorprendió a la industria de los videojuegos cuando el insólito mod se convirtió en el juego de acción en línea para PC más jugado del mundo casi inmediatamente después de su lanzamiento en agosto de 1999», dijo Doug Lombardi, de Valve. «Durante los últimos 12 años, se ha mantenido como uno de los títulos más jugados del mundo, ha ocupado un papel protagonista en los torneos de videojuegos competitivos y ha vendido más de 25 millones de copias de la franquicia en todo el mundo. CS:GO promete ampliar la galardonada jugabilidad de Counter-Strike y ofrecérsela tanto a los jugadores de PC como a los de consolas de nueva generación y de Mac».');
 INSERT INTO games (id, title, img, price, discount, description) VALUES (21, 'NIPPON MARATHON', '1624416547403-21-nm.jpg', 179.99, 33, '¡San! ¡Ni! ¡Ichi! ¡¡¡Hajime!!! Estira los músculos y embárcate en el maratón definitivo de Japón en un estridente juego de carreras multijugador en el que puede pasar de todo. Supera barriles, corre más rápido que los Shiba Inu y lánzate fuera del camino de las bicicletas, todo ello mientras lanzas fruta a tus oponentes y atraviesas tablones en precario equilibrio sobre cascadas, en una experiencia irreal que hay que jugar para creer. Características: Una locura para cuatro jugadores que se pueden ir y venir. El juego en solitario es compatible, pero coge hasta cuatro almohadillas y disfruta de la suprema tontería de la mayor maratón de juegos. ¿Necesitas ir al baño para quitarte el zumo de piña del body? ¿Un peatón cualquiera pasa por tu sofá y quiere jugar? Sea cual sea la causa, ¡sube y baja para disfrutar de la mejor fiesta! ¡Experimenta sorpresas en abundancia en una carrera a través de todo Japón! Atraviesa el país nipón en una serie de niveles creativos que abarcan calles urbanas concurridas, calles estrechas y antiguas, mercados bulliciosos, santuarios en las cimas de las montañas e incluso la parte superior de un tren bala. En el Maratón de Nippon nunca se sabe qué ocurrirá a continuación. ¿Quizás encuentres tiempo para una improvisada diversión en una máquina tragaperras? ¿Quizás un presentador de noticias llegue en jetpack para entrevistarte en la pista de carreras? Demonios, todo es posible... Un extenso modo historia con un extraño elenco de personajes. Asciende de corredor novato a maestro del maratón. Vive las historias del hombre langosta J DARWIN, la entusiasta de los narvales Elizabeth Nishibori, el viejo tío marinero Zenbei "XEN BAE" y el aspirante a dueño de una agencia de citas Snuguru Maestro, todo ello mientras se revelan los turbios secretos de las fuerzas invisibles que están en juego detrás del Maratón de Nippon. ¿Podrás vencer al diez veces campeón Handsome Hazuki y a sus compinches? ¡Relájate con algunos Party Games! A algunas personas les gusta observar los pájaros. A algunos les gusta dar un paseo en coche el domingo por la tarde. A otros les gusta subirse a un carrito y chocar de frente con bolos del tamaño de un hombre. Fija la posición de tu carro de la compra, da un salto en marcha, haz una mueca de dolor mientras te lanzas hacia peligros aleatorios y reza para no acabar en la sala de urgencias. ¿Has dominado el pavo en los bolos? Entonces enfréntate al guante L.O.B.S.T.E.R. Un recorrido de asalto precariamente estrecho y generado aleatoriamente. Martillos oscilantes, guantes de boxeo neumáticos y furiosos jugadores de fútbol americano conspiran para tirarte a la bebida.');
 INSERT INTO games (id, title, img, price, discount, description) VALUES (22, 'DOOM ETERNAL', '1624416547403-22-de.png', 599.99, 50, 'Los ejércitos del infierno han invadido la Tierra. Ponte en la piel del Slayer en una épica campaña para un jugador y cruza dimensiones aniquilando demonios para detener la destrucción definitiva de la humanidad. No Le Tienen Miedo A Nada... Salvo A Ti. Disfruta de la mejor combinación de velocidad y potencia en DOOM Eternal, que trae un salto cualitativo del combate en primera persona. Nivel De Amenaza Del Slayer Al Máximo. Armado con un lanzallamas en el hombro, una hoja retráctil en la muñeca, armas y modificaciones mejoradas, y habilidades, eres más rápido, fuerte y versátil que nunca. La Impía Trinidad. Obtén lo que necesites de tus enemigos: consigue salud al ejecutarlos, armadura al incinerarlos y munición al destriparlos con la motosierra; conviértete en el matademonios supremo. Juega A Battlemode. Una nueva experiencia multijugador 2 contra 1. Un DOOM Slayer armado hasta los dientes se enfrenta a dos jugadores demonio en cinco rondas de intenso combate en primera persona.');
+INSERT INTO games (id, title, img, price, discount, description) VALUES (23, 'RED DEAD REDEMPTION 2', '162303243654.jpg', 599.99, 40, 'Con más de 175 premios al Juego del año y más de 250 valoraciones perfectas, Red Dead Redemption 2 es la épica historia de Arthur Morgan y la banda de Van der Linde, que huyen por toda América en el albor de una nueva era. También incluye acceso al mundo multijugador compartido de Red Dead Online.');
+INSERT INTO games (id, title, img, price, discount, description) VALUES (24, 'DIRT RALLY 2.0', 'dirtrally2-head.jpg', 249.99, 30, 'DiRT Rally 2.0 te reta a abrirte camino a través de una selección de ubicaciones de rally icónicas por todo el mundo, en los vehículos todoterreno más potentes de la historia, teniendo en cuenta que el menor de los fallos puede poner fin a tu carrera.');
+INSERT INTO games (id, title, img, price, discount, description) VALUES (25, 'PLAYERUNKNOWN’S BATTLEGROUNDS', '48550.jpg', 399.99, 50, 'PLAYERUNKNOWN’S BATTLEGROUNDS es un shooter basado en el modo Battle Royale que está siendo desarrollado a través de la retroalimentación con la comunidad. Comenzando de la nada, los usuarios tienen que luchar uno contra el otro para localizar armas y suministros para ser el único.');
 
 -- INSERT INTO games (id, title, img, price, discount, description) VALUES ('id', 'name', 'img', 'price', '%des', 'descr.');
 -- ---------------------------------------------------------------------------
@@ -93,62 +96,63 @@ INSERT INTO status (id, name) VALUES (2, 'IN OFFER');
 
 -- users
 
-INSERT INTO users (id, name, surname, email, avatar, newsletter, admin, password) values (1, 'Alisander', 'Garfit', 'agarfit0@globo.com', 'user-1', true, true, 'mVOeeAA');
-INSERT INTO users (id, name, surname, email, avatar, newsletter, admin, password) values (2, 'Erna', 'Britch', 'ebritch1@over-blog.com', 'user-2', true, false, 'ivBhSkV');
-INSERT INTO users (id, name, surname, email, avatar, newsletter, admin, password) values (3, 'Ainslee', 'Crother', 'acrother2@tumblr.com', 'user-3', true, false, 'h4C1GRhsj06');
-INSERT INTO users (id, name, surname, email, avatar, newsletter, admin, password) values (4, 'Retha', 'Laffling', 'rlaffling3@nba.com', 'user-4', true, true, '5RLGMRnbjZD');
-INSERT INTO users (id, name, surname, email, avatar, newsletter, admin, password) values (5, 'Vivianne', 'Cringle', 'vcringle4@mediafire.com', 'user-5', false, false, 'SZSl9L');
-INSERT INTO users (id, name, surname, email, avatar, newsletter, admin, password) values (6, 'Thibaut', 'Cusiter', 'tcusiter5@ebay.com', 'user-6', false, false, 'rf3Y9BbIR');
-INSERT INTO users (id, name, surname, email, avatar, newsletter, admin, password) values (7, 'Patty', 'Esby', 'pesby6@toplist.cz', 'user-7', false, true, 'DgL2zR6OM25');
-INSERT INTO users (id, name, surname, email, avatar, newsletter, admin, password) values (8, 'Lynsey', 'Ong', 'long7@google.com.au', 'user-8', true, false, 'Ya5QqNR');
-INSERT INTO users (id, name, surname, email, avatar, newsletter, admin, password) values (9, 'Haley', 'Haucke', 'hhaucke8@shinystat.com', 'user-9', false, false, '8toNZs20vJQI');
-INSERT INTO users (id, name, surname, email, avatar, newsletter, admin, password) values (10, 'Rossie', 'Attac', 'rattac9@drupal.org', 'user-10', true, true, '33Ywxj5Y7BId');
-INSERT INTO users (id, name, surname, email, avatar, newsletter, admin, password) values (11, 'Derward', 'Duling', 'ddulinga@123-reg.co.uk', 'user-11', false, false, 'Ce0c7SQ2S');
-INSERT INTO users (id, name, surname, email, avatar, newsletter, admin, password) values (12, 'Norry', 'Renne', 'nrenneb@liveinternet.ru', 'user-12', true, true, '4vF1ACQbE1U');
-INSERT INTO users (id, name, surname, email, avatar, newsletter, admin, password) values (13, 'Norbie', 'Matskevich', 'nmatskevichc@ucla.edu', 'user-13', false, false, 'nZaswvCE3N');
-INSERT INTO users (id, name, surname, email, avatar, newsletter, admin, password) values (14, 'Creighton', 'Beining', 'cbeiningd@slate.com', 'user-14', false, true, '8CtaZzIy');
-INSERT INTO users (id, name, surname, email, avatar, newsletter, admin, password) values (15, 'Melessa', 'Umney', 'mumneye@wsj.com', 'user-15', true, false, '49X84k5F7Z');
-INSERT INTO users (id, name, surname, email, avatar, newsletter, admin, password) values (16, 'Ruttger', 'Cambling', 'rcamblingf@tuttocitta.it', 'user-16', false, false, 'grzvJax8I2');
-INSERT INTO users (id, name, surname, email, avatar, newsletter, admin, password) values (17, 'Hercules', 'Glasspoole', 'hglasspooleg@topsy.com', 'user-17', false, false, 'SJeK4tK62');
-INSERT INTO users (id, name, surname, email, avatar, newsletter, admin, password) values (18, 'Almeta', 'Extil', 'aextilh@ebay.com', 'user-18', true, false, 'kzYrKq');
-INSERT INTO users (id, name, surname, email, avatar, newsletter, admin, password) values (19, 'Clayton', 'Caillou', 'ccailloui@privacy.gov.au', 'user-19', true, false, 'GBHPCvse');
-INSERT INTO users (id, name, surname, email, avatar, newsletter, admin, password) values (20, 'Boot', 'Axup', 'baxupj@telegraph.co.uk', 'user-20', true, false, 'MnHrmmN');
-INSERT INTO users (id, name, surname, email, avatar, newsletter, admin, password) values (21, 'Jules', 'Herrieven', 'jherrievenk@japanpost.jp', 'user-21', true, false, '67wqhX');
-INSERT INTO users (id, name, surname, email, avatar, newsletter, admin, password) values (22, 'William', 'Parriss', 'wparrissl@adobe.com', 'user-22', false, true, 'SU6rU5xyvL');
-INSERT INTO users (id, name, surname, email, avatar, newsletter, admin, password) values (23, 'Goldarina', 'Girkin', 'ggirkinm@xinhuanet.com', 'user-23', true, false, 'OgJ3d9');
-INSERT INTO users (id, name, surname, email, avatar, newsletter, admin, password) values (24, 'Cthrine', 'Brough', 'cbroughn@wikipedia.org', 'user-24', false, false, 'rJwMDrIOMGf');
-INSERT INTO users (id, name, surname, email, avatar, newsletter, admin, password) values (25, 'Emogene', 'Averill', 'eaverillo@ibm.com', 'user-25', true, false, 'hiYOX8PVFq');
-INSERT INTO users (id, name, surname, email, avatar, newsletter, admin, password) values (26, 'Aldous', 'Kemmons', 'akemmonsp@slate.com', 'user-26', true, false, 'cMl4oF5P');
-INSERT INTO users (id, name, surname, email, avatar, newsletter, admin, password) values (27, 'Gayel', 'Curds', 'gcurdsq@hc360.com', 'user-27', true, false, 'jUJGGWhfTLd');
-INSERT INTO users (id, name, surname, email, avatar, newsletter, admin, password) values (28, 'Erhart', 'Swinney', 'eswinneyr@printfriendly.com', 'user-28', true, false, 'vKnhhh');
-INSERT INTO users (id, name, surname, email, avatar, newsletter, admin, password) values (29, 'Audrey', 'Ollerton', 'aollertons@bloglovin.com', 'user-29', false, true, 'hZbFTZEi');
-INSERT INTO users (id, name, surname, email, avatar, newsletter, admin, password) values (30, 'Dalis', 'Wicher', 'dwichert@theglobeandmail.com', 'user-30', false, false, 'wedfOGL4a');
-INSERT INTO users (id, name, surname, email, avatar, newsletter, admin, password) values (31, 'Glori', 'Ollerton', 'gollertonu@youtube.com', 'user-31', false, false, 'LmlNCoYouH');
-INSERT INTO users (id, name, surname, email, avatar, newsletter, admin, password) values (32, 'Putnem', 'Vowles', 'pvowlesv@mashable.com', 'user-32', true, false, 'Qn2mGqUwJv');
-INSERT INTO users (id, name, surname, email, avatar, newsletter, admin, password) values (33, 'Ely', 'Bewlay', 'ebewlayw@addtoany.com', 'user-33', false, false, 'A28n6HRw');
-INSERT INTO users (id, name, surname, email, avatar, newsletter, admin, password) values (34, 'Niven', 'Jozsef', 'njozsefx@over-blog.com', 'user-34', false, false, 'I1ZGe3');
-INSERT INTO users (id, name, surname, email, avatar, newsletter, admin, password) values (35, 'Cass', 'Cadden', 'ccaddeny@technorati.com', 'user-35', false, false, 'M7fMRf');
-INSERT INTO users (id, name, surname, email, avatar, newsletter, admin, password) values (36, 'Burty', 'Bascomb', 'bbascombz@usgs.gov', 'user-36', true, true, 'kPCqznS');
-INSERT INTO users (id, name, surname, email, avatar, newsletter, admin, password) values (37, 'Leticia', 'Extill', 'lextill10@mashable.com', 'user-37', false, false, 'cxw8ll6x');
-INSERT INTO users (id, name, surname, email, avatar, newsletter, admin, password) values (38, 'Aleece', 'Broadbear', 'abroadbear11@senate.gov', 'user-38', true, true, '5C7OQOgWQJ0');
-INSERT INTO users (id, name, surname, email, avatar, newsletter, admin, password) values (39, 'Tammi', 'Santore', 'tsantore12@sakura.ne.jp', 'user-39', false, false, 'szVFEv4k');
-INSERT INTO users (id, name, surname, email, avatar, newsletter, admin, password) values (40, 'Vanda', 'Rilston', 'vrilston13@wix.com', 'user-40', false, false, 'ieJ6lB');
-INSERT INTO users (id, name, surname, email, avatar, newsletter, admin, password) values (41, 'Darwin', 'Nurden', 'dnurden14@arizona.edu', 'user-41', false, false, 'L1yNDNTi');
-INSERT INTO users (id, name, surname, email, avatar, newsletter, admin, password) values (42, 'Nev', 'Philippe', 'nphilippe15@joomla.org', 'user-42', true, false, 'OdoEmY6f');
-INSERT INTO users (id, name, surname, email, avatar, newsletter, admin, password) values (43, 'Tris', 'Tythe', 'ttythe16@washingtonpost.com', 'user-43', false, true, 'QZIJfQF');
-INSERT INTO users (id, name, surname, email, avatar, newsletter, admin, password) values (44, 'Rubie', 'Rodgier', 'rrodgier17@privacy.gov.au', 'user-44', false, true, 'SBKtUAN');
-INSERT INTO users (id, name, surname, email, avatar, newsletter, admin, password) values (45, 'Biddie', 'Jarrett', 'bjarrett18@usgs.gov', 'user-45', false, false, '6w2bVfe');
-INSERT INTO users (id, name, surname, email, avatar, newsletter, admin, password) values (46, 'Martica', 'Ney', 'mney19@flickr.com', 'user-46', false, false, 'VCJOBWeT');
-INSERT INTO users (id, name, surname, email, avatar, newsletter, admin, password) values (47, 'Dew', 'Craig', 'dcraig1a@usda.gov', 'user-47', false, false, 'SbxDi1x9Ubt');
-INSERT INTO users (id, name, surname, email, avatar, newsletter, admin, password) values (48, 'Kimbra', 'Sultana', 'ksultana1b@princeton.edu', 'user-48', true, false, '4zfDVrDBpK4');
-INSERT INTO users (id, name, surname, email, avatar, newsletter, admin, password) values (49, 'Wilbert', 'Brindley', 'wbrindley1c@microsoft.com', 'user-49', false, false, 'DpfRZ15dT2ik');
-INSERT INTO users (id, name, surname, email, avatar, newsletter, admin, password) values (50, 'Windham', 'Garnam', 'wgarnam1d@etsy.com', 'user-50', true, true, 'hfEaoqT');
+INSERT INTO users (id, name, surname, email, avatar, newsletter, admin, password) values (1, 'Alisander', 'Garfit', 'agarfit0@globo.com', 'user-1.jpg', true, true, 'mVOeeAA');
+INSERT INTO users (id, name, surname, email, avatar, newsletter, admin, password) values (2, 'Erna', 'Britch', 'ebritch1@over-blog.com', 'user-2.jpg', true, false, 'ivBhSkV');
+INSERT INTO users (id, name, surname, email, avatar, newsletter, admin, password) values (3, 'Ainslee', 'Crother', 'acrother2@tumblr.com', 'user-3.jpg', true, false, 'h4C1GRhsj06');
+INSERT INTO users (id, name, surname, email, avatar, newsletter, admin, password) values (4, 'Retha', 'Laffling', 'rlaffling3@nba.com', 'user-4.jpg', true, true, '5RLGMRnbjZD');
+INSERT INTO users (id, name, surname, email, avatar, newsletter, admin, password) values (5, 'Vivianne', 'Cringle', 'vcringle4@mediafire.com', 'user-5.jpg', false, false, 'SZSl9L');
+INSERT INTO users (id, name, surname, email, avatar, newsletter, admin, password) values (6, 'Thibaut', 'Cusiter', 'tcusiter5@ebay.com', 'user-6.jpg', false, false, 'rf3Y9BbIR');
+INSERT INTO users (id, name, surname, email, avatar, newsletter, admin, password) values (7, 'Patty', 'Esby', 'pesby6@toplist.cz', 'user-7.jpg', false, true, 'DgL2zR6OM25');
+INSERT INTO users (id, name, surname, email, avatar, newsletter, admin, password) values (8, 'Lynsey', 'Ong', 'long7@google.com.au', 'user-8.jpg', true, false, 'Ya5QqNR');
+INSERT INTO users (id, name, surname, email, avatar, newsletter, admin, password) values (9, 'Haley', 'Haucke', 'hhaucke8@shinystat.com', 'user-9.jpg', false, false, '8toNZs20vJQI');
+INSERT INTO users (id, name, surname, email, avatar, newsletter, admin, password) values (10, 'Rossie', 'Attac', 'rattac9@drupal.org', 'user-10.jpg', true, true, '33Ywxj5Y7BId');
+INSERT INTO users (id, name, surname, email, avatar, newsletter, admin, password) values (11, 'Derward', 'Duling', 'ddulinga@123-reg.co.uk', 'user-11.jpg', false, false, 'Ce0c7SQ2S');
+INSERT INTO users (id, name, surname, email, avatar, newsletter, admin, password) values (12, 'Norry', 'Renne', 'nrenneb@liveinternet.ru', 'user-12.jpg', true, true, '4vF1ACQbE1U');
+INSERT INTO users (id, name, surname, email, avatar, newsletter, admin, password) values (13, 'Norbie', 'Matskevich', 'nmatskevichc@ucla.edu', 'user-13.jpg', false, false, 'nZaswvCE3N');
+INSERT INTO users (id, name, surname, email, avatar, newsletter, admin, password) values (14, 'Creighton', 'Beining', 'cbeiningd@slate.com', 'user-14.jpg', false, true, '8CtaZzIy');
+INSERT INTO users (id, name, surname, email, avatar, newsletter, admin, password) values (15, 'Melessa', 'Umney', 'mumneye@wsj.com', 'user-15.jpg', true, false, '49X84k5F7Z');
+INSERT INTO users (id, name, surname, email, avatar, newsletter, admin, password) values (16, 'Ruttger', 'Cambling', 'rcamblingf@tuttocitta.it', 'user-16.jpg', false, false, 'grzvJax8I2');
+INSERT INTO users (id, name, surname, email, avatar, newsletter, admin, password) values (17, 'Hercules', 'Glasspoole', 'hglasspooleg@topsy.com', 'user-17.jpg', false, false, 'SJeK4tK62');
+INSERT INTO users (id, name, surname, email, avatar, newsletter, admin, password) values (18, 'Almeta', 'Extil', 'aextilh@ebay.com', 'user-18.jpg', true, false, 'kzYrKq');
+INSERT INTO users (id, name, surname, email, avatar, newsletter, admin, password) values (19, 'Clayton', 'Caillou', 'ccailloui@privacy.gov.au', 'user-19.jpg', true, false, 'GBHPCvse');
+INSERT INTO users (id, name, surname, email, avatar, newsletter, admin, password) values (20, 'Boot', 'Axup', 'baxupj@telegraph.co.uk', 'user-20.jpg', true, false, 'MnHrmmN');
+INSERT INTO users (id, name, surname, email, avatar, newsletter, admin, password) values (21, 'Jules', 'Herrieven', 'jherrievenk@japanpost.jp', 'user-21.jpg', true, false, '67wqhX');
+INSERT INTO users (id, name, surname, email, avatar, newsletter, admin, password) values (22, 'William', 'Parriss', 'wparrissl@adobe.com', 'user-22.jpg', false, true, 'SU6rU5xyvL');
+INSERT INTO users (id, name, surname, email, avatar, newsletter, admin, password) values (23, 'Goldarina', 'Girkin', 'ggirkinm@xinhuanet.com', 'user-23.jpg', true, false, 'OgJ3d9');
+INSERT INTO users (id, name, surname, email, avatar, newsletter, admin, password) values (24, 'Cthrine', 'Brough', 'cbroughn@wikipedia.org', 'user-24.jpg', false, false, 'rJwMDrIOMGf');
+INSERT INTO users (id, name, surname, email, avatar, newsletter, admin, password) values (25, 'Emogene', 'Averill', 'eaverillo@ibm.com', 'user-25.jpg', true, false, 'hiYOX8PVFq');
+INSERT INTO users (id, name, surname, email, avatar, newsletter, admin, password) values (26, 'Aldous', 'Kemmons', 'akemmonsp@slate.com', 'user-26.jpg', true, false, 'cMl4oF5P');
+INSERT INTO users (id, name, surname, email, avatar, newsletter, admin, password) values (27, 'Gayel', 'Curds', 'gcurdsq@hc360.com', 'user-27.jpg', true, false, 'jUJGGWhfTLd');
+INSERT INTO users (id, name, surname, email, avatar, newsletter, admin, password) values (28, 'Erhart', 'Swinney', 'eswinneyr@printfriendly.com', 'user-28.jpg', true, false, 'vKnhhh');
+INSERT INTO users (id, name, surname, email, avatar, newsletter, admin, password) values (29, 'Audrey', 'Ollerton', 'aollertons@bloglovin.com', 'user-29.jpg', false, true, 'hZbFTZEi');
+INSERT INTO users (id, name, surname, email, avatar, newsletter, admin, password) values (30, 'Dalis', 'Wicher', 'dwichert@theglobeandmail.com', 'user-30.jpg', false, false, 'wedfOGL4a');
+INSERT INTO users (id, name, surname, email, avatar, newsletter, admin, password) values (31, 'Glori', 'Ollerton', 'gollertonu@youtube.com', 'user-31.jpg', false, false, 'LmlNCoYouH');
+INSERT INTO users (id, name, surname, email, avatar, newsletter, admin, password) values (32, 'Putnem', 'Vowles', 'pvowlesv@mashable.com', 'user-32.jpg', true, false, 'Qn2mGqUwJv');
+INSERT INTO users (id, name, surname, email, avatar, newsletter, admin, password) values (33, 'Ely', 'Bewlay', 'ebewlayw@addtoany.com', 'user-33.jpg', false, false, 'A28n6HRw');
+INSERT INTO users (id, name, surname, email, avatar, newsletter, admin, password) values (34, 'Niven', 'Jozsef', 'njozsefx@over-blog.com', 'user-34.jpg', false, false, 'I1ZGe3');
+INSERT INTO users (id, name, surname, email, avatar, newsletter, admin, password) values (35, 'Cass', 'Cadden', 'ccaddeny@technorati.com', 'user-35.jpg', false, false, 'M7fMRf');
+INSERT INTO users (id, name, surname, email, avatar, newsletter, admin, password) values (36, 'Burty', 'Bascomb', 'bbascombz@usgs.gov', 'user-36.jpg', true, true, 'kPCqznS');
+INSERT INTO users (id, name, surname, email, avatar, newsletter, admin, password) values (37, 'Leticia', 'Extill', 'lextill10@mashable.com', 'user-37.jpg', false, false, 'cxw8ll6x');
+INSERT INTO users (id, name, surname, email, avatar, newsletter, admin, password) values (38, 'Aleece', 'Broadbear', 'abroadbear11@senate.gov', 'user-38.jpg', true, true, '5C7OQOgWQJ0');
+INSERT INTO users (id, name, surname, email, avatar, newsletter, admin, password) values (39, 'Tammi', 'Santore', 'tsantore12@sakura.ne.jp', 'user-39.jpg', false, false, 'szVFEv4k');
+INSERT INTO users (id, name, surname, email, avatar, newsletter, admin, password) values (40, 'Vanda', 'Rilston', 'vrilston13@wix.com', 'user-40.jpg', false, false, 'ieJ6lB');
+INSERT INTO users (id, name, surname, email, avatar, newsletter, admin, password) values (41, 'Darwin', 'Nurden', 'dnurden14@arizona.edu', 'user-41.jpg', false, false, 'L1yNDNTi');
+INSERT INTO users (id, name, surname, email, avatar, newsletter, admin, password) values (42, 'Nev', 'Philippe', 'nphilippe15@joomla.org', 'user-42.jpg', true, false, 'OdoEmY6f');
+INSERT INTO users (id, name, surname, email, avatar, newsletter, admin, password) values (43, 'Tris', 'Tythe', 'ttythe16@washingtonpost.com', 'user-43.jpg', false, true, 'QZIJfQF');
+INSERT INTO users (id, name, surname, email, avatar, newsletter, admin, password) values (44, 'Rubie', 'Rodgier', 'rrodgier17@privacy.gov.au', 'user-44.jpg', false, true, 'SBKtUAN');
+INSERT INTO users (id, name, surname, email, avatar, newsletter, admin, password) values (45, 'Biddie', 'Jarrett', 'bjarrett18@usgs.gov', 'user-45.jpg', false, false, '6w2bVfe');
+INSERT INTO users (id, name, surname, email, avatar, newsletter, admin, password) values (46, 'Martica', 'Ney', 'mney19@flickr.com', 'user-46.jpg', false, false, 'VCJOBWeT');
+INSERT INTO users (id, name, surname, email, avatar, newsletter, admin, password) values (47, 'Dew', 'Craig', 'dcraig1a@usda.gov', 'user-47.jpg', false, false, 'SbxDi1x9Ubt');
+INSERT INTO users (id, name, surname, email, avatar, newsletter, admin, password) values (48, 'Kimbra', 'Sultana', 'ksultana1b@princeton.edu', 'user-48.jpg', true, false, '4zfDVrDBpK4');
+INSERT INTO users (id, name, surname, email, avatar, newsletter, admin, password) values (49, 'Wilbert', 'Brindley', 'wbrindley1c@microsoft.com', 'user-49.jpg', false, false, 'DpfRZ15dT2ik');
+INSERT INTO users (id, name, surname, email, avatar, newsletter, admin, password) values (50, 'Windham', 'Garnam', 'wgarnam1d@etsy.com', 'user-50.jpg', true, true, 'hfEaoqT');
 INSERT INTO users (id, name, surname, email, avatar, newsletter, admin, password) values (51, 'admin', 'admin', 'admin', 'user-51.jpg', false, true, '$2b$10$9brKXibQBlPSF04m8lkbjeLj66uDTNyIvFYXHjNGrU6XOFlIupYhW');
 INSERT INTO users (id, name, surname, email, avatar, newsletter, admin, password) values (52, 'Sarah', 'Richards', 'sarah.richards@gmail.com', 'user-52.jpg', false, true, '$2b$10$9brKXibQBlPSF04m8lkbjeLj66uDTNyIvFYXHjNGrU6XOFlIupYhW');
 
 -- ---------------------------------------------------------------------------
 
 -- category_game
+
 
 -- AGE OF EMPIRES II ('STRATEGY', 'REAL-TIME STRATEGY', 'CITY BUILDER', 'MULTIPLAYER')
 INSERT INTO category_game (id, game_id_category, category_id) VALUES (1, 1, 1);
@@ -260,6 +264,22 @@ INSERT INTO category_game (id, game_id_category, category_id) VALUES (85, 22, 6)
 INSERT INTO category_game (id, game_id_category, category_id) VALUES (86, 22, 9);
 INSERT INTO category_game (id, game_id_category, category_id) VALUES (87, 22, 7);
 INSERT INTO category_game (id, game_id_category, category_id) VALUES (88, 22, 23);
+-- RED DEAD REDEMPTION 2 ('SANDBOX', 'ACTION', 'GREAT SOUNDTRACK', 'MULTIPLAYER')
+INSERT INTO category_game (id, game_id_category, category_id) VALUES (89, 23, 28);
+INSERT INTO category_game (id, game_id_category, category_id) VALUES (90, 23, 9);
+INSERT INTO category_game (id, game_id_category, category_id) VALUES (91, 23, 7);
+INSERT INTO category_game (id, game_id_category, category_id) VALUES (92, 23, 4);
+-- DIRT RALLY 2.0 ('RACING', 'SPORTS', 'DIFFICULT', 'MULTIPLAYER')
+INSERT INTO category_game (id, game_id_category, category_id) VALUES (93, 24, 41);
+INSERT INTO category_game (id, game_id_category, category_id) VALUES (94, 24, 5);
+INSERT INTO category_game (id, game_id_category, category_id) VALUES (95, 24, 6);
+INSERT INTO category_game (id, game_id_category, category_id) VALUES (96, 24, 4);
+-- PLAYERUNKNOWN’S BATTLEGROUNDS ('BATTLE ROYAL', 'MULTIPLAYER', 'SURVIVAL', 'FIRST PERSON SHOOTER')
+INSERT INTO category_game (id, game_id_category, category_id) VALUES (97, 25, 36);
+INSERT INTO category_game (id, game_id_category, category_id) VALUES (98, 25, 4);
+INSERT INTO category_game (id, game_id_category, category_id) VALUES (99, 25, 16);
+INSERT INTO category_game (id, game_id_category, category_id) VALUES (100, 25, 23);
+
 
 -- QUERY PARA VER RESULTADOS EN WORKBENCH
 # SELECT category_game.id, games.title AS 'Juego', categories.title AS 'Categoría'
@@ -272,7 +292,8 @@ INSERT INTO category_game (id, game_id_category, category_id) VALUES (88, 22, 23
 #FROM category_game
 #INNER JOIN categories ON categories.id = category_id
 #GROUP BY category_id
-#ORDER BY quantity DESC;
+#ORDER BY quantity DESC
+#LIMIT 4;
 
 -- ---------------------------------------------------------------------------
 
@@ -370,6 +391,22 @@ INSERT INTO platform_game (id, game_id_platform, platform_id) VALUES (67, 22, 1)
 INSERT INTO platform_game (id, game_id_platform, platform_id) VALUES (68, 22, 2);
 INSERT INTO platform_game (id, game_id_platform, platform_id) VALUES (69, 22, 3);
 INSERT INTO platform_game (id, game_id_platform, platform_id) VALUES (70, 22, 4);
+-- RED DEAD REDEMPTION 2
+INSERT INTO platform_game (id, game_id_platform, platform_id) VALUES (71, 23, 1);
+INSERT INTO platform_game (id, game_id_platform, platform_id) VALUES (72, 23, 2);
+INSERT INTO platform_game (id, game_id_platform, platform_id) VALUES (73, 23, 3);
+INSERT INTO platform_game (id, game_id_platform, platform_id) VALUES (74, 23, 4);
+-- DIRT RALLY 2.0
+INSERT INTO platform_game (id, game_id_platform, platform_id) VALUES (75, 24, 1);
+INSERT INTO platform_game (id, game_id_platform, platform_id) VALUES (76, 24, 2);
+INSERT INTO platform_game (id, game_id_platform, platform_id) VALUES (77, 24, 3);
+INSERT INTO platform_game (id, game_id_platform, platform_id) VALUES (78, 24, 4);
+-- PLAYERUNKNOWN’S BATTLEGROUNDS
+INSERT INTO platform_game (id, game_id_platform, platform_id) VALUES (79, 25, 1);
+INSERT INTO platform_game (id, game_id_platform, platform_id) VALUES (80, 25, 2);
+INSERT INTO platform_game (id, game_id_platform, platform_id) VALUES (81, 25, 3);
+INSERT INTO platform_game (id, game_id_platform, platform_id) VALUES (82, 25, 4);
+
 
 -- QUERY PARA VER RESULTADOS EN WORKBENCH
 # SELECT platform_game.id, games.title AS 'Juego', platforms.title AS 'Plataforma'
@@ -382,7 +419,8 @@ INSERT INTO platform_game (id, game_id_platform, platform_id) VALUES (70, 22, 4)
 #FROM platform_game
 #INNER JOIN platforms ON platforms.id = platform_id
 #GROUP BY platform_id
-#ORDER BY quantity DESC;
+#ORDER BY quantity DESC
+#LIMIT 4;
 
 -- ---------------------------------------------------------------------------
 
@@ -433,6 +471,16 @@ INSERT INTO status_game (id, game_id_status, status_id) VALUES (21, 21, 1);
 -- doom eternal
 INSERT INTO status_game (id, game_id_status, status_id) VALUES (22, 22, 1);
 INSERT INTO status_game (id, game_id_status, status_id) VALUES (23, 22, 2);
+-- Red Dead Redemption 2
+INSERT INTO status_game (id, game_id_status, status_id) VALUES (24, 23, 1);
+INSERT INTO status_game (id, game_id_status, status_id) VALUES (25, 23, 2);
+-- Dirt Rally 2.0
+INSERT INTO status_game (id, game_id_status, status_id) VALUES (26, 24, 1);
+INSERT INTO status_game (id, game_id_status, status_id) VALUES (27, 24, 2);
+-- PLAYERUNKNOWN’S BATTLEGROUNDS
+INSERT INTO status_game (id, game_id_status, status_id) VALUES (28, 25, 1);
+INSERT INTO status_game (id, game_id_status, status_id) VALUES (29, 25, 2);
+
 
 -- QUERY PARA VER RESULTADOS EN WORKBENCH
 # SELECT status_game.id, games.title AS 'Juego', status.name AS 'Estado'
@@ -612,6 +660,7 @@ INSERT INTO user_game (id, game_id_user, user_id) VALUES (164, 13, 51);
 INSERT INTO user_game (id, game_id_user, user_id) VALUES (165, 14, 51);
 INSERT INTO user_game (id, game_id_user, user_id) VALUES (166, 15, 51);
 INSERT INTO user_game (id, game_id_user, user_id) VALUES (167, 16, 51);
+INSERT INTO user_game (id, game_id_user, user_id) VALUES (168, 23, 69);
 
 -- QUERY PARA VER RESULTADOS EN WORKBENCH
 # SELECT user_game.id, games.title AS 'Juego', users.name, users.surname
@@ -619,5 +668,13 @@ INSERT INTO user_game (id, game_id_user, user_id) VALUES (167, 16, 51);
 # INNER JOIN user_game ON games.id = game_id_user
 # INNER JOIN users ON users.id = user_id
 # ORDER BY games.title ASC;
+
+#SELECT COUNT(user_id) AS 'quantity', users.name AS 'name', users.surname AS 'surname' 
+#FROM user_game 
+#INNER JOIN users ON users.id = user_id
+#WHERE name <> 'admin'
+#GROUP BY user_id 
+#ORDER BY quantity DESC
+#LIMIT 4;
 
 -- ---------------------------------------------------------------------------
