@@ -20,13 +20,13 @@ let Main = () => {
     ] = useState([])
 
     let [
-        categoryCount,
-        setCategoryCount
+        categories,
+        setCategories
     ] = useState([])
 
     let [
-        platformCount,
-        setPlatformCount
+        platforms,
+        setPlatforms
     ] = useState([])
 
     let [
@@ -60,21 +60,10 @@ let Main = () => {
         fetch('http://localhost:3001/api/products')
             .then(res => res.json())
             .then(data => {
-                setCategoryCount({
-                    ...data.countByCategory
-                });
-                return data;
-            })
-            .then(data => {
-                setPlatformCount({
-                    ...data.countByPlatform
-                });
-                return data;
-            })
-            .then(data => {
-                setBestSellers({
-                    ...data.bestSellers
-                })
+                delete data.games;
+                setCategories(
+                    data.categories
+                )
             })
             .catch(err => console.log(err));
     }, [])
@@ -112,7 +101,9 @@ let Main = () => {
                         )
                     })
                 }
-                <CountPanel />
+                <CountPanel>
+
+                </CountPanel>
             </div>
         </main>
     )

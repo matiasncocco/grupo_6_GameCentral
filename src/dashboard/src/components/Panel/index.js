@@ -19,7 +19,7 @@ let Panel = (props) => {
             <article className='panel-article'>
                 <p className='panel-title'>{ props.title }</p>
                 <div className='panel-img'>
-                    <a target='_blank' href={ props.img }>
+                    <a target='_blank' href={ props.img } rel='noreferrer'>
                         <img src={ props.img } alt={ `img${props.title}` }/>
                     </a>
                 </div>

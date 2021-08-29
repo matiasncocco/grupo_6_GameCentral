@@ -42,7 +42,7 @@ let CountPanel = () => {
         }, []);
    
     return (
-        <section className='count-panel'>
+        <section className='main-count-panel'>
             {
                 count.length === 0 &&
                 <p>
