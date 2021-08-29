@@ -24,8 +24,8 @@ INSERT INTO games (id, title, img, price, discount, description) VALUES (19, 'RI
 INSERT INTO games (id, title, img, price, discount, description) VALUES (20, 'COUNTER STRIKE', '1624416547403-20-csgo.jpg', 1381.99, null, 'Counter-Strike: Global Offensive (CS:GO) amplía el juego de acción por equipos del que fue pionero cuando salió hace más de 20 años. CS:GO incluye nuevos mapas, personajes, armas y modos de juego, y ofrece versiones actualizadas del contenido clásico de Counter-Strike (de_dust2, etc.). «Counter-Strike sorprendió a la industria de los videojuegos cuando el insólito mod se convirtió en el juego de acción en línea para PC más jugado del mundo casi inmediatamente después de su lanzamiento en agosto de 1999», dijo Doug Lombardi, de Valve. «Durante los últimos 12 años, se ha mantenido como uno de los títulos más jugados del mundo, ha ocupado un papel protagonista en los torneos de videojuegos competitivos y ha vendido más de 25 millones de copias de la franquicia en todo el mundo. CS:GO promete ampliar la galardonada jugabilidad de Counter-Strike y ofrecérsela tanto a los jugadores de PC como a los de consolas de nueva generación y de Mac».');
 INSERT INTO games (id, title, img, price, discount, description) VALUES (21, 'NIPPON MARATHON', '1624416547403-21-nm.jpg', 179.99, 33, '¡San! ¡Ni! ¡Ichi! ¡¡¡Hajime!!! Estira los músculos y embárcate en el maratón definitivo de Japón en un estridente juego de carreras multijugador en el que puede pasar de todo. Supera barriles, corre más rápido que los Shiba Inu y lánzate fuera del camino de las bicicletas, todo ello mientras lanzas fruta a tus oponentes y atraviesas tablones en precario equilibrio sobre cascadas, en una experiencia irreal que hay que jugar para creer. Características: Una locura para cuatro jugadores que se pueden ir y venir. El juego en solitario es compatible, pero coge hasta cuatro almohadillas y disfruta de la suprema tontería de la mayor maratón de juegos. ¿Necesitas ir al baño para quitarte el zumo de piña del body? ¿Un peatón cualquiera pasa por tu sofá y quiere jugar? Sea cual sea la causa, ¡sube y baja para disfrutar de la mejor fiesta! ¡Experimenta sorpresas en abundancia en una carrera a través de todo Japón! Atraviesa el país nipón en una serie de niveles creativos que abarcan calles urbanas concurridas, calles estrechas y antiguas, mercados bulliciosos, santuarios en las cimas de las montañas e incluso la parte superior de un tren bala. En el Maratón de Nippon nunca se sabe qué ocurrirá a continuación. ¿Quizás encuentres tiempo para una improvisada diversión en una máquina tragaperras? ¿Quizás un presentador de noticias llegue en jetpack para entrevistarte en la pista de carreras? Demonios, todo es posible... Un extenso modo historia con un extraño elenco de personajes. Asciende de corredor novato a maestro del maratón. Vive las historias del hombre langosta J DARWIN, la entusiasta de los narvales Elizabeth Nishibori, el viejo tío marinero Zenbei "XEN BAE" y el aspirante a dueño de una agencia de citas Snuguru Maestro, todo ello mientras se revelan los turbios secretos de las fuerzas invisibles que están en juego detrás del Maratón de Nippon. ¿Podrás vencer al diez veces campeón Handsome Hazuki y a sus compinches? ¡Relájate con algunos Party Games! A algunas personas les gusta observar los pájaros. A algunos les gusta dar un paseo en coche el domingo por la tarde. A otros les gusta subirse a un carrito y chocar de frente con bolos del tamaño de un hombre. Fija la posición de tu carro de la compra, da un salto en marcha, haz una mueca de dolor mientras te lanzas hacia peligros aleatorios y reza para no acabar en la sala de urgencias. ¿Has dominado el pavo en los bolos? Entonces enfréntate al guante L.O.B.S.T.E.R. Un recorrido de asalto precariamente estrecho y generado aleatoriamente. Martillos oscilantes, guantes de boxeo neumáticos y furiosos jugadores de fútbol americano conspiran para tirarte a la bebida.');
 INSERT INTO games (id, title, img, price, discount, description) VALUES (22, 'DOOM ETERNAL', '1624416547403-22-de.png', 599.99, 50, 'Los ejércitos del infierno han invadido la Tierra. Ponte en la piel del Slayer en una épica campaña para un jugador y cruza dimensiones aniquilando demonios para detener la destrucción definitiva de la humanidad. No Le Tienen Miedo A Nada... Salvo A Ti. Disfruta de la mejor combinación de velocidad y potencia en DOOM Eternal, que trae un salto cualitativo del combate en primera persona. Nivel De Amenaza Del Slayer Al Máximo. Armado con un lanzallamas en el hombro, una hoja retráctil en la muñeca, armas y modificaciones mejoradas, y habilidades, eres más rápido, fuerte y versátil que nunca. La Impía Trinidad. Obtén lo que necesites de tus enemigos: consigue salud al ejecutarlos, armadura al incinerarlos y munición al destriparlos con la motosierra; conviértete en el matademonios supremo. Juega A Battlemode. Una nueva experiencia multijugador 2 contra 1. Un DOOM Slayer armado hasta los dientes se enfrenta a dos jugadores demonio en cinco rondas de intenso combate en primera persona.');
-INSERT INTO games (id, title, img, price, discount, description) VALUES (23, 'RED DEAD REDEMPTION 2', '6402981a-9446-46d8-8289-e370f3158746.jpg', 599.99, 40, 'Con más de 175 premios al Juego del año y más de 250 valoraciones perfectas, Red Dead Redemption 2 es la épica historia de Arthur Morgan y la banda de Van der Linde, que huyen por toda América en el albor de una nueva era. También incluye acceso al mundo multijugador compartido de Red Dead Online.');
-
+INSERT INTO games (id, title, img, price, discount, description) VALUES (23, 'RED DEAD REDEMPTION 2', '162303243654.jpg', 599.99, 40, 'Con más de 175 premios al Juego del año y más de 250 valoraciones perfectas, Red Dead Redemption 2 es la épica historia de Arthur Morgan y la banda de Van der Linde, que huyen por toda América en el albor de una nueva era. También incluye acceso al mundo multijugador compartido de Red Dead Online.');
+INSERT INTO games (id, title, img, price, discount, description) VALUES (24, 'DIRT RALLY 2.0', 'dirtrally2-head.jpg', 249.99, 30, 'DiRT Rally 2.0 te reta a abrirte camino a través de una selección de ubicaciones de rally icónicas por todo el mundo, en los vehículos todoterreno más potentes de la historia, teniendo en cuenta que el menor de los fallos puede poner fin a tu carrera.');
 
 -- INSERT INTO games (id, title, img, price, discount, description) VALUES ('id', 'name', 'img', 'price', '%des', 'descr.');
 -- ---------------------------------------------------------------------------
@@ -268,6 +268,11 @@ INSERT INTO category_game (id, game_id_category, category_id) VALUES (89, 23, 28
 INSERT INTO category_game (id, game_id_category, category_id) VALUES (90, 23, 9);
 INSERT INTO category_game (id, game_id_category, category_id) VALUES (91, 23, 7);
 INSERT INTO category_game (id, game_id_category, category_id) VALUES (92, 23, 4);
+-- DIRT RALLY 2.0 ('RACING', 'SPORTS', 'DIFFICULT', 'MULTIPLAYER')
+INSERT INTO category_game (id, game_id_category, category_id) VALUES (93, 24, 41);
+INSERT INTO category_game (id, game_id_category, category_id) VALUES (94, 24, 5);
+INSERT INTO category_game (id, game_id_category, category_id) VALUES (95, 24, 6);
+INSERT INTO category_game (id, game_id_category, category_id) VALUES (96, 24, 4);
 
 -- QUERY PARA VER RESULTADOS EN WORKBENCH
 # SELECT category_game.id, games.title AS 'Juego', categories.title AS 'Categoría'
@@ -384,6 +389,11 @@ INSERT INTO platform_game (id, game_id_platform, platform_id) VALUES (71, 23, 1)
 INSERT INTO platform_game (id, game_id_platform, platform_id) VALUES (72, 23, 2);
 INSERT INTO platform_game (id, game_id_platform, platform_id) VALUES (73, 23, 3);
 INSERT INTO platform_game (id, game_id_platform, platform_id) VALUES (74, 23, 4);
+-- DIRT RALLY 2.0
+INSERT INTO platform_game (id, game_id_platform, platform_id) VALUES (75, 24, 1);
+INSERT INTO platform_game (id, game_id_platform, platform_id) VALUES (76, 24, 2);
+INSERT INTO platform_game (id, game_id_platform, platform_id) VALUES (77, 24, 3);
+INSERT INTO platform_game (id, game_id_platform, platform_id) VALUES (78, 24, 4);
 
 
 -- QUERY PARA VER RESULTADOS EN WORKBENCH
@@ -452,6 +462,10 @@ INSERT INTO status_game (id, game_id_status, status_id) VALUES (23, 22, 2);
 -- Red Dead Redemption 2
 INSERT INTO status_game (id, game_id_status, status_id) VALUES (24, 23, 1);
 INSERT INTO status_game (id, game_id_status, status_id) VALUES (25, 23, 2);
+-- Dirt Rally 2.0
+INSERT INTO status_game (id, game_id_status, status_id) VALUES (26, 24, 1);
+INSERT INTO status_game (id, game_id_status, status_id) VALUES (27, 24, 2);
+
 
 -- QUERY PARA VER RESULTADOS EN WORKBENCH
 # SELECT status_game.id, games.title AS 'Juego', status.name AS 'Estado'
