@@ -660,6 +660,7 @@ INSERT INTO user_game (id, game_id_user, user_id) VALUES (164, 13, 51);
 INSERT INTO user_game (id, game_id_user, user_id) VALUES (165, 14, 51);
 INSERT INTO user_game (id, game_id_user, user_id) VALUES (166, 15, 51);
 INSERT INTO user_game (id, game_id_user, user_id) VALUES (167, 16, 51);
+INSERT INTO user_game (id, game_id_user, user_id) VALUES (168, 23, 69);
 
 -- QUERY PARA VER RESULTADOS EN WORKBENCH
 # SELECT user_game.id, games.title AS 'Juego', users.name, users.surname
