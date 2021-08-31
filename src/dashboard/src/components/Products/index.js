@@ -1,4 +1,5 @@
 import Panel from '../Panel';
+import Spinner from '../Spinner';
 import {
     useEffect,
     useState
@@ -41,9 +42,7 @@ let Products = () => {
                 {/* panel-container => Main.css */}
                 {
                     games.length === 0 &&
-                    <p>
-                        SPINNER
-                    </p>
+                    <Spinner />
                 }
                 {
                     games &&

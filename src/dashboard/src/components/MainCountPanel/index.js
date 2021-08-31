@@ -1,5 +1,6 @@
 import './css/styles.css';
 import CountItem from '../CountItem';
+import Spinner from '../Spinner';
 import {
     useState,
     useEffect
@@ -45,9 +46,7 @@ let CountPanel = () => {
         <section className='main-count-panel'>
             {
                 count.length === 0 &&
-                <p>
-                    SPINNER
-                </p>
+                <Spinner />
             }
             {
                 count.length > 0 &&

@@ -31,6 +31,7 @@ editButton.addEventListener('click', () => {
     };
 });
 
+// ésto es lo que oculta y desoculta el formulario de edición
 function switchClasses () {
     if (profileForm.classList.contains('profile-section-hide')) {
         profileForm.classList.remove('profile-section-hide');

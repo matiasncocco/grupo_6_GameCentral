@@ -4,6 +4,7 @@ import Sidebar from './Sidebar';
 import Main from './Main';
 import Products from './Products';
 import Users from './Users';
+import NotFound from './NotFound';
 import {
   Route,
   Switch
@@ -25,7 +26,7 @@ let App = () => {
         <Route path='/' exact component={ Main } />
         <Route path='/products' exact component={ Products } />
         <Route path='/users' exact component={ Users } />
-        {/* <Route component={ NotFound } /> */}
+        <Route component={ NotFound } />
       </Switch>
     </div>
   )

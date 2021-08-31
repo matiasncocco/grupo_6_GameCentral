@@ -100,7 +100,8 @@
         <% } %>
     </section>
     <!-- formulario de edición -->
-    <form class="profile-section profile-section-form profile-section-hide" action="/users/profile?_method=PUT" method="POST" id="edit-profile-form">
+    <!-- hay que terminarlo -->
+    <!-- <form class="profile-section profile-section-form profile-section-hide" action="/users/profile?_method=PUT" method="POST" id="edit-profile-form">
         <div class="profile-title">
             <h1 class="big-title">
                 TU PERFIL
@@ -127,7 +128,7 @@
                     type="text"
                     name="name"
                     id="name"
-                    value="<%= user.name %>"
+                    value="<%#= user.name %>"
                 >
             </div>
             <div class="edit-user-box">
@@ -139,31 +140,31 @@
                     type="text"
                     name="surname"
                     id="surname"
-                    value="<%= user.surname %>"
+                    value="<%#= user.surname %>"
                 >
             </div>
         </div>
         <div class="profile-avatar">
-            <img src="/img/users/<%= user.avatar %>">
+            <img src="/img/users/<%#= user.avatar %>">
         </div>
         <div class="profile-more">
             <h3>
-                <%= user.email %>
+                <%#= user.email %>
             </h3>
-            <% if (user.newsletter == 1) { %>
+            <%# if (user.newsletter == 1) { %>
                 <h5>
                     Estás subscripto a nuestra newsletter
                 </h5>
-            <% } else { %>
+            <%# } else { %>
                 <h5>
                    No estás subscripto a nuestra newsletter
                 </h5>
-            <% } %>
+            <%# } %>
             <h3>
                 Argentina
             </h3>
         </div>
-    </form>
+    </form> -->
     <!-- caja de controles -->
     <footer class="user-control-footer">
         <form class="user-control-box" action="/users/delog" method="GET">

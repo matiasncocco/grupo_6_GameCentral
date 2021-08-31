@@ -37,7 +37,8 @@
                 <p class="user-data longest-data">
                     <%= users[i].email %>
                 </p>
-                <div class="user-data short-data">
+                <!-- ésto es un link que iría a dar o quitar admin a ése usuario -->
+                <!-- <div class="user-data short-data">
                     <a href="/users/<%= users[i].id %>">
                         <% if (users[i].admin === true) { %>
                             <i class="fas fa-check admin-true"></i>
@@ -45,7 +46,7 @@
                             <i class="fas fa-times admin-false"></i>
                         <% } %>
                     </a>
-                </div>
+                </div> -->
             </div>
         <% } %>
     </section>

@@ -2,6 +2,7 @@ import './css/styles.css';
 import MainCountPanel from '../MainCountPanel';
 import Panel from '../Panel';
 import Ocurrences from '../Ocurrences';
+import Spinner from '../Spinner';
 import {
     useState,
     useEffect
@@ -94,9 +95,7 @@ let Main = () => {
             <div className='panel-container'>
                 {
                     lastEntries.length === 0 &&
-                    <p>
-                        SPINNER
-                    </p>
+                    <Spinner />
                 }
                 {   lastEntries &&
                     lastEntries.map((item, i) => {
@@ -116,9 +115,7 @@ let Main = () => {
                 }
                 {
                     categories.length === 0 &&
-                    <p>
-                        SPINNER
-                    </p>
+                    <Spinner />
                 }
                 {
                     categories &&
@@ -143,9 +140,7 @@ let Main = () => {
                 }
                 {
                     platforms.length === 0 &&
-                    <p>
-                        SPINNER
-                    </p>
+                    <Spinner />
                 }                
                 {
                     platforms &&
@@ -170,9 +165,7 @@ let Main = () => {
                 }
                 {
                     bestBuyers.length === 0 &&
-                    <p>
-                        SPINNER
-                    </p>
+                    <Spinner />
                 }
                 {
                     bestBuyers &&
@@ -197,9 +190,7 @@ let Main = () => {
                 }
                 {
                     bestBuyers.length === 0 &&
-                    <p>
-                        SPINNER
-                    </p>
+                    <Spinner />
                 }
                 {
                     bestSellers &&
