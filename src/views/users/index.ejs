@@ -38,15 +38,17 @@
                     <%= users[i].email %>
                 </p>
                 <!-- ésto es un link que iría a dar o quitar admin a ése usuario -->
-                <!-- <div class="user-data short-data">
-                    <a href="/users/<%= users[i].id %>">
+                <div class="user-data short-data">
+                    <!-- <a href="/users/<%= users[i].id %>"> -->
+                    <div>
                         <% if (users[i].admin === true) { %>
                             <i class="fas fa-check admin-true"></i>
                         <% } else { %>
                             <i class="fas fa-times admin-false"></i>
                         <% } %>
-                    </a>
-                </div> -->
+                    </div>
+                    <!-- </a> -->
+                </div>
             </div>
         <% } %>
     </section>
