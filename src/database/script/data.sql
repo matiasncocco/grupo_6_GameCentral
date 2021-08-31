@@ -26,8 +26,8 @@ INSERT INTO games (id, title, img, price, discount, description) VALUES (21, 'NI
 INSERT INTO games (id, title, img, price, discount, description) VALUES (22, 'DOOM ETERNAL', '1624416547403-22-de.png', 599.99, 50, 'Los ejércitos del infierno han invadido la Tierra. Ponte en la piel del Slayer en una épica campaña para un jugador y cruza dimensiones aniquilando demonios para detener la destrucción definitiva de la humanidad. No Le Tienen Miedo A Nada... Salvo A Ti. Disfruta de la mejor combinación de velocidad y potencia en DOOM Eternal, que trae un salto cualitativo del combate en primera persona. Nivel De Amenaza Del Slayer Al Máximo. Armado con un lanzallamas en el hombro, una hoja retráctil en la muñeca, armas y modificaciones mejoradas, y habilidades, eres más rápido, fuerte y versátil que nunca. La Impía Trinidad. Obtén lo que necesites de tus enemigos: consigue salud al ejecutarlos, armadura al incinerarlos y munición al destriparlos con la motosierra; conviértete en el matademonios supremo. Juega A Battlemode. Una nueva experiencia multijugador 2 contra 1. Un DOOM Slayer armado hasta los dientes se enfrenta a dos jugadores demonio en cinco rondas de intenso combate en primera persona.');
 INSERT INTO games (id, title, img, price, discount, description) VALUES (23, 'RED DEAD REDEMPTION 2', '162303243654.jpg', 599.99, 40, 'Con más de 175 premios al Juego del año y más de 250 valoraciones perfectas, Red Dead Redemption 2 es la épica historia de Arthur Morgan y la banda de Van der Linde, que huyen por toda América en el albor de una nueva era. También incluye acceso al mundo multijugador compartido de Red Dead Online.');
 INSERT INTO games (id, title, img, price, discount, description) VALUES (24, 'DIRT RALLY 2.0', 'dirtrally2-head.jpg', 249.99, 30, 'DiRT Rally 2.0 te reta a abrirte camino a través de una selección de ubicaciones de rally icónicas por todo el mundo, en los vehículos todoterreno más potentes de la historia, teniendo en cuenta que el menor de los fallos puede poner fin a tu carrera.');
-INSERT INTO games (id, title, img, price, discount, description) VALUES (25, 'PLAYERUNKNOWN’S BATTLEGROUNDS', '48550.jpg', 399.99, 50, 'PLAYERUNKNOWN’S BATTLEGROUNDS es un shooter basado en el modo Battle Royale que está siendo desarrollado a través de la retroalimentación con la comunidad. Comenzando de la nada, los usuarios tienen que luchar uno contra el otro para localizar armas y suministros para ser el único.');
-INSERT INTO games (id, title, img, price, discount, description) VALUES (26, 'STAR WARS Jedi: Fallen Order', 'thumb-1920-1037076.jpg', 599.99, 50, 'Una aventura de dimensiones galácticas te espera en STAR WARS Jedi: Fallen Order, un juego de acción-aventura en tercera persona de Respawn Entertainment. Un padawan superviviente debe completar su entrenamiento, desarrollar nuevas y poderosas habilidades con la Fuerza.');
+INSERT INTO games (id, title, img, price, discount, description) VALUES (25, 'PLAYER UNKNOWN’S BATTLEGROUNDS', '48550.jpg', 399.99, 50, 'PLAYERUNKNOWN’S BATTLEGROUNDS es un shooter basado en el modo Battle Royale que está siendo desarrollado a través de la retroalimentación con la comunidad. Comenzando de la nada, los usuarios tienen que luchar uno contra el otro para localizar armas y suministros para ser el único.');
+INSERT INTO games (id, title, img, price, discount, description) VALUES (26, 'STAR WARS JEDI: FALLEN ORDER', 'thumb-1920-1037076.jpg', 599.99, 50, 'Una aventura de dimensiones galácticas te espera en STAR WARS Jedi: Fallen Order, un juego de acción-aventura en tercera persona de Respawn Entertainment. Un padawan superviviente debe completar su entrenamiento, desarrollar nuevas y poderosas habilidades con la Fuerza.');
 
 -- INSERT INTO games (id, title, img, price, discount, description) VALUES ('id', 'name', 'img', 'price', '%des', 'descr.');
 -- ---------------------------------------------------------------------------
@@ -481,16 +481,16 @@ INSERT INTO status_game (id, game_id_status, status_id) VALUES (21, 21, 1);
 -- doom eternal
 INSERT INTO status_game (id, game_id_status, status_id) VALUES (22, 22, 1);
 INSERT INTO status_game (id, game_id_status, status_id) VALUES (23, 22, 2);
--- Red Dead Redemption 2
+-- red dead redemption 2
 INSERT INTO status_game (id, game_id_status, status_id) VALUES (24, 23, 1);
 INSERT INTO status_game (id, game_id_status, status_id) VALUES (25, 23, 2);
--- Dirt Rally 2.0
+-- dirt rally 2.0
 INSERT INTO status_game (id, game_id_status, status_id) VALUES (26, 24, 1);
 INSERT INTO status_game (id, game_id_status, status_id) VALUES (27, 24, 2);
--- PLAYERUNKNOWN’S BATTLEGROUNDS
+-- player unknown's battlegrounds
 INSERT INTO status_game (id, game_id_status, status_id) VALUES (28, 25, 1);
 INSERT INTO status_game (id, game_id_status, status_id) VALUES (29, 25, 2);
--- STAR WARS Jedi: Fallen Order
+-- star wars jedi: fallen order
 INSERT INTO status_game (id, game_id_status, status_id) VALUES (30, 26, 1);
 INSERT INTO status_game (id, game_id_status, status_id) VALUES (31, 26, 2);
 
@@ -672,7 +672,6 @@ INSERT INTO user_game (id, game_id_user, user_id) VALUES (164, 13, 51);
 INSERT INTO user_game (id, game_id_user, user_id) VALUES (165, 14, 51);
 INSERT INTO user_game (id, game_id_user, user_id) VALUES (166, 15, 51);
 INSERT INTO user_game (id, game_id_user, user_id) VALUES (167, 16, 51);
-INSERT INTO user_game (id, game_id_user, user_id) VALUES (168, 23, 69);
 
 -- QUERY PARA VER RESULTADOS EN WORKBENCH
 # SELECT user_game.id, games.title AS 'Juego', users.name, users.surname
@@ -681,11 +680,20 @@ INSERT INTO user_game (id, game_id_user, user_id) VALUES (168, 23, 69);
 # INNER JOIN users ON users.id = user_id
 # ORDER BY games.title ASC;
 
+-- usuarios con más juegos
 #SELECT COUNT(user_id) AS 'quantity', users.name AS 'name', users.surname AS 'surname' 
 #FROM user_game 
 #INNER JOIN users ON users.id = user_id
 #WHERE name <> 'admin'
 #GROUP BY user_id 
+#ORDER BY quantity DESC
+#LIMIT 4;
+
+-- juegos más vendidos
+#SELECT COUNT(game_id_user) AS 'quantity', games.title AS 'title'
+#FROM user_game
+#INNER JOIN games ON games.id = game_id_user
+#GROUP BY game_id_user
 #ORDER BY quantity DESC
 #LIMIT 4;
 

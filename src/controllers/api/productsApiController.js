@@ -14,11 +14,16 @@ let productsApiController = {
                 model: db.PlatformGame
             }
         );
-        let bestSellers = await sequelize.query(
+        let bestBuyers = await sequelize.query(
             'SELECT COUNT(user_id) AS \'quantity\', users.name AS \'name\', users.surname AS \'surname\' FROM user_game  INNER JOIN users ON users.id = user_id WHERE name <> \'admin\' GROUP BY user_id ORDER BY quantity DESC LIMIT 4', {
                 model: db.UserGame
             }
         );
+        let bestSellers = await sequelize.query(
+            'SELECT COUNT(game_id_user) AS \'quantity\', games.title AS \'title\' FROM user_game INNER JOIN games ON games.id = game_id_user GROUP BY game_id_user ORDER BY quantity DESC LIMIT 4', {
+                model: db.UserGame
+            }
+        )
             try {
                 games = games.map(game => {
                     game = {
@@ -34,6 +39,7 @@ let productsApiController = {
                     games,
                     countByCategory,
                     countByPlatform,
+                    bestBuyers,
                     bestSellers
                 });
             } catch(err) {
