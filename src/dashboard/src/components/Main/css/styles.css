@@ -32,7 +32,7 @@
     width: 25%;
     align-self: center;
     font-weight: 600;
-    text-shadow: -1px 0 #FFF, 0 1px #FFF, 1px 0 #FFF, 0 -1px #FFF, -2px 2px 0 black;
+    text-shadow: -1px 0 #FFF, 0 1px #FFF, 1px 0 #FFF, 0 -1px #FFF, -1px 1px 0 black;
     font-size: 8px;
     padding: 6px 6px 6px 2%;
 }
@@ -80,7 +80,8 @@ DESKTOP
     }
 
     .count-header {
-        font-size: 20px;
+        font-size: 18px;
+        text-shadow: -1px 0 #FFF, 0 1px #FFF, 1px 0 #FFF, 0 -1px #FFF, -1.5px 1.5px 0 black;
     }
 }
 

@@ -3,7 +3,6 @@
     border: #404040 2px solid;
     border-radius: 8px;
     background-color: #FFF;
-    box-shadow: inset 0px 0px 50px 10px #B6B1F1, 5px 5px 5px 5px black;
     display: flex;
     flex-flow: row wrap;
     justify-content: space-between;
@@ -18,7 +17,7 @@
     font-size: 12px;
     line-height: 25px;
     color: #FFF;
-    text-shadow: -1px 0 #404040, 0 1px #404040, 1px 0 #404040, 0 -1px #404040, -2px 2px 0 black;
+    text-shadow: -1px 0 #404040, 0 1px #404040, 1px 0 #404040, 0 -1px #404040, -1px 1px 0 black;
 }
 
 .count-number {
@@ -33,12 +32,12 @@ TABLETS
 */
 @media (min-width: 576px) {
     .count-title {
-        font-size: 18px;
-        line-height: 35px;
+        font-size: 14px;
+        line-height: 20px;
     }
 
     .count-number {
-        font-size: 30px;
+        font-size: 18px;
     }
 }
 
@@ -46,7 +45,15 @@ TABLETS
 DESKTOP
 */
 @media (min-width: 768px) {
+    .count-title {
+        font-size: 16px;
+        line-height: 35px;
+        text-shadow: -1px 0 #404040, 0 1px #404040, 1px 0 #404040, 0 -1px #404040, -1.5px 1.5px 0 black;
+    }
 
+    .count-number {
+        font-size: 28px;
+    }
 }
 
 /*

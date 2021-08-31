@@ -94,26 +94,6 @@ let Main = () => {
             <MainCountPanel />
             <div className='panel-container'>
                 {
-                    lastEntries.length === 0 &&
-                    <Spinner />
-                }
-                {   lastEntries &&
-                    lastEntries.map((item, i) => {
-                        return (
-                            <Panel key={ item.title + i } 
-                                title={ item.title }
-                                img={ item.img }
-                            >
-                                <header className='panel-header'>
-                                {/* panel-header => Panel.css */}
-                                    <p>ÚLTIMO</p>
-                                    <p>{ item.identity }</p>
-                                </header>
-                            </Panel>
-                        )
-                    })
-                }
-                {
                     categories.length === 0 &&
                     <Spinner />
                 }
@@ -212,6 +192,26 @@ let Main = () => {
                             }
                         </article>
                     </section>
+                }
+                {
+                    lastEntries.length === 0 &&
+                    <Spinner />
+                }
+                {   lastEntries &&
+                    lastEntries.map((item, i) => {
+                        return (
+                            <Panel key={ item.title + i } 
+                                title={ item.title }
+                                img={ item.img }
+                            >
+                                <header className='panel-header'>
+                                {/* panel-header => Panel.css */}
+                                    <p>ÚLTIMO</p>
+                                    <p>{ item.identity }</p>
+                                </header>
+                            </Panel>
+                        )
+                    })
                 }
             </div>
         </main>
