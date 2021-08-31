@@ -31,14 +31,14 @@ let productsController = {
 
     // 1 GET: show all items
     index: (req, res) => {
-        let param = 0;
-        if (req.params.id) {
-            let page = parseInt(req.params.id);
-            param = (page - 1) * 4;
-        };
+        // let param = 0;
+        // if (req.params.id) {
+        //     let page = parseInt(req.params.id);
+        //     param = (page - 1) * 4;
+        // };
         db.Game.findAll({
-            limit: 4,
-            offset: param,
+            // limit: 4,
+            // offset: param,
             include: [
                 'status'
             ],
@@ -59,11 +59,11 @@ let productsController = {
     },
 
     // 1.5 GET: resultados de búsqueda
-    results: (req,res) => {
-        res.send({
-            ...req
-        })
-    },
+    // results: (req,res) => {
+    //     res.send({
+    //         ...req
+    //     })
+    // },
 
     // 2 GET: show product <form>
     create: async (req, res) => {

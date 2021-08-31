@@ -129,7 +129,7 @@ let usersController = {
                         'userEmail',
                         email,
                         {
-                            maxAge: (1000 * 60) * 30
+                            maxAge: (((1000 * 60) * 60) * 24) * 30
                         }
                     );
                 };

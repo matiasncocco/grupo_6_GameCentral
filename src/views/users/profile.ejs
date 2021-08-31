@@ -16,7 +16,8 @@
         <div class="profile-cart-link">
             <h2 class="big-title">
                 <a href="/products/cart">
-                    Mi carrito<i class="fas fa-shopping-cart"></i>
+                    Mi carrito
+                    <i class="fas fa-shopping-cart"></i>
                 </a>
             </h2>
             <h4 class="small-title">
@@ -42,6 +43,10 @@
                     </a>
                     <a class="admin-link" href="/users">
                         Listado de usuarios
+                        <i class="fas fa-external-link-alt"></i>
+                    </a>
+                    <a class="admin-link" target="_blank" href="http://localhost:3000/">
+                        DASHBOARD
                         <i class="fas fa-external-link-alt"></i>
                     </a>
                 </div>
@@ -84,15 +89,12 @@
                     En mi librería
                 </h4>
                 <% user.games.forEach(game => { %>
-
-                        <a href="/products/detail/<%= game.id %>">
-                            <p class="profile-acquired-games">
-                            <img class="profile-game-libreria" src="/img/products/<%= game.img %>"> 
-                            <%= game.title %>
-                          </p>
-                        </a>
-                        
-                    
+                    <a href="/products/detail/<%= game.id %>">
+                        <p class="profile-acquired-games">
+                        <img class="profile-game-libreria" src="/img/products/<%= game.img %>">
+                        <%= game.title %>
+                        </p>
+                    </a>
                 <% }) %>
             </div>
         <% } %>
