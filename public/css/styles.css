@@ -1533,9 +1533,7 @@ img {
 
 .contact-box {
     width: 80%;
-    height: 100px;
     box-shadow: 5px 5px 5px 5px black;
-    margin: 10px 0;
     display: flex;
     flex-flow: row wrap;
     align-items: center;
@@ -1543,14 +1541,13 @@ img {
 }
 
 .contact-img {
-    width: 30%;
+    width: 20%;
 }
 
 .contact-img img {
     border-radius: 50%;
-    width: 80%;
-    margin: auto;
-    box-shadow: 0 0 5px 0 #B14593;
+    width: 100%;
+    box-shadow: 0 0 5px 0 black;
 }
 
 .contact-data {
