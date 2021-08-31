@@ -1538,10 +1538,13 @@ img {
     flex-flow: row wrap;
     align-items: center;
     justify-content: flex-start;
+    margin: 5%;
+    padding: 2%;
 }
 
 .contact-img {
     width: 20%;
+    /* margin: 5%; */
 }
 
 .contact-img img {
