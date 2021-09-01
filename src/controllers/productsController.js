@@ -31,22 +31,25 @@ let productsController = {
 
     // 1 GET: show all items
     index: (req, res) => {
-        // let param = 0;
-        // if (req.params.id) {
-        //     let page = parseInt(req.params.id);
-        //     param = (page - 1) * 4;
-        // };
+        let realParam = req.params.id;
+        let param = 0;
+        if (req.params.id) {
+            let page = parseInt(realParam);
+            param = (page - 1) * 4;
+        };
         db.Game.findAll({
-            // limit: 4,
-            // offset: param,
+            limit: 4,
+            offset: param,
             include: [
                 'status'
             ],
         })
             .then(games => {
+                realParam === undefined ? realParam = 1 : realParam = parseInt(realParam);
                 res.render('./products/index', {
                     title: 'Todos los títulos',
-                    games
+                    games,
+                    realParam
                 });
             })
             .catch(err => {
@@ -56,7 +59,7 @@ let productsController = {
                     errorDetail: err
                 });
             });
-    },
+    },    
 
     // 1.5 GET: resultados de búsqueda
     // results: (req,res) => {

@@ -152,7 +152,7 @@ img {
     text-shadow: -1px 0 black, 0 1px black, 1px 0 black, 0 -1px black;
 }
 
-.icon-bar{
+.icon-bar {
     padding: 2%;
     color: black;
     border: 1px solid black;
@@ -672,9 +672,6 @@ img {
     transition: all .1s cubic-bezier(.25,.25,.25,.25);
 };
 
-.hide-while-searching {
-    display: none;
-}
 
 /**/
 /* FORMULARIOS */
@@ -1572,6 +1569,24 @@ img {
 
 
 /**/
+/* PRODUCT INDEX */
+/**/
+
+
+.product-page {
+    width: 100%;
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: center;
+    align-items: center;
+}
+
+.page-form {
+    
+}
+
+
+/**/
 /* MEDIA QUERIES */
 /**/
 
@@ -2426,6 +2441,7 @@ DESKTOP
     .admin-link:hover.admin-link i {
         opacity: 1;
     }
+}
 
 /*
 PANTALLAS +
@@ -2615,8 +2631,3 @@ LIMITAR ANCHO MÁXIMO
         max-width: 1200px;
     }
 }
-
-}
-
-
-

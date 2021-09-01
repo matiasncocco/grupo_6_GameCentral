@@ -27,29 +27,42 @@
         </div>
     </header>
     <section class="search-bar-section">
-        <!-- <form class="search-bar-box" action="/product/results" method="GET"> -->
-        <div class="search-bar-box">
+        <form class="search-bar-box" action="/product/results" method="GET">
             <input
                 class="search-bar"
                 type="text"
                 name="query"
                 placeholder="Buscar un juego..."
             >
-            <!-- <button class="search-button" type="submit">
+            <button class="search-button" type="submit">
                 <h3 class="big-title">
                     <i class="fas fa-search"></i>
                 </h3>
                 <h5 class="small-title">
                     <i class="fas fa-search"></i>
                 </h5>
-            </button> -->
-        </div>
-        <!-- </form> -->
+            </button>
+        </form>
     </section>
     <section class="main-section last-section">
         <% for (i = 0; i < games.length; i++) { %>
             <%- include('../products/partials/game', { game: games } ) %>
         <% } %>
+    </section>
+    <section class="product-page">
+        <form class="page-form" method="GET" action='/products/<%= realParam == 1 || realParam == 0 ? null : realParam -1 %>'>
+            <button type="submit">
+                <i class="fas fa-caret-left"></i>
+            </button>
+        </form>
+        <p class="current-page">
+            <%= realParam ? realParam : 1 %>
+        </p>
+        <form class="page-form" method="GET" action='/products/<%= realParam == undefined ? realParam = 1 : realParam + 1 %>'>
+            <button type="sumbit">
+                <i class="fas fa-caret-right"></i>
+            </button>
+        </form>
     </section>
 </main>
 <%- include ('../partials/footer') %>
