@@ -30,35 +30,44 @@ let productsController = {
     },
 
     // 1 GET: show all items
-    index: (req, res) => {
+    index: async (req, res) => {
         let realParam = req.params.id;
-        let param = 0;
-        if (req.params.id) {
+        let offset = 0;
+        let limit = 4;
+        if (realParam) {
             let page = parseInt(realParam);
-            param = (page - 1) * 4;
+            offset = (page - 1) * 4;
         };
-        db.Game.findAll({
-            limit: 4,
-            offset: param,
+        let fourGames = await db.Game.findAll({
+            limit: limit,
+            offset: offset,
             include: [
                 'status'
             ],
-        })
-            .then(games => {
-                realParam === undefined ? realParam = 1 : realParam = parseInt(realParam);
-                res.render('./products/index', {
-                    title: 'Todos los títulos',
-                    games,
-                    realParam
-                });
-            })
-            .catch(err => {
-                res.status(500).render('error', {
-                    status: 500,
-                    title: 'ERROR',
-                    errorDetail: err
-                });
+        });
+        let allGames = await db.Game.findAll({
+            attributes: [
+                'id'
+            ]
+        });
+        try {
+            let allGamesLength = allGames.length;
+            if (Math.ceil((allGamesLength / limit)) < parseInt(realParam)) {
+                throw new Error('Request Range Not Satisfiable')
+            };
+            realParam === undefined ? realParam = 1 : realParam = parseInt(realParam);
+            res.render('./products/index', {
+                title: 'Todos los títulos',
+                games: fourGames,
+                realParam
             });
+        } catch(err) {
+            res.status(416).render('error', {
+                status: 416,
+                title: 'ERROR',
+                errorDetail: err
+            });
+        };
     },    
 
     // 1.5 GET: resultados de búsqueda

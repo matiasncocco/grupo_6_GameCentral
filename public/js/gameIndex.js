@@ -35,3 +35,8 @@ searchBox.addEventListener('mouseover', () => {
 //         };
 //     };
 // });
+
+// acá voy a programar para poner límites visuales al páginado.
+// desde el back ya estoy prohibiendo ir al 0 y mando un error
+// si el cliente fuerza un paginado mayor a mi cantidad de productos.
+// acá voy a armar prevent defaults etc limitando esas opciones.

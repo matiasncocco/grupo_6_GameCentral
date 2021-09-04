@@ -5,7 +5,7 @@
 <script src="/js/gameIndex.js" defer>
 </script>
 <main class="main-main">
-    <header class="main-title flex-title">
+    <header class="main-title flex-title" id="title">
         <div class="title-header-box">
             <h3 class="big-title">
                 TODOS LOS TÍTULOS
@@ -49,7 +49,7 @@
         <% } %>
     </section>
     <section class="product-page last-section">
-        <form method="GET" action='/products/<%= realParam == 1 || realParam == 0 ? null : realParam -1 %>'>
+        <form method="GET" action='/products/<%= realParam == 1 || realParam == 0 ? null : realParam -1 %>/#title'>
             <button class="change-page-button" type="submit">
                 <h1 class="big-title">
                     <i class="fas fa-caret-left"></i>
@@ -67,7 +67,7 @@
                 <%= realParam ? realParam : 1 %>
             </h3>
         </div>
-        <form method="GET" action='/products/<%= realParam == undefined ? realParam = 1 : realParam + 1 %>'>
+        <form method="GET" action='/products/<%= realParam == undefined ? realParam = 1 : realParam + 1 %>/#title'>
             <button class="change-page-button" type="sumbit">
                 <h1 class="big-title">
                     <i class="fas fa-caret-right"></i>
