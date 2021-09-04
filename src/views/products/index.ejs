@@ -5,7 +5,6 @@
 <script src="/js/gameIndex.js" defer>
 </script>
 <main class="main-main">
-    <!-- Título todos los juegos -->
     <header class="main-title flex-title">
         <div class="title-header-box">
             <h3 class="big-title">
@@ -49,18 +48,33 @@
             <%- include('../products/partials/game', { game: games } ) %>
         <% } %>
     </section>
-    <section class="product-page">
-        <form class="page-form" method="GET" action='/products/<%= realParam == 1 || realParam == 0 ? null : realParam -1 %>'>
-            <button type="submit">
-                <i class="fas fa-caret-left"></i>
+    <section class="product-page last-section">
+        <form method="GET" action='/products/<%= realParam == 1 || realParam == 0 ? null : realParam -1 %>'>
+            <button class="change-page-button" type="submit">
+                <h1 class="big-title">
+                    <i class="fas fa-caret-left"></i>
+                </h1>
+                <h3 class="small-title">
+                    <i class="fas fa-caret-left"></i>
+                </h3>
             </button>
         </form>
-        <p class="current-page">
-            <%= realParam ? realParam : 1 %>
-        </p>
-        <form class="page-form" method="GET" action='/products/<%= realParam == undefined ? realParam = 1 : realParam + 1 %>'>
-            <button type="sumbit">
-                <i class="fas fa-caret-right"></i>
+        <div class="current-page">
+            <h1 class="big-title">
+                <%= realParam ? realParam : 1 %>
+            </h1>
+            <h3 class="small-title">
+                <%= realParam ? realParam : 1 %>
+            </h3>
+        </div>
+        <form method="GET" action='/products/<%= realParam == undefined ? realParam = 1 : realParam + 1 %>'>
+            <button class="change-page-button" type="sumbit">
+                <h1 class="big-title">
+                    <i class="fas fa-caret-right"></i>
+                </h1>
+                <h3 class="small-title">
+                    <i class="fas fa-caret-right"></i>
+                </h3>
             </button>
         </form>
     </section>
