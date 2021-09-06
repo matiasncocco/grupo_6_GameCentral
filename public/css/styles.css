@@ -1598,6 +1598,12 @@ img {
     cursor: pointer;
 }
 
+.change-page-button-disable {
+    color: #767889;
+    cursor: auto;
+    background: #808080;
+}
+
 .current-page {
     color: #B14593;
     text-shadow: -1px 0 #FFF, 0 1px #FFF, 1px 0 #FFF, 0 -1px #FFF, -2px 2px 0 black;
@@ -2471,6 +2477,12 @@ DESKTOP
         color: #767889;
         transform: translate(3px,3px);
         box-shadow: 3px 3px black;
+    }
+
+    .change-page-button-disable:hover {
+        transform: none;
+        box-shadow: none;
+        box-shadow: 6px 6px black;
     }
 }
 

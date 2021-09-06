@@ -25,7 +25,8 @@
             </a>
         </div>
     </header>
-    <section class="search-bar-section">
+    <!-- en progreso barra de búsqueda -->
+    <!-- <section class="search-bar-section">
         <form class="search-bar-box" action="/product/results" method="GET">
             <input
                 class="search-bar"
@@ -42,15 +43,15 @@
                 </h5>
             </button>
         </form>
-    </section>
-    <section class="main-section last-section">
+    </section> -->
+    <section class="main-section last-section limit-main-section">
         <% for (i = 0; i < games.length; i++) { %>
             <%- include('../products/partials/game', { game: games } ) %>
         <% } %>
     </section>
     <section class="product-page last-section">
-        <form method="GET" action='/products/<%= realParam == 1 || realParam == 0 ? null : realParam -1 %>/#title'>
-            <button class="change-page-button" type="submit">
+        <form method="GET" action='/products/<%= realParam == 1 || realParam == 0 ? null : realParam -1 %>/#title' id="page-back">
+            <button class="change-page-button" type="submit" id="submit-back">
                 <h1 class="big-title">
                     <i class="fas fa-caret-left"></i>
                 </h1>
@@ -67,8 +68,8 @@
                 <%= realParam ? realParam : 1 %>
             </h3>
         </div>
-        <form method="GET" action='/products/<%= realParam == undefined ? realParam = 1 : realParam + 1 %>/#title'>
-            <button class="change-page-button" type="sumbit">
+        <form method="GET" action='/products/<%= realParam == undefined ? realParam = 1 : realParam + 1 %>/#title' id="page-forward">
+            <button class="change-page-button" type="sumbit" id="submit-forward">
                 <h1 class="big-title">
                     <i class="fas fa-caret-right"></i>
                 </h1>

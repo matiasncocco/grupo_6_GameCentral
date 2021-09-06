@@ -1,21 +1,23 @@
-let searchBox = document.querySelector('.search-bar-box');
-let searchBar = document.querySelector('.search-bar');
-let searchButton = document.querySelector('.search-button');
+// // CAPTURO ELEMENTOS DE LA BARRA DE BÚSQUEDA
+// let searchBox = document.querySelector('.search-bar-box');
+// let searchBar = document.querySelector('.search-bar');
+// let searchButton = document.querySelector('.search-button');
 
-searchBox.addEventListener('mouseenter', () => {
-    searchBar.classList.add('search-button-hover-me');
-    searchButton.classList.add('search-button-hover-me');
-});
+// searchBox.addEventListener('mouseenter', () => {
+//     searchBar.classList.add('search-button-hover-me');
+//     searchButton.classList.add('search-button-hover-me');
+// });
 
-searchBox.addEventListener('mouseout', () => {
-    searchBar.classList.remove('search-button-hover-me');
-    searchButton.classList.remove('search-button-hover-me');
-});
+// searchBox.addEventListener('mouseout', () => {
+//     searchBar.classList.remove('search-button-hover-me');
+//     searchButton.classList.remove('search-button-hover-me');
+// });
 
-searchBox.addEventListener('mouseover', () => {
-    searchBar.classList.add('search-button-hover-me');
-    searchButton.classList.add('search-button-hover-me');
-});
+// searchBox.addEventListener('mouseover', () => {
+//     searchBar.classList.add('search-button-hover-me');
+//     searchButton.classList.add('search-button-hover-me');
+// });
+// // CAPTURO ELEMENTOS DE LA BARRA DE BÚSQUEDA
 
 // codigo para buscador en vivo (filtro)
 
@@ -40,3 +42,44 @@ searchBox.addEventListener('mouseover', () => {
 // desde el back ya estoy prohibiendo ir al 0 y mando un error
 // si el cliente fuerza un paginado mayor a mi cantidad de productos.
 // acá voy a armar prevent defaults etc limitando esas opciones.
+
+// ambos formularios
+let pageBack = document.querySelector('#page-back');
+let pageForward = document.querySelector('#page-forward');
+
+// ambos botones
+let buttonBack = document.querySelector('#submit-back');
+let buttonForward = document.querySelector('#submit-forward');
+
+// el pathname con el que voy a trabajar
+let pathName = window.location.pathname;
+
+// si no hay nada después de /products, checkeo que no sea 1 y deshabilito el botón para restar el paginado
+if (pathName.length === 9 || pathName.includes('1')) {
+    buttonBack.classList.add('change-page-button-disable');
+    pageBack.addEventListener('submit', (e) => {
+        e.preventDefault();
+    });
+};
+
+// si el pathName tiene algo más que /products, voy a almacenar el número del mismo, es decir, el parámetro y desde ahí evalúo hasta donde dejo sumar página
+if (pathName.length > 9) {
+    // regex para extraer número y lo hago INT
+    let param = parseInt(pathName.match(/\d+/)[0]);
+    // limit es la cantidad máxima de juegos que muestro por vista
+    let limit = 4;
+    // consulto a éste endpoint la cantidad de juegos
+    fetch('http://localhost:3001/api')
+    .then(res => res.json())
+    .then(data => {
+        let allGamesLength = data.totals.gameCount;
+        // hago misma operación que en el back, solo que en vez de enviar el error cuando supero el número, prevengo el envío cuando es igual
+        if (Math.ceil(allGamesLength / limit) === param) {
+            buttonForward.classList.add('change-page-button-disable');
+            pageForward.addEventListener('submit', (e) => {
+                e.preventDefault();
+            });
+        };
+    })
+    .catch(err => console.log(err));
+};

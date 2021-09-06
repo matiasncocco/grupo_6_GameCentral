@@ -52,7 +52,7 @@ let productsController = {
         });
         try {
             let allGamesLength = allGames.length;
-            if (Math.ceil((allGamesLength / limit)) < parseInt(realParam)) {
+            if (Math.ceil(allGamesLength / limit) < parseInt(realParam)) {
                 throw new Error('Request Range Not Satisfiable')
             };
             realParam === undefined ? realParam = 1 : realParam = parseInt(realParam);
