@@ -200,7 +200,7 @@ let Main = () => {
                 {   lastEntries &&
                     lastEntries.map((item, i) => {
                         return (
-                            <Panel key={ item.title + i } 
+                            <Panel key={ item.title + i }
                                 title={ item.title }
                                 img={ item.img }
                             >

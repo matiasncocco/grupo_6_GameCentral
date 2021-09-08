@@ -6,7 +6,7 @@
     box-shadow: inset 0px 0px 50px 10px #B6B1F1, 5px 5px 5px 5px black;
     display: flex;
     flex-flow: row wrap;
-    margin: 2% 10%;
+    margin: 4% 0 0 10%;
     transition: all .1s cubic-bezier(.25, .25, .25, .25);
 }
 
@@ -79,7 +79,7 @@ DESKTOP
 
     .panel-img:hover {
         cursor: pointer;
-        box-shadow: 0 0 5px 2px #B14593;
+        box-shadow: 5px 5px 5px 2px #404040
     }
 }
 
@@ -87,19 +87,21 @@ DESKTOP
 PANTALLAS +
 */
 @media (min-width: 992px) {
-    .panel {
-        width: 600px;
-        margin-left: auto;
-        margin-right: auto;
-    }
-
     .panel-thinner {
         width: 450px;
+        margin: 2% 0 0 30px;
+    }
+
+    .panel-wide {
+        width: 600px;
+        margin-right: auto;
+        margin-left: auto;
+        margin-bottom: 5%;
     }
 
     .panel-title {
         font-size: 22px;
-        line-height: 50px;
+        display: inline-block;
     }
 }
 

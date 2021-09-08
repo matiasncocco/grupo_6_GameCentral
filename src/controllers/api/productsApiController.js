@@ -3,7 +3,10 @@ let db = require('../../database/models');
 
 let productsApiController = {
     list: async (req, res) => {
-        let games = await db.Game.findAll();
+        let games = await db.Game.findAll({
+            // limit: perPage,
+            // offset: offset
+        });
         let countByCategory = await sequelize.query(
             'SELECT COUNT(category_id) as \'quantity\', categories.title AS \'title\' FROM category_game INNER JOIN categories ON categories.id = category_id GROUP BY category_id ORDER BY quantity DESC LIMIT 4', {
                 model: db.CategoryGame
@@ -23,31 +26,31 @@ let productsApiController = {
             'SELECT COUNT(game_id_user) AS \'quantity\', games.title AS \'title\' FROM user_game INNER JOIN games ON games.id = game_id_user GROUP BY game_id_user ORDER BY quantity DESC LIMIT 4', {
                 model: db.UserGame
             }
-        )
-            try {
-                games = games.map(game => {
-                    game = {
-                        id: game.dataValues.id,
-                        title: game.dataValues.title,
-                        img: 'http://localhost:3001/img/products/' + game.dataValues.img,
-                        url: game.dataValues.url = 'http://localhost:3001/api/products/' + game.dataValues.id
-                    };
-                    return game;
-                });
-                res.status(200).json({
-                    status: 200,
-                    games,
-                    countByCategory,
-                    countByPlatform,
-                    bestBuyers,
-                    bestSellers
-                });
-            } catch(err) {
-                res.status(500).json({
-                    status: 500,
-                    err
-                });  
-            };
+        );
+        try {
+            games = games.map(game => {
+                game = {
+                    id: game.dataValues.id,
+                    title: game.dataValues.title,
+                    img: 'http://localhost:3001/img/products/' + game.dataValues.img,
+                    url: game.dataValues.url = 'http://localhost:3001/api/products/' + game.dataValues.id
+                };
+                return game;
+            });
+            res.status(200).json({
+                status: 200,
+                games,
+                countByCategory,
+                countByPlatform,
+                bestBuyers,
+                bestSellers
+            });
+        } catch(err) {
+            res.status(500).json({
+                status: 500,
+                err
+            });  
+        };
     },
 
     lastGame: (req, res) => {

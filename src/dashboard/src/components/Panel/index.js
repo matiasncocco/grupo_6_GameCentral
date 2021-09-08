@@ -9,7 +9,9 @@ let Panel = (props) => {
         for (let i = 0; i < panel.length; i++) {
             if (panel[i].firstChild.localName !== 'header') {
                 panel[i].classList.add('panel-thinner');
-            };
+            } else {
+                panel[i].classList.add('panel-wide')
+            }
         }
     }, [])
 
@@ -20,7 +22,7 @@ let Panel = (props) => {
                 <p className='panel-title'>{ props.title }</p>
                 <div className='panel-img'>
                     <a target='_blank' href={ props.img } rel='noreferrer'>
-                        <img src={ props.img } alt={ `img${props.title}` }/>
+                        <img src={ props.img } alt={ `img${ props.title }` }/>
                     </a>
                 </div>
                 {/* <Link to={`/products/:${props.id}`}></Link> */}
