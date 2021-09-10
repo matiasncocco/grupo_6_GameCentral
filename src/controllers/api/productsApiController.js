@@ -3,10 +3,8 @@ let db = require('../../database/models');
 
 let productsApiController = {
     list: async (req, res) => {
-        let games = await db.Game.findAll({
-            // limit: perPage,
-            // offset: offset
-        });
+        let warning = null;
+        let allGames = await db.Game.findAll();
         let countByCategory = await sequelize.query(
             'SELECT COUNT(category_id) as \'quantity\', categories.title AS \'title\' FROM category_game INNER JOIN categories ON categories.id = category_id GROUP BY category_id ORDER BY quantity DESC LIMIT 4', {
                 model: db.CategoryGame
@@ -28,28 +26,55 @@ let productsApiController = {
             }
         );
         try {
-            games = games.map(game => {
-                game = {
-                    id: game.dataValues.id,
-                    title: game.dataValues.title,
-                    img: 'http://localhost:3001/img/products/' + game.dataValues.img,
-                    url: game.dataValues.url = 'http://localhost:3001/api/products/' + game.dataValues.id
+            let realParam = parseInt(req.params.id);
+            let offset = 0;
+            let limit = 9;
+            if (realParam) {
+                offset = (realParam - 1) * 9;
+                if (realParam < 1) {
+                    offset = 1;
+                    warning = 'Showing first entries within the limit (multiplier) of 9 (nine). MIN OFFSET (0 || > 1) has been breached. INVALID'
                 };
-                return game;
+                let allGamesLength = allGames.length;
+                if (Math.ceil(allGamesLength / limit) < realParam) {
+                    offset = (Math.ceil(allGamesLength / limit) - 1) * 9;
+                    warning = 'Showing last entries within the limit (multiplier) of 9 (nine). MAX OFFSET has been breached. No further entries in DB to show.'
+                };
+            };
+            let nineGames = await db.Game.findAll({
+                limit: limit,
+                offset: offset
             });
-            res.status(200).json({
-                status: 200,
-                games,
-                countByCategory,
-                countByPlatform,
-                bestBuyers,
-                bestSellers
-            });
+            try {
+                nineGames = nineGames.map(game => {
+                    game = {
+                        id: game.dataValues.id,
+                        title: game.dataValues.title,
+                        img: 'http://localhost:3001/img/products/' + game.dataValues.img,
+                        url: game.dataValues.url = 'http://localhost:3001/api/products/detail/' + game.dataValues.id
+                    };
+                    return game;
+                });
+                res.status(200).json({
+                    status: 200,
+                    warning,
+                    nineGames,
+                    countByCategory,
+                    countByPlatform,
+                    bestBuyers,
+                    bestSellers
+                });
+            } catch (err) {
+                res.status(500).json({
+                    status: 500,
+                    err
+                });
+            };
         } catch(err) {
             res.status(500).json({
                 status: 500,
                 err
-            });  
+            });
         };
     },
 
@@ -65,7 +90,7 @@ let productsApiController = {
                     id: game.id,
                     title: game.title,
                     img: 'http://localhost:3001/img/products/' + game.dataValues.img,
-                    url: 'http://localhost:3001/api/products/' + game.dataValues.id
+                    url: 'http://localhost:3001/api/products/detail/' + game.dataValues.id
                 }
                 res.status(200).json({
                     status: 200,

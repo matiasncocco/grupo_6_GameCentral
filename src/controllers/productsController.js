@@ -31,36 +31,43 @@ let productsController = {
 
     // 1 GET: show all items
     index: async (req, res) => {
-        let realParam = req.params.id;
+        let realParam = parseInt(req.params.id);
         let offset = 0;
         let limit = 4;
-        if (realParam) {
-            let page = parseInt(realParam);
-            offset = (page - 1) * 4;
-        };
-        let fourGames = await db.Game.findAll({
-            limit: limit,
-            offset: offset,
-            include: [
-                'status'
-            ],
-        });
-        let allGames = await db.Game.findAll({
-            attributes: [
-                'id'
-            ]
-        });
+        let allGames = await db.Game.findAll();
         try {
-            let allGamesLength = allGames.length;
-            if (Math.ceil(allGamesLength / limit) < parseInt(realParam)) {
-                throw new Error('Request Range Not Satisfiable')
+            if (realParam) {
+                offset = (realParam - 1) * 4;
+                if (realParam < 1) {
+                    throw new Error('Request Range Not Satisfiable');
+                };
+                let allGamesLength = allGames.length;
+                if (Math.ceil(allGamesLength / limit) < realParam) {
+                    throw new Error('Request Range Not Satisfiable');
+                };
+            } else {
+                realParam = 1;
             };
-            realParam === undefined ? realParam = 1 : realParam = parseInt(realParam);
-            res.render('./products/index', {
-                title: 'Todos los títulos',
-                games: fourGames,
-                realParam
+            let fourGames = await db.Game.findAll({
+                limit: limit,
+                offset: offset,
+                include: [
+                    'status'
+                ],
             });
+            try {
+                res.render('./products/index', {
+                    title: 'Todos los títulos',
+                    games: fourGames,
+                    realParam
+                });
+            } catch(err) {
+                res.status(416).render('error', {
+                    status: 416,
+                    title: 'ERROR',
+                    errorDetail: err
+                });
+            };
         } catch(err) {
             res.status(416).render('error', {
                 status: 416,

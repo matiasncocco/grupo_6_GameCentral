@@ -12,16 +12,63 @@ let Products = () => {
         setGames
     ] = useState([])
 
+    let [
+        gameTotal,
+        setGameTotal
+    ] = useState(0)
+
+    let [
+        page,
+        setPage
+    ] = useState(1)
+
     useEffect(() => {
-        fetch('http://localhost:3001/api/products')
+        fetch('http://localhost:3001/api')
+            .then(res => res.json())
+            .then(data => {
+                setGameTotal(data.totals.gameCount);
+            })
+            .catch(err => console.log(err));
+    })
+
+    useEffect(() => {
+        fetch(`http://localhost:3001/api/products/${page}`)
             .then(res => res.json())
             .then(data => {
                 setGames(
-                    data.games
+                    data.nineGames
                 )
             })
             .catch(err => console.log(err));
-    }, [])
+    }, [page])
+
+    let gamesPageUp = async () => {
+        await setPage(page + 1);
+        fetch(`http://localhost:3001/api/products/${page}`)
+            .then(res => res.json())
+            .then(data => {
+                setGames(
+                    data.nineGames
+                )
+            })
+            .catch(err => console.log(err));
+    }
+
+    let gamesPageDown = async () => {
+        await setPage(page - 1);
+        fetch(`http://localhost:3001/api/products/${page}`)
+            .then(res => res.json())
+            .then(data => {
+                setGames(
+                    data.nineGames
+                )
+            })
+            .catch(err => console.log(err));
+    }
+
+    let preventDefault = (e) => {
+        e.preventDefault();
+    };
 
     useEffect(() => {
         let thisLink = document.querySelector('#products-link');
@@ -54,6 +101,25 @@ let Products = () => {
                             />
                         )
                     })
+                }
+                {
+                    games &&
+                    <div className='paging-buttons'>
+                        <button
+                            className=''
+                            onClick={
+                                Math.ceil(gameTotal/9) === page ? preventDefault : gamesPageUp
+                            }
+                        >
+                            Más
+                        </button>
+                        <button 
+                            className='' 
+                            onClick={ page === 1 ? preventDefault : gamesPageDown }
+                        >
+                            Menos
+                        </button>
+                    </div>
                 }
             </div>
         </main>

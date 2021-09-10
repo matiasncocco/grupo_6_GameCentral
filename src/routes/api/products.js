@@ -3,8 +3,8 @@ let router = express.Router();
 let productsApiController = require ('../../controllers/api/productsApiController');
 
 router.get(
-    '/',
-    productsApiController.list
+    '/detail/:id',
+    productsApiController.oneGame
 );
 
 router.get(
@@ -19,8 +19,8 @@ router.post(
 );
 
 router.get(
-    '/:id',
-    productsApiController.oneGame
+    '/:id?',
+    productsApiController.list
 );
 
 module.exports = router;
