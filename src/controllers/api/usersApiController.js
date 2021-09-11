@@ -1,30 +1,57 @@
 let db = require('../../database/models');
 
 let usersApiController = {
-    list: (req, res) => {
-        db.User.findAll()
-            .then(users => {
-                users = users.map(user => {
-                    delete user.dataValues.password;
-                    delete user.dataValues.admin;
-                    delete user.dataValues.country;
-                    delete user.dataValues.createdAt;
-                    delete user.dataValues.updatedAt;
-                    user.dataValues.avatar = 'http://localhost:3001/img/users/' + user.dataValues.avatar;
-                    return user.dataValues;
+    list: async (req, res) => {
+        let warning = null;
+        let allUsers = await db.User.findAll();
+        try {
+            let realParam = parseInt(req.params.id);
+            let offset = 0;
+            let limit = 6;
+            if (realParam) {
+                offset = (realParam - 1) * limit;
+                if (realParam < 1) {
+                    offset = 0;
+                    warning = 'BAD REQUEST ::: Showing first entries within the limit (multiplier) of 6 (twelve). MIN OFFSET (0 || > 1) has been breached.'
+                };
+                let allUsersLength = allUsers.length;
+                if (Math.ceil(allUsersLength / limit) < realParam) {
+                    offset = (Math.ceil(allUsersLength / limit) - 1) * limit;
+                    warning = 'BAD REQUEST ::: Showing last entries within the limit (multiplier) of 6 (twelve). MAX OFFSET has been breached. No further entries in DB to show.'
+                };
+            };
+            let twelveUsers = await db.User.findAll({
+                limit: limit,
+                offset: offset
+            });
+            try {
+                twelveUsers = twelveUsers.map(user => {
+                    user = {
+                        id: user.dataValues.id,
+                        name: user.dataValues.name,
+                        surname: user.dataValues.surname,
+                        avatar: 'http://localhost:3001/img/users/' + user.dataValues.avatar,
+                        url: 'http://localhost:3001/api/users/detail/' + user.dataValues.id
+                    };
+                    return user;
                 });
                 res.status(200).json({
                     status: 200,
-                    count: users.length,
-                    users
+                    warning,
+                    users: twelveUsers
                 });
-            })
-            .catch(err => {
+            } catch(err) {
                 res.status(500).json({
                     status: 500,
                     err
                 });
+            };
+        } catch(err) {
+            res.status(500).json({
+                status: 500,
+                err
             });
+        };
     },
 
     lastUser: (req, res) => {
@@ -38,14 +65,8 @@ let usersApiController = {
                     identity: 'USUARIO',
                     id: user.id,
                     title: user.name + ' ' + user.surname,
-                    img: 'http://localhost:3001/img/users/' + user.dataValues.avatar,
+                    img: 'http://localhost:3001/img/users/' + user.avatar,
                 };
-                // delete user.dataValues.password;
-                // delete user.dataValues.admin;
-                // delete user.dataValues.country;
-                // delete user.dataValues.createdAt;
-                // delete user.dataValues.updatedAt;
-                // user.dataValues.avatar = 'http://localhost:3001/img/users/' + user.dataValues.avatar;
                 res.status(200).json({
                     stauts: 200,
                     user
@@ -62,12 +83,15 @@ let usersApiController = {
     oneUser: (req, res) => {
         db.User.findByPk(req.params.id)
             .then(user => {
-                delete user.dataValues.password;
-                delete user.dataValues.admin;
-                delete user.dataValues.country;
-                delete user.dataValues.createdAt;
-                delete user.dataValues.updatedAt;
-                user.dataValues.avatar = 'http://localhost:3001/img/users/' + user.dataValues.avatar;
+                console.log(user);
+                user = {
+                    id: user.id,
+                    name: user.name,
+                    surname: user.surname,
+                    email: user.email,
+                    avatar: 'http://localhost:3001/img/users/' + user.avatar,
+                    newsletter: user.newsletter
+                };
                 res.status(200).json({
                     stauts: 200,
                     user

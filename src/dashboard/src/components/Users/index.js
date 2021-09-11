@@ -12,8 +12,27 @@ let Users = () => {
         setUsers
     ] = useState([])
 
+    let [
+        userTotal,
+        setUserTotal
+    ] = useState(0)
+
+    let [
+        page,
+        setPage
+    ] = useState(1)
+
     useEffect(() => {
-        fetch('http://localhost:3001/api/users')
+        fetch('http://localhost:3001/api')
+            .then(res => res.json())
+            .then(data => {
+                setUserTotal(data.totals.userCount);
+            })
+            .catch(err => console.log(err));
+    })
+
+    useEffect(() => {
+        fetch(`http://localhost:3001/api/users/${ page }`)
             .then(res => res.json())
             .then(data => {
                 setUsers(
@@ -21,7 +40,35 @@ let Users = () => {
                 )
             })
             .catch(err => console.log(err));
-    }, [])
+    }, [page])
+
+    let usersPageUp = async () => {
+        await setPage(page + 1);
+        fetch(`http://localhost:3001/api/users/${ page }`)
+            .then(res => res.json())
+            .then(data => {
+                setUsers(
+                    data.users
+                )
+            })
+            .catch(err => console.log(err));
+    }
+
+    let usersPageDown = async () => {
+        await setPage(page - 1);
+        fetch(`http://localhost:3001/api/users/${ page }`)
+            .then(res => res.json())
+            .then(data => {
+                setUsers(
+                    data.users
+                )
+            })
+            .catch(err => console.log(err));
+    }
+
+    let preventDefault = (e) => {
+        e.preventDefault();
+    }
 
     useEffect(() => {
         let thisLink = document.querySelector('#users-link');
@@ -54,6 +101,31 @@ let Users = () => {
                         />
                     )
                 })
+            }
+            {
+                // every className in this block => Product.css
+                users &&
+                <div className='paging-button-box'>
+                    <button
+                        className='paging-button'
+                        onClick={ page === 1 ? preventDefault : usersPageDown }
+                    >
+                        <h2>
+                            <i className='fas fa-caret-left'></i>
+                        </h2>
+                    </button>
+                    <h2 className='current-page'>{ page }</h2>
+                    <button
+                        className='paging-button'
+                        onClick={
+                            Math.ceil(userTotal / 6) === page ? preventDefault : usersPageUp
+                        }
+                    >
+                        <h2>
+                            <i className='fas fa-caret-right'></i>
+                        </h2>
+                    </button>
+                </div>
             }
             </div>
         </main>

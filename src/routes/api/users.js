@@ -3,8 +3,8 @@ let router = express.Router();
 let usersApiController = require('../../controllers/api/usersApiController');
 
 router.get(
-    '/',
-    usersApiController.list
+    '/detail/:id',
+    usersApiController.oneUser
 );
 
 router.get(
@@ -25,8 +25,8 @@ router.post(
 );
 
 router.get(
-    '/:id',
-    usersApiController.oneUser
+    '/:id?',
+    usersApiController.list
 );
 
 module.exports = router;

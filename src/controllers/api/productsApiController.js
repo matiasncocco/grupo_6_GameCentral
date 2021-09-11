@@ -30,15 +30,15 @@ let productsApiController = {
             let offset = 0;
             let limit = 9;
             if (realParam) {
-                offset = (realParam - 1) * 9;
+                offset = (realParam - 1) * limit;
                 if (realParam < 1) {
-                    offset = 1;
-                    warning = 'Showing first entries within the limit (multiplier) of 9 (nine). MIN OFFSET (0 || > 1) has been breached. INVALID'
+                    offset = 0;
+                    warning = 'BAD REQUEST ::: Showing first entries within the limit (multiplier) of 9 (nine). MIN OFFSET (0 || > 1) has been breached.'
                 };
                 let allGamesLength = allGames.length;
                 if (Math.ceil(allGamesLength / limit) < realParam) {
-                    offset = (Math.ceil(allGamesLength / limit) - 1) * 9;
-                    warning = 'Showing last entries within the limit (multiplier) of 9 (nine). MAX OFFSET has been breached. No further entries in DB to show.'
+                    offset = (Math.ceil(allGamesLength / limit) - 1) * limit;
+                    warning = 'BAD REQUEST ::: Showing last entries within the limit (multiplier) of 9 (nine). MAX OFFSET has been breached. No further entries in DB to show.'
                 };
             };
             let nineGames = await db.Game.findAll({
@@ -51,14 +51,14 @@ let productsApiController = {
                         id: game.dataValues.id,
                         title: game.dataValues.title,
                         img: 'http://localhost:3001/img/products/' + game.dataValues.img,
-                        url: game.dataValues.url = 'http://localhost:3001/api/products/detail/' + game.dataValues.id
+                        url: 'http://localhost:3001/api/products/detail/' + game.dataValues.id
                     };
                     return game;
                 });
                 res.status(200).json({
                     status: 200,
                     warning,
-                    nineGames,
+                    games: nineGames,
                     countByCategory,
                     countByPlatform,
                     bestBuyers,

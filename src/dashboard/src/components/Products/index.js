@@ -33,11 +33,11 @@ let Products = () => {
     })
 
     useEffect(() => {
-        fetch(`http://localhost:3001/api/products/${page}`)
+        fetch(`http://localhost:3001/api/products/${ page }`)
             .then(res => res.json())
             .then(data => {
                 setGames(
-                    data.nineGames
+                    data.games
                 )
             })
             .catch(err => console.log(err));
@@ -45,11 +45,11 @@ let Products = () => {
 
     let gamesPageUp = async () => {
         await setPage(page + 1);
-        fetch(`http://localhost:3001/api/products/${page}`)
+        fetch(`http://localhost:3001/api/products/${ page }`)
             .then(res => res.json())
             .then(data => {
                 setGames(
-                    data.nineGames
+                    data.games
                 )
             })
             .catch(err => console.log(err));
@@ -57,11 +57,11 @@ let Products = () => {
 
     let gamesPageDown = async () => {
         await setPage(page - 1);
-        fetch(`http://localhost:3001/api/products/${page}`)
+        fetch(`http://localhost:3001/api/products/${ page }`)
             .then(res => res.json())
             .then(data => {
                 setGames(
-                    data.nineGames
+                    data.games
                 )
             })
             .catch(err => console.log(err));
@@ -69,7 +69,7 @@ let Products = () => {
 
     let preventDefault = (e) => {
         e.preventDefault();
-    };
+    }
 
     useEffect(() => {
         let thisLink = document.querySelector('#products-link');
@@ -118,7 +118,7 @@ let Products = () => {
                         <button
                             className='paging-button'
                             onClick={
-                                Math.ceil(gameTotal/9) === page ? preventDefault : gamesPageUp
+                                Math.ceil(gameTotal /9 ) === page ? preventDefault : gamesPageUp
                             }
                         >
                             <h2>
