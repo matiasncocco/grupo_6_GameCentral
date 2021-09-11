@@ -1,0 +1,81 @@
+.paging-button-box {
+    margin: 50px 0;
+    width: 100%;
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: center;
+    align-items: center;
+}
+
+.paging-button {
+    padding: 8px 20px;
+    border: none;
+    border-radius: 8px;
+    color: #FFF;
+    text-shadow: -2px 2px 0 black;
+    background: linear-gradient(#E2DDF9,#858BB7);
+    box-shadow: 6px 6px black;
+    transition: all .1s cubic-bezier(.25,.25,.25,.25);
+    cursor: pointer;
+}
+
+/* yet to implement */
+.paging-button-disable {
+    color: #767889;
+    cursor: auto;
+    background: #808080;
+}
+
+.current-page {
+    color: #B14593;
+    text-shadow: -1px 0 #FFF, 0 1px #FFF, 1px 0 #FFF, 0 -1px #FFF, -2px 2px 0 black;
+    margin: 0 5%;
+}
+
+/*
+TABLETS
+*/
+@media (min-width: 576px) {
+    .paging-button, .current-page {
+        font-size: 40px;
+    }
+}
+
+/*
+DESKTOP
+*/
+@media (min-width: 768px) {
+    .paging-button:hover {
+        color: #767889;
+        transform: translate(3px,3px);
+        box-shadow: 3px 3px black;
+    }
+
+    /* yet to implement */
+    .paging-button-disable:hover {
+        transform: none;
+        box-shadow: none;
+        box-shadow: 6px 6px black;
+    }
+}
+
+/*
+PANTALLAS +
+*/
+@media (min-width: 992px) {
+
+}
+
+/*
+PANTALLAS +++
+*/
+@media (min-width: 1200px) {
+
+}
+
+/*
+regla muy particular
+*/
+@media (min-width: 1400px) {
+
+}

@@ -1,3 +1,4 @@
+import './css/styles.css';
 import Panel from '../Panel';
 import Spinner from '../Spinner';
 import {
@@ -104,20 +105,25 @@ let Products = () => {
                 }
                 {
                     games &&
-                    <div className='paging-buttons'>
+                    <div className='paging-button-box'>
+                        <button 
+                            className='paging-button' 
+                            onClick={ page === 1 ? preventDefault : gamesPageDown }
+                        >
+                            <h2>
+                                <i className='fas fa-caret-left'></i>
+                            </h2>
+                        </button>
+                        <h2 className='current-page'>{ page }</h2>
                         <button
-                            className=''
+                            className='paging-button'
                             onClick={
                                 Math.ceil(gameTotal/9) === page ? preventDefault : gamesPageUp
                             }
                         >
-                            Más
-                        </button>
-                        <button 
-                            className='' 
-                            onClick={ page === 1 ? preventDefault : gamesPageDown }
-                        >
-                            Menos
+                            <h2>
+                                <i className='fas fa-caret-right'></i>
+                            </h2>
                         </button>
                     </div>
                 }
