@@ -1,7 +1,11 @@
-<h1>grupo_6_GameCentral</h1>
+[Game Central](https://g6-game-central.herokuapp.com/)
+---
 
-<h2>Proyecto Grupo 6 DH</h2>
+---
 
+<h3>Grupo 6 Digital House</h3>
+
+---
 
 <h3>¿Qué productos o servicios brindará nuestro sitio? ¿Quién será nuestra audiencia objetivo? ¿Cómo ajustaremos nuestra oferta a ese público?</h3>
 
@@ -11,39 +15,25 @@
 
 ---
 
-<h2>Integrantes</h2>
+<h3>Integrantes</h3>
 
-Nombre: Melina Giménez  
-Edad: 22  
-Ocupación: estudiante de Nutrición  
-
-Nombre: Matías Cocco  
-Edad: 25  
-Ocupación: estudiante de Ingeniería Electromecánica  
-
-Nombre: Santiago Guastavino  
-Edad: 28  
-Ocupación: desarrollador web  
-
-Nombre: Francisco Rivero  
-Edad: 42  
-Profesión: Lic. en Comunicación Social y Periodismo  
-
-Nombre: Federico Schlatter  
-Edad: 35  
-Profesión: Contador Público
+| Nombre | Edad | Ocupación |
+| ------------- |:-------------:| -----:|
+| Melina Giménez | 22 | Estudiante de nutrición |
+| Matías Cocco | 25 | Estudiante de ingeniería electromecánica |
+| Santiago Guastavino | 29 | Full stack web developer |
+| Federico Schlatter | 35 | Contador público |
 
 ---
 
-<h2>Wireframe del sitio</h2>
-
-[Wireframe](https://marvelapp.com/prototype/59521h4/screen/78427280)
+[Wireframe del sitio](https://marvelapp.com/prototype/59521h4/screen/78427280)
+---
 
 ---
 
-<h2>Páginas de referencia</h2>
+<h3>Páginas de referencia</h3>
 
-<h6><em>Todas fueron elegidas, en primer lugar, porque ofrecen el mismo producto y/o servicio que nuestro sitio.</h6></em>
+<h4><em>Todas fueron elegidas, en primer lugar, porque ofrecen el mismo producto y/o servicio que nuestro sitio.</h4></em>
 
 - [Steam](https://store.steampowered.com/): es el modelo principal al que apunta nuestro sitio.
 - [Epic Games](https://www.epicgames.com/store/es-ES/): por la estética y funcionalidad que presenta.
