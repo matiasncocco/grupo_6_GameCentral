@@ -84,6 +84,7 @@ app.use((req, res, next) => {
 });
 
 // levanto el server
+let port = process.env.PORT || 3001;
 app.listen(
-    3001, () => console.log('Servidor corriendo en el puerto 3001')
+    port, () => console.log(`Servidor corriendo en el puerto ${port}`)
 );
