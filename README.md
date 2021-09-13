@@ -5,6 +5,32 @@
 
 <h3>Grupo 6 Digital House</h3>
 
+<h4>&nbsp;&nbsp;Para lograr éste proyecto usamos, para el back-end<h4>
+
+- Javascript
+- [Node.js](https://nodejs.org)  
+&nbsp;&nbsp; *[express-validator](https://www.npmjs.com/package/express-validator)*  
+&nbsp;&nbsp; *[bcrypt](https://www.npmjs.com/package/bcrypt)*  
+&nbsp;&nbsp; *[express-session](https://www.npmjs.com/package/express-session)*  
+&nbsp;&nbsp; *[cookie-parser](https://www.npmjs.com/package/cookie-parser)*  
+&nbsp;&nbsp; *[cors](https://www.npmjs.com/package/cors)*  
+&nbsp;&nbsp; *[multer](https://www.npmjs.com/package/multer)*  
+&nbsp;&nbsp; *[method-override](https://www.npmjs.com/package/method-override)*  
+- [Express.js](https://expressjs.com/)
+- [Sequelize](https://sequelize.org/)
+- REST API
+- MySQL
+- Prácticas MVC (Model View Controller)
+
+<h4>&nbsp;&nbsp;Y para el front-end:<h4>
+
+- Javascript
+- HTML
+- CSS
+- [ejs template engine](https://ejs.co/)
+- [React.js](https://reactjs.org/)
+
+
 ---
 
 <h3>¿Qué productos o servicios brindará nuestro sitio? ¿Quién será nuestra audiencia objetivo? ¿Cómo ajustaremos nuestra oferta a ese público?</h3>
