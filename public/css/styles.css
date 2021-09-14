@@ -1664,7 +1664,7 @@ TABLETS
     }
 
     .local-navbar, .user-navbar {
-        width: 50%;
+        width: 55%;
         display: flex;
         flex-flow: row wrap;
         align-items: center;
@@ -1675,12 +1675,21 @@ TABLETS
     }
 
     .user-navbar {
+        width: 45%;
+    }
+
+    .user-navbar {
         justify-content: flex-end;
     }
 
     .local-navbar-link {
-        width: 33%;
+        width: 30%;
         text-align: center;
+    }
+
+    #react-link {
+        width: 10%;
+        text-align: right;
     }
 
     .user-navbar-link {
