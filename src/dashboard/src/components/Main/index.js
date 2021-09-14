@@ -16,22 +16,6 @@ let Main = () => {
     }, [])
 
     let [
-        fetchTo,
-        setFetchTo
-    ] = useState('')
-
-    useEffect(() => {
-        setFetchTo(
-            'https://g6-game-central.herokuapp.com/api'
-        );
-        if (window.location.href.includes('localhost')) {
-            setFetchTo(
-                'http://localhost:3001/api'
-            )
-        };
-    }, [])
-
-    let [
         lastEntries,
         setLastEntries
     ] = useState([])
@@ -58,9 +42,9 @@ let Main = () => {
 
     useEffect(() => {
         let fetchData = async () => {
-            let lastUser = await fetch(`${ fetchTo }/users/last`)
+            let lastUser = await fetch('https://g6-game-central.herokuapp.com/api/users/last')
                 .then(res => res.json());
-            let lastProduct = await fetch(`${ fetchTo }/products/last`)
+            let lastProduct = await fetch('https://g6-game-central.herokuapp.com/api/products/last')
                 .then(res => res.json());
             try {
                 setLastEntries([
@@ -76,10 +60,10 @@ let Main = () => {
             };
         };
         fetchData();
-    }, [fetchTo])
+    }, [])
 
     useEffect(() => {
-        fetch(`${ fetchTo }/products`)
+        fetch('https://g6-game-central.herokuapp.com/api/products')
             .then(res => res.json())
             .then(data => {
                 setCategories(
@@ -96,14 +80,14 @@ let Main = () => {
                 )
             })
             .catch(err => console.log(err));
-    }, [fetchTo])
+    }, [])
 
     useEffect(() => {
         let thisLink = document.querySelector('#home-link');
         return () => {
             thisLink.classList.remove('active-link');
         }
-    }, [fetchTo])
+    }, [])
 
     return (
         <main className='main-main'>

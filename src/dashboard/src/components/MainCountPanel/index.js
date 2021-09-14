@@ -13,7 +13,7 @@ let CountPanel = () => {
     ] = useState([]);
 
     useEffect(() => {
-        fetch('http://localhost:3001/api')
+        fetch('https://g6-game-central.herokuapp.com/api')
             .then(res => res.json())
             .then(data => {
                 setCount([

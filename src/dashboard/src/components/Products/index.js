@@ -24,7 +24,7 @@ let Products = () => {
     ] = useState(1)
 
     useEffect(() => {
-        fetch('http://localhost:3001/api')
+        fetch('https://g6-game-central.herokuapp.com/api')
             .then(res => res.json())
             .then(data => {
                 setGameTotal(data.totals.gameCount);
@@ -33,7 +33,7 @@ let Products = () => {
     })
 
     useEffect(() => {
-        fetch(`http://localhost:3001/api/products/${ page }`)
+        fetch(`https://g6-game-central.herokuapp.com/api/products/${ page }`)
             .then(res => res.json())
             .then(data => {
                 setGames(
@@ -45,7 +45,7 @@ let Products = () => {
 
     let gamesPageUp = async () => {
         await setPage(page + 1);
-        fetch(`http://localhost:3001/api/products/${ page }`)
+        fetch(`https://g6-game-central.herokuapp.com/api/products/${ page }`)
             .then(res => res.json())
             .then(data => {
                 setGames(
@@ -57,7 +57,7 @@ let Products = () => {
 
     let gamesPageDown = async () => {
         await setPage(page - 1);
-        fetch(`http://localhost:3001/api/products/${ page }`)
+        fetch(`https://g6-game-central.herokuapp.com/api/products/${ page }`)
             .then(res => res.json())
             .then(data => {
                 setGames(

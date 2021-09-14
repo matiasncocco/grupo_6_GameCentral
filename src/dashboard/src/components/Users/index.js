@@ -23,7 +23,7 @@ let Users = () => {
     ] = useState(1)
 
     useEffect(() => {
-        fetch('http://localhost:3001/api')
+        fetch('https://g6-game-central.herokuapp.com/api')
             .then(res => res.json())
             .then(data => {
                 setUserTotal(data.totals.userCount);
@@ -32,7 +32,7 @@ let Users = () => {
     })
 
     useEffect(() => {
-        fetch(`http://localhost:3001/api/users/${ page }`)
+        fetch(`https://g6-game-central.herokuapp.com/api/users/${ page }`)
             .then(res => res.json())
             .then(data => {
                 setUsers(
@@ -44,7 +44,7 @@ let Users = () => {
 
     let usersPageUp = async () => {
         await setPage(page + 1);
-        fetch(`http://localhost:3001/api/users/${ page }`)
+        fetch(`https://g6-game-central.herokuapp.com/api/users/${ page }`)
             .then(res => res.json())
             .then(data => {
                 setUsers(
@@ -56,7 +56,7 @@ let Users = () => {
 
     let usersPageDown = async () => {
         await setPage(page - 1);
-        fetch(`http://localhost:3001/api/users/${ page }`)
+        fetch(`https://g6-game-central.herokuapp.com/api/users/${ page }`)
             .then(res => res.json())
             .then(data => {
                 setUsers(

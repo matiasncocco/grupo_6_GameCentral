@@ -50,8 +50,8 @@ let productsApiController = {
                     game = {
                         id: game.dataValues.id,
                         title: game.dataValues.title,
-                        img: 'http://localhost:3001/img/products/' + game.dataValues.img,
-                        url: 'http://localhost:3001/api/products/detail/' + game.dataValues.id
+                        img: 'https://g6-game-central.herokuapp.com/img/products/' + game.dataValues.img,
+                        url: 'https://g6-game-central.herokuapp.com/api/products/detail/' + game.dataValues.id
                     };
                     return game;
                 });
@@ -89,8 +89,8 @@ let productsApiController = {
                     identity: 'PRODUCTO',
                     id: game.id,
                     title: game.title,
-                    img: 'http://localhost:3001/img/products/' + game.dataValues.img,
-                    url: 'http://localhost:3001/api/products/detail/' + game.dataValues.id
+                    img: 'https://g6-game-central.herokuapp.com/img/products/' + game.dataValues.img,
+                    url: 'https://g6-game-central.herokuapp.com/api/products/detail/' + game.dataValues.id
                 }
                 res.status(200).json({
                     status: 200,
@@ -129,7 +129,7 @@ let productsApiController = {
                 game = {
                     id: game.id,
                     title: game.title,
-                    img: 'http://localhost:3001/img/users/' + game.dataValues.img,
+                    img: 'https://g6-game-central.herokuapp.com/img/users/' + game.dataValues.img,
                     price: game.price,
                     discount: game.discount,
                     description: game.description,

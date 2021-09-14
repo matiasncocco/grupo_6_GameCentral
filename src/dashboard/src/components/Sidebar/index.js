@@ -23,7 +23,7 @@ let Sidebar = () => {
                 </Link>
             </ul>
             <ul id='back-to-web-page' className='link-list'>
-                <a className='link-link' href='http://localhost:3001/' target='_blank' rel='noreferrer'>
+                <a className='link-link' href='https://g6-game-central.herokuapp.com/' target='_blank' rel='noreferrer'>
                     Volver
                 </a>
             </ul>

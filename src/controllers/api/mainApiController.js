@@ -3,10 +3,10 @@ let db = require('../../database/models');
 let mainApiController = {
     totals: async (req, res) => {
         let links = [
-            'http://localhost:3001/api/users',
-            'http://localhost:3001/api/users/last',
-            'http://localhost:3001/api/products',
-            'http://localhost:3001/api/products/last'
+            'https://g6-game-central.herokuapp.com/api/users',
+            'https://g6-game-central.herokuapp.com/api/users/last',
+            'https://g6-game-central.herokuapp.com/api/products',
+            'https://g6-game-central.herokuapp.com/api/products/last'
         ]
         let totals = {};
         let gameCount = await db.Game.count();

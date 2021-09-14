@@ -30,8 +30,8 @@ let usersApiController = {
                         id: user.dataValues.id,
                         name: user.dataValues.name,
                         surname: user.dataValues.surname,
-                        avatar: 'http://localhost:3001/img/users/' + user.dataValues.avatar,
-                        url: 'http://localhost:3001/api/users/detail/' + user.dataValues.id
+                        avatar: 'https://g6-game-central.herokuapp.com/img/users/' + user.dataValues.avatar,
+                        url: 'https://g6-game-central.herokuapp.com/api/users/detail/' + user.dataValues.id
                     };
                     return user;
                 });
@@ -65,7 +65,7 @@ let usersApiController = {
                     identity: 'USUARIO',
                     id: user.id,
                     title: user.name + ' ' + user.surname,
-                    img: 'http://localhost:3001/img/users/' + user.avatar,
+                    img: 'https://g6-game-central.herokuapp.com/img/users/' + user.avatar,
                 };
                 res.status(200).json({
                     stauts: 200,
@@ -89,7 +89,7 @@ let usersApiController = {
                     name: user.name,
                     surname: user.surname,
                     email: user.email,
-                    avatar: 'http://localhost:3001/img/users/' + user.avatar,
+                    avatar: 'https://g6-game-central.herokuapp.com/img/users/' + user.avatar,
                     newsletter: user.newsletter
                 };
                 res.status(200).json({
