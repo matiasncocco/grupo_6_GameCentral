@@ -1,7 +1,6 @@
 {
   "name": "grupo_6_gamecentral",
   "version": "1.0.0",
-  "description": "<h1>grupo_6_GameCentral</h1>",
   "main": "./src/app.js",
   "scripts": {
     "test": "nodemon ./src/app.js"
