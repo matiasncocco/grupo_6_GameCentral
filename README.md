@@ -28,7 +28,11 @@
 - HTML
 - CSS
 - [ejs template engine](https://ejs.co/)
-- [React.js](https://reactjs.org/)
+- React.js
+
+[Game Central: DASHBOARD](https://game-central-dashboard.herokuapp.com/)
+---
+
 
 
 ---
