@@ -30,10 +30,12 @@ app.use(session({
 app.use(cookies());
 app.use(cors());
 
-// middleware global p/ etiquetas HTML
-let userAppMiddleware = require('./middlewares/userAppMiddleware');
+// middleware global
+let userAppMiddleware = require('./middlewares/userAppMiddleware'); // p/ etiquetas html y ETC
+let urlMiddleware = require('./middlewares/urlMiddleware'); // p/ obtener URL
 
 app.use(userAppMiddleware);
+app.use(urlMiddleware);
 
 // requiero ruteos
 let mainRouter = require('./routes/main');

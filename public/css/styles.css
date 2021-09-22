@@ -680,7 +680,7 @@ img {
 .product-create-form {
     margin: auto;
     width: 90%;
-    background: linear-gradient(#E2DDF9,#858BB7);
+    /* background: linear-gradient(#E2DDF9,#858BB7); */
     border: #858BB7 solid 2px;
     border-radius: 8px;
     margin-bottom: 30px;
@@ -695,6 +695,7 @@ img {
 }
 
 .product-create-section {
+    background: linear-gradient(#E2DDF9,#858BB7);
     width: 80%;
     margin: auto;
     margin-top: 10px;
@@ -1683,13 +1684,8 @@ TABLETS
     }
 
     .local-navbar-link {
-        width: 30%;
+        width: 33%;
         text-align: center;
-    }
-
-    #react-link {
-        width: 10%;
-        text-align: right;
     }
 
     .user-navbar-link {
