@@ -1,5 +1,5 @@
 let urlMiddleware = (req, res, next) => {
-    res.locals.currentUrl = req.protocol + '://' + req.get('host') + req.originalUrl;
+    res.locals.currentUrl = req.protocol + '://' + req.get('host');
     next();
 };
 

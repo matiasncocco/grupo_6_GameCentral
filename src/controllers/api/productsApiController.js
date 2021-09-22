@@ -3,28 +3,25 @@ let db = require('../../database/models');
 
 let productsApiController = {
     list: async (req, res) => {
+        const currentUrl = res.locals.currentUrl;
         let warning = null;
         let allGames = await db.Game.findAll();
         let countByCategory = await sequelize.query(
             'SELECT COUNT(category_id) as \'quantity\', categories.title AS \'title\' FROM category_game INNER JOIN categories ON categories.id = category_id GROUP BY category_id ORDER BY quantity DESC LIMIT 4', {
                 model: db.CategoryGame
-            }
-        );
+            });
         let countByPlatform = await sequelize.query(
             'SELECT COUNT(platform_id) AS \'quantity\', platforms.title AS \'title\' FROM platform_game INNER JOIN platforms ON platforms.id = platform_id GROUP BY platform_id ORDER BY quantity DESC LIMIT 4', {
                 model: db.PlatformGame
-            }
-        );
+            });
         let bestBuyers = await sequelize.query(
             'SELECT COUNT(user_id) AS \'quantity\', users.name AS \'name\', users.surname AS \'surname\' FROM user_game  INNER JOIN users ON users.id = user_id WHERE name <> \'admin\' GROUP BY user_id ORDER BY quantity DESC LIMIT 4', {
                 model: db.UserGame
-            }
-        );
+            });
         let bestSellers = await sequelize.query(
             'SELECT COUNT(game_id_user) AS \'quantity\', games.title AS \'title\' FROM user_game INNER JOIN games ON games.id = game_id_user GROUP BY game_id_user ORDER BY quantity DESC LIMIT 4', {
                 model: db.UserGame
-            }
-        );
+            });
         try {
             let realParam = parseInt(req.params.id);
             let offset = 0;
@@ -50,8 +47,8 @@ let productsApiController = {
                     game = {
                         id: game.dataValues.id,
                         title: game.dataValues.title,
-                        img: 'https://g6-game-central.herokuapp.com/img/products/' + game.dataValues.img,
-                        url: 'https://g6-game-central.herokuapp.com/api/products/detail/' + game.dataValues.id
+                        img: `${ currentUrl }/img/products/` + game.dataValues.img,
+                        url: `${ currentUrl }/api/products/detail/` + game.dataValues.id
                     };
                     return game;
                 });
@@ -79,6 +76,7 @@ let productsApiController = {
     },
 
     lastGame: (req, res) => {
+        const currentUrl = res.locals.currentUrl;
         db.Game.findOne({
             order: [
                 ['id', 'DESC']
@@ -89,8 +87,8 @@ let productsApiController = {
                     identity: 'PRODUCTO',
                     id: game.id,
                     title: game.title,
-                    img: 'https://g6-game-central.herokuapp.com/img/products/' + game.dataValues.img,
-                    url: 'https://g6-game-central.herokuapp.com/api/products/detail/' + game.dataValues.id
+                    img: `${ currentUrl }/img/products/` + game.dataValues.img,
+                    url: `${ currentUrl }/api/products/detail/` + game.dataValues.id
                 }
                 res.status(200).json({
                     status: 200,
@@ -106,6 +104,7 @@ let productsApiController = {
     },
 
     oneGame: (req, res) => {
+        const currentUrl = res.locals.currentUrl;
         db.Game.findByPk(req.params.id, {
             include: [
                 'categories',
@@ -129,7 +128,7 @@ let productsApiController = {
                 game = {
                     id: game.id,
                     title: game.title,
-                    img: 'https://g6-game-central.herokuapp.com/img/users/' + game.dataValues.img,
+                    img: `${ currentUrl }/img/products/` + game.dataValues.img,
                     price: game.price,
                     discount: game.discount,
                     description: game.description,

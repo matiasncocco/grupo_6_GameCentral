@@ -2,12 +2,13 @@ let db = require('../../database/models');
 
 let mainApiController = {
     totals: async (req, res) => {
+        const currentUrl = res.locals.currentUrl;
         let links = [
-            'https://g6-game-central.herokuapp.com/api/users',
-            'https://g6-game-central.herokuapp.com/api/users/last',
-            'https://g6-game-central.herokuapp.com/api/products',
-            'https://g6-game-central.herokuapp.com/api/products/last'
-        ]
+            `${ currentUrl }/api/users`,
+            `${ currentUrl }/api/users/last`,
+            `${ currentUrl }/api/products`,
+            `${ currentUrl }/api/products/last`
+        ];
         let totals = {};
         let gameCount = await db.Game.count();
         let categoryCount = await db.Category.count();
@@ -26,12 +27,12 @@ let mainApiController = {
                 status: 200,
                 links,
                 totals
-            })
+            });
         } catch(err) {
             res.status(500).json({
                 status: 500,
                 err
-            })
+            });
         };
     }
 };

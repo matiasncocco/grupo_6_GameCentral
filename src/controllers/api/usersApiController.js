@@ -2,6 +2,7 @@ let db = require('../../database/models');
 
 let usersApiController = {
     list: async (req, res) => {
+        let currentUrl = res.locals.currentUrl;
         let warning = null;
         let allUsers = await db.User.findAll();
         try {
@@ -30,8 +31,8 @@ let usersApiController = {
                         id: user.dataValues.id,
                         name: user.dataValues.name,
                         surname: user.dataValues.surname,
-                        avatar: 'https://g6-game-central.herokuapp.com/img/users/' + user.dataValues.avatar,
-                        url: 'https://g6-game-central.herokuapp.com/api/users/detail/' + user.dataValues.id
+                        avatar: `${ currentUrl }/img/users/` + user.dataValues.avatar,
+                        url: `${ currentUrl }/api/users/detail/` + user.dataValues.id
                     };
                     return user;
                 });
@@ -55,6 +56,7 @@ let usersApiController = {
     },
 
     lastUser: (req, res) => {
+        let currentUrl = res.locals.currentUrl;
         db.User.findOne({
             order: [
                 ['id', 'DESC']
@@ -65,7 +67,7 @@ let usersApiController = {
                     identity: 'USUARIO',
                     id: user.id,
                     title: user.name + ' ' + user.surname,
-                    img: 'https://g6-game-central.herokuapp.com/img/users/' + user.avatar,
+                    img: `${ currentUrl }/img/users/` + user.avatar,
                 };
                 res.status(200).json({
                     stauts: 200,
@@ -81,15 +83,15 @@ let usersApiController = {
     },
 
     oneUser: (req, res) => {
+        let currentUrl = res.locals.currentUrl;
         db.User.findByPk(req.params.id)
             .then(user => {
-                console.log(user);
                 user = {
                     id: user.id,
                     name: user.name,
                     surname: user.surname,
                     email: user.email,
-                    avatar: 'https://g6-game-central.herokuapp.com/img/users/' + user.avatar,
+                    avatar: `${ currentUrl }/img/users/` + user.avatar,
                     newsletter: user.newsletter
                 };
                 res.status(200).json({
