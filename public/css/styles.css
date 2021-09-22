@@ -680,7 +680,6 @@ img {
 .product-create-form {
     margin: auto;
     width: 90%;
-    /* background: linear-gradient(#E2DDF9,#858BB7); */
     border: #858BB7 solid 2px;
     border-radius: 8px;
     margin-bottom: 30px;
@@ -1509,53 +1508,67 @@ img {
     color: black;
     margin: auto;
     width: 90%;
-    background: linear-gradient(#E2DDF9,#858BB7);
-    border: #858BB7 solid 2px;
-    border-radius: 8px;
-    padding: 2%;
     margin-bottom: 30px;
     display: flex;
-    flex-flow: row wrap;
-    justify-content: center;
+    flex-wrap: wrap;
 }
 
 .contact-box {
-    width: 80%;
+    background: linear-gradient(#E2DDF9,#858BB7);
+    width: 100%;
     box-shadow: 5px 5px 5px 5px black;
     display: flex;
-    flex-flow: row wrap;
+    flex-flow: column wrap;
     align-items: center;
     justify-content: flex-start;
-    margin: 5%;
-    padding: 2%;
+    margin: 5% 0%;
 }
 
 .contact-img {
-    width: 20%;
+    max-width: 150px;
+    margin: 5% 0;
 }
 
 .contact-img img {
-    border-radius: 50%;
     width: 100%;
     box-shadow: 0 0 5px 0 black;
+    border-radius: 50%;
 }
 
 .contact-data {
-    width: 70%;
+    width: 100%;
     display: flex;
     flex-flow: column wrap;
     text-align: center;
 }
 
 .contact-data-name {
-    font-size: 14px;
-    font-weight: bold;
-    padding: 5px;
+    font-weight: 700;
+    font-size: 20px;
+    text-shadow: -1px 0 #FFF, 0 1px #FFF, 1px 0 #FFF, 0 -1px #FFF;
 }
 
 .contact-data-email {
-    font-size: 10px;
+    font-size: 12px;
+    margin: 5% 0;
+}
+
+.contact-data-links {
+    width: 100%;
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: center;
+    margin-bottom: 5%;
+}
+
+.contact-link-box {
     padding: 5px;
+}
+
+.contact-link-box i {
+    font-size: 30px;
+    color: #FFF;
+    text-shadow: -1px 0 black, 0 1px black, 1px 0 black, 0 -1px black;
 }
 
 
@@ -1782,33 +1795,59 @@ TABLETS
     }
 
     /**/
-    /* CONTACT */
+    /* CONTACTO */
     /**/
 
+    
+    .contact-box {
+        flex-flow: row wrap;
+        align-items: flex-start;
+    }
+
     .contact-img {
-        width: 20%;
-        margin-left: 10%;
+        max-width: unset;
+        width: 30%;
+    }
+
+    .contact-img img {
+        width: 80%;
+        margin: auto;
     }
     
     .contact-data {
         width: 70%;
         display: flex;
-        flex-flow: column wrap;
-        text-align: center;
+        flex-flow: row wrap;
+        justify-content: flex-start;
+        align-items: center;
+        margin-top: 20px;
     }
     
     .contact-data-name {
-        font-size: 18px;
-        font-weight: bold;
-        padding: 10px;
+        width: 100%;
+        text-align: left;
+        font-size: 25px;
+    }
+
+    .data-name, .data-surname {
+        display: inline-block;
+    }
+
+    .data-surname {
+        text-indent: 5px;
     }
     
     .contact-data-email {
-        font-size: 14px;
-        padding: 10px;
+        width: 100%;
+        text-align: left;
+        font-size: 20px;
     }
 
+    .contact-data-links {
+        justify-content: flex-start;
+    }
 
+    
     /**/
     /* PRODUCT INDEX */
     /**/
@@ -2198,30 +2237,42 @@ DESKTOP
     }
 
     /**/
-    /* CONTACT */
+    /* CONTACTO */
     /**/
 
-    .contact-img {
-        width: 15%;
-        margin-left: 10%;
-    }
-    
-    .contact-data {
-        width: 75%;
-        display: flex;
-        flex-direction: center;
-        /* flex-flow: row; */
+
+    .contact-box {
+        margin: 2% 0;
     }
     
     .contact-data-name {
-        font-size: 24px;
-        font-weight: bold;
-        padding: 5px;
+        font-size: 40px;
+        text-shadow: -2px 0 #FFF, 0 2px #FFF, 2px 0 #FFF, 0 -2px #FFF;
     }
-    
+
     .contact-data-email {
-        font-size: 18px;
-        padding: 5px;
+        font-size: 26px;
+    }
+
+    .contact-link-box {
+        padding: 0;
+        margin: 0 10px;
+        height: 50px;
+        width: 50px;
+    }
+
+    .contact-link-box i:hover {
+        text-shadow: none;
+        color: #B14593;
+        background-color: #FFF;
+        border-radius: 50%;
+    }
+
+    .contact-link-box i {
+        font-size: 50px;
+        background-color: black;
+        border-radius: 50%;
+        transition: all .1s cubic-bezier(.25,.25,.25,.25);
     }
 
 
@@ -2667,6 +2718,16 @@ PANTALLAS +
 
     .link-box {
         width: 30%;
+    }
+
+
+    /**/
+    /* CONTACTO */
+    /**/
+
+
+    .contact-data {
+        margin-top: 40px;
     }
 }
 

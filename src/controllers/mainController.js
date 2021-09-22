@@ -1,4 +1,5 @@
 let db = require('../database/models');
+let { readJson } = require('../controllers/helper');
 
 let mainController = {
     index: (req, res) => {
@@ -30,15 +31,17 @@ let mainController = {
 
     // en construcción
     contact: (req, res) => {
+        let us = readJson('us.json');
         res.render('contact', {
-            title: 'Contacto'
+            title: 'Contacto',
+            us
         });
     },
 
     // en construcción
     processContact: (req, res) => {
         res.send({
-            body: req.body
+            body: req.body,
         });
     }
 };

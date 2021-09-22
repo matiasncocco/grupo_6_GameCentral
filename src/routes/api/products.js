@@ -1,26 +1,31 @@
 let express = require('express');
 let router = express.Router();
-let productsApiController = require ('../../controllers/api/productsApiController');
+let {
+    oneGame,
+    lastGame,
+    freeTitle,
+    list
+} = require ('../../controllers/api/productsApiController');
 
 router.get(
     '/detail/:id',
-    productsApiController.oneGame
+    oneGame
 );
 
 router.get(
     '/last',
-    productsApiController.lastGame
+    lastGame
 );
 
 // para validación del front
 router.post(
     '/free-title',
-    productsApiController.freeTitle
+    freeTitle
 );
 
 router.get(
     '/:id?',
-    productsApiController.list
+    list
 );
 
 module.exports = router;

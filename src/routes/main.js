@@ -1,27 +1,31 @@
 let express = require('express');
 let router = express.Router();
-let mainController = require('../controllers/mainController');
+let {
+    index,
+    termsConditions,
+    contact,
+    // processContact
+} = require('../controllers/mainController');
 
 router.get(
     '/',
-    mainController.index
+    index
 );
 
 router.get(
     '/terms-conditions',
-    mainController.termsConditions
+    termsConditions
 );
 
-// en construcción
 router.get(
     '/contact',
-    mainController.contact
+    contact
 );
 
-// en construcción
-router.post(
-    '/contact',
-    mainController.processContact
-);
+// YET TO IMPLEMENT
+// router.post(
+//     '/contact',
+//     processContact
+// );
 
 module.exports= router;

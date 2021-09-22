@@ -1,32 +1,38 @@
 let express = require('express');
 let router = express.Router();
-let usersApiController = require('../../controllers/api/usersApiController');
+let {
+    oneUser,
+    lastUser,
+    freeEmail,
+    checkEmail,
+    list
+} = require('../../controllers/api/usersApiController');
 
 router.get(
     '/detail/:id',
-    usersApiController.oneUser
+    oneUser
 );
 
 router.get(
     '/last',
-    usersApiController.lastUser
+    lastUser
 )
 
 // para validación del front
 router.post(
     '/free-email',
-    usersApiController.freeEmail
+    freeEmail
 );
 
 // para validación del front
 router.post(
     '/ok-email',
-    usersApiController.checkEmail
+    checkEmail
 );
 
 router.get(
     '/:id?',
-    usersApiController.list
+    list
 );
 
 module.exports = router;

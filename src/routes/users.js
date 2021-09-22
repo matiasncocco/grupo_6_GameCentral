@@ -1,6 +1,18 @@
 let express = require('express');
 let router = express.Router();
-let usersController = require('../controllers/usersController');
+let {
+    register,
+    processRegister,
+    login,
+    processLogin,
+    show,
+    delog,
+    index,
+    update,
+    destroy,
+    // admin,
+    // giveAdmin
+} = require('../controllers/usersController');
 let upload = require('../middlewares/multerMiddleware');
 let userMiddleware = require('../middlewares/userMiddleware');
 let guestMiddleware = require('../middlewares/guestMiddleware');
@@ -10,17 +22,11 @@ let {
     loginValidations
 } = require('../middlewares/userValidations');
 
-// // // // // // // // //
-// USAR                 //
-// email: admin         //
-// password: admin      //
-// // // // // // // // //
-
 // vista registro de usuario <form>
 router.get(
     '/register',
     guestMiddleware,
-    usersController.register
+    register
 );
 
 // procesar registro/creación de usuario
@@ -28,67 +34,69 @@ router.post(
     '/',
     upload.single('avatar'),
     registerValidations,
-    usersController.processRegister
+    processRegister
 );
 
 // vista login de usuario <form>
 router.get(
     '/login',
     guestMiddleware,
-    usersController.login
+    login
 );
 
 // procesar login de usuario
 router.post(
     '/login',
     loginValidations,
-    usersController.processLogin
+    processLogin
 );
 
 // vista de perfil del usuario
 router.get(
     '/profile',
     userMiddleware,
-    usersController.show
+    show
 );
 
 // procesar delog de usuario & destrucción de cookie
 router.get(
     '/delog',
-    usersController.delog
+    delog
 );
 
 // vista con lista de todos los usuarios
 router.get(
     '/',
     adminMiddleware,
-    usersController.index
+    index
 );
 
 // procesar edición de usuario
 router.put(
     '/profile',
     upload.any('avatar'),
-    usersController.update
+    update
 );
 
 // elimiar usuario
 router.delete(
     '/profile',
-    usersController.destroy
+    destroy
 );
 
 // vista para cambiar, pregunto: user.admin === ( 1 || 0 )
-router.get(
-    '/:id',
-    adminMiddleware,
-    usersController.admin
-);
+// YET TO IMPLEMENT
+// router.get(
+//     '/:id',
+//     adminMiddleware,
+//     admin
+// );
 
 // procesar cambio de, submit: user.admin === ( 1 || 0 )
-router.put(
-    '/:id',
-    usersController.giveAdmin
-);
+// YET TO IMPLEMENT
+// router.put(
+//     '/:id',
+//     giveAdmin
+// );
 
 module.exports = router;

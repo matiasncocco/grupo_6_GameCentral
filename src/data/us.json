@@ -1,0 +1,34 @@
+[
+    {
+        "img": "https://media-exp1.licdn.com/dms/image/C4E03AQG0XtAqwgLTqQ/profile-displayphoto-shrink_200_200/0/1626201282129?e=1634774400&v=beta&t=8KpLcaf64CpL9RXtLDVTb44a-n78ky4_hwj9yzzxD9E",
+        "name": "Santiago",
+        "surname": "Guastavino",
+        "email": "smguastavino@gmail.com",
+        "github": "https://github.com/santiagoGuastavino",
+        "linkedin": "https://www.linkedin.com/in/smguastavino/"
+    },
+    {
+        "img": "https://media-exp1.licdn.com/dms/image/C4E03AQGEU_MXqUMYPA/profile-displayphoto-shrink_200_200/0/1630375471899?e=1635984000&v=beta&t=qTFmtjSAlDKuv6Y07hPWpQmhR-8kdCS7rTi53Xmk--g",
+        "name": "Federico",
+        "surname": "Schlatter",
+        "email": "fedeschlatter@gmail.com",
+        "github": "https://github.com/Flappersch",
+        "linkedin": "https://www.linkedin.com/in/fede-schlatter-0062b020/"
+    },
+    {
+        "img": "https://media-exp1.licdn.com/dms/image/C5603AQGPfr7mKRoQWg/profile-displayphoto-shrink_200_200/0/1607799110341?e=1635984000&v=beta&t=W_KHN9YRnFNTDloX9jwFcifsvaJM0oqbxKUlExp36pc",
+        "name": "Matias",
+        "surname": "Cocco",
+        "email": "matiasnicolascocco95@gmail.com",
+        "github": "https://github.com/matiasncocco",
+        "linkedin": "https://www.linkedin.com/in/matias-cocco-a2279411a/"
+    },
+    {
+        "img": "https://media-exp1.licdn.com/dms/image/C4E03AQEN5HKkhzNnkw/profile-displayphoto-shrink_200_200/0/1627516075580?e=1635984000&v=beta&t=VQOalNe46lVsrltQAnYQZszTYinh8cngATo81m2tn04",
+        "name": "Melina",
+        "surname": "Gimenez",
+        "email": "gimenez.melina@hotmail.com",
+        "github": "https://github.com/MelinaGimenez",
+        "linkedin": "https://www.linkedin.com/in/migimenez/"
+    }
+]
