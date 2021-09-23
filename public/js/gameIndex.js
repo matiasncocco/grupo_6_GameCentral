@@ -63,7 +63,7 @@ if (pathName.length === 9 || pathName.includes('1')) {
 };
 
 // acá uso una función para determinar el hostname, puede ser el localhost durante desarrollo o algún servidor en internet.
-import { getCurrentUrl } from './helper/helper.js';
+import { getCurrentUrl } from './utils/helper.js';
 const currentUrl = getCurrentUrl();
 
 // si el pathName tiene algo más que /products, voy a almacenar el número del mismo, es decir, el parámetro y desde ahí evalúo hasta donde dejo sumar página

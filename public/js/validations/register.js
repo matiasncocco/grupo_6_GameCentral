@@ -1,5 +1,5 @@
 // voy a guardar la url en la que estoy trabajando, así si es desarollo o server en internet, sabe a qué endpoint hacerle fetch
-import { getCurrentUrl } from '../helper/helper.js';
+import { getCurrentUrl } from '../utils/helper.js';
 const currentUrl = getCurrentUrl();
 
 // voy a validar los campos del siguiente formulario

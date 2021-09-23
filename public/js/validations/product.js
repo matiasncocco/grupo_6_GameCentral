@@ -1,4 +1,4 @@
-import { getCurrentUrl } from '../helper/helper.js';
+import { getCurrentUrl } from '../utils/helper.js';
 const currentUrl = getCurrentUrl();
 
 let form = document.querySelector('.product-create-form');

@@ -7,6 +7,7 @@ import {
     useState,
     useEffect
 } from 'react';
+// import { getCurrentUrl } from '../../utils/helper.js';
 
 let Main = () => {
 
@@ -42,9 +43,9 @@ let Main = () => {
 
     useEffect(() => {
         let fetchData = async () => {
-            let lastUser = await fetch('https://g6-game-central.herokuapp.com/api/users/last')
+            let lastUser = await fetch(`${ currentUrl }/api/users/last`)
                 .then(res => res.json());
-            let lastProduct = await fetch('https://g6-game-central.herokuapp.com/api/products/last')
+            let lastProduct = await fetch(`${ currentUrl }/api/products/last`)
                 .then(res => res.json());
             try {
                 setLastEntries([
