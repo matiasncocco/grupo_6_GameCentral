@@ -20,7 +20,7 @@ function createOptionGroups(array) {
     // le agrego la clase acá? O después?
     // quiero que tengan una clase y capturarlos para después meterles los países
     return newThings
-}
+};
 
 let countryGroups = createOptionGroups(regions);
 console.log(countryGroups);

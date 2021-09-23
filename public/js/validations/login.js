@@ -1,3 +1,6 @@
+import { getCurrentUrl } from '../helper/helper.js';
+const currentUrl = getCurrentUrl();
+
 let form = document.querySelector('.register-form');
 
 let email = form.email;
@@ -50,7 +53,7 @@ function validateEmail() {
                 email: email.value
             })
         };
-        fetch('http://localhost:3001/api/users/ok-email', settings)
+        fetch(`${ currentUrl }/api/users/ok-email`, settings)
             .then(response => response.json())
             .then(info => {
                 info.result === false ? errors.push({

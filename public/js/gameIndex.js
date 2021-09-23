@@ -62,6 +62,10 @@ if (pathName.length === 9 || pathName.includes('1')) {
     });
 };
 
+// acá uso una función para determinar el hostname, puede ser el localhost durante desarrollo o algún servidor en internet.
+import { getCurrentUrl } from './helper/helper.js';
+const currentUrl = getCurrentUrl();
+
 // si el pathName tiene algo más que /products, voy a almacenar el número del mismo, es decir, el parámetro y desde ahí evalúo hasta donde dejo sumar página
 if (pathName.length > 9) {
     // regex para extraer número y lo hago INT
@@ -69,17 +73,17 @@ if (pathName.length > 9) {
     // limit es la cantidad máxima de juegos que muestro por vista
     let limit = 4;
     // consulto a éste endpoint la cantidad de juegos
-    fetch('http://localhost:3001/api')
-    .then(res => res.json())
-    .then(data => {
-        let allGamesLength = data.totals.gameCount;
-        // hago misma operación que en el back, solo que en vez de enviar el error cuando supero el número, prevengo el envío cuando es igual
-        if (Math.ceil(allGamesLength / limit) === param) {
-            buttonForward.classList.add('change-page-button-disable');
-            pageForward.addEventListener('submit', (e) => {
-                e.preventDefault();
-            });
-        };
-    })
-    .catch(err => console.log(err));
+    fetch(`${ currentUrl }/api`)
+        .then(res => res.json())
+        .then(data => {
+            let allGamesLength = data.totals.gameCount;
+            
+            if (Math.ceil(allGamesLength / limit) === param) {
+                buttonForward.classList.add('change-page-button-disable');
+                pageForward.addEventListener('submit', (e) => {
+                    e.preventDefault();
+                });
+            };
+        })
+        .catch(err => console.log(err));
 };

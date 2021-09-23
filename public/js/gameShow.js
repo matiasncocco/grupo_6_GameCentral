@@ -27,4 +27,4 @@ if (savedMoneyMath) {
         return Math.floor(saved);
     };
     savedMoneyMath.innerHTML = `AHORRAS $${math(price,discount)}!`;
-}
+};

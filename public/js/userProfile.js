@@ -9,7 +9,7 @@ let editButtonTextSmall = document.querySelector('.edit-profile-button h6');
 let delogButton = document.querySelector('#delog-button');
 let deleteButton = document.querySelector('#delete-button');
 
-editButtonTextBig.innerText = 'EDITAR MIS DATOS'
+editButtonTextBig.innerText = 'EDITAR MIS DATOS';
 editButtonTextSmall.innerText = 'EDITAR MIS DATOS';
 
 editButton.addEventListener('click', () => {

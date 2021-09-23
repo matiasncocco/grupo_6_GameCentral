@@ -1,3 +1,7 @@
+// voy a guardar la url en la que estoy trabajando, así si es desarollo o server en internet, sabe a qué endpoint hacerle fetch
+import { getCurrentUrl } from '../helper/helper.js';
+const currentUrl = getCurrentUrl();
+
 // voy a validar los campos del siguiente formulario
 let form = document.querySelector('.register-form');
 
@@ -163,7 +167,7 @@ function validateEmail() {
             })
         };
         // fetch con endpoint y configuración
-        fetch('http://localhost:3001/api/users/free-email', settings)
+        fetch(`${ currentUrl }/api/users/free-email`, settings)
             .then(response => response.json())
             .then(response => {
                 response.result === false ? errors.push({
