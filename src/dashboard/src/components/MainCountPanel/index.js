@@ -5,6 +5,7 @@ import {
     useState,
     useEffect
 } from 'react';
+import { getCurrentUrl } from '../../utils/helper';
 
 let CountPanel = () => {
     let [
@@ -13,7 +14,8 @@ let CountPanel = () => {
     ] = useState([]);
 
     useEffect(() => {
-        fetch('https://g6-game-central.herokuapp.com/api')
+        let currentUrl = getCurrentUrl();
+        fetch(`${ currentUrl }/api`)
             .then(res => res.json())
             .then(data => {
                 setCount([

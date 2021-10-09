@@ -4,8 +4,11 @@ import {
     useEffect,
     useState
 } from 'react';
+import { getCurrentUrl } from '../../utils/helper';
 
 let Users = () => {
+
+    let currentUrl = getCurrentUrl();
 
     let [
         users,
@@ -23,16 +26,16 @@ let Users = () => {
     ] = useState(1)
 
     useEffect(() => {
-        fetch('https://g6-game-central.herokuapp.com/api')
+        fetch(`${ currentUrl }/api`)
             .then(res => res.json())
             .then(data => {
                 setUserTotal(data.totals.userCount);
             })
             .catch(err => console.log(err));
-    })
+    }, [currentUrl])
 
     useEffect(() => {
-        fetch(`https://g6-game-central.herokuapp.com/api/users/${ page }`)
+        fetch(`${ currentUrl }/api/users/${ page }`)
             .then(res => res.json())
             .then(data => {
                 setUsers(
@@ -40,11 +43,11 @@ let Users = () => {
                 )
             })
             .catch(err => console.log(err));
-    }, [page])
+    }, [page, currentUrl])
 
     let usersPageUp = async () => {
         await setPage(page + 1);
-        fetch(`https://g6-game-central.herokuapp.com/api/users/${ page }`)
+        fetch(`${ currentUrl }/api/users/${ page }`)
             .then(res => res.json())
             .then(data => {
                 setUsers(
@@ -56,7 +59,7 @@ let Users = () => {
 
     let usersPageDown = async () => {
         await setPage(page - 1);
-        fetch(`https://g6-game-central.herokuapp.com/api/users/${ page }`)
+        fetch(`${ currentUrl }/api/users/${ page }`)
             .then(res => res.json())
             .then(data => {
                 setUsers(
@@ -84,9 +87,7 @@ let Users = () => {
 
     return(
         <main className='main-main'>
-        {/* main-main => Main.css */}
             <div className='panel-container'>
-            {/* panel-container => Main.css */}
             {
                 users.length === 0 &&
                 <Spinner />
@@ -103,7 +104,6 @@ let Users = () => {
                 })
             }
             {
-                // every className in this block => Product.css
                 users &&
                 <div className='paging-button-box'>
                     <button

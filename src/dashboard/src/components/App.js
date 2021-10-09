@@ -16,7 +16,7 @@ let appStyle = {
   backgroundAttachment: 'fixed',
   backgroundRepeat: 'no-repeat',
   backgroundSize: 'cover'
-}
+};
 
 let App = () => {
   return (

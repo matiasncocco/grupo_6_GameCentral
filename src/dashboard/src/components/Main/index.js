@@ -7,9 +7,11 @@ import {
     useState,
     useEffect
 } from 'react';
-// import { getCurrentUrl } from '../../utils/helper.js';
+import { getCurrentUrl } from '../../utils/helper';
 
 let Main = () => {
+
+    let currentUrl = getCurrentUrl();
 
     useEffect(() => {
         let thisLink = document.querySelector('#home-link');
@@ -61,10 +63,10 @@ let Main = () => {
             };
         };
         fetchData();
-    }, [])
+    }, [currentUrl])
 
     useEffect(() => {
-        fetch('https://g6-game-central.herokuapp.com/api/products')
+        fetch(`${ currentUrl }/api/products`)
             .then(res => res.json())
             .then(data => {
                 setCategories(
@@ -81,7 +83,7 @@ let Main = () => {
                 )
             })
             .catch(err => console.log(err));
-    }, [])
+    }, [currentUrl])
 
     useEffect(() => {
         let thisLink = document.querySelector('#home-link');

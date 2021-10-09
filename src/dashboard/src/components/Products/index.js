@@ -5,8 +5,11 @@ import {
     useEffect,
     useState
 } from 'react';
+import { getCurrentUrl } from '../../utils/helper';
 
 let Products = () => {
+
+    let currentUrl = getCurrentUrl();
 
     let [
         games,
@@ -24,16 +27,16 @@ let Products = () => {
     ] = useState(1)
 
     useEffect(() => {
-        fetch('https://g6-game-central.herokuapp.com/api')
+        fetch(`${ currentUrl }/api`)
             .then(res => res.json())
             .then(data => {
                 setGameTotal(data.totals.gameCount);
             })
             .catch(err => console.log(err));
-    })
+    }, [currentUrl])
 
     useEffect(() => {
-        fetch(`https://g6-game-central.herokuapp.com/api/products/${ page }`)
+        fetch(`${ currentUrl }/api/products/${ page }`)
             .then(res => res.json())
             .then(data => {
                 setGames(
@@ -41,11 +44,11 @@ let Products = () => {
                 )
             })
             .catch(err => console.log(err));
-    }, [page])
+    }, [page, currentUrl])
 
     let gamesPageUp = async () => {
         await setPage(page + 1);
-        fetch(`https://g6-game-central.herokuapp.com/api/products/${ page }`)
+        fetch(`${ currentUrl }/api/products/${ page }`)
             .then(res => res.json())
             .then(data => {
                 setGames(
@@ -57,7 +60,7 @@ let Products = () => {
 
     let gamesPageDown = async () => {
         await setPage(page - 1);
-        fetch(`https://g6-game-central.herokuapp.com/api/products/${ page }`)
+        fetch(`${ currentUrl }/api/products/${ page }`)
             .then(res => res.json())
             .then(data => {
                 setGames(
@@ -85,9 +88,7 @@ let Products = () => {
 
     return (
         <main className='main-main'>
-        {/* main-main => Main.css */}
             <div className='panel-container'>
-                {/* panel-container => Main.css */}
                 {
                     games.length === 0 &&
                     <Spinner />
