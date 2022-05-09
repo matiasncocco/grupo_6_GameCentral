@@ -8,12 +8,12 @@
 <h4>&nbsp;&nbsp;Para lograr éste proyecto usamos, para el back-end<h4>
 
 - [Node.js](https://nodejs.org)
+    - [Express.js](https://expressjs.com/)
     - [bcrypt](https://www.npmjs.com/package/bcrypt)
     - [cookie-parser](https://www.npmjs.com/package/cookie-parser)
     - [cors](https://www.npmjs.com/package/cors)
     - [express-session](https://www.npmjs.com/package/express-session)
     - [express-validator](https://www.npmjs.com/package/express-validator)
-    - [Express.js](https://expressjs.com/)
     - [method-override](https://www.npmjs.com/package/method-override)
     - [multer](https://www.npmjs.com/package/multer)
     - [ejs template engine](https://ejs.co/)
