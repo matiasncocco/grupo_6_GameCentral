@@ -7,28 +7,25 @@
 
 <h4>&nbsp;&nbsp;Para lograr éste proyecto usamos, para el back-end<h4>
 
-- Javascript
-- [Node.js](https://nodejs.org)  
-&nbsp;&nbsp; *[express-validator](https://www.npmjs.com/package/express-validator)*  
-&nbsp;&nbsp; *[bcrypt](https://www.npmjs.com/package/bcrypt)*  
-&nbsp;&nbsp; *[express-session](https://www.npmjs.com/package/express-session)*  
-&nbsp;&nbsp; *[cookie-parser](https://www.npmjs.com/package/cookie-parser)*  
-&nbsp;&nbsp; *[cors](https://www.npmjs.com/package/cors)*  
-&nbsp;&nbsp; *[multer](https://www.npmjs.com/package/multer)*  
-&nbsp;&nbsp; *[method-override](https://www.npmjs.com/package/method-override)*  
-- [Express.js](https://expressjs.com/)
-- [Sequelize](https://sequelize.org/)
-- REST API
-- MySQL
+- [Node.js](https://nodejs.org)
+    - [bcrypt](https://www.npmjs.com/package/bcrypt)
+    - [cookie-parser](https://www.npmjs.com/package/cookie-parser)
+    - [cors](https://www.npmjs.com/package/cors)
+    - [express-session](https://www.npmjs.com/package/express-session)
+    - [express-validator](https://www.npmjs.com/package/express-validator)
+    - [Express.js](https://expressjs.com/)
+    - [method-override](https://www.npmjs.com/package/method-override)
+    - [multer](https://www.npmjs.com/package/multer)
+    - [ejs template engine](https://ejs.co/)
 - Prácticas MVC (Model View Controller)
+- Arquitectura REST
+- MySQL
+- [Sequelize](https://sequelize.org/)
 
-<h4>&nbsp;&nbsp;Y para el front-end:<h4>
+<h4>&nbsp;&nbsp;También instanciamos una web app con React.js que consume nuestra Api REST, con el fin de servir una dashboard para administradores. Para su desarrollo, utilizamos:<h4>
 
-- Javascript
-- HTML
-- CSS
-- [ejs template engine](https://ejs.co/)
 - React.js
+    - [react-router](https://v5.reactrouter.com/web/guides/quick-start)
 
 [Game Central: ADMIN DASHBOARD](https://game-central-dashboard.herokuapp.com/)
 ---
@@ -47,12 +44,12 @@
 
 <h3>Integrantes</h3>
 
-| Nombre | Edad | Ocupación |
-| ------------- |:-------------:| -----:|
-| Melina Giménez | 22 | Estudiante de nutrición |
-| Matías Cocco | 25 | Estudiante de ingeniería electromecánica |
-| Santiago Guastavino | 29 | Full stack web developer |
-| Federico Schlatter | 35 | Contador público |
+| Nombre             |LinkedIn                                                        |GitHub
+|--------------------|----------------------------------------------------------------|-----------------------------------------------|
+| Melina Giménez     |[LinkedIn](https://www.linkedin.com/in/migimenez/)              |[GitHub](https://github.com/MelinaGimenez)     |
+| Matías Cocco       |[LinkedIn](https://www.linkedin.com/in/matias-cocco-a2279411a/) |[GitHub](https://github.com/matiasncocco)      |
+| Santiago Guastavino|[LinkedIn](https://www.linkedin.com/in/smguastavino/)           |[GitHub](https://github.com/santiagoGuastavino)|
+| Federico Schlatter |[LinkedIn](https://www.linkedin.com/in/fede-schlatter-0062b020/)|[GitHub](https://github.com/Flappersch)        |
 
 ---
 
