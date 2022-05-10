@@ -1,6 +1,6 @@
 [
     {
-        "img": "https://media-exp1.licdn.com/dms/image/C4E03AQGtPL6_-9ddHg/profile-displayphoto-shrink_200_200/0/1632581279942?e=1637798400&v=beta&t=v2kQouekhbtdDouSnU3R0ZqnxB9aN7Ko8mOpwlnLSIY",
+        "img": "/img/us/santiago-guastavino.png",
         "name": "Santiago",
         "surname": "Guastavino",
         "email": "smguastavino@gmail.com",
@@ -8,7 +8,7 @@
         "linkedin": "https://www.linkedin.com/in/smguastavino/"
     },
     {
-        "img": "https://media-exp1.licdn.com/dms/image/C4E03AQGEU_MXqUMYPA/profile-displayphoto-shrink_200_200/0/1630375471899?e=1635984000&v=beta&t=qTFmtjSAlDKuv6Y07hPWpQmhR-8kdCS7rTi53Xmk--g",
+        "img": "/img/us/fede.png",
         "name": "Federico",
         "surname": "Schlatter",
         "email": "fedeschlatter@gmail.com",
@@ -16,7 +16,7 @@
         "linkedin": "https://www.linkedin.com/in/fede-schlatter-0062b020/"
     },
     {
-        "img": "https://media-exp1.licdn.com/dms/image/C5603AQGPfr7mKRoQWg/profile-displayphoto-shrink_200_200/0/1607799110341?e=1635984000&v=beta&t=W_KHN9YRnFNTDloX9jwFcifsvaJM0oqbxKUlExp36pc",
+        "img": "/img/us/matias.png",
         "name": "Matias",
         "surname": "Cocco",
         "email": "matiasnicolascocco95@gmail.com",
@@ -24,7 +24,7 @@
         "linkedin": "https://www.linkedin.com/in/matias-cocco-a2279411a/"
     },
     {
-        "img": "https://media-exp1.licdn.com/dms/image/C4E03AQEN5HKkhzNnkw/profile-displayphoto-shrink_200_200/0/1627516075580?e=1635984000&v=beta&t=VQOalNe46lVsrltQAnYQZszTYinh8cngATo81m2tn04",
+        "img": "/img/us/melina.png",
         "name": "Melina",
         "surname": "Gimenez",
         "email": "gimenez.melina@hotmail.com",
